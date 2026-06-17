@@ -94,6 +94,25 @@ function setFilter(categoryKey) {
     renderProducts();
 }
 
+function getVariantsPreview(product) {
+    if (!product.variants || product.variants.length === 0) {
+        return "";
+    }
+
+    const title = currentLang === "ar" ? "القياسات / الأنواع" : "Sizes / Types";
+
+    return `
+    <div class="variants-preview">
+      <small>${title}</small>
+      <div class="variant-chips">
+        ${product.variants
+            .map((variant) => `<span>${variant[currentLang]}</span>`)
+            .join("")}
+      </div>
+    </div>
+  `;
+}
+
 function renderProducts() {
     if (!productsContainer) return;
 
@@ -107,11 +126,13 @@ function renderProducts() {
             return `
         <article class="product-card">
           <a href="product.html?id=${product.id}" class="product-image-box">
-            <img 
-              src="${product.image}" 
-              alt="${product.name[currentLang]}"
-              onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
-            >
+           <img 
+  src="${product.image}" 
+  alt="${product.name[currentLang]}"
+  onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
+>
+
+${getVariantsPreview(product)}
           </a>
 
           <div class="product-info">

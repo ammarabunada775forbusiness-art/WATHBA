@@ -463,3 +463,50 @@ footer {
     color: var(--accent-text);
     border-color: var(--accent);
 }
+
+.variants-preview {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    padding: 12px;
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(14px);
+    opacity: 0;
+    transform: translateY(14px);
+    transition: 0.25s;
+    pointer-events: none;
+}
+
+.product-card:hover .variants-preview {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.variants-preview small {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.variant-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.variant-chips span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 9px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--accent-text);
+    font-size: 12px;
+    font-weight: 900;
+}
