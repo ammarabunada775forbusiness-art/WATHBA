@@ -1,5 +1,5 @@
 let currentLang = localStorage.getItem("wathbaLang") || "ar";
-let currentTheme = localStorage.getItem("wathbaTheme") || "dark";
+let currentTheme = localStorage.getItem("wathbaTheme") || "light";
 let currentFilter = "all";
 
 const html = document.documentElement;
@@ -16,7 +16,8 @@ function applyLanguage() {
 
     document.querySelectorAll("[data-i18n]").forEach((element) => {
         const key = element.dataset.i18n;
-        if (t && t[key]) {
+
+        if (t[key]) {
             element.textContent = t[key];
         }
     });
@@ -33,10 +34,7 @@ function applyTheme() {
     document.body.dataset.theme = currentTheme;
 
     if (themeToggle) {
-        themeToggle.innerHTML =
-            currentTheme === "dark"
-                ? '<span class="material-symbols-outlined">light_mode</span>'
-                : '<span class="material-symbols-outlined">dark_mode</span>';
+        themeToggle.textContent = currentTheme === "dark" ? "☀️" : "🌙";
     }
 }
 
@@ -64,11 +62,12 @@ function renderFilters() {
     if (!filtersContainer) return;
 
     const categories = getCategories();
-    const allText = currentLang === "ar" ? "كل المعدات" : "All Equipment";
+
+    const allText = currentLang === "ar" ? "الكل" : "All";
 
     filtersContainer.innerHTML = `
-    <button
-      class="filter-btn ${currentFilter === "all" ? "active" : ""}"
+    <button 
+      class="filter-btn ${currentFilter === "all" ? "active" : ""}" 
       onclick="setFilter('all')"
     >
       ${allText}
@@ -77,8 +76,8 @@ function renderFilters() {
     ${categories
             .map(
                 (category) => `
-          <button
-            class="filter-btn ${currentFilter === category.key ? "active" : ""}"
+          <button 
+            class="filter-btn ${currentFilter === category.key ? "active" : ""}" 
             onclick="setFilter('${category.key}')"
           >
             ${category[currentLang]}
@@ -104,13 +103,11 @@ function getVariantsPreview(product) {
 
     return `
     <div class="variants-preview">
-      <div>
-        <small>${title}</small>
-        <div class="variant-chips">
-          ${product.variants
+      <small>${title}</small>
+      <div class="variant-chips">
+        ${product.variants
             .map((variant) => `<span>${variant[currentLang]}</span>`)
             .join("")}
-        </div>
       </div>
     </div>
   `;
@@ -129,12 +126,13 @@ function renderProducts() {
             return `
         <article class="product-card">
           <a href="product.html?id=${product.id}" class="product-image-box">
-            <img
-              src="${product.image}"
-              alt="${product.name[currentLang]}"
-              onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
-            >
-            ${getVariantsPreview(product)}
+           <img 
+  src="${product.image}" 
+  alt="${product.name[currentLang]}"
+  onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
+>
+
+${getVariantsPreview(product)}
           </a>
 
           <div class="product-info">
@@ -143,9 +141,8 @@ function renderProducts() {
             <p class="desc">${product.description[currentLang]}</p>
 
             <div class="product-bottom">
-              <strong>${getProductPriceText(product, currentLang)}</strong>
-              <button onclick='openWhatsApp(${JSON.stringify(product)})'>
-                ${currentLang === "ar" ? "اطلب" : "Order"}
+<strong>${getProductPriceText(product, currentLang)}</strong>              <button onclick='openWhatsApp(${JSON.stringify(product)})'>
+                ${currentLang === "ar" ? "اطلب عبر واتساب" : "Order on WhatsApp"}
               </button>
             </div>
           </div>
@@ -157,7 +154,7 @@ function renderProducts() {
 
 if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-        currentTheme = currentTheme === "dark" ? "light" : "dark";
+        currentTheme = currentTheme === "light" ? "dark" : "light";
         localStorage.setItem("wathbaTheme", currentTheme);
         applyTheme();
     });

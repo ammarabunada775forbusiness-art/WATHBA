@@ -171,34 +171,3 @@
         display: none;
     }
 }
-
-@media (max-width: 768px) {
-    .shop-hero {
-        padding: 150px 5% 48px;
-    }
-
-    .shop-hero h1 {
-        font-size: 72px;
-    }
-
-    .shop-hero p:last-child {
-        font-size: 15px;
-    }
-
-    .products-page-section {
-        padding-left: 5%;
-        padding-right: 5%;
-        padding-bottom: 90px;
-    }
-
-    .filters {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 8px;
-    }
-
-    .filter-btn {
-        white-space: nowrap;
-        padding: 0 20px;
-    }
-}
