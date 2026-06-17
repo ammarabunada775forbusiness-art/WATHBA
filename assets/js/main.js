@@ -57,8 +57,7 @@ function renderFeaturedProducts() {
             <p class="desc">${product.description[currentLang]}</p>
 
             <div class="product-bottom">
-              <strong>${product.price} JOD</strong>
-              <button onclick='openWhatsApp(${JSON.stringify(product)})'>
+<strong>${getProductPriceText(product, currentLang)}</strong>              <button onclick='openWhatsApp(${JSON.stringify(product)})'>
                 ${currentLang === "ar" ? "اطلب عبر واتساب" : "Order on WhatsApp"}
               </button>
             </div>

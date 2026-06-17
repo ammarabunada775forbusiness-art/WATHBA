@@ -1,22 +1,32 @@
 const WHATSAPP_NUMBER = "962791752349";
 
-function openWhatsApp(product) {
+function openWhatsApp(product, selectedVariant = null) {
     const lang = localStorage.getItem("wathbaLang") || "ar";
+
+    const productName = product.name[lang];
+    const categoryName = product.category[lang];
+    const priceText = getProductPriceText(product, lang);
+
+    const variantText = selectedVariant
+        ? lang === "ar"
+            ? `\nالقياس / النوع: ${selectedVariant.ar}`
+            : `\nSize / Type: ${selectedVariant.en}`
+        : "";
 
     const message =
         lang === "ar"
             ? `مرحبا، أريد طلب المنتج التالي:
 
-اسم المنتج: ${product.name.ar}
-السعر: ${product.price} دينار
-التصنيف: ${product.category.ar}
+اسم المنتج: ${productName}${variantText}
+السعر: ${priceText}
+التصنيف: ${categoryName}
 
 هل المنتج متوفر؟`
             : `Hello, I want to order this product:
 
-Product: ${product.name.en}
-Price: ${product.price} JOD
-Category: ${product.category.en}
+Product: ${productName}${variantText}
+Price: ${priceText}
+Category: ${categoryName}
 
 Is it available?`;
 
