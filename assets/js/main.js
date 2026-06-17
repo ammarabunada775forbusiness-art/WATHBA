@@ -1,31 +1,89 @@
+let currentLang = localStorage.getItem("wathbaLang") || "ar";
+let currentTheme = localStorage.getItem("wathbaTheme") || "light";
+
+const html = document.documentElement;
+const themeToggle = document.getElementById("themeToggle");
+const langToggle = document.getElementById("langToggle");
 const featuredContainer = document.getElementById("featuredProducts");
 
-if (featuredContainer) {
-    const featuredProducts = products.slice(0, 6);
+function applyLanguage() {
+  const t = translations[currentLang];
 
-    featuredContainer.innerHTML = featuredProducts.map(product => `
-    <div class="product-card">
-      <div class="product-image-box">
-        <img 
-          src="${product.image}" 
-          alt="${product.name}"
-          onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
-        >
-        <span>${product.badge}</span>
-      </div>
+  html.lang = currentLang;
+  html.dir = currentLang === "ar" ? "rtl" : "ltr";
 
-      <div class="product-info">
-        <p class="category">${product.category}</p>
-        <h3>${product.name}</h3>
-        <p class="desc">${product.description}</p>
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.dataset.i18n;
+    if (t[key]) {
+      element.textContent = t[key];
+    }
+  });
 
-        <div class="product-bottom">
-          <strong>${product.price} JOD</strong>
-          <button onclick='openWhatsApp(${JSON.stringify(product)})'>
-            اطلب عبر واتساب
-          </button>
-        </div>
-      </div>
-    </div>
-  `).join("");
+  if (langToggle) {
+    langToggle.textContent = currentLang === "ar" ? "EN" : "AR";
+  }
+
+  renderFeaturedProducts();
 }
+
+function applyTheme() {
+  document.body.dataset.theme = currentTheme;
+
+  if (themeToggle) {
+    themeToggle.textContent = currentTheme === "dark" ? "☀️" : "🌙";
+  }
+}
+
+function renderFeaturedProducts() {
+  if (!featuredContainer) return;
+
+  const selectedProducts = products.slice(0, 6);
+
+  featuredContainer.innerHTML = selectedProducts
+    .map((product) => {
+      return `
+        <article class="product-card">
+          <a href="product.html?id=${product.id}" class="product-image-box">
+            <img 
+              src="${product.image}" 
+              alt="${product.name[currentLang]}"
+              onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
+            >
+          </a>
+
+          <div class="product-info">
+            <p class="category">${product.category[currentLang]}</p>
+            <h3>${product.name[currentLang]}</h3>
+            <p class="desc">${product.description[currentLang]}</p>
+
+            <div class="product-bottom">
+              <strong>${product.price} JOD</strong>
+              <button onclick='openWhatsApp(${JSON.stringify(product)})'>
+                ${currentLang === "ar" ? "اطلب عبر واتساب" : "Order on WhatsApp"}
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    currentTheme = currentTheme === "light" ? "dark" : "light";
+    localStorage.setItem("wathbaTheme", currentTheme);
+    applyTheme();
+  });
+}
+
+if (langToggle) {
+  langToggle.addEventListener("click", () => {
+    currentLang = currentLang === "ar" ? "en" : "ar";
+    localStorage.setItem("wathbaLang", currentLang);
+    applyLanguage();
+  });
+}
+
+applyTheme();
+applyLanguage();

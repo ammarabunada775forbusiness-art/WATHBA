@@ -1,0 +1,55 @@
+const translations = {
+    ar: {
+        brand: "وثبة",
+        navHome: "الرئيسية",
+        navProducts: "المنتجات",
+        navAbout: "من نحن",
+        navContact: "تواصل معنا",
+        whatsapp: "واتساب",
+        heroMini: "معدات كاليسثنكس مختارة",
+        heroTitle: "جهّز تدريبك. ارفع مستواك. ابدأ وثبتك.",
+        heroText:
+            "معدات كاليسثنكس عملية للبيت والجيم: عقلة، حلقات، باراليتس، مطاط مقاومة وإكسسوارات تساعدك تتطور خطوة بخطوة.",
+        browseProducts: "تصفح المنتجات",
+        featuredProducts: "المنتجات المميزة",
+        fastOrderTitle: "طلب سريع",
+        fastOrderText: "اضغط على المنتج وسيتم تحويلك مباشرة إلى واتساب.",
+        qualityTitle: "اختيار عملي",
+        qualityText: "منتجات مناسبة للمبتدئين والمتوسطين والمتقدمين.",
+        mobileTitle: "تجربة سهلة",
+        mobileText: "الموقع مصمم ليعمل بشكل ممتاز على الهاتف.",
+        productsMini: "منتجاتنا",
+        productsTitle: "معدات تساعدك تتطور",
+        needHelpTitle: "مش عارف تختار المنتج المناسب؟",
+        needHelpText: "احكِ لنا مستواك وهدفك، ونساعدك تختار الأفضل.",
+        askWhatsapp: "اسألنا على واتساب",
+        footerText: "© 2026 وثبة. جميع الحقوق محفوظة."
+    },
+
+    en: {
+        brand: "WATHBA",
+        navHome: "Home",
+        navProducts: "Products",
+        navAbout: "About",
+        navContact: "Contact",
+        whatsapp: "WhatsApp",
+        heroMini: "Selected Calisthenics Equipment",
+        heroTitle: "Equip your training. Level up. Start your Wathba.",
+        heroText:
+            "Practical calisthenics gear for home and gym: pull-up bars, rings, parallettes, resistance bands, and accessories to help you progress step by step.",
+        browseProducts: "Browse Products",
+        featuredProducts: "Featured Products",
+        fastOrderTitle: "Fast Order",
+        fastOrderText: "Click a product and order directly through WhatsApp.",
+        qualityTitle: "Practical Gear",
+        qualityText: "Products suitable for beginners, intermediates, and advanced athletes.",
+        mobileTitle: "Easy Experience",
+        mobileText: "The website is designed to work smoothly on mobile.",
+        productsMini: "Our Products",
+        productsTitle: "Gear that helps you progress",
+        needHelpTitle: "Not sure what to choose?",
+        needHelpText: "Tell us your level and goal, and we will help you choose.",
+        askWhatsapp: "Ask us on WhatsApp",
+        footerText: "© 2026 WATHBA. All rights reserved."
+    }
+};

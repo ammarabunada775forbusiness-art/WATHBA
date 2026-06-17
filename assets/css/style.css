@@ -1,3 +1,26 @@
+:root {
+    --bg: #ffffff;
+    --text: #050505;
+    --muted: #5f5f5f;
+    --card: #f4f4f4;
+    --card-2: #ffffff;
+    --border: #dedede;
+    --accent: #050505;
+    --accent-text: #ffffff;
+    --whatsapp: #25d366;
+}
+
+body[data-theme="dark"] {
+    --bg: #050505;
+    --text: #ffffff;
+    --muted: #b8b8b8;
+    --card: #111111;
+    --card-2: #0b0b0b;
+    --border: #262626;
+    --accent: #ffffff;
+    --accent-text: #050505;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,14 +33,19 @@ html {
 
 body {
     font-family: Arial, Tahoma, sans-serif;
-    background: #080808;
-    color: #ffffff;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.8;
+    transition: background 0.3s, color 0.3s;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
 }
 
 img {
@@ -27,84 +55,111 @@ img {
 
 .navbar {
     width: 100%;
-    padding: 20px 7%;
+    padding: 18px 7%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(8, 8, 8, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 22px;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: -1px;
 }
 
-.logo span {
-    color: #d4af37;
+html[dir="ltr"] .logo {
+    letter-spacing: 1px;
 }
 
 .navbar nav {
     display: flex;
+    align-items: center;
     gap: 26px;
 }
 
 .navbar nav a {
-    color: #d8d8d8;
+    color: var(--muted);
     font-size: 15px;
-    transition: 0.3s;
+    font-weight: 700;
+    transition: 0.25s;
 }
 
 .navbar nav a:hover {
-    color: #d4af37;
+    color: var(--text);
 }
 
-.nav-whatsapp {
-    background: #25d366;
-    color: #071007;
-    padding: 10px 18px;
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-btn,
+.lang-btn,
+.whatsapp-link {
+    height: 42px;
     border-radius: 999px;
-    font-weight: 800;
-    transition: 0.3s;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    cursor: pointer;
+    font-weight: 900;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.nav-whatsapp:hover {
-    transform: translateY(-2px);
+.icon-btn {
+    width: 42px;
+}
+
+.lang-btn {
+    padding: 0 15px;
+}
+
+.whatsapp-link {
+    padding: 0 18px;
+    background: var(--whatsapp);
+    color: #071007;
+    border-color: var(--whatsapp);
 }
 
 .hero {
-    min-height: 85vh;
-    padding: 90px 7%;
+    min-height: 82vh;
+    padding: 80px 7%;
     display: grid;
-    grid-template-columns: 1.4fr 0.8fr;
+    grid-template-columns: 1.25fr 0.75fr;
     align-items: center;
     gap: 50px;
     background:
-        radial-gradient(circle at top left, rgba(212, 175, 55, 0.18), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(37, 211, 102, 0.12), transparent 30%),
-        #080808;
+        radial-gradient(circle at top, color-mix(in srgb, var(--accent) 10%, transparent), transparent 35%),
+        var(--bg);
 }
 
 .mini-title {
-    color: #d4af37;
-    font-weight: 800;
+    color: var(--muted);
+    font-weight: 900;
     margin-bottom: 14px;
 }
 
 .hero h1 {
-    font-size: clamp(38px, 6vw, 76px);
-    line-height: 1.15;
+    max-width: 760px;
+    font-size: clamp(40px, 6vw, 78px);
+    line-height: 1.13;
+    letter-spacing: -2px;
     margin-bottom: 24px;
 }
 
 .hero-text {
-    color: #cfcfcf;
-    max-width: 650px;
+    max-width: 680px;
+    color: var(--muted);
     font-size: 18px;
     margin-bottom: 32px;
 }
@@ -118,52 +173,68 @@ img {
 .btn {
     padding: 13px 24px;
     border-radius: 999px;
-    font-weight: 800;
-    transition: 0.3s;
+    font-weight: 900;
+    transition: 0.25s;
 }
 
 .btn.primary {
-    background: #d4af37;
-    color: #090909;
+    background: var(--accent);
+    color: var(--accent-text);
 }
 
 .btn.secondary {
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    color: #ffffff;
+    border: 1px solid var(--border);
+    color: var(--text);
+    background: var(--card-2);
 }
 
 .btn:hover {
     transform: translateY(-3px);
 }
 
-.hero-card {
-    min-height: 360px;
-    border-radius: 32px;
-    padding: 34px;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
+.hero-visual {
+    min-height: 400px;
+    border-radius: 34px;
+    padding: 28px;
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
-        url("../images/hero/hero.webp");
-    background-size: cover;
-    background-position: center;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+        linear-gradient(135deg, var(--card), var(--card-2));
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: end;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
 }
 
-.hero-card h2 {
-    font-size: 70px;
-    color: #d4af37;
+body[data-theme="dark"] .hero-visual {
+    box-shadow: 0 30px 80px rgba(255, 255, 255, 0.04);
 }
 
-.hero-card p {
-    color: #f0f0f0;
-    font-weight: 700;
+.hero-box {
+    width: 100%;
+    border-radius: 26px;
+    padding: 28px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+}
+
+.hero-box span {
+    display: inline-block;
+    color: var(--muted);
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.hero-box h2 {
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.hero-box p {
+    color: var(--muted);
+    margin-top: 8px;
 }
 
 .features {
-    padding: 30px 7%;
+    padding: 28px 7%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
@@ -171,18 +242,18 @@ img {
 
 .features div {
     padding: 24px;
-    border-radius: 22px;
-    background: #111111;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
 }
 
 .features h3 {
+    font-size: 22px;
     margin-bottom: 8px;
-    color: #d4af37;
 }
 
 .features p {
-    color: #cfcfcf;
+    color: var(--muted);
 }
 
 .section {
@@ -191,16 +262,17 @@ img {
 
 .section-head {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 42px;
 }
 
 .section-head p {
-    color: #d4af37;
-    font-weight: 800;
+    color: var(--muted);
+    font-weight: 900;
 }
 
 .section-head h2 {
-    font-size: 42px;
+    font-size: clamp(32px, 4vw, 50px);
+    line-height: 1.2;
 }
 
 .products-grid {
@@ -211,34 +283,34 @@ img {
 
 .product-card {
     overflow: hidden;
-    border-radius: 26px;
-    background: #111111;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: 0.3s;
+    border-radius: 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    transition: 0.25s;
 }
 
 .product-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(212, 175, 55, 0.5);
+    transform: translateY(-7px);
 }
 
 .product-image-box {
     height: 260px;
     position: relative;
+    display: block;
     background:
-        linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(255, 255, 255, 0.04)),
-        #181818;
+        linear-gradient(135deg, var(--card), var(--card-2));
 }
 
 .product-image-box.no-image::after {
-    content: "Product Image";
+    content: "WATHBA";
     position: absolute;
     inset: 0;
     display: grid;
     place-items: center;
-    color: #d4af37;
+    color: var(--muted);
+    font-size: 30px;
     font-weight: 900;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .product-image-box img {
@@ -247,38 +319,26 @@ img {
     object-fit: cover;
 }
 
-.product-image-box span {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    background: #d4af37;
-    color: #080808;
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 900;
-}
-
 .product-info {
     padding: 22px;
 }
 
 .category {
-    color: #d4af37;
+    color: var(--muted);
     font-size: 14px;
-    font-weight: 800;
-    margin-bottom: 5px;
+    font-weight: 900;
+    margin-bottom: 4px;
 }
 
 .product-info h3 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .desc {
-    color: #c9c9c9;
+    color: var(--muted);
     font-size: 15px;
-    min-height: 82px;
+    min-height: 76px;
 }
 
 .product-bottom {
@@ -290,19 +350,18 @@ img {
 }
 
 .product-bottom strong {
-    font-size: 20px;
-    color: #ffffff;
+    font-size: 19px;
 }
 
 .product-bottom button {
     border: none;
     cursor: pointer;
-    background: #25d366;
-    color: #071007;
-    padding: 10px 14px;
+    background: var(--accent);
+    color: var(--accent-text);
+    padding: 10px 15px;
     border-radius: 999px;
     font-weight: 900;
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
 .product-bottom button:hover {
@@ -313,26 +372,26 @@ img {
     margin: 30px 7% 80px;
     padding: 50px;
     text-align: center;
-    border-radius: 32px;
-    background:
-        radial-gradient(circle at top, rgba(212, 175, 55, 0.24), transparent 45%),
-        #111111;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 34px;
+    background: var(--card);
+    border: 1px solid var(--border);
 }
 
 .cta h2 {
-    font-size: 36px;
+    font-size: clamp(28px, 4vw, 42px);
     margin-bottom: 12px;
 }
 
 .cta p {
-    color: #cfcfcf;
+    color: var(--muted);
     margin-bottom: 24px;
 }
 
 .cta a {
-    display: inline-block;
-    background: #25d366;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--whatsapp);
     color: #071007;
     padding: 13px 24px;
     border-radius: 999px;
@@ -342,7 +401,7 @@ img {
 footer {
     padding: 24px 7%;
     text-align: center;
-    color: #aaa;
-    background: #050505;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--muted);
+    background: var(--card);
+    border-top: 1px solid var(--border);
 }

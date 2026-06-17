@@ -1,102 +1,172 @@
 const products = [
     {
         id: "parallettes",
-        name: "Parallettes خشب",
-        category: "معدات دفع",
+        name: {
+            ar: "باراليتس خشب",
+            en: "Wooden Parallettes"
+        },
+        category: {
+            ar: "معدات دفع",
+            en: "Push Equipment"
+        },
         price: 25,
-        badge: "الأكثر طلباً",
         image: "assets/images/products/parallettes/cover.webp",
-        description: "باراليتس خشبي مناسب لتدريبات الضغط، L-sit، البلانش، والهاندستاند.",
-        features: ["خشب قوي", "ثبات عالي", "مناسب للمبتدئين والمتقدمين"]
+        description: {
+            ar: "باراليتس مناسب للضغط، L-sit، البلانش والهاندستاند.",
+            en: "Parallettes for push-ups, L-sit, planche training, and handstands."
+        }
     },
     {
         id: "rings",
-        name: "Gymnastic Rings",
-        category: "معدات سحب",
+        name: {
+            ar: "حلقات جمباز",
+            en: "Gymnastic Rings"
+        },
+        category: {
+            ar: "معدات سحب",
+            en: "Pull Equipment"
+        },
         price: 30,
-        badge: "احترافي",
         image: "assets/images/products/rings/cover.webp",
-        description: "حلقات رياضية ممتازة لتدريب السحب، الديبس، والمهارات المتقدمة.",
-        features: ["أحزمة قابلة للتعديل", "قبضة مريحة", "مناسبة للبيت والجيم"]
+        description: {
+            ar: "حلقات قوية لتدريب السحب، الديبس، والمهارات المتقدمة.",
+            en: "Strong rings for pull training, dips, and advanced skills."
+        }
     },
     {
         id: "resistance-bands",
-        name: "Resistance Bands",
-        category: "مساعدة وتمرين",
+        name: {
+            ar: "مطاط مقاومة",
+            en: "Resistance Bands"
+        },
+        category: {
+            ar: "مساعدة وتمرين",
+            en: "Assistance"
+        },
         price: 12,
-        badge: "مناسب للمبتدئين",
         image: "assets/images/products/resistance-bands/cover.webp",
-        description: "مطاط مقاومة يساعدك في العقلة، الإحماء، وتمارين المرونة.",
-        features: ["عدة مقاومات", "خفيف وسهل الحمل", "ممتاز للتدرج"]
+        description: {
+            ar: "مطاط يساعدك في العقلة، الإحماء، المرونة والتدرج.",
+            en: "Bands for pull-up assistance, warm-up, mobility, and progression."
+        }
     },
     {
         id: "pull-up-bar",
-        name: "Pull-up Bar",
-        category: "معدات سحب",
+        name: {
+            ar: "بار عقلة",
+            en: "Pull-up Bar"
+        },
+        category: {
+            ar: "معدات سحب",
+            en: "Pull Equipment"
+        },
         price: 28,
-        badge: "أساسي",
         image: "assets/images/products/pull-up-bar/cover.webp",
-        description: "بار عقلة منزلي لتدريب الظهر، الذراعين، والكور.",
-        features: ["سهل التركيب", "مناسب للمنزل", "يتحمل الاستخدام اليومي"]
+        description: {
+            ar: "بار عقلة منزلي لتدريب الظهر، الذراعين والكور.",
+            en: "Home pull-up bar for back, arms, and core training."
+        }
     },
     {
         id: "dip-bars",
-        name: "Dip Bars",
-        category: "معدات دفع",
+        name: {
+            ar: "متوازي ديبس",
+            en: "Dip Bars"
+        },
+        category: {
+            ar: "معدات دفع",
+            en: "Push Equipment"
+        },
         price: 45,
-        badge: "قوي",
         image: "assets/images/products/dip-bars/cover.webp",
-        description: "متوازي عالي الثبات لتدريب الديبس، الضغط، وتمارين الكور.",
-        features: ["حديد قوي", "ثبات ممتاز", "مناسب للتمارين المركبة"]
+        description: {
+            ar: "متوازي ثابت لتدريب الديبس، الضغط وتمارين الكور.",
+            en: "Stable dip bars for dips, push exercises, and core work."
+        }
     },
     {
         id: "liquid-chalk",
-        name: "Liquid Chalk",
-        category: "إكسسوارات",
+        name: {
+            ar: "مغنيسيوم سائل",
+            en: "Liquid Chalk"
+        },
+        category: {
+            ar: "إكسسوارات",
+            en: "Accessories"
+        },
         price: 6,
-        badge: "قبضة أفضل",
         image: "assets/images/products/liquid-chalk/cover.webp",
-        description: "مغنيسيوم سائل لتحسين القبضة أثناء العقلة والحلقات.",
-        features: ["يقلل الانزلاق", "سهل الاستخدام", "مناسب للحلقات والبار"]
+        description: {
+            ar: "يساعد على تحسين القبضة وتقليل الانزلاق أثناء التدريب.",
+            en: "Improves grip and reduces slipping during training."
+        }
     },
     {
         id: "wrist-wraps",
-        name: "Wrist Wraps",
-        category: "حماية",
+        name: {
+            ar: "رباط معصم",
+            en: "Wrist Wraps"
+        },
+        category: {
+            ar: "حماية",
+            en: "Protection"
+        },
         price: 8,
-        badge: "حماية المعصم",
         image: "assets/images/products/wrist-wraps/cover.webp",
-        description: "رباط معصم يساعد في الثبات والحماية أثناء الضغط والهاندستاند.",
-        features: ["دعم للمعصم", "مريح", "مناسب للمهارات"]
+        description: {
+            ar: "دعم للمعصم أثناء الضغط، الهاندستاند والمهارات.",
+            en: "Wrist support for push exercises, handstands, and skills."
+        }
     },
     {
         id: "weight-vest",
-        name: "Weight Vest",
-        category: "تطوير القوة",
+        name: {
+            ar: "سترة أوزان",
+            en: "Weight Vest"
+        },
+        category: {
+            ar: "تطوير القوة",
+            en: "Strength"
+        },
         price: 55,
-        badge: "متقدم",
         image: "assets/images/products/weight-vest/cover.webp",
-        description: "سترة أوزان لزيادة صعوبة العقلة، الضغط، السكوات، والديبس.",
-        features: ["قابلة للتعديل", "مناسبة للتدرج", "تزيد القوة والتحمل"]
+        description: {
+            ar: "لزيادة صعوبة العقلة، الضغط، السكوات والديبس.",
+            en: "Adds difficulty to pull-ups, push-ups, squats, and dips."
+        }
     },
     {
         id: "ab-wheel",
-        name: "Ab Wheel",
-        category: "كور",
+        name: {
+            ar: "عجلة بطن",
+            en: "Ab Wheel"
+        },
+        category: {
+            ar: "كور",
+            en: "Core"
+        },
         price: 10,
-        badge: "للكور",
         image: "assets/images/products/ab-wheel/cover.webp",
-        description: "عجلة بطن لتقوية الكور، البطن، وأسفل الظهر.",
-        features: ["قوية", "خفيفة", "ممتازة للكور"]
+        description: {
+            ar: "أداة ممتازة لتقوية البطن والكور.",
+            en: "A great tool for abs and core strength."
+        }
     },
     {
         id: "jump-rope",
-        name: "Jump Rope",
-        category: "كارديو",
+        name: {
+            ar: "حبل قفز",
+            en: "Jump Rope"
+        },
+        category: {
+            ar: "كارديو",
+            en: "Cardio"
+        },
         price: 7,
-        badge: "سرعة ولياقة",
         image: "assets/images/products/jump-rope/cover.webp",
-        description: "حبل قفز لتطوير اللياقة، السرعة، والتحمل.",
-        features: ["خفيف", "سريع", "مناسب للإحماء والكارديو"]
+        description: {
+            ar: "لتحسين اللياقة، السرعة، التحمل والإحماء.",
+            en: "For conditioning, speed, endurance, and warm-up."
+        }
     }
 ];

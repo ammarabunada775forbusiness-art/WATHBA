@@ -1,18 +1,25 @@
-const WHATSAPP_NUMBER = "9627XXXXXXXX";
+const WHATSAPP_NUMBER = "962791752349";
 
 function openWhatsApp(product) {
-    const message = `
-مرحبا، أريد طلب هذا المنتج:
+    const lang = localStorage.getItem("wathbaLang") || "ar";
 
-اسم المنتج: ${product.name}
+    const message =
+        lang === "ar"
+            ? `مرحبا، أريد طلب المنتج التالي:
+
+اسم المنتج: ${product.name.ar}
 السعر: ${product.price} دينار
-التصنيف: ${product.category}
+التصنيف: ${product.category.ar}
 
-هل المنتج متوفر؟
-`;
+هل المنتج متوفر؟`
+            : `Hello, I want to order this product:
 
-    const encodedMessage = encodeURIComponent(message);
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+Product: ${product.name.en}
+Price: ${product.price} JOD
+Category: ${product.category.en}
 
+Is it available?`;
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
 }

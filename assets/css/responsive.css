@@ -1,6 +1,7 @@
 @media (max-width: 992px) {
     .hero {
         grid-template-columns: 1fr;
+        min-height: auto;
     }
 
     .products-grid {
@@ -14,9 +15,12 @@
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 16px 5%;
+        padding: 14px 5%;
         flex-wrap: wrap;
-        gap: 16px;
+    }
+
+    .logo {
+        font-size: 25px;
     }
 
     .navbar nav {
@@ -24,31 +28,69 @@
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 16px;
+        gap: 14px;
+    }
+
+    .navbar nav a {
+        font-size: 14px;
+    }
+
+    .nav-actions {
+        gap: 7px;
+    }
+
+    .whatsapp-link {
+        padding: 0 14px;
     }
 
     .hero {
-        padding: 60px 5%;
+        padding: 56px 5%;
+        gap: 34px;
     }
 
     .hero h1 {
-        font-size: 38px;
+        font-size: 40px;
+        letter-spacing: -1px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero-visual {
+        min-height: 280px;
+        border-radius: 26px;
+    }
+
+    .hero-box h2 {
+        font-size: 32px;
+    }
+
+    .features,
+    .section {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .products-grid {
         grid-template-columns: 1fr;
     }
 
-    .section {
-        padding: 60px 5%;
+    .product-image-box {
+        height: 240px;
+    }
+
+    .product-bottom {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .product-bottom button {
+        width: 100%;
     }
 
     .cta {
         margin: 20px 5% 60px;
         padding: 34px 20px;
-    }
-
-    .cta h2 {
-        font-size: 28px;
     }
 }

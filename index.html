@@ -5,92 +5,103 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Calisthenics Store | متجر معدات الكاليستنكس</title>
+    <title>وثبة | معدات الكاليستنكس</title>
 
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
 
-<body>
+<body data-theme="light">
 
     <header class="navbar">
-        <a href="index.html" class="logo">
-            CALI<span>STORE</span>
-        </a>
+        <a href="index.html" class="logo" data-i18n="brand">وثبة</a>
 
         <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="products.html">المنتجات</a>
-            <a href="about.html">من نحن</a>
-            <a href="contact.html">تواصل معنا</a>
+            <a href="index.html" data-i18n="navHome">الرئيسية</a>
+            <a href="products.html" data-i18n="navProducts">المنتجات</a>
+            <a href="about.html" data-i18n="navAbout">من نحن</a>
+            <a href="contact.html" data-i18n="navContact">تواصل معنا</a>
         </nav>
 
-        <a class="nav-whatsapp" href="https://wa.me/9627XXXXXXXX" target="_blank">
-            واتساب
-        </a>
+        <div class="nav-actions">
+            <button id="themeToggle" class="icon-btn" type="button">🌙</button>
+            <button id="langToggle" class="lang-btn" type="button">EN</button>
+            <a class="whatsapp-link" href="https://wa.me/962791752349" target="_blank" data-i18n="whatsapp">
+                واتساب
+            </a>
+        </div>
     </header>
 
     <main>
 
         <section class="hero">
             <div class="hero-content">
-                <p class="mini-title">معدات كاليسثنكس احترافية</p>
-                <h1>ابدأ تدريبك بقوة من البيت أو الجيم</h1>
-                <p class="hero-text">
-                    منتجات مختارة لتطوير العقلة، الضغط، الكور، المهارات، والقوة العامة.
-                    اطلب المنتج مباشرة عبر واتساب بدون تسجيل أو تعقيد.
+                <p class="mini-title" data-i18n="heroMini">معدات كاليسثنكس مختارة</p>
+
+                <h1 data-i18n="heroTitle">
+                    جهّز تدريبك. ارفع مستواك. ابدأ وثبتك.
+                </h1>
+
+                <p class="hero-text" data-i18n="heroText">
+                    معدات كاليسثنكس عملية للبيت والجيم.
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="products.html" class="btn primary">تصفح المنتجات</a>
-                    <a href="#featured" class="btn secondary">المنتجات المميزة</a>
+                    <a href="products.html" class="btn primary" data-i18n="browseProducts">تصفح المنتجات</a>
+                    <a href="#featured" class="btn secondary" data-i18n="featuredProducts">المنتجات المميزة</a>
                 </div>
             </div>
 
-            <div class="hero-card">
-                <h2>10+</h2>
-                <p>منتجات كاليسثنكس مختارة بعناية</p>
+            <div class="hero-visual">
+                <div class="hero-box">
+                    <span>WATHBA</span>
+                    <h2>Calisthenics</h2>
+                    <p>Strength • Control • Progress</p>
+                </div>
             </div>
         </section>
 
         <section class="features">
             <div>
-                <h3>طلب سريع</h3>
-                <p>اضغط شراء وسيتم تحويلك مباشرة إلى واتساب.</p>
+                <h3 data-i18n="fastOrderTitle">طلب سريع</h3>
+                <p data-i18n="fastOrderText">اضغط على المنتج وسيتم تحويلك مباشرة إلى واتساب.</p>
             </div>
 
             <div>
-                <h3>معدات عملية</h3>
-                <p>منتجات مناسبة للبيت، النادي، والتدريب الخارجي.</p>
+                <h3 data-i18n="qualityTitle">اختيار عملي</h3>
+                <p data-i18n="qualityText">منتجات مناسبة للمبتدئين والمتوسطين والمتقدمين.</p>
             </div>
 
             <div>
-                <h3>مناسبة لكل المستويات</h3>
-                <p>معدات للمبتدئ والمتوسط والمتقدم.</p>
+                <h3 data-i18n="mobileTitle">تجربة سهلة</h3>
+                <p data-i18n="mobileText">الموقع مصمم ليعمل بشكل ممتاز على الهاتف.</p>
             </div>
         </section>
 
         <section class="section" id="featured">
             <div class="section-head">
-                <p>منتجاتنا</p>
-                <h2>المنتجات المميزة</h2>
+                <p data-i18n="productsMini">منتجاتنا</p>
+                <h2 data-i18n="productsTitle">معدات تساعدك تتطور</h2>
             </div>
 
             <div class="products-grid" id="featuredProducts"></div>
         </section>
 
         <section class="cta">
-            <h2>مش عارف تختار المنتج المناسب؟</h2>
-            <p>احكِ لنا مستواك وهدفك، وبنساعدك تختار الأنسب.</p>
-            <a href="https://wa.me/9627XXXXXXXX" target="_blank">اسألنا على واتساب</a>
+            <h2 data-i18n="needHelpTitle">مش عارف تختار المنتج المناسب؟</h2>
+            <p data-i18n="needHelpText">احكِ لنا مستواك وهدفك، ونساعدك تختار الأفضل.</p>
+            <a href="https://wa.me/962791752349" target="_blank" data-i18n="askWhatsapp">
+                اسألنا على واتساب
+            </a>
         </section>
 
     </main>
 
     <footer>
-        <p>© 2026 CALISTORE. جميع الحقوق محفوظة.</p>
+        <p data-i18n="footerText">© 2026 وثبة. جميع الحقوق محفوظة.</p>
     </footer>
 
+    <script src="assets/js/translations.js"></script>
     <script src="assets/js/products-data.js"></script>
     <script src="assets/js/whatsapp.js"></script>
     <script src="assets/js/main.js"></script>
