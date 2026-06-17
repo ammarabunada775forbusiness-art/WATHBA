@@ -1,10 +1,11 @@
 let currentLang = localStorage.getItem("wathbaLang") || "ar";
-let currentTheme = localStorage.getItem("wathbaTheme") || "light";
+let currentTheme = localStorage.getItem("wathbaTheme") || "dark";
 
 const html = document.documentElement;
 const themeToggle = document.getElementById("themeToggle");
 const langToggle = document.getElementById("langToggle");
 const featuredContainer = document.getElementById("featuredProducts");
+const heroProduct = document.getElementById("heroProduct");
 
 function applyLanguage() {
   const t = translations[currentLang];
@@ -14,7 +15,7 @@ function applyLanguage() {
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
-    if (t[key]) {
+    if (t && t[key]) {
       element.textContent = t[key];
     }
   });
@@ -30,7 +31,10 @@ function applyTheme() {
   document.body.dataset.theme = currentTheme;
 
   if (themeToggle) {
-    themeToggle.textContent = currentTheme === "dark" ? "☀️" : "🌙";
+    themeToggle.innerHTML =
+      currentTheme === "dark"
+        ? '<span class="material-symbols-outlined">light_mode</span>'
+        : '<span class="material-symbols-outlined">dark_mode</span>';
   }
 }
 
@@ -43,11 +47,13 @@ function getVariantsPreview(product) {
 
   return `
     <div class="variants-preview">
-      <small>${title}</small>
-      <div class="variant-chips">
-        ${product.variants
+      <div>
+        <small>${title}</small>
+        <div class="variant-chips">
+          ${product.variants
       .map((variant) => `<span>${variant[currentLang]}</span>`)
       .join("")}
+        </div>
       </div>
     </div>
   `;
@@ -63,13 +69,12 @@ function renderFeaturedProducts() {
       return `
         <article class="product-card">
           <a href="product.html?id=${product.id}" class="product-image-box">
-            <img 
-  src="${product.image}" 
-  alt="${product.name[currentLang]}"
-  onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
->
-
-${getVariantsPreview(product)}
+            <img
+              src="${product.image}"
+              alt="${product.name[currentLang]}"
+              onerror="this.style.display='none'; this.parentElement.classList.add('no-image');"
+            >
+            ${getVariantsPreview(product)}
           </a>
 
           <div class="product-info">
@@ -78,8 +83,9 @@ ${getVariantsPreview(product)}
             <p class="desc">${product.description[currentLang]}</p>
 
             <div class="product-bottom">
-<strong>${getProductPriceText(product, currentLang)}</strong>              <button onclick='openWhatsApp(${JSON.stringify(product)})'>
-                ${currentLang === "ar" ? "اطلب عبر واتساب" : "Order on WhatsApp"}
+              <strong>${getProductPriceText(product, currentLang)}</strong>
+              <button onclick='openWhatsApp(${JSON.stringify(product)})'>
+                ${currentLang === "ar" ? "اطلب" : "Order"}
               </button>
             </div>
           </div>
@@ -91,7 +97,7 @@ ${getVariantsPreview(product)}
 
 if (themeToggle) {
   themeToggle.addEventListener("click", () => {
-    currentTheme = currentTheme === "light" ? "dark" : "light";
+    currentTheme = currentTheme === "dark" ? "light" : "dark";
     localStorage.setItem("wathbaTheme", currentTheme);
     applyTheme();
   });
@@ -102,6 +108,13 @@ if (langToggle) {
     currentLang = currentLang === "ar" ? "en" : "ar";
     localStorage.setItem("wathbaLang", currentLang);
     applyLanguage();
+  });
+}
+
+if (heroProduct) {
+  window.addEventListener("mousemove", (event) => {
+    const x = (event.clientX / window.innerWidth - 0.5) * 18;
+    heroProduct.style.transform = `rotateY(${x}deg)`;
   });
 }
 

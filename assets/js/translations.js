@@ -27,6 +27,10 @@ const translations = {
         productsPageTitle: "اختر معداتك وابدأ التقدم",
         productsPageText: "تصفح معدات الكاليستنكس المختارة بعناية، واطلب مباشرة عبر واتساب.",
         footerText: "© 2026 وثبة. جميع الحقوق محفوظة.",
+        heroTitleMain: "ENGINEERED",
+        heroTitleStroke: "FOR POWER",
+        heroArabic: "مصمم للقوة",
+        productsNote: "معدات مختارة للاستخدام المنزلي، الخارجي، والتجهيزات الاحترافية.",
         floatingWhatsapp: "راسلنا"
     },
 
@@ -58,6 +62,10 @@ const translations = {
         productsPageTitle: "Choose your gear and start progressing",
         productsPageText: "Browse selected calisthenics equipment and order directly through WhatsApp.",
         footerText: "© 2026 WATHBA. All rights reserved.",
+        heroTitleMain: "ENGINEERED",
+        heroTitleStroke: "FOR POWER",
+        heroArabic: "Built for Power",
+        productsNote: "Selected gear for home, outdoor, and professional training setups.",
         floatingWhatsapp: "Chat"
     }
 };

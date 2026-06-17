@@ -5,110 +5,175 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>وثبة | معدات الكاليستنكس</title>
+    <title>WATHBA | وثبة</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
 
-<body data-theme="light">
+<body data-theme="dark">
 
-    <header class="navbar">
-        <a href="index.html" class="logo" data-i18n="brand">وثبة</a>
+    <header class="site-header">
+        <a href="index.html" class="brand-logo" data-i18n="brand">وثبة</a>
 
-        <nav>
-            <a href="index.html" data-i18n="navHome">الرئيسية</a>
+        <nav class="main-nav">
+            <a href="index.html" class="active" data-i18n="navHome">الرئيسية</a>
             <a href="products.html" data-i18n="navProducts">المنتجات</a>
             <a href="about.html" data-i18n="navAbout">من نحن</a>
             <a href="contact.html" data-i18n="navContact">تواصل معنا</a>
         </nav>
 
         <div class="nav-actions">
-            <button id="themeToggle" class="icon-btn" type="button">🌙</button>
-            <button id="langToggle" class="lang-btn" type="button">EN</button>
+            <button id="langToggle" class="nav-icon-btn" type="button">EN</button>
+            <button id="themeToggle" class="nav-icon-btn" type="button">
+                <span class="material-symbols-outlined">dark_mode</span>
+            </button>
         </div>
     </header>
 
     <main>
 
-        <section class="hero">
-            <div class="hero-content">
-                <p class="mini-title" data-i18n="heroMini">معدات كاليسثنكس مختارة</p>
+        <section class="lux-hero" id="home">
+            <div class="hero-copy">
+                <p class="eyebrow" data-i18n="heroMini">معدات كاليسثنكس مختارة</p>
 
-                <h1 data-i18n="heroTitle">
-                    جهّز تدريبك. ارفع مستواك. ابدأ وثبتك.
+                <h1>
+                    <span data-i18n="heroTitleMain">ENGINEERED</span>
+                    <span class="outline-text" data-i18n="heroTitleStroke">FOR POWER</span>
                 </h1>
 
-                <p class="hero-text" data-i18n="heroText">
-                    معدات كاليسثنكس عملية للبيت والجيم.
+                <h2 data-i18n="heroArabic">مصمم للقوة</h2>
+
+                <p class="hero-description" data-i18n="heroText">
+                    معدات كاليسثنكس احترافية مصممة للقوة، الثبات، والتطور.
                 </p>
 
-                <div class="hero-buttons">
-                    <a href="products.html" class="btn primary" data-i18n="browseProducts">تصفح المنتجات</a>
-                    <a href="#featured" class="btn secondary" data-i18n="featuredProducts">المنتجات المميزة</a>
+                <div class="hero-actions">
+                    <a href="products.html" class="btn btn-primary" data-i18n="browseProducts">
+                        تصفح المنتجات
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+
+                    <a href="https://wa.me/962791752349" target="_blank" class="btn btn-secondary">
+                        <span data-i18n="whatsapp">واتساب</span>
+                        <span class="material-symbols-outlined">chat</span>
+                    </a>
                 </div>
             </div>
 
-            <div class="hero-visual">
-                <div class="hero-box">
-                    <span>WATHBA</span>
-                    <h2>Calisthenics</h2>
-                    <p>Strength • Control • Progress</p>
+            <div class="hero-product-stage">
+                <div class="floating-spec spec-one">
+                    <small>MATERIAL</small>
+                    <strong>SOLID OAK</strong>
+                </div>
+
+                <div class="floating-spec spec-two">
+                    <small>GRIP</small>
+                    <strong>NATURAL</strong>
+                </div>
+
+                <div class="floating-spec spec-three">
+                    <small>LIMIT</small>
+                    <strong>200KG</strong>
+                </div>
+
+                <div class="product-360-container">
+                    <img id="heroProduct" src="assets/images/products/wooden-parallettes/cover.webp"
+                        alt="Wooden Parallettes" onerror="this.src='assets/images/products/parallettes/cover.webp';" />
                 </div>
             </div>
         </section>
 
-        <section class="features">
-            <div>
-                <h3 data-i18n="fastOrderTitle">طلب سريع</h3>
-                <p data-i18n="fastOrderText">اضغط على المنتج وسيتم تحويلك مباشرة إلى واتساب.</p>
-            </div>
+        <section class="featured-section" id="featured">
+            <div class="section-top">
+                <div>
+                    <p class="eyebrow" data-i18n="productsMini">منتجاتنا</p>
+                    <h2 data-i18n="productsTitle">PROFESSIONAL GEAR</h2>
+                </div>
 
-            <div>
-                <h3 data-i18n="qualityTitle">اختيار عملي</h3>
-                <p data-i18n="qualityText">منتجات مناسبة للمبتدئين والمتوسطين والمتقدمين.</p>
-            </div>
-
-            <div>
-                <h3 data-i18n="mobileTitle">تجربة سهلة</h3>
-                <p data-i18n="mobileText">الموقع مصمم ليعمل بشكل ممتاز على الهاتف.</p>
-            </div>
-        </section>
-
-        <section class="section" id="featured">
-            <div class="section-head">
-                <p data-i18n="productsMini">منتجاتنا</p>
-                <h2 data-i18n="productsTitle">معدات تساعدك تتطور</h2>
+                <p class="section-note" data-i18n="productsNote">
+                    معدات مختارة للاستخدام المنزلي، الخارجي، والتجهيزات الاحترافية.
+                </p>
             </div>
 
             <div class="products-grid" id="featuredProducts"></div>
         </section>
 
-        <section class="cta">
+        <section class="standard-section">
+            <div class="standard-copy">
+                <h2>
+                    THE<br>
+                    WATHBA<br>
+                    STANDARD
+                </h2>
+
+                <div class="standard-list">
+                    <div>
+                        <span class="material-symbols-outlined">fitness_center</span>
+                        <div>
+                            <h3 data-i18n="qualityTitle">جودة عملية</h3>
+                            <p data-i18n="qualityText">معدات مناسبة للمبتدئين والمتوسطين والمتقدمين.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="material-symbols-outlined">architecture</span>
+                        <div>
+                            <h3 data-i18n="fastOrderTitle">طلب سريع</h3>
+                            <p data-i18n="fastOrderText">اضغط على المنتج وسيتم تحويلك مباشرة إلى واتساب.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="material-symbols-outlined">home_work</span>
+                        <div>
+                            <h3 data-i18n="mobileTitle">للبيت والخارج</h3>
+                            <p data-i18n="mobileText">الموقع والمنتجات مصممة لتجربة سهلة ومباشرة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="standard-visual">
+                <img src="assets/images/hero/hero.webp" alt="WATHBA Training" />
+                <div class="trusted-card">
+                    <strong>01</strong>
+                    <span>Trusted Gear</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="join-section">
             <h2 data-i18n="needHelpTitle">مش عارف تختار المنتج المناسب؟</h2>
             <p data-i18n="needHelpText">احكِ لنا مستواك وهدفك، ونساعدك تختار الأفضل.</p>
-            <a href="https://wa.me/962791752349" target="_blank" data-i18n="askWhatsapp">
-                اسألنا على واتساب
-            </a>
+            <a href="https://wa.me/962791752349" target="_blank" data-i18n="askWhatsapp">اسألنا على واتساب</a>
         </section>
 
     </main>
 
-    <footer>
-        <p data-i18n="footerText">© 2026 وثبة. جميع الحقوق محفوظة.</p>
-    </footer>
-    <a class="floating-whatsapp" href="https://wa.me/9627XXXXXXXX" target="_blank" aria-label="WhatsApp">
-        <span class="whatsapp-tooltip" data-i18n="floatingWhatsapp">راسلنا</span>
+    <footer class="site-footer">
+        <div>
+            <h2>WATHBA</h2>
+            <p data-i18n="footerText">© 2026 وثبة. جميع الحقوق محفوظة.</p>
+        </div>
 
-        <span class="whatsapp-icon">
-            <svg viewBox="0 0 32 32" aria-hidden="true">
-                <path
-                    d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z" />
-                <path
-                    d="M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z" />
-            </svg>
-        </span>
+        <a href="products.html" data-i18n="navProducts">المنتجات</a>
+        <a href="about.html" data-i18n="navAbout">من نحن</a>
+        <a href="contact.html" data-i18n="navContact">تواصل معنا</a>
+    </footer>
+
+    <a class="floating-whatsapp" href="https://wa.me/962791752349" target="_blank" aria-label="WhatsApp">
+        <span class="whatsapp-tooltip" data-i18n="floatingWhatsapp">راسلنا</span>
+        <span class="material-symbols-outlined">chat</span>
     </a>
+
     <script src="assets/js/translations.js"></script>
     <script src="assets/js/products-data.js"></script>
     <script src="assets/js/whatsapp.js"></script>
