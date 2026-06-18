@@ -155,830 +155,10 @@
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
         }
     </style>
-
-    <!-- WATHBA_GLOBAL_UI_START -->
-    <style id="wathba-global-ui-fix">
-        /* ????? ???? ?????? ?? ???? ????? */
-        body:has(#home) main {
-            padding-top: 80px !important;
-        }
-
-        body:has(#home) #home {
-            min-height: calc(100vh - 80px) !important;
-            padding-top: 30px !important;
-            padding-bottom: 60px !important;
-        }
-
-        body:has(#home) #home>.grid {
-            align-items: center !important;
-        }
-
-        /* ?? ????? ??????? */
-        .wathba-top-tools {
-            position: fixed;
-            top: 18px;
-            right: 64px;
-            z-index: 100000;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            direction: ltr !important;
-        }
-
-        .wathba-lang-btn,
-        .wathba-menu-toggle {
-            min-width: 48px;
-            height: 48px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            background: rgba(10, 10, 10, 0.78);
-            color: #ffffff;
-            backdrop-filter: blur(16px);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-family: "Be Vietnam Pro", sans-serif;
-            font-size: 12px;
-            font-weight: 900;
-            letter-spacing: 0.1em;
-            cursor: pointer;
-            transition: 0.25s;
-        }
-
-        .wathba-lang-btn:hover,
-        .wathba-menu-toggle:hover {
-            background: #ffffff;
-            color: #000000;
-            transform: translateY(-2px);
-        }
-
-        .wathba-menu-toggle {
-            display: none;
-        }
-
-        .wathba-mobile-menu {
-            position: fixed;
-            top: 82px;
-            left: 16px;
-            right: 16px;
-            z-index: 99999;
-            display: none;
-            flex-direction: column;
-            gap: 8px;
-            padding: 16px;
-            border-radius: 18px;
-            background: rgba(7, 7, 7, 0.96);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
-        }
-
-        .wathba-mobile-menu.open {
-            display: flex;
-        }
-
-        .wathba-mobile-menu a {
-            padding: 14px 16px;
-            border-radius: 12px;
-            color: #ffffff;
-            text-decoration: none;
-            font-family: "Be Vietnam Pro", sans-serif;
-            font-weight: 900;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .wathba-mobile-menu a:hover {
-            background: #ffffff;
-            color: #000000;
-        }
-
-        /* ????? ????? ?????? ??????? ??????? ??? */
-        body>a.fixed[href*="wa.me"],
-        main>a.fixed[href*="wa.me"],
-        body>div.fixed a[href*="wa.me"],
-        main>div.fixed a[href*="wa.me"] {
-            display: none !important;
-        }
-
-        /* ?? ?????? ?????? ??? ????? */
-        .whatsapp-widget {
-            position: fixed;
-            right: 28px;
-            bottom: 28px;
-            z-index: 100000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            direction: rtl;
-        }
-
-        .whatsapp-label {
-            background: #333333;
-            color: #ffffff;
-            padding: 10px 18px;
-            border-radius: 999px;
-            font-family: "Be Vietnam Pro", sans-serif;
-            font-size: 14px;
-            font-weight: 900;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
-            white-space: nowrap;
-        }
-
-        .whatsapp-float {
-            position: relative;
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            background: #25D366 !important;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff !important;
-            box-shadow: 0 18px 45px rgba(37, 211, 102, 0.35);
-            transition: 0.25s;
-        }
-
-        .whatsapp-float:hover {
-            transform: translateY(-4px) scale(1.04);
-        }
-
-        .whatsapp-pulse {
-            position: absolute;
-            inset: -8px;
-            border-radius: 50%;
-            border: 1px solid rgba(37, 211, 102, 0.45);
-            animation: whatsappPulse 1.8s infinite;
-        }
-
-        .whatsapp-float svg {
-            width: 31px;
-            height: 31px;
-            fill: #ffffff;
-            position: relative;
-            z-index: 2;
-        }
-
-        @keyframes whatsappPulse {
-            0% {
-                transform: scale(0.95);
-                opacity: 0.8;
-            }
-
-            100% {
-                transform: scale(1.25);
-                opacity: 0;
-            }
-        }
-
-        /* ????? ?????? ?????? ???? ????? ???????? ??????? */
-        .wathba-wa-svg {
-            width: 1.25em;
-            height: 1.25em;
-            fill: currentColor;
-            display: inline-block;
-            flex: 0 0 auto;
-        }
-
-        a[href*="wa.me"] {
-            background: #25D366 !important;
-            color: #ffffff !important;
-        }
-
-        @media (max-width: 767px) {
-            body:has(#home) main {
-                padding-top: 80px !important;
-            }
-
-            body:has(#home) #home {
-                min-height: auto !important;
-                padding-top: 36px !important;
-                padding-bottom: 70px !important;
-            }
-
-            .wathba-top-tools {
-                top: 16px;
-                right: 18px;
-                gap: 8px;
-            }
-
-            .wathba-lang-btn,
-            .wathba-menu-toggle {
-                min-width: 46px;
-                height: 46px;
-            }
-
-            .wathba-menu-toggle {
-                display: inline-flex;
-            }
-
-            nav [class*="px-margin-desktop"],
-            header [class*="px-margin-desktop"],
-            nav [class*="px-16"],
-            header [class*="px-16"] {
-                padding-left: 20px !important;
-                padding-right: 126px !important;
-            }
-
-            nav [class*="text-headline-md"],
-            header [class*="text-headline-md"] {
-                font-size: 26px !important;
-                line-height: 34px !important;
-            }
-
-            .whatsapp-widget {
-                right: 18px;
-                bottom: 18px;
-                gap: 10px;
-            }
-
-            .whatsapp-label {
-                display: none;
-            }
-
-            .whatsapp-float {
-                width: 58px;
-                height: 58px;
-            }
-
-            .whatsapp-float svg {
-                width: 29px;
-                height: 29px;
-            }
-        }
-    </style>
-    <!-- WATHBA_GLOBAL_UI_END -->
-    <!-- WATHBA_MOBILE_FIRST_FIX_START -->
-    <style id="wathba-mobile-first-fix">
-        @media (max-width: 1024px) {
-            .wathba-menu-toggle {
-                display: inline-flex !important;
-            }
-
-            .wathba-top-tools {
-                top: 16px !important;
-                right: 18px !important;
-                z-index: 100000 !important;
-                gap: 8px !important;
-            }
-
-            .wathba-lang-btn,
-            .wathba-menu-toggle {
-                min-width: 46px !important;
-                height: 46px !important;
-            }
-
-            nav .hidden.md\:flex,
-            header .hidden.md\:flex,
-            nav .hidden,
-            header .hidden {
-                display: none !important;
-            }
-
-            nav [class*="px-margin-desktop"],
-            header [class*="px-margin-desktop"],
-            nav [class*="px-16"],
-            header [class*="px-16"],
-            nav [class*="md:px-16"],
-            header [class*="md:px-16"] {
-                padding-left: 20px !important;
-                padding-right: 126px !important;
-            }
-
-            nav,
-            header {
-                min-height: 76px !important;
-            }
-
-            .wathba-mobile-menu {
-                top: 84px !important;
-            }
-        }
-
-        @media (max-width: 480px) {
-
-            .wathba-lang-btn,
-            .wathba-menu-toggle {
-                min-width: 42px !important;
-                height: 42px !important;
-                font-size: 11px !important;
-            }
-
-            .wathba-top-tools {
-                right: 14px !important;
-            }
-
-            nav [class*="px-margin-desktop"],
-            header [class*="px-margin-desktop"],
-            nav [class*="px-16"],
-            header [class*="px-16"],
-            nav [class*="md:px-16"],
-            header [class*="md:px-16"] {
-                padding-left: 16px !important;
-                padding-right: 112px !important;
-            }
-        }
-    </style>
-    <!-- WATHBA_MOBILE_FIRST_FIX_END -->
-
-    <!-- WATHBA_MOBILE_POLISH_START -->
-    <style id="wathba-mobile-polish">
-        /* =========================
-     Mobile First Final Polish
-  ========================= */
-
-        @media (max-width: 1024px) {
-
-            html,
-            body {
-                width: 100%;
-                overflow-x: hidden !important;
-                background: #131313;
-            }
-
-            body {
-                min-width: 0 !important;
-            }
-
-            /* نخلي أدوات اللغة والبرجر ثابتة فوق يمين مهما كانت اللغة */
-            .wathba-top-tools {
-                position: fixed !important;
-                top: 14px !important;
-                right: 14px !important;
-                left: auto !important;
-                z-index: 999999 !important;
-                display: flex !important;
-                align-items: center !important;
-                gap: 8px !important;
-                direction: ltr !important;
-            }
-
-            .wathba-lang-btn,
-            .wathba-menu-toggle {
-                width: 42px !important;
-                min-width: 42px !important;
-                height: 42px !important;
-                border-radius: 999px !important;
-                background: rgba(12, 12, 12, 0.86) !important;
-                color: #ffffff !important;
-                border: 1px solid rgba(255, 255, 255, 0.18) !important;
-                backdrop-filter: blur(16px) !important;
-                display: inline-flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                font-size: 11px !important;
-                font-weight: 900 !important;
-                letter-spacing: 0.05em !important;
-            }
-
-            .wathba-menu-toggle {
-                display: inline-flex !important;
-            }
-
-            .wathba-menu-toggle .material-symbols-outlined {
-                font-size: 23px !important;
-            }
-
-            /* نخفي روابط الديسكتوب على التابلت والموبايل */
-            nav .hidden,
-            header .hidden,
-            nav .hidden.md\:flex,
-            header .hidden.md\:flex {
-                display: none !important;
-            }
-
-            /* الهيدر نفسه */
-            nav,
-            header {
-                min-height: 70px !important;
-                overflow: visible !important;
-            }
-
-            nav>div,
-            header>nav,
-            header>div {
-                width: 100% !important;
-                padding-left: 18px !important;
-                padding-right: 112px !important;
-                padding-top: 12px !important;
-                padding-bottom: 12px !important;
-            }
-
-            /* اللوجو */
-            nav a[href="#"],
-            nav a[href="index.html"],
-            header a[href="index.html"],
-            nav .font-headline-md,
-            header .font-headline-md {
-                font-size: 25px !important;
-                line-height: 1 !important;
-                white-space: nowrap !important;
-            }
-
-            /* القائمة التي تظهر عند الضغط على البرجر */
-            .wathba-mobile-menu {
-                position: fixed !important;
-                top: 76px !important;
-                left: 14px !important;
-                right: 14px !important;
-                width: auto !important;
-                z-index: 999998 !important;
-                border-radius: 18px !important;
-                background: rgba(7, 7, 7, 0.97) !important;
-                border: 1px solid rgba(255, 255, 255, 0.14) !important;
-                backdrop-filter: blur(20px) !important;
-                box-shadow: 0 28px 90px rgba(0, 0, 0, 0.55) !important;
-            }
-
-            .wathba-mobile-menu a {
-                font-size: 13px !important;
-                padding: 14px 16px !important;
-            }
-
-            /* =========================
-       Home Hero Mobile
-    ========================= */
-
-            body:has(#home) main {
-                padding-top: 72px !important;
-            }
-
-            body:has(#home) #home {
-                min-height: auto !important;
-                padding: 34px 20px 70px !important;
-                max-width: 100% !important;
-                overflow: hidden !important;
-            }
-
-            body:has(#home) #home>.grid {
-                display: grid !important;
-                grid-template-columns: 1fr !important;
-                gap: 38px !important;
-                align-items: start !important;
-            }
-
-            body:has(#home) #home .z-10 {
-                position: relative !important;
-                z-index: 5 !important;
-            }
-
-            body:has(#home) #home h1 {
-                font-size: clamp(58px, 18vw, 78px) !important;
-                line-height: 0.88 !important;
-                letter-spacing: -0.03em !important;
-                margin-top: 4px !important;
-                max-width: 100% !important;
-            }
-
-            body:has(#home) #home h2 {
-                font-size: clamp(28px, 8vw, 40px) !important;
-                line-height: 1.05 !important;
-                margin-top: 4px !important;
-                max-width: 100% !important;
-            }
-
-            body:has(#home) #home p {
-                font-size: 15px !important;
-                line-height: 1.75 !important;
-                max-width: 290px !important;
-                margin-top: 24px !important;
-            }
-
-            body:has(#home) #home .mt-12 {
-                margin-top: 30px !important;
-            }
-
-            body:has(#home) #home .flex.flex-wrap.gap-4 {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                gap: 12px !important;
-            }
-
-            body:has(#home) #home button,
-            body:has(#home) #home a {
-                max-width: 100%;
-            }
-
-            body:has(#home) #home button {
-                min-height: 48px !important;
-                padding: 12px 22px !important;
-                font-size: 15px !important;
-            }
-
-            /* صندوق المنتج في الهوم */
-            body:has(#home) #home .md\:col-span-7,
-            body:has(#home) #home .relative.h-\[600px\] {
-                height: 360px !important;
-                min-height: 360px !important;
-                max-height: 360px !important;
-                margin-top: 4px !important;
-            }
-
-            body:has(#home) #home .product-360-container {
-                width: 100% !important;
-                height: 100% !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-            }
-
-            body:has(#home) #home .product-360-inner {
-                width: 100% !important;
-                height: 100% !important;
-            }
-
-            body:has(#home) #home #hero-product {
-                width: 92% !important;
-                max-width: 320px !important;
-                height: auto !important;
-                object-fit: contain !important;
-            }
-
-            /* كروت المواصفات حول المنتج */
-            body:has(#home) #home .glass-panel {
-                padding: 10px 12px !important;
-                border-radius: 10px !important;
-            }
-
-            body:has(#home) #home .glass-panel span:first-child {
-                font-size: 8px !important;
-            }
-
-            body:has(#home) #home .glass-panel span:last-child {
-                font-size: 15px !important;
-                line-height: 1.1 !important;
-            }
-
-            body:has(#home) #home .absolute.top-20.right-0 {
-                top: 0 !important;
-                right: 8px !important;
-            }
-
-            body:has(#home) #home .absolute.bottom-40.left-0 {
-                bottom: 18px !important;
-                left: 20px !important;
-            }
-
-            body:has(#home) #home .absolute.top-1\/2.left-\[-40px\] {
-                top: 52% !important;
-                left: 0 !important;
-            }
-
-            /* =========================
-       WhatsApp Mobile
-    ========================= */
-
-            .whatsapp-widget {
-                right: 18px !important;
-                bottom: 18px !important;
-                left: auto !important;
-                z-index: 999999 !important;
-                direction: ltr !important;
-            }
-
-            .whatsapp-label {
-                display: none !important;
-            }
-
-            .whatsapp-float {
-                width: 56px !important;
-                height: 56px !important;
-                min-width: 56px !important;
-                border-radius: 50% !important;
-                box-shadow: 0 16px 40px rgba(37, 211, 102, 0.35) !important;
-            }
-
-            .whatsapp-float svg {
-                width: 29px !important;
-                height: 29px !important;
-            }
-
-            /* =========================
-       Products / Cards Mobile
-    ========================= */
-
-            section {
-                max-width: 100% !important;
-            }
-
-            section[class*="px-margin-desktop"],
-            footer [class*="px-margin-desktop"],
-            main [class*="px-margin-desktop"] {
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-            }
-
-            .grid {
-                max-width: 100% !important;
-            }
-
-            .product-card,
-            .group.relative {
-                max-width: 100% !important;
-            }
-        }
-
-        @media (max-width: 430px) {
-            body:has(#home) #home {
-                padding-left: 18px !important;
-                padding-right: 18px !important;
-            }
-
-            body:has(#home) #home h1 {
-                font-size: clamp(52px, 17vw, 68px) !important;
-            }
-
-            body:has(#home) #home h2 {
-                font-size: 30px !important;
-            }
-
-            body:has(#home) #home p {
-                max-width: 270px !important;
-            }
-
-            body:has(#home) #home .md\:col-span-7,
-            body:has(#home) #home .relative.h-\[600px\] {
-                height: 330px !important;
-                min-height: 330px !important;
-            }
-
-            body:has(#home) #home #hero-product {
-                max-width: 280px !important;
-            }
-        }
-    </style>
-    <!-- WATHBA_MOBILE_POLISH_END -->
-
-    <!-- WATHBA_PRODUCTS_DYNAMIC_FIX_START -->
-    <style id="wathba-products-dynamic-fix">
-        .wathba-wa-svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
-
-        @media (max-width: 767px) {
-            #categoryFilters {
-                display: flex;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                padding-bottom: 10px;
-                gap: 10px;
-                scrollbar-width: none;
-            }
-
-            #categoryFilters::-webkit-scrollbar {
-                display: none;
-            }
-
-            #categoryFilters button {
-                white-space: nowrap;
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-            }
-
-            #allProducts {
-                gap: 20px !important;
-            }
-
-            #allProducts .product-card {
-                border-radius: 14px;
-            }
-
-            #allProducts .product-card a.relative {
-                height: 330px !important;
-            }
-
-            #allProducts .product-card h3 {
-                font-size: 28px !important;
-                line-height: 1.05 !important;
-            }
-
-            #allProducts .product-card p {
-                font-size: 14px !important;
-                line-height: 1.7 !important;
-            }
-
-            .product-card-bottom {
-                flex-direction: column;
-                align-items: stretch !important;
-            }
-
-            .product-card-bottom button {
-                justify-content: center;
-                width: 100%;
-            }
-
-            #allProducts .product-overlay {
-                opacity: 1;
-                background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.15));
-                justify-content: flex-end;
-                padding-bottom: 24px;
-            }
-        }
-    </style>
-    <!-- WATHBA_PRODUCTS_DYNAMIC_FIX_END -->
-
-    <!-- WATHBA_FOOTER_CTA_CLEANUP_START -->
-    <style id="wathba-footer-cta-cleanup">
-        .wathba-footer-wa-svg {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-            flex: 0 0 auto;
-        }
-
-        .wathba-site-footer a {
-            text-decoration: none;
-        }
-
-        @media (max-width: 767px) {
-            .wathba-final-cta {
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-                padding-top: 70px !important;
-                padding-bottom: 70px !important;
-            }
-
-            .wathba-final-cta>div {
-                padding: 38px 22px !important;
-                border-radius: 26px !important;
-            }
-
-            .wathba-final-cta h2 {
-                font-size: 48px !important;
-                line-height: 0.95 !important;
-            }
-
-            .wathba-final-cta p {
-                font-size: 15px !important;
-                line-height: 1.75 !important;
-            }
-
-            .wathba-final-cta a {
-                width: 100%;
-                min-height: 54px;
-            }
-
-            .wathba-site-footer>div {
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-                padding-top: 56px !important;
-                padding-bottom: 56px !important;
-            }
-
-            .wathba-site-footer h3 {
-                font-size: 52px !important;
-                line-height: 1 !important;
-            }
-
-            .wathba-site-footer h5 {
-                margin-bottom: 16px !important;
-            }
-
-            .wathba-site-footer ul {
-                display: grid;
-                gap: 10px;
-            }
-
-            .wathba-site-footer li,
-            .wathba-site-footer p,
-            .wathba-site-footer a {
-                font-size: 15px !important;
-                line-height: 1.7 !important;
-            }
-
-            .wathba-site-footer .md\:col-span-12 {
-                align-items: flex-start !important;
-                text-align: left !important;
-            }
-        }
-    </style>
-    <!-- WATHBA_FOOTER_CTA_CLEANUP_END -->
+    <link rel="stylesheet" href="assets/css/shared-ui.css" />
 </head>
 
 <body class="dark bg-background text-on-surface">
-    <!-- WATHBA_GLOBAL_UI_START -->
-    <div class="wathba-top-tools">
-        <button class="wathba-lang-btn" type="button">AR</button>
-        <button class="wathba-menu-toggle" type="button" aria-label="Open menu">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
-    </div>
-
-    <div class="wathba-mobile-menu" id="wathbaMobileMenu">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
-
-    <div id="sharedWhatsApp"></div>
-    <!-- WATHBA_GLOBAL_UI_END -->
-
     <!-- TopAppBar Shell -->
     <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
         <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
@@ -996,8 +176,10 @@
                     href="contact.html">Contact</a>
             </div>
             <div class="flex items-center space-x-4">
-
-
+                <span
+                    class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-all">language</span>
+                <span
+                    class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-all">dark_mode</span>
             </div>
         </div>
     </nav>
@@ -1017,138 +199,285 @@
         </section>
         <!-- Filters -->
         <section class="px-margin-desktop max-w-container-max mx-auto mb-12">
-            <div class="flex flex-wrap gap-4 items-center" id="categoryFilters"></div>
+            <div class="flex flex-wrap gap-4 items-center">
+                <button
+                    class="bg-primary text-background px-8 py-3 rounded-full font-label-caps text-label-caps uppercase transition-transform active:scale-95">All
+                    Equipment</button>
+                <button
+                    class="border border-outline-variant/30 text-on-surface-variant px-8 py-3 rounded-full font-label-caps text-label-caps uppercase hover:border-primary hover:text-primary transition-all">Bars</button>
+                <button
+                    class="border border-outline-variant/30 text-on-surface-variant px-8 py-3 rounded-full font-label-caps text-label-caps uppercase hover:border-primary hover:text-primary transition-all">Rings</button>
+                <button
+                    class="border border-outline-variant/30 text-on-surface-variant px-8 py-3 rounded-full font-label-caps text-label-caps uppercase hover:border-primary hover:text-primary transition-all">Accessories</button>
+                <button
+                    class="border border-outline-variant/30 text-on-surface-variant px-8 py-3 rounded-full font-label-caps text-label-caps uppercase hover:border-primary hover:text-primary transition-all">Rigs</button>
+            </div>
         </section>
-
         <!-- Product Grid -->
         <section class="px-margin-desktop max-w-container-max mx-auto pb-40">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="allProducts"></div>
-        </section>
-        <a class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center whatsapp-pulse shadow-xl hover:scale-110 transition-transform active:scale-95 group"
-            href="https://wa.me/962791752349">
-            <svg class="wathba-wa-svg" viewBox="0 0 32 32" aria-hidden="true">
-                <path
-                    d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z" />
-                <path
-                    d="M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z" />
-            </svg>
-            <div
-                class="absolute right-20 bg-surface px-4 py-2 rounded-lg border border-outline-variant/30 text-xs font-label-caps whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                ASK US ON WHATSAPP
-            </div>
-        </a>
-    </main>
-    <!-- Footer -->
-    <footer class="wathba-site-footer bg-surface-container-lowest border-t border-outline-variant/20">
-        <div
-            class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop max-w-container-max mx-auto py-16 md:py-20">
-
-            <div class="md:col-span-5">
-                <h3 class="font-headline-lg text-headline-lg uppercase text-primary mb-6">
-                    WATHBA
-                </h3>
-
-                <p class="text-on-surface-variant font-body-md text-body-md max-w-md mb-8">
-                    Premium calisthenics equipment for home, outdoor, and professional training setups. Browse, choose,
-                    and order directly through WhatsApp.
-                </p>
-
-                <a href="https://wa.me/962791752349?text=Hello%20WATHBA%2C%20I%20want%20to%20ask%20about%20calisthenics%20equipment"
-                    target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-3 bg-[#25D366] text-white px-6 py-4 rounded-full font-label-caps text-label-caps uppercase hover:opacity-90 transition-opacity">
-                    <svg class="wathba-footer-wa-svg" viewBox="0 0 32 32" aria-hidden="true">
-                        <path
-                            d="M19.11 17.27c-.27-.13-1.58-.78-1.82-.87-.24-.09-.41-.13-.59.14-.18.27-.68.87-.84 1.04-.15.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.3-.79-.7-1.32-1.57-1.47-1.84-.15-.27-.02-.42.11-.55.11-.11.27-.29.41-.43.14-.15.18-.25.27-.43.09-.18.05-.34-.02-.48-.07-.13-.59-1.43-.81-1.96-.21-.5-.43-.43-.59-.44h-.5c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.65 1.11 2.83c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.58-.65 1.8-1.27.22-.63.22-1.16.15-1.27-.06-.12-.24-.18-.5-.31z">
-                        </path>
-                        <path
-                            d="M16.02 3.2c-7.07 0-12.8 5.72-12.8 12.77 0 2.25.59 4.45 1.71 6.39L3.1 28.8l6.63-1.73a12.8 12.8 0 0 0 6.29 1.69h.01c7.06 0 12.79-5.72 12.79-12.77 0-3.42-1.34-6.63-3.79-9.04A12.76 12.76 0 0 0 16.02 3.2zm0 23.39h-.01a10.62 10.62 0 0 1-5.41-1.49l-.39-.23-3.94 1.03 1.05-3.84-.25-.4a10.55 10.55 0 0 1-1.63-5.61c0-5.84 4.76-10.59 10.6-10.59 2.82 0 5.47 1.09 7.47 3.08a10.5 10.5 0 0 1 3.11 7.51c0 5.84-4.76 10.59-10.6 10.59z">
-                        </path>
-                    </svg>
-                    Order via WhatsApp
-                </a>
-            </div>
-
-            <div class="md:col-span-2">
-                <h5 class="font-label-caps text-label-caps text-primary mb-6">
-                    Pages
-                </h5>
-
-                <ul class="space-y-4">
-                    <li>
-                        <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
-                            href="index.html">
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
-                            href="products.html">
-                            Products
-                        </a>
-                    </li>
-                    <li>
-                        <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
-                            href="about.html">
-                            About
-                        </a>
-                    </li>
-                    <li>
-                        <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
-                            href="contact.html">
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="md:col-span-2">
-                <h5 class="font-label-caps text-label-caps text-primary mb-6">
-                    Equipment
-                </h5>
-
-                <ul class="space-y-4">
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
-                            href="products.html">Pull-up Bar</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
-                            href="products.html">Parallettes</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
-                            href="products.html">Dip Bars</a></li>
-                    <li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
-                            href="products.html">Rings</a></li>
-                </ul>
-            </div>
-
-            <div class="md:col-span-3">
-                <h5 class="font-label-caps text-label-caps text-primary mb-6">
-                    Contact
-                </h5>
-
-                <div class="space-y-4 text-on-surface-variant">
-                    <p class="font-body-md text-body-md">
-                        Amman, Jordan
-                    </p>
-
-                    <p class="font-body-md text-body-md">
-                        WhatsApp: +962 79 175 2349
-                    </p>
-
-                    <p class="font-body-md text-body-md">
-                        Orders and custom equipment requests are handled directly through WhatsApp.
-                    </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                <!-- Product Card 1 -->
+                <div
+                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="High-contrast studio photography of a premium steel pull-up bar mounted on a dark textured wall. The lighting is cinematic, highlighting the metallic texture and muscular tension associated with calisthenics. The overall aesthetic is dark sports-tech with deep blacks and sharp highlights, emphasizing professional-grade durability."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfkexQjd3qE0G6kif7vBWBtpiPR-n-2yYdwwCUZEC2e5jqfw0SqAjFH0zYi1G-y6pJbjoHeEXf8qxIswNhFlUOjR6zlJpHqJPIY_v6OzT4l-hSAjLGh-7upNZ57cpjmIvuTgE9RCBDZPWOTOacrjn1ks854VmiMbbuVVFkgzP5We5CepmHr4mvx0uSdGY5LgBRkNkQibpbkwKRRx9nEsq3T9g1T3zxqOY7uEJbffozOBohXGP2QCNJd7OjIFF1m3sEqPhRSGqbBw" />
+                        <div
+                            class="product-overlay absolute inset-0 bg-background/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4">
+                            <span class="font-label-caps text-label-caps text-primary mb-2">Standard Sizes
+                                Available</span>
+                            <div class="flex gap-2">
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold">FIXED</span>
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold">EXTENDABLE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-headline-md text-headline-md uppercase">Pull-up Bar</h3>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">BARS</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Heavy-duty reinforced steel construction with textured grip coating for ultimate stability.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">JOD — Price on
+                                Request</span>
+                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
+                                href="https://wa.me/962791752349">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span> ORDER
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div
+                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Sleek wooden parallettes crafted from premium ash wood, presented in a minimalist high-contrast setting. The wood grain is sharp and detailed, under cool-toned professional lighting. The background is a deep matte black, creating a high-fashion fitness aesthetic that focuses on the organic material and precision engineering."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYB8tqXcSeQ00VVpV_QlrQjfb1AuRQyMAZ-344RvEoLphja-M26LLdj9CUKLVpafBloz54KafnEsLmCY5hQEf69lOQ0tjOmJpboT-K3d7td0mfouamzk8LX4d5N-QbNG9b_QD63S240XSbB_zVCbOHBGhL5Q4LYYKZyGMG0WMMRK-MNnr3gdYtGK7dU7JkobeJXJycEtlQdj50jVdBe00tdF-hvbXbKoZ_LKIgOK71RisrE-A3sbRZe5WaHSRqzzmyjn5VqipGZg" />
+                        <div
+                            class="product-overlay absolute inset-0 bg-background/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4">
+                            <span class="font-label-caps text-label-caps text-primary mb-2">Select Height</span>
+                            <div class="flex gap-2">
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Small</span>
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Medium</span>
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Large</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-headline-md text-headline-md uppercase">Wooden Parallettes</h3>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">HANDLES</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Premium handcrafted ash wood with non-slip bases for perfect handstand and planche practice.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">Price on
+                                request</span>
+                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
+                                href="#">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span> ORDER
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div
+                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Industrial style dip bars made of thick black powder-coated steel. The image captures the sharp angles and robust welding in a moody, low-light gym environment. Dramatic highlights pick out the edges of the bars against a pitch-black background, conveying a sense of extreme strength and elite sports technology."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw8WZasaNxcQA38rCK6HxDRelMTdKJxVJVlPGtNOTp_c2e0c3wzQpSl1y2Gp00eDn7oaJ0vvgoAtTH02T2oEQqSeoLzo9-wLY-4JPSwYNl9Ep7jutURrWMv6_aa_ViYeGZDvoVkMVM_2TNDk2d8Oj2g3gPbVRGLls6tq4QMG2saAKwyshKA80susXmZ0Lbs6cNiOJWV-zKf2sguWxoxlYhIUK87uVmNHAQ8PoNh-5B7XcRG3SX3onuW_jCfUrYEyRL5KeslsXVkw" />
+                        <div
+                            class="product-overlay absolute inset-0 bg-background/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4">
+                            <span class="font-label-caps text-label-caps text-primary mb-2">Variants</span>
+                            <div class="flex gap-2">
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Standard</span>
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Pro</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-headline-md text-headline-md uppercase">Dip Bars</h3>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">BARS</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Ultra-stable free-standing dip station. Professional height for full range of motion.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">JOD — Ask for
+                                Price</span>
+                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
+                                href="#">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span> ORDER
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 4 -->
+                <div
+                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Professional gymnastics rings made of textured birch wood with heavy-duty nylon straps. The focus is on the intricate wood texture and the robust buckle mechanism. Set in a dark, atmospheric athletic studio with soft top-down lighting that creates long, elegant shadows. The palette is strictly grayscale with high-end editorial clarity."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0-MhLsP_6ihoAaKfINnL_5XPqVO5kXpqB0YgmAaIOtOotFb3LEHXzga4XNdgRrKjwVnxtta73NsWAdSYSPi4poK7O3-i8lhGgbQl1frPTAeOlUN1vFOFarvu1xS-s0Cl_z_OyM_bvZtWj4l7nFG58iXjRQYNnP-ZzMr1cVExYAJiz1jqxIQf7BII6VZ9aIrk-yYjYSInS8t9yeaIGD93HXgwPN1vZBR13Womlyd8C-TPBBtY3o4LT9kXe_RBMDd8Tis7eozUlvg" />
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-headline-md text-headline-md uppercase">Gymnastic Rings</h3>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">RINGS</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Olympic standard birch rings with reinforced numbered straps for precise height adjustment.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">Price on
+                                request</span>
+                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
+                                href="#">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span> ORDER
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 5 -->
+                <div
+                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Large-scale outdoor calisthenics multi rig structure made of matte black steel. The architectural lines of the monkey bars and pull-up stations are captured against a dark twilight sky. High-contrast lighting emphasizes the geometric precision and massive scale of the equipment, reflecting a premium sports-tech and architectural vibe."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA4acp6wZXFaFVIlZ61CGYOaz5nsgBJpTe7x6fz-zQB7XbXvxQX_F5AB_nco8kEiNF1fInwYZ50EpFhkKSrByl10kSvx0XFX518oD0PJnsyUf6TtzezPttS6Arg7goyUHputiXOVPyrOE2pm9CApGj9C8umcbptSCJkN1PQlKscxKh0coSlkpXwlEJSONSs3TxrP1z_j_3P90zR-YkfWwMANYzjZeqUAjeVFtTYZxyTRjeJKxRX3SM6GIhZ4PvA0lRztCKl-UMkw" />
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-headline-md text-headline-md uppercase">Multi Rig</h3>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">RIGS</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Complete custom training station. Includes monkey bars, multiple pull-up heights, and dip
+                            stations.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">Price on
+                                request</span>
+                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
+                                href="#">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span> ORDER
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 6 -->
+                <div
+                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Macro photography of professional resistance bands with different thicknesses and textures. The lighting highlights the matte finish of the rubber against a deep black backdrop. The composition is artistic and high-fashion, treating the equipment like luxury technical accessories with a monochromatic black and white color palette."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrTC_inPxGE_PjaP2fVdusL7jZ-6bUKZhNNF6pGGJV1EisrfLwMi5megkxosUnlote8JEvj1pet7Ksl5fQLnBgDMtfMzZDZn8GkFJEX_fLaWzNfwcQIWeuZ6sEcqyMjblIlkTyVd1EWZKYyrh1rwLeTeI-EW6275IoD8QSS02zIDeDJ1wwWfNTAsXPdpIBL4Rc6RLqIoCJjLHEyOh5G9dcvpotyYBIMqefd62Jd5SIahnDG-AFPhTDW8ocnJ0W8ZIvQt4ksS_YaA" />
+                        <div
+                            class="product-overlay absolute inset-0 bg-background/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4">
+                            <span class="font-label-caps text-label-caps text-primary mb-2">Tensions</span>
+                            <div class="flex gap-2">
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Light</span>
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Med</span>
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Heavy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-headline-md text-headline-md uppercase">Resistance Bands</h3>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">ACCESSORIES</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Premium latex-free elastic bands for mobility work and weighted exercise assistance.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">Price on
+                                request</span>
+                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
+                                href="#">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span> ORDER
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div
-                class="md:col-span-12 border-t border-outline-variant/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="font-label-caps text-[10px] text-on-surface-variant opacity-60 uppercase">
-                    © 2026 WATHBA. ALL RIGHTS RESERVED.
-                </p>
-
-                <p class="font-label-caps text-[10px] text-on-surface-variant opacity-50 uppercase">
-                    No cart. No checkout. WhatsApp ordering only.
+        </section>
+    </main>
+    <div id="wathbaFooter"></div>
+    <!-- Footer Shell -->
+    <footer class="w-full pt-20 pb-10 bg-surface-container-lowest border-t border-outline-variant/20">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+            <div class="md:col-span-4">
+                <div class="font-headline-lg text-headline-lg uppercase text-primary mb-6">WATHBA</div>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    The peak of physical performance. Exclusive calisthenics equipment for elite athletes.
                 </p>
             </div>
-
+            <div class="md:col-span-2">
+                <h4 class="font-label-caps text-label-caps text-primary mb-6">QUICK LINKS</h4>
+                <div class="flex flex-col gap-4">
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                        href="index.html">Home</a>
+                    <a class="font-body-md text-body-md text-primary font-bold" href="products.html">Products</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                        href="about.html">About</a>
+                </div>
+            </div>
+            <div class="md:col-span-2">
+                <h4 class="font-label-caps text-label-caps text-primary mb-6">LEGAL</h4>
+                <div class="flex flex-col gap-4">
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Privacy Policy</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="md:col-span-4 flex flex-col items-start md:items-end">
+                <h4 class="font-label-caps text-label-caps text-primary mb-6">CONTACT US</h4>
+                <a class="bg-[#25D366] text-white px-8 py-4 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity active:opacity-70 mb-4"
+                    href="#">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span> CHAT
+                    ON WHATSAPP
+                </a>
+                <span class="font-label-caps text-label-caps text-on-surface-variant">AMMAN, JORDAN</span>
+            </div>
+        </div>
+        <div
+            class="mt-20 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-outline-variant/10">
+            <span class="font-label-caps text-[10px] text-on-surface-variant tracking-widest uppercase">© 2026 WATHBA.
+                ALL RIGHTS RESERVED.</span>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <span
+                    class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">face_nod</span>
+                <span
+                    class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">public</span>
+                <span
+                    class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">video_library</span>
+            </div>
         </div>
     </footer>
     <script>
@@ -1176,131 +505,7 @@
             // Optional: performance heavy for small screens, so skip or use simple CSS glow
         });
     </script>
-
-    <!-- WATHBA_GLOBAL_UI_START -->
-    <script id="wathba-global-ui-js">
-        (function () {
-            const phone = "962791752349";
-
-            const waSvg = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M19.11 17.27c-.27-.13-1.58-.78-1.82-.87-.24-.09-.41-.13-.59.14-.18.27-.68.87-.84 1.04-.15.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.3-.79-.7-1.32-1.57-1.47-1.84-.15-.27-.02-.42.11-.55.11-.11.27-.29.41-.43.14-.15.18-.25.27-.43.09-.18.05-.34-.02-.48-.07-.13-.59-1.43-.81-1.96-.21-.5-.43-.43-.59-.44h-.5c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.65 1.11 2.83c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.58-.65 1.8-1.27.22-.63.22-1.16.15-1.27-.06-.12-.24-.18-.5-.31z"></path>
-        <path d="M16.02 3.2c-7.07 0-12.8 5.72-12.8 12.77 0 2.25.59 4.45 1.71 6.39L3.1 28.8l6.63-1.73a12.8 12.8 0 0 0 6.29 1.69h.01c7.06 0 12.79-5.72 12.79-12.77 0-3.42-1.34-6.63-3.79-9.04A12.76 12.76 0 0 0 16.02 3.2zm0 23.39h-.01a10.62 10.62 0 0 1-5.41-1.49l-.39-.23-3.94 1.03 1.05-3.84-.25-.4a10.55 10.55 0 0 1-1.63-5.61c0-5.84 4.76-10.59 10.6-10.59 2.82 0 5.47 1.09 7.47 3.08a10.5 10.5 0 0 1 3.11 7.51c0 5.84-4.76 10.59-10.6 10.59z"></path>
-      </svg>
-    `;
-
-            const mobileMenu = document.getElementById("wathbaMobileMenu");
-            const menuBtn = document.querySelector(".wathba-menu-toggle");
-            const langBtn = document.querySelector(".wathba-lang-btn");
-
-            function getLang() {
-                return localStorage.getItem("wathbaLang") || "en";
-            }
-
-            function applyLang(lang) {
-                localStorage.setItem("wathbaLang", lang);
-
-                // ???: ?? ???? dir ???? ??? ?? ???? ????? Stitch
-                document.documentElement.lang = lang;
-                document.documentElement.dir = "ltr";
-
-                if (langBtn) {
-                    langBtn.textContent = lang === "ar" ? "EN" : "AR";
-                }
-
-                renderWhatsAppWidget();
-            }
-
-            function renderWhatsAppWidget() {
-                const lang = getLang();
-                const host = document.getElementById("sharedWhatsApp");
-                if (!host) return;
-
-                const label = lang === "ar" ? "??????" : "Chat with us";
-                const message = lang === "ar"
-                    ? "?????? ???? ????????? ?? ?????? WATHBA"
-                    : "Hello, I want to ask about WATHBA products";
-
-                host.innerHTML = `
-        <div class="whatsapp-widget">
-          <div class="whatsapp-label">${label}</div>
-          <a href="https://wa.me/${phone}?text=${encodeURIComponent(message)}"
-             class="whatsapp-float"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="WhatsApp">
-            <span class="whatsapp-pulse"></span>
-            ${waSvg}
-          </a>
-        </div>
-      `;
-            }
-
-            if (langBtn) {
-                langBtn.addEventListener("click", () => {
-                    const nextLang = getLang() === "en" ? "ar" : "en";
-                    applyLang(nextLang);
-                });
-            }
-
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener("click", () => {
-                    mobileMenu.classList.toggle("open");
-                });
-
-                mobileMenu.querySelectorAll("a").forEach((link) => {
-                    link.addEventListener("click", () => mobileMenu.classList.remove("open"));
-                });
-            }
-
-            document.querySelectorAll('a[href="#"]').forEach((link) => {
-                const text = link.textContent.toLowerCase();
-
-                if (text.includes("whatsapp") || text.includes("order") || text.includes("chat")) {
-                    link.href = "https://wa.me/" + phone;
-                    link.target = "_blank";
-                    link.rel = "noopener noreferrer";
-                }
-
-                if (text.includes("browse products") || text.includes("explore products")) {
-                    link.href = "products.html";
-                }
-            });
-
-            document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
-                link.href = link.href.replace(/wa\.me\/[^?"]+/, "wa.me/" + phone);
-
-                link.querySelectorAll(".material-symbols-outlined").forEach((icon) => {
-                    if (icon.textContent.trim() === "chat") {
-                        icon.outerHTML = `<span class="wathba-wa-svg">${waSvg}</span>`;
-                    }
-                });
-            });
-
-            document.querySelectorAll("button").forEach((button) => {
-                const text = button.textContent.toLowerCase();
-
-                if (text.includes("browse products") || text.includes("explore products")) {
-                    button.addEventListener("click", () => {
-                        window.location.href = "products.html";
-                    });
-                }
-
-                if (text.includes("whatsapp") || text.includes("order via whatsapp")) {
-                    button.addEventListener("click", () => {
-                        window.open("https://wa.me/" + phone, "_blank");
-                    });
-                }
-            });
-
-            applyLang(getLang());
-        })();
-    </script>
-    <!-- WATHBA_GLOBAL_UI_END -->
-
-    <script src="assets/js/products-data.js"></script>
-    <script src="assets/js/whatsapp.js"></script>
-    <script src="assets/js/products.js"></script>
+    <script src="assets/js/shared-ui.js"></script>
 </body>
 
 </html>

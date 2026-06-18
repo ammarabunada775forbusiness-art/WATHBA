@@ -1,0 +1,653 @@
+/* =========================
+   WATHBA Shared UI
+   Mobile First / WhatsApp Only
+========================= */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background: #131313;
+}
+
+/* =========================
+   Shared Top Tools
+========================= */
+
+.wathba-top-tools {
+  position: fixed;
+  top: 18px;
+  right: 64px;
+  left: auto;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  direction: ltr;
+}
+
+.wathba-lang-btn,
+.wathba-menu-toggle {
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(10, 10, 10, 0.78);
+  color: #ffffff;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.wathba-lang-btn:hover,
+.wathba-menu-toggle:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+.wathba-menu-toggle {
+  display: none;
+}
+
+.wathba-menu-toggle .material-symbols-outlined {
+  font-size: 24px;
+}
+
+/* =========================
+   Mobile Menu
+========================= */
+
+.wathba-mobile-menu {
+  position: fixed;
+  top: 82px;
+  left: 16px;
+  right: 16px;
+  z-index: 999998;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(7, 7, 7, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.55);
+}
+
+.wathba-mobile-menu.open {
+  display: flex;
+}
+
+.wathba-mobile-menu a {
+  padding: 14px 16px;
+  border-radius: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.2s ease;
+}
+
+.wathba-mobile-menu a:hover,
+.wathba-mobile-menu a.active {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* =========================
+   Desktop Nav
+========================= */
+
+nav a.active,
+header a.active {
+  color: #ffffff !important;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 4px;
+}
+
+.wathba-old-mobile-menu-button {
+  display: none !important;
+}
+
+/* =========================
+   Floating WhatsApp
+========================= */
+
+body > a.fixed[href*="wa.me"],
+main > a.fixed[href*="wa.me"],
+body > div.fixed a[href*="wa.me"],
+main > div.fixed a[href*="wa.me"] {
+  display: none !important;
+}
+
+.whatsapp-widget {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  direction: ltr;
+}
+
+.whatsapp-label {
+  background: #333333;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+  white-space: nowrap;
+}
+
+.whatsapp-float {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  border-radius: 50%;
+  background: #25d366 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
+  box-shadow: 0 18px 45px rgba(37, 211, 102, 0.35);
+  transition: 0.25s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+
+.whatsapp-pulse {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(37, 211, 102, 0.45);
+  animation: whatsappPulse 1.8s infinite;
+}
+
+.whatsapp-float svg,
+.wathba-wa-svg,
+.wathba-footer-wa-svg {
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
+.whatsapp-float svg {
+  width: 31px;
+  height: 31px;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+.wathba-wa-svg,
+.wathba-footer-wa-svg {
+  width: 22px;
+  height: 22px;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+a[href*="wa.me"] {
+  background: #25d366 !important;
+  color: #ffffff !important;
+}
+
+/* =========================
+   Shared Footer
+========================= */
+
+.wathba-site-footer {
+  background: #0e0e0e;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.wathba-site-footer a {
+  text-decoration: none;
+}
+
+.wathba-site-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 80px 64px;
+}
+
+.wathba-footer-brand {
+  grid-column: span 5 / span 5;
+}
+
+.wathba-footer-col {
+  grid-column: span 2 / span 2;
+}
+
+.wathba-footer-contact {
+  grid-column: span 3 / span 3;
+}
+
+.wathba-footer-logo {
+  font-family: "Anton", sans-serif;
+  font-size: 64px;
+  line-height: 1;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.wathba-footer-title {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.wathba-footer-text {
+  color: #c4c7c8;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 430px;
+}
+
+.wathba-footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.wathba-footer-list a,
+.wathba-footer-contact p {
+  color: #c4c7c8;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  transition: 0.2s ease;
+}
+
+.wathba-footer-list a:hover {
+  color: #ffffff;
+}
+
+.wathba-footer-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+  background: #25d366;
+  color: #ffffff;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.1em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.wathba-footer-bottom {
+  grid-column: span 12 / span 12;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 28px;
+  margin-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.wathba-footer-bottom p {
+  color: rgba(196, 199, 200, 0.65);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* =========================
+   Language Behavior
+========================= */
+
+html[data-wathba-lang="ar"] .wathba-ar-right {
+  text-align: right;
+}
+
+html[data-wathba-lang="ar"] .wathba-ar-text {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Logo stays English always */
+.wathba-logo,
+.wathba-footer-logo {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate !important;
+}
+
+/* =========================
+   Mobile First
+========================= */
+
+@media (max-width: 1024px) {
+  .wathba-menu-toggle {
+    display: inline-flex !important;
+  }
+
+  .wathba-top-tools {
+    top: 14px !important;
+    right: 14px !important;
+    gap: 8px !important;
+  }
+
+  .wathba-lang-btn,
+  .wathba-menu-toggle {
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 42px !important;
+    font-size: 11px !important;
+  }
+
+  nav .hidden,
+  header .hidden,
+  nav .hidden.md\:flex,
+  header .hidden.md\:flex {
+    display: none !important;
+  }
+
+  nav,
+  header {
+    min-height: 70px !important;
+    overflow: visible !important;
+  }
+
+  nav > div,
+  header > nav,
+  header > div {
+    width: 100% !important;
+    padding-left: 18px !important;
+    padding-right: 112px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  nav a[href="#"],
+  nav a[href="index.html"],
+  header a[href="index.html"],
+  nav .font-headline-md,
+  header .font-headline-md,
+  .wathba-logo {
+    font-size: 25px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  .wathba-mobile-menu {
+    top: 76px !important;
+    left: 14px !important;
+    right: 14px !important;
+  }
+
+  section {
+    max-width: 100% !important;
+  }
+
+  section[class*="px-margin-desktop"],
+  footer [class*="px-margin-desktop"],
+  main [class*="px-margin-desktop"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .grid {
+    max-width: 100% !important;
+  }
+
+  .product-card,
+  .group.relative {
+    max-width: 100% !important;
+  }
+
+  .whatsapp-widget {
+    right: 18px !important;
+    bottom: 18px !important;
+  }
+
+  .whatsapp-label {
+    display: none !important;
+  }
+
+  .whatsapp-float {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+  }
+
+  .whatsapp-float svg {
+    width: 29px !important;
+    height: 29px !important;
+  }
+
+  .wathba-site-footer-grid {
+    grid-template-columns: 1fr;
+    padding: 56px 20px;
+  }
+
+  .wathba-footer-brand,
+  .wathba-footer-col,
+  .wathba-footer-contact,
+  .wathba-footer-bottom {
+    grid-column: auto;
+  }
+
+  .wathba-footer-logo {
+    font-size: 52px;
+  }
+
+  .wathba-footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .wathba-footer-list {
+    gap: 10px;
+  }
+
+  .wathba-footer-list a,
+  .wathba-footer-contact p,
+  .wathba-footer-text {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   Home Hero Mobile Polish
+========================= */
+
+@media (max-width: 1024px) {
+  body:has(#home) main {
+    padding-top: 72px !important;
+  }
+
+  body:has(#home) #home {
+    min-height: auto !important;
+    padding: 34px 20px 70px !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  body:has(#home) #home > .grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 38px !important;
+    align-items: start !important;
+  }
+
+  body:has(#home) #home .z-10 {
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  body:has(#home) #home h1 {
+    font-size: clamp(52px, 17vw, 78px) !important;
+    line-height: 0.88 !important;
+    letter-spacing: -0.03em !important;
+    margin-top: 4px !important;
+    max-width: 100% !important;
+  }
+
+  body:has(#home) #home h2 {
+    font-size: clamp(28px, 8vw, 40px) !important;
+    line-height: 1.05 !important;
+    margin-top: 4px !important;
+    max-width: 100% !important;
+  }
+
+  body:has(#home) #home p {
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+    max-width: 290px !important;
+    margin-top: 24px !important;
+  }
+
+  body:has(#home) #home .mt-12 {
+    margin-top: 30px !important;
+  }
+
+  body:has(#home) #home .flex.flex-wrap.gap-4 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  body:has(#home) #home button {
+    min-height: 48px !important;
+    padding: 12px 22px !important;
+    font-size: 15px !important;
+  }
+
+  body:has(#home) #home .md\:col-span-7,
+  body:has(#home) #home .relative.h-\[600px\] {
+    height: 360px !important;
+    min-height: 360px !important;
+    max-height: 360px !important;
+    margin-top: 4px !important;
+  }
+
+  body:has(#home) #home .product-360-container,
+  body:has(#home) #home .product-360-inner {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  body:has(#home) #home #hero-product {
+    width: 92% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  body:has(#home) #home .glass-panel {
+    padding: 10px 12px !important;
+    border-radius: 10px !important;
+  }
+
+  body:has(#home) #home .glass-panel span:first-child {
+    font-size: 8px !important;
+  }
+
+  body:has(#home) #home .glass-panel span:last-child {
+    font-size: 15px !important;
+    line-height: 1.1 !important;
+  }
+
+  body:has(#home) #home .absolute.top-20.right-0 {
+    top: 0 !important;
+    right: 8px !important;
+  }
+
+  body:has(#home) #home .absolute.bottom-40.left-0 {
+    bottom: 18px !important;
+    left: 20px !important;
+  }
+
+  body:has(#home) #home .absolute.top-1\/2.left-\[-40px\] {
+    top: 52% !important;
+    left: 0 !important;
+  }
+}
+
+@media (max-width: 430px) {
+  body:has(#home) #home {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  body:has(#home) #home h1 {
+    font-size: clamp(52px, 17vw, 68px) !important;
+  }
+
+  body:has(#home) #home h2 {
+    font-size: 30px !important;
+  }
+
+  body:has(#home) #home p {
+    max-width: 270px !important;
+  }
+
+  body:has(#home) #home .md\:col-span-7,
+  body:has(#home) #home .relative.h-\[600px\] {
+    height: 330px !important;
+    min-height: 330px !important;
+  }
+
+  body:has(#home) #home #hero-product {
+    max-width: 280px !important;
+  }
+}
