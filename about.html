@@ -154,27 +154,32 @@
 </head>
 
 <body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
-  <!-- TopNavBar -->
-  <header
-    class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
-    <div class="flex justify-between items-center px-16 h-20 w-full max-w-container-max mx-auto">
-      <div class="font-headline-md text-headline-md text-primary tracking-tighter uppercase">WATHBA</div>
-      <nav class="hidden md:flex gap-8 items-center">
-        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300"
-          href="index.html">Home</a>
-        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300"
-          href="products.html">Products</a>
-        <a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-300"
-          href="about.html">About</a>
-        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300"
-          href="contact.html">Contact</a>
-      </nav>
-      <div class="flex items-center gap-4">
-
+  <!-- Top Navigation Bar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
+    <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+      <div class="flex items-center gap-12">
+        <div class="font-headline-md text-headline-md uppercase tracking-tighter text-primary">
+          WATHBA
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1"
+            href="index.html">Home</a>
+          <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+            href="products.html">Products</a>
+          <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+            href="about.html">About</a>
+          <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+            href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-6">
+        <button
+          class="bg-primary text-surface font-label-caps text-label-caps px-6 py-2 rounded-full font-bold hover:scale-95 transition-transform duration-200">Sign
+          Up</button>
       </div>
     </div>
-  </header>
-  <main class="pt-20">
+  </nav>
+  <main class="pt-32">
     <!-- Section 1: Hero -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
       <div class="absolute inset-0 z-0">
