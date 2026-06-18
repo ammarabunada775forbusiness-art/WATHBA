@@ -251,11 +251,21 @@ function wathbaTranslateDesktopNav() {
 }
 function wathbaSetActiveLinks() {
   const path = window.location.pathname.split("/").pop() || "index.html";
-  const normalizedPath = path === "" ? "index.html" : path;
+  let normalizedPath = path === "" ? "index.html" : path;
+
+  /*
+    صفحة تفاصيل المنتج product.html تعتبر من قسم المنتجات
+    عشان يظل رابط المنتجات هو النشط.
+  */
+  if (normalizedPath === "product.html") {
+    normalizedPath = "products.html";
+  }
 
   document.querySelectorAll("nav a, header a, .wathba-mobile-menu a").forEach((link) => {
+    if (link.classList.contains("wathba-logo")) return;
+
     const href = link.getAttribute("href") || "";
-    const linkPage = href.split("?")[0];
+    let linkPage = href.split("?")[0];
 
     link.classList.toggle("active", linkPage === normalizedPath);
   });
@@ -473,7 +483,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const main = home.closest("main");
 
     if (main) {
-      main.style.paddingTop = "80px";
+      // main.style.paddingTop = "80px";
     }
 
     home.style.minHeight = "calc(100vh - 80px)";

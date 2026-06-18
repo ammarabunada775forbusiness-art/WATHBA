@@ -287,29 +287,29 @@
 </head>
 
 <body class="selection:bg-primary selection:text-surface">
-    <!-- Top Navigation Bar -->
+    <!-- WATHBA Unified Navbar -->
     <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
         <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
             <div class="flex items-center gap-12">
-                <div class="font-headline-md text-headline-md uppercase tracking-tighter text-primary">
-                    WATHBA
-                </div>
+                <a class="wathba-logo font-headline-md text-headline-md uppercase tracking-tighter text-primary"
+                    href="index.html">WATHBA</a>
+
                 <div class="hidden md:flex items-center gap-8">
-                    <a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1"
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
                         href="index.html">Home</a>
+
                     <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
                         href="products.html">Products</a>
+
                     <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
                         href="about.html">About</a>
+
                     <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
                         href="contact.html">Contact</a>
                 </div>
             </div>
-            <div class="flex items-center gap-6">
-                <button
-                    class="bg-primary text-surface font-label-caps text-label-caps px-6 py-2 rounded-full font-bold hover:scale-95 transition-transform duration-200">Sign
-                    Up</button>
-            </div>
+
+            <div class="wathba-nav-empty"></div>
         </div>
     </nav>
     <main class="pt-32">
@@ -335,18 +335,17 @@
                         strength.
                     </p>
                     <div class="mt-12 flex flex-wrap gap-4">
-                        <<a href="products.html"
+                        <a href="https://wa.me/962791752349"
+                            class="border border-primary text-primary font-headline-md text-[18px] uppercase px-10 py-4 rounded-full flex items-center gap-3 hover:bg-primary/10 transition-colors active:scale-95">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">chat</span>
+                            WhatsApp
+                        </a>
+
+                        <a href="products.html"
                             class="bg-primary text-surface font-headline-md text-[18px] uppercase px-10 py-4 rounded-full flex items-center gap-3 hover:scale-105 transition-transform active:scale-95">
                             Browse Products
-                            <span class="material-symbols-outlined">arrow_forward</span>
-                            </a>
-
-                            <a href="https://wa.me/962791752349"
-                                class="border border-primary text-primary font-headline-md text-[18px] uppercase px-10 py-4 rounded-full flex items-center gap-3 hover:bg-primary/10 transition-colors active:scale-95">
-                                WhatsApp
-                                <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">chat</span>
-                            </a>
+                        </a>
                     </div>
                 </div>
                 <!-- Center: 360 Product Interaction -->
