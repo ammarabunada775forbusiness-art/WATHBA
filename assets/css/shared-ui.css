@@ -427,17 +427,6 @@ html[data-wathba-lang="ar"] .wathba-ar-text {
     padding-bottom: 12px !important;
   }
 
-  nav a[href="#"],
-  nav a[href="index.html"],
-  header a[href="index.html"],
-  nav .font-headline-md,
-  header .font-headline-md,
-  .wathba-logo {
-    font-size: 25px !important;
-    line-height: 1 !important;
-    white-space: nowrap !important;
-  }
-
   .wathba-mobile-menu {
     top: 76px !important;
     left: 14px !important;
@@ -663,204 +652,6 @@ html[data-wathba-lang="ar"] .wathba-ar-text {
   }
 }
 
-/* =========================
-   WATHBA HOTFIX
-   Fix desktop hero spacing + hide old Stitch nav actions
-========================= */
-
-/* يخفي أزرار Stitch القديمة داخل النافبار مثل:
-   globe / dark mode / sign up / cart
-   مع إبقاء أزرار WATHBA الجديدة شغالة */
-nav button:not(.wathba-lang-btn):not(.wathba-menu-toggle),
-header button:not(.wathba-lang-btn):not(.wathba-menu-toggle) {
-  display: none !important;
-}
-
-/* إخفاء أي روابط قديمة للـ Sign Up داخل النافبار */
-nav a[href="#"],
-header a[href="#"] {
-  display: none !important;
-}
-
-/* لكن لو اللوجو كان رابط href="#" نخليه ظاهر */
-nav a.wathba-logo,
-header a.wathba-logo,
-nav a.font-headline-md,
-header a.font-headline-md {
-  display: inline-flex !important;
-}
-
-/* إصلاح نزول الهيرو في الصفحة الرئيسية على الديسكتوب */
-@media (min-width: 1025px) {
-  body:has(#home) main {
-    padding-top: 80px !important;
-  }
-
-  body:has(#home) #home {
-    min-height: calc(100vh - 80px) !important;
-    padding-top: 0 !important;
-    padding-bottom: 40px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  body:has(#home) #home>.grid {
-    align-items: center !important;
-  }
-
-  body:has(#home) #home .md\:col-span-5 {
-    transform: translateY(-18px);
-  }
-
-  body:has(#home) #home .md\:col-span-7 {
-    transform: translateY(-18px);
-  }
-}
-
-/* إصلاح صفحة المنتجات لو صار فيها فراغ زائد فوق */
-@media (min-width: 1025px) {
-  body:not(:has(#home)) main.pt-32 {
-    padding-top: 110px !important;
-  }
-}
-
-/* =========================
-   WATHBA NAVBAR ALIGNMENT FIX
-   يخلي النافبار ثابت بنفس المكان بكل الصفحات
-========================= */
-
-@media (min-width: 1025px) {
-
-  nav.fixed>div,
-  header.fixed>div,
-  header.fixed>nav {
-    position: relative !important;
-  }
-
-  nav.fixed .hidden.md\:flex,
-  header.fixed .hidden.md\:flex,
-  nav.fixed .hidden.md\:flex.items-center,
-  header.fixed .hidden.md\:flex.items-center {
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 32px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    white-space: nowrap !important;
-  }
-
-  nav.fixed a,
-  header.fixed a {
-    white-space: nowrap !important;
-  }
-
-  nav.fixed .font-headline-md,
-  header.fixed .font-headline-md {
-    flex: 0 0 auto !important;
-  }
-}
-
-/* WATHBA NAV + ARABIC + CART FIX */
-
-@media (min-width: 1025px) {
-
-  nav.fixed,
-  header.fixed {
-    min-height: 88px !important;
-  }
-
-  nav.fixed>div,
-  header.fixed>div,
-  header.fixed>nav {
-    min-height: 88px !important;
-    padding-top: 16px !important;
-    padding-bottom: 16px !important;
-    padding-left: 64px !important;
-    padding-right: 190px !important;
-    display: flex !important;
-    align-items: center !important;
-  }
-
-  nav.fixed .hidden.md\:flex,
-  header.fixed .hidden.md\:flex,
-  nav.fixed .hidden.md\:flex.items-center,
-  header.fixed .hidden.md\:flex.items-center,
-  nav.fixed .hidden.md\:flex.gap-8,
-  header.fixed .hidden.md\:flex.gap-8 {
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 38px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    white-space: nowrap !important;
-  }
-
-  nav.fixed .hidden.md\:flex a,
-  header.fixed .hidden.md\:flex a,
-  nav.fixed a.font-label-caps,
-  header.fixed a.font-label-caps {
-    font-family: "Be Vietnam Pro", sans-serif !important;
-    font-size: 13px !important;
-    line-height: 18px !important;
-    letter-spacing: 0.08em !important;
-    font-weight: 900 !important;
-    text-transform: none !important;
-  }
-
-  html[data-wathba-lang="en"] nav.fixed .hidden.md\:flex a,
-  html[data-wathba-lang="en"] header.fixed .hidden.md\:flex a {
-    text-transform: uppercase !important;
-  }
-
-  nav.fixed .font-headline-md,
-  header.fixed .font-headline-md,
-  .wathba-logo {
-    font-size: 34px !important;
-    line-height: 1 !important;
-    letter-spacing: -0.03em !important;
-  }
-
-  .wathba-top-tools {
-    top: 20px !important;
-    right: 64px !important;
-  }
-}
-
-html[data-wathba-lang="ar"] .font-body-md,
-html[data-wathba-lang="ar"] .text-body-md,
-html[data-wathba-lang="ar"] p.font-body-md,
-html[data-wathba-lang="ar"] .desc {
-  font-size: 18px !important;
-  line-height: 1.9 !important;
-}
-
-html[data-wathba-lang="ar"] .font-body-lg,
-html[data-wathba-lang="ar"] .text-body-lg,
-html[data-wathba-lang="ar"] p.font-body-lg {
-  font-size: 20px !important;
-  line-height: 2 !important;
-}
-
-html[data-wathba-lang="ar"] .font-label-caps,
-html[data-wathba-lang="ar"] .text-label-caps,
-html[data-wathba-lang="ar"] button.font-label-caps,
-html[data-wathba-lang="ar"] a.font-label-caps,
-html[data-wathba-lang="ar"] nav.fixed a,
-html[data-wathba-lang="ar"] header.fixed a {
-  font-size: 14px !important;
-  line-height: 1.7 !important;
-  letter-spacing: 0 !important;
-  font-weight: 900 !important;
-}
 
 .home-product-card .home-product-overlay {
   opacity: 0;
@@ -1201,60 +992,110 @@ html[data-wathba-lang="ar"] header.fixed a {
   justify-content: center !important;
 }
 
-/* =========================
-   WATHBA FINAL NAV + ARABIC FIX
-========================= */
+/* =====================================================
+   WATHBA CLEAN NAVBAR + ARABIC + HOME HERO FINAL
+===================================================== */
 
-/* يمنع لمحة Home / Products قبل ما تتحول عربي */
-html.wathba-ui-loading[data-wathba-lang="ar"] nav.fixed .hidden.md\:flex a,
-html.wathba-ui-loading[data-wathba-lang="ar"] header.fixed .hidden.md\:flex a,
-html.wathba-ui-loading[data-wathba-lang="ar"] .wathba-mobile-menu a {
-  opacity: 0 !important;
+:root {
+  --wathba-nav-height: 96px;
 }
 
-/* يخلي ظهور النافبار ناعم بعد الترجمة */
-nav.fixed .hidden.md\:flex a,
-header.fixed .hidden.md\:flex a,
-.wathba-mobile-menu a {
-  transition: opacity 0.18s ease, color 0.2s ease, border-color 0.2s ease !important;
+/* Navbar shell */
+nav.fixed,
+header.fixed {
+  min-height: var(--wathba-nav-height) !important;
 }
 
-/* تثبيت وتكبير اللوغو بكل الصفحات خصوصًا الرئيسية */
+nav.fixed>div,
+header.fixed>div,
+header.fixed>nav {
+  min-height: var(--wathba-nav-height) !important;
+  padding: 14px 190px 14px 64px !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Logo: never affected by Arabic text rules */
 nav.fixed .wathba-logo,
 header.fixed .wathba-logo,
-nav.fixed a.font-headline-md,
-header.fixed a.font-headline-md,
-nav.fixed .font-headline-md,
-header.fixed .font-headline-md {
+nav.fixed .wathba-nav-logo,
+header.fixed .wathba-nav-logo,
+.wathba-logo,
+.wathba-nav-logo,
+html[data-wathba-lang="ar"] nav.fixed .wathba-logo,
+html[data-wathba-lang="ar"] header.fixed .wathba-logo,
+html[data-wathba-lang="ar"] nav.fixed .wathba-nav-logo,
+html[data-wathba-lang="ar"] header.fixed .wathba-nav-logo {
   font-family: "Anton", sans-serif !important;
-  font-size: 46px !important;
-  line-height: 1 !important;
-  letter-spacing: -0.04em !important;
+  font-size: 64px !important;
+  line-height: 0.85 !important;
+  letter-spacing: -0.05em !important;
   color: #ffffff !important;
   text-transform: uppercase !important;
+  text-decoration: none !important;
   white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
   opacity: 1 !important;
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  border-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
-/* حجم روابط النافبار عربي */
-html[data-wathba-lang="ar"] nav.fixed .hidden.md\:flex a,
-html[data-wathba-lang="ar"] header.fixed .hidden.md\:flex a {
-  font-size: 16px !important;
+/* Desktop nav links */
+nav.fixed .hidden.md\:flex,
+header.fixed .hidden.md\:flex {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 42px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+}
+
+nav.fixed .hidden.md\:flex a:not(.wathba-logo):not(.wathba-nav-logo),
+header.fixed .hidden.md\:flex a:not(.wathba-logo):not(.wathba-nav-logo) {
+  font-family: "Be Vietnam Pro", sans-serif !important;
+  font-size: 14px !important;
+  line-height: 18px !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+}
+
+/* Arabic nav links only, not logo */
+html[data-wathba-lang="ar"] nav.fixed .hidden.md\:flex a:not(.wathba-logo):not(.wathba-nav-logo),
+html[data-wathba-lang="ar"] header.fixed .hidden.md\:flex a:not(.wathba-logo):not(.wathba-nav-logo) {
+  font-size: 17px !important;
   line-height: 24px !important;
   letter-spacing: 0 !important;
+  text-transform: none !important;
   font-weight: 900 !important;
 }
 
-/* حجم روابط النافبار إنجليزي */
-html[data-wathba-lang="en"] nav.fixed .hidden.md\:flex a,
-html[data-wathba-lang="en"] header.fixed .hidden.md\:flex a {
-  font-size: 13px !important;
-  line-height: 18px !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
+/* Active page underline */
+nav a.active:not(.wathba-logo):not(.wathba-nav-logo),
+header a.active:not(.wathba-logo):not(.wathba-nav-logo) {
+  color: #ffffff !important;
+  border-bottom: 2px solid #ffffff !important;
+  padding-bottom: 4px !important;
 }
 
-/* تكبير العربي في أغلب المشروع بدون تخريب عناوين WATHBA الإنجليزية الكبيرة */
+nav a.wathba-logo.active,
+header a.wathba-logo.active,
+nav a.wathba-nav-logo.active,
+header a.wathba-nav-logo.active {
+  border-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Arabic text sizing, but never logo */
 html[data-wathba-lang="ar"] p,
 html[data-wathba-lang="ar"] li,
 html[data-wathba-lang="ar"] label,
@@ -1262,354 +1103,136 @@ html[data-wathba-lang="ar"] input,
 html[data-wathba-lang="ar"] textarea,
 html[data-wathba-lang="ar"] select,
 html[data-wathba-lang="ar"] button,
-html[data-wathba-lang="ar"] a,
+html[data-wathba-lang="ar"] a:not(.wathba-logo):not(.wathba-nav-logo),
 html[data-wathba-lang="ar"] .font-body-md,
 html[data-wathba-lang="ar"] .font-body-lg,
 html[data-wathba-lang="ar"] .text-body-md,
 html[data-wathba-lang="ar"] .text-body-lg,
-html[data-wathba-lang="ar"] .text-on-surface-variant,
-html[data-wathba-lang="ar"] .product-card p,
-html[data-wathba-lang="ar"] .home-product-card p,
-html[data-wathba-lang="ar"] .wathba-footer-text,
-html[data-wathba-lang="ar"] .wathba-footer-list a,
-html[data-wathba-lang="ar"] .wathba-footer-contact p {
+html[data-wathba-lang="ar"] .text-on-surface-variant {
   font-size: 18px !important;
   line-height: 1.9 !important;
 }
 
-/* النصوص الصغيرة جدًا مثل التصنيف، الفلاتر، الأزرار */
 html[data-wathba-lang="ar"] .font-label-caps,
-html[data-wathba-lang="ar"] .text-label-caps,
-html[data-wathba-lang="ar"] .category,
-html[data-wathba-lang="ar"] .product-card span,
-html[data-wathba-lang="ar"] .home-product-card span,
-html[data-wathba-lang="ar"] .wathba-footer-title,
-html[data-wathba-lang="ar"] .wathba-lang-btn,
-html[data-wathba-lang="ar"] .wathba-cart-added-bubble {
+html[data-wathba-lang="ar"] .text-label-caps {
   font-size: 15px !important;
   line-height: 1.7 !important;
   letter-spacing: 0 !important;
-  font-weight: 900 !important;
 }
 
-/* عناوين المنتجات بالعربي */
-html[data-wathba-lang="ar"] .product-card h3,
-html[data-wathba-lang="ar"] .home-product-card h3,
-html[data-wathba-lang="ar"] #productDetailsRoot h1,
-html[data-wathba-lang="ar"] #relatedProductsRoot h2 {
-  font-size: clamp(30px, 3.3vw, 46px) !important;
-  line-height: 1.15 !important;
+/* Stable page top spacing */
+main.pt-32,
+body:has(#home) main {
+  padding-top: var(--wathba-nav-height) !important;
 }
 
-/* لا تكبّر عناوين العرض الإنجليزية الكبيرة */
-html[data-wathba-lang="ar"] .font-display-hero,
-html[data-wathba-lang="ar"] .text-display-hero,
-html[data-wathba-lang="ar"] .hero-text-stroke {
-  font-family: "Anton", sans-serif !important;
+/* Stable home hero desktop */
+@media (min-width: 1025px) {
+  body:has(#home) #home {
+    min-height: calc(100vh - var(--wathba-nav-height)) !important;
+    padding-top: 0 !important;
+    padding-bottom: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  body:has(#home) #home>.grid {
+    align-items: center !important;
+    transform: translateY(-14px) !important;
+  }
 }
 
-/* موبايل */
+/* Mobile navbar */
 @media (max-width: 1024px) {
+  :root {
+    --wathba-nav-height: 70px;
+  }
+
+  nav.fixed,
+  header.fixed {
+    min-height: var(--wathba-nav-height) !important;
+  }
+
+  nav.fixed>div,
+  header.fixed>div,
+  header.fixed>nav {
+    min-height: var(--wathba-nav-height) !important;
+    padding: 12px 158px 12px 18px !important;
+  }
 
   nav.fixed .wathba-logo,
   header.fixed .wathba-logo,
-  nav.fixed a.font-headline-md,
-  header.fixed a.font-headline-md,
-  nav.fixed .font-headline-md,
-  header.fixed .font-headline-md {
+  nav.fixed .wathba-nav-logo,
+  header.fixed .wathba-nav-logo,
+  .wathba-logo,
+  .wathba-nav-logo,
+  html[data-wathba-lang="ar"] nav.fixed .wathba-logo,
+  html[data-wathba-lang="ar"] header.fixed .wathba-logo,
+  html[data-wathba-lang="ar"] nav.fixed .wathba-nav-logo,
+  html[data-wathba-lang="ar"] header.fixed .wathba-nav-logo {
     font-size: 34px !important;
+    line-height: 0.9 !important;
   }
 
-  html[data-wathba-lang="ar"] .wathba-mobile-menu a {
-    font-size: 15px !important;
-    line-height: 1.7 !important;
-    letter-spacing: 0 !important;
-  }
-
-  html[data-wathba-lang="ar"] p,
-  html[data-wathba-lang="ar"] li,
-  html[data-wathba-lang="ar"] label,
-  html[data-wathba-lang="ar"] button,
-  html[data-wathba-lang="ar"] a,
-  html[data-wathba-lang="ar"] .font-body-md,
-  html[data-wathba-lang="ar"] .font-body-lg,
-  html[data-wathba-lang="ar"] .text-body-md,
-  html[data-wathba-lang="ar"] .text-body-lg {
-    font-size: 17px !important;
-    line-height: 1.9 !important;
-  }
-}
-
-/* =========================
-   HOME HERO FLOATING CARDS MOBILE FIX
-========================= */
-
-@media (max-width: 768px) {
-
-  body:has(#home) #home .md\:col-span-7,
-  body:has(#home) #home .relative.h-\[600px\] {
-    height: 440px !important;
-    min-height: 440px !important;
-    max-height: none !important;
-    overflow: visible !important;
-  }
-
-  body:has(#home) #home #hero-product {
-    width: 86% !important;
-    max-width: 270px !important;
-    margin-top: -10px !important;
-  }
-
-  body:has(#home) #home .hero-stat-layer {
-    position: absolute !important;
-    left: 0 !important;
-    right: 0 !important;
-    top: auto !important;
-    bottom: 8px !important;
-    z-index: 30 !important;
-
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 8px !important;
-
-    padding: 0 8px !important;
-    overflow: visible !important;
-    pointer-events: none !important;
-  }
-
-  body:has(#home) #home .hero-stat-card {
-    position: relative !important;
-    inset: auto !important;
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: none !important;
-
-    padding: 10px 11px !important;
-    border-radius: 12px !important;
-  }
-
-  body:has(#home) #home .hero-stat-card span:first-child {
-    font-size: 8px !important;
-    line-height: 1.2 !important;
-    margin-bottom: 5px !important;
-    letter-spacing: 0.04em !important;
-  }
-
-  body:has(#home) #home .hero-stat-card span:last-child {
-    font-size: 14px !important;
-    line-height: 1.08 !important;
-  }
-
-  body:has(#home) #home .hero-stat-grip,
-  body:has(#home) #home .hero-stat-use,
-  body:has(#home) #home .hero-stat-support {
+  nav .hidden.md\:flex,
+  header .hidden.md\:flex {
     display: none !important;
   }
-}
 
-@media (max-width: 430px) {
+  .wathba-top-tools {
+    top: 14px !important;
+    right: 14px !important;
+    gap: 8px !important;
+  }
+
+  .wathba-lang-btn,
+  .wathba-menu-toggle,
+  .wathba-cart-toggle {
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 42px !important;
+  }
+
+  body:has(#home) #home {
+    min-height: auto !important;
+    padding: 26px 18px 64px !important;
+    overflow: hidden !important;
+  }
+
+  body:has(#home) #home>.grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  body:has(#home) #home .md\:col-span-5 {
+    order: 2 !important;
+  }
 
   body:has(#home) #home .md\:col-span-7,
   body:has(#home) #home .relative.h-\[600px\] {
-    height: 410px !important;
-    min-height: 410px !important;
-  }
-
-  body:has(#home) #home #hero-product {
-    max-width: 245px !important;
-  }
-
-  body:has(#home) #home .hero-stat-card span:last-child {
-    font-size: 13px !important;
-  }
-}
-
-/* FINAL FORCE: WATHBA LOGO SIZE */
-nav.fixed .wathba-brand-logo,
-header.fixed .wathba-brand-logo,
-.wathba-brand-logo {
-  font-family: "Anton", sans-serif !important;
-  font-size: 72px !important;
-  line-height: 0.82 !important;
-  letter-spacing: -0.055em !important;
-  color: #ffffff !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-@media (max-width: 1024px) {
-
-  nav.fixed .wathba-brand-logo,
-  header.fixed .wathba-brand-logo,
-  .wathba-brand-logo {
-    font-size: 42px !important;
-    line-height: 0.86 !important;
-  }
-}
-
-@media (max-width: 430px) {
-
-  nav.fixed .wathba-brand-logo,
-  header.fixed .wathba-brand-logo,
-  .wathba-brand-logo {
-    font-size: 36px !important;
-  }
-}
-
-/* FINAL NAV LOGO LOCK */
-nav.fixed .wathba-nav-logo,
-header.fixed .wathba-nav-logo,
-.wathba-nav-logo {
-  font-family: "Anton", sans-serif !important;
-  font-size: 64px !important;
-  line-height: 0.88 !important;
-  letter-spacing: -0.045em !important;
-  color: #ffffff !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  opacity: 1 !important;
-  transform: none !important;
-}
-
-@media (max-width: 1024px) {
-
-  nav.fixed .wathba-nav-logo,
-  header.fixed .wathba-nav-logo,
-  .wathba-nav-logo {
-    font-size: 40px !important;
-    line-height: 0.9 !important;
-  }
-}
-
-@media (max-width: 430px) {
-
-  nav.fixed .wathba-nav-logo,
-  header.fixed .wathba-nav-logo,
-  .wathba-nav-logo {
-    font-size: 34px !important;
-  }
-}
-
-/* FINAL FIX: Arabic mode must never resize WATHBA logo */
-html[data-wathba-lang="ar"] nav.fixed .wathba-nav-logo,
-html[data-wathba-lang="ar"] header.fixed .wathba-nav-logo,
-html[data-wathba-lang="ar"] .wathba-nav-logo,
-html[data-wathba-lang="ar"] nav.fixed .wathba-logo,
-html[data-wathba-lang="ar"] header.fixed .wathba-logo,
-html[data-wathba-lang="ar"] .wathba-logo,
-nav.fixed .wathba-nav-logo,
-header.fixed .wathba-nav-logo,
-.wathba-nav-logo {
-  font-family: "Anton", sans-serif !important;
-  font-size: 64px !important;
-  line-height: 0.88 !important;
-  letter-spacing: -0.045em !important;
-  color: #ffffff !important;
-  text-transform: uppercase !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  opacity: 1 !important;
-  transform: none !important;
-  direction: ltr !important;
-  unicode-bidi: isolate !important;
-}
-
-/* لا تجعل قاعدة تكبير العربي تلمس اللوغو */
-html[data-wathba-lang="ar"] a.wathba-logo,
-html[data-wathba-lang="ar"] a.wathba-nav-logo {
-  font-size: 64px !important;
-  line-height: 0.88 !important;
-  letter-spacing: -0.045em !important;
-}
-
-/* Mobile logo */
-@media (max-width: 1024px) {
-
-  html[data-wathba-lang="ar"] nav.fixed .wathba-nav-logo,
-  html[data-wathba-lang="ar"] header.fixed .wathba-nav-logo,
-  html[data-wathba-lang="ar"] .wathba-nav-logo,
-  nav.fixed .wathba-nav-logo,
-  header.fixed .wathba-nav-logo,
-  .wathba-nav-logo {
-    font-size: 40px !important;
-    line-height: 0.9 !important;
-  }
-
-  html[data-wathba-lang="ar"] a.wathba-logo,
-  html[data-wathba-lang="ar"] a.wathba-nav-logo {
-    font-size: 40px !important;
-    line-height: 0.9 !important;
-  }
-}
-
-@media (max-width: 430px) {
-
-  html[data-wathba-lang="ar"] nav.fixed .wathba-nav-logo,
-  html[data-wathba-lang="ar"] header.fixed .wathba-nav-logo,
-  html[data-wathba-lang="ar"] .wathba-nav-logo,
-  nav.fixed .wathba-nav-logo,
-  header.fixed .wathba-nav-logo,
-  .wathba-nav-logo {
-    font-size: 34px !important;
-  }
-
-  html[data-wathba-lang="ar"] a.wathba-logo,
-  html[data-wathba-lang="ar"] a.wathba-nav-logo {
-    font-size: 34px !important;
-  }
-}
-
-/* =========================
-   MOBILE: keep hero floating cards like desktop
-========================= */
-
-@media (max-width: 768px) {
-
-  body:has(#home) #home .md\:col-span-7,
-  body:has(#home) #home .relative.h-\[600px\] {
+    order: 1 !important;
     position: relative !important;
-    height: 430px !important;
-    min-height: 430px !important;
-    max-height: none !important;
+    height: 400px !important;
+    min-height: 400px !important;
     overflow: visible !important;
-    margin-top: 8px !important;
-  }
-
-  body:has(#home) #home .product-360-container,
-  body:has(#home) #home .product-360-inner {
-    position: relative !important;
-    width: 100% !important;
-    height: 100% !important;
+    margin-top: 0 !important;
   }
 
   body:has(#home) #home #hero-product {
-    width: 76% !important;
-    max-width: 255px !important;
+    width: 74% !important;
+    max-width: 235px !important;
     height: auto !important;
-    margin-top: 28px !important;
+    margin-top: 36px !important;
     object-fit: contain !important;
   }
 
   body:has(#home) #home .hero-stat-layer {
     position: absolute !important;
     inset: 0 !important;
-    z-index: 40 !important;
     display: block !important;
+    z-index: 40 !important;
     padding: 0 !important;
     overflow: visible !important;
     pointer-events: none !important;
@@ -1618,147 +1241,70 @@ html[data-wathba-lang="ar"] a.wathba-nav-logo {
   body:has(#home) #home .hero-stat-card {
     position: absolute !important;
     width: auto !important;
-    min-width: 88px !important;
-    max-width: 118px !important;
-    padding: 8px 9px !important;
+    min-width: 82px !important;
+    max-width: 108px !important;
+    padding: 7px 8px !important;
     border-radius: 11px !important;
-    background: rgba(18, 18, 18, 0.78) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    backdrop-filter: blur(16px) !important;
-    -webkit-backdrop-filter: blur(16px) !important;
-    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.32) !important;
   }
 
   body:has(#home) #home .hero-stat-card span:first-child {
-    font-size: 6.5px !important;
+    font-size: 6px !important;
     line-height: 1.15 !important;
     margin-bottom: 4px !important;
     letter-spacing: 0.04em !important;
   }
 
   body:has(#home) #home .hero-stat-card span:last-child {
-    font-size: 11px !important;
-    line-height: 1.05 !important;
-  }
-
-  /* رجّع كل الكروت تظهر على الموبايل */
-  body:has(#home) #home .hero-stat-grip,
-  body:has(#home) #home .hero-stat-use,
-  body:has(#home) #home .hero-stat-support {
-    display: block !important;
-  }
-
-  /* Mobile positions مثل الديسكتوب لكن مصغرة */
-  body:has(#home) #home .hero-stat-grip {
-    top: 18px !important;
-    left: 28px !important;
-    right: auto !important;
-    bottom: auto !important;
-  }
-
-  body:has(#home) #home .hero-stat-material {
-    top: 18px !important;
-    right: 24px !important;
-    left: auto !important;
-    bottom: auto !important;
-  }
-
-  body:has(#home) #home .hero-stat-finish {
-    top: 150px !important;
-    left: 8px !important;
-    right: auto !important;
-    bottom: auto !important;
-  }
-
-  body:has(#home) #home .hero-stat-use {
-    top: 158px !important;
-    right: 4px !important;
-    left: auto !important;
-    bottom: auto !important;
-  }
-
-  body:has(#home) #home .hero-stat-support {
-    top: 222px !important;
-    right: 16px !important;
-    left: auto !important;
-    bottom: auto !important;
-  }
-
-  body:has(#home) #home .hero-stat-capacity {
-    left: 20px !important;
-    bottom: 56px !important;
-    top: auto !important;
-    right: auto !important;
-  }
-
-  body:has(#home) #home .hero-stat-base {
-    right: 28px !important;
-    bottom: 54px !important;
-    top: auto !important;
-    left: auto !important;
-  }
-}
-
-@media (max-width: 430px) {
-
-  body:has(#home) #home .md\:col-span-7,
-  body:has(#home) #home .relative.h-\[600px\] {
-    height: 400px !important;
-    min-height: 400px !important;
-  }
-
-  body:has(#home) #home #hero-product {
-    width: 74% !important;
-    max-width: 235px !important;
-    margin-top: 36px !important;
-  }
-
-  body:has(#home) #home .hero-stat-card {
-    min-width: 82px !important;
-    max-width: 108px !important;
-    padding: 7px 8px !important;
-  }
-
-  body:has(#home) #home .hero-stat-card span:first-child {
-    font-size: 6px !important;
-  }
-
-  body:has(#home) #home .hero-stat-card span:last-child {
     font-size: 10px !important;
+    line-height: 1.05 !important;
   }
 
   body:has(#home) #home .hero-stat-grip {
     top: 14px !important;
     left: 18px !important;
+    right: auto !important;
+    bottom: auto !important;
   }
 
   body:has(#home) #home .hero-stat-material {
     top: 14px !important;
     right: 18px !important;
+    left: auto !important;
+    bottom: auto !important;
   }
 
   body:has(#home) #home .hero-stat-finish {
     top: 145px !important;
     left: 2px !important;
+    right: auto !important;
+    bottom: auto !important;
   }
 
   body:has(#home) #home .hero-stat-use {
     top: 150px !important;
     right: 0 !important;
+    left: auto !important;
+    bottom: auto !important;
   }
 
   body:has(#home) #home .hero-stat-support {
     top: 205px !important;
     right: 10px !important;
+    left: auto !important;
+    bottom: auto !important;
   }
 
   body:has(#home) #home .hero-stat-capacity {
     left: 12px !important;
     bottom: 48px !important;
+    top: auto !important;
+    right: auto !important;
   }
 
   body:has(#home) #home .hero-stat-base {
     right: 18px !important;
     bottom: 48px !important;
+    top: auto !important;
+    left: auto !important;
   }
 }
