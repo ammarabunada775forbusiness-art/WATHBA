@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About WATHBA | Elite Calisthenics Engineering</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#c6c6c7",
+                        "surface-container": "#20201f",
+                        "outline-variant": "#444748",
+                        "on-background": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#c4c7c8",
+                        "tertiary-fixed": "#66ff8e",
+                        "secondary": "#c9c6c5",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "primary-container": "#e2e2e2",
+                        "on-primary-fixed-variant": "#454747",
+                        "outline": "#8e9192",
+                        "on-primary-fixed": "#1a1c1c",
+                        "on-tertiary-fixed": "#002109",
+                        "primary": "#ffffff",
+                        "on-tertiary": "#003915",
+                        "surface-dim": "#131313",
+                        "on-primary-container": "#636565",
+                        "surface-container-highest": "#353535",
+                        "surface-bright": "#393939",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary": "#2f3131",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface": "#131313",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-secondary": "#313030",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed": "#e2e2e2",
+                        "on-tertiary-container": "#007433",
+                        "tertiary-fixed-dim": "#3de273",
+                        "surface-variant": "#353535",
+                        "tertiary": "#ffffff",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-container": "#bab8b7",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#005322",
+                        "background": "#131313",
+                        "tertiary-container": "#66ff8e",
+                        "secondary-container": "#4a4949",
+                        "inverse-primary": "#5d5f5f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Anton"],
+                        "display-hero": ["Anton"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "label-caps": ["Be Vietnam Pro"],
+                        "headline-md": ["Anton"],
+                        "headline-lg-mobile": ["Anton"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "arabic-support": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "display-hero": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "arabic-support": ["18px", { "lineHeight": "32px", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <header
+        class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-16 h-20 w-full max-w-container-max mx-auto">
+            <div class="font-headline-md text-headline-md text-primary tracking-tighter uppercase">WATHBA</div>
+            <nav class="hidden md:flex gap-8 items-center">
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300"
+                    href="#">Home</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300"
+                    href="#">Products</a>
+                <a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-300"
+                    href="#">About</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300"
+                    href="#">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button class="text-primary p-2 hover:opacity-80 transition-opacity">
+                    <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="pt-20">
+        <!-- Section 1: Hero -->
+        <section class="relative h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img alt="WATHBA Athletic Hero" class="w-full h-full object-cover grayscale opacity-60 scale-105"
+                    data-alt="A high-contrast cinematic photograph of a muscular athlete's hands gripping professional wooden calisthenics rings. The lighting is dramatic and moody, focusing on the tension in the forearms and the texture of the premium wood. The background is a dark, minimalist professional studio with deep shadows and soft highlights, reflecting a luxury sports-tech aesthetic with a monochromatic palette."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmalCL-B1ZGb2hFLsJ5x7wJfSsKUllaesOSzZEYQi08DEoicD3JkxkZj6l8alO-ThHiDFTrCw5MOwWFrzOVrU3DOiwLcPxbNkgewdYrzOTEeOhMixgBPr0r0D3lmCxqx8GQUcmOfNlUOW8lUp7Rr6HIxR8GQIi3lXcjBpZaTKkDP-Fqnnb1YsvaHe3VRNOjU4dnR9ZWN02Rm7VxdRyShL8hHQVZL4KaXpLmH9cyIGrmUvb-NHryjdAd4hldPXvKfd6klFEJx7nWg" />
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background"></div>
+            </div>
+            <div class="relative z-10 text-center px-6">
+                <h1
+                    class="font-display-hero text-display-hero text-primary uppercase leading-none tracking-tighter text-glow reveal">
+                    ABOUT WATHBA
+                </h1>
+                <p
+                    class="font-label-caps text-label-caps text-on-surface-variant mt-8 tracking-[0.3em] reveal delay-200">
+                    ENGINEERED IN THE PURSUIT OF PHYSICAL MASTERY
+                </p>
+            </div>
+        </section>
+        <!-- Section 2: Brand Story -->
+        <section class="py-32 px-16 max-w-container-max mx-auto">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5 reveal">
+                    <h2 class="font-headline-lg text-headline-lg text-primary uppercase mb-8">THE CRAFT</h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Born from the gritty streets and polished by high-performance engineering, WATHBA is the
+                        definitive answer for those who demand more from their gear. We don't just manufacture tools; we
+                        forge extensions of the human body.
+                    </p>
+                    <p class="font-body-md text-body-md text-on-surface-variant mt-6 leading-relaxed opacity-80">
+                        Our journey began with a single frustration: the lack of equipment that could withstand the
+                        explosive power of professional calisthenics while maintaining an aesthetic fit for the modern
+                        luxury space. Every ring, every bar, and every strap is a testament to our obsession with
+                        detail.
+                    </p>
+                </div>
+                <div class="md:col-span-7 relative reveal delay-300">
+                    <div
+                        class="aspect-[4/3] bg-surface-container-low overflow-hidden rounded-xl border border-outline-variant/20">
+                        <img alt="The Craftmanship" class="w-full h-full object-cover grayscale"
+                            data-alt="An extreme close-up of a high-end calisthenics pull-up bar showing the intricate knurling on the steel surface. The lighting is sharp, highlighting the metallic texture and the precision of the manufacturing. The background is a blurred, dark industrial studio space with a high-key focus on the industrial design and the premium quality of the materials used in WATHBA gear."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKsqXhQqxZ-AYNaVKKsAPtj3V5SN98oVFUU96O1g3_-U8igWVgliNBJSSzYnV9fRANwvmYn-ccE2aOCllv--9Fw1J3kB-77C6SDFLt-cDVXo19D85jhUNF0O3XNWNA5S3yU8hXRwDe5OGAepqJNvwDge42ffXQG48578Alz90n6Uuo5S3G1kcs3WFTxkAUfvVZyzJS8U-yCszTkqDC4qhKtRYzRJJCH_JvIcM4NCFrQ9imqouPTL01TWPfRjU_kxYcqQrc699oXw" />
+                    </div>
+                    <!-- Data Block Overlay -->
+                    <div class="absolute -bottom-8 -left-8 glass-panel p-8 rounded-xl reveal delay-500">
+                        <div class="font-headline-md text-headline-md text-primary leading-tight">100%<br />PRO-GRADE
+                        </div>
+                        <div class="font-label-caps text-label-caps text-on-surface-variant mt-2 uppercase">MIL-SPEC
+                            MATERIALS</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section 3: Mission -->
+        <section class="bg-surface-container-lowest py-40 overflow-hidden">
+            <div class="max-w-container-max mx-auto px-16 relative">
+                <div class="absolute -right-20 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none">
+                    <span
+                        class="font-display-hero text-display-hero text-primary leading-none select-none">STRENGTH</span>
+                </div>
+                <div class="max-w-3xl reveal">
+                    <span class="font-label-caps text-label-caps text-primary mb-4 block">OUR MISSION</span>
+                    <h2 class="font-headline-lg text-headline-lg text-primary uppercase leading-tight mb-12">
+                        ENGINEERING HUMAN <br /> POTENTIAL.
+                    </h2>
+                    <div class="h-1 w-24 bg-primary mb-12"></div>
+                    <p class="font-body-lg text-body-lg text-on-surface leading-loose">
+                        WATHBA exists at the intersection of elite performance and uncompromising design. We provide the
+                        tools that allow the human body to defy gravity, build raw power, and achieve a state of
+                        physical flow. Our commitment is to provide the elite athlete with equipment that is as
+                        resilient as their spirit.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Section 4: Core Values -->
+        <section class="py-32 px-16 max-w-container-max mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Strength -->
+                <div class="glass-panel p-10 flex flex-col justify-between min-h-[320px] reveal">
+                    <div class="font-headline-md text-headline-md text-primary uppercase">STRENGTH</div>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Built to withstand thousands of hours
+                        of peak-intensity loads without compromise.</p>
+                </div>
+                <!-- Control -->
+                <div class="glass-panel p-10 flex flex-col justify-between min-h-[320px] reveal delay-100">
+                    <div class="font-headline-md text-headline-md text-primary uppercase">CONTROL</div>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Precision textures and ergonomic
+                        geometries that offer absolute grip and spatial awareness.</p>
+                </div>
+                <!-- Progress -->
+                <div class="glass-panel p-10 flex flex-col justify-between min-h-[320px] reveal delay-200">
+                    <div class="font-headline-md text-headline-md text-primary uppercase">PROGRESS</div>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Iterative design philosophy that
+                        evolves alongside the world's most advanced practitioners.</p>
+                </div>
+                <!-- Build Quality -->
+                <div class="glass-panel p-10 flex flex-col justify-between min-h-[320px] reveal delay-300">
+                    <div class="font-headline-md text-headline-md text-primary uppercase">BUILD QUALITY</div>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Sourced from premium aerospace-grade
+                        alloys and sustainable hardwoods for life-long durability.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Section 5: Visual Showcase -->
+        <section class="relative py-20 px-4 md:px-0 reveal">
+            <div class="w-full aspect-[21/9] overflow-hidden">
+                <img alt="WATHBA Studio" class="w-full h-full object-cover grayscale brightness-50"
+                    data-alt="A wide-angle editorial shot of a luxury minimalist home gym featuring WATHBA equipment. The space is constructed from raw concrete and dark wood, with floor-to-ceiling windows showing a moody cityscape at dusk. The equipment is perfectly arranged, caught in soft top-down spotlighting that creates deep shadows. The overall vibe is high-fashion, athletic, and extremely premium."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtbhQNsBOPmmK_wmf77e12CfDtUZLQ8aUxBB9LhYXXA9xNPe79a-iF5P6vHxU3VxpEleKs5O2D92_XMUGmnr75NUJNreXDntjh-uwwwyPaHHb2y12V8XNL09pxzEBKG_S8AXhTeTVKKYFFRntGvk7Elchg73JwUsY9cuG6P49g4RrN-Ke-2asuF2iuXUKlZ1efsB7y3UydjfwohTXOIcJ8KCW-tMDpaW47OH0iFyBOSSLP3a8SV90puFbyNjA6yEWN_ZuiqKWjhA" />
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center px-4">
+                        <div class="font-label-caps text-label-caps text-primary tracking-[0.5em] mb-4">THE SETTING
+                        </div>
+                        <h3 class="font-headline-lg text-headline-lg text-primary uppercase">WHERE POWER MEETS
+                            AESTHETICS</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section 6: Final CTA -->
+        <section class="py-40 px-16 text-center max-w-container-max mx-auto reveal">
+            <h2 class="font-headline-lg text-headline-lg text-primary uppercase mb-6">EQUIP YOUR JOURNEY</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
+                Join the global community of elite calisthenics practitioners. Our team is ready to help you configure
+                your professional training environment.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a class="bg-primary text-on-primary font-headline-md text-label-caps py-6 px-12 rounded-full uppercase transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3"
+                    href="#">
+                    EXPLORE PRODUCTS
+                </a>
+                <a class="bg-[#25D366] text-white font-headline-md text-label-caps py-6 px-12 rounded-full uppercase transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3"
+                    href="https://wa.me/yournumber">
+                    <span class="material-symbols-outlined" data-icon="chat">chat</span>
+                    WHATSAPP US
+                </a>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full border-t border-outline-variant bg-surface-container-lowest dark:bg-surface-container-lowest">
+        <div class="flex flex-col items-center py-20 px-16 w-full max-w-container-max mx-auto space-y-12">
+            <div class="font-headline-lg text-headline-lg text-primary uppercase">WATHBA</div>
+            <div class="flex flex-wrap justify-center gap-10">
+                <a class="text-on-surface-variant font-label-caps hover:text-primary transition-all active:underline uppercase"
+                    href="#">Privacy Policy</a>
+                <a class="text-on-surface-variant font-label-caps hover:text-primary transition-all active:underline uppercase"
+                    href="#">Terms of Service</a>
+                <a class="text-on-surface-variant font-label-caps hover:text-primary transition-all active:underline uppercase"
+                    href="#">Shipping</a>
+                <a class="text-on-surface-variant font-label-caps hover:text-primary transition-all active:underline uppercase"
+                    href="#">Returns</a>
+            </div>
+            <div class="font-body-md text-body-md text-on-surface-variant opacity-50">
+                © 2024 WATHBA. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+    <!-- BottomNavBar (Floating WhatsApp FAB) -->
+    <div class="fixed bottom-8 right-8 z-50 flex justify-end items-center">
+        <a class="bg-[#25D366] text-white p-4 rounded-full flex items-center justify-center shadow-[2px_2px_0px_white] hover:scale-110 active:scale-90 transition-all duration-200"
+            href="https://wa.me/yournumber" title="Order via WhatsApp">
+            <span class="material-symbols-outlined" data-icon="chat">chat</span>
+        </a>
+    </div>
+    <script>
+        // Micro-interactions and Scroll Reveal
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('section img');
+            if (heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.1}px) scale(1.05)`;
+            }
+        });
+    </script>
+</body>
+
+</html>

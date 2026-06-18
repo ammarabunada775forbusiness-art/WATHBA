@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>WATHBA | Contact Us</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid #1A1A1A;
+        }
+
+        body {
+            background-color: #000000;
+            color: #e5e2e1;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hero-text {
+            line-height: 0.9;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #ffffff !important;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#e2e2e2",
+                        "on-surface-variant": "#c4c7c8",
+                        "surface-tint": "#c6c6c7",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-surface": "#e5e2e1",
+                        "surface-bright": "#393939",
+                        "on-secondary": "#313030",
+                        "on-secondary-container": "#bab8b7",
+                        "secondary-container": "#4a4949",
+                        "on-error": "#690005",
+                        "inverse-primary": "#5d5f5f",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#ffffff",
+                        "tertiary-fixed-dim": "#3de273",
+                        "on-tertiary-container": "#007433",
+                        "on-tertiary-fixed": "#002109",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary": "#ffffff",
+                        "tertiary-container": "#66ff8e",
+                        "on-primary": "#2f3131",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#1a1c1c",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-variant": "#353535",
+                        "surface-dim": "#131313",
+                        "secondary": "#c9c6c5",
+                        "on-tertiary": "#003915",
+                        "tertiary-fixed": "#66ff8e",
+                        "error-container": "#93000a",
+                        "surface-container": "#20201f",
+                        "surface-container-highest": "#353535",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-on-surface": "#313030",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-primary-container": "#636565",
+                        "outline-variant": "#444748",
+                        "on-secondary-fixed-variant": "#474646",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed-variant": "#005322",
+                        "on-primary-fixed-variant": "#454747",
+                        "background": "#131313",
+                        "outline": "#8e9192",
+                        "error": "#ffb4ab",
+                        "surface": "#131313",
+                        "on-background": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Anton"],
+                        "display-hero": ["Anton"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "label-caps": ["Be Vietnam Pro"],
+                        "headline-lg": ["Anton"],
+                        "headline-md": ["Anton"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "arabic-support": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "display-hero": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "arabic-support": ["18px", { "lineHeight": "32px", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-background selection:bg-primary selection:text-black">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center px-6 md:px-16 h-20 w-full max-w-container-max mx-auto">
+            <div class="font-headline-md text-headline-md text-primary tracking-tighter uppercase">WATHBA</div>
+            <div class="hidden md:flex items-center space-x-12">
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps"
+                    href="#">Home</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps"
+                    href="#">Products</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300 font-label-caps text-label-caps"
+                    href="#">About</a>
+                <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-caps text-label-caps"
+                    href="#">Contact</a>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button class="hover:text-primary transition-colors duration-300">
+                    <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                </button>
+                <button class="md:hidden">
+                    <span class="material-symbols-outlined" data-icon="menu">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative min-h-[716px] flex flex-col justify-center px-6 md:px-16 py-20 overflow-hidden">
+            <div class="absolute inset-0 -z-10 opacity-40">
+
+            </div>
+            <div class="max-w-container-max mx-auto w-full relative">
+                <span class="font-label-caps text-label-caps tracking-[0.3em] text-primary mb-8 block">UNCOMPROMISING
+                    PERFORMANCE</span>
+                <h1 class="font-display-hero text-[80px] md:text-display-hero uppercase leading-none hero-text mb-12">
+                    LET’S BUILD<br />YOUR SETUP
+                </h1>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                    <!-- WhatsApp Primary CTA Card -->
+                    <div
+                        class="md:col-span-7 glass-card p-8 md:p-12 rounded-xl flex flex-col justify-between group overflow-hidden relative">
+                        <div class="relative z-10">
+                            <h2 class="font-headline-md text-headline-md mb-6 uppercase">Instant Support</h2>
+                            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-10">
+                                Connect with our equipment specialists directly. We offer personalized quotes and
+                                technical consultations via WhatsApp.
+                            </p>
+                        </div>
+                        <div class="relative z-10">
+                            <a class="inline-flex items-center space-x-4 bg-[#25D366] text-white px-8 py-4 rounded-full font-headline-md text-headline-md hover:scale-105 transition-transform duration-300"
+                                href="https://wa.me/#">
+                                <span class="material-symbols-outlined" data-icon="chat" data-weight="fill"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span>
+                                <span>CHAT ON WHATSAPP</span>
+                            </a>
+                        </div>
+                        <div
+                            class="absolute -right-20 -bottom-20 opacity-10 group-hover:opacity-20 transition-opacity duration-700">
+                            <span class="material-symbols-outlined text-[300px]" data-icon="bolt">bolt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Information Grid -->
+        <section class="px-6 md:px-16 py-20 bg-surface-container-lowest">
+            <div class="max-w-container-max mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                    <!-- Card 1 -->
+                    <div class="border border-outline-variant p-8 hover:bg-surface-variant/20 transition-colors">
+                        <span class="material-symbols-outlined text-primary mb-6" data-icon="call">call</span>
+                        <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2">WHATSAPP NUMBER</h3>
+                        <p class="font-headline-md text-headline-md text-primary">+962 7X XXX XXXX</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="border border-outline-variant p-8 hover:bg-surface-variant/20 transition-colors">
+                        <span class="material-symbols-outlined text-primary mb-6" data-icon="share">share</span>
+                        <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2">INSTAGRAM</h3>
+                        <p class="font-headline-md text-headline-md text-primary">@WATHBA_JO</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="border border-outline-variant p-8 hover:bg-surface-variant/20 transition-colors">
+                        <span class="material-symbols-outlined text-primary mb-6"
+                            data-icon="location_on">location_on</span>
+                        <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2">LOCATION</h3>
+                        <p class="font-headline-md text-headline-md text-primary">AMMAN, JORDAN</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="border border-outline-variant p-8 hover:bg-surface-variant/20 transition-colors">
+                        <span class="material-symbols-outlined text-primary mb-6" data-icon="schedule">schedule</span>
+                        <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2">WORKING HOURS</h3>
+                        <p class="font-headline-md text-headline-md text-primary uppercase">SUN-THU, 9AM-6PM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Visual Form Section -->
+        <section
+            class="px-6 md:px-16 py-32 grid grid-cols-1 lg:grid-cols-2 gap-24 items-start max-w-container-max mx-auto">
+            <div class="sticky top-32">
+                <h2 class="font-headline-lg text-headline-lg uppercase mb-8">INQUIRY<br />DETAILS</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-md">
+                    Tell us about your space and goals. Whether you're building a home gym or a professional
+                    calisthenics park, we've got the expertise to guide you.
+                </p>
+                <div class="w-full aspect-video rounded-lg overflow-hidden border border-outline-variant">
+                    <img alt="Athletic Gym" class="w-full h-full object-cover grayscale brightness-75"
+                        data-alt="A cinematic, high-contrast photograph of a minimalist calisthenics training facility in Amman, Jordan. The space features matte black steel pull-up bars and parallel bars against a dark charcoal concrete wall. High-key dramatic side lighting highlights the metallic textures and creating deep shadows. The atmosphere is intense, professional, and captures the elite athletic editorial luxe aesthetic of the brand."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk8nxcTZc0KjghT2CIs-Lw05clXYLUA2t78eu9_8A0LVYrWj6htNZnCX-5oIqa8-wE5SlcLGrXi1skhoihZfSCf2Uf5DHZwHmKZOfCjI7r4yX_CzRq2OByk2ln2y8p1csuM-X3Ewy4w-jMJv8ZFkj2Log7S__XGEpayC97iN88rsGf-ar-7u87DxcSAfc6GmXDieATUMBVci4CQg_4HNnw5qEVNkNeae6qJarKtl-jymsqdm8sx1aRGrcz1ijBXbGoXFzr_anfJw" />
+                </div>
+            </div>
+            <div class="glass-card p-10 md:p-16 rounded-xl border border-outline-variant/30">
+                <form class="space-y-12">
+                    <div class="space-y-2 group">
+                        <label
+                            class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">FULL
+                            NAME</label>
+                        <input
+                            class="w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary"
+                            placeholder="YOUR NAME" type="text" />
+                    </div>
+                    <div class="space-y-2 group">
+                        <label
+                            class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">PHONE
+                            NUMBER</label>
+                        <input
+                            class="w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary"
+                            placeholder="+962" type="tel" />
+                    </div>
+                    <div class="space-y-2 group">
+                        <label
+                            class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">MESSAGE
+                            / EQUIPMENT SPECS</label>
+                        <textarea
+                            class="w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary resize-none"
+                            placeholder="WHAT ARE YOU LOOKING FOR?" rows="4"></textarea>
+                    </div>
+                    <button
+                        class="w-full flex items-center justify-center space-x-4 bg-primary text-black py-6 rounded-full font-headline-md text-headline-md hover:bg-[#25D366] hover:text-white transition-all duration-500 group"
+                        type="submit">
+                        <span>SEND VIA WHATSAPP</span>
+                        <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform"
+                            data-icon="send">send</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+        <section class="px-6 md:px-16 py-32 border-t border-outline-variant/10">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-headline-lg text-headline-lg uppercase mb-20 text-center">FREQUENTLY ASKED</h2>
+                <div class="space-y-8">
+                    <!-- Q1 -->
+                    <div class="border-b border-outline-variant/30 pb-8 group cursor-pointer"
+                        onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-headline-md text-headline-md uppercase">HOW DO I ORDER?</h3>
+                            <span
+                                class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-45"
+                                data-icon="add">add</span>
+                        </div>
+                        <div class="hidden group-[.active]:block transition-all duration-500">
+                            <p class="font-body-lg text-body-lg text-on-surface-variant">All orders are processed
+                                through WhatsApp for personalized verification. Simply send us a message with your
+                                requirements, and we'll generate a formal quote.</p>
+                        </div>
+                    </div>
+                    <!-- Q2 -->
+                    <div class="border-b border-outline-variant/30 pb-8 group cursor-pointer"
+                        onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-headline-md text-headline-md uppercase">ARE PRICES FIXED?</h3>
+                            <span
+                                class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-45"
+                                data-icon="add">add</span>
+                        </div>
+                        <div class="hidden group-[.active]:block">
+                            <p class="font-body-lg text-body-lg text-on-surface-variant">While basic equipment has
+                                listed prices, custom rigs and large-scale installations depend on specific dimensions
+                                and powder coating finishes. We provide fixed quotes before any commitment.</p>
+                        </div>
+                    </div>
+                    <!-- Q3 -->
+                    <div class="border-b border-outline-variant/30 pb-8 group cursor-pointer"
+                        onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-headline-md text-headline-md uppercase">DO YOU DELIVER?</h3>
+                            <span
+                                class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-45"
+                                data-icon="add">add</span>
+                        </div>
+                        <div class="hidden group-[.active]:block">
+                            <p class="font-body-lg text-body-lg text-on-surface-variant">Yes, we deliver and provide
+                                installation services across all governorates of Jordan. Shipping costs vary based on
+                                the weight and destination.</p>
+                        </div>
+                    </div>
+                    <!-- Q4 -->
+                    <div class="border-b border-outline-variant/30 pb-8 group cursor-pointer"
+                        onclick="this.classList.toggle('active')">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-headline-md text-headline-md uppercase">CAN I CUSTOMIZE EQUIPMENT?</h3>
+                            <span
+                                class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-45"
+                                data-icon="add">add</span>
+                        </div>
+                        <div class="hidden group-[.active]:block">
+                            <p class="font-body-lg text-body-lg text-on-surface-variant">Customization is our specialty.
+                                We can tailor bar heights, widths, and color schemes to fit your specific training space
+                                or brand identity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant">
+        <div class="flex flex-col items-center py-20 px-6 md:px-16 w-full max-w-container-max mx-auto space-y-12">
+            <div class="font-headline-lg text-headline-lg text-primary uppercase">WATHBA</div>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all"
+                    href="#">Privacy Policy</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all"
+                    href="#">Terms of Service</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all"
+                    href="#">Shipping</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-all"
+                    href="#">Returns</a>
+            </div>
+            <div class="text-on-surface-variant font-label-caps text-label-caps">
+                © 2024 WATHBA. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </footer>
+    <!-- BottomNavBar (FAB) -->
+    <div class="fixed bottom-8 right-8 z-50 flex justify-end items-center">
+        <a class="bg-[#25D366] text-white p-4 rounded-full flex items-center justify-center shadow-[2px_2px_0px_white] hover:scale-110 transition-transform duration-200 active:scale-90 group"
+            href="https://wa.me/#">
+            <span class="material-symbols-outlined text-3xl" data-icon="chat" data-weight="fill"
+                style="font-variation-settings: 'FILL' 1;">chat</span>
+            <span
+                class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 font-label-caps uppercase whitespace-nowrap">ORDER
+                NOW</span>
+        </a>
+    </div>
+    <script>
+        // Simple Micro-interaction for FAQ toggles
+        document.querySelectorAll('.group.cursor-pointer').forEach(item => {
+            item.addEventListener('click', () => {
+                const isCurrentlyActive = item.classList.contains('active');
+                // Optional: Close others
+                // document.querySelectorAll('.group.cursor-pointer').forEach(el => el.classList.remove('active'));
+                if (!isCurrentlyActive) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

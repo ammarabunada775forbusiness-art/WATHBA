@@ -1,71 +1,517 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
+<html class="dark" lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>WATHBA | Premium Equipment</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Theme Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary": "#ffffff",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-background": "#e5e2e1",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-tertiary-container": "#007433",
+                        "on-primary-fixed": "#1a1c1c",
+                        "tertiary-fixed": "#66ff8e",
+                        "on-tertiary": "#003915",
+                        "on-secondary": "#313030",
+                        "tertiary-container": "#66ff8e",
+                        "on-secondary-container": "#bab8b7",
+                        "surface-container-high": "#2a2a2a",
+                        "surface": "#131313",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#e2e2e2",
+                        "surface-container-highest": "#353535",
+                        "primary-container": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#005322",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-variant": "#353535",
+                        "secondary-container": "#4a4949",
+                        "background": "#131313",
+                        "surface-dim": "#131313",
+                        "tertiary-fixed-dim": "#3de273",
+                        "on-primary-fixed-variant": "#454747",
+                        "on-tertiary-fixed": "#002109",
+                        "error": "#ffb4ab",
+                        "secondary": "#c9c6c5",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-fixed-dim": "#c9c6c5",
+                        "on-primary": "#2f3131",
+                        "surface-container-lowest": "#0e0e0e",
+                        "inverse-on-surface": "#313030",
+                        "surface-bright": "#393939",
+                        "primary": "#ffffff",
+                        "inverse-primary": "#5d5f5f",
+                        "surface-tint": "#c6c6c7",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#444748",
+                        "surface-container": "#20201f",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "outline": "#8e9192",
+                        "on-surface": "#e5e2e1",
+                        "on-primary-container": "#636565",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Be Vietnam Pro"],
+                        "display-hero": ["Anton"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "arabic-support": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Anton"],
+                        "headline-md": ["Anton"],
+                        "headline-lg": ["Anton"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-hero": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "arabic-support": ["18px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "letterSpacing": "0em", "fontWeight": "400" }],
+                        "headline-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.01em", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #e5e2e1;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            overflow-x: hidden;
+        }
 
-    <title>وثبة | المنتجات</title>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
+        .glass-panel {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid #1A1A1A;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .whatsapp-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .diagonal-bg {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+    </style>
 </head>
 
-<body data-theme="light">
-
-    <header class="navbar">
-        <a href="index.html" class="logo" data-i18n="brand">وثبة</a>
-
-        <nav>
-            <a href="index.html" data-i18n="navHome">الرئيسية</a>
-            <a href="products.html" data-i18n="navProducts">المنتجات</a>
-            <a href="about.html" data-i18n="navAbout">من نحن</a>
-            <a href="contact.html" data-i18n="navContact">تواصل معنا</a>
-        </nav>
-
-        <div class="nav-actions">
-            <button id="themeToggle" class="icon-btn" type="button">🌙</button>
-            <button id="langToggle" class="lang-btn" type="button">EN</button>
+<body class="dark bg-background text-on-surface">
+    <!-- TopAppBar Shell -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="font-headline-md text-headline-md uppercase tracking-tighter text-primary">
+                WATHBA
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Home</a>
+                <a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1"
+                    href="#">Products</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">About</a>
+                <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span
+                    class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-all">language</span>
+                <span
+                    class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-all">dark_mode</span>
+            </div>
         </div>
-    </header>
-
-    <main>
-
-        <section class="page-hero">
-            <p data-i18n="productsPageMini">متجر وثبة</p>
-            <h1 data-i18n="productsPageTitle">اختر معداتك وابدأ التقدم</h1>
-            <span data-i18n="productsPageText">
-                تصفح معدات الكاليستنكس المختارة بعناية، واطلب مباشرة عبر واتساب.
-            </span>
+    </nav>
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="px-margin-desktop max-w-container-max mx-auto mb-20 relative overflow-hidden">
+            <div class="absolute -top-20 -right-20 opacity-10">
+                <span class="font-display-hero text-[300px] leading-none select-none">WATHBA</span>
+            </div>
+            <h1 class="font-display-hero text-display-hero uppercase relative z-10">
+                Equipment
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4">
+                Engineered for peak performance. Professional-grade calisthenics tools designed for athletes who demand
+                uncompromising quality and durability.
+            </p>
         </section>
-
-        <section class="products-section">
-            <div class="filters" id="categoryFilters"></div>
-
-            <div class="products-grid" id="allProducts"></div>
+        <!-- Filters -->
+        <section class="px-margin-desktop max-w-container-max mx-auto mb-12">
+            <div class="flex flex-wrap gap-4 items-center">
+                <button
+                    class="bg-primary text-background px-8 py-3 rounded-full font-label-caps text-label-caps uppercase transition-transform active:scale-95">All
+                    Equipment</button>
+                <button
+                    class="border border-outline-variant/30 text-on-surface-variant px-8 py-3 rounded-full font-label-caps text-label-caps uppercase hover:border-primary hover:text-primary transition-all">Bars</button>
+                <button
+                    class="border border-outline-variant/30 text-on-surface-variant px-8 py-3 rounded-full font-label-caps text-label-caps uppercase hover:border-primary hover:text-primary transition-all">Rings</button>
+                <button
+                    class="border border-outline-variant/30 text-on-surface-variant px-8 py-3 rounded-full font-label-caps text-label-caps uppercase hover:border-primary hover:text-primary transition-all">Accessories</button>
+                <button
+                    class="border border-outline-variant/30 text-on-surface-variant px-8 py-3 rounded-full font-label-caps text-label-caps uppercase hover:border-primary hover:text-primary transition-all">Rigs</button>
+            </div>
         </section>
-
+        <!-- Product Grid -->
+        <section class="px-margin-desktop max-w-container-max mx-auto pb-40">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                <!-- Product Card 1 -->
+                <div
+                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="High-contrast studio photography of a premium steel pull-up bar mounted on a dark textured wall. The lighting is cinematic, highlighting the metallic texture and muscular tension associated with calisthenics. The overall aesthetic is dark sports-tech with deep blacks and sharp highlights, emphasizing professional-grade durability."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfkexQjd3qE0G6kif7vBWBtpiPR-n-2yYdwwCUZEC2e5jqfw0SqAjFH0zYi1G-y6pJbjoHeEXf8qxIswNhFlUOjR6zlJpHqJPIY_v6OzT4l-hSAjLGh-7upNZ57cpjmIvuTgE9RCBDZPWOTOacrjn1ks854VmiMbbuVVFkgzP5We5CepmHr4mvx0uSdGY5LgBRkNkQibpbkwKRRx9nEsq3T9g1T3zxqOY7uEJbffozOBohXGP2QCNJd7OjIFF1m3sEqPhRSGqbBw" />
+                        <div
+                            class="product-overlay absolute inset-0 bg-background/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4">
+                            <span class="font-label-caps text-label-caps text-primary mb-2">Standard Sizes
+                                Available</span>
+                            <div class="flex gap-2">
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold">FIXED</span>
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold">EXTENDABLE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-headline-md text-headline-md uppercase">Pull-up Bar</h3>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">BARS</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Heavy-duty reinforced steel construction with textured grip coating for ultimate stability.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">JOD — Price on
+                                Request</span>
+                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
+                                href="https://wa.me/123456789">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span> ORDER
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div
+                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Sleek wooden parallettes crafted from premium ash wood, presented in a minimalist high-contrast setting. The wood grain is sharp and detailed, under cool-toned professional lighting. The background is a deep matte black, creating a high-fashion fitness aesthetic that focuses on the organic material and precision engineering."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYB8tqXcSeQ00VVpV_QlrQjfb1AuRQyMAZ-344RvEoLphja-M26LLdj9CUKLVpafBloz54KafnEsLmCY5hQEf69lOQ0tjOmJpboT-K3d7td0mfouamzk8LX4d5N-QbNG9b_QD63S240XSbB_zVCbOHBGhL5Q4LYYKZyGMG0WMMRK-MNnr3gdYtGK7dU7JkobeJXJycEtlQdj50jVdBe00tdF-hvbXbKoZ_LKIgOK71RisrE-A3sbRZe5WaHSRqzzmyjn5VqipGZg" />
+                        <div
+                            class="product-overlay absolute inset-0 bg-background/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4">
+                            <span class="font-label-caps text-label-caps text-primary mb-2">Select Height</span>
+                            <div class="flex gap-2">
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Small</span>
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Medium</span>
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Large</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-headline-md text-headline-md uppercase">Wooden Parallettes</h3>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">HANDLES</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Premium handcrafted ash wood with non-slip bases for perfect handstand and planche practice.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">Price on
+                                request</span>
+                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
+                                href="#">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span> ORDER
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div
+                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Industrial style dip bars made of thick black powder-coated steel. The image captures the sharp angles and robust welding in a moody, low-light gym environment. Dramatic highlights pick out the edges of the bars against a pitch-black background, conveying a sense of extreme strength and elite sports technology."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw8WZasaNxcQA38rCK6HxDRelMTdKJxVJVlPGtNOTp_c2e0c3wzQpSl1y2Gp00eDn7oaJ0vvgoAtTH02T2oEQqSeoLzo9-wLY-4JPSwYNl9Ep7jutURrWMv6_aa_ViYeGZDvoVkMVM_2TNDk2d8Oj2g3gPbVRGLls6tq4QMG2saAKwyshKA80susXmZ0Lbs6cNiOJWV-zKf2sguWxoxlYhIUK87uVmNHAQ8PoNh-5B7XcRG3SX3onuW_jCfUrYEyRL5KeslsXVkw" />
+                        <div
+                            class="product-overlay absolute inset-0 bg-background/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4">
+                            <span class="font-label-caps text-label-caps text-primary mb-2">Variants</span>
+                            <div class="flex gap-2">
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Standard</span>
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Pro</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-headline-md text-headline-md uppercase">Dip Bars</h3>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">BARS</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Ultra-stable free-standing dip station. Professional height for full range of motion.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">JOD — Ask for
+                                Price</span>
+                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
+                                href="#">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span> ORDER
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 4 -->
+                <div
+                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Professional gymnastics rings made of textured birch wood with heavy-duty nylon straps. The focus is on the intricate wood texture and the robust buckle mechanism. Set in a dark, atmospheric athletic studio with soft top-down lighting that creates long, elegant shadows. The palette is strictly grayscale with high-end editorial clarity."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0-MhLsP_6ihoAaKfINnL_5XPqVO5kXpqB0YgmAaIOtOotFb3LEHXzga4XNdgRrKjwVnxtta73NsWAdSYSPi4poK7O3-i8lhGgbQl1frPTAeOlUN1vFOFarvu1xS-s0Cl_z_OyM_bvZtWj4l7nFG58iXjRQYNnP-ZzMr1cVExYAJiz1jqxIQf7BII6VZ9aIrk-yYjYSInS8t9yeaIGD93HXgwPN1vZBR13Womlyd8C-TPBBtY3o4LT9kXe_RBMDd8Tis7eozUlvg" />
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-headline-md text-headline-md uppercase">Gymnastic Rings</h3>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">RINGS</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Olympic standard birch rings with reinforced numbered straps for precise height adjustment.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">Price on
+                                request</span>
+                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
+                                href="#">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span> ORDER
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 5 -->
+                <div
+                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Large-scale outdoor calisthenics multi rig structure made of matte black steel. The architectural lines of the monkey bars and pull-up stations are captured against a dark twilight sky. High-contrast lighting emphasizes the geometric precision and massive scale of the equipment, reflecting a premium sports-tech and architectural vibe."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA4acp6wZXFaFVIlZ61CGYOaz5nsgBJpTe7x6fz-zQB7XbXvxQX_F5AB_nco8kEiNF1fInwYZ50EpFhkKSrByl10kSvx0XFX518oD0PJnsyUf6TtzezPttS6Arg7goyUHputiXOVPyrOE2pm9CApGj9C8umcbptSCJkN1PQlKscxKh0coSlkpXwlEJSONSs3TxrP1z_j_3P90zR-YkfWwMANYzjZeqUAjeVFtTYZxyTRjeJKxRX3SM6GIhZ4PvA0lRztCKl-UMkw" />
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-headline-md text-headline-md uppercase">Multi Rig</h3>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">RIGS</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Complete custom training station. Includes monkey bars, multiple pull-up heights, and dip
+                            stations.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">Price on
+                                request</span>
+                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
+                                href="#">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span> ORDER
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 6 -->
+                <div
+                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            data-alt="Macro photography of professional resistance bands with different thicknesses and textures. The lighting highlights the matte finish of the rubber against a deep black backdrop. The composition is artistic and high-fashion, treating the equipment like luxury technical accessories with a monochromatic black and white color palette."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrTC_inPxGE_PjaP2fVdusL7jZ-6bUKZhNNF6pGGJV1EisrfLwMi5megkxosUnlote8JEvj1pet7Ksl5fQLnBgDMtfMzZDZn8GkFJEX_fLaWzNfwcQIWeuZ6sEcqyMjblIlkTyVd1EWZKYyrh1rwLeTeI-EW6275IoD8QSS02zIDeDJ1wwWfNTAsXPdpIBL4Rc6RLqIoCJjLHEyOh5G9dcvpotyYBIMqefd62Jd5SIahnDG-AFPhTDW8ocnJ0W8ZIvQt4ksS_YaA" />
+                        <div
+                            class="product-overlay absolute inset-0 bg-background/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4">
+                            <span class="font-label-caps text-label-caps text-primary mb-2">Tensions</span>
+                            <div class="flex gap-2">
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Light</span>
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Med</span>
+                                <span
+                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Heavy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-headline-md text-headline-md uppercase">Resistance Bands</h3>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant">ACCESSORIES</span>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                            Premium latex-free elastic bands for mobility work and weighted exercise assistance.
+                        </p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">Price on
+                                request</span>
+                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
+                                href="#">
+                                <span class="material-symbols-outlined text-[18px]"
+                                    style="font-variation-settings: 'FILL' 1;">chat</span> ORDER
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fixed WhatsApp Floating Action -->
+        <a class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center whatsapp-pulse shadow-xl hover:scale-110 transition-transform active:scale-95 group"
+            href="https://wa.me/123456789">
+            <span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">chat</span>
+            <div
+                class="absolute right-20 bg-surface px-4 py-2 rounded-lg border border-outline-variant/30 text-xs font-label-caps whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                ASK US ON WHATSAPP
+            </div>
+        </a>
     </main>
-
-    <footer>
-        <p data-i18n="footerText">© 2026 وثبة. جميع الحقوق محفوظة.</p>
+    <!-- Footer Shell -->
+    <footer class="w-full pt-20 pb-10 bg-surface-container-lowest border-t border-outline-variant/20">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+            <div class="md:col-span-4">
+                <div class="font-headline-lg text-headline-lg uppercase text-primary mb-6">WATHBA</div>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    The peak of physical performance. Exclusive calisthenics equipment for elite athletes.
+                </p>
+            </div>
+            <div class="md:col-span-2">
+                <h4 class="font-label-caps text-label-caps text-primary mb-6">QUICK LINKS</h4>
+                <div class="flex flex-col gap-4">
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Home</a>
+                    <a class="font-body-md text-body-md text-primary font-bold" href="#">Products</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">About</a>
+                </div>
+            </div>
+            <div class="md:col-span-2">
+                <h4 class="font-label-caps text-label-caps text-primary mb-6">LEGAL</h4>
+                <div class="flex flex-col gap-4">
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Privacy Policy</a>
+                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
+                        href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="md:col-span-4 flex flex-col items-start md:items-end">
+                <h4 class="font-label-caps text-label-caps text-primary mb-6">CONTACT US</h4>
+                <a class="bg-[#25D366] text-white px-8 py-4 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity active:opacity-70 mb-4"
+                    href="#">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span> CHAT
+                    ON WHATSAPP
+                </a>
+                <span class="font-label-caps text-label-caps text-on-surface-variant">AMMAN, JORDAN</span>
+            </div>
+        </div>
+        <div
+            class="mt-20 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-outline-variant/10">
+            <span class="font-label-caps text-[10px] text-on-surface-variant tracking-widest uppercase">© 2024 WATHBA.
+                ALL RIGHTS RESERVED.</span>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <span
+                    class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">face_nod</span>
+                <span
+                    class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">public</span>
+                <span
+                    class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">video_library</span>
+            </div>
+        </div>
     </footer>
-    <a class="floating-whatsapp" href="https://wa.me/9627XXXXXXXX" target="_blank" aria-label="WhatsApp">
-        <span class="whatsapp-tooltip" data-i18n="floatingWhatsapp">راسلنا</span>
+    <script>
+        // Simple filter interaction simulation
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // If it's a category button (not a WhatsApp one)
+                if (btn.innerText.length > 5 && !btn.innerText.includes('ORDER')) {
+                    buttons.forEach(b => {
+                        if (b.classList.contains('bg-primary')) {
+                            b.classList.remove('bg-primary', 'text-background');
+                            b.classList.add('border', 'border-outline-variant/30', 'text-on-surface-variant');
+                        }
+                    });
+                    btn.classList.add('bg-primary', 'text-background');
+                    btn.classList.remove('border', 'border-outline-variant/30', 'text-on-surface-variant');
+                }
+            });
+        });
 
-        <span class="whatsapp-icon">
-            <svg viewBox="0 0 32 32" aria-hidden="true">
-                <path
-                    d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z" />
-                <path
-                    d="M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z" />
-            </svg>
-        </span>
-    </a>
-    <script src="assets/js/translations.js"></script>
-    <script src="assets/js/products-data.js"></script>
-    <script src="assets/js/whatsapp.js"></script>
-    <script src="assets/js/products.js"></script>
+        // Hover effect micro-interaction (already handled by CSS for simple transition)
+        // Adding a subtle mouse trail or glow would enhance the 'tech' feel
+        document.addEventListener('mousemove', (e) => {
+            // Optional: performance heavy for small screens, so skip or use simple CSS glow
+        });
+    </script>
 </body>
 
 </html>
