@@ -794,6 +794,159 @@
     }
   </style>
   <!-- WATHBA_MOBILE_POLISH_END -->
+
+  <!-- WATHBA_CONTACT_FORM_FIX_START -->
+  <style id="wathba-contact-form-fix">
+    .wathba-contact-error {
+      border-color: #ff5a5a !important;
+    }
+
+    .wathba-contact-note {
+      display: none;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(37, 211, 102, 0.12);
+      border: 1px solid rgba(37, 211, 102, 0.45);
+      color: #ffffff;
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .wathba-contact-note.show {
+      display: block;
+    }
+
+    @media (max-width: 767px) {
+
+      /* صفحة التواصل Mobile First */
+      main.pt-20 {
+        padding-top: 76px !important;
+      }
+
+      main>section:first-child {
+        min-height: auto !important;
+        padding-top: 46px !important;
+        padding-bottom: 60px !important;
+      }
+
+      main>section:first-child h1 {
+        font-size: clamp(54px, 17vw, 72px) !important;
+        line-height: 0.92 !important;
+        margin-bottom: 32px !important;
+      }
+
+      main>section:first-child .glass-card {
+        padding: 26px !important;
+      }
+
+      main>section:first-child .glass-card h2 {
+        font-size: 30px !important;
+        line-height: 1.1 !important;
+      }
+
+      main>section:first-child .glass-card p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+      }
+
+      main>section:first-child .glass-card a {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 14px 18px !important;
+        font-size: 22px !important;
+      }
+
+      /* كروت معلومات التواصل */
+      main section:nth-of-type(2) {
+        padding-top: 46px !important;
+        padding-bottom: 46px !important;
+      }
+
+      main section:nth-of-type(2) .grid {
+        gap: 16px !important;
+      }
+
+      main section:nth-of-type(2) .border {
+        padding: 22px !important;
+      }
+
+      main section:nth-of-type(2) p {
+        font-size: 25px !important;
+        line-height: 1.1 !important;
+        word-break: break-word !important;
+      }
+
+      /* قسم الفورم */
+      main section:nth-of-type(3) {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+        gap: 46px !important;
+      }
+
+      main section:nth-of-type(3) .sticky {
+        position: relative !important;
+        top: auto !important;
+      }
+
+      main section:nth-of-type(3) h2 {
+        font-size: 46px !important;
+        line-height: 0.98 !important;
+      }
+
+      main section:nth-of-type(3) p {
+        font-size: 15px !important;
+        line-height: 1.75 !important;
+      }
+
+      main section:nth-of-type(3) .glass-card {
+        padding: 26px !important;
+        border-radius: 18px !important;
+      }
+
+      main section:nth-of-type(3) form {
+        gap: 0 !important;
+      }
+
+      main section:nth-of-type(3) input,
+      main section:nth-of-type(3) textarea {
+        font-size: 25px !important;
+        line-height: 1.15 !important;
+        padding-top: 14px !important;
+        padding-bottom: 14px !important;
+      }
+
+      main section:nth-of-type(3) textarea {
+        min-height: 130px !important;
+      }
+
+      main section:nth-of-type(3) button[type="submit"] {
+        padding-top: 18px !important;
+        padding-bottom: 18px !important;
+        font-size: 26px !important;
+        line-height: 1 !important;
+      }
+
+      /* FAQ */
+      main section:nth-of-type(4) {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+      }
+
+      main section:nth-of-type(4) h2 {
+        font-size: 44px !important;
+        line-height: 1 !important;
+        margin-bottom: 48px !important;
+      }
+
+      main section:nth-of-type(4) h3 {
+        font-size: 25px !important;
+        line-height: 1.15 !important;
+      }
+    }
+  </style>
+  <!-- WATHBA_CONTACT_FORM_FIX_END -->
 </head>
 
 <body class="bg-background text-on-background selection:bg-primary selection:text-black">
@@ -889,7 +1042,7 @@
           <div class="border border-outline-variant p-8 hover:bg-surface-variant/20 transition-colors">
             <span class="material-symbols-outlined text-primary mb-6" data-icon="call">call</span>
             <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2">WHATSAPP NUMBER</h3>
-            <p class="font-headline-md text-headline-md text-primary">+962 7X XXX XXXX</p>
+            <p class="font-headline-md text-headline-md text-primary">+962 79 175 2349</p>
           </div>
           <!-- Card 2 -->
           <div class="border border-outline-variant p-8 hover:bg-surface-variant/20 transition-colors">
@@ -1197,6 +1350,114 @@
     })();
   </script>
   <!-- WATHBA_GLOBAL_UI_END -->
+
+  <!-- WATHBA_CONTACT_FORM_JS_START -->
+  <script id="wathba-contact-form-js">
+    (function () {
+      const WATHBA_PHONE = "962791752349";
+
+      const form = document.querySelector(".glass-card form");
+
+      if (!form) return;
+
+      const inputs = form.querySelectorAll("input");
+      const textarea = form.querySelector("textarea");
+
+      const nameInput = inputs[0];
+      const phoneInput = inputs[1];
+      const messageInput = textarea;
+
+      const note = document.createElement("div");
+      note.className = "wathba-contact-note";
+      note.textContent = "Opening WhatsApp with your message...";
+      form.appendChild(note);
+
+      function getCurrentLang() {
+        return localStorage.getItem("wathbaLang") || "en";
+      }
+
+      function clearErrors() {
+        [nameInput, phoneInput, messageInput].forEach((field) => {
+          if (field) field.classList.remove("wathba-contact-error");
+        });
+      }
+
+      function validateField(field) {
+        if (!field) return false;
+
+        const value = field.value.trim();
+
+        if (!value) {
+          field.classList.add("wathba-contact-error");
+          return false;
+        }
+
+        field.classList.remove("wathba-contact-error");
+        return true;
+      }
+
+      function buildWhatsAppMessage() {
+        const lang = getCurrentLang();
+
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const message = messageInput.value.trim();
+
+        if (lang === "ar") {
+          return `مرحبا WATHBA، أريد الاستفسار عن تجهيزات كاليسثنكس.
+
+الاسم: ${name}
+رقم الهاتف: ${phone}
+
+الطلب / التفاصيل:
+${message}`;
+        }
+
+        return `Hello WATHBA, I want to ask about calisthenics equipment.
+
+Name: ${name}
+Phone: ${phone}
+
+Request / details:
+${message}`;
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        clearErrors();
+
+        const isNameValid = validateField(nameInput);
+        const isPhoneValid = validateField(phoneInput);
+        const isMessageValid = validateField(messageInput);
+
+        if (!isNameValid || !isPhoneValid || !isMessageValid) {
+          note.classList.add("show");
+          note.style.background = "rgba(255, 90, 90, 0.12)";
+          note.style.borderColor = "rgba(255, 90, 90, 0.45)";
+          note.textContent =
+            getCurrentLang() === "ar"
+              ? "عبّي الاسم ورقم الهاتف والرسالة قبل الإرسال."
+              : "Please fill in your name, phone number, and message before sending.";
+          return;
+        }
+
+        note.classList.add("show");
+        note.style.background = "rgba(37, 211, 102, 0.12)";
+        note.style.borderColor = "rgba(37, 211, 102, 0.45)";
+        note.textContent =
+          getCurrentLang() === "ar"
+            ? "جاري فتح واتساب بالرسالة..."
+            : "Opening WhatsApp with your message...";
+
+        const finalMessage = buildWhatsAppMessage();
+        const whatsappUrl = `https://wa.me/${WATHBA_PHONE}?text=${encodeURIComponent(finalMessage)}`;
+
+        window.open(whatsappUrl, "_blank");
+      });
+    })();
+  </script>
+  <!-- WATHBA_CONTACT_FORM_JS_END -->
 </body>
 
 </html>
