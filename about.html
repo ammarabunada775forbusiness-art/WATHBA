@@ -397,6 +397,77 @@
   }
 </style>
 <!-- WATHBA_GLOBAL_UI_END -->
+<!-- WATHBA_MOBILE_FIRST_FIX_START -->
+<style id="wathba-mobile-first-fix">
+  @media (max-width: 1024px) {
+    .wathba-menu-toggle {
+      display: inline-flex !important;
+    }
+
+    .wathba-top-tools {
+      top: 16px !important;
+      right: 18px !important;
+      z-index: 100000 !important;
+      gap: 8px !important;
+    }
+
+    .wathba-lang-btn,
+    .wathba-menu-toggle {
+      min-width: 46px !important;
+      height: 46px !important;
+    }
+
+    nav .hidden.md\:flex,
+    header .hidden.md\:flex,
+    nav .hidden,
+    header .hidden {
+      display: none !important;
+    }
+
+    nav [class*="px-margin-desktop"],
+    header [class*="px-margin-desktop"],
+    nav [class*="px-16"],
+    header [class*="px-16"],
+    nav [class*="md:px-16"],
+    header [class*="md:px-16"] {
+      padding-left: 20px !important;
+      padding-right: 126px !important;
+    }
+
+    nav,
+    header {
+      min-height: 76px !important;
+    }
+
+    .wathba-mobile-menu {
+      top: 84px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .wathba-lang-btn,
+    .wathba-menu-toggle {
+      min-width: 42px !important;
+      height: 42px !important;
+      font-size: 11px !important;
+    }
+
+    .wathba-top-tools {
+      right: 14px !important;
+    }
+
+    nav [class*="px-margin-desktop"],
+    header [class*="px-margin-desktop"],
+    nav [class*="px-16"],
+    header [class*="px-16"],
+    nav [class*="md:px-16"],
+    header [class*="md:px-16"] {
+      padding-left: 16px !important;
+      padding-right: 112px !important;
+    }
+  }
+</style>
+<!-- WATHBA_MOBILE_FIRST_FIX_END -->
 </head>
 
 <body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
@@ -762,5 +833,6 @@
 </body>
 
 </html>
+
 
 
