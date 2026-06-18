@@ -1502,3 +1502,74 @@ header.fixed .wathba-nav-logo,
     font-size: 34px !important;
   }
 }
+
+/* FINAL FIX: Arabic mode must never resize WATHBA logo */
+html[data-wathba-lang="ar"] nav.fixed .wathba-nav-logo,
+html[data-wathba-lang="ar"] header.fixed .wathba-nav-logo,
+html[data-wathba-lang="ar"] .wathba-nav-logo,
+html[data-wathba-lang="ar"] nav.fixed .wathba-logo,
+html[data-wathba-lang="ar"] header.fixed .wathba-logo,
+html[data-wathba-lang="ar"] .wathba-logo,
+nav.fixed .wathba-nav-logo,
+header.fixed .wathba-nav-logo,
+.wathba-nav-logo {
+  font-family: "Anton", sans-serif !important;
+  font-size: 64px !important;
+  line-height: 0.88 !important;
+  letter-spacing: -0.045em !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  opacity: 1 !important;
+  transform: none !important;
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
+/* لا تجعل قاعدة تكبير العربي تلمس اللوغو */
+html[data-wathba-lang="ar"] a.wathba-logo,
+html[data-wathba-lang="ar"] a.wathba-nav-logo {
+  font-size: 64px !important;
+  line-height: 0.88 !important;
+  letter-spacing: -0.045em !important;
+}
+
+/* Mobile logo */
+@media (max-width: 1024px) {
+
+  html[data-wathba-lang="ar"] nav.fixed .wathba-nav-logo,
+  html[data-wathba-lang="ar"] header.fixed .wathba-nav-logo,
+  html[data-wathba-lang="ar"] .wathba-nav-logo,
+  nav.fixed .wathba-nav-logo,
+  header.fixed .wathba-nav-logo,
+  .wathba-nav-logo {
+    font-size: 40px !important;
+    line-height: 0.9 !important;
+  }
+
+  html[data-wathba-lang="ar"] a.wathba-logo,
+  html[data-wathba-lang="ar"] a.wathba-nav-logo {
+    font-size: 40px !important;
+    line-height: 0.9 !important;
+  }
+}
+
+@media (max-width: 430px) {
+
+  html[data-wathba-lang="ar"] nav.fixed .wathba-nav-logo,
+  html[data-wathba-lang="ar"] header.fixed .wathba-nav-logo,
+  html[data-wathba-lang="ar"] .wathba-nav-logo,
+  nav.fixed .wathba-nav-logo,
+  header.fixed .wathba-nav-logo,
+  .wathba-nav-logo {
+    font-size: 34px !important;
+  }
+
+  html[data-wathba-lang="ar"] a.wathba-logo,
+  html[data-wathba-lang="ar"] a.wathba-nav-logo {
+    font-size: 34px !important;
+  }
+}
