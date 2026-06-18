@@ -811,6 +811,76 @@
         }
     </style>
     <!-- WATHBA_MOBILE_POLISH_END -->
+
+    <!-- WATHBA_PRODUCTS_DYNAMIC_FIX_START -->
+    <style id="wathba-products-dynamic-fix">
+        .wathba-wa-svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 767px) {
+            #categoryFilters {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 10px;
+                gap: 10px;
+                scrollbar-width: none;
+            }
+
+            #categoryFilters::-webkit-scrollbar {
+                display: none;
+            }
+
+            #categoryFilters button {
+                white-space: nowrap;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            #allProducts {
+                gap: 20px !important;
+            }
+
+            #allProducts .product-card {
+                border-radius: 14px;
+            }
+
+            #allProducts .product-card a.relative {
+                height: 330px !important;
+            }
+
+            #allProducts .product-card h3 {
+                font-size: 28px !important;
+                line-height: 1.05 !important;
+            }
+
+            #allProducts .product-card p {
+                font-size: 14px !important;
+                line-height: 1.7 !important;
+            }
+
+            .product-card-bottom {
+                flex-direction: column;
+                align-items: stretch !important;
+            }
+
+            .product-card-bottom button {
+                justify-content: center;
+                width: 100%;
+            }
+
+            #allProducts .product-overlay {
+                opacity: 1;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.15));
+                justify-content: flex-end;
+                padding-bottom: 24px;
+            }
+        }
+    </style>
+    <!-- WATHBA_PRODUCTS_DYNAMIC_FIX_END -->
 </head>
 
 <body class="dark bg-background text-on-surface">
@@ -870,258 +940,13 @@
         </section>
         <!-- Filters -->
         <section class="px-margin-desktop max-w-container-max mx-auto mb-12">
-            <div class="flex flex-wrap gap-4 items-center">
-                <button
-                    class="bg-primary text-background px-8 py-3 rounded-full font-label-caps text-label-caps uppercase transition-transform active:scale-95">All
-                    Equipment</button>
-                <button
-                    class="border border-outline-variant/30 text-on-surface-variant px-8 py-3 rounded-full font-label-caps text-label-caps uppercase hover:border-primary hover:text-primary transition-all">Bars</button>
-                <button
-                    class="border border-outline-variant/30 text-on-surface-variant px-8 py-3 rounded-full font-label-caps text-label-caps uppercase hover:border-primary hover:text-primary transition-all">Rings</button>
-                <button
-                    class="border border-outline-variant/30 text-on-surface-variant px-8 py-3 rounded-full font-label-caps text-label-caps uppercase hover:border-primary hover:text-primary transition-all">Accessories</button>
-                <button
-                    class="border border-outline-variant/30 text-on-surface-variant px-8 py-3 rounded-full font-label-caps text-label-caps uppercase hover:border-primary hover:text-primary transition-all">Rigs</button>
-            </div>
+            <div class="flex flex-wrap gap-4 items-center" id="categoryFilters"></div>
         </section>
+
         <!-- Product Grid -->
         <section class="px-margin-desktop max-w-container-max mx-auto pb-40">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-                <!-- Product Card 1 -->
-                <div
-                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
-                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            data-alt="High-contrast studio photography of a premium steel pull-up bar mounted on a dark textured wall. The lighting is cinematic, highlighting the metallic texture and muscular tension associated with calisthenics. The overall aesthetic is dark sports-tech with deep blacks and sharp highlights, emphasizing professional-grade durability."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfkexQjd3qE0G6kif7vBWBtpiPR-n-2yYdwwCUZEC2e5jqfw0SqAjFH0zYi1G-y6pJbjoHeEXf8qxIswNhFlUOjR6zlJpHqJPIY_v6OzT4l-hSAjLGh-7upNZ57cpjmIvuTgE9RCBDZPWOTOacrjn1ks854VmiMbbuVVFkgzP5We5CepmHr4mvx0uSdGY5LgBRkNkQibpbkwKRRx9nEsq3T9g1T3zxqOY7uEJbffozOBohXGP2QCNJd7OjIFF1m3sEqPhRSGqbBw" />
-                        <div
-                            class="product-overlay absolute inset-0 bg-background/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4">
-                            <span class="font-label-caps text-label-caps text-primary mb-2">Standard Sizes
-                                Available</span>
-                            <div class="flex gap-2">
-                                <span
-                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold">FIXED</span>
-                                <span
-                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold">EXTENDABLE</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-headline-md text-headline-md uppercase">Pull-up Bar</h3>
-                            <span class="font-label-caps text-label-caps text-on-surface-variant">BARS</span>
-                        </div>
-                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
-                            Heavy-duty reinforced steel construction with textured grip coating for ultimate stability.
-                        </p>
-                        <div class="flex items-center justify-between mt-auto">
-                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">JOD — Price on
-                                Request</span>
-                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
-                                href="https://wa.me/962791752349">
-                                <svg class="wathba-wa-svg" viewBox="0 0 32 32" aria-hidden="true">
-                                    <path
-                                        d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z" />
-                                    <path
-                                        d="M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z" />
-                                </svg> ORDER
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 2 -->
-                <div
-                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
-                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            data-alt="Sleek wooden parallettes crafted from premium ash wood, presented in a minimalist high-contrast setting. The wood grain is sharp and detailed, under cool-toned professional lighting. The background is a deep matte black, creating a high-fashion fitness aesthetic that focuses on the organic material and precision engineering."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYB8tqXcSeQ00VVpV_QlrQjfb1AuRQyMAZ-344RvEoLphja-M26LLdj9CUKLVpafBloz54KafnEsLmCY5hQEf69lOQ0tjOmJpboT-K3d7td0mfouamzk8LX4d5N-QbNG9b_QD63S240XSbB_zVCbOHBGhL5Q4LYYKZyGMG0WMMRK-MNnr3gdYtGK7dU7JkobeJXJycEtlQdj50jVdBe00tdF-hvbXbKoZ_LKIgOK71RisrE-A3sbRZe5WaHSRqzzmyjn5VqipGZg" />
-                        <div
-                            class="product-overlay absolute inset-0 bg-background/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4">
-                            <span class="font-label-caps text-label-caps text-primary mb-2">Select Height</span>
-                            <div class="flex gap-2">
-                                <span
-                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Small</span>
-                                <span
-                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Medium</span>
-                                <span
-                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Large</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-headline-md text-headline-md uppercase">Wooden Parallettes</h3>
-                            <span class="font-label-caps text-label-caps text-on-surface-variant">HANDLES</span>
-                        </div>
-                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
-                            Premium handcrafted ash wood with non-slip bases for perfect handstand and planche practice.
-                        </p>
-                        <div class="flex items-center justify-between mt-auto">
-                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">Price on
-                                request</span>
-                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
-                                href="#">
-                                <svg class="wathba-wa-svg" viewBox="0 0 32 32" aria-hidden="true">
-                                    <path
-                                        d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z" />
-                                    <path
-                                        d="M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z" />
-                                </svg> ORDER
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 3 -->
-                <div
-                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
-                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            data-alt="Industrial style dip bars made of thick black powder-coated steel. The image captures the sharp angles and robust welding in a moody, low-light gym environment. Dramatic highlights pick out the edges of the bars against a pitch-black background, conveying a sense of extreme strength and elite sports technology."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw8WZasaNxcQA38rCK6HxDRelMTdKJxVJVlPGtNOTp_c2e0c3wzQpSl1y2Gp00eDn7oaJ0vvgoAtTH02T2oEQqSeoLzo9-wLY-4JPSwYNl9Ep7jutURrWMv6_aa_ViYeGZDvoVkMVM_2TNDk2d8Oj2g3gPbVRGLls6tq4QMG2saAKwyshKA80susXmZ0Lbs6cNiOJWV-zKf2sguWxoxlYhIUK87uVmNHAQ8PoNh-5B7XcRG3SX3onuW_jCfUrYEyRL5KeslsXVkw" />
-                        <div
-                            class="product-overlay absolute inset-0 bg-background/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4">
-                            <span class="font-label-caps text-label-caps text-primary mb-2">Variants</span>
-                            <div class="flex gap-2">
-                                <span
-                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Standard</span>
-                                <span
-                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Pro</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-headline-md text-headline-md uppercase">Dip Bars</h3>
-                            <span class="font-label-caps text-label-caps text-on-surface-variant">BARS</span>
-                        </div>
-                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
-                            Ultra-stable free-standing dip station. Professional height for full range of motion.
-                        </p>
-                        <div class="flex items-center justify-between mt-auto">
-                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">JOD — Ask for
-                                Price</span>
-                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
-                                href="#">
-                                <svg class="wathba-wa-svg" viewBox="0 0 32 32" aria-hidden="true">
-                                    <path
-                                        d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z" />
-                                    <path
-                                        d="M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z" />
-                                </svg> ORDER
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 4 -->
-                <div
-                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
-                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            data-alt="Professional gymnastics rings made of textured birch wood with heavy-duty nylon straps. The focus is on the intricate wood texture and the robust buckle mechanism. Set in a dark, atmospheric athletic studio with soft top-down lighting that creates long, elegant shadows. The palette is strictly grayscale with high-end editorial clarity."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0-MhLsP_6ihoAaKfINnL_5XPqVO5kXpqB0YgmAaIOtOotFb3LEHXzga4XNdgRrKjwVnxtta73NsWAdSYSPi4poK7O3-i8lhGgbQl1frPTAeOlUN1vFOFarvu1xS-s0Cl_z_OyM_bvZtWj4l7nFG58iXjRQYNnP-ZzMr1cVExYAJiz1jqxIQf7BII6VZ9aIrk-yYjYSInS8t9yeaIGD93HXgwPN1vZBR13Womlyd8C-TPBBtY3o4LT9kXe_RBMDd8Tis7eozUlvg" />
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-headline-md text-headline-md uppercase">Gymnastic Rings</h3>
-                            <span class="font-label-caps text-label-caps text-on-surface-variant">RINGS</span>
-                        </div>
-                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
-                            Olympic standard birch rings with reinforced numbered straps for precise height adjustment.
-                        </p>
-                        <div class="flex items-center justify-between mt-auto">
-                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">Price on
-                                request</span>
-                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
-                                href="#">
-                                <svg class="wathba-wa-svg" viewBox="0 0 32 32" aria-hidden="true">
-                                    <path
-                                        d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z" />
-                                    <path
-                                        d="M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z" />
-                                </svg> ORDER
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 5 -->
-                <div
-                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
-                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            data-alt="Large-scale outdoor calisthenics multi rig structure made of matte black steel. The architectural lines of the monkey bars and pull-up stations are captured against a dark twilight sky. High-contrast lighting emphasizes the geometric precision and massive scale of the equipment, reflecting a premium sports-tech and architectural vibe."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA4acp6wZXFaFVIlZ61CGYOaz5nsgBJpTe7x6fz-zQB7XbXvxQX_F5AB_nco8kEiNF1fInwYZ50EpFhkKSrByl10kSvx0XFX518oD0PJnsyUf6TtzezPttS6Arg7goyUHputiXOVPyrOE2pm9CApGj9C8umcbptSCJkN1PQlKscxKh0coSlkpXwlEJSONSs3TxrP1z_j_3P90zR-YkfWwMANYzjZeqUAjeVFtTYZxyTRjeJKxRX3SM6GIhZ4PvA0lRztCKl-UMkw" />
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-headline-md text-headline-md uppercase">Multi Rig</h3>
-                            <span class="font-label-caps text-label-caps text-on-surface-variant">RIGS</span>
-                        </div>
-                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
-                            Complete custom training station. Includes monkey bars, multiple pull-up heights, and dip
-                            stations.
-                        </p>
-                        <div class="flex items-center justify-between mt-auto">
-                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">Price on
-                                request</span>
-                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
-                                href="#">
-                                <svg class="wathba-wa-svg" viewBox="0 0 32 32" aria-hidden="true">
-                                    <path
-                                        d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z" />
-                                    <path
-                                        d="M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z" />
-                                </svg> ORDER
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 6 -->
-                <div
-                    class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
-                    <div class="relative h-[400px] overflow-hidden bg-surface-container">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            data-alt="Macro photography of professional resistance bands with different thicknesses and textures. The lighting highlights the matte finish of the rubber against a deep black backdrop. The composition is artistic and high-fashion, treating the equipment like luxury technical accessories with a monochromatic black and white color palette."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrTC_inPxGE_PjaP2fVdusL7jZ-6bUKZhNNF6pGGJV1EisrfLwMi5megkxosUnlote8JEvj1pet7Ksl5fQLnBgDMtfMzZDZn8GkFJEX_fLaWzNfwcQIWeuZ6sEcqyMjblIlkTyVd1EWZKYyrh1rwLeTeI-EW6275IoD8QSS02zIDeDJ1wwWfNTAsXPdpIBL4Rc6RLqIoCJjLHEyOh5G9dcvpotyYBIMqefd62Jd5SIahnDG-AFPhTDW8ocnJ0W8ZIvQt4ksS_YaA" />
-                        <div
-                            class="product-overlay absolute inset-0 bg-background/40 backdrop-blur-sm opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4">
-                            <span class="font-label-caps text-label-caps text-primary mb-2">Tensions</span>
-                            <div class="flex gap-2">
-                                <span
-                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Light</span>
-                                <span
-                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Med</span>
-                                <span
-                                    class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">Heavy</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-grow">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="font-headline-md text-headline-md uppercase">Resistance Bands</h3>
-                            <span class="font-label-caps text-label-caps text-on-surface-variant">ACCESSORIES</span>
-                        </div>
-                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
-                            Premium latex-free elastic bands for mobility work and weighted exercise assistance.
-                        </p>
-                        <div class="flex items-center justify-between mt-auto">
-                            <span class="font-label-caps text-label-caps text-on-surface/60 italic">Price on
-                                request</span>
-                            <a class="bg-[#25D366] text-white px-6 py-3 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity"
-                                href="#">
-                                <svg class="wathba-wa-svg" viewBox="0 0 32 32" aria-hidden="true">
-                                    <path
-                                        d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z" />
-                                    <path
-                                        d="M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z" />
-                                </svg> ORDER
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="allProducts"></div>
         </section>
-        <!-- Fixed WhatsApp Floating Action -->
         <a class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center whatsapp-pulse shadow-xl hover:scale-110 transition-transform active:scale-95 group"
             href="https://wa.me/962791752349">
             <svg class="wathba-wa-svg" viewBox="0 0 32 32" aria-hidden="true">
@@ -1339,6 +1164,10 @@
         })();
     </script>
     <!-- WATHBA_GLOBAL_UI_END -->
+
+    <script src="assets/js/products-data.js"></script>
+    <script src="assets/js/whatsapp.js"></script>
+    <script src="assets/js/products.js"></script>
 </body>
 
 </html>
