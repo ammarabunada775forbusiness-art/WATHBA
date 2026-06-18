@@ -824,6 +824,100 @@
         }
     </style>
     <!-- WATHBA_MOBILE_POLISH_END -->
+
+    <!-- WATHBA_HOME_DYNAMIC_PRODUCTS_START -->
+    <style id="wathba-home-dynamic-products">
+        .home-product-card {
+            min-height: 520px;
+        }
+
+        .home-product-card:hover .home-product-image {
+            transform: scale(1.08);
+        }
+
+        .home-product-card:hover .home-product-overlay {
+            opacity: 1;
+        }
+
+        .home-product-image {
+            transition: transform 0.7s ease;
+        }
+
+        .home-product-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .home-product-fallback::after {
+            content: "WATHBA";
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            font-family: "Anton", sans-serif;
+            font-size: 42px;
+            color: rgba(255, 255, 255, 0.18);
+            letter-spacing: 0.08em;
+        }
+
+        .home-wa-svg {
+            width: 17px;
+            height: 17px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 767px) {
+            #homeProductsSection {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                padding-top: 70px !important;
+                padding-bottom: 70px !important;
+            }
+
+            #homeProductsSection h2 {
+                font-size: 44px !important;
+                line-height: 1 !important;
+            }
+
+            #homeProductsSection p {
+                font-size: 14px !important;
+                line-height: 1.7 !important;
+            }
+
+            .home-product-card {
+                min-height: auto;
+                border-radius: 16px;
+            }
+
+            .home-product-card .home-product-media {
+                height: 330px !important;
+            }
+
+            .home-product-card h3 {
+                font-size: 30px !important;
+                line-height: 1.05 !important;
+            }
+
+            .home-product-card .home-product-actions {
+                flex-direction: column;
+                align-items: stretch !important;
+            }
+
+            .home-product-card .home-product-actions a,
+            .home-product-card .home-product-actions button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .home-product-overlay {
+                opacity: 1;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.12)) !important;
+                justify-content: flex-end !important;
+                padding-bottom: 24px !important;
+            }
+        }
+    </style>
+    <!-- WATHBA_HOME_DYNAMIC_PRODUCTS_END -->
 </head>
 
 <body class="selection:bg-primary selection:text-surface">
@@ -940,109 +1034,35 @@
                 </div>
             </div>
         </section>
-        <!-- Product Grid Section -->
-        <section class="py-32 px-margin-desktop max-w-container-max mx-auto" id="products">
-            <div class="flex justify-between items-end mb-16">
+        <!-- Dynamic Featured Products -->
+        <section class="px-margin-desktop max-w-container-max mx-auto py-24 md:py-32" id="homeProductsSection">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
                 <div>
-                    <span class="text-primary font-label-caps text-label-caps tracking-widest uppercase">Curated
-                        Collection</span>
-                    <h2 class="font-headline-lg text-headline-lg uppercase mt-2">Professional Gear</h2>
+                    <p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-[0.22em] mb-4"
+                        data-home-i18n="featuredMini">
+                        CURATED COLLECTION
+                    </p>
+
+                    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase tracking-tighter leading-none"
+                        data-home-i18n="featuredTitle">
+                        PROFESSIONAL GEAR
+                    </h2>
                 </div>
-                <div class="hidden md:block">
-                    <span class="font-body-md text-body-md text-on-surface-variant max-w-xs block text-right">Tested by
-                        elite athletes to ensure peak performance and durability.</span>
-                </div>
+
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-md md:text-right"
+                    data-home-i18n="featuredText">
+                    Tested gear for home, outdoor, and professional calisthenics setups.
+                </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-gutter">
-                <!-- Product Card 1 -->
-                <div
-                    class="group relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg cursor-pointer">
-                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 opacity-60 group-hover:opacity-100"
-                        data-alt="A heavy-duty steel outdoor pull-up bar station in a minimalist industrial setting. The metal has a matte black powder-coated finish. High-contrast lighting emphasizes the muscular form of the equipment against a dark background, evoking a sense of raw power and elite athletic training environments. The overall tone is professional and premium."
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-eBWBlLZuUO8zsf5qMdv7CqV4hGt-FqwHQBlyXbGcN-9VJeWRPy1b9nIhwtnNQ80YTdJcJd1h05kO3Higr0azSZZHNrBQnuJJECvig8bjvUU2xFCAZak4ISfafJVI4_Z9pdJH8GQSD5VYMqr9PW1OkzQYLgZZV0iHY3VNRx7oJniLQzJWnxT-3BZTp74C_lu5z4MRSKzbp_8uEwdb3GhFyJ7dSgifQbYmCxU4HdP465Gu7vf2E37EfTy-b2y9w62mBoJ4sVcIQw" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-8 w-full">
-                        <span class="font-label-caps text-label-caps text-primary/60 uppercase">Elite Series</span>
-                        <h3 class="font-headline-md text-headline-md uppercase mt-1">Pull-up Bar</h3>
-                        <div
-                            class="mt-4 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="font-headline-md text-[20px]">JOD 850</span>
-                            <span class="material-symbols-outlined text-primary">add_circle</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 2 -->
-                <div
-                    class="group relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg cursor-pointer">
-                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 opacity-60 group-hover:opacity-100"
-                        data-alt="Professional gymnastics rings made of high-quality birch wood with heavy-duty black nylon straps. The rings are hanging in a vast minimalist training hall with dark walls and focused spotlights. The composition focuses on the texture of the wood and the strength of the straps. The visual style is editorial, high-contrast, and focused on physical excellence."
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuANSkIynk6ykdNHw651RBqA71Ou3FUU6Oe5fLXVqzv_hKpLgx_Py-3bejyQw_yUz-XnAMNHobjaIqfJPan2zO2JcEylBK6YlE9P2JqbwzZNhZjQwqpu5s2__VXvR0eBUptAbrDe6HVJpzjf5eB6qWnmyQ1Lcn9rAWTY98EYoosW0UUVaJsiAzLOxTm9rFkJWiYdPNvQPvarg1tGxk9FA0p4zRzSMwLrTnTTSdpF0Dv5xAmUXmwnCv6VLdx-B5tbeYo1ddRddrDneQ" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-8 w-full">
-                        <span class="font-label-caps text-label-caps text-primary/60 uppercase">Pro Gymnastics</span>
-                        <h3 class="font-headline-md text-headline-md uppercase mt-1">Gymnastic Rings</h3>
-                        <div
-                            class="mt-4 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="font-headline-md text-[20px]">JOD 350</span>
-                            <span class="material-symbols-outlined text-primary">add_circle</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product Card 3 -->
-                <div
-                    class="group relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-lg cursor-pointer">
-                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 opacity-60 group-hover:opacity-100"
-                        data-alt="A multi-rig calisthenics station featuring various levels of bars and dip stations. The structure is made from matte black industrial steel. The background is a clean minimalist modern warehouse gym with dramatic shadows and sharp lines. The image is captured in a high-fashion athletic editorial style, emphasizing architectural strength and performance utility."
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPs2yQtOzJv-nvs_X325NXddlZ37mtaOnLdQGcedba_CGMRuM6jgXxBGjcA972NWurCXQ_a_MhCHCy07LlZxKdcdMOyBvNrMdiwFYM5RGI1fgfUhLKb0Vb16fBIeBSNiTbI0DIMoRVM-od_ypmPhCRyKIWXWVaPa18sI1e5BFafViEFUXpuSvAPiJDkUBvKOeJ3hXFN-gFX4A9u_CEJg5i5NUdniBM2nyyHGRg-h05eDEV0X4aCv-tJ73P1cmNuufaPfC5d3YodQ" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-8 w-full">
-                        <span class="font-label-caps text-label-caps text-primary/60 uppercase">Structure</span>
-                        <h3 class="font-headline-md text-headline-md uppercase mt-1">Calisthenics Multi Rig</h3>
-                        <div
-                            class="mt-4 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="font-headline-md text-[20px]">JOD 4,200</span>
-                            <span class="material-symbols-outlined text-primary">add_circle</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Row 2: Secondary Items -->
-                <div
-                    class="md:col-span-1 p-8 glass-panel rounded-lg flex flex-col justify-between group hover:border-primary/50 transition-colors">
-                    <div>
-                        <h4 class="font-headline-md text-[24px] uppercase">Dip Bars</h4>
-                        <p class="text-on-surface-variant text-body-md mt-2">Maximum stability for advanced levers.</p>
-                    </div>
-                    <div class="mt-8 flex items-center justify-between">
-                        <span class="font-label-caps text-label-caps text-primary">Explore More</span>
-                        <span
-                            class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
-                    </div>
-                </div>
-                <div
-                    class="md:col-span-1 p-8 glass-panel rounded-lg flex flex-col justify-between group hover:border-primary/50 transition-colors">
-                    <div>
-                        <h4 class="font-headline-md text-[24px] uppercase">Steel Bars</h4>
-                        <p class="text-on-surface-variant text-body-md mt-2">Weather-proof coating for outdoor mastery.
-                        </p>
-                    </div>
-                    <div class="mt-8 flex items-center justify-between">
-                        <span class="font-label-caps text-label-caps text-primary">Explore More</span>
-                        <span
-                            class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
-                    </div>
-                </div>
-                <div
-                    class="md:col-span-1 p-8 glass-panel rounded-lg flex flex-col justify-between group hover:border-primary/50 transition-colors">
-                    <div>
-                        <h4 class="font-headline-md text-[24px] uppercase">Resistance Bands</h4>
-                        <p class="text-on-surface-variant text-body-md mt-2">Premium latex for progressive load.</p>
-                    </div>
-                    <div class="mt-8 flex items-center justify-between">
-                        <span class="font-label-caps text-label-caps text-primary">Explore More</span>
-                        <span
-                            class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
-                    </div>
-                </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter" id="homeFeaturedProducts"></div>
+
+            <div class="mt-12 flex justify-center">
+                <a href="products.html"
+                    class="inline-flex items-center justify-center gap-3 bg-primary text-background px-8 py-4 rounded-full font-label-caps text-label-caps uppercase hover:scale-95 transition-transform"
+                    data-home-i18n="viewAllProducts">
+                    View All Products
+                </a>
             </div>
         </section>
         <!-- Why Choose Section -->
@@ -1341,6 +1361,10 @@
         })();
     </script>
     <!-- WATHBA_GLOBAL_UI_END -->
+
+    <script src="assets/js/products-data.js"></script>
+    <script src="assets/js/whatsapp.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
