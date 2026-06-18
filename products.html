@@ -881,6 +881,83 @@
         }
     </style>
     <!-- WATHBA_PRODUCTS_DYNAMIC_FIX_END -->
+
+    <!-- WATHBA_FOOTER_CTA_CLEANUP_START -->
+    <style id="wathba-footer-cta-cleanup">
+        .wathba-footer-wa-svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+            flex: 0 0 auto;
+        }
+
+        .wathba-site-footer a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 767px) {
+            .wathba-final-cta {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                padding-top: 70px !important;
+                padding-bottom: 70px !important;
+            }
+
+            .wathba-final-cta>div {
+                padding: 38px 22px !important;
+                border-radius: 26px !important;
+            }
+
+            .wathba-final-cta h2 {
+                font-size: 48px !important;
+                line-height: 0.95 !important;
+            }
+
+            .wathba-final-cta p {
+                font-size: 15px !important;
+                line-height: 1.75 !important;
+            }
+
+            .wathba-final-cta a {
+                width: 100%;
+                min-height: 54px;
+            }
+
+            .wathba-site-footer>div {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                padding-top: 56px !important;
+                padding-bottom: 56px !important;
+            }
+
+            .wathba-site-footer h3 {
+                font-size: 52px !important;
+                line-height: 1 !important;
+            }
+
+            .wathba-site-footer h5 {
+                margin-bottom: 16px !important;
+            }
+
+            .wathba-site-footer ul {
+                display: grid;
+                gap: 10px;
+            }
+
+            .wathba-site-footer li,
+            .wathba-site-footer p,
+            .wathba-site-footer a {
+                font-size: 15px !important;
+                line-height: 1.7 !important;
+            }
+
+            .wathba-site-footer .md\:col-span-12 {
+                align-items: flex-start !important;
+                text-align: left !important;
+            }
+        }
+    </style>
+    <!-- WATHBA_FOOTER_CTA_CLEANUP_END -->
 </head>
 
 <body class="dark bg-background text-on-surface">
@@ -961,61 +1038,117 @@
             </div>
         </a>
     </main>
-    <!-- Footer Shell -->
-    <footer class="w-full pt-20 pb-10 bg-surface-container-lowest border-t border-outline-variant/20">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop max-w-container-max mx-auto">
-            <div class="md:col-span-4">
-                <div class="font-headline-lg text-headline-lg uppercase text-primary mb-6">WATHBA</div>
-                <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
-                    The peak of physical performance. Exclusive calisthenics equipment for elite athletes.
+    <!-- Footer -->
+    <footer class="wathba-site-footer bg-surface-container-lowest border-t border-outline-variant/20">
+        <div
+            class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop max-w-container-max mx-auto py-16 md:py-20">
+
+            <div class="md:col-span-5">
+                <h3 class="font-headline-lg text-headline-lg uppercase text-primary mb-6">
+                    WATHBA
+                </h3>
+
+                <p class="text-on-surface-variant font-body-md text-body-md max-w-md mb-8">
+                    Premium calisthenics equipment for home, outdoor, and professional training setups. Browse, choose,
+                    and order directly through WhatsApp.
+                </p>
+
+                <a href="https://wa.me/962791752349?text=Hello%20WATHBA%2C%20I%20want%20to%20ask%20about%20calisthenics%20equipment"
+                    target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-3 bg-[#25D366] text-white px-6 py-4 rounded-full font-label-caps text-label-caps uppercase hover:opacity-90 transition-opacity">
+                    <svg class="wathba-footer-wa-svg" viewBox="0 0 32 32" aria-hidden="true">
+                        <path
+                            d="M19.11 17.27c-.27-.13-1.58-.78-1.82-.87-.24-.09-.41-.13-.59.14-.18.27-.68.87-.84 1.04-.15.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.3-.79-.7-1.32-1.57-1.47-1.84-.15-.27-.02-.42.11-.55.11-.11.27-.29.41-.43.14-.15.18-.25.27-.43.09-.18.05-.34-.02-.48-.07-.13-.59-1.43-.81-1.96-.21-.5-.43-.43-.59-.44h-.5c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.65 1.11 2.83c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.58-.65 1.8-1.27.22-.63.22-1.16.15-1.27-.06-.12-.24-.18-.5-.31z">
+                        </path>
+                        <path
+                            d="M16.02 3.2c-7.07 0-12.8 5.72-12.8 12.77 0 2.25.59 4.45 1.71 6.39L3.1 28.8l6.63-1.73a12.8 12.8 0 0 0 6.29 1.69h.01c7.06 0 12.79-5.72 12.79-12.77 0-3.42-1.34-6.63-3.79-9.04A12.76 12.76 0 0 0 16.02 3.2zm0 23.39h-.01a10.62 10.62 0 0 1-5.41-1.49l-.39-.23-3.94 1.03 1.05-3.84-.25-.4a10.55 10.55 0 0 1-1.63-5.61c0-5.84 4.76-10.59 10.6-10.59 2.82 0 5.47 1.09 7.47 3.08a10.5 10.5 0 0 1 3.11 7.51c0 5.84-4.76 10.59-10.6 10.59z">
+                        </path>
+                    </svg>
+                    Order via WhatsApp
+                </a>
+            </div>
+
+            <div class="md:col-span-2">
+                <h5 class="font-label-caps text-label-caps text-primary mb-6">
+                    Pages
+                </h5>
+
+                <ul class="space-y-4">
+                    <li>
+                        <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="products.html">
+                            Products
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="about.html">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-2">
+                <h5 class="font-label-caps text-label-caps text-primary mb-6">
+                    Equipment
+                </h5>
+
+                <ul class="space-y-4">
+                    <li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="products.html">Pull-up Bar</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="products.html">Parallettes</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="products.html">Dip Bars</a></li>
+                    <li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md"
+                            href="products.html">Rings</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-3">
+                <h5 class="font-label-caps text-label-caps text-primary mb-6">
+                    Contact
+                </h5>
+
+                <div class="space-y-4 text-on-surface-variant">
+                    <p class="font-body-md text-body-md">
+                        Amman, Jordan
+                    </p>
+
+                    <p class="font-body-md text-body-md">
+                        WhatsApp: +962 79 175 2349
+                    </p>
+
+                    <p class="font-body-md text-body-md">
+                        Orders and custom equipment requests are handled directly through WhatsApp.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="md:col-span-12 border-t border-outline-variant/10 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="font-label-caps text-[10px] text-on-surface-variant opacity-60 uppercase">
+                    © 2026 WATHBA. ALL RIGHTS RESERVED.
+                </p>
+
+                <p class="font-label-caps text-[10px] text-on-surface-variant opacity-50 uppercase">
+                    No cart. No checkout. WhatsApp ordering only.
                 </p>
             </div>
-            <div class="md:col-span-2">
-                <h4 class="font-label-caps text-label-caps text-primary mb-6">QUICK LINKS</h4>
-                <div class="flex flex-col gap-4">
-                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
-                        href="index.html">Home</a>
-                    <a class="font-body-md text-body-md text-primary font-bold" href="products.html">Products</a>
-                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
-                        href="about.html">About</a>
-                </div>
-            </div>
-            <div class="md:col-span-2">
-                <h4 class="font-label-caps text-label-caps text-primary mb-6">LEGAL</h4>
-                <div class="flex flex-col gap-4">
-                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
-                        href="#">Privacy Policy</a>
-                    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors"
-                        href="#">Terms of Service</a>
-                </div>
-            </div>
-            <div class="md:col-span-4 flex flex-col items-start md:items-end">
-                <h4 class="font-label-caps text-label-caps text-primary mb-6">CONTACT US</h4>
-                <a class="bg-[#25D366] text-white px-8 py-4 rounded-full font-label-caps text-label-caps flex items-center gap-2 hover:opacity-90 transition-opacity active:opacity-70 mb-4"
-                    href="#">
-                    <svg class="wathba-wa-svg" viewBox="0 0 32 32" aria-hidden="true">
-                        <path
-                            d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z" />
-                        <path
-                            d="M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z" />
-                    </svg> CHAT
-                    ON WHATSAPP
-                </a>
-                <span class="font-label-caps text-label-caps text-on-surface-variant">AMMAN, JORDAN</span>
-            </div>
-        </div>
-        <div
-            class="mt-20 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-outline-variant/10">
-            <span class="font-label-caps text-[10px] text-on-surface-variant tracking-widest uppercase">© 2026 WATHBA.
-                ALL RIGHTS RESERVED.</span>
-            <div class="flex gap-6 mt-4 md:mt-0">
-                <span
-                    class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">face_nod</span>
-                <span
-                    class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">public</span>
-                <span
-                    class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">video_library</span>
-            </div>
+
         </div>
     </footer>
     <script>
