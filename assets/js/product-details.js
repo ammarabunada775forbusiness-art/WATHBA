@@ -6,210 +6,225 @@ const productDetailsRoot = document.getElementById("productDetailsRoot");
 const relatedProductsRoot = document.getElementById("relatedProductsRoot");
 
 function getCurrentLang() {
-    return localStorage.getItem("wathbaLang") || "en";
+  return localStorage.getItem("wathbaLang") || "en";
 }
 
 function getProductIdFromUrl() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get("id") || "wooden-parallettes";
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("id");
+
+  if (productId) {
+    return productId;
+  }
+
+  /*
+    إذا دخل شخص على product.html بدون id
+    نرجعه لصفحة المنتجات بدل ما نظهر باراليتس خشب دائمًا.
+  */
+  window.location.href = "products.html";
+  return null;
 }
 
 function getCurrentProduct() {
-    const productId = getProductIdFromUrl();
-    return products.find((product) => product.id === productId) || products[0];
-}
+  const productId = getProductIdFromUrl();
 
+  if (!productId) {
+    return null;
+  }
+
+  return products.find((product) => product.id === productId) || products[0];
+}
 function getProductFolder(product) {
-    return product.image.replace("cover.webp", "");
+  return product.image.replace("cover.webp", "");
 }
 
 function getProductGallery(product) {
-    const folder = getProductFolder(product);
+  const folder = getProductFolder(product);
 
-    return [
-        product.image,
-        `${folder}1.webp`,
-        `${folder}2.webp`,
-        `${folder}3.webp`
-    ];
+  return [
+    product.image,
+    `${folder}1.webp`,
+    `${folder}2.webp`,
+    `${folder}3.webp`
+  ];
 }
 
 function getProductFeatures(product, lang) {
-    const common = {
-        ar: [
-            {
-                icon: "fitness_center",
-                title: "تصميم عملي",
-                text: "مصمم لتدريبات الكاليستنكس الأساسية والمتقدمة."
-            },
-            {
-                icon: "grid_view",
-                title: "ثبات وجودة",
-                text: "مناسب للاستخدام المنزلي أو الخارجي حسب نوع المنتج."
-            },
-            {
-                icon: "verified",
-                title: "طلب مباشر",
-                text: "اطلب المنتج مباشرة عبر واتساب واسأل عن التفاصيل."
-            }
-        ],
-        en: [
-            {
-                icon: "fitness_center",
-                title: "Functional Design",
-                text: "Built for essential and advanced calisthenics training."
-            },
-            {
-                icon: "grid_view",
-                title: "Stable Build",
-                text: "Suitable for home or outdoor use depending on the product type."
-            },
-            {
-                icon: "verified",
-                title: "Direct Order",
-                text: "Order directly through WhatsApp and ask for details."
-            }
-        ]
-    };
+  const common = {
+    ar: [
+      {
+        icon: "fitness_center",
+        title: "تصميم عملي",
+        text: "مصمم لتدريبات الكاليستنكس الأساسية والمتقدمة."
+      },
+      {
+        icon: "grid_view",
+        title: "ثبات وجودة",
+        text: "مناسب للاستخدام المنزلي أو الخارجي حسب نوع المنتج."
+      },
+      {
+        icon: "verified",
+        title: "طلب مباشر",
+        text: "اطلب المنتج مباشرة عبر واتساب واسأل عن التفاصيل."
+      }
+    ],
+    en: [
+      {
+        icon: "fitness_center",
+        title: "Functional Design",
+        text: "Built for essential and advanced calisthenics training."
+      },
+      {
+        icon: "grid_view",
+        title: "Stable Build",
+        text: "Suitable for home or outdoor use depending on the product type."
+      },
+      {
+        icon: "verified",
+        title: "Direct Order",
+        text: "Order directly through WhatsApp and ask for details."
+      }
+    ]
+  };
 
-    const custom = {
-        "wooden-parallettes": {
-            ar: [
-                {
-                    icon: "forest",
-                    title: "خشب ممتاز",
-                    text: "قبضة مريحة ومناسبة للهاندستاند والبلانش والـ L-sit."
-                },
-                {
-                    icon: "grid_view",
-                    title: "قاعدة ثابتة",
-                    text: "تصميم يساعد على الثبات أثناء تمارين التحكم."
-                },
-                {
-                    icon: "fitness_center",
-                    title: "٣ قياسات",
-                    text: "متوفر بثلاث قياسات حسب مستوى وهدف اللاعب."
-                }
-            ],
-            en: [
-                {
-                    icon: "forest",
-                    title: "Premium Wood",
-                    text: "Comfortable grip for handstands, planche work, and L-sits."
-                },
-                {
-                    icon: "grid_view",
-                    title: "Stable Base",
-                    text: "Designed to support control and balance movements."
-                },
-                {
-                    icon: "fitness_center",
-                    title: "3 Sizes",
-                    text: "Available in three sizes based on training level and goal."
-                }
-            ]
+  const custom = {
+    "wooden-parallettes": {
+      ar: [
+        {
+          icon: "forest",
+          title: "خشب ممتاز",
+          text: "قبضة مريحة ومناسبة للهاندستاند والبلانش والـ L-sit."
         },
-
-        "pull-up-bar": {
-            ar: [
-                {
-                    icon: "fitness_center",
-                    title: "تدريب السحب",
-                    text: "مناسب للعقلة، التعلق، وتمارين الظهر والكور."
-                },
-                {
-                    icon: "architecture",
-                    title: "تركيب ثابت",
-                    text: "اسأل عن النوع المناسب للمساحة المتوفرة عندك."
-                },
-                {
-                    icon: "verified",
-                    title: "حسب النوع",
-                    text: "السعر والتفاصيل حسب نوع العقلة المطلوبة."
-                }
-            ],
-            en: [
-                {
-                    icon: "fitness_center",
-                    title: "Pull Training",
-                    text: "Great for pull-ups, hanging, back, and core work."
-                },
-                {
-                    icon: "architecture",
-                    title: "Stable Setup",
-                    text: "Ask about the best type for your available space."
-                },
-                {
-                    icon: "verified",
-                    title: "Type Based",
-                    text: "Price and details depend on the requested bar type."
-                }
-            ]
+        {
+          icon: "grid_view",
+          title: "قاعدة ثابتة",
+          text: "تصميم يساعد على الثبات أثناء تمارين التحكم."
         },
-
-        "multi-rig": {
-            ar: [
-                {
-                    icon: "account_tree",
-                    title: "تصميم احترافي",
-                    text: "مناسب للنوادي، الحدائق، والمساحات التدريبية."
-                },
-                {
-                    icon: "architecture",
-                    title: "حسب المساحة",
-                    text: "يتم تحديد التصميم حسب المكان والاحتياج."
-                },
-                {
-                    icon: "verified",
-                    title: "طلب مخصص",
-                    text: "تواصل معنا للحصول على عرض مناسب."
-                }
-            ],
-            en: [
-                {
-                    icon: "account_tree",
-                    title: "Professional Setup",
-                    text: "Suitable for gyms, parks, and training spaces."
-                },
-                {
-                    icon: "architecture",
-                    title: "Space Based",
-                    text: "The design depends on your location and needs."
-                },
-                {
-                    icon: "verified",
-                    title: "Custom Quote",
-                    text: "Contact us to get a suitable offer."
-                }
-            ]
+        {
+          icon: "fitness_center",
+          title: "٣ قياسات",
+          text: "متوفر بثلاث قياسات حسب مستوى وهدف اللاعب."
         }
-    };
+      ],
+      en: [
+        {
+          icon: "forest",
+          title: "Premium Wood",
+          text: "Comfortable grip for handstands, planche work, and L-sits."
+        },
+        {
+          icon: "grid_view",
+          title: "Stable Base",
+          text: "Designed to support control and balance movements."
+        },
+        {
+          icon: "fitness_center",
+          title: "3 Sizes",
+          text: "Available in three sizes based on training level and goal."
+        }
+      ]
+    },
 
-    return custom[product.id]?.[lang] || common[lang];
+    "pull-up-bar": {
+      ar: [
+        {
+          icon: "fitness_center",
+          title: "تدريب السحب",
+          text: "مناسب للعقلة، التعلق، وتمارين الظهر والكور."
+        },
+        {
+          icon: "architecture",
+          title: "تركيب ثابت",
+          text: "اسأل عن النوع المناسب للمساحة المتوفرة عندك."
+        },
+        {
+          icon: "verified",
+          title: "حسب النوع",
+          text: "السعر والتفاصيل حسب نوع العقلة المطلوبة."
+        }
+      ],
+      en: [
+        {
+          icon: "fitness_center",
+          title: "Pull Training",
+          text: "Great for pull-ups, hanging, back, and core work."
+        },
+        {
+          icon: "architecture",
+          title: "Stable Setup",
+          text: "Ask about the best type for your available space."
+        },
+        {
+          icon: "verified",
+          title: "Type Based",
+          text: "Price and details depend on the requested bar type."
+        }
+      ]
+    },
+
+    "multi-rig": {
+      ar: [
+        {
+          icon: "account_tree",
+          title: "تصميم احترافي",
+          text: "مناسب للنوادي، الحدائق، والمساحات التدريبية."
+        },
+        {
+          icon: "architecture",
+          title: "حسب المساحة",
+          text: "يتم تحديد التصميم حسب المكان والاحتياج."
+        },
+        {
+          icon: "verified",
+          title: "طلب مخصص",
+          text: "تواصل معنا للحصول على عرض مناسب."
+        }
+      ],
+      en: [
+        {
+          icon: "account_tree",
+          title: "Professional Setup",
+          text: "Suitable for gyms, parks, and training spaces."
+        },
+        {
+          icon: "architecture",
+          title: "Space Based",
+          text: "The design depends on your location and needs."
+        },
+        {
+          icon: "verified",
+          title: "Custom Quote",
+          text: "Contact us to get a suitable offer."
+        }
+      ]
+    }
+  };
+
+  return custom[product.id]?.[lang] || common[lang];
 }
 
 function splitTitle(name) {
-    if (currentLang === "ar") {
-        return name;
-    }
+  if (currentLang === "ar") {
+    return name;
+  }
 
-    const words = name.split(" ");
+  const words = name.split(" ");
 
-    if (words.length <= 1) {
-        return name;
-    }
+  if (words.length <= 1) {
+    return name;
+  }
 
-    const middle = Math.ceil(words.length / 2);
-    return `${words.slice(0, middle).join(" ")}<br>${words.slice(middle).join(" ")}`;
+  const middle = Math.ceil(words.length / 2);
+  return `${words.slice(0, middle).join(" ")}<br>${words.slice(middle).join(" ")}`;
 }
 
 function renderVariantButtons(product) {
-    const variants = product.variants || [];
+  const variants = product.variants || [];
 
-    if (variants.length === 0) {
-        selectedVariant = null;
+  if (variants.length === 0) {
+    selectedVariant = null;
 
-        return `
+    return `
       <div class="mb-8">
         <label class="font-label-caps text-label-caps block mb-4">
           ${currentLang === "ar" ? "النوع / التفاصيل" : "TYPE / DETAILS"}
@@ -225,13 +240,13 @@ function renderVariantButtons(product) {
         </div>
       </div>
     `;
-    }
+  }
 
-    if (!selectedVariant) {
-        selectedVariant = variants[0];
-    }
+  if (!selectedVariant) {
+    selectedVariant = variants[0];
+  }
 
-    return `
+  return `
     <div class="mb-8">
       <label class="font-label-caps text-label-caps block mb-4">
         ${currentLang === "ar" ? "اختر القياس / النوع" : "SELECT SIZE / TYPE"}
@@ -239,44 +254,45 @@ function renderVariantButtons(product) {
 
       <div class="flex flex-wrap gap-3 wathba-size-row">
         ${variants
-            .map((variant, index) => {
-                const active = selectedVariant === variant || (!selectedVariant && index === 0);
+      .map((variant, index) => {
+        const active = selectedVariant === variant || (!selectedVariant && index === 0);
 
-                return `
+        return `
               <button
                 class="wathba-size-chip px-8 py-3 rounded-full border ${active
-                        ? "active border-primary bg-primary text-background"
-                        : "border-outline-variant/30 hover:border-primary"
-                    } font-label-caps text-label-caps transition-all"
+            ? "active border-primary bg-primary text-background"
+            : "border-outline-variant/30 hover:border-primary"
+          } font-label-caps text-label-caps transition-all"
                 type="button"
                 data-variant-index="${index}"
               >
                 ${variant[currentLang]}
               </button>
             `;
-            })
-            .join("")}
+      })
+      .join("")}
       </div>
     </div>
   `;
 }
 
 function renderProductDetails() {
-    if (!productDetailsRoot) return;
+  if (!productDetailsRoot) return;
 
-    currentLang = getCurrentLang();
+  currentLang = getCurrentLang();
 
-    const product = getCurrentProduct();
-    const gallery = getProductGallery(product);
-    const mainImage = gallery[activeImageIndex] || product.image;
-    const features = getProductFeatures(product, currentLang);
-    const title = splitTitle(product.name[currentLang]);
-    const category = product.category[currentLang];
-    const priceText = getProductPriceText(product, currentLang);
+  const product = getCurrentProduct();
+  if (!product) return;
+  const gallery = getProductGallery(product);
+  const mainImage = gallery[activeImageIndex] || product.image;
+  const features = getProductFeatures(product, currentLang);
+  const title = splitTitle(product.name[currentLang]);
+  const category = product.category[currentLang];
+  const priceText = getProductPriceText(product, currentLang);
 
-    document.title = `WATHBA | ${product.name.en}`;
+  document.title = `WATHBA | ${product.name.en}`;
 
-    productDetailsRoot.innerHTML = `
+  productDetailsRoot.innerHTML = `
     <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-16">
       
       <div class="lg:col-span-7 flex flex-col gap-6">
@@ -292,11 +308,11 @@ function renderProductDetails() {
 
         <div class="grid grid-cols-4 gap-4 wathba-detail-thumbs">
           ${gallery
-            .map(
-                (image, index) => `
+      .map(
+        (image, index) => `
                 <button
                   class="wathba-thumb ${index === activeImageIndex ? "active border-primary" : "border-outline-variant/20"
-                    } relative aspect-square bg-surface-container-low rounded border hover:border-primary transition-all overflow-hidden"
+          } relative aspect-square bg-surface-container-low rounded border hover:border-primary transition-all overflow-hidden"
                   type="button"
                   data-gallery-index="${index}"
                 >
@@ -308,8 +324,8 @@ function renderProductDetails() {
                   />
                 </button>
               `
-            )
-            .join("")}
+      )
+      .join("")}
         </div>
       </div>
 
@@ -352,60 +368,60 @@ function renderProductDetails() {
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 pt-16 border-t border-outline-variant/10">
           ${features
-            .map(
-                (feature) => `
+      .map(
+        (feature) => `
                 <div class="flex flex-col gap-3">
                   <span class="material-symbols-outlined text-primary text-3xl">${feature.icon}</span>
                   <h3 class="font-label-caps text-label-caps">${feature.title}</h3>
                   <p class="text-xs text-on-surface-variant">${feature.text}</p>
                 </div>
               `
-            )
-            .join("")}
+      )
+      .join("")}
         </div>
       </div>
     </section>
   `;
 
-    bindProductDetailsEvents();
-    renderRelatedProducts(product);
+  bindProductDetailsEvents();
+  renderRelatedProducts(product);
 }
 
 function bindProductDetailsEvents() {
-    const product = getCurrentProduct();
+  const product = getCurrentProduct();
 
-    document.querySelectorAll("[data-gallery-index]").forEach((button) => {
-        button.addEventListener("click", () => {
-            activeImageIndex = Number(button.dataset.galleryIndex);
-            renderProductDetails();
-        });
+  document.querySelectorAll("[data-gallery-index]").forEach((button) => {
+    button.addEventListener("click", () => {
+      activeImageIndex = Number(button.dataset.galleryIndex);
+      renderProductDetails();
     });
+  });
 
-    document.querySelectorAll("[data-variant-index]").forEach((button) => {
-        button.addEventListener("click", () => {
-            const index = Number(button.dataset.variantIndex);
-            selectedVariant = product.variants[index];
-            renderProductDetails();
-        });
+  document.querySelectorAll("[data-variant-index]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const index = Number(button.dataset.variantIndex);
+      selectedVariant = product.variants[index];
+      renderProductDetails();
     });
+  });
 
-    const orderButton = document.getElementById("orderProductBtn");
+  const orderButton = document.getElementById("orderProductBtn");
 
-    if (orderButton) {
-        orderButton.addEventListener("click", () => {
-            openWhatsApp(product, selectedVariant);
-        });
-    }
+  if (orderButton) {
+    orderButton.addEventListener("click", () => {
+      openWhatsApp(product, selectedVariant);
+    });
+  }
 }
 
 function renderRelatedProducts(currentProduct) {
-    if (!relatedProductsRoot) return;
+  if (!relatedProductsRoot) return;
 
-    const relatedProducts = products
-        .filter((product) => product.id !== currentProduct.id)
-        .slice(0, 4);
+  const relatedProducts = products
+    .filter((product) => product.id !== currentProduct.id)
+    .slice(0, 4);
 
-    relatedProductsRoot.innerHTML = `
+  relatedProductsRoot.innerHTML = `
     <section class="mt-32 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
       <div class="flex justify-between items-end mb-12 border-b border-outline-variant/20 pb-8">
         <h2 class="font-headline-lg-mobile md:font-headline-md text-headline-lg-mobile md:text-headline-md uppercase tracking-tighter">
@@ -419,8 +435,8 @@ function renderRelatedProducts(currentProduct) {
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
         ${relatedProducts
-            .map(
-                (product) => `
+      .map(
+        (product) => `
               <a
                 href="product.html?id=${product.id}"
                 class="group relative bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all hover:-translate-y-2"
@@ -449,21 +465,35 @@ function renderRelatedProducts(currentProduct) {
                 </div>
               </a>
             `
-            )
-            .join("")}
+      )
+      .join("")}
       </div>
     </section>
   `;
 }
 
 document.addEventListener("click", (event) => {
-    if (event.target.closest(".wathba-lang-btn")) {
-        setTimeout(() => {
-            currentLang = getCurrentLang();
-            selectedVariant = null;
-            renderProductDetails();
-        }, 80);
-    }
+  if (event.target.closest(".wathba-lang-btn")) {
+    setTimeout(() => {
+      currentLang = getCurrentLang();
+      selectedVariant = null;
+      renderProductDetails();
+    }, 80);
+  }
 });
 
 renderProductDetails();
+
+/* =========================
+   WATHBA PRODUCT DETAILS LANGUAGE HOTFIX
+========================= */
+
+document.addEventListener("wathba:langchange", function (event) {
+  const newLang = event.detail && event.detail.lang ? event.detail.lang : null;
+
+  setTimeout(function () {
+    currentLang = newLang || localStorage.getItem("wathbaLang") || "en";
+    selectedVariant = null;
+    renderProductDetails();
+  }, 80);
+});

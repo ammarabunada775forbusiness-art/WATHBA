@@ -139,6 +139,101 @@
         }
     </script>
     <link rel="stylesheet" href="assets/css/shared-ui.css" />
+    <!-- WATHBA_PRODUCT_DETAILS_DYNAMIC_START -->
+    <style id="wathba-product-details-dynamic">
+        .wathba-detail-main-image.wathba-image-fallback::after,
+        .wathba-related-image.wathba-image-fallback::after,
+        .wathba-thumb.wathba-image-fallback::after {
+            content: "WATHBA";
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            font-family: "Anton", sans-serif;
+            color: rgba(255, 255, 255, 0.22);
+            letter-spacing: 0.08em;
+        }
+
+        .wathba-detail-main-image.wathba-image-fallback::after {
+            font-size: clamp(42px, 8vw, 92px);
+        }
+
+        .wathba-related-image.wathba-image-fallback::after,
+        .wathba-thumb.wathba-image-fallback::after {
+            font-size: 28px;
+        }
+
+        .wathba-size-chip.active {
+            background: #ffffff !important;
+            color: #000000 !important;
+            border-color: #ffffff !important;
+        }
+
+        .wathba-thumb.active {
+            border-color: #ffffff !important;
+        }
+
+        .wathba-thumb.active img {
+            opacity: 1 !important;
+        }
+
+        .wathba-wa-svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 767px) {
+            #productDetailsRoot section {
+                padding-top: 22px !important;
+            }
+
+            #productDetailsRoot h1 {
+                font-size: 46px !important;
+                line-height: 0.95 !important;
+            }
+
+            #productDetailsRoot p {
+                font-size: 15px !important;
+                line-height: 1.75 !important;
+            }
+
+            #productDetailsRoot .wathba-detail-main-image {
+                aspect-ratio: 1 / 1 !important;
+            }
+
+            #productDetailsRoot .wathba-detail-thumbs {
+                gap: 10px !important;
+            }
+
+            #productDetailsRoot .wathba-size-row {
+                overflow-x: auto;
+                flex-wrap: nowrap !important;
+                padding-bottom: 8px;
+            }
+
+            #productDetailsRoot .wathba-size-chip {
+                white-space: nowrap;
+            }
+
+            #productDetailsRoot .wathba-order-btn {
+                width: 100%;
+                font-size: 24px !important;
+                padding-top: 18px !important;
+                padding-bottom: 18px !important;
+            }
+
+            #relatedProductsRoot {
+                margin-top: 70px !important;
+            }
+
+            #relatedProductsRoot h2 {
+                font-size: 42px !important;
+                line-height: 1 !important;
+            }
+        }
+    </style>
+    <!-- WATHBA_PRODUCT_DETAILS_DYNAMIC_END -->
 </head>
 
 <body class="bg-background text-on-surface font-body-md selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
@@ -167,224 +262,14 @@
         </nav>
     </header>
     <main class="pt-32 pb-24">
-        <!-- Hero/Product Section -->
-        <section
-            class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-16">
-            <!-- Gallery & Main Image -->
-            <div class="lg:col-span-7 flex flex-col gap-6">
-                <div
-                    class="relative aspect-square md:aspect-[4/3] overflow-hidden bg-surface-container-lowest border border-outline-variant/20 rounded-lg">
-                    <img alt="Wooden Parallettes" class="w-full h-full object-cover"
-                        data-alt="A high-contrast, professional product photograph of handcrafted wooden parallettes made from premium light ash wood. The parallettes are positioned on a dark, reflective granite surface in a moody gym setting with dramatic top-down lighting highlighting the muscular wood grain. The background is a dark, desaturated industrial space that enhances the premium athletic editorial aesthetic. Shadows are sharp and controlled, emphasizing the stability and heavy-duty craftsmanship of the fitness equipment."
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEv8IuG4Ow32saPY2NFseJNPhIFNeAa5u67c0xk8cthIa1NcMrQKnYqBI-snrES22EVI2ng-uBDmH-EfYQSdfJYDgZv3FV2BqgIyVTxa2oyD1Fyezrvl1szcQFMIdhCNIt_gQ0e4I7WrNZOfDj0SbirRvsbbVqfJ2yEKuUh0xMfA66058Pnlczug4E0dJik5X-FWyf7slMTR1IpQ3E20T4fU_qX6xCnWcWQSVQ6z2BT2BYk_rbkS5Y-2TVEUJe1km9fR-0ODK9Vg" />
-                </div>
-                <div class="grid grid-cols-4 gap-4">
-                    <button class="aspect-square bg-surface-container rounded border border-primary overflow-hidden">
-                        <img class="w-full h-full object-cover opacity-100"
-                            data-alt="Close up of the grain in the premium ash wood used for parallettes."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxsj-VOXxhypd3ja9bbU7ow-EavnEW2DxD4rJne4P_IMVAJTggIh-8Uo6mmNYI5V924KakVv8RI5NsBOMkQC3O3avzjSD7On-GfTSt8IYvRuETKQk1MKoAqiGdU4ZCqGk1ur9Id0y_ueKYs_yM3C_qUmpU7Xu5OnMgOB1s56xfyeI416gmQyKEtURv0gbwm6PzmctibfPGA4vMtH82hNHuHsxg52lWFGouUOZ3_bwvRQAj0nkUznT7bYFm8bRQxbsc0mgIuUq88A" />
-                    </button>
-                    <button
-                        class="aspect-square bg-surface-container-low rounded border border-outline-variant/20 hover:border-primary transition-all overflow-hidden">
-                        <img class="w-full h-full object-cover opacity-60"
-                            data-alt="Wide shot of parallettes in a minimalist gym setting."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH2ntBKnA0H0ZuyyLLV9zuaDphluMUnRvXcWGzH3_H2Y6aLBkSkdCMkhP4ytrFeTcHbBG5n1dcuAbMDyuc0Nfem5CPJKXMk5eK69LpgjfTfNidr8gzKUZuVIP8KHEomPeOaeNnW2VJcXomGdcuEcSKQ2PjXwGTRDlOEqjLRZpiqh1Au2MkR7tNEj92hOoUegLbXZZkTFjLRTPmU2i00LYpCAFbbkpsmFwBVxe-Pi9vXGiD9vAaGzfK4wMdfRrRghMwwk7kHeSKdg" />
-                    </button>
-                    <button
-                        class="aspect-square bg-surface-container-low rounded border border-outline-variant/20 hover:border-primary transition-all overflow-hidden">
-                        <img class="w-full h-full object-cover opacity-60"
-                            data-alt="Athlete using wooden parallettes for a handstand hold."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCsTXsiKfHjvnah6WAEbme7dHZJLLC0ao_PlHWpgZS8PmwJYEYh95vrL6NtioQ3au9yK_4MeQ8jkjIduz2nbyvHCkmxMWJg8q8p5gTErd-pwlNq72y9iwRKwDeLWnhl2s5xsmCCjQbTrDSdbXktP0E5lRyjBLqMrNrq1S1UHpppI1c2FWIf8mj0IUybmkdFoMZT_3bu3SSK8mS9LfH-mfSKdMd683_nNdXqVMHFfP4JUdhBfYtK2BxySKZrRFOYXDRRjjKHo1DhA" />
-                    </button>
-                    <button
-                        class="aspect-square bg-surface-container-low rounded border border-outline-variant/20 hover:border-primary transition-all overflow-hidden">
-                        <img class="w-full h-full object-cover opacity-60"
-                            data-alt="Detail of the non-slip rubber base of the wooden parallettes."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8wl4Y_gMhI4Bv3-7qklKb9wWTfo7peen_ObyzGuUL-jjtfBRVNfeaqxhk5jJdIDuETWOdSq16KNyd4GFtseOXoozKcJt-Y9JAuG1sgK_Rg-zZLNGdtiMNt6mbVRRGF3aAIHcRTn5n-400s5AsvD8akwQIIT5LPEVPr39DCmaf9QJ3ujkxfqV_oPX8-ahZa3yl87d4xISJbzyvlMzzv9Fj2rEcFOblMwf3wH08RKEIv1h2xu8bDG09e8RXTe2ubo427BkDHzaOHA" />
-                    </button>
-                </div>
-            </div>
-            <!-- Product Info -->
-            <div class="lg:col-span-5 flex flex-col">
-                <span class="font-label-caps text-label-caps text-tertiary-fixed-dim mb-4">HANDLES / CALISTHENICS</span>
-                <h1
-                    class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-6 tracking-tighter leading-none">
-                    WOODEN<br />PARALLETTES
-                </h1>
-                <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
-                    Engineered for peak calisthenics performance. Crafted from premium ash wood for a superior grip that
-                    absorbs moisture and prevents slipping during intense sessions. Designed for absolute stability and
-                    heavy-duty load bearing.
-                </p>
-                <!-- Selectors -->
-                <div class="mb-8">
-                    <label class="font-label-caps text-label-caps block mb-4">SELECT SIZE</label>
-                    <div class="flex flex-wrap gap-3">
-                        <button
-                            class="px-8 py-3 rounded-full border border-primary bg-primary text-background font-label-caps text-label-caps transition-all">SMALL</button>
-                        <button
-                            class="px-8 py-3 rounded-full border border-outline-variant/30 hover:border-primary transition-all font-label-caps text-label-caps">MEDIUM</button>
-                        <button
-                            class="px-8 py-3 rounded-full border border-outline-variant/30 hover:border-primary transition-all font-label-caps text-label-caps">LARGE</button>
-                    </div>
-                </div>
-                <div class="mb-10 p-6 bg-surface-container-low border border-outline-variant/10 rounded-lg">
-                    <span class="font-label-caps text-label-caps text-on-surface-variant block mb-1">PRICING</span>
-                    <div class="flex items-baseline gap-2">
-                        <span class="font-headline-md text-headline-md text-primary">Price depends on size</span>
-                        <span class="font-body-md text-body-md text-on-surface-variant">JOD</span>
-                    </div>
-                </div>
-                <!-- CTA -->
-                <a class="flex items-center justify-center gap-3 bg-[#25D366] text-white py-5 px-8 rounded-full font-headline-md text-headline-md uppercase tracking-tighter hover:brightness-110 active:scale-95 transition-all shadow-lg"
-                    href="https://wa.me/962791752349">
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span>
-                    ORDER VIA WHATSAPP
-                </a>
-                <!-- Features Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 pt-16 border-t border-outline-variant/10">
-                    <div class="flex flex-col gap-3">
-                        <span class="material-symbols-outlined text-primary text-3xl">forest</span>
-                        <h3 class="font-label-caps text-label-caps">Premium Ash Wood</h3>
-                        <p class="text-xs text-on-surface-variant">Solid hardwood construction for maximum grip &amp;
-                            durability.</p>
-                    </div>
-                    <div class="flex flex-col gap-3">
-                        <span class="material-symbols-outlined text-primary text-3xl">grid_view</span>
-                        <h3 class="font-label-caps text-label-caps">Non-slip Base</h3>
-                        <p class="text-xs text-on-surface-variant">Industrial grade rubber pads for multi-surface
-                            stability.</p>
-                    </div>
-                    <div class="flex flex-col gap-3">
-                        <span class="material-symbols-outlined text-primary text-3xl">fitness_center</span>
-                        <h3 class="font-label-caps text-label-caps">200kg Limit</h3>
-                        <p class="text-xs text-on-surface-variant">Heavy-duty testing ensures safety for all movements.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Related Products Section -->
-        <section class="mt-32 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-            <div class="flex justify-between items-end mb-12 border-b border-outline-variant/20 pb-8">
-                <h2
-                    class="font-headline-lg-mobile md:font-headline-md text-headline-lg-mobile md:text-headline-md uppercase tracking-tighter">
-                    EQUIP YOURSELF</h2>
-                <a class="font-label-caps text-label-caps text-primary border-b border-primary" href="#">VIEW ALL
-                    TOOLS</a>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-                <!-- Product Card 1 -->
-                <div
-                    class="group relative bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all hover:-translate-y-2">
-                    <div class="aspect-[3/4] relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            data-alt="A dark, athletic editorial photo of heavy-duty black steel pull-up bars mounted on a concrete wall. The lighting is cold and clinical, highlighting the texture of the powder-coated steel. The mood is raw and professional."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTvvNH5_hUXBT10oOF2ur1gEIOr6KcWQExs9WP8O7Z0FrwfSANHI7b6wocE9-0IBi3MqHVRRcvFBj83r-TV_7gwkjN-_9evnIdT8-ug-gyF3X3l63NcGvF1pLI8UE70l8b9pqmskDV6a1-Sp5hsQvvqvsWovB3k4yznW3BWaCZPOtp1CSOWEH09UPiaqQq35Dte9rueH9h4k-WoUJWsNR2lff1A0V-IVV6VsqBDMFsE7Tbml9C9KnjqwZgBa803_w4YqsXUQl_5g" />
-                        <div
-                            class="absolute bottom-0 left-0 w-full glass-effect p-6 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
-                            <span class="font-label-caps text-label-caps text-tertiary-fixed-dim">EQUIPMENT</span>
-                        </div>
-                    </div>
-                    <div class="p-6 flex justify-between items-center">
-                        <div>
-                            <h4 class="font-headline-md text-[20px] uppercase tracking-tight">PULL-UP BAR</h4>
-                            <p class="font-label-caps text-[10px] text-on-surface-variant">WALL MOUNTED</p>
-                        </div>
-                        <span class="material-symbols-outlined text-primary">arrow_forward</span>
-                    </div>
-                </div>
-                <!-- Product Card 2 -->
-                <div
-                    class="group relative bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all hover:-translate-y-2">
-                    <div class="aspect-[3/4] relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            data-alt="A minimalist, high-contrast shot of wooden gymnastic rings hanging from heavy-duty nylon straps against a pitch-black background. High-key rim lighting outlines the perfect circle of the rings. The style is premium sports-tech."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCOV69ozy1crzujdS-BZiJn1WXGqycTRyHVjBzMDoNf7tXwK1MBslaxDk7aYt6tu2QO-Ldk2hpwZuWfY8uecLIMDcwOhmH_OEZIwely4FMRji5b17_sel1rmDZNEDxkw6RvieO5PEbx0y9YYucpopHHWv_MOZL0ybPL4pOcXutkWlOodmuE2Dyd6_P3Tk0GgKXd9tUej7-xmjBKGiRTpEVKF-o_pczGEuDaFTn81WxB2HftRx6e14dlA1IQlanFIl9v_PHqXnaGA" />
-                        <div
-                            class="absolute bottom-0 left-0 w-full glass-effect p-6 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
-                            <span class="font-label-caps text-label-caps text-tertiary-fixed-dim">CALISTHENICS</span>
-                        </div>
-                    </div>
-                    <div class="p-6 flex justify-between items-center">
-                        <div>
-                            <h4 class="font-headline-md text-[20px] uppercase tracking-tight">GYMNASTIC RINGS</h4>
-                            <p class="font-label-caps text-[10px] text-on-surface-variant">BIRCH WOOD</p>
-                        </div>
-                        <span class="material-symbols-outlined text-primary">arrow_forward</span>
-                    </div>
-                </div>
-                <!-- Product Card 3 -->
-                <div
-                    class="group relative bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all hover:-translate-y-2">
-                    <div class="aspect-[3/4] relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            data-alt="Professional flat lay of high-tension latex resistance bands in various shades of gray and black on a dark industrial floor. The texture is matte and premium. Light catches the edges of the bands creating a sense of energy and tension."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfj7gfXFW6Zh_PDePiqJHy3HfySZmK3pcJ7GT8tTNldcuQ02DlbaL60yzzuMw3tKYPULfXTLffF7FoCnQn91US8iNwEnaoT8_JK7AJ2-5n6mLehmiGVzyoFw0f1_aeoMY4Gcd8BSbNj8Sqv9Q-lKrbWrQJzue5etsTthwMsi4OwURTz0H_9XASTQLLzFr1fAq3-AP8PI8yrGwhY2_sLjyvzfK7nVg66-u3j9RTWa_At7zsikc2PZ_q1RBF9OOr38GRLgXFELYmkg" />
-                        <div
-                            class="absolute bottom-0 left-0 w-full glass-effect p-6 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
-                            <span class="font-label-caps text-label-caps text-tertiary-fixed-dim">ACCESSORY</span>
-                        </div>
-                    </div>
-                    <div class="p-6 flex justify-between items-center">
-                        <div>
-                            <h4 class="font-headline-md text-[20px] uppercase tracking-tight">RESISTANCE BANDS</h4>
-                            <p class="font-label-caps text-[10px] text-on-surface-variant">HEAVY DUTY</p>
-                        </div>
-                        <span class="material-symbols-outlined text-primary">arrow_forward</span>
-                    </div>
-                </div>
-                <!-- Product Card 4 -->
-                <div
-                    class="group relative bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all hover:-translate-y-2">
-                    <div class="aspect-[3/4] relative overflow-hidden">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            data-alt="A focused studio shot of a 10kg weighted vest with a tactical aesthetic, featuring military-grade fabric and sleek black finishes. The vest is illuminated by sharp side-lighting that emphasizes its technical structure and fit."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuANe8BTN_KYASE-KfDzqdbUlbIN9V4dHlxN7406MI0LqVSrc6G4ZF5soWI65ra6MRDejK_fLY8psZgXWUMPYzojWiw9uSXAmZnO_j0e0DmphVCcA5bpIQyvfM2wxCvogxe-9G_EdHFOeFXeoVbArU76KZFjvmxyUbaTcw_ecfvQOEitagJSnvvx_0NgBGcMVyNV69TCiFTO5mt2cKTqg30wgRURYhumG4Lpv2vT5YJW9OeR5v9pSbwZqUlo98oL6sOT9cM1LL9dJA" />
-                        <div
-                            class="absolute bottom-0 left-0 w-full glass-effect p-6 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
-                            <span class="font-label-caps text-label-caps text-tertiary-fixed-dim">LOADED</span>
-                        </div>
-                    </div>
-                    <div class="p-6 flex justify-between items-center">
-                        <div>
-                            <h4 class="font-headline-md text-[20px] uppercase tracking-tight">WEIGHTED VEST</h4>
-                            <p class="font-label-caps text-[10px] text-on-surface-variant">TACTICAL 10KG</p>
-                        </div>
-                        <span class="material-symbols-outlined text-primary">arrow_forward</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section id="productDetailsRoot"></section>
+        <section id="relatedProductsRoot"></section>
     </main>
     <div id="wathbaFooter"></div>
-    <script>
-        // Simple Interaction Logic
-        document.querySelectorAll('button').forEach(btn => {
-            btn.addEventListener('click', function () {
-                if (this.parentElement.classList.contains('flex-wrap')) {
-                    this.parentElement.querySelectorAll('button').forEach(b => {
-                        b.classList.remove('bg-primary', 'text-background');
-                        b.classList.add('border-outline-variant/30');
-                    });
-                    this.classList.add('bg-primary', 'text-background');
-                    this.classList.remove('border-outline-variant/30');
-                }
-            });
-        });
 
-        // Sticky Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 20) {
-                header.classList.add('py-2');
-                header.classList.remove('py-4');
-            } else {
-                header.classList.add('py-4');
-                header.classList.remove('py-2');
-            }
-        });
-    </script>
+    <script src="assets/js/products-data.js"></script>
+    <script src="assets/js/whatsapp.js"></script>
+    <script src="assets/js/product-details.js"></script>
     <script src="assets/js/shared-ui.js"></script>
 </body>
 
