@@ -147,7 +147,12 @@ function wathbaTranslateDesktopNav() {
   };
 
   document.querySelectorAll("nav a, header a").forEach((link) => {
+    if (link.dataset.wathbaLogo === "true") return;
+    if (link.classList.contains("wathba-logo")) return;
+    if (link.classList.contains("wathba-nav-logo")) return;
+
     const href = (link.getAttribute("href") || "").split("?")[0];
+
     if (map[href]) {
       link.textContent = wathbaT(map[href]);
     }
@@ -239,6 +244,10 @@ function wathbaTranslateDesktopNav() {
   };
 
   document.querySelectorAll("nav a, header a").forEach((link) => {
+    if (link.dataset.wathbaLogo === "true") return;
+    if (link.classList.contains("wathba-logo")) return;
+    if (link.classList.contains("wathba-nav-logo")) return;
+
     const href = link.getAttribute("href") || "";
     const page = href.split("?")[0];
 
@@ -272,20 +281,17 @@ function wathbaSetActiveLinks() {
 }
 
 function wathbaNormalizeLogo() {
-  const logoCandidates = document.querySelectorAll(
-    "nav .font-headline-md, header .font-headline-md, nav a[href='#'], header a[href='#']"
-  );
+  document.querySelectorAll("[data-wathba-logo='true'], .wathba-nav-logo, .wathba-logo").forEach((logo) => {
+    const insideNav = logo.closest("nav, header");
 
-  logoCandidates.forEach((logo) => {
-    const text = logo.textContent.trim().toLowerCase();
+    if (!insideNav) return;
 
-    if (text === "wathba" || text === "وثبة") {
-      logo.textContent = "WATHBA";
-      logo.classList.add("wathba-logo");
+    logo.textContent = "WATHBA";
+    logo.classList.add("wathba-logo", "wathba-nav-logo");
+    logo.dataset.wathbaLogo = "true";
 
-      if (logo.tagName.toLowerCase() === "a") {
-        logo.href = "index.html";
-      }
+    if (logo.tagName.toLowerCase() === "a") {
+      logo.setAttribute("href", "index.html");
     }
   });
 }
@@ -317,6 +323,9 @@ function wathbaNormalizeLinks() {
   });
 
   document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
+    if (link.dataset.wathbaLogo === "true") return;
+    if (link.classList.contains("wathba-logo")) return;
+    if (link.classList.contains("wathba-nav-logo")) return;
     const hasQuery = link.href.includes("?text=");
     if (!hasQuery) {
       link.href = wathbaWhatsappUrl(wathbaT("whatsappMessage"));
@@ -498,16 +507,17 @@ document.addEventListener("DOMContentLoaded", () => {
     fixHomeHeroSpacing();
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(runWathbaHotfix, 50);
-    setTimeout(runWathbaHotfix, 300);
-  });
+  // OLD HOTFIX DISABLED - unified navbar handles logo/nav now
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   setTimeout(runWathbaHotfix, 50);
+  //   setTimeout(runWathbaHotfix, 300);
+  // });
 
-  document.addEventListener("wathba:langchange", () => {
-    setTimeout(runWathbaHotfix, 50);
-  });
+  // document.addEventListener("wathba:langchange", () => {
+  //   setTimeout(runWathbaHotfix, 50);
+  // });
 
-  window.addEventListener("load", runWathbaHotfix);
+  // window.addEventListener("load", runWathbaHotfix);
 })();
 
 /* WATHBA CART PATCH */

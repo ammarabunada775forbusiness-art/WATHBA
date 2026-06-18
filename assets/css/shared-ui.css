@@ -1428,3 +1428,77 @@ html[data-wathba-lang="ar"] .hero-text-stroke {
     font-size: 13px !important;
   }
 }
+
+/* FINAL FORCE: WATHBA LOGO SIZE */
+nav.fixed .wathba-brand-logo,
+header.fixed .wathba-brand-logo,
+.wathba-brand-logo {
+  font-family: "Anton", sans-serif !important;
+  font-size: 72px !important;
+  line-height: 0.82 !important;
+  letter-spacing: -0.055em !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@media (max-width: 1024px) {
+
+  nav.fixed .wathba-brand-logo,
+  header.fixed .wathba-brand-logo,
+  .wathba-brand-logo {
+    font-size: 42px !important;
+    line-height: 0.86 !important;
+  }
+}
+
+@media (max-width: 430px) {
+
+  nav.fixed .wathba-brand-logo,
+  header.fixed .wathba-brand-logo,
+  .wathba-brand-logo {
+    font-size: 36px !important;
+  }
+}
+
+/* FINAL NAV LOGO LOCK */
+nav.fixed .wathba-nav-logo,
+header.fixed .wathba-nav-logo,
+.wathba-nav-logo {
+  font-family: "Anton", sans-serif !important;
+  font-size: 64px !important;
+  line-height: 0.88 !important;
+  letter-spacing: -0.045em !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@media (max-width: 1024px) {
+
+  nav.fixed .wathba-nav-logo,
+  header.fixed .wathba-nav-logo,
+  .wathba-nav-logo {
+    font-size: 40px !important;
+    line-height: 0.9 !important;
+  }
+}
+
+@media (max-width: 430px) {
+
+  nav.fixed .wathba-nav-logo,
+  header.fixed .wathba-nav-logo,
+  .wathba-nav-logo {
+    font-size: 34px !important;
+  }
+}
