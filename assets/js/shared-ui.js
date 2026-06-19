@@ -101,7 +101,11 @@ function wathbaApplyLanguage(lang) {
   localStorage.setItem("wathbaLang", lang);
 
   document.documentElement.lang = lang;
-  document.documentElement.dir = "ltr";
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+  if (document.body) {
+    document.body.dir = lang === "ar" ? "rtl" : "ltr";
+  }
   document.documentElement.dataset.wathbaLang = lang;
 
   const langButton = document.querySelector(".wathba-lang-btn");

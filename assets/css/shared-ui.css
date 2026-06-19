@@ -1327,3 +1327,117 @@ body:has(#home) main {
     display: inline-flex !important;
   }
 }
+
+/* =====================================================
+   WATHBA RTL TEXT DIRECTION FIX
+   Arabic text RTL, visual layout/logo/tools stay stable
+===================================================== */
+
+/* Arabic page text direction */
+html[dir="rtl"] body {
+  direction: rtl;
+}
+
+/* Main Arabic content */
+html[dir="rtl"] main p,
+html[dir="rtl"] main li,
+html[dir="rtl"] main label,
+html[dir="rtl"] main input,
+html[dir="rtl"] main textarea,
+html[dir="rtl"] main select,
+html[dir="rtl"] main h2,
+html[dir="rtl"] main h3,
+html[dir="rtl"] main h4,
+html[dir="rtl"] main h5,
+html[dir="rtl"] main h6,
+html[dir="rtl"] main .font-body-md,
+html[dir="rtl"] main .font-body-lg,
+html[dir="rtl"] main .text-body-md,
+html[dir="rtl"] main .text-body-lg,
+html[dir="rtl"] main .text-on-surface-variant,
+html[dir="rtl"] main .font-label-caps,
+html[dir="rtl"] main .text-label-caps,
+html[dir="rtl"] .product-card,
+html[dir="rtl"] .home-product-card,
+html[dir="rtl"] #productDetailsRoot,
+html[dir="rtl"] #relatedProductsRoot {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: plaintext !important;
+}
+
+/* Buttons stay visually centered */
+html[dir="rtl"] main a[class*="rounded-full"],
+html[dir="rtl"] main button,
+html[dir="rtl"] .product-card-actions a,
+html[dir="rtl"] .product-card-actions button,
+html[dir="rtl"] .home-product-actions a,
+html[dir="rtl"] .home-product-actions button {
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+/* Keep navbar layout stable */
+html[dir="rtl"] nav.fixed,
+html[dir="rtl"] header.fixed,
+html[dir="rtl"] nav.fixed>div,
+html[dir="rtl"] header.fixed>div {
+  direction: ltr !important;
+}
+
+/* But Arabic nav labels can still read normally */
+html[dir="rtl"] nav.fixed .hidden.md\:flex a:not(.wathba-logo):not(.wathba-nav-logo),
+html[dir="rtl"] header.fixed .hidden.md\:flex a:not(.wathba-logo):not(.wathba-nav-logo),
+html[dir="rtl"] .wathba-mobile-menu a {
+  direction: rtl !important;
+  unicode-bidi: plaintext !important;
+}
+
+/* Keep logo English always */
+html[dir="rtl"] .wathba-logo,
+html[dir="rtl"] .wathba-nav-logo,
+html[dir="rtl"] .wathba-footer-logo {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  text-align: left !important;
+}
+
+/* Keep tools and icons stable */
+html[dir="rtl"] .wathba-top-tools,
+html[dir="rtl"] .whatsapp-widget,
+html[dir="rtl"] .wathba-cart-drawer,
+html[dir="rtl"] .material-symbols-outlined,
+html[dir="rtl"] .wathba-wa-svg,
+html[dir="rtl"] .home-wa-svg {
+  direction: ltr !important;
+}
+
+/* Keep big editorial English headings as English */
+html[dir="rtl"] .font-display-hero,
+html[dir="rtl"] .text-display-hero,
+html[dir="rtl"] .hero-text-stroke,
+html[dir="rtl"] #home h1,
+html[dir="rtl"] #home h1 span {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate !important;
+}
+
+/* Hero floating cards remain English technical labels */
+html[dir="rtl"] .hero-stat-card,
+html[dir="rtl"] .hero-stat-card span {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: isolate !important;
+}
+
+/* Footer Arabic text */
+html[dir="rtl"] .wathba-site-footer,
+html[dir="rtl"] .wathba-footer-text,
+html[dir="rtl"] .wathba-footer-list,
+html[dir="rtl"] .wathba-footer-contact,
+html[dir="rtl"] .wathba-footer-contact p,
+html[dir="rtl"] .wathba-footer-bottom p {
+  direction: rtl !important;
+  text-align: right !important;
+}

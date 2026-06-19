@@ -11,6 +11,7 @@
       var lang = localStorage.getItem("wathbaLang") || "ar";
       document.documentElement.lang = lang;
       document.documentElement.dataset.wathbaLang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
       document.documentElement.classList.add("wathba-ui-loading");
     })();
   </script>
