@@ -1617,6 +1617,35 @@ html[dir="rtl"] body:has(#wathba-about-page-translation) main section:nth-of-typ
   justify-content: center !important;
 }
 
+/* =====================================================
+   GLOBAL SCROLL REVEAL
+===================================================== */
+
+.wathba-reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  filter: blur(8px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--wathba-reveal-delay, 0ms);
+}
+
+.wathba-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wathba-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
 
 /* =====================================================
    CART DESIGN V2: premium drawer + mobile bottom sheet
@@ -1711,10 +1740,41 @@ html[dir="rtl"] body:has(#wathba-about-page-translation) main section:nth-of-typ
 
 .wathba-cart-body {
   padding: 14px !important;
+  padding-inline-end: 10px !important;
   gap: 12px !important;
   display: grid !important;
   align-content: start !important;
   overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(37, 211, 102, 0.55) transparent !important;
+}
+
+.wathba-cart-body::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+.wathba-cart-body::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.wathba-cart-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(37, 211, 102, 0.85), rgba(255, 255, 255, 0.24)) !important;
+  border-radius: 999px !important;
+}
+
+.wathba-cart-body::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+html[dir="rtl"] .wathba-cart-body {
+  direction: ltr !important;
+}
+
+html[dir="rtl"] .wathba-cart-body>* {
+  direction: rtl !important;
 }
 
 .wathba-cart-item {

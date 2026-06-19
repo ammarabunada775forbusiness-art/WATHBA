@@ -521,6 +521,63 @@ document.addEventListener("DOMContentLoaded", () => {
   // window.addEventListener("load", runWathbaHotfix);
 })();
 
+/* Global Scroll Reveal */
+(function () {
+  function wathbaInitReveal() {
+    const selectors = [
+      "main > section",
+      ".product-card",
+      ".home-product-card",
+      ".glass-card",
+      ".glass-panel",
+      ".wathba-contact-info-card",
+      ".wathba-site-footer-grid > *"
+    ];
+
+    const elements = Array.from(document.querySelectorAll(selectors.join(",")))
+      .filter((element) => {
+        if (element.classList.contains("wathba-reveal-bound")) return false;
+        if (element.closest(".wathba-cart-drawer")) return false;
+        if (element.closest(".wathba-mobile-menu")) return false;
+        return true;
+      });
+
+    if (!elements.length) return;
+
+    elements.forEach((element, index) => {
+      element.classList.add("wathba-reveal", "wathba-reveal-bound");
+      element.style.setProperty("--wathba-reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -70px 0px"
+      }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(wathbaInitReveal, 80);
+  });
+
+  document.addEventListener("wathba:langchange", () => {
+    setTimeout(wathbaInitReveal, 120);
+  });
+
+  window.WathbaInitReveal = wathbaInitReveal;
+})();
+
 /* WATHBA CART PATCH */
 (function () {
   const CART_KEY = "wathbaCartItems";
