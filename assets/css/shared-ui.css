@@ -474,15 +474,19 @@ html[data-wathba-lang="ar"] .wathba-ar-text {
   }
 
   .wathba-site-footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     padding: 56px 20px;
+    gap: 26px 18px;
   }
 
   .wathba-footer-brand,
-  .wathba-footer-col,
   .wathba-footer-contact,
   .wathba-footer-bottom {
-    grid-column: auto;
+    grid-column: 1 / -1;
+  }
+
+  .wathba-footer-col {
+    grid-column: span 1 / span 1;
   }
 
   .wathba-footer-logo {
@@ -1354,12 +1358,7 @@ body:has(#home) main {
     bottom: auto !important;
   }
 
-  body:has(#home) #home .hero-stat-support {
-    top: 205px !important;
-    right: 10px !important;
-    left: auto !important;
-    bottom: auto !important;
-  }
+
 
   body:has(#home) #home .hero-stat-capacity {
     left: 12px !important;
@@ -1368,7 +1367,7 @@ body:has(#home) main {
     right: auto !important;
   }
 
-  body:has(#home) #home .hero-stat-base {
+  body:has(#home) #home .hero-stat-support {
     right: 18px !important;
     bottom: 48px !important;
     top: auto !important;

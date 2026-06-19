@@ -1,4 +1,4 @@
-let currentLang = localStorage.getItem("wathbaLang") || "en";
+let currentLang = localStorage.getItem("wathbaLang") || "ar";
 let currentFilter = "all";
 
 const filtersContainer = document.getElementById("categoryFilters");
@@ -48,7 +48,7 @@ const productGroups = [
 ];
 
 function getCurrentLang() {
-  return localStorage.getItem("wathbaLang") || "en";
+  return localStorage.getItem("wathbaLang") || "ar";
 }
 
 function syncCurrentLang(langFromEvent = null) {

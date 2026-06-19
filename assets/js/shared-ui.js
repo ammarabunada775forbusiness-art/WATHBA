@@ -533,9 +533,22 @@ document.addEventListener("DOMContentLoaded", () => {
       ".wathba-contact-info-card",
       ".wathba-site-footer-grid > *"
     ];
+    const firstVisibleProductCards = new Set();
 
+    const productsGrid = document.getElementById("allProducts");
+    if (productsGrid) {
+      const firstRowCount = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+
+      Array.from(productsGrid.querySelectorAll(".product-card"))
+        .slice(0, firstRowCount)
+        .forEach((card) => {
+          firstVisibleProductCards.add(card);
+          card.classList.add("active");
+        });
+    }
     const elements = Array.from(document.querySelectorAll(selectors.join(",")))
       .filter((element) => {
+        if (firstVisibleProductCards.has(element)) return false;
         if (element.classList.contains("wathba-reveal-bound")) return false;
         if (element.closest(".wathba-cart-drawer")) return false;
         if (element.closest(".wathba-mobile-menu")) return false;
