@@ -283,6 +283,74 @@
                 font-size: 15px;
             }
         }
+
+        /* Home trusted floating badge */
+        .home-trusted-floating-card {
+            position: absolute;
+            right: -28px;
+            bottom: -28px;
+            z-index: 5;
+            width: 190px;
+            padding: 16px 18px;
+            border-radius: 16px;
+            background: rgba(26, 26, 26, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 22px 65px rgba(0, 0, 0, 0.32);
+        }
+
+        .home-trusted-number {
+            display: block;
+            font-family: "Anton", sans-serif;
+            font-size: 42px;
+            line-height: 0.95;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .home-trusted-text {
+            display: block;
+            font-family: "Be Vietnam Pro", sans-serif;
+            color: #c4c7c8;
+            font-size: 12px;
+            line-height: 1.4;
+            letter-spacing: 0.08em;
+            font-weight: 1000;
+            text-transform: uppercase;
+        }
+
+        html[dir="rtl"] .home-trusted-floating-card {
+            direction: rtl;
+            text-align: right;
+        }
+
+        html[dir="rtl"] .home-trusted-text {
+            font-size: 15px;
+            letter-spacing: 0;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 768px) {
+            .home-trusted-floating-card {
+                right: 12px;
+                bottom: -18px;
+                width: 150px;
+                padding: 12px 13px;
+            }
+
+            .home-trusted-number {
+                font-size: 32px;
+            }
+
+            .home-trusted-text {
+                font-size: 10px;
+            }
+
+            html[dir="rtl"] .home-trusted-text {
+                font-size: 13px;
+            }
+        }
     </style>
     <link rel="stylesheet" href="assets/css/shared-ui.css" />
 </head>
@@ -464,9 +532,9 @@
                     <img class="w-full h-auto rounded-lg shadow-2xl"
                         data-alt="A focused high-contrast black and white photograph of an elite athlete performing a perfectly straight handstand on wooden parallettes. The lighting is dramatic, highlighting muscle definition and the clean lines of the equipment. The setting is a minimalist architectural space with soft ambient light filtering through high windows. The image conveys mastery, balance, and the premium quality of WATHBA products."
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP61UWkVZlK97Cnh6Of2btcxnYamuOEPzoc682kw3PQ4HWrC8-jOalHnIXVrG-T_nT6976MqWiVBsHb0cpQ8FccHGaJpniZBlTL7wsDslCZzoWHOfsePA6pKihTOVKZSdKfLI2LwMQRDtih2ZKoBOGb24ObCNlf12wcRQ-MjJUBDFYsfYMwfKlOR4pFeMeof1ybSOZuGHtiRNNbO8ulS1rER_rdYaYvsqkf13_EyQsMuDeb9Ntj8-2ZQ-8TQFKmR_7pctnA0d5Qw" />
-                    <div class="absolute -bottom-10 -right-10 bg-primary p-8 rounded-lg text-surface">
-                        <span class="font-display-hero text-[48px] block">01</span>
-                        <span class="font-label-caps text-label-caps font-bold">Trusted by Champions</span>
+                    <div class="home-trusted-floating-card floating">
+                        <span class="home-trusted-number">01</span>
+                        <span class="home-trusted-text">Trusted by Champions</span>
                     </div>
                 </div>
             </div>
@@ -602,6 +670,8 @@
             }
 
             function applyHomePageTranslation() {
+                const trustedCardText = document.querySelector(".home-trusted-text");
+                if (trustedCardText) trustedCardText.textContent = t.trusted;
                 const lang = getLang();
                 const t = homePageText[lang];
 

@@ -95,6 +95,47 @@
       letter-spacing: 0;
     }
 
+    /* Arabic contact typography boost */
+    html[dir="rtl"] main section:nth-of-type(1) span.font-label-caps {
+      font-size: 18px !important;
+      line-height: 1.8 !important;
+      letter-spacing: 0 !important;
+      font-weight: 1000 !important;
+    }
+
+    html[dir="rtl"] main section:nth-of-type(1) .glass-card h2 {
+      font-size: clamp(32px, 4vw, 48px) !important;
+      line-height: 1.25 !important;
+      font-family: "Be Vietnam Pro", sans-serif !important;
+      font-weight: 1000 !important;
+    }
+
+    html[dir="rtl"] main section:nth-of-type(1) .glass-card p {
+      font-size: 21px !important;
+      line-height: 2 !important;
+      font-weight: 600 !important;
+    }
+
+    html[dir="rtl"] main section:nth-of-type(3) h2 {
+      font-family: "Be Vietnam Pro", sans-serif !important;
+      font-size: clamp(38px, 5vw, 58px) !important;
+      line-height: 1.25 !important;
+      font-weight: 1000 !important;
+    }
+
+    html[dir="rtl"] main section:nth-of-type(3) .sticky>p {
+      font-size: 21px !important;
+      line-height: 2 !important;
+      font-weight: 600 !important;
+    }
+
+    html[dir="rtl"] main section:nth-of-type(4) h2 {
+      font-family: "Be Vietnam Pro", sans-serif !important;
+      font-size: clamp(36px, 5vw, 56px) !important;
+      line-height: 1.25 !important;
+      font-weight: 1000 !important;
+    }
+
     /* Contact form polish */
     main section form input,
     main section form textarea {
@@ -544,7 +585,7 @@
           cardHours: "ساعات العمل",
           cardHoursValue: "الأحد - الخميس، 9 صباحًا - 6 مساءً",
 
-          inquiryTitle: "INQUIRY<br />DETAILS",
+          inquiryTitle: "تفاصيل<br />الاستفسار",
           inquiryText:
             "اكتب لنا ما الذي تبحث عنه: تجهيز منزلي، عقلة، متوازي، حلقات، أو مساحة كاليسثنكس كاملة. سنساعدك تختار الأنسب حسب هدفك والمساحة المتوفرة.",
 
@@ -556,7 +597,7 @@
           messagePlaceholder: "ما المنتج أو التجهيز الذي تبحث عنه؟",
           submitButton: "إرسال عبر واتساب",
 
-          faqTitle: "FREQUENTLY ASKED",
+          faqTitle: "الأسئلة الشائعة",
           q1: "كيف أطلب؟",
           a1:
             "كل الطلبات تتم عبر واتساب. أرسل لنا المنتج المطلوب وسنؤكد لك التوفر والتفاصيل والسعر.",

@@ -1108,16 +1108,68 @@ html[data-wathba-lang="ar"] .font-body-md,
 html[data-wathba-lang="ar"] .font-body-lg,
 html[data-wathba-lang="ar"] .text-body-md,
 html[data-wathba-lang="ar"] .text-body-lg,
-html[data-wathba-lang="ar"] .text-on-surface-variant {
-  font-size: 18px !important;
-  line-height: 1.9 !important;
+html[data-wathba-lang="ar"] .text-on-surface-variant,
+html[data-wathba-lang="ar"] .product-card p,
+html[data-wathba-lang="ar"] .home-product-card p,
+html[data-wathba-lang="ar"] .wathba-footer-text,
+html[data-wathba-lang="ar"] .wathba-footer-list a,
+html[data-wathba-lang="ar"] .wathba-footer-contact p {
+  font-size: 20px !important;
+  line-height: 2 !important;
+  font-weight: 600 !important;
 }
 
+/* Arabic small labels: mini titles, filters, categories */
 html[data-wathba-lang="ar"] .font-label-caps,
-html[data-wathba-lang="ar"] .text-label-caps {
-  font-size: 15px !important;
-  line-height: 1.7 !important;
+html[data-wathba-lang="ar"] .text-label-caps,
+html[data-wathba-lang="ar"] .category,
+html[data-wathba-lang="ar"] main span.text-label-caps,
+html[data-wathba-lang="ar"] main span.font-label-caps,
+html[data-wathba-lang="ar"] .wathba-footer-title {
+  font-size: 17px !important;
+  line-height: 1.75 !important;
   letter-spacing: 0 !important;
+  font-weight: 1000 !important;
+}
+
+/* Arabic section subtitles / hero mini lines */
+html[data-wathba-lang="ar"] main section>div>span.font-label-caps,
+html[data-wathba-lang="ar"] main section>span.font-label-caps,
+html[data-wathba-lang="ar"] main .tracking-\[0\.3em\],
+html[data-wathba-lang="ar"] main .tracking-\[0\.5em\] {
+  font-size: 18px !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0 !important;
+  font-weight: 1000 !important;
+}
+
+/* Arabic headings that are not the big English editorial words */
+html[data-wathba-lang="ar"] main h2:not(.font-display-hero),
+html[data-wathba-lang="ar"] main h3:not(.font-display-hero),
+html[data-wathba-lang="ar"] main h4:not(.font-display-hero) {
+  font-weight: 1000 !important;
+}
+
+@media (max-width: 768px) {
+
+  html[data-wathba-lang="ar"] p,
+  html[data-wathba-lang="ar"] li,
+  html[data-wathba-lang="ar"] label,
+  html[data-wathba-lang="ar"] button,
+  html[data-wathba-lang="ar"] a:not(.wathba-logo):not(.wathba-nav-logo),
+  html[data-wathba-lang="ar"] .font-body-md,
+  html[data-wathba-lang="ar"] .font-body-lg,
+  html[data-wathba-lang="ar"] .text-body-md,
+  html[data-wathba-lang="ar"] .text-body-lg,
+  html[data-wathba-lang="ar"] .text-on-surface-variant {
+    font-size: 18px !important;
+    line-height: 1.95 !important;
+  }
+
+  html[data-wathba-lang="ar"] .font-label-caps,
+  html[data-wathba-lang="ar"] .text-label-caps {
+    font-size: 15.5px !important;
+  }
 }
 
 /* Stable page top spacing */
