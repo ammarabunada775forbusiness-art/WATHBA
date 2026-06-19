@@ -366,13 +366,13 @@ function renderProductDetails() {
         </div>
 
               <button
-          class="wathba-order-btn flex items-center justify-center gap-3 bg-[#25D366] text-white py-5 px-8 rounded-full font-headline-md text-headline-md uppercase tracking-tighter hover:brightness-110 active:scale-95 transition-all shadow-lg"
-          type="button"
-          id="orderProductBtn"
-        >
-          <span class="material-symbols-outlined">add_shopping_cart</span>
-          ${currentLang === "ar" ? "إضافة للسلة" : "ADD TO CART"}
-        </button>
+  class="wathba-add-cart-btn wathba-add-cart-btn-large"
+  type="button"
+  id="orderProductBtn"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+  <span>${currentLang === "ar" ? "إضافة للسلة" : "ADD TO CART"}</span>
+</button>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 pt-16 border-t border-outline-variant/10">
           ${features

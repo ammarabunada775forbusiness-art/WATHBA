@@ -153,13 +153,13 @@ function renderHomeProducts() {
                 </a>
 
                 <button
-                  class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-4 py-3 rounded-full font-label-caps text-label-caps hover:opacity-90 transition-opacity"
-                  type="button"
-                  data-home-product-id="${product.id}"
-                >
-                  
-                  ${homeTranslations[currentLang].order}
-                </button>
+  class="wathba-add-cart-btn"
+  type="button"
+  data-home-product-id="${product.id}"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+  <span>${homeTranslations[currentLang].order}</span>
+</button>
               </div>
             </div>
           </div>

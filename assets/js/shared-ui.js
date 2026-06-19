@@ -528,6 +528,7 @@ document.addEventListener("DOMContentLoaded", () => {
 (function () {
   const CART_KEY = "wathbaCartItems";
   const PHONE = "962791752349";
+  let cartNotesDraft = "";
 
   function lang() {
     return localStorage.getItem("wathbaLang") || "ar";
@@ -699,6 +700,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function clearCart() {
+    cartNotesDraft = "";
     saveCart([]);
   }
 
@@ -706,7 +708,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const items = readCart();
     if (!items.length) return;
 
-    const notes = document.getElementById("wathbaCartNotes")?.value.trim() || "";
+    const notesElement = document.getElementById("wathbaCartNotes");
+
+    if (notesElement) {
+      cartNotesDraft = notesElement.value;
+    }
+
+    const notes = cartNotesDraft.trim();
 
     const lines = items.map((item, index) => {
       const variant = item.variant ? itemName(item.variant) : "";
@@ -737,63 +745,121 @@ Quantity: ${item.qty}`;
     if (!drawer) return;
 
     const items = readCart();
+    const totalQty = cartCount();
+    const uniqueCount = items.length;
 
     const body = items.length
       ? items
-        .map(
-          (item) => `
-              <div class="wathba-cart-item" data-cart-key="${item.key}">
-                <h4>${itemName(item.name)}</h4>
-                <p>
-                  ${itemName(item.category)}
-                  ${item.variant ? ` • ${itemName(item.variant)}` : ""}
-                </p>
-                <strong>${itemName(item.price)}</strong>
+        .map((item, index) => {
+          const variantText = item.variant ? itemName(item.variant) : "";
+          const itemCategory = itemName(item.category);
+          const itemPrice = itemName(item.price);
 
-                <div class="wathba-cart-controls">
-                  <button type="button" data-cart-minus>-</button>
+          return `
+            <article class="wathba-cart-item" data-cart-key="${item.key}">
+              <div class="wathba-cart-item-top">
+                <div class="wathba-cart-item-index">${index + 1}</div>
+
+                <div class="wathba-cart-item-info">
+                  <h4>${itemName(item.name)}</h4>
+
+                  <p>
+                    ${itemCategory}
+                    ${variantText ? `<span>•</span> ${variantText}` : ""}
+                  </p>
+                </div>
+
+                <button
+                  class="wathba-cart-remove"
+                  type="button"
+                  data-cart-remove
+                  aria-label="${txt("حذف المنتج", "Remove item")}"
+                >
+                  <span class="material-symbols-outlined">close</span>
+                </button>
+              </div>
+
+              <div class="wathba-cart-item-bottom">
+                <strong>${itemPrice}</strong>
+
+                <div class="wathba-cart-stepper" aria-label="${txt("تغيير الكمية", "Change quantity")}">
+                  <button type="button" data-cart-minus aria-label="${txt("تقليل", "Decrease")}">
+                    <span class="material-symbols-outlined">remove</span>
+                  </button>
+
                   <b>${item.qty}</b>
-                  <button type="button" data-cart-plus>+</button>
-                  <button type="button" data-cart-remove>${txt("حذف", "Remove")}</button>
+
+                  <button type="button" data-cart-plus aria-label="${txt("زيادة", "Increase")}">
+                    <span class="material-symbols-outlined">add</span>
+                  </button>
                 </div>
               </div>
-            `
-        )
+            </article>
+          `;
+        })
         .join("")
-      : `<div class="wathba-cart-empty">${txt("السلة فارغة. أضف المنتجات التي تريدها ثم اطلبها عبر واتساب.", "Your cart is empty. Add products then order through WhatsApp.")}</div>`;
+      : `
+      <div class="wathba-cart-empty">
+        <span class="material-symbols-outlined">shopping_bag</span>
+        <h4>${txt("السلة فارغة", "Your cart is empty")}</h4>
+        <p>${txt("أضف المنتجات التي تريدها، ثم اطلبها كلها برسالة واتساب واحدة.", "Add products, then order everything in one WhatsApp message.")}</p>
+      </div>
+    `;
 
     drawer.innerHTML = `
-      <div class="wathba-cart-backdrop" data-cart-close></div>
+    <div class="wathba-cart-backdrop" data-cart-close></div>
 
-      <aside class="wathba-cart-panel">
-        <div class="wathba-cart-header">
-          <div>
-            <strong>WATHBA</strong>
-            <h3>${txt("سلة الطلبات", "Your Cart")}</h3>
-            <p>${cartCount()} ${txt("منتج", "items")}</p>
-          </div>
+    <aside class="wathba-cart-panel" aria-label="${txt("سلة الطلبات", "Shopping cart")}">
+      <div class="wathba-cart-header">
+        <div>
+          <strong>WATHBA</strong>
+          <h3>${txt("سلة الطلبات", "Your Cart")}</h3>
 
-          <button class="wathba-cart-close" type="button" data-cart-close>×</button>
+          <p>
+            ${totalQty} ${txt("قطعة", "items")}
+            ${uniqueCount ? ` • ${uniqueCount} ${txt("منتج", "products")}` : ""}
+          </p>
         </div>
 
-        <div class="wathba-cart-body">
-          ${body}
+        <button class="wathba-cart-close" type="button" data-cart-close aria-label="${txt("إغلاق السلة", "Close cart")}">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="wathba-cart-body">
+        ${body}
+      </div>
+
+      <div class="wathba-cart-footer">
+        <button class="wathba-cart-notes-toggle" type="button" data-cart-notes-toggle>
+          <span class="material-symbols-outlined">edit_note</span>
+          ${txt("إضافة ملاحظات / قياسات", "Add notes / sizes")}
+        </button>
+
+        <div class="wathba-cart-notes ${cartNotesDraft ? "open" : ""}">
+          <textarea
+            id="wathbaCartNotes"
+            rows="3"
+            placeholder="${txt("مثال: اللون، القياس، عنوان التوصيل، أو أي ملاحظة...", "Example: color, size, delivery address, or any note...")}"
+          >${cartNotesDraft}</textarea>
         </div>
 
-        <div class="wathba-cart-footer">
-          <label>${txt("ملاحظات / قياسات / تفاصيل التوصيل", "Notes / sizes / delivery details")}</label>
-          <textarea id="wathbaCartNotes" rows="3" placeholder="${txt("اكتب أي تفاصيل إضافية هنا...", "Write any extra details here...")}"></textarea>
-
-          <button class="wathba-cart-order" type="button" data-cart-order>
-            ${txt("طلب الآن عبر واتساب", "Order now on WhatsApp")}
-          </button>
-
-          <button class="wathba-cart-clear" type="button" data-cart-clear>
-            ${txt("تفريغ السلة", "Clear cart")}
-          </button>
+        <div class="wathba-cart-summary">
+          <span>${txt("الإجمالي", "Summary")}</span>
+          <strong>${totalQty} ${txt("قطعة", "items")}</strong>
         </div>
-      </aside>
-    `;
+
+        <button class="wathba-cart-order" type="button" data-cart-order ${items.length ? "" : "disabled"}>
+          <span class="material-symbols-outlined">send</span>
+          ${txt("اطلب الآن عبر واتساب", "Order now on WhatsApp")}
+        </button>
+
+        <button class="wathba-cart-clear" type="button" data-cart-clear ${items.length ? "" : "disabled"}>
+          ${txt("تفريغ السلة", "Clear cart")}
+        </button>
+      </div>
+    </aside>
+  `;
   }
 
   function openCart() {
@@ -822,7 +888,11 @@ Quantity: ${item.qty}`;
     if (event.target.closest("[data-cart-clear]")) {
       clearCart();
     }
+    const notesToggle = event.target.closest("[data-cart-notes-toggle]");
 
+    if (notesToggle) {
+      document.querySelector(".wathba-cart-notes")?.classList.toggle("open");
+    }
     const cartItem = event.target.closest(".wathba-cart-item");
 
     if (cartItem && event.target.closest("[data-cart-plus]")) {
@@ -835,6 +905,14 @@ Quantity: ${item.qty}`;
 
     if (cartItem && event.target.closest("[data-cart-remove]")) {
       removeItem(cartItem.dataset.cartKey);
+    }
+  });
+
+  document.addEventListener("input", function (event) {
+    const notes = event.target.closest("#wathbaCartNotes");
+
+    if (notes) {
+      cartNotesDraft = notes.value;
     }
   });
 

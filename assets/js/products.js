@@ -222,14 +222,13 @@ function renderProducts() {
                 </a>
 
                 <button
-                  class="bg-[#25D366] text-white px-5 py-3 rounded-full font-label-caps text-label-caps flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
-                  type="button"
-                  data-product-id="${product.id}"
-                >
-                  
-                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
-${currentLang === "ar" ? "أضف للسلة" : "Add to Cart"}
-                </button>
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="${product.id}"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+  <span>${currentLang === "ar" ? "أضف للسلة" : "Add to Cart"}</span>
+</button>
               </div>
             </div>
           </div>
