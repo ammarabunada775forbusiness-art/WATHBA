@@ -18,7 +18,6 @@ const WATHBA_SHARED_TRANSLATIONS = {
     footerPhone: "WhatsApp: +962 79 175 2349",
     footerNote: "Orders and custom equipment requests are handled directly through WhatsApp.",
     copyright: "© 2026 WATHBA. ALL RIGHTS RESERVED.",
-    noCheckout: "No cart. No checkout. WhatsApp ordering only.",
     pullUp: "Pull-up Bar",
     parallettes: "Parallettes",
     dipBars: "Dip Bars",
@@ -42,7 +41,6 @@ const WATHBA_SHARED_TRANSLATIONS = {
     footerPhone: "واتساب: +962 79 175 2349",
     footerNote: "الطلبات والتجهيزات المخصصة تتم مباشرة عبر واتساب.",
     copyright: "© 2026 WATHBA. جميع الحقوق محفوظة.",
-    noCheckout: "لا يوجد سلة أو دفع إلكتروني. الطلب فقط عبر واتساب.",
     pullUp: "عقلة",
     parallettes: "باراليتس",
     dipBars: "متوازي",
@@ -233,7 +231,6 @@ function wathbaRenderFooter() {
 
         <div class="wathba-footer-bottom">
           <p>${wathbaT("copyright")}</p>
-          <p>${wathbaT("noCheckout")}</p>
         </div>
       </div>
     </footer>

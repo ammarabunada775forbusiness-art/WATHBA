@@ -1096,19 +1096,17 @@ header a.wathba-nav-logo.active {
 }
 
 /* Arabic text sizing, but never logo */
-html[data-wathba-lang="ar"] p,
-html[data-wathba-lang="ar"] li,
-html[data-wathba-lang="ar"] label,
-html[data-wathba-lang="ar"] input,
-html[data-wathba-lang="ar"] textarea,
-html[data-wathba-lang="ar"] select,
-html[data-wathba-lang="ar"] button,
-html[data-wathba-lang="ar"] a:not(.wathba-logo):not(.wathba-nav-logo),
-html[data-wathba-lang="ar"] .font-body-md,
-html[data-wathba-lang="ar"] .font-body-lg,
-html[data-wathba-lang="ar"] .text-body-md,
-html[data-wathba-lang="ar"] .text-body-lg,
-html[data-wathba-lang="ar"] .text-on-surface-variant,
+html[data-wathba-lang="ar"] main p,
+html[data-wathba-lang="ar"] main li,
+html[data-wathba-lang="ar"] main label,
+html[data-wathba-lang="ar"] main input,
+html[data-wathba-lang="ar"] main textarea,
+html[data-wathba-lang="ar"] main select,
+html[data-wathba-lang="ar"] main .font-body-md,
+html[data-wathba-lang="ar"] main .font-body-lg,
+html[data-wathba-lang="ar"] main .text-body-md,
+html[data-wathba-lang="ar"] main .text-body-lg,
+html[data-wathba-lang="ar"] main .text-on-surface-variant,
 html[data-wathba-lang="ar"] .product-card p,
 html[data-wathba-lang="ar"] .home-product-card p,
 html[data-wathba-lang="ar"] .wathba-footer-text,
@@ -1119,12 +1117,12 @@ html[data-wathba-lang="ar"] .wathba-footer-contact p {
   font-weight: 600 !important;
 }
 
-/* Arabic small labels: mini titles, filters, categories */
-html[data-wathba-lang="ar"] .font-label-caps,
-html[data-wathba-lang="ar"] .text-label-caps,
-html[data-wathba-lang="ar"] .category,
-html[data-wathba-lang="ar"] main span.text-label-caps,
+/* Arabic labels and small captions */
+html[data-wathba-lang="ar"] main .font-label-caps,
+html[data-wathba-lang="ar"] main .text-label-caps,
+html[data-wathba-lang="ar"] main .category,
 html[data-wathba-lang="ar"] main span.font-label-caps,
+html[data-wathba-lang="ar"] main span.text-label-caps,
 html[data-wathba-lang="ar"] .wathba-footer-title {
   font-size: 17px !important;
   line-height: 1.75 !important;
@@ -1132,42 +1130,59 @@ html[data-wathba-lang="ar"] .wathba-footer-title {
   font-weight: 1000 !important;
 }
 
-/* Arabic section subtitles / hero mini lines */
-html[data-wathba-lang="ar"] main section>div>span.font-label-caps,
-html[data-wathba-lang="ar"] main section>span.font-label-caps,
+/* Arabic section mini titles */
 html[data-wathba-lang="ar"] main .tracking-\[0\.3em\],
-html[data-wathba-lang="ar"] main .tracking-\[0\.5em\] {
+html[data-wathba-lang="ar"] main .tracking-\[0\.5em\],
+html[data-wathba-lang="ar"] main section>span.font-label-caps,
+html[data-wathba-lang="ar"] main section>div>span.font-label-caps {
   font-size: 18px !important;
   line-height: 1.8 !important;
   letter-spacing: 0 !important;
   font-weight: 1000 !important;
 }
 
-/* Arabic headings that are not the big English editorial words */
+/* Arabic headings, excluding big English editorial titles */
 html[data-wathba-lang="ar"] main h2:not(.font-display-hero),
 html[data-wathba-lang="ar"] main h3:not(.font-display-hero),
 html[data-wathba-lang="ar"] main h4:not(.font-display-hero) {
+  font-family: "Be Vietnam Pro", sans-serif !important;
   font-weight: 1000 !important;
+}
+
+/* Keep buttons balanced */
+html[data-wathba-lang="ar"] main a[class*="rounded-full"],
+html[data-wathba-lang="ar"] main button {
+  font-size: 17px !important;
+  line-height: 1.5 !important;
+  font-weight: 1000 !important;
+}
+
+/* Do not touch logo or big English headings */
+html[data-wathba-lang="ar"] .wathba-logo,
+html[data-wathba-lang="ar"] .wathba-nav-logo,
+html[data-wathba-lang="ar"] .wathba-footer-logo,
+html[data-wathba-lang="ar"] .font-display-hero,
+html[data-wathba-lang="ar"] .text-display-hero,
+html[data-wathba-lang="ar"] .hero-text-stroke {
+  font-family: "Anton", sans-serif !important;
 }
 
 @media (max-width: 768px) {
 
-  html[data-wathba-lang="ar"] p,
-  html[data-wathba-lang="ar"] li,
-  html[data-wathba-lang="ar"] label,
-  html[data-wathba-lang="ar"] button,
-  html[data-wathba-lang="ar"] a:not(.wathba-logo):not(.wathba-nav-logo),
-  html[data-wathba-lang="ar"] .font-body-md,
-  html[data-wathba-lang="ar"] .font-body-lg,
-  html[data-wathba-lang="ar"] .text-body-md,
-  html[data-wathba-lang="ar"] .text-body-lg,
-  html[data-wathba-lang="ar"] .text-on-surface-variant {
+  html[data-wathba-lang="ar"] main p,
+  html[data-wathba-lang="ar"] main li,
+  html[data-wathba-lang="ar"] main label,
+  html[data-wathba-lang="ar"] main .font-body-md,
+  html[data-wathba-lang="ar"] main .font-body-lg,
+  html[data-wathba-lang="ar"] main .text-body-md,
+  html[data-wathba-lang="ar"] main .text-body-lg,
+  html[data-wathba-lang="ar"] main .text-on-surface-variant {
     font-size: 18px !important;
     line-height: 1.95 !important;
   }
 
-  html[data-wathba-lang="ar"] .font-label-caps,
-  html[data-wathba-lang="ar"] .text-label-caps {
+  html[data-wathba-lang="ar"] main .font-label-caps,
+  html[data-wathba-lang="ar"] main .text-label-caps {
     font-size: 15.5px !important;
   }
 }
@@ -1427,6 +1442,35 @@ html[dir="rtl"] .home-product-actions a,
 html[dir="rtl"] .home-product-actions button {
   text-align: center !important;
   justify-content: center !important;
+}
+
+/* Balanced CTA buttons in both languages */
+.wathba-final-cta a,
+#home .mt-12 a,
+.wathba-contact-wa-hero {
+  min-width: 250px !important;
+  min-height: 58px !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+
+html[dir="rtl"] .wathba-final-cta a,
+html[dir="rtl"] #home .mt-12 a,
+html[dir="rtl"] .wathba-contact-wa-hero {
+  direction: rtl !important;
+  gap: 12px !important;
+}
+
+@media (max-width: 768px) {
+
+  .wathba-final-cta a,
+  #home .mt-12 a,
+  .wathba-contact-wa-hero {
+    min-width: 0 !important;
+    width: 100% !important;
+    white-space: normal !important;
+  }
 }
 
 /* Keep navbar layout stable */

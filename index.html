@@ -407,12 +407,12 @@
                             class="border border-primary text-primary font-headline-md text-[18px] uppercase px-10 py-4 rounded-full flex items-center gap-3 hover:bg-primary/10 transition-colors active:scale-95">
                             <span class="material-symbols-outlined"
                                 style="font-variation-settings: 'FILL' 1;">chat</span>
-                            WhatsApp
+                            <span data-home-hero-whatsapp>WhatsApp</span>
                         </a>
 
                         <a href="products.html"
                             class="bg-primary text-surface font-headline-md text-[18px] uppercase px-10 py-4 rounded-full flex items-center gap-3 hover:scale-105 transition-transform active:scale-95">
-                            Browse Products
+                            <span data-home-hero-browse>Browse Products</span>
                         </a>
                     </div>
                 </div>
@@ -656,7 +656,7 @@
             };
 
             function getLang() {
-                return localStorage.getItem("wathbaLang") || "en";
+                return localStorage.getItem("wathbaLang") || "ar";
             }
 
             function setText(selector, text) {
@@ -670,10 +670,11 @@
             }
 
             function applyHomePageTranslation() {
+                const lang = getLang();
+                const t = homePageText[lang] || homePageText.ar;
+
                 const trustedCardText = document.querySelector(".home-trusted-text");
                 if (trustedCardText) trustedCardText.textContent = t.trusted;
-                const lang = getLang();
-                const t = homePageText[lang];
 
                 setText("#home .md\\:col-span-5 span.text-primary", t.heroMini);
                 setText("#home h1 span:nth-child(1)", t.heroLine1);
@@ -681,13 +682,8 @@
                 setText("#home h2", t.heroArabic);
                 setText("#home .md\\:col-span-5 > p", t.heroText);
 
-                const heroButtons = document.querySelectorAll("#home .mt-12 button");
-                if (heroButtons[0]) {
-                    heroButtons[0].childNodes[0].textContent = t.browse + " ";
-                }
-                if (heroButtons[1]) {
-                    heroButtons[1].childNodes[0].textContent = t.whatsapp + " ";
-                }
+                setText("[data-home-hero-whatsapp]", t.whatsapp);
+                setText("[data-home-hero-browse]", t.browse);
 
                 const statCards = [
                     [".hero-stat-material", "materialLabel", "materialValue"],

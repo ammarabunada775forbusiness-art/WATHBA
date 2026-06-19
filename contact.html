@@ -611,7 +611,7 @@
       };
 
       function getLang() {
-        return localStorage.getItem("wathbaLang") || "en";
+        return localStorage.getItem("wathbaLang") || "ar";
       }
 
       function setText(selector, text) {
@@ -639,7 +639,7 @@
         if (heroWhatsappButton) heroWhatsappButton.textContent = t.chatButton;
 
         /* Info Cards */
-        const infoCards = document.querySelectorAll("main section:nth-of-type(2) .border");
+        const infoCards = document.querySelectorAll("main section:nth-of-type(3) .border");
 
         if (infoCards[0]) {
           infoCards[0].querySelector("h3").textContent = t.cardWhatsapp;
@@ -660,10 +660,10 @@
         }
 
         /* Form Section */
-        setHTML("main section:nth-of-type(3) h2", t.inquiryTitle);
-        setText("main section:nth-of-type(3) .sticky > p", t.inquiryText);
+        setHTML("main section:nth-of-type(2) h2", t.inquiryTitle);
+        setText("main section:nth-of-type(2) .sticky > p", t.inquiryText);
 
-        const form = document.querySelector("main section:nth-of-type(3) form");
+        const form = document.querySelector("main section:nth-of-type(2) form");
 
         if (form) {
           const groups = form.querySelectorAll(".group");
@@ -755,7 +755,7 @@
         },
 
         ar: {
-          title: "FREQUENTLY ASKED",
+          title: "الأسئلة الشائعة",
           items: [
             {
               q: "كيف أطلب؟",
@@ -778,11 +778,11 @@
       };
 
       function getLang() {
-        return localStorage.getItem("wathbaLang") || "en";
+        return localStorage.getItem("wathbaLang") || "ar";
       }
 
       function setupContactForm() {
-        const form = document.querySelector("main section:nth-of-type(3) form");
+        const form = document.querySelector("main section:nth-of-type(2) form");
         if (!form) return;
 
         const inputs = form.querySelectorAll("input");
