@@ -537,8 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const productsGrid = document.getElementById("allProducts");
     if (productsGrid) {
-      const firstRowCount = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
-
+      const firstRowCount = 3;
       Array.from(productsGrid.querySelectorAll(".product-card"))
         .slice(0, firstRowCount)
         .forEach((card) => {
