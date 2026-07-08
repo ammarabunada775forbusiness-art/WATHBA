@@ -160,15 +160,19 @@ function renderProducts() {
   const visibleProducts = getFilteredProducts();
 
   productsContainer.innerHTML = visibleProducts
-    .map((product) => {
+    .map((product, index) => {
       const productName = product.name[currentLang];
       const productDescription = product.description[currentLang];
       const priceText = getProductPriceText(product, currentLang);
       const groupLabel = getProductGroupLabel(product);
       const detailsUrl = getProductDetailsUrl(product);
+      const isPriorityVisible = index < 3;
 
       return `
-        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+        <article
+          class="${isPriorityVisible ? "wathba-priority-product-card " : ""}product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30"
+          ${isPriorityVisible ? "style=\"opacity: 1; transform: none; filter: none;\"" : ""}
+        >
           
           <a href="${detailsUrl}" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="${productName}">
             
@@ -222,13 +226,13 @@ function renderProducts() {
                 </a>
 
                 <button
-  class="wathba-add-cart-btn"
-  type="button"
-  data-product-id="${product.id}"
->
-  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
-  <span>${currentLang === "ar" ? "أضف للسلة" : "Add to Cart"}</span>
-</button>
+   class="wathba-add-cart-btn"
+   type="button"
+   data-product-id="${product.id}"
+ >
+   <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+   <span>${currentLang === "ar" ? "أضف للسلة" : "Add to Cart"}</span>
+ </button>
               </div>
             </div>
           </div>
