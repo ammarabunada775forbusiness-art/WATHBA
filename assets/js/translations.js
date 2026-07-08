@@ -1,6 +1,6 @@
 const translations = {
     ar: {
-        brand: "وثبة",
+        brand: "WATHBA",
         navHome: "الرئيسية",
         navProducts: "المنتجات",
         navAbout: "من نحن",

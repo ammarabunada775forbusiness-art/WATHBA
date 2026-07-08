@@ -594,7 +594,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* WATHBA CART PATCH */
 (function () {
   const CART_KEY = "wathbaCartItems";
-  const PHONE = "962791752349";
+  const PHONE = WATHBA_SHARED_PHONE;
   let cartNotesDraft = "";
 
   function lang() {

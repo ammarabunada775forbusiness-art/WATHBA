@@ -1,4 +1,4 @@
-let currentLang = localStorage.getItem("wathbaLang") || "en";
+let currentLang = localStorage.getItem("wathbaLang") || "ar";
 
 const homeFeaturedProducts = document.getElementById("homeFeaturedProducts");
 
@@ -35,7 +35,7 @@ const featuredProductIds = [
 ];
 
 function getCurrentLang() {
-  return localStorage.getItem("wathbaLang") || "en";
+  return localStorage.getItem("wathbaLang") || "ar";
 }
 
 function applyHomeTranslations() {

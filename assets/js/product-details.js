@@ -1,4 +1,4 @@
-let currentLang = localStorage.getItem("wathbaLang") || "en";
+let currentLang = localStorage.getItem("wathbaLang") || "ar";
 let selectedVariant = null;
 let activeImageIndex = 0;
 
@@ -6,7 +6,7 @@ const productDetailsRoot = document.getElementById("productDetailsRoot");
 const relatedProductsRoot = document.getElementById("relatedProductsRoot");
 
 function getCurrentLang() {
-  return localStorage.getItem("wathbaLang") || "en";
+  return localStorage.getItem("wathbaLang") || "ar";
 }
 
 function getProductIdFromUrl() {
@@ -504,7 +504,7 @@ document.addEventListener("wathba:langchange", function (event) {
   const newLang = event.detail && event.detail.lang ? event.detail.lang : null;
 
   setTimeout(function () {
-    currentLang = newLang || localStorage.getItem("wathbaLang") || "en";
+    currentLang = newLang || localStorage.getItem("wathbaLang") || "ar";
     selectedVariant = null;
     renderProductDetails();
   }, 80);
