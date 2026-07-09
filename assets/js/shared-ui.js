@@ -1,5 +1,5 @@
-const WATHBA_SHARED_PHONE = "962791752349";
-
+const WATHBA_SHARED_PHONE =
+  window.WATHBA_CONFIG?.whatsappNumber || "962791752349";
 const WATHBA_SHARED_TRANSLATIONS = {
   en: {
     navHome: "Home",

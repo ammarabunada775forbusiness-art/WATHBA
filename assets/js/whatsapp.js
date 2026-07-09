@@ -1,5 +1,5 @@
-const WHATSAPP_NUMBER = "962791752349";
-
+const WHATSAPP_NUMBER =
+    window.WATHBA_CONFIG?.whatsappNumber || "962791752349";
 function openWhatsApp(product, selectedVariant = null) {
     const lang = localStorage.getItem("wathbaLang") || "ar";
 
