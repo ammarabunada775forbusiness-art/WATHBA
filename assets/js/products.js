@@ -274,8 +274,19 @@ document.addEventListener("click", function (event) {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  refreshProductsPage();
-});
+function initProductsPage() {
+  if (!filtersContainer || !productsContainer) return;
 
-refreshProductsPage();
+  if (typeof products === "undefined" || !Array.isArray(products)) {
+    setTimeout(initProductsPage, 80);
+    return;
+  }
+
+  refreshProductsPage();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initProductsPage);
+} else {
+  initProductsPage();
+}
