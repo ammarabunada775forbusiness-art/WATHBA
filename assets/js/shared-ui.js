@@ -55,7 +55,7 @@ const WATHBA_WA_SVG = `
   </svg>
 `;
 
-const WATHBA_MENU_PRODUCTS = [
+const WATHBA_MENU_FALLBACK_PRODUCTS = [
   {
     id: "pull-up-bar",
     ar: "عقلة",
@@ -111,6 +111,19 @@ const WATHBA_MENU_PRODUCTS = [
     image: "assets/images/products/hand-gripper/cover.webp"
   }
 ];
+
+function wathbaGetMenuProducts() {
+  if (typeof products !== "undefined" && Array.isArray(products) && products.length) {
+    return products.map((product) => ({
+      id: product.id,
+      ar: product.name?.ar || product.name?.en || product.id,
+      en: product.name?.en || product.name?.ar || product.id,
+      image: product.image || "assets/images/products/pull-up-bar/cover.webp"
+    }));
+  }
+
+  return WATHBA_MENU_FALLBACK_PRODUCTS;
+}
 
 function wathbaMenuProductName(item) {
   return wathbaGetLang() === "ar" ? item.ar : item.en;
@@ -199,7 +212,7 @@ function wathbaRenderMobileMenu() {
   if (!menu) return;
 
   const lang = wathbaGetLang();
-
+  const menuProducts = wathbaGetMenuProducts();
   menu.innerHTML = `
     <div class="wathba-mobile-menu-head">
       <a href="index.html" data-page="index">${wathbaT("navHome")}</a>
@@ -221,7 +234,7 @@ function wathbaRenderMobileMenu() {
           <span>${lang === "ar" ? "كل المنتجات" : "All Products"}</span>
         </a>
 
-        ${WATHBA_MENU_PRODUCTS.map((item) => `
+        ${menuProducts.map((item) => `
           <a href="${wathbaProductUrl(item.id)}" class="wathba-mobile-product-item">
             <span class="wathba-mobile-product-img">
               <img src="${item.image}" alt="${wathbaMenuProductName(item)}" loading="lazy" />
@@ -259,42 +272,96 @@ function wathbaRenderWhatsappWidget() {
   `;
 }
 
+let wathbaMegaCloseTimer = null;
+
+function wathbaPositionDesktopMegaMenu() {
+  const megaMenu = document.getElementById("wathbaDesktopMegaMenu");
+  const nav = document.querySelector("nav.fixed, header.fixed, nav, header");
+
+  if (!megaMenu) return;
+
+  const navBottom = nav ? nav.getBoundingClientRect().bottom : 96;
+  megaMenu.style.top = `${Math.max(0, navBottom - 1)}px`;
+}
+
+function wathbaOpenDesktopMegaMenu() {
+  const megaMenu = document.getElementById("wathbaDesktopMegaMenu");
+  if (!megaMenu) return;
+
+  clearTimeout(wathbaMegaCloseTimer);
+  wathbaPositionDesktopMegaMenu();
+  megaMenu.classList.add("open");
+}
+
+function wathbaCloseDesktopMegaMenu(delay = 180) {
+  const megaMenu = document.getElementById("wathbaDesktopMegaMenu");
+  if (!megaMenu) return;
+
+  clearTimeout(wathbaMegaCloseTimer);
+  wathbaMegaCloseTimer = setTimeout(() => {
+    megaMenu.classList.remove("open");
+  }, delay);
+}
+
+function wathbaBindDesktopMegaTriggers() {
+  document.querySelectorAll('nav a[href="products.html"], header a[href="products.html"]').forEach((link) => {
+    if (link.dataset.wathbaLogo === "true") return;
+
+    link.classList.add("wathba-products-trigger");
+
+    if (link.dataset.wathbaMegaBound === "true") return;
+    link.dataset.wathbaMegaBound = "true";
+
+    link.addEventListener("mouseenter", wathbaOpenDesktopMegaMenu);
+    link.addEventListener("focus", wathbaOpenDesktopMegaMenu);
+    link.addEventListener("mouseleave", () => wathbaCloseDesktopMegaMenu(220));
+  });
+}
+
 function wathbaRenderDesktopMegaMenu() {
-  if (window.innerWidth < 1024) return;
-  if (document.getElementById("wathbaDesktopMegaMenu")) return;
+  const oldMega = document.getElementById("wathbaDesktopMegaMenu");
+
+  if (window.innerWidth < 1024) {
+    if (oldMega) oldMega.remove();
+    return;
+  }
+
+  if (oldMega) oldMega.remove();
 
   const lang = wathbaGetLang();
-  const productsLabel = wathbaT("navProducts");
+  const menuProducts = wathbaGetMenuProducts();
 
   document.body.insertAdjacentHTML(
     "beforeend",
     `
       <div class="wathba-desktop-mega-menu" id="wathbaDesktopMegaMenu">
-        <div class="wathba-mega-inner">
-          <div class="wathba-mega-column">
-            <span class="wathba-mega-title">${productsLabel}</span>
-            <a href="products.html">${lang === "ar" ? "كل المنتجات" : "All Products"}</a>
-            ${WATHBA_MENU_PRODUCTS.slice(0, 6).map((item) => `
-              <a href="${wathbaProductUrl(item.id)}">${wathbaMenuProductName(item)}</a>
-            `).join("")}
+        <div class="wathba-mega-inner wathba-mega-inner-v2">
+          <div class="wathba-mega-top">
+            <div>
+              <span class="wathba-mega-title">${lang === "ar" ? "المنتجات" : "Equipment"}</span>
+              <h3>${lang === "ar" ? "اختر معدتك" : "Choose Your Gear"}</h3>
+            </div>
+
+            <a href="products.html" class="wathba-mega-view-all">
+              ${lang === "ar" ? "عرض كل المنتجات" : "View All Products"}
+            </a>
           </div>
 
-          <div class="wathba-mega-column">
-            <span class="wathba-mega-title">${lang === "ar" ? "الأكثر طلبًا" : "Featured"}</span>
-            ${WATHBA_MENU_PRODUCTS.slice(6).map((item) => `
-              <a href="${wathbaProductUrl(item.id)}">${wathbaMenuProductName(item)}</a>
-            `).join("")}
-            <a href="products.html">${lang === "ar" ? "المزيد من المنتجات" : "More Equipment"}</a>
-          </div>
-
-          <div class="wathba-mega-feature-grid">
-            ${WATHBA_MENU_PRODUCTS.slice(0, 3).map((item) => `
-              <a href="${wathbaProductUrl(item.id)}" class="wathba-mega-feature-card">
-                <img src="${item.image}" alt="${wathbaMenuProductName(item)}" loading="lazy" />
+          <div class="wathba-mega-products-grid">
+            ${menuProducts.map((item) => `
+              <a href="${wathbaProductUrl(item.id)}" class="wathba-mega-product-tile">
+                <span class="wathba-mega-product-thumb">
+                  <img src="${item.image}" alt="${wathbaMenuProductName(item)}" loading="lazy" />
+                </span>
                 <span>${wathbaMenuProductName(item)}</span>
-                <p>${lang === "ar" ? "تصفّح المنتج والتفاصيل" : "View product details"}</p>
               </a>
             `).join("")}
+          </div>
+
+          <div class="wathba-mega-bottom">
+            <a href="${wathbaWhatsappUrl(wathbaT("whatsappMessage"))}" target="_blank" rel="noopener noreferrer">
+              ${lang === "ar" ? "مش عارف تختار؟ راسلنا واتساب" : "Need help choosing? Message us"}
+            </a>
           </div>
         </div>
       </div>
@@ -303,36 +370,18 @@ function wathbaRenderDesktopMegaMenu() {
 
   const megaMenu = document.getElementById("wathbaDesktopMegaMenu");
 
-  document.querySelectorAll('nav a[href="products.html"], header a[href="products.html"]').forEach((link) => {
-    if (link.dataset.wathbaLogo === "true") return;
+  megaMenu.addEventListener("mouseenter", wathbaOpenDesktopMegaMenu);
+  megaMenu.addEventListener("mouseleave", () => wathbaCloseDesktopMegaMenu(180));
 
-    link.classList.add("wathba-products-trigger");
+  wathbaBindDesktopMegaTriggers();
+  wathbaPositionDesktopMegaMenu();
 
-    link.addEventListener("mouseenter", () => {
-      megaMenu.classList.add("open");
+  if (!window.__wathbaMegaResizeBound) {
+    window.__wathbaMegaResizeBound = true;
+    window.addEventListener("resize", () => {
+      wathbaRenderDesktopMegaMenu();
     });
-
-    link.addEventListener("focus", () => {
-      megaMenu.classList.add("open");
-    });
-  });
-
-  megaMenu.addEventListener("mouseenter", () => {
-    megaMenu.classList.add("open");
-  });
-
-  megaMenu.addEventListener("mouseleave", () => {
-    megaMenu.classList.remove("open");
-  });
-
-  document.addEventListener("mousemove", (event) => {
-    const isOnProductsLink = event.target.closest(".wathba-products-trigger");
-    const isOnMega = event.target.closest("#wathbaDesktopMegaMenu");
-
-    if (!isOnProductsLink && !isOnMega) {
-      megaMenu.classList.remove("open");
-    }
-  });
+  }
 }
 
 function wathbaRenderFooter() {
