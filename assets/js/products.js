@@ -250,10 +250,6 @@ function renderProducts() {
       }
     });
   });
-
-  if (window.WathbaInitReveal) {
-    window.WathbaInitReveal();
-  }
 }
 
 function refreshProductsPage(langFromEvent = null) {
