@@ -140,26 +140,7 @@ function wathbaRenderMobileMenu() {
   `;
 }
 
-function wathbaTranslateDesktopNav() {
-  const map = {
-    "index.html": "navHome",
-    "products.html": "navProducts",
-    "about.html": "navAbout",
-    "contact.html": "navContact"
-  };
 
-  document.querySelectorAll("nav a, header a").forEach((link) => {
-    if (link.dataset.wathbaLogo === "true") return;
-    if (link.classList.contains("wathba-logo")) return;
-    if (link.classList.contains("wathba-nav-logo")) return;
-
-    const href = (link.getAttribute("href") || "").split("?")[0];
-
-    if (map[href]) {
-      link.textContent = wathbaT(map[href]);
-    }
-  });
-}
 
 function wathbaRenderWhatsappWidget() {
   const host = document.getElementById("sharedWhatsApp");
@@ -234,7 +215,7 @@ function wathbaRenderFooter() {
         </div>
       </div>
     </footer>
-  `;
+  `; س
 }
 function wathbaTranslateDesktopNav() {
   const navMap = {
