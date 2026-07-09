@@ -181,10 +181,6 @@ function renderHomeProducts() {
       }
     });
   });
-
-  if (window.WathbaInitReveal) {
-    window.WathbaInitReveal();
-  }
 }
 
 document.addEventListener("click", (event) => {
