@@ -123,6 +123,216 @@ body {
 }
 
 /* =========================
+   WATHBA Mega Menu
+========================= */
+
+.wathba-desktop-mega-menu {
+  position: fixed;
+  top: var(--wathba-nav-height, 96px);
+  left: 0;
+  right: 0;
+  z-index: 999990;
+  background: rgba(255, 255, 255, 0.98);
+  color: #050505;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: 0.22s ease;
+  direction: ltr;
+}
+
+.wathba-desktop-mega-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.wathba-mega-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 34px 34px 44px;
+  display: grid;
+  grid-template-columns: 190px 190px 1fr;
+  gap: 34px;
+}
+
+.wathba-mega-column {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.wathba-mega-title {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 1000;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.wathba-mega-column a {
+  color: #050505 !important;
+  text-decoration: none !important;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 500;
+  border: 0 !important;
+  padding: 0 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.wathba-mega-column a:hover {
+  text-decoration: underline !important;
+}
+
+.wathba-mega-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.wathba-mega-feature-card {
+  display: block;
+  text-align: center;
+  color: #050505 !important;
+  text-decoration: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+.wathba-mega-feature-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #eeeeee;
+  border-radius: 0;
+  margin-bottom: 14px;
+}
+
+.wathba-mega-feature-card span {
+  display: block;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 1000;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.wathba-mega-feature-card p {
+  margin: 0;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #111111;
+}
+
+html[dir="rtl"] .wathba-desktop-mega-menu {
+  direction: rtl;
+}
+
+html[dir="rtl"] .wathba-mega-feature-card {
+  text-align: center;
+}
+
+/* =========================
+   Mobile Product Menu
+========================= */
+
+.wathba-mobile-menu {
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
+}
+
+.wathba-mobile-menu-head {
+  display: grid;
+  gap: 8px;
+}
+
+.wathba-mobile-products-block {
+  margin-top: 8px;
+  padding: 14px 0 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.wathba-mobile-products-title {
+  color: #ffffff;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 13px;
+  font-weight: 1000;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 4px 14px;
+}
+
+.wathba-mobile-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px 10px;
+}
+
+.wathba-mobile-menu .wathba-mobile-product-item {
+  border: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  color: #ffffff !important;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  text-align: center;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  line-height: 1.25;
+}
+
+.wathba-mobile-product-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.wathba-mobile-product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wathba-mobile-all-products .material-symbols-outlined {
+  color: #000000;
+  font-size: 32px;
+}
+
+.wathba-mobile-menu-bottom {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.wathba-mobile-menu-bottom a {
+  display: flex;
+  justify-content: center;
+  background: #25d366 !important;
+  color: #ffffff !important;
+  border: 0 !important;
+}
+
+/* =========================
    Desktop Nav
 ========================= */
 

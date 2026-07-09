@@ -55,6 +55,71 @@ const WATHBA_WA_SVG = `
   </svg>
 `;
 
+const WATHBA_MENU_PRODUCTS = [
+  {
+    id: "pull-up-bar",
+    ar: "عقلة",
+    en: "Pull-up Bar",
+    image: "assets/images/products/pull-up-bar/cover.webp"
+  },
+  {
+    id: "wooden-parallettes-small",
+    ar: "باراليتس",
+    en: "Parallettes",
+    image: "assets/images/products/wooden-parallettes/cover.webp"
+  },
+  {
+    id: "dip-bars",
+    ar: "متوازي",
+    en: "Dip Bars",
+    image: "assets/images/products/dip-bars/cover.webp"
+  },
+  {
+    id: "steel-bars",
+    ar: "ستيل بارز",
+    en: "Steel Bars",
+    image: "assets/images/products/steel-bars/cover.webp"
+  },
+  {
+    id: "monkey-bars",
+    ar: "مونكي بارز",
+    en: "Monkey Bars",
+    image: "assets/images/products/monkey-bars/cover.webp"
+  },
+  {
+    id: "resistance-bands",
+    ar: "حبال مقاومة",
+    en: "Resistance Bands",
+    image: "assets/images/products/resistance-bands/cover.webp"
+  },
+  {
+    id: "gymnastic-rings",
+    ar: "حلقات جمباز",
+    en: "Gymnastic Rings",
+    image: "assets/images/products/gymnastic-rings/cover.webp"
+  },
+  {
+    id: "multi-rig",
+    ar: "جهاز متعدد",
+    en: "Multi Rig",
+    image: "assets/images/products/multi-rig/cover.webp"
+  },
+  {
+    id: "hand-gripper",
+    ar: "هاند جريبر",
+    en: "Hand Gripper",
+    image: "assets/images/products/hand-gripper/cover.webp"
+  }
+];
+
+function wathbaMenuProductName(item) {
+  return wathbaGetLang() === "ar" ? item.ar : item.en;
+}
+
+function wathbaProductUrl(id) {
+  return `product.html?id=${id}`;
+}
+
 function wathbaGetLang() {
   return localStorage.getItem("wathbaLang") || "ar";
 }
@@ -114,6 +179,7 @@ function wathbaApplyLanguage(lang) {
   wathbaRenderMobileMenu();
   wathbaRenderWhatsappWidget();
   wathbaRenderFooter();
+  wathbaRenderDesktopMegaMenu();
   wathbaTranslateDesktopNav();
   wathbaNormalizeLinks();
   wathbaSetActiveLinks();
@@ -132,11 +198,45 @@ function wathbaRenderMobileMenu() {
   const menu = document.getElementById("wathbaMobileMenu");
   if (!menu) return;
 
+  const lang = wathbaGetLang();
+
   menu.innerHTML = `
-    <a href="index.html" data-page="index">${wathbaT("navHome")}</a>
-    <a href="products.html" data-page="products">${wathbaT("navProducts")}</a>
-    <a href="about.html" data-page="about">${wathbaT("navAbout")}</a>
-    <a href="contact.html" data-page="contact">${wathbaT("navContact")}</a>
+    <div class="wathba-mobile-menu-head">
+      <a href="index.html" data-page="index">${wathbaT("navHome")}</a>
+      <a href="products.html" data-page="products">${wathbaT("navProducts")}</a>
+      <a href="about.html" data-page="about">${wathbaT("navAbout")}</a>
+      <a href="contact.html" data-page="contact">${wathbaT("navContact")}</a>
+    </div>
+
+    <div class="wathba-mobile-products-block">
+      <div class="wathba-mobile-products-title">
+        ${lang === "ar" ? "المنتجات" : "Products"}
+      </div>
+
+      <div class="wathba-mobile-products-grid">
+        <a href="products.html" class="wathba-mobile-product-item">
+          <span class="wathba-mobile-product-img wathba-mobile-all-products">
+            <span class="material-symbols-outlined">apps</span>
+          </span>
+          <span>${lang === "ar" ? "كل المنتجات" : "All Products"}</span>
+        </a>
+
+        ${WATHBA_MENU_PRODUCTS.map((item) => `
+          <a href="${wathbaProductUrl(item.id)}" class="wathba-mobile-product-item">
+            <span class="wathba-mobile-product-img">
+              <img src="${item.image}" alt="${wathbaMenuProductName(item)}" loading="lazy" />
+            </span>
+            <span>${wathbaMenuProductName(item)}</span>
+          </a>
+        `).join("")}
+      </div>
+    </div>
+
+    <div class="wathba-mobile-menu-bottom">
+      <a href="${wathbaWhatsappUrl(wathbaT("whatsappMessage"))}" target="_blank" rel="noopener noreferrer">
+        ${lang === "ar" ? "اطلب عبر واتساب" : "Order via WhatsApp"}
+      </a>
+    </div>
   `;
 }
 
@@ -157,6 +257,82 @@ function wathbaRenderWhatsappWidget() {
       </a>
     </div>
   `;
+}
+
+function wathbaRenderDesktopMegaMenu() {
+  if (window.innerWidth < 1024) return;
+  if (document.getElementById("wathbaDesktopMegaMenu")) return;
+
+  const lang = wathbaGetLang();
+  const productsLabel = wathbaT("navProducts");
+
+  document.body.insertAdjacentHTML(
+    "beforeend",
+    `
+      <div class="wathba-desktop-mega-menu" id="wathbaDesktopMegaMenu">
+        <div class="wathba-mega-inner">
+          <div class="wathba-mega-column">
+            <span class="wathba-mega-title">${productsLabel}</span>
+            <a href="products.html">${lang === "ar" ? "كل المنتجات" : "All Products"}</a>
+            ${WATHBA_MENU_PRODUCTS.slice(0, 6).map((item) => `
+              <a href="${wathbaProductUrl(item.id)}">${wathbaMenuProductName(item)}</a>
+            `).join("")}
+          </div>
+
+          <div class="wathba-mega-column">
+            <span class="wathba-mega-title">${lang === "ar" ? "الأكثر طلبًا" : "Featured"}</span>
+            ${WATHBA_MENU_PRODUCTS.slice(6).map((item) => `
+              <a href="${wathbaProductUrl(item.id)}">${wathbaMenuProductName(item)}</a>
+            `).join("")}
+            <a href="products.html">${lang === "ar" ? "المزيد من المنتجات" : "More Equipment"}</a>
+          </div>
+
+          <div class="wathba-mega-feature-grid">
+            ${WATHBA_MENU_PRODUCTS.slice(0, 3).map((item) => `
+              <a href="${wathbaProductUrl(item.id)}" class="wathba-mega-feature-card">
+                <img src="${item.image}" alt="${wathbaMenuProductName(item)}" loading="lazy" />
+                <span>${wathbaMenuProductName(item)}</span>
+                <p>${lang === "ar" ? "تصفّح المنتج والتفاصيل" : "View product details"}</p>
+              </a>
+            `).join("")}
+          </div>
+        </div>
+      </div>
+    `
+  );
+
+  const megaMenu = document.getElementById("wathbaDesktopMegaMenu");
+
+  document.querySelectorAll('nav a[href="products.html"], header a[href="products.html"]').forEach((link) => {
+    if (link.dataset.wathbaLogo === "true") return;
+
+    link.classList.add("wathba-products-trigger");
+
+    link.addEventListener("mouseenter", () => {
+      megaMenu.classList.add("open");
+    });
+
+    link.addEventListener("focus", () => {
+      megaMenu.classList.add("open");
+    });
+  });
+
+  megaMenu.addEventListener("mouseenter", () => {
+    megaMenu.classList.add("open");
+  });
+
+  megaMenu.addEventListener("mouseleave", () => {
+    megaMenu.classList.remove("open");
+  });
+
+  document.addEventListener("mousemove", (event) => {
+    const isOnProductsLink = event.target.closest(".wathba-products-trigger");
+    const isOnMega = event.target.closest("#wathbaDesktopMegaMenu");
+
+    if (!isOnProductsLink && !isOnMega) {
+      megaMenu.classList.remove("open");
+    }
+  });
 }
 
 function wathbaRenderFooter() {
