@@ -215,7 +215,7 @@ function wathbaRenderFooter() {
         </div>
       </div>
     </footer>
-  `; س
+  `;
 }
 function wathbaTranslateDesktopNav() {
   const navMap = {
