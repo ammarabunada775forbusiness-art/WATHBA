@@ -399,7 +399,7 @@
                         strength.
                     </p>
                     <div class="mt-12 flex flex-wrap gap-4">
-                        <a href="https://wa.me/962791752349"
+                        <a href="https://wa.me/962791752349" data-wathba-whatsapp-link
                             class="border border-primary text-primary font-headline-md text-[18px] uppercase px-10 py-4 rounded-full flex items-center gap-3 hover:bg-primary/10 transition-colors active:scale-95">
                             <span class="material-symbols-outlined"
                                 style="font-variation-settings: 'FILL' 1;">chat</span>
@@ -535,28 +535,35 @@
     <div id="wathbaFooter"></div>
     <script>
         // Simple 360-style rotation effect following mouse movement
-        const productContainer = document.querySelector('.product-360-container');
-        const productInner = document.querySelector('.product-360-inner');
+        const productContainer = document.querySelector(".product-360-container");
+        const productInner = document.querySelector(".product-360-inner");
 
-        productContainer.addEventListener('mousemove', (e) => {
-            const rect = productContainer.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const centerX = rect.width / 2;
-            const rotationY = (x - centerX) / 10;
+        if (productContainer && productInner) {
+            productContainer.addEventListener("mousemove", (e) => {
+                const rect = productContainer.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const centerX = rect.width / 2;
+                const rotationY = (x - centerX) / 10;
 
-            productInner.style.transform = `rotateY(${rotationY}deg)`;
-        });
+                productInner.style.transform = `rotateY(${rotationY}deg)`;
+            });
 
-        productContainer.addEventListener('mouseleave', () => {
-            productInner.style.transform = `rotateY(0deg)`;
-        });
+            productContainer.addEventListener("mouseleave", () => {
+                productInner.style.transform = "rotateY(0deg)";
+            });
+        }
 
         // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetSelector = this.getAttribute("href");
+                const target = targetSelector ? document.querySelector(targetSelector) : null;
+
+                if (!target) return;
+
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+                target.scrollIntoView({
+                    behavior: "smooth"
                 });
             });
         });
