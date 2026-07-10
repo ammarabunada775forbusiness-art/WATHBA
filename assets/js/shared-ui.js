@@ -456,7 +456,7 @@ function wathbaRenderDesktopMegaMenu() {
 
       return `
                 <div class="wathba-mega-category-card">
-                  <a href="products.html" class="wathba-mega-category-pill">
+                  <a href="products.html?filter=${group.key}" class="wathba-mega-category-pill">
                     ${wathbaMenuGroupLabel(group)}
                   </a>
 
