@@ -401,9 +401,6 @@
   <main class="pt-32">
     <!-- Hero Section -->
     <section class="relative min-h-[716px] flex flex-col justify-center px-6 md:px-16 py-20 overflow-hidden">
-      <div class="absolute inset-0 -z-10 opacity-40">
-
-      </div>
       <div class="max-w-container-max mx-auto w-full relative">
         <span class="font-label-caps text-label-caps tracking-[0.3em] text-primary mb-8 block">UNCOMPROMISING
           PERFORMANCE</span>
@@ -422,7 +419,7 @@
               </p>
             </div>
             <div class="relative z-10">
-              <a class="wathba-contact-wa-hero" href="https://wa.me/962791752349" target="_blank"
+              <a class="wathba-contact-wa-hero" href="#" data-wathba-whatsapp-link target="_blank"
                 rel="noopener noreferrer">
                 <span class="material-symbols-outlined" data-icon="chat" data-weight="fill"
                   style="font-variation-settings: 'FILL' 1;">chat</span>
@@ -455,36 +452,34 @@
       <div class="glass-card p-10 md:p-16 rounded-xl border border-outline-variant/30">
         <form class="space-y-12">
           <div class="space-y-2 group">
-            <label
-              class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">FULL
-              NAME</label>
-            <input
+            <label for="contactName"
+              class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">
+              FULL NAME
+            </label>
+            <input id="contactName" name="name" required autocomplete="name"
               class="w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary"
               placeholder="YOUR NAME" type="text" />
           </div>
+
           <div class="space-y-2 group">
-            <label
-              class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">PHONE
-              NUMBER</label>
-            <input
+            <label for="contactPhone"
+              class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">
+              PHONE NUMBER
+            </label>
+            <input id="contactPhone" name="phone" required autocomplete="tel"
               class="w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary"
               placeholder="+962" type="tel" />
           </div>
+
           <div class="space-y-2 group">
-            <label
-              class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">MESSAGE
-              / EQUIPMENT SPECS</label>
-            <textarea
+            <label for="contactMessage"
+              class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">
+              MESSAGE / EQUIPMENT SPECS
+            </label>
+            <textarea id="contactMessage" name="message" required
               class="w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary resize-none"
               placeholder="WHAT ARE YOU LOOKING FOR?" rows="4"></textarea>
           </div>
-          <button
-            class="w-full flex items-center justify-center space-x-4 bg-primary text-black py-6 rounded-full font-headline-md text-headline-md hover:bg-[#25D366] hover:text-white transition-all duration-500 group"
-            type="submit">
-            <span>SEND VIA WHATSAPP</span>
-            <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform"
-              data-icon="send">send</span>
-          </button>
         </form>
       </div>
     </section>
