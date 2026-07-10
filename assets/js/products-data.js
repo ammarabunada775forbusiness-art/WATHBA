@@ -48,7 +48,7 @@ const products = [
             ar: "السعر حسب التصميم",
             en: "Price depends on design"
         },
-        image: "assets/images/products/steel-bars/cover.webp",
+        image: "assets/images/products/static-bars/cover.webp",
         description: {
             ar: "ستاتيك بارز بطول تقريبي 2 متر للمهارات، الثبات، وتمارين الكاليستنكس المفتوحة. يمكن تنفيذها حسب الطلب والمساحة.",
             en: "Static bars around 2 meters long for skills, holds, and open calisthenics movements. Can be customized based on space and request."
@@ -111,7 +111,7 @@ const products = [
             ar: "السعر حسب القياس",
             en: "Price depends on size"
         },
-        image: "assets/images/products/wooden-parallettes/cover.webp",
+        image: "assets/images/products/steel-wood-parallettes/cover.webp",
         description: {
             ar: "باراليتس بقاعدة حديد قوية ومقبض خشب مريح، مناسب للضغط، L-sit، البلانش، والهاندستاند.",
             en: "Parallettes with a strong steel base and comfortable wooden grip, suitable for push-ups, L-sits, planche work, and handstands."
@@ -150,7 +150,7 @@ const products = [
             ar: "اسأل عن السعر",
             en: "Ask for price"
         },
-        image: "assets/images/products/wooden-parallettes/cover.webp",
+        image: "assets/images/products/full-wooden-parallettes/cover.webp",
         description: {
             ar: "باراليتس خشب كامل بتصميم بسيط ومتين، مناسب لتدريبات التحكم والضغط والمهارات الأساسية.",
             en: "Full wooden parallettes with a clean and solid design, suitable for control drills, push training, and basic skills."
@@ -179,7 +179,7 @@ const products = [
             ar: "السعر حسب الارتفاع",
             en: "Price depends on height"
         },
-        image: "assets/images/products/dip-bars/cover.webp",
+        image: "assets/images/products/freestanding-parallel-bars/cover.webp",
         description: {
             ar: "متوازي حديد مواسير كامل، ثابت ومناسب لتدريبات الديبس، الضغط، الكور، وتمارين الثبات.",
             en: "Freestanding parallel bars made from steel pipes, stable for dips, push training, core work, and hold exercises."
@@ -213,7 +213,7 @@ const products = [
             ar: "السعر حسب القياس",
             en: "Price depends on size"
         },
-        image: "assets/images/products/dip-bars/cover.webp",
+        image: "assets/images/products/wall-mounted-dip-bars/cover.webp",
         description: {
             ar: "ديب بار يثبت على الحائط لتدريبات الديبس والضغط والكور، مناسب لمن يريد توفير مساحة على الأرض.",
             en: "Wall-mounted dip bars for dips, push training, and core work, suitable for saving floor space."
@@ -407,7 +407,7 @@ const products = [
             ar: "حسب القطعة المطلوبة",
             en: "Depends on requested item"
         },
-        image: "assets/images/products/multi-rig/cover.webp",
+        image: "assets/images/products/custom-orders/cover.webp",
         description: {
             ar: "بدك قطعة غير موجودة؟ أرسل لنا صورة أو وصف أو قياسات المساحة، ونساعدك بتصميم وتنفيذ قطعة مناسبة.",
             en: "Need a piece that is not listed? Send us a photo, description, or space dimensions, and we will help design and build it."
