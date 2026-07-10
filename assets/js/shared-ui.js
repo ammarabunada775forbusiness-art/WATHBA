@@ -66,7 +66,7 @@ const WATHBA_MENU_FALLBACK_PRODUCTS = [
     id: "static-bars",
     ar: "ستاتيك بارز",
     en: "Static Bars",
-    image: "assets/images/products/steel-bars/cover.webp"
+    image: "assets/images/products/static-bars/cover.webp"
   },
   {
     id: "monkey-bars",
@@ -78,25 +78,25 @@ const WATHBA_MENU_FALLBACK_PRODUCTS = [
     id: "steel-wood-parallettes",
     ar: "باراليتس حديد وخشب",
     en: "Steel/Wood Parallettes",
-    image: "assets/images/products/wooden-parallettes/cover.webp"
+    image: "assets/images/products/steel-wood-parallettes/cover.webp"
   },
   {
     id: "full-wooden-parallettes",
     ar: "باراليتس خشب كامل",
     en: "Full Wooden Parallettes",
-    image: "assets/images/products/wooden-parallettes/cover.webp"
+    image: "assets/images/products/full-wooden-parallettes/cover.webp"
   },
   {
     id: "freestanding-parallel-bars",
     ar: "متوازي حديد",
     en: "Parallel Bars",
-    image: "assets/images/products/dip-bars/cover.webp"
+    image: "assets/images/products/freestanding-parallel-bars/cover.webp"
   },
   {
     id: "wall-mounted-dip-bars",
     ar: "ديب بار حائط",
     en: "Wall Dip Bars",
-    image: "assets/images/products/dip-bars/cover.webp"
+    image: "assets/images/products/wall-mounted-dip-bars/cover.webp"
   },
   {
     id: "gymnastic-rings",
@@ -152,8 +152,14 @@ function wathbaMenuProductName(item) {
 }
 
 function wathbaProductUrl(id) {
-  return `product.html?id=${id}`;
+  return `product.html?id=${encodeURIComponent(id)}`;
 }
+
+function wathbaFormatSharedPhone() {
+  const phone = WATHBA_SHARED_PHONE;
+  return `+${phone.slice(0, 3)} ${phone.slice(3, 5)} ${phone.slice(5, 8)} ${phone.slice(8)}`;
+}
+
 const WATHBA_MENU_GROUPS = [
   {
     key: "bars",
@@ -546,7 +552,7 @@ function wathbaRenderFooter() {
         <div class="wathba-footer-contact">
           <h5 class="wathba-footer-title">${wathbaT("contactTitle")}</h5>
           <p>${wathbaT("footerLocation")}</p>
-          <p>${wathbaT("footerPhone")}</p>
+          <p>${wathbaGetLang() === "ar" ? "واتساب: " : "WhatsApp: "}${wathbaFormatSharedPhone()}</p>
           <p>${wathbaT("footerNote")}</p>
         </div>
 

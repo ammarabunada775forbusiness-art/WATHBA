@@ -46,14 +46,9 @@ function getProductFolder(product) {
 }
 
 function getProductGallery(product) {
-  const folder = getProductFolder(product);
+  const extraImages = Array.isArray(product.gallery) ? product.gallery : [];
 
-  return [
-    product.image,
-    `${folder}1.webp`,
-    `${folder}2.webp`,
-    `${folder}3.webp`
-  ];
+  return [product.image, ...extraImages].filter(Boolean);
 }
 
 function getProductFeatures(product, lang) {
