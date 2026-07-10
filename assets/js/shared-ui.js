@@ -292,7 +292,7 @@ function wathbaRenderMobileMenu() {
   if (!menu) return;
 
   const lang = wathbaGetLang();
-  const menuProducts = wathbaGetMenuProducts();
+
   menu.innerHTML = `
     <div class="wathba-mobile-menu-head">
       <a href="index.html" data-page="index">${wathbaT("navHome")}</a>
@@ -303,25 +303,45 @@ function wathbaRenderMobileMenu() {
 
     <div class="wathba-mobile-products-block">
       <div class="wathba-mobile-products-title">
-        ${lang === "ar" ? "المنتجات" : "Products"}
+        ${lang === "ar" ? "تصفح حسب التصنيف" : "Shop by Category"}
       </div>
 
-      <div class="wathba-mobile-products-grid">
-        <a href="products.html" class="wathba-mobile-product-item">
-          <span class="wathba-mobile-product-img wathba-mobile-all-products">
-            <span class="material-symbols-outlined">apps</span>
-          </span>
-          <span>${lang === "ar" ? "كل المنتجات" : "All Products"}</span>
+      <div class="wathba-mobile-category-list">
+        <a href="products.html" class="wathba-mobile-category-pill">
+          ${lang === "ar" ? "كل المعدات" : "All Equipment"}
         </a>
 
-        ${menuProducts.map((item) => `
-          <a href="${wathbaProductUrl(item.id)}" class="wathba-mobile-product-item">
-            <span class="wathba-mobile-product-img">
-              <img src="${item.image}" alt="${wathbaMenuProductName(item)}" loading="lazy" />
-            </span>
-            <span>${wathbaMenuProductName(item)}</span>
-          </a>
-        `).join("")}
+        ${WATHBA_MENU_GROUPS.map((group) => {
+    const groupProducts = group.ids
+      .map((id) => wathbaFindMenuProductById(id))
+      .filter(Boolean);
+
+    if (!groupProducts.length) return "";
+
+    return `
+            <div class="wathba-mobile-category-card">
+              <a href="products.html?filter=${group.key}" class="wathba-mobile-category-pill">
+                ${wathbaMenuGroupLabel(group)}
+              </a>
+
+              <div class="wathba-mobile-category-products">
+                ${groupProducts.map((item) => `
+                  <a href="${wathbaProductUrl(item.id)}" class="wathba-mobile-mini-product">
+                    <span class="wathba-mobile-mini-thumb">
+                      <img
+                        src="${item.image}"
+                        alt="${wathbaMenuProductName(item)}"
+                        loading="lazy"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('wathba-mobile-thumb-empty');"
+                      />
+                    </span>
+                    <span>${wathbaMenuProductName(item)}</span>
+                  </a>
+                `).join("")}
+              </div>
+            </div>
+          `;
+  }).join("")}
       </div>
     </div>
 

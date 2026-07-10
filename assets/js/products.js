@@ -1,6 +1,5 @@
 let currentLang = localStorage.getItem("wathbaLang") || "ar";
-let currentFilter = "all";
-
+let currentFilter = new URLSearchParams(window.location.search).get("filter") || "all";
 const filtersContainer = document.getElementById("categoryFilters");
 const productsContainer = document.getElementById("allProducts");
 
@@ -60,6 +59,11 @@ const productGroups = [
     ids: ["custom-orders"]
   }
 ];
+
+if (!productGroups.some((group) => group.key === currentFilter)) {
+  currentFilter = "all";
+}
+
 function getCurrentLang() {
   return localStorage.getItem("wathbaLang") || "ar";
 }
@@ -159,6 +163,15 @@ function renderFilters() {
   filtersContainer.querySelectorAll("[data-filter]").forEach((button) => {
     button.addEventListener("click", () => {
       currentFilter = button.dataset.filter;
+      const url = new URL(window.location.href);
+
+      if (currentFilter === "all") {
+        url.searchParams.delete("filter");
+      } else {
+        url.searchParams.set("filter", currentFilter);
+      }
+
+      window.history.replaceState(null, "", url);
       renderFilters();
       renderProducts();
     });

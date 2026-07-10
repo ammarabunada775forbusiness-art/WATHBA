@@ -2672,3 +2672,92 @@ html[dir="rtl"] .wathba-mega-bottom {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* =====================================================
+   Mobile menu grouped categories
+===================================================== */
+
+.wathba-mobile-category-list {
+  display: grid;
+  gap: 14px;
+}
+
+.wathba-mobile-category-card {
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.wathba-mobile-menu .wathba-mobile-category-pill {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #ffffff !important;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 13px !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  text-decoration: none !important;
+}
+
+.wathba-mobile-menu .wathba-mobile-category-pill:hover,
+.wathba-mobile-menu .wathba-mobile-category-pill.active {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+.wathba-mobile-category-products {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px 8px;
+}
+
+.wathba-mobile-mini-product {
+  display: grid !important;
+  justify-items: center;
+  gap: 7px;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  text-align: center;
+  text-decoration: none !important;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 10px !important;
+  line-height: 1.25;
+  font-weight: 800 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.wathba-mobile-mini-thumb {
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.wathba-mobile-mini-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wathba-mobile-thumb-empty::after {
+  content: "W";
+  color: #000000;
+  font-family: "Anton", sans-serif;
+  font-size: 26px;
+}
