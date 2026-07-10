@@ -176,7 +176,7 @@ function wathbaRenderSocialLinks() {
   if (!items.length) return "";
 
   return `
-    <div class="wathba-footer-socials">
+    <div class="wathba-footer-socials" aria-label="WATHBA social links">
       ${items.map((item) => `
         <a
           href="${item.url}"
@@ -184,9 +184,9 @@ function wathbaRenderSocialLinks() {
           rel="noopener noreferrer"
           class="wathba-footer-social-link"
           aria-label="${item.label}"
+          title="${item.handle || item.label}"
         >
-          <span>${item.label}</span>
-          <strong>${item.handle}</strong>
+          ${item.label}
         </a>
       `).join("")}
     </div>
@@ -560,7 +560,6 @@ function wathbaRenderFooter() {
             <span class="wathba-footer-wa-svg">${WATHBA_WA_SVG}</span>
             ${wathbaT("orderWhatsapp")}
           </a>
-          ${wathbaRenderSocialLinks()}
         </div>
 
         <div class="wathba-footer-col">
@@ -588,6 +587,7 @@ function wathbaRenderFooter() {
           <p>${wathbaT("footerLocation")}</p>
           <p>${wathbaGetLang() === "ar" ? "واتساب: " : "WhatsApp: "}${wathbaFormatSharedPhone()}</p>
           <p>${wathbaT("footerNote")}</p>
+          ${wathbaRenderSocialLinks()}
         </div>
 
         <div class="wathba-footer-bottom">

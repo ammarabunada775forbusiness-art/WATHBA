@@ -2825,3 +2825,101 @@ html[dir="rtl"] .wathba-footer-social-link strong {
 .wathba-contact-info-value a:hover {
   text-decoration: underline;
 }
+
+/* =====================================================
+   Footer social links - compact professional layout
+===================================================== */
+
+.wathba-footer-socials {
+  margin-top: 18px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.wathba-footer-social-link {
+  min-height: 38px !important;
+  width: auto !important;
+  padding: 0 14px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  background: rgba(255, 255, 255, 0.045) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  font-family: "Be Vietnam Pro", sans-serif !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.04em !important;
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease !important;
+}
+
+.wathba-footer-social-link:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  background: rgba(255, 255, 255, 0.085) !important;
+}
+
+html[dir="rtl"] .wathba-footer-socials {
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] .wathba-footer-social-link {
+  letter-spacing: 0 !important;
+}
+
+/* =====================================================
+   Contact page social card
+===================================================== */
+
+.wathba-contact-social-list {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+}
+
+.wathba-contact-social-pill {
+  min-height: 42px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.22s ease;
+}
+
+.wathba-contact-social-pill:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.075);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.wathba-contact-social-pill span {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 13px;
+  font-weight: 1000;
+}
+
+.wathba-contact-social-pill strong {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 11px;
+  line-height: 1.25;
+  opacity: 0.7;
+  text-align: end;
+}
+
+html[dir="rtl"] .wathba-contact-social-pill {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .wathba-contact-social-pill strong {
+  text-align: start;
+}
