@@ -136,14 +136,12 @@ function wathbaGetMenuProducts() {
     (typeof products !== "undefined" && Array.isArray(products) ? products : null);
 
   if (Array.isArray(sourceProducts) && sourceProducts.length) {
-    return sourceProducts
-      .filter((product) => product.id !== "custom-orders")
-      .map((product) => ({
-        id: product.id,
-        ar: product.name?.ar || product.name?.en || product.id,
-        en: product.name?.en || product.name?.ar || product.id,
-        image: product.image || "assets/images/products/pull-up-bar/cover.webp"
-      }));
+    return sourceProducts.map((product) => ({
+      id: product.id,
+      ar: product.name?.ar || product.name?.en || product.id,
+      en: product.name?.en || product.name?.ar || product.id,
+      image: product.image || "assets/images/products/pull-up-bar/cover.webp"
+    }));
   }
 
   return WATHBA_MENU_FALLBACK_PRODUCTS;
@@ -155,6 +153,64 @@ function wathbaMenuProductName(item) {
 
 function wathbaProductUrl(id) {
   return `product.html?id=${id}`;
+}
+const WATHBA_MENU_GROUPS = [
+  {
+    key: "bars",
+    ar: "بارات السحب",
+    en: "Pull-up Bars",
+    ids: ["wall-pull-up-bar", "static-bars", "monkey-bars"]
+  },
+  {
+    key: "parallettes",
+    ar: "باراليتس",
+    en: "Parallettes",
+    ids: ["steel-wood-parallettes", "full-wooden-parallettes"]
+  },
+  {
+    key: "parallel-bars",
+    ar: "متوازي حديد",
+    en: "Parallel Bars",
+    ids: ["freestanding-parallel-bars"]
+  },
+  {
+    key: "wall-dip-bars",
+    ar: "ديب بار حائط",
+    en: "Wall Dip Bars",
+    ids: ["wall-mounted-dip-bars"]
+  },
+  {
+    key: "rings",
+    ar: "حلقات جمباز",
+    en: "Gymnastic Rings",
+    ids: ["gymnastic-rings"]
+  },
+  {
+    key: "accessories",
+    ar: "إكسسوارات",
+    en: "Accessories",
+    ids: ["hand-gripper", "resistance-bands", "grip-tape"]
+  },
+  {
+    key: "multi-rig",
+    ar: "جهاز متعدد",
+    en: "Multi Rig",
+    ids: ["multi-rig"]
+  },
+  {
+    key: "custom",
+    ar: "طلبات مخصصة",
+    en: "Custom Orders",
+    ids: ["custom-orders"]
+  }
+];
+
+function wathbaMenuGroupLabel(group) {
+  return wathbaGetLang() === "ar" ? group.ar : group.en;
+}
+
+function wathbaFindMenuProductById(id) {
+  return wathbaGetMenuProducts().find((product) => product.id === id);
 }
 
 function wathbaGetLang() {
@@ -353,33 +409,50 @@ function wathbaRenderDesktopMegaMenu() {
   if (oldMega) oldMega.remove();
 
   const lang = wathbaGetLang();
-  const menuProducts = wathbaGetMenuProducts();
 
   document.body.insertAdjacentHTML(
     "beforeend",
     `
       <div class="wathba-desktop-mega-menu" id="wathbaDesktopMegaMenu">
-        <div class="wathba-mega-inner wathba-mega-inner-v2">
-          <div class="wathba-mega-top">
+        <div class="wathba-mega-inner wathba-mega-inner-groups">
+          <div class="wathba-mega-groups-top">
             <div>
               <span class="wathba-mega-title">${lang === "ar" ? "المنتجات" : "Equipment"}</span>
-              <h3>${lang === "ar" ? "اختر معدتك" : "Choose Your Gear"}</h3>
+              <h3>${lang === "ar" ? "اختر حسب التصنيف" : "Shop by Category"}</h3>
             </div>
 
             <a href="products.html" class="wathba-mega-view-all">
-              ${lang === "ar" ? "عرض كل المنتجات" : "View All Products"}
+              ${lang === "ar" ? "كل المعدات" : "All Equipment"}
             </a>
           </div>
 
-          <div class="wathba-mega-products-grid">
-            ${menuProducts.map((item) => `
-              <a href="${wathbaProductUrl(item.id)}" class="wathba-mega-product-tile">
-                <span class="wathba-mega-product-thumb">
-                  <img src="${item.image}" alt="${wathbaMenuProductName(item)}" loading="lazy" />
-                </span>
-                <span>${wathbaMenuProductName(item)}</span>
-              </a>
-            `).join("")}
+          <div class="wathba-mega-category-grid">
+            ${WATHBA_MENU_GROUPS.map((group) => {
+      const groupProducts = group.ids
+        .map((id) => wathbaFindMenuProductById(id))
+        .filter(Boolean);
+
+      if (!groupProducts.length) return "";
+
+      return `
+                <div class="wathba-mega-category-card">
+                  <a href="products.html" class="wathba-mega-category-pill">
+                    ${wathbaMenuGroupLabel(group)}
+                  </a>
+
+                  <div class="wathba-mega-category-products">
+                    ${groupProducts.map((item) => `
+                      <a href="${wathbaProductUrl(item.id)}" class="wathba-mega-mini-product">
+                        <span class="wathba-mega-mini-thumb">
+                          <img src="${item.image}" alt="${wathbaMenuProductName(item)}" loading="lazy" />
+                        </span>
+                        <span>${wathbaMenuProductName(item)}</span>
+                      </a>
+                    `).join("")}
+                  </div>
+                </div>
+              `;
+    }).join("")}
           </div>
 
           <div class="wathba-mega-bottom">
