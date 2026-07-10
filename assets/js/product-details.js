@@ -95,7 +95,7 @@ function getProductFeatures(product, lang) {
   };
 
   const custom = {
-    "wooden-parallettes": {
+    "steel-wood-parallettes": {
       ar: [
         {
           icon: "forest",
@@ -132,7 +132,7 @@ function getProductFeatures(product, lang) {
       ]
     },
 
-    "pull-up-bar": {
+    "wall-pull-up-bar": {
       ar: [
         {
           icon: "fitness_center",
@@ -207,8 +207,8 @@ function getProductFeatures(product, lang) {
     }
   };
 
-  if (product.id && product.id.startsWith("wooden-parallettes")) {
-    return custom["wooden-parallettes"][lang];
+  if (product.id === "steel-wood-parallettes" || product.id === "full-wooden-parallettes") {
+    return custom["steel-wood-parallettes"][lang];
   }
 
   return custom[product.id]?.[lang] || common[lang];

@@ -26,11 +26,11 @@ const homeTranslations = {
 };
 
 const featuredProductIds = [
-  "pull-up-bar",
-  "wooden-parallettes-medium",
+  "wall-pull-up-bar",
+  "steel-wood-parallettes",
+  "freestanding-parallel-bars",
   "gymnastic-rings",
   "multi-rig",
-  "dip-bars",
   "resistance-bands"
 ];
 

@@ -1015,6 +1015,12 @@ ${message}`;
       function applyContactFinalFix() {
         setupContactForm();
         setupFaq();
+
+        const phoneCard = document.querySelector(".wathba-contact-info-card .wathba-contact-info-value");
+        if (phoneCard) {
+          const phone = getWathbaContactPhone();
+          phoneCard.textContent = `+${phone.slice(0, 3)} ${phone.slice(3)}`;
+        }
       }
 
       document.addEventListener("DOMContentLoaded", applyContactFinalFix);

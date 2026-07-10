@@ -20,7 +20,7 @@ const WATHBA_SHARED_TRANSLATIONS = {
     copyright: "© 2026 WATHBA. ALL RIGHTS RESERVED.",
     pullUp: "Pull-up Bar",
     parallettes: "Parallettes",
-    dipBars: "Dip Bars",
+    dipBars: "Parallel Bars",
     rings: "Rings"
   },
 
@@ -43,7 +43,7 @@ const WATHBA_SHARED_TRANSLATIONS = {
     copyright: "© 2026 WATHBA. جميع الحقوق محفوظة.",
     pullUp: "عقلة",
     parallettes: "باراليتس",
-    dipBars: "متوازي",
+    dipBars: "متوازي حديد",
     rings: "حلقات جمباز"
   }
 };
