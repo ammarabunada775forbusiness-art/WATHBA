@@ -590,219 +590,205 @@
     </section>
   </main>
   <div id="wathbaFooter"></div>
-  <script>
-    // Simple Micro-interaction for FAQ toggles
-    document.querySelectorAll('.group.cursor-pointer').forEach(item => {
-      item.addEventListener('click', () => {
-        const isCurrentlyActive = item.classList.contains('active');
-        // Optional: Close others
-        // document.querySelectorAll('.group.cursor-pointer').forEach(el => el.classList.remove('active'));
-        if (!isCurrentlyActive) {
-          item.classList.add('active');
-        } else {
-          item.classList.remove('active');
-        }
-      });
-    });
-  </script>
+
   <!-- WATHBA_CONTACT_PAGE_TRANSLATION_START -->
   <script id="wathba-contact-page-translation">
-    (function () {
-      const contactPageText = {
-        en: {
-          heroMini: "UNCOMPROMISING PERFORMANCE",
-          heroTitle: "LET’S BUILD<br />YOUR SETUP",
+      (function () {
+        const contactPageText = {
+          en: {
+            heroMini: "UNCOMPROMISING PERFORMANCE",
+            heroTitle: "LET’S BUILD<br />YOUR SETUP",
 
-          supportTitle: "Instant Support",
-          supportText:
-            "Connect with our equipment specialists directly. We offer personalized quotes and technical consultations via WhatsApp.",
-          chatButton: "CHAT ON WHATSAPP",
+            supportTitle: "Instant Support",
+            supportText:
+              "Connect with our equipment specialists directly. We offer personalized quotes and technical consultations via WhatsApp.",
+            chatButton: "CHAT ON WHATSAPP",
 
-          cardWhatsapp: "WHATSAPP NUMBER",
-          cardInstagram: "INSTAGRAM",
-          cardLocation: "LOCATION",
-          cardLocationValue: "AMMAN, JORDAN",
-          cardHours: "WORKING HOURS",
-          cardHoursValue: "SUN-THU, 9AM-6PM",
+            cardWhatsapp: "WHATSAPP NUMBER",
+            cardInstagram: "INSTAGRAM",
+            cardLocation: "LOCATION",
+            cardLocationValue: "AMMAN, JORDAN",
+            cardHours: "WORKING HOURS",
+            cardHoursValue: "SUN-THU, 9AM-6PM",
 
-          inquiryTitle: "INQUIRY<br />DETAILS",
-          inquiryText:
-            "Tell us about your space and goals. Whether you're building a home gym or a professional calisthenics park, we've got the expertise to guide you.",
+            inquiryTitle: "INQUIRY<br />DETAILS",
+            inquiryText:
+              "Tell us about your space and goals. Whether you're building a home gym or a professional calisthenics park, we've got the expertise to guide you.",
 
-          nameLabel: "FULL NAME",
-          namePlaceholder: "YOUR NAME",
-          phoneLabel: "PHONE NUMBER",
-          phonePlaceholder: "+962",
-          messageLabel: "MESSAGE / EQUIPMENT SPECS",
-          messagePlaceholder: "WHAT ARE YOU LOOKING FOR?",
-          submitButton: "SEND VIA WHATSAPP",
+            nameLabel: "FULL NAME",
+            namePlaceholder: "YOUR NAME",
+            phoneLabel: "PHONE NUMBER",
+            phonePlaceholder: "+962",
+            messageLabel: "MESSAGE / EQUIPMENT SPECS",
+            messagePlaceholder: "WHAT ARE YOU LOOKING FOR?",
+            submitButton: "SEND VIA WHATSAPP",
 
-          faqTitle: "FREQUENTLY ASKED",
-          q1: "HOW DO I ORDER?",
-          a1:
-            "All orders are processed through WhatsApp. Send us your product request, and we will confirm availability, details, and price.",
-          q2: "ARE PRICES FIXED?",
-          a2:
-            "Some products depend on size, material, and custom setup. We always confirm the final price through WhatsApp before ordering.",
-          q3: "DO YOU MAKE CUSTOM SETUPS?",
-          a3:
-            "Yes. We can help with home setups, outdoor bars, multi rigs, and customized calisthenics spaces depending on your available area."
-        },
+            faqTitle: "FREQUENTLY ASKED",
+            q1: "HOW DO I ORDER?",
+            a1:
+              "All orders are processed through WhatsApp. Send us your product request, and we will confirm availability, details, and price.",
+            q2: "ARE PRICES FIXED?",
+            a2:
+              "Some products depend on size, material, and custom setup. We always confirm the final price through WhatsApp before ordering.",
+            q3: "DO YOU MAKE CUSTOM SETUPS?",
+            a3:
+              "Yes. We can help with home setups, outdoor bars, multi rigs, and customized calisthenics spaces depending on your available area."
+          },
 
-        ar: {
-          heroMini: "أداء بلا تنازل",
-          heroTitle: "LET’S BUILD<br />YOUR SETUP",
+          ar: {
+            heroMini: "أداء بلا تنازل",
+            heroTitle: "LET’S BUILD<br />YOUR SETUP",
 
-          supportTitle: "دعم مباشر",
-          supportText:
-            "تواصل معنا مباشرة عبر واتساب، واحكِ لنا عن المنتج أو المساحة أو التجهيز الذي تريده، وسنساعدك بالاختيار والتفاصيل.",
-          chatButton: "راسلنا واتساب",
+            supportTitle: "دعم مباشر",
+            supportText:
+              "تواصل معنا مباشرة عبر واتساب، واحكِ لنا عن المنتج أو المساحة أو التجهيز الذي تريده، وسنساعدك بالاختيار والتفاصيل.",
+            chatButton: "راسلنا واتساب",
 
-          cardWhatsapp: "رقم الواتساب",
-          cardInstagram: "إنستغرام",
-          cardLocation: "الموقع",
-          cardLocationValue: "عمّان، الأردن",
-          cardHours: "ساعات العمل",
-          cardHoursValue: "الأحد - الخميس، 9 صباحًا - 6 مساءً",
+            cardWhatsapp: "رقم الواتساب",
+            cardInstagram: "إنستغرام",
+            cardLocation: "الموقع",
+            cardLocationValue: "عمّان، الأردن",
+            cardHours: "ساعات العمل",
+            cardHoursValue: "الأحد - الخميس، 9 صباحًا - 6 مساءً",
 
-          inquiryTitle: "تفاصيل<br />الاستفسار",
-          inquiryText:
-            "اكتب لنا ما الذي تبحث عنه: تجهيز منزلي، عقلة، متوازي، حلقات، أو مساحة كاليسثنكس كاملة. سنساعدك تختار الأنسب حسب هدفك والمساحة المتوفرة.",
+            inquiryTitle: "تفاصيل<br />الاستفسار",
+            inquiryText:
+              "اكتب لنا ما الذي تبحث عنه: تجهيز منزلي، عقلة، متوازي، حلقات، أو مساحة كاليسثنكس كاملة. سنساعدك تختار الأنسب حسب هدفك والمساحة المتوفرة.",
 
-          nameLabel: "الاسم الكامل",
-          namePlaceholder: "اكتب اسمك",
-          phoneLabel: "رقم الهاتف",
-          phonePlaceholder: "+962",
-          messageLabel: "الرسالة / تفاصيل المعدات",
-          messagePlaceholder: "ما المنتج أو التجهيز الذي تبحث عنه؟",
-          submitButton: "إرسال عبر واتساب",
+            nameLabel: "الاسم الكامل",
+            namePlaceholder: "اكتب اسمك",
+            phoneLabel: "رقم الهاتف",
+            phonePlaceholder: "+962",
+            messageLabel: "الرسالة / تفاصيل المعدات",
+            messagePlaceholder: "ما المنتج أو التجهيز الذي تبحث عنه؟",
+            submitButton: "إرسال عبر واتساب",
 
-          faqTitle: "الأسئلة الشائعة",
-          q1: "كيف أطلب؟",
-          a1:
-            "كل الطلبات تتم عبر واتساب. أرسل لنا المنتج المطلوب وسنؤكد لك التوفر والتفاصيل والسعر.",
-          q2: "هل الأسعار ثابتة؟",
-          a2:
-            "بعض المنتجات تعتمد على القياس والخامة والتجهيز المطلوب. نؤكد السعر النهائي عبر واتساب قبل أي طلب.",
-          q3: "هل يمكن عمل تجهيزات مخصصة؟",
-          a3:
-            "نعم، يمكننا المساعدة في تجهيزات منزلية، خارجية، متوازي، عقلات، وأجهزة كاليسثنكس حسب المساحة المتوفرة."
-        }
-      };
-
-      function getLang() {
-        return localStorage.getItem("wathbaLang") || "ar";
-      }
-
-      function setText(selector, text) {
-        const element = document.querySelector(selector);
-        if (element) element.textContent = text;
-      }
-
-      function setHTML(selector, html) {
-        const element = document.querySelector(selector);
-        if (element) element.innerHTML = html;
-      }
-
-      function applyContactPageTranslation() {
-        const lang = getLang();
-        const t = contactPageText[lang];
-
-        /* Hero */
-        setText("main section:nth-of-type(1) span.font-label-caps", t.heroMini);
-        setHTML("main section:nth-of-type(1) h1", t.heroTitle);
-
-        setText("main section:nth-of-type(1) .glass-card h2", t.supportTitle);
-        setText("main section:nth-of-type(1) .glass-card p", t.supportText);
-
-        const heroWhatsappButton = document.querySelector("main section:nth-of-type(1) .glass-card a .wathba-contact-hero-wa-text");
-        if (heroWhatsappButton) heroWhatsappButton.textContent = t.chatButton;
-
-        /* Info Cards */
-        const infoCards = document.querySelectorAll("main section:nth-of-type(3) .wathba-contact-info-card");
-
-        if (infoCards[0]) {
-          infoCards[0].querySelector("h3").textContent = t.cardWhatsapp;
-        }
-
-        if (infoCards[1]) {
-          infoCards[1].querySelector("h3").textContent = t.cardInstagram;
-        }
-
-        if (infoCards[2]) {
-          infoCards[2].querySelector("h3").textContent = t.cardLocation;
-          infoCards[2].querySelector("p").textContent = t.cardLocationValue;
-        }
-
-        if (infoCards[3]) {
-          infoCards[3].querySelector("h3").textContent = t.cardHours;
-          infoCards[3].querySelector("p").textContent = t.cardHoursValue;
-        }
-
-        /* Form Section */
-        setHTML("main section:nth-of-type(2) h2", t.inquiryTitle);
-        setText("main section:nth-of-type(2) .sticky > p", t.inquiryText);
-
-        const form = document.querySelector("main section:nth-of-type(2) form");
-
-        if (form) {
-          const groups = form.querySelectorAll(".group");
-          const inputs = form.querySelectorAll("input");
-          const textarea = form.querySelector("textarea");
-          const submitText = form.querySelector("button[type='submit'] span:first-child");
-
-          if (groups[0]) groups[0].querySelector("label").textContent = t.nameLabel;
-          if (groups[1]) groups[1].querySelector("label").textContent = t.phoneLabel;
-          if (groups[2]) groups[2].querySelector("label").textContent = t.messageLabel;
-
-          if (inputs[0]) inputs[0].placeholder = t.namePlaceholder;
-          if (inputs[1]) inputs[1].placeholder = t.phonePlaceholder;
-          if (textarea) textarea.placeholder = t.messagePlaceholder;
-
-          if (submitText) submitText.textContent = t.submitButton;
-        }
-
-        /* FAQ */
-        setText("main section:nth-of-type(4) h2", t.faqTitle);
-
-        const faqItems = document.querySelectorAll("main section:nth-of-type(4) .border-b");
-
-        const faqData = [
-          [t.q1, t.a1],
-          [t.q2, t.a2],
-          [t.q3, t.a3]
-        ];
-
-        faqItems.forEach((item, index) => {
-          const question = item.querySelector("h3");
-          const answer = item.querySelector("p");
-
-          if (question && faqData[index]) question.textContent = faqData[index][0];
-          if (answer && faqData[index]) answer.textContent = faqData[index][1];
-        });
-
-        const rtlTargets = [
-          "main section:nth-of-type(1)",
-          "main section:nth-of-type(2)",
-          "main section:nth-of-type(3)",
-          "main section:nth-of-type(4)"
-        ];
-
-        rtlTargets.forEach((selector) => {
-          const element = document.querySelector(selector);
-          if (!element) return;
-
-          if (lang === "ar") {
-            element.classList.add("wathba-ar-text");
-          } else {
-            element.classList.remove("wathba-ar-text");
+            faqTitle: "الأسئلة الشائعة",
+            q1: "كيف أطلب؟",
+            a1:
+              "كل الطلبات تتم عبر واتساب. أرسل لنا المنتج المطلوب وسنؤكد لك التوفر والتفاصيل والسعر.",
+            q2: "هل الأسعار ثابتة؟",
+            a2:
+              "بعض المنتجات تعتمد على القياس والخامة والتجهيز المطلوب. نؤكد السعر النهائي عبر واتساب قبل أي طلب.",
+            q3: "هل يمكن عمل تجهيزات مخصصة؟",
+            a3:
+              "نعم، يمكننا المساعدة في تجهيزات منزلية، خارجية، متوازي، عقلات، وأجهزة كاليسثنكس حسب المساحة المتوفرة."
           }
-        });
-      }
+        };
 
-      document.addEventListener("DOMContentLoaded", applyContactPageTranslation);
-      document.addEventListener("wathba:langchange", applyContactPageTranslation);
-    })();
+        function getLang() {
+          return localStorage.getItem("wathbaLang") || "ar";
+        }
+
+        function setText(selector, text) {
+          const element = document.querySelector(selector);
+          if (element) element.textContent = text;
+        }
+
+        function setHTML(selector, html) {
+          const element = document.querySelector(selector);
+          if (element) element.innerHTML = html;
+        }
+
+        function applyContactPageTranslation() {
+          const lang = getLang();
+          const t = contactPageText[lang];
+
+          /* Hero */
+          setText("main section:nth-of-type(1) span.font-label-caps", t.heroMini);
+          setHTML("main section:nth-of-type(1) h1", t.heroTitle);
+
+          setText("main section:nth-of-type(1) .glass-card h2", t.supportTitle);
+          setText("main section:nth-of-type(1) .glass-card p", t.supportText);
+
+          const heroWhatsappButton = document.querySelector("main section:nth-of-type(1) .glass-card a .wathba-contact-hero-wa-text");
+          if (heroWhatsappButton) heroWhatsappButton.textContent = t.chatButton;
+
+          /* Info Cards */
+          const infoCards = document.querySelectorAll("main section:nth-of-type(3) .wathba-contact-info-card");
+
+          if (infoCards[0]) {
+            infoCards[0].querySelector("h3").textContent = t.cardWhatsapp;
+          }
+
+          if (infoCards[1]) {
+            infoCards[1].querySelector("h3").textContent = t.cardInstagram;
+          }
+
+          if (infoCards[2]) {
+            infoCards[2].querySelector("h3").textContent = t.cardLocation;
+            infoCards[2].querySelector("p").textContent = t.cardLocationValue;
+          }
+
+          if (infoCards[3]) {
+            infoCards[3].querySelector("h3").textContent = t.cardHours;
+            infoCards[3].querySelector("p").textContent = t.cardHoursValue;
+          }
+
+          /* Form Section */
+          setHTML("main section:nth-of-type(2) h2", t.inquiryTitle);
+          setText("main section:nth-of-type(2) .sticky > p", t.inquiryText);
+
+          const form = document.querySelector("main section:nth-of-type(2) form");
+
+          if (form) {
+            const groups = form.querySelectorAll(".group");
+            const inputs = form.querySelectorAll("input");
+            const textarea = form.querySelector("textarea");
+            const submitText = form.querySelector("button[type='submit'] span:first-child");
+
+            if (groups[0]) groups[0].querySelector("label").textContent = t.nameLabel;
+            if (groups[1]) groups[1].querySelector("label").textContent = t.phoneLabel;
+            if (groups[2]) groups[2].querySelector("label").textContent = t.messageLabel;
+
+            if (inputs[0]) inputs[0].placeholder = t.namePlaceholder;
+            if (inputs[1]) inputs[1].placeholder = t.phonePlaceholder;
+            if (textarea) textarea.placeholder = t.messagePlaceholder;
+
+            if (submitText) submitText.textContent = t.submitButton;
+          }
+
+          /* FAQ */
+          setText("main section:nth-of-type(4) h2", t.faqTitle);
+
+          const faqItems = document.querySelectorAll("main section:nth-of-type(4) .border-b");
+
+          const faqData = [
+            [t.q1, t.a1],
+            [t.q2, t.a2],
+            [t.q3, t.a3]
+          ];
+
+          faqItems.forEach((item, index) => {
+            const question = item.querySelector("h3");
+            const answer = item.querySelector("p");
+
+            if (question && faqData[index]) question.textContent = faqData[index][0];
+            if (answer && faqData[index]) answer.textContent = faqData[index][1];
+          });
+
+          const rtlTargets = [
+            "main section:nth-of-type(1)",
+            "main section:nth-of-type(2)",
+            "main section:nth-of-type(3)",
+            "main section:nth-of-type(4)"
+          ];
+
+          rtlTargets.forEach((selector) => {
+            const element = document.querySelector(selector);
+            if (!element) return;
+
+            if (lang === "ar") {
+              element.classList.add("wathba-ar-text");
+            } else {
+              element.classList.remove("wathba-ar-text");
+            }
+          });
+        }
+
+        document.addEventListener("DOMContentLoaded", applyContactPageTranslation);
+        document.addEventListener("wathba:langchange", applyContactPageTranslation);
+      })();
   </script>
   <!-- WATHBA_CONTACT_PAGE_TRANSLATION_END -->
 
