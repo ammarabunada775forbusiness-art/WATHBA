@@ -13,37 +13,39 @@ const productGroups = [
   },
   {
     key: "bars",
-    ar: "البارات",
-    en: "Bars",
-    ids: ["pull-up-bar", "dip-bars", "steel-bars", "monkey-bars"]
+    ar: "بارات السحب",
+    en: "Pull-up Bars",
+    ids: ["wall-pull-up-bar", "static-bars"]
   },
   {
-    key: "handles",
-    ar: "المقابض",
-    en: "Handles",
-    ids: [
-      "wooden-parallettes-small",
-      "wooden-parallettes-medium",
-      "wooden-parallettes-large"
-    ]
+    key: "parallettes",
+    ar: "باراليتس",
+    en: "Parallettes",
+    ids: ["steel-wood-parallettes", "full-wooden-parallettes"]
+  },
+  {
+    key: "dip-parallel",
+    ar: "متوازي وديب",
+    en: "Dip & Parallel Bars",
+    ids: ["freestanding-parallel-bars", "wall-mounted-dip-bars"]
   },
   {
     key: "rings",
-    ar: "الحلقات",
-    en: "Rings",
+    ar: "حلقات جمباز",
+    en: "Gymnastic Rings",
     ids: ["gymnastic-rings"]
   },
   {
     key: "accessories",
     ar: "إكسسوارات",
     en: "Accessories",
-    ids: ["hand-gripper", "resistance-bands"]
+    ids: ["hand-gripper", "resistance-bands", "grip-tape"]
   },
   {
-    key: "rigs",
-    ar: "الأجهزة",
-    en: "Rigs",
-    ids: ["multi-rig"]
+    key: "custom",
+    ar: "تجهيزات مخصصة",
+    en: "Custom Setups",
+    ids: ["multi-rig", "custom-orders"]
   }
 ];
 

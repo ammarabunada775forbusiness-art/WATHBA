@@ -1,145 +1,47 @@
 const products = [
     {
-        id: "pull-up-bar",
+        id: "wall-pull-up-bar",
         name: {
-            ar: "عقلة",
-            en: "Pull-up Bar"
+            ar: "عقلة حائط",
+            en: "Wall Pull-up Bar"
         },
         category: {
-            ar: "معدات سحب",
-            en: "Pull Equipment"
-        },
-        price: null,
-        priceLabel: {
-            ar: "السعر حسب النوع",
-            en: "Price depends on type"
-        },
-        image: "assets/images/products/pull-up-bar/cover.webp",
-        description: {
-            ar: "عقلة مناسبة لتدريب الظهر، الذراعين، الكور، وتمارين الكاليستنكس الأساسية.",
-            en: "A pull-up bar for back, arms, core training, and essential calisthenics exercises."
-        },
-        variants: [
-            {
-                ar: "عقلة جدارية",
-                en: "Wall-mounted Pull-up Bar",
-                price: null
-            }
-        ]
-    },
-
-    {
-        id: "wooden-parallettes-small",
-        name: {
-            ar: "باراليتس خشب صغير",
-            en: "Wooden Parallettes Small"
-        },
-        category: {
-            ar: "معدات دفع",
-            en: "Push Equipment"
-        },
-        price: null,
-        priceLabel: {
-            ar: "اسأل عن السعر",
-            en: "Ask for price"
-        },
-        image: "assets/images/products/wooden-parallettes/cover.webp",
-        description: {
-            ar: "باراليتس خشب صغير مناسب لتدريبات الضغط، L-sit، وتمارين التحكم للمساحات الصغيرة.",
-            en: "Small wooden parallettes for push-ups, L-sit, control drills, and compact training spaces."
-        },
-        variants: []
-    },
-
-    {
-        id: "wooden-parallettes-medium",
-        name: {
-            ar: "باراليتس خشب وسط",
-            en: "Wooden Parallettes Medium"
-        },
-        category: {
-            ar: "معدات دفع",
-            en: "Push Equipment"
-        },
-        price: null,
-        priceLabel: {
-            ar: "اسأل عن السعر",
-            en: "Ask for price"
-        },
-        image: "assets/images/products/wooden-parallettes/cover.webp",
-        description: {
-            ar: "باراليتس خشب وسط مناسب للهاندستاند، البلانش، L-sit، وتدريبات التوازن.",
-            en: "Medium wooden parallettes for handstands, planche work, L-sit, and balance training."
-        },
-        variants: []
-    },
-
-    {
-        id: "wooden-parallettes-large",
-        name: {
-            ar: "باراليتس خشب كبير",
-            en: "Wooden Parallettes Large"
-        },
-        category: {
-            ar: "معدات دفع",
-            en: "Push Equipment"
-        },
-        price: null,
-        priceLabel: {
-            ar: "اسأل عن السعر",
-            en: "Ask for price"
-        },
-        image: "assets/images/products/wooden-parallettes/cover.webp",
-        description: {
-            ar: "باراليتس خشب كبير مناسب للتمارين المتقدمة والثبات العالي أثناء التدريب.",
-            en: "Large wooden parallettes for advanced movements and higher stability during training."
-        },
-        variants: []
-    },
-
-    {
-        id: "dip-bars",
-        name: {
-            ar: "متوازي",
-            en: "Dip Bars"
-        },
-        category: {
-            ar: "معدات دفع",
-            en: "Push Equipment"
+            ar: "بارات السحب",
+            en: "Pull-up Bars"
         },
         price: null,
         priceLabel: {
             ar: "السعر حسب القياس",
             en: "Price depends on size"
         },
-        image: "assets/images/products/dip-bars/cover.webp",
+        image: "assets/images/products/pull-up-bar/cover.webp",
         description: {
-            ar: "متوازي ثابت لتدريب الديبس، الضغط، الكور، والمهارات الأساسية والمتقدمة.",
-            en: "Stable dip bars for dips, push training, core work, and basic to advanced skills."
+            ar: "عقلة حائط قوية لتدريب السحب، التعلق، الكور، والمهارات الأساسية. متوفرة ببروز 60 سم أو 90 سم حسب المساحة والهدف.",
+            en: "A strong wall-mounted pull-up bar for pulling, hanging, core work, and essential skills. Available in 60cm or 90cm wall projection."
         },
         variants: [
             {
-                ar: "قياس عادي",
-                en: "Standard Size",
+                ar: "بروز 60 سم من الحائط",
+                en: "60cm wall projection",
                 price: null
             },
             {
-                ar: "قياس كبير",
-                en: "Large Size",
+                ar: "بروز 90 سم من الحائط",
+                en: "90cm wall projection",
                 price: null
             }
         ]
     },
 
     {
-        id: "steel-bars",
+        id: "static-bars",
         name: {
-            ar: "ستيل بارز",
-            en: "Steel Bars"
+            ar: "ستاتيك بارز",
+            en: "Static Bars"
         },
         category: {
-            ar: "معدات خارجية",
-            en: "Outdoor Equipment"
+            ar: "بارات السحب",
+            en: "Pull-up Bars"
         },
         price: null,
         priceLabel: {
@@ -148,33 +50,225 @@ const products = [
         },
         image: "assets/images/products/steel-bars/cover.webp",
         description: {
-            ar: "ستيل بارز قوية لتجهيز مساحات تدريب خارجية أو منزلية حسب الحاجة.",
-            en: "Strong steel bars for building outdoor or home training setups based on your needs."
+            ar: "ستاتيك بارز بطول تقريبي 2 متر للمهارات، الثبات، وتمارين الكاليستنكس المفتوحة. يمكن تنفيذها حسب الطلب والمساحة.",
+            en: "Static bars around 2 meters long for skills, holds, and open calisthenics movements. Can be customized based on space and request."
         },
-        variants: []
+        variants: [
+            {
+                ar: "طول 2 متر تقريبًا",
+                en: "Around 2m length",
+                price: null
+            },
+            {
+                ar: "تنفيذ حسب الطلب",
+                en: "Custom build",
+                price: null
+            }
+        ]
     },
 
     {
-        id: "monkey-bars",
+        id: "steel-wood-parallettes",
         name: {
-            ar: "مونكي بارز",
-            en: "Monkey Bars"
+            ar: "باراليتس حديد بمقبض خشب",
+            en: "Steel Parallettes with Wooden Grip"
         },
         category: {
-            ar: "معدات خارجية",
-            en: "Outdoor Equipment"
+            ar: "باراليتس",
+            en: "Parallettes"
         },
         price: null,
         priceLabel: {
-            ar: "السعر حسب المقاس",
+            ar: "السعر حسب القياس",
             en: "Price depends on size"
         },
-        image: "assets/images/products/monkey-bars/cover.webp",
+        image: "assets/images/products/wooden-parallettes/cover.webp",
         description: {
-            ar: "مونكي بارز لتدريب القبضة، السحب، التعلق، والتحمل بطريقة ممتعة وقوية.",
-            en: "Monkey bars for grip strength, pulling, hanging, and endurance training."
+            ar: "باراليتس بقاعدة حديد قوية ومقبض خشب مريح، مناسب للضغط، L-sit، البلانش، والهاندستاند.",
+            en: "Parallettes with a strong steel base and comfortable wooden grip, suitable for push-ups, L-sits, planche work, and handstands."
         },
-        variants: []
+        variants: [
+            {
+                ar: "قياس صغير",
+                en: "Small size",
+                price: null
+            },
+            {
+                ar: "قياس وسط",
+                en: "Medium size",
+                price: null
+            },
+            {
+                ar: "قياس كبير",
+                en: "Large size",
+                price: null
+            }
+        ]
+    },
+
+    {
+        id: "full-wooden-parallettes",
+        name: {
+            ar: "باراليتس خشب كامل",
+            en: "Full Wooden Parallettes"
+        },
+        category: {
+            ar: "باراليتس",
+            en: "Parallettes"
+        },
+        price: null,
+        priceLabel: {
+            ar: "اسأل عن السعر",
+            en: "Ask for price"
+        },
+        image: "assets/images/products/wooden-parallettes/cover.webp",
+        description: {
+            ar: "باراليتس خشب كامل بتصميم بسيط ومتين، مناسب لتدريبات التحكم والضغط والمهارات الأساسية.",
+            en: "Full wooden parallettes with a clean and solid design, suitable for control drills, push training, and basic skills."
+        },
+        variants: [
+            {
+                ar: "قياس ثابت",
+                en: "Standard size",
+                price: null
+            }
+        ]
+    },
+
+    {
+        id: "freestanding-parallel-bars",
+        name: {
+            ar: "متوازي حديد حر",
+            en: "Freestanding Parallel Bars"
+        },
+        category: {
+            ar: "متوازي وديب",
+            en: "Dip & Parallel Bars"
+        },
+        price: null,
+        priceLabel: {
+            ar: "السعر حسب الارتفاع",
+            en: "Price depends on height"
+        },
+        image: "assets/images/products/dip-bars/cover.webp",
+        description: {
+            ar: "متوازي حديد مواسير كامل، ثابت ومناسب لتدريبات الديبس، الضغط، الكور، وتمارين الثبات.",
+            en: "Freestanding parallel bars made from steel pipes, stable for dips, push training, core work, and hold exercises."
+        },
+        variants: [
+            {
+                ar: "ارتفاع 100 سم",
+                en: "100cm height",
+                price: null
+            },
+            {
+                ar: "ارتفاع 40 سم",
+                en: "40cm height",
+                price: null
+            }
+        ]
+    },
+
+    {
+        id: "wall-mounted-dip-bars",
+        name: {
+            ar: "ديب بار حائط",
+            en: "Wall-mounted Dip Bars"
+        },
+        category: {
+            ar: "متوازي وديب",
+            en: "Dip & Parallel Bars"
+        },
+        price: null,
+        priceLabel: {
+            ar: "السعر حسب القياس",
+            en: "Price depends on size"
+        },
+        image: "assets/images/products/dip-bars/cover.webp",
+        description: {
+            ar: "ديب بار يثبت على الحائط لتدريبات الديبس والضغط والكور، مناسب لمن يريد توفير مساحة على الأرض.",
+            en: "Wall-mounted dip bars for dips, push training, and core work, suitable for saving floor space."
+        },
+        variants: [
+            {
+                ar: "قياس ثابت",
+                en: "Standard size",
+                price: null
+            },
+            {
+                ar: "تنفيذ حسب الطلب",
+                en: "Custom build",
+                price: null
+            }
+        ]
+    },
+
+    {
+        id: "gymnastic-rings",
+        name: {
+            ar: "حلقات جمباز",
+            en: "Gymnastic Rings"
+        },
+        category: {
+            ar: "حلقات جمباز",
+            en: "Gymnastic Rings"
+        },
+        price: null,
+        priceLabel: {
+            ar: "اسأل عن السعر",
+            en: "Ask for price"
+        },
+        image: "assets/images/products/gymnastic-rings/cover.webp",
+        description: {
+            ar: "حلقات جمباز لتدريب السحب، الديبس، التوازن، والثبات العضلي بمرونة عالية.",
+            en: "Gymnastic rings for pulling, dips, balance, and upper-body stability with high training versatility."
+        },
+        variants: [
+            {
+                ar: "حلقات خشب",
+                en: "Wooden rings",
+                price: null
+            }
+        ]
+    },
+
+    {
+        id: "resistance-bands",
+        name: {
+            ar: "حبال مقاومة",
+            en: "Resistance Bands"
+        },
+        category: {
+            ar: "إكسسوارات",
+            en: "Accessories"
+        },
+        price: null,
+        priceLabel: {
+            ar: "السعر حسب المقاومة",
+            en: "Price depends on resistance"
+        },
+        image: "assets/images/products/resistance-bands/cover.webp",
+        description: {
+            ar: "حبال مقاومة تساعدك في العقلة، الإحماء، التدرج، وتمارين المرونة.",
+            en: "Resistance bands for pull-up assistance, warm-up, progression, and mobility work."
+        },
+        variants: [
+            {
+                ar: "مقاومة خفيفة",
+                en: "Light resistance",
+                price: null
+            },
+            {
+                ar: "مقاومة متوسطة",
+                en: "Medium resistance",
+                price: null
+            },
+            {
+                ar: "مقاومة قوية",
+                en: "Heavy resistance",
+                price: null
+            }
+        ]
     },
 
     {
@@ -197,7 +291,42 @@ const products = [
             ar: "هاند جريبر لتقوية القبضة والساعد، مناسب للاعبين الكاليستنكس والتدريب اليومي.",
             en: "Hand gripper for improving grip and forearm strength, suitable for calisthenics athletes and daily training."
         },
-        variants: []
+        variants: [
+            {
+                ar: "قياس / مقاومة متوفرة",
+                en: "Available resistance",
+                price: null
+            }
+        ]
+    },
+
+    {
+        id: "grip-tape",
+        name: {
+            ar: "جريب تيب",
+            en: "Grip Tape"
+        },
+        category: {
+            ar: "إكسسوارات",
+            en: "Accessories"
+        },
+        price: null,
+        priceLabel: {
+            ar: "اسأل عن السعر",
+            en: "Ask for price"
+        },
+        image: "assets/images/products/grip-tape/cover.webp",
+        description: {
+            ar: "جريب تيب لتحسين القبضة وتقليل الانزلاق أثناء تمارين البارات والحلقات.",
+            en: "Grip tape for improving grip and reducing slipping during bar and ring training."
+        },
+        variants: [
+            {
+                ar: "رول جريب تيب",
+                en: "Grip tape roll",
+                price: null
+            }
+        ]
     },
 
     {
@@ -207,8 +336,8 @@ const products = [
             en: "Calisthenics Multi Rig"
         },
         category: {
-            ar: "معدات احترافية",
-            en: "Professional Equipment"
+            ar: "تجهيزات مخصصة",
+            en: "Custom Setups"
         },
         price: null,
         priceLabel: {
@@ -217,75 +346,47 @@ const products = [
         },
         image: "assets/images/products/multi-rig/cover.webp",
         description: {
-            ar: "جهاز كاليسثنكس متعدد مناسب للحدائق، النوادي، والمساحات التدريبية الاحترافية.",
-            en: "A multi-purpose calisthenics rig suitable for parks, gyms, and professional training spaces."
-        },
-        variants: []
-    },
-
-    {
-        id: "resistance-bands",
-        name: {
-            ar: "حبال مقاومة",
-            en: "Resistance Bands"
-        },
-        category: {
-            ar: "مساعدة وتمرين",
-            en: "Assistance"
-        },
-        price: null,
-        priceLabel: {
-            ar: "السعر حسب المقاومة",
-            en: "Price depends on resistance"
-        },
-        image: "assets/images/products/resistance-bands/cover.webp",
-        description: {
-            ar: "حبال مقاومة تساعدك في العقلة، الإحماء، التدرج، وتمارين المرونة.",
-            en: "Resistance bands for pull-up assistance, warm-up, progression, and mobility work."
+            ar: "جهاز كاليسثنكس متعدد حسب الطلب، ممكن يحتوي على عقل، مونكي بارز، ديب بارز، وستاتيك بارز حسب المساحة والهدف.",
+            en: "A custom calisthenics multi rig that can include pull-up bars, monkey bars, dip bars, and static bars based on space and goal."
         },
         variants: [
             {
-                ar: "مقاومة خفيفة",
-                en: "Light Resistance",
+                ar: "تصميم حسب المساحة",
+                en: "Space-based design",
                 price: null
             },
             {
-                ar: "مقاومة متوسطة",
-                en: "Medium Resistance",
-                price: null
-            },
-            {
-                ar: "مقاومة قوية",
-                en: "Heavy Resistance",
+                ar: "تجهيز حديقة / نادي / بيت",
+                en: "Park / gym / home setup",
                 price: null
             }
         ]
     },
 
     {
-        id: "gymnastic-rings",
+        id: "custom-orders",
         name: {
-            ar: "حلقات جمباز",
-            en: "Gymnastic Rings"
+            ar: "طلب تصنيع مخصص",
+            en: "Custom Orders"
         },
         category: {
-            ar: "معدات سحب",
-            en: "Pull Equipment"
+            ar: "تجهيزات مخصصة",
+            en: "Custom Setups"
         },
         price: null,
         priceLabel: {
-            ar: "اسأل عن السعر",
-            en: "Ask for price"
+            ar: "حسب القطعة المطلوبة",
+            en: "Depends on requested item"
         },
-        image: "assets/images/products/gymnastic-rings/cover.webp",
+        image: "assets/images/products/multi-rig/cover.webp",
         description: {
-            ar: "حلقات جمباز لتدريب السحب، الديبس، التوازن، والثبات العضلي.",
-            en: "Gymnastic rings for pulling, dips, balance, and upper-body stability."
+            ar: "بدك قطعة غير موجودة؟ أرسل لنا صورة أو وصف أو قياسات المساحة، ونساعدك بتصميم وتنفيذ قطعة مناسبة.",
+            en: "Need a piece that is not listed? Send us a photo, description, or space dimensions, and we will help design and build it."
         },
         variants: [
             {
-                ar: "حلقات خشب",
-                en: "Wooden Rings",
+                ar: "قطعة حسب الطلب",
+                en: "Custom equipment",
                 price: null
             }
         ]

@@ -419,10 +419,10 @@ function wathbaRenderFooter() {
         <div class="wathba-footer-col">
           <h5 class="wathba-footer-title">${wathbaT("equipmentTitle")}</h5>
           <ul class="wathba-footer-list">
-            <li><a href="product.html?id=pull-up-bar">${wathbaT("pullUp")}</a></li>
-            <li><a href="product.html?id=wooden-parallettes-medium">${wathbaT("parallettes")}</a></li>
-            <li><a href="product.html?id=dip-bars">${wathbaT("dipBars")}</a></li>
-            <li><a href="product.html?id=gymnastic-rings">${wathbaT("rings")}</a></li>
+            <li><a href="product.html?id=wall-pull-up-bar">${wathbaT("pullUp")}</a></li>
+<li><a href="product.html?id=steel-wood-parallettes">${wathbaT("parallettes")}</a></li>
+<li><a href="product.html?id=freestanding-parallel-bars">${wathbaT("dipBars")}</a></li>
+<li><a href="product.html?id=gymnastic-rings">${wathbaT("rings")}</a></li>
           </ul>
         </div>
 
