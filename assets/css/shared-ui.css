@@ -1,3 +1,16 @@
+/* =====================================================
+   Prevent language flash before JS applies translations
+===================================================== */
+
+html.wathba-ui-loading body {
+  opacity: 0;
+}
+
+html.wathba-ui-ready body {
+  opacity: 1;
+  transition: opacity 0.12s ease;
+}
+
 html,
 body {
   background: #131313 !important;

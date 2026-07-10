@@ -316,8 +316,7 @@ function wathbaApplyLanguage(lang) {
   wathbaNormalizeLinks();
   wathbaSetActiveLinks();
   wathbaNormalizeLogo();
-  document.documentElement.classList.remove("wathba-ui-loading");
-  document.documentElement.classList.add("wathba-ui-ready");
+  wathbaReleaseUi();
 
   document.dispatchEvent(
     new CustomEvent("wathba:langchange", {
@@ -724,11 +723,21 @@ function wathbaBindEvents() {
   });
 }
 
+function wathbaReleaseUi() {
+  document.documentElement.classList.remove("wathba-ui-loading");
+  document.documentElement.classList.add("wathba-ui-ready");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  wathbaEnsureSharedShell();
-  wathbaNormalizeLogo();
-  wathbaBindEvents();
-  wathbaApplyLanguage(wathbaGetLang());
+  try {
+    wathbaEnsureSharedShell();
+    wathbaNormalizeLogo();
+    wathbaBindEvents();
+    wathbaApplyLanguage(wathbaGetLang());
+  } catch (error) {
+    console.error("WATHBA UI failed:", error);
+    wathbaReleaseUi();
+  }
 });
 
 /* WATHBA CART PATCH */
