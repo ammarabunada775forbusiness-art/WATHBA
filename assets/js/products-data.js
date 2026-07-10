@@ -68,6 +68,35 @@ const products = [
     },
 
     {
+        id: "monkey-bars",
+        name: {
+            ar: "مونكي بارز",
+            en: "Monkey Bars"
+        },
+        category: {
+            ar: "بارات السحب",
+            en: "Pull-up Bars"
+        },
+        price: null,
+        priceLabel: {
+            ar: "السعر حسب المقاس",
+            en: "Price depends on size"
+        },
+        image: "assets/images/products/monkey-bars/cover.webp",
+        description: {
+            ar: "مونكي بارز لتدريب القبضة، السحب، التعلق، والتحمل. مناسبة للتجهيزات الخارجية أو ضمن جهاز كاليسثنكس متعدد.",
+            en: "Monkey bars for grip strength, pulling, hanging, and endurance. Suitable for outdoor setups or as part of a multi rig."
+        },
+        variants: [
+            {
+                ar: "قياس حسب الطلب",
+                en: "Custom size",
+                price: null
+            }
+        ]
+    },
+
+    {
         id: "steel-wood-parallettes",
         name: {
             ar: "باراليتس حديد بمقبض خشب",
@@ -142,8 +171,8 @@ const products = [
             en: "Freestanding Parallel Bars"
         },
         category: {
-            ar: "متوازي وديب",
-            en: "Dip & Parallel Bars"
+            ar: "متوازي حديد",
+            en: "Parallel Bars"
         },
         price: null,
         priceLabel: {
@@ -176,8 +205,8 @@ const products = [
             en: "Wall-mounted Dip Bars"
         },
         category: {
-            ar: "متوازي وديب",
-            en: "Dip & Parallel Bars"
+            ar: "ديب بار حائط",
+            en: "Wall Dip Bars"
         },
         price: null,
         priceLabel: {
@@ -336,8 +365,8 @@ const products = [
             en: "Calisthenics Multi Rig"
         },
         category: {
-            ar: "تجهيزات مخصصة",
-            en: "Custom Setups"
+            ar: "جهاز كاليسثنكس متعدد",
+            en: "Calisthenics Multi Rig"
         },
         price: null,
         priceLabel: {
@@ -392,6 +421,8 @@ const products = [
         ]
     }
 ];
+
+window.WATHBA_PRODUCTS = products;
 
 function getProductPriceText(product, lang) {
     if (product.price !== null && product.price !== undefined) {

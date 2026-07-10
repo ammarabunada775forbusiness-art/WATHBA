@@ -57,27 +57,15 @@ const WATHBA_WA_SVG = `
 
 const WATHBA_MENU_FALLBACK_PRODUCTS = [
   {
-    id: "pull-up-bar",
-    ar: "عقلة",
-    en: "Pull-up Bar",
+    id: "wall-pull-up-bar",
+    ar: "عقلة حائط",
+    en: "Wall Pull-up Bar",
     image: "assets/images/products/pull-up-bar/cover.webp"
   },
   {
-    id: "wooden-parallettes-small",
-    ar: "باراليتس",
-    en: "Parallettes",
-    image: "assets/images/products/wooden-parallettes/cover.webp"
-  },
-  {
-    id: "dip-bars",
-    ar: "متوازي",
-    en: "Dip Bars",
-    image: "assets/images/products/dip-bars/cover.webp"
-  },
-  {
-    id: "steel-bars",
-    ar: "ستيل بارز",
-    en: "Steel Bars",
+    id: "static-bars",
+    ar: "ستاتيك بارز",
+    en: "Static Bars",
     image: "assets/images/products/steel-bars/cover.webp"
   },
   {
@@ -87,10 +75,28 @@ const WATHBA_MENU_FALLBACK_PRODUCTS = [
     image: "assets/images/products/monkey-bars/cover.webp"
   },
   {
-    id: "resistance-bands",
-    ar: "حبال مقاومة",
-    en: "Resistance Bands",
-    image: "assets/images/products/resistance-bands/cover.webp"
+    id: "steel-wood-parallettes",
+    ar: "باراليتس حديد وخشب",
+    en: "Steel/Wood Parallettes",
+    image: "assets/images/products/wooden-parallettes/cover.webp"
+  },
+  {
+    id: "full-wooden-parallettes",
+    ar: "باراليتس خشب كامل",
+    en: "Full Wooden Parallettes",
+    image: "assets/images/products/wooden-parallettes/cover.webp"
+  },
+  {
+    id: "freestanding-parallel-bars",
+    ar: "متوازي حديد",
+    en: "Parallel Bars",
+    image: "assets/images/products/dip-bars/cover.webp"
+  },
+  {
+    id: "wall-mounted-dip-bars",
+    ar: "ديب بار حائط",
+    en: "Wall Dip Bars",
+    image: "assets/images/products/dip-bars/cover.webp"
   },
   {
     id: "gymnastic-rings",
@@ -99,27 +105,45 @@ const WATHBA_MENU_FALLBACK_PRODUCTS = [
     image: "assets/images/products/gymnastic-rings/cover.webp"
   },
   {
-    id: "multi-rig",
-    ar: "جهاز متعدد",
-    en: "Multi Rig",
-    image: "assets/images/products/multi-rig/cover.webp"
+    id: "resistance-bands",
+    ar: "حبال مقاومة",
+    en: "Resistance Bands",
+    image: "assets/images/products/resistance-bands/cover.webp"
   },
   {
     id: "hand-gripper",
     ar: "هاند جريبر",
     en: "Hand Gripper",
     image: "assets/images/products/hand-gripper/cover.webp"
+  },
+  {
+    id: "grip-tape",
+    ar: "جريب تيب",
+    en: "Grip Tape",
+    image: "assets/images/products/grip-tape/cover.webp"
+  },
+  {
+    id: "multi-rig",
+    ar: "جهاز متعدد",
+    en: "Multi Rig",
+    image: "assets/images/products/multi-rig/cover.webp"
   }
 ];
 
 function wathbaGetMenuProducts() {
-  if (typeof products !== "undefined" && Array.isArray(products) && products.length) {
-    return products.map((product) => ({
-      id: product.id,
-      ar: product.name?.ar || product.name?.en || product.id,
-      en: product.name?.en || product.name?.ar || product.id,
-      image: product.image || "assets/images/products/pull-up-bar/cover.webp"
-    }));
+  const sourceProducts =
+    window.WATHBA_PRODUCTS ||
+    (typeof products !== "undefined" && Array.isArray(products) ? products : null);
+
+  if (Array.isArray(sourceProducts) && sourceProducts.length) {
+    return sourceProducts
+      .filter((product) => product.id !== "custom-orders")
+      .map((product) => ({
+        id: product.id,
+        ar: product.name?.ar || product.name?.en || product.id,
+        en: product.name?.en || product.name?.ar || product.id,
+        image: product.image || "assets/images/products/pull-up-bar/cover.webp"
+      }));
   }
 
   return WATHBA_MENU_FALLBACK_PRODUCTS;

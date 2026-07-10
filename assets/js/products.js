@@ -15,7 +15,7 @@ const productGroups = [
     key: "bars",
     ar: "بارات السحب",
     en: "Pull-up Bars",
-    ids: ["wall-pull-up-bar", "static-bars"]
+    ids: ["wall-pull-up-bar", "static-bars", "monkey-bars"]
   },
   {
     key: "parallettes",
@@ -24,10 +24,16 @@ const productGroups = [
     ids: ["steel-wood-parallettes", "full-wooden-parallettes"]
   },
   {
-    key: "dip-parallel",
-    ar: "متوازي وديب",
-    en: "Dip & Parallel Bars",
-    ids: ["freestanding-parallel-bars", "wall-mounted-dip-bars"]
+    key: "parallel-bars",
+    ar: "متوازي حديد",
+    en: "Parallel Bars",
+    ids: ["freestanding-parallel-bars"]
+  },
+  {
+    key: "wall-dip-bars",
+    ar: "ديب بار حائط",
+    en: "Wall Dip Bars",
+    ids: ["wall-mounted-dip-bars"]
   },
   {
     key: "rings",
@@ -42,13 +48,18 @@ const productGroups = [
     ids: ["hand-gripper", "resistance-bands", "grip-tape"]
   },
   {
+    key: "multi-rig",
+    ar: "جهاز متعدد",
+    en: "Multi Rig",
+    ids: ["multi-rig"]
+  },
+  {
     key: "custom",
-    ar: "تجهيزات مخصصة",
-    en: "Custom Setups",
-    ids: ["multi-rig", "custom-orders"]
+    ar: "طلبات مخصصة",
+    en: "Custom Orders",
+    ids: ["custom-orders"]
   }
 ];
-
 function getCurrentLang() {
   return localStorage.getItem("wathbaLang") || "ar";
 }
