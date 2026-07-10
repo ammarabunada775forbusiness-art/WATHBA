@@ -160,6 +160,39 @@ function wathbaFormatSharedPhone() {
   return `+${phone.slice(0, 3)} ${phone.slice(3, 5)} ${phone.slice(5, 8)} ${phone.slice(8)}`;
 }
 
+function wathbaGetSocials() {
+  return window.WATHBA_CONFIG?.socials || {};
+}
+
+function wathbaRenderSocialLinks() {
+  const socials = wathbaGetSocials();
+
+  const items = [
+    socials.instagram,
+    socials.tiktok,
+    socials.facebook
+  ].filter((item) => item && item.url);
+
+  if (!items.length) return "";
+
+  return `
+    <div class="wathba-footer-socials">
+      ${items.map((item) => `
+        <a
+          href="${item.url}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-footer-social-link"
+          aria-label="${item.label}"
+        >
+          <span>${item.label}</span>
+          <strong>${item.handle}</strong>
+        </a>
+      `).join("")}
+    </div>
+  `;
+}
+
 const WATHBA_MENU_GROUPS = [
   {
     key: "bars",
@@ -527,6 +560,7 @@ function wathbaRenderFooter() {
             <span class="wathba-footer-wa-svg">${WATHBA_WA_SVG}</span>
             ${wathbaT("orderWhatsapp")}
           </a>
+          ${wathbaRenderSocialLinks()}
         </div>
 
         <div class="wathba-footer-col">

@@ -926,6 +926,16 @@ ${message}`;
           const phone = getWathbaContactPhone();
           phoneCard.textContent = `+${phone.slice(0, 3)} ${phone.slice(3)}`;
         }
+
+        const socialCards = document.querySelectorAll(".wathba-contact-info-card");
+        const instagram = window.WATHBA_CONFIG?.socials?.instagram;
+
+        if (socialCards[1] && instagram) {
+          const value = socialCards[1].querySelector(".wathba-contact-info-value");
+          if (value) {
+            value.innerHTML = `<a href="${instagram.url}" target="_blank" rel="noopener noreferrer">${instagram.handle}</a>`;
+          }
+        }
       }
 
       document.addEventListener("DOMContentLoaded", applyContactFinalFix);

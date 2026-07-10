@@ -2761,3 +2761,67 @@ html[dir="rtl"] .wathba-mega-bottom {
   font-family: "Anton", sans-serif;
   font-size: 26px;
 }
+
+/* =====================================================
+   Footer social links
+===================================================== */
+
+.wathba-footer-socials {
+  margin-top: 22px;
+  display: grid;
+  gap: 10px;
+}
+
+.wathba-footer-social-link {
+  min-height: 48px;
+  padding: 11px 14px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.095);
+  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.wathba-footer-social-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.065);
+}
+
+.wathba-footer-social-link span {
+  font-family: "Anton", sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.wathba-footer-social-link strong {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 11px;
+  line-height: 1.25;
+  opacity: 0.68;
+  text-align: end;
+}
+
+html[dir="rtl"] .wathba-footer-social-link {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .wathba-footer-social-link span,
+html[dir="rtl"] .wathba-footer-social-link strong {
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.wathba-contact-info-value a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wathba-contact-info-value a:hover {
+  text-decoration: underline;
+}
