@@ -809,7 +809,9 @@
   <!-- WATHBA_CONTACT_FINAL_FIX_START -->
   <script id="wathba-contact-final-fix">
     (function () {
-      const WATHBA_CONTACT_PHONE = "962791752349";
+      function getWathbaContactPhone() {
+        return window.WATHBA_CONFIG?.whatsappNumber || "962791752349";
+      }
 
       const faqText = {
         en: {
@@ -955,7 +957,7 @@ Request / details:
 ${message}`;
 
             const whatsappUrl =
-              `https://wa.me/${WATHBA_CONTACT_PHONE}?text=${encodeURIComponent(finalMessage)}`;
+              `https://wa.me/${getWathbaContactPhone()}?text=${encodeURIComponent(finalMessage)}`;
 
             showNote(
               lang === "ar"

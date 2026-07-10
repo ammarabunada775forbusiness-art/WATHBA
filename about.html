@@ -404,7 +404,7 @@
           EXPLORE PRODUCTS
         </a>
         <a class="bg-[#25D366] text-white font-headline-md text-label-caps py-6 px-12 rounded-full uppercase transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3"
-          href="https://wa.me/962791752349">
+          href="#" data-wathba-whatsapp-link>
           <span class="material-symbols-outlined" data-icon="chat">chat</span>
           WHATSAPP US
         </a>
@@ -600,7 +600,10 @@
           ${t.whatsapp}
         `;
 
-          ctaLinks[1].href = `https://wa.me/962791752349?text=${encodeURIComponent(whatsappText)}`;
+          const whatsappNumber =
+            window.WATHBA_CONFIG?.whatsappNumber || "962791752349";
+
+          ctaLinks[1].href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
           ctaLinks[1].target = "_blank";
           ctaLinks[1].rel = "noopener noreferrer";
         }
