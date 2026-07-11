@@ -253,8 +253,11 @@ function renderProducts() {
   data-product-id="${product.id}"
 >
   <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
-  <span>${currentLang === "ar" ? "أضف للسلة" : "Add to Cart"}</span>
-</button>
+<span>
+  ${(product.variants || []).length
+          ? (currentLang === "ar" ? "اختر القياس" : "Choose Size")
+          : (currentLang === "ar" ? "أضف للسلة" : "Add to Cart")}
+</span></button>
               </div>
             </div>
           </div>
@@ -268,6 +271,13 @@ function renderProducts() {
       const product = products.find((item) => item.id === button.dataset.productId);
 
       if (product) {
+        const hasVariants = Array.isArray(product.variants) && product.variants.length > 0;
+
+        if (hasVariants) {
+          window.location.href = `product.html?id=${encodeURIComponent(product.id)}`;
+          return;
+        }
+
         if (window.WathbaCart) {
           window.WathbaCart.addProduct(product);
         } else {

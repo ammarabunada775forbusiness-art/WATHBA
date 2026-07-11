@@ -248,9 +248,7 @@ function renderVariantButtons(product) {
     `;
   }
 
-  if (!selectedVariant) {
-    selectedVariant = variants[0];
-  }
+
 
   return `
     <div class="mb-8">
@@ -261,7 +259,7 @@ function renderVariantButtons(product) {
       <div class="flex flex-wrap gap-3 wathba-size-row">
         ${variants
       .map((variant, index) => {
-        const active = selectedVariant === variant || (!selectedVariant && index === 0);
+        const active = selectedVariant === variant;
 
         return `
               <button
@@ -366,8 +364,11 @@ function renderProductDetails() {
   id="orderProductBtn"
 >
   <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
-  <span>${currentLang === "ar" ? "إضافة للسلة" : "ADD TO CART"}</span>
-</button>
+<span>
+  ${(product.variants || []).length && !selectedVariant
+      ? (currentLang === "ar" ? "اختر القياس أولًا" : "Choose Size First")
+      : (currentLang === "ar" ? "إضافة للسلة" : "ADD TO CART")}
+</span></button>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 pt-16 border-t border-outline-variant/10">
           ${features
@@ -412,6 +413,19 @@ function bindProductDetailsEvents() {
 
   if (orderButton) {
     orderButton.addEventListener("click", () => {
+      if ((product.variants || []).length && !selectedVariant) {
+        const sizeRow = document.querySelector(".wathba-size-row");
+
+        if (sizeRow) {
+          sizeRow.classList.add("wathba-size-row-alert");
+
+          setTimeout(() => {
+            sizeRow.classList.remove("wathba-size-row-alert");
+          }, 900);
+        }
+
+        return;
+      }
       if (window.WathbaCart) {
         window.WathbaCart.addProduct(product, selectedVariant);
       } else {

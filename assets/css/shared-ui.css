@@ -3168,3 +3168,346 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
     padding-bottom: 48px !important;
   }
 }
+
+/* =====================================================
+   Mobile UX Compression Pass
+   Fix oversized about/contact/footer/FAQ sections
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* Global section rhythm */
+  main>section {
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+  }
+
+  /* -------------------------
+     ABOUT PAGE
+  ------------------------- */
+
+  body:has(#wathba-about-page-translation) main {
+    padding-top: 64px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(1) {
+    height: auto !important;
+    min-height: 420px !important;
+    padding: 90px 18px 54px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(1) h1 {
+    font-size: clamp(48px, 15vw, 74px) !important;
+    line-height: 0.9 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(1) p {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+    letter-spacing: 0.05em !important;
+    max-width: 310px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(2) {
+    padding: 48px 20px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(2) .grid {
+    gap: 28px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(2) h2 {
+    font-size: 38px !important;
+    line-height: 1 !important;
+    margin-bottom: 18px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(2) p {
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(2) .aspect-\[4\/3\] {
+    aspect-ratio: 1 / 0.82 !important;
+    border-radius: 18px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(2) .absolute.glass-panel {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin-top: -36px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: min(86%, 310px) !important;
+    padding: 20px !important;
+    text-align: center !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(2) .absolute.glass-panel .font-headline-md {
+    font-size: 38px !important;
+    line-height: 0.95 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(3) {
+    padding: 56px 20px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(3) .max-w-container-max {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(3) h2 {
+    font-size: clamp(38px, 12vw, 58px) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 24px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(3) p {
+    font-size: 15px !important;
+    line-height: 1.85 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(4) {
+    padding: 44px 20px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(4) .grid {
+    gap: 14px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(4) .glass-panel {
+    min-height: auto !important;
+    padding: 22px !important;
+    border-radius: 18px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(4) .glass-panel .font-headline-md {
+    font-size: 30px !important;
+    line-height: 1.12 !important;
+    margin-bottom: 14px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(4) .glass-panel p {
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(5) {
+    padding: 38px 0 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(5) .aspect-\[21\/9\] {
+    aspect-ratio: 4 / 3.2 !important;
+    border-radius: 18px !important;
+    margin-inline: 18px !important;
+    width: auto !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(5) h3 {
+    font-size: clamp(34px, 12vw, 52px) !important;
+    line-height: 1.08 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(6) {
+    padding: 52px 20px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(6) h2 {
+    font-size: clamp(36px, 12vw, 56px) !important;
+    line-height: 1.08 !important;
+  }
+
+  /* -------------------------
+     CONTACT PAGE
+  ------------------------- */
+
+  .wathba-contact-info-card {
+    min-height: auto !important;
+    padding: 22px !important;
+    border-radius: 20px !important;
+  }
+
+  .wathba-contact-info-card .material-symbols-outlined {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 14px !important;
+    margin-bottom: 18px !important;
+    font-size: 25px !important;
+  }
+
+  .wathba-contact-info-card h3 {
+    font-size: 13px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .wathba-contact-info-value {
+    font-size: clamp(22px, 7vw, 30px) !important;
+    line-height: 1.35 !important;
+  }
+
+  .wathba-contact-social-list {
+    gap: 7px !important;
+  }
+
+  .wathba-contact-social-pill {
+    min-height: 38px !important;
+    padding: 7px 10px !important;
+    border-radius: 12px !important;
+  }
+
+  .wathba-contact-social-pill span {
+    font-size: 12px !important;
+  }
+
+  .wathba-contact-social-pill strong {
+    font-size: 10px !important;
+  }
+
+  /* FAQ becomes compact */
+  body:has(#wathba-contact-page-translation) main section:last-of-type {
+    padding: 46px 20px !important;
+  }
+
+  body:has(#wathba-contact-page-translation) main section:last-of-type .group.cursor-pointer {
+    padding: 24px 0 !important;
+  }
+
+  body:has(#wathba-contact-page-translation) main section:last-of-type h3,
+  body:has(#wathba-contact-page-translation) main section:last-of-type .font-headline-md {
+    font-size: clamp(28px, 8vw, 40px) !important;
+    line-height: 1.25 !important;
+  }
+
+  body:has(#wathba-contact-page-translation) main section:last-of-type .material-symbols-outlined {
+    font-size: 30px !important;
+  }
+
+  /* -------------------------
+     FOOTER
+  ------------------------- */
+
+  .wathba-site-footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    padding: 36px 18px 28px !important;
+    gap: 22px 18px !important;
+  }
+
+  .wathba-footer-brand,
+  .wathba-footer-contact,
+  .wathba-footer-bottom {
+    grid-column: 1 / -1 !important;
+  }
+
+  .wathba-footer-logo {
+    font-size: 42px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .wathba-footer-text {
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    max-width: 100% !important;
+  }
+
+  .wathba-footer-whatsapp {
+    width: 100% !important;
+    min-height: 44px !important;
+    margin-top: 16px !important;
+    padding: 12px 18px !important;
+  }
+
+  .wathba-footer-title {
+    font-size: 11px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .wathba-footer-list {
+    gap: 6px !important;
+  }
+
+  .wathba-footer-list a,
+  .wathba-footer-contact p {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
+
+  .wathba-footer-socials {
+    margin-top: 14px !important;
+  }
+
+  .wathba-footer-social-link {
+    min-height: 34px !important;
+    padding: 0 12px !important;
+    font-size: 11px !important;
+  }
+
+  .wathba-footer-bottom {
+    margin-top: 10px !important;
+    padding-top: 16px !important;
+  }
+
+  .wathba-footer-bottom p {
+    font-size: 9px !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* -------------------------
+     HOME HERO FLOATING BADGES
+  ------------------------- */
+
+  body:has(#home) #home .glass-panel {
+    max-width: 140px !important;
+    padding: 9px 10px !important;
+  }
+
+  body:has(#home) #home .glass-panel span:first-child {
+    font-size: 7px !important;
+  }
+
+  body:has(#home) #home .glass-panel span:last-child {
+    font-size: 13px !important;
+  }
+
+  body:has(#home) #home .absolute.top-20.right-0 {
+    top: 10px !important;
+    right: 4px !important;
+  }
+
+  body:has(#home) #home .absolute.bottom-40.left-0 {
+    bottom: 20px !important;
+    left: 8px !important;
+  }
+
+  body:has(#home) #home .absolute.top-1\/2.left-\[-40px\] {
+    left: 4px !important;
+    top: 48% !important;
+  }
+
+  body:has(#home) #home .absolute.bottom-20.right-10,
+  body:has(#home) #home .absolute.top-1\/3.right-\[-20px\] {
+    display: none !important;
+  }
+}
+
+/* Required variant selection feedback */
+
+.wathba-size-row-alert .wathba-size-chip {
+  border-color: #25d366 !important;
+  box-shadow: 0 0 0 1px rgba(37, 211, 102, 0.4), 0 0 24px rgba(37, 211, 102, 0.16);
+}
+
+@media (max-width: 768px) {
+  .wathba-size-chip {
+    padding: 10px 14px !important;
+    font-size: 11px !important;
+  }
+
+  .wathba-add-cart-btn-large {
+    min-height: 54px !important;
+    font-size: 14px !important;
+  }
+}

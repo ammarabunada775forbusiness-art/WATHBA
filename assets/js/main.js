@@ -158,8 +158,11 @@ function renderHomeProducts() {
   data-home-product-id="${product.id}"
 >
   <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
-  <span>${homeTranslations[currentLang].order}</span>
-</button>
+<span>
+  ${(product.variants || []).length
+          ? (currentLang === "ar" ? "اختر القياس" : "Choose Size")
+          : homeTranslations[currentLang].order}
+</span></button>
               </div>
             </div>
           </div>
@@ -173,6 +176,13 @@ function renderHomeProducts() {
       const product = products.find((item) => item.id === button.dataset.homeProductId);
 
       if (product) {
+        const hasVariants = Array.isArray(product.variants) && product.variants.length > 0;
+
+        if (hasVariants) {
+          window.location.href = `product.html?id=${encodeURIComponent(product.id)}`;
+          return;
+        }
+
         if (window.WathbaCart) {
           window.WathbaCart.addProduct(product);
         } else {
