@@ -4276,3 +4276,100 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
     line-height: 1.1 !important;
   }
 }
+
+/* =====================================================
+   Social brand colors - site wide
+===================================================== */
+
+.wathba-footer-social-link,
+.wathba-contact-social-pill,
+.wathba-mobile-social-link {
+  isolation: isolate;
+}
+
+/* Instagram */
+.wathba-footer-social-link[href*="instagram.com"],
+.wathba-contact-social-pill[href*="instagram.com"],
+.wathba-mobile-social-link[data-social="instagram"] {
+  color: #ffffff !important;
+  border-color: rgba(225, 48, 108, 0.45) !important;
+  background:
+    linear-gradient(135deg, rgba(245, 133, 41, 0.28), rgba(221, 42, 123, 0.28), rgba(81, 91, 212, 0.28)) !important;
+}
+
+/* TikTok */
+.wathba-footer-social-link[href*="tiktok.com"],
+.wathba-contact-social-pill[href*="tiktok.com"],
+.wathba-mobile-social-link[data-social="tiktok"] {
+  color: #ffffff !important;
+  border-color: rgba(37, 244, 238, 0.38) !important;
+  background:
+    linear-gradient(135deg, rgba(37, 244, 238, 0.2), rgba(0, 0, 0, 0.68), rgba(254, 44, 85, 0.22)) !important;
+}
+
+/* Facebook */
+.wathba-footer-social-link[href*="facebook.com"],
+.wathba-contact-social-pill[href*="facebook.com"],
+.wathba-mobile-social-link[data-social="facebook"] {
+  color: #ffffff !important;
+  border-color: rgba(24, 119, 242, 0.45) !important;
+  background: rgba(24, 119, 242, 0.24) !important;
+}
+
+/* WhatsApp */
+.wathba-social-whatsapp,
+.wathba-mobile-social-link.wathba-social-whatsapp {
+  color: #ffffff !important;
+  border-color: rgba(37, 211, 102, 0.52) !important;
+  background: rgba(37, 211, 102, 0.28) !important;
+}
+
+.wathba-footer-social-link[href*="instagram.com"]:hover,
+.wathba-footer-social-link[href*="tiktok.com"]:hover,
+.wathba-footer-social-link[href*="facebook.com"]:hover,
+.wathba-contact-social-pill[href*="instagram.com"]:hover,
+.wathba-contact-social-pill[href*="tiktok.com"]:hover,
+.wathba-contact-social-pill[href*="facebook.com"]:hover,
+.wathba-mobile-social-link:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.12) !important;
+}
+
+/* =====================================================
+   Mobile menu social links
+===================================================== */
+
+.wathba-mobile-menu-socials {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.wathba-mobile-social-link {
+  min-height: 40px;
+  padding: 0 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 1000;
+}
+
+@media (max-width: 768px) {
+  .wathba-mobile-menu-bottom {
+    padding-top: 14px !important;
+    margin-top: 12px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .wathba-mobile-menu-socials {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}

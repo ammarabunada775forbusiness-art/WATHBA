@@ -193,6 +193,45 @@ function wathbaRenderSocialLinks() {
   `;
 }
 
+function wathbaRenderMobileMenuSocialLinks() {
+  const socials = wathbaGetSocials();
+
+  const items = [
+    socials.instagram,
+    socials.tiktok,
+    socials.facebook
+  ].filter((item) => item && item.url);
+
+  const lang = wathbaGetLang();
+
+  return `
+    <div class="wathba-mobile-menu-socials">
+      <a
+        href="${wathbaWhatsappUrl(wathbaT("whatsappMessage"))}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="wathba-mobile-social-link wathba-social-whatsapp"
+        aria-label="WhatsApp"
+      >
+        WhatsApp
+      </a>
+
+      ${items.map((item) => `
+        <a
+          href="${item.url}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-mobile-social-link"
+          data-social="${(item.label || "").toLowerCase()}"
+          aria-label="${item.label}"
+        >
+          ${item.label}
+        </a>
+      `).join("")}
+    </div>
+  `;
+}
+
 const WATHBA_MENU_GROUPS = [
   {
     key: "bars",
@@ -384,10 +423,8 @@ function wathbaRenderMobileMenu() {
     </div>
 
     <div class="wathba-mobile-menu-bottom">
-      <a href="${wathbaWhatsappUrl(wathbaT("whatsappMessage"))}" target="_blank" rel="noopener noreferrer">
-        ${lang === "ar" ? "اطلب عبر واتساب" : "Order via WhatsApp"}
-      </a>
-    </div>
+  ${wathbaRenderMobileMenuSocialLinks()}
+</div>
   `;
 }
 
@@ -700,7 +737,17 @@ function wathbaBindEvents() {
   document.addEventListener("click", (event) => {
     const langButton = event.target.closest(".wathba-lang-btn");
     const menuButton = event.target.closest(".wathba-menu-toggle");
+    const mobileMenu = document.getElementById("wathbaMobileMenu");
     const mobileMenuLink = event.target.closest(".wathba-mobile-menu a");
+
+    if (
+      mobileMenu &&
+      mobileMenu.classList.contains("open") &&
+      !event.target.closest(".wathba-mobile-menu") &&
+      !event.target.closest(".wathba-menu-toggle")
+    ) {
+      mobileMenu.classList.remove("open");
+    }
 
     if (langButton) {
       const nextLang = wathbaGetLang() === "en" ? "ar" : "en";
@@ -708,16 +755,14 @@ function wathbaBindEvents() {
     }
 
     if (menuButton) {
-      const menu = document.getElementById("wathbaMobileMenu");
-      if (menu) {
-        menu.classList.toggle("open");
+      if (mobileMenu) {
+        mobileMenu.classList.toggle("open");
       }
     }
 
     if (mobileMenuLink) {
-      const menu = document.getElementById("wathbaMobileMenu");
-      if (menu) {
-        menu.classList.remove("open");
+      if (mobileMenu) {
+        mobileMenu.classList.remove("open");
       }
     }
   });
