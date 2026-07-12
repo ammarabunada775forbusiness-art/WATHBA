@@ -4373,3 +4373,121 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
+
+/* =====================================================
+   MOBILE ONLY - hide floating WhatsApp when menu is open
+===================================================== */
+
+@media (max-width: 768px) {
+
+  body.wathba-mobile-menu-is-open .whatsapp-widget,
+  body.wathba-mobile-menu-is-open #sharedWhatsApp {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
+/* =====================================================
+   MOBILE ONLY - home featured products compact grid
+===================================================== */
+
+@media (max-width: 768px) {
+  #homeFeaturedProducts {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  #homeFeaturedProducts .home-product-card {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+
+  #homeFeaturedProducts .home-product-media {
+    height: 170px !important;
+  }
+
+  #homeFeaturedProducts .home-product-card .p-7 {
+    padding: 12px !important;
+  }
+
+  #homeFeaturedProducts .home-product-card span.font-label-caps {
+    font-size: 9.5px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 6px !important;
+  }
+
+  #homeFeaturedProducts .home-product-card h3 {
+    font-size: 17px !important;
+    line-height: 1.18 !important;
+    margin-bottom: 6px !important;
+  }
+
+  html[data-wathba-lang="ar"] #homeFeaturedProducts .home-product-card h3 {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+  }
+
+  #homeFeaturedProducts .home-product-card p {
+    display: none !important;
+  }
+
+  #homeFeaturedProducts .home-product-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+  }
+
+  #homeFeaturedProducts .home-product-actions>span {
+    font-size: 10.5px !important;
+    line-height: 1.3 !important;
+  }
+
+  #homeFeaturedProducts .home-product-actions>div {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+
+  #homeFeaturedProducts .home-product-actions a,
+  #homeFeaturedProducts .home-product-actions button {
+    width: 100% !important;
+    min-height: 38px !important;
+    padding: 9px 10px !important;
+    font-size: 10.5px !important;
+  }
+
+  #homeFeaturedProducts .home-product-overlay {
+    opacity: 1 !important;
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.08),
+        rgba(0, 0, 0, 0.28)) !important;
+    backdrop-filter: none !important;
+  }
+
+  #homeFeaturedProducts .home-product-overlay span {
+    font-size: 9px !important;
+  }
+}
+
+/* =====================================================
+   Desktop mega menu stability
+===================================================== */
+
+@media (min-width: 1024px) {
+  .wathba-desktop-mega-menu {
+    z-index: 99980 !important;
+  }
+
+  .wathba-desktop-mega-menu.open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .wathba-products-trigger {
+    cursor: pointer !important;
+  }
+}

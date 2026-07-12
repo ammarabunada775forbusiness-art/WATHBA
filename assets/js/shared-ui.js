@@ -479,8 +479,15 @@ function wathbaCloseDesktopMegaMenu(delay = 180) {
 }
 
 function wathbaBindDesktopMegaTriggers() {
-  document.querySelectorAll('nav a[href="products.html"], header a[href="products.html"]').forEach((link) => {
+  document.querySelectorAll("nav a, header a").forEach((link) => {
     if (link.dataset.wathbaLogo === "true") return;
+    if (link.classList.contains("wathba-logo")) return;
+    if (link.classList.contains("wathba-nav-logo")) return;
+
+    const rawHref = link.getAttribute("href") || "";
+    const cleanHref = rawHref.split("?")[0].split("#")[0];
+
+    if (!cleanHref.endsWith("products.html")) return;
 
     link.classList.add("wathba-products-trigger");
 
@@ -733,6 +740,14 @@ function wathbaNormalizeLinks() {
   });
 }
 
+function wathbaSetMobileMenuOpen(isOpen) {
+  const menu = document.getElementById("wathbaMobileMenu");
+  if (!menu) return;
+
+  menu.classList.toggle("open", isOpen);
+  document.body.classList.toggle("wathba-mobile-menu-is-open", isOpen);
+}
+
 function wathbaBindEvents() {
   document.addEventListener("click", (event) => {
     const langButton = event.target.closest(".wathba-lang-btn");
@@ -746,7 +761,7 @@ function wathbaBindEvents() {
       !event.target.closest(".wathba-mobile-menu") &&
       !event.target.closest(".wathba-menu-toggle")
     ) {
-      mobileMenu.classList.remove("open");
+      wathbaSetMobileMenuOpen(false);
     }
 
     if (langButton) {
@@ -756,14 +771,20 @@ function wathbaBindEvents() {
 
     if (menuButton) {
       if (mobileMenu) {
-        mobileMenu.classList.toggle("open");
+        wathbaSetMobileMenuOpen(!mobileMenu.classList.contains("open"));
       }
     }
 
     if (mobileMenuLink) {
       if (mobileMenu) {
-        mobileMenu.classList.remove("open");
+        wathbaSetMobileMenuOpen(false);
       }
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      wathbaSetMobileMenuOpen(false);
     }
   });
 }
@@ -783,6 +804,13 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("WATHBA UI failed:", error);
     wathbaReleaseUi();
   }
+});
+
+window.addEventListener("pageshow", () => {
+  setTimeout(() => {
+    wathbaRenderDesktopMegaMenu();
+    wathbaBindDesktopMegaTriggers();
+  }, 80);
 });
 
 /* WATHBA CART PATCH */
