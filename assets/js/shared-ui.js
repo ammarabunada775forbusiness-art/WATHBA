@@ -1016,16 +1016,19 @@ Quantity: ${item.qty}`;
         .join("")
       : `
       <div class="wathba-cart-empty">
-        <span class="material-symbols-outlined">shopping_bag</span>
-        <h4>${txt("السلة فارغة", "Your cart is empty")}</h4>
-        <p>${txt("أضف المنتجات التي تريدها، ثم اطلبها كلها برسالة واتساب واحدة.", "Add products, then order everything in one WhatsApp message.")}</p>
-      </div>
+  <span class="material-symbols-outlined">shopping_bag</span>
+  <h4>${txt("السلة فارغة", "Your cart is empty")}</h4>
+  <p>${txt("أضف المنتجات التي تريدها، ثم اطلبها كلها برسالة واتساب واحدة.", "Add products, then order everything in one WhatsApp message.")}</p>
+  <a class="wathba-cart-empty-link" href="products.html">
+    ${txt("تصفح المنتجات", "Start Shopping")}
+  </a>
+</div>
     `;
 
     drawer.innerHTML = `
     <div class="wathba-cart-backdrop" data-cart-close></div>
 
-    <aside class="wathba-cart-panel" aria-label="${txt("سلة الطلبات", "Shopping cart")}">
+    <aside class="wathba-cart-panel ${items.length ? "" : "is-empty"}" aria-label="${txt("سلة الطلبات", "Shopping cart")}">
       <div class="wathba-cart-header">
         <div>
           <strong>WATHBA</strong>

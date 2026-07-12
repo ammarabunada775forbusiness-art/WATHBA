@@ -3906,3 +3906,373 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
     transform: translateY(-7px);
   }
 }
+
+/* =====================================================
+   MOBILE ONLY - compact cart drawer and empty state
+===================================================== */
+
+@media (max-width: 768px) {
+  .wathba-cart-panel {
+    top: calc(var(--wathba-nav-height) + 10px) !important;
+    right: 10px !important;
+    bottom: 14px !important;
+    left: auto !important;
+    width: min(360px, calc(100% - 32px)) !important;
+    max-width: 360px !important;
+    height: auto !important;
+    border-radius: 22px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  }
+
+  html[dir="ltr"] .wathba-cart-panel {
+    left: 10px !important;
+    right: auto !important;
+    border-radius: 22px !important;
+  }
+
+  .wathba-cart-header {
+    padding: 16px 18px !important;
+  }
+
+  .wathba-cart-header strong {
+    font-size: 34px !important;
+    line-height: 0.9 !important;
+  }
+
+  .wathba-cart-header h3 {
+    font-size: 22px !important;
+    margin-top: 8px !important;
+  }
+
+  .wathba-cart-header p {
+    font-size: 13px !important;
+  }
+
+  .wathba-cart-close {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+  }
+
+  .wathba-cart-body {
+    padding: 12px !important;
+  }
+
+  .wathba-cart-panel.is-empty .wathba-cart-body {
+    display: grid !important;
+    place-items: center !important;
+    min-height: 330px !important;
+  }
+
+  .wathba-cart-panel.is-empty .wathba-cart-footer {
+    display: none !important;
+  }
+
+  .wathba-cart-empty {
+    width: 100% !important;
+    min-height: 260px !important;
+    padding: 28px 18px !important;
+    border-radius: 20px !important;
+    gap: 14px !important;
+  }
+
+  .wathba-cart-empty .material-symbols-outlined {
+    font-size: 54px !important;
+  }
+
+  .wathba-cart-empty h4 {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+
+  .wathba-cart-empty p {
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    max-width: 260px !important;
+    margin-inline: auto !important;
+  }
+
+  .wathba-cart-empty-link {
+    margin-top: 6px !important;
+    min-height: 42px !important;
+    padding: 0 22px !important;
+    border-radius: 999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #25d366 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 13px !important;
+    font-weight: 1000 !important;
+  }
+
+  .wathba-cart-item {
+    padding: 12px !important;
+    border-radius: 16px !important;
+  }
+
+  .wathba-cart-footer {
+    padding: 14px !important;
+  }
+
+  .wathba-cart-order {
+    min-height: 48px !important;
+  }
+}
+
+/* =====================================================
+   MOBILE ONLY - drawer direction by language
+===================================================== */
+
+@media (max-width: 768px) {
+  html[dir="rtl"] .wathba-mobile-menu {
+    right: 0 !important;
+    left: 54px !important;
+    direction: rtl !important;
+    text-align: right !important;
+    border-radius: 18px 0 0 0 !important;
+    box-shadow: -24px 0 60px rgba(0, 0, 0, 0.42) !important;
+  }
+
+  html[dir="ltr"] .wathba-mobile-menu {
+    left: 0 !important;
+    right: 54px !important;
+    direction: ltr !important;
+    text-align: left !important;
+    border-radius: 0 18px 0 0 !important;
+    box-shadow: 24px 0 60px rgba(0, 0, 0, 0.42) !important;
+  }
+
+  html[dir="rtl"] .wathba-mobile-menu a {
+    text-align: right !important;
+    justify-content: flex-start !important;
+  }
+
+  html[dir="ltr"] .wathba-mobile-menu a {
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+
+  html[dir="rtl"] .wathba-mobile-category-products,
+  html[dir="ltr"] .wathba-mobile-category-products {
+    direction: inherit !important;
+  }
+}
+
+
+/* =====================================================
+   MOBILE ONLY - contact / FAQ / about final compression
+===================================================== */
+
+@media (max-width: 768px) {
+  /* -------------------------
+     Contact page
+  ------------------------- */
+
+  body:has(#wathba-contact-page-translation) main {
+    padding-top: var(--wathba-nav-height) !important;
+  }
+
+  body:has(#wathba-contact-page-translation) main section {
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+  }
+
+  body:has(#wathba-contact-page-translation) .wathba-contact-info-card {
+    min-height: auto !important;
+    padding: 18px !important;
+    border-radius: 18px !important;
+  }
+
+  body:has(#wathba-contact-page-translation) .wathba-contact-info-card .material-symbols-outlined {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 23px !important;
+    border-radius: 12px !important;
+    margin-bottom: 14px !important;
+  }
+
+  body:has(#wathba-contact-page-translation) .wathba-contact-info-card h3 {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 6px !important;
+  }
+
+  body:has(#wathba-contact-page-translation) .wathba-contact-info-value {
+    font-size: clamp(20px, 6vw, 27px) !important;
+    line-height: 1.35 !important;
+  }
+
+  body:has(#wathba-contact-page-translation) .wathba-contact-social-list {
+    gap: 6px !important;
+  }
+
+  body:has(#wathba-contact-page-translation) .wathba-contact-social-pill {
+    min-height: 36px !important;
+    padding: 6px 10px !important;
+    border-radius: 12px !important;
+  }
+
+  body:has(#wathba-contact-page-translation) .wathba-contact-social-pill span {
+    font-size: 11px !important;
+  }
+
+  body:has(#wathba-contact-page-translation) .wathba-contact-social-pill strong {
+    font-size: 9.5px !important;
+  }
+
+  /* -------------------------
+     FAQ
+  ------------------------- */
+
+  body:has(#wathba-contact-page-translation) main section:last-of-type {
+    padding: 38px 18px !important;
+  }
+
+  body:has(#wathba-contact-page-translation) main section:last-of-type .group.cursor-pointer {
+    padding: 18px 0 !important;
+  }
+
+  body:has(#wathba-contact-page-translation) main section:last-of-type h3,
+  body:has(#wathba-contact-page-translation) main section:last-of-type .font-headline-md {
+    font-size: clamp(24px, 7vw, 34px) !important;
+    line-height: 1.25 !important;
+  }
+
+  body:has(#wathba-contact-page-translation) main section:last-of-type .material-symbols-outlined {
+    font-size: 26px !important;
+  }
+
+  body:has(#wathba-contact-page-translation) main section:last-of-type p {
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+  }
+
+  /* -------------------------
+     About page
+  ------------------------- */
+
+  body:has(#wathba-about-page-translation) main {
+    padding-top: var(--wathba-nav-height) !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(1) {
+    min-height: 360px !important;
+    height: auto !important;
+    padding: 72px 18px 42px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(1) h1 {
+    font-size: clamp(44px, 13vw, 64px) !important;
+    line-height: 0.92 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(1) p {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+    letter-spacing: 0.04em !important;
+    max-width: 300px !important;
+    margin-inline: auto !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(2) {
+    padding: 42px 18px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(2) .grid {
+    gap: 24px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(2) h2 {
+    font-size: 34px !important;
+    line-height: 1.05 !important;
+    margin-bottom: 14px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(2) p {
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(2) .absolute.glass-panel {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin: -32px auto 0 !important;
+    width: min(88%, 290px) !important;
+    padding: 18px !important;
+    text-align: center !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(2) .absolute.glass-panel .font-headline-md {
+    font-size: 34px !important;
+    line-height: 0.95 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(3) {
+    padding: 44px 18px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(3) h2 {
+    font-size: clamp(34px, 10vw, 50px) !important;
+    line-height: 1.12 !important;
+    margin-bottom: 22px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(3) p {
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(4) {
+    padding: 38px 18px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(4) .grid {
+    gap: 12px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(4) .glass-panel {
+    min-height: auto !important;
+    padding: 18px !important;
+    border-radius: 16px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(4) .glass-panel .font-headline-md {
+    font-size: 26px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 10px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(4) .glass-panel p {
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(5) {
+    padding: 34px 0 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(5) .aspect-\[21\/9\] {
+    aspect-ratio: 4 / 3.1 !important;
+    margin-inline: 16px !important;
+    width: auto !important;
+    border-radius: 18px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(5) h3 {
+    font-size: clamp(30px, 10vw, 46px) !important;
+    line-height: 1.1 !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(6) {
+    padding: 42px 18px !important;
+  }
+
+  body:has(#wathba-about-page-translation) main section:nth-of-type(6) h2 {
+    font-size: clamp(32px, 10vw, 48px) !important;
+    line-height: 1.1 !important;
+  }
+}
