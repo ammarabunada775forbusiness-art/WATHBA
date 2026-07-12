@@ -180,7 +180,7 @@ function renderFilters() {
 
 function renderProducts() {
   if (!productsContainer) return;
-
+  productsContainer.classList.add("wathba-products-grid");
   syncCurrentLang();
 
   const visibleProducts = getFilteredProducts();

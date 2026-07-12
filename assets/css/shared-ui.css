@@ -3644,3 +3644,265 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
     left: auto !important;
   }
 }
+
+/* =====================================================
+   MOBILE ONLY – menu / cart / products / hero / footer
+===================================================== */
+
+@media (max-width: 768px) {
+
+  /* -------------------------
+     1) Burger menu like drawer
+  ------------------------- */
+  .wathba-mobile-menu {
+    position: fixed !important;
+    top: var(--wathba-nav-height) !important;
+    left: 0 !important;
+    right: 54px !important;
+    /* يترك فراغ واضح على اليمين */
+    bottom: 0 !important;
+    max-height: none !important;
+    overflow-y: auto !important;
+    padding: 14px 12px 22px !important;
+    border-radius: 0 18px 0 0 !important;
+    box-shadow: 24px 0 60px rgba(0, 0, 0, 0.42) !important;
+  }
+
+  .wathba-mobile-menu a {
+    min-height: 40px !important;
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .wathba-mobile-products-title {
+    font-size: 12px !important;
+    margin: 10px 0 !important;
+  }
+
+  .wathba-mobile-category-card {
+    padding: 10px !important;
+    border-radius: 16px !important;
+  }
+
+  .wathba-mobile-category-products {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 10px 8px !important;
+  }
+
+  .wathba-mobile-mini-thumb {
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .wathba-mobile-mini-product {
+    gap: 6px !important;
+    font-size: 10px !important;
+    line-height: 1.25 !important;
+  }
+
+  /* -------------------------
+     2) Product cards smaller on mobile
+     (2 columns = 4 products visible faster)
+  ------------------------- */
+  .wathba-products-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .wathba-products-grid .product-card {
+    border-radius: 16px !important;
+  }
+
+  .wathba-products-grid .product-card>a.relative {
+    height: 180px !important;
+  }
+
+  .wathba-products-grid .product-card .p-8 {
+    padding: 12px !important;
+  }
+
+  .wathba-products-grid .product-card h3 {
+    font-size: 18px !important;
+    line-height: 1.18 !important;
+    margin-bottom: 4px !important;
+  }
+
+  html[data-wathba-lang="ar"] .wathba-products-grid .product-card h3 {
+    font-size: 17px !important;
+    line-height: 1.28 !important;
+  }
+
+  .wathba-products-grid .product-card p {
+    display: none !important;
+    /* نخفي الوصف على الهاتف */
+  }
+
+  .wathba-products-grid .product-card .product-card-bottom {
+    gap: 8px !important;
+  }
+
+  .wathba-products-grid .product-card .product-card-actions {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+  }
+
+  .wathba-products-grid .product-card .product-card-actions a,
+  .wathba-products-grid .product-card .product-card-actions button {
+    width: 100% !important;
+    min-height: 38px !important;
+    padding: 10px 12px !important;
+    font-size: 11px !important;
+  }
+
+  .wathba-products-grid .product-card .italic {
+    font-size: 11px !important;
+  }
+
+  /* -------------------------
+     3) Cart drawer with visible gap
+  ------------------------- */
+  .wathba-cart-panel {
+    top: 10px !important;
+    right: 0 !important;
+    bottom: 10px !important;
+    height: auto !important;
+    width: calc(100% - 22px) !important;
+    /* يترك فراغ من اليسار */
+    max-width: 390px !important;
+    border-radius: 18px 0 0 18px !important;
+  }
+
+  .wathba-cart-body {
+    padding: 14px !important;
+  }
+
+  .wathba-cart-empty {
+    min-height: clamp(280px, 46vh, 420px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 18px !important;
+    padding: 28px 22px !important;
+    margin-top: 14px !important;
+  }
+
+  .wathba-cart-empty a,
+  .wathba-cart-empty button {
+    min-width: 220px !important;
+  }
+
+  /* -------------------------
+     4) Home hero floating badges animate on phone
+  ------------------------- */
+  body:has(#home) #home .hero-stat-card {
+    animation: wathbaHeroFloatMobile 4.2s ease-in-out infinite !important;
+    will-change: transform !important;
+  }
+
+  body:has(#home) #home .hero-stat-grip {
+    animation-delay: 0s !important;
+  }
+
+  body:has(#home) #home .hero-stat-material {
+    animation-delay: 0.35s !important;
+  }
+
+  body:has(#home) #home .hero-stat-finish {
+    animation-delay: 0.7s !important;
+  }
+
+  body:has(#home) #home .hero-stat-use {
+    animation-delay: 1.05s !important;
+  }
+
+  body:has(#home) #home .hero-stat-capacity {
+    animation-delay: 1.4s !important;
+  }
+
+  body:has(#home) #home .hero-stat-support {
+    animation-delay: 1.75s !important;
+  }
+
+  /* -------------------------
+     5) Footer compact on mobile
+  ------------------------- */
+  .wathba-site-footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    padding: 24px 16px 18px !important;
+    gap: 14px 12px !important;
+  }
+
+  .wathba-footer-brand,
+  .wathba-footer-contact,
+  .wathba-footer-bottom {
+    grid-column: 1 / -1 !important;
+  }
+
+  .wathba-footer-logo {
+    font-size: 34px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .wathba-footer-text {
+    display: none !important;
+  }
+
+  .wathba-footer-whatsapp {
+    margin-top: 8px !important;
+    min-height: 40px !important;
+  }
+
+  .wathba-footer-title {
+    font-size: 10px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .wathba-footer-list {
+    gap: 5px !important;
+  }
+
+  .wathba-footer-list a,
+  .wathba-footer-contact p {
+    font-size: 12px !important;
+    line-height: 1.55 !important;
+  }
+
+  .wathba-footer-socials {
+    margin-top: 8px !important;
+    gap: 6px !important;
+  }
+
+  .wathba-footer-social-link {
+    min-height: 30px !important;
+    padding: 0 10px !important;
+    font-size: 10px !important;
+  }
+
+  .wathba-footer-bottom {
+    padding-top: 10px !important;
+    margin-top: 4px !important;
+  }
+
+  .wathba-footer-bottom p {
+    font-size: 8.5px !important;
+    letter-spacing: 0 !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@keyframes wathbaHeroFloatMobile {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-7px);
+  }
+}
