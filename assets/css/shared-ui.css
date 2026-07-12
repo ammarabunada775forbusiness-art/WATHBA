@@ -4374,19 +4374,6 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
   }
 }
 
-/* =====================================================
-   MOBILE ONLY - hide floating WhatsApp when menu is open
-===================================================== */
-
-@media (max-width: 768px) {
-
-  body.wathba-mobile-menu-is-open .whatsapp-widget,
-  body.wathba-mobile-menu-is-open #sharedWhatsApp {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-  }
-}
 
 /* =====================================================
    MOBILE ONLY - home featured products compact grid
@@ -4489,5 +4476,35 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
 
   .wathba-products-trigger {
     cursor: pointer !important;
+  }
+}
+
+/* =====================================================
+   MOBILE ONLY - WhatsApp stays under opened menu
+===================================================== */
+
+@media (max-width: 768px) {
+
+  #sharedWhatsApp,
+  .whatsapp-widget {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    z-index: 80000 !important;
+  }
+
+  .wathba-mobile-menu {
+    z-index: 999900 !important;
+  }
+
+  .wathba-top-tools {
+    z-index: 1000000 !important;
+  }
+
+  body.wathba-mobile-menu-is-open #sharedWhatsApp,
+  body.wathba-mobile-menu-is-open .whatsapp-widget {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
 }

@@ -478,24 +478,47 @@ function wathbaCloseDesktopMegaMenu(delay = 180) {
   }, delay);
 }
 
+function wathbaIsProductsNavLink(link) {
+  if (!link) return false;
+  if (link.dataset.wathbaLogo === "true") return false;
+  if (link.classList.contains("wathba-logo")) return false;
+  if (link.classList.contains("wathba-nav-logo")) return false;
+
+  const rawHref = link.getAttribute("href") || "";
+  const cleanHref = rawHref.split("?")[0].split("#")[0];
+
+  return cleanHref.endsWith("products.html");
+}
+
+function wathbaEnsureMegaMenuReady() {
+  if (window.innerWidth < 1024) return;
+
+  if (!document.getElementById("wathbaDesktopMegaMenu")) {
+    wathbaRenderDesktopMegaMenu();
+  }
+
+  wathbaBindDesktopMegaTriggers();
+}
+
 function wathbaBindDesktopMegaTriggers() {
   document.querySelectorAll("nav a, header a").forEach((link) => {
-    if (link.dataset.wathbaLogo === "true") return;
-    if (link.classList.contains("wathba-logo")) return;
-    if (link.classList.contains("wathba-nav-logo")) return;
-
-    const rawHref = link.getAttribute("href") || "";
-    const cleanHref = rawHref.split("?")[0].split("#")[0];
-
-    if (!cleanHref.endsWith("products.html")) return;
+    if (!wathbaIsProductsNavLink(link)) return;
 
     link.classList.add("wathba-products-trigger");
 
     if (link.dataset.wathbaMegaBound === "true") return;
     link.dataset.wathbaMegaBound = "true";
 
-    link.addEventListener("mouseenter", wathbaOpenDesktopMegaMenu);
-    link.addEventListener("focus", wathbaOpenDesktopMegaMenu);
+    link.addEventListener("mouseenter", () => {
+      wathbaEnsureMegaMenuReady();
+      wathbaOpenDesktopMegaMenu();
+    });
+
+    link.addEventListener("focus", () => {
+      wathbaEnsureMegaMenuReady();
+      wathbaOpenDesktopMegaMenu();
+    });
+
     link.addEventListener("mouseleave", () => wathbaCloseDesktopMegaMenu(220));
   });
 }
@@ -782,6 +805,28 @@ function wathbaBindEvents() {
     }
   });
 
+  document.addEventListener("pointerover", (event) => {
+    if (window.innerWidth < 1024) return;
+
+    const productsLink = event.target.closest("nav a, header a");
+
+    if (!wathbaIsProductsNavLink(productsLink)) return;
+
+    wathbaEnsureMegaMenuReady();
+    wathbaOpenDesktopMegaMenu();
+  });
+
+  document.addEventListener("focusin", (event) => {
+    if (window.innerWidth < 1024) return;
+
+    const productsLink = event.target.closest("nav a, header a");
+
+    if (!wathbaIsProductsNavLink(productsLink)) return;
+
+    wathbaEnsureMegaMenuReady();
+    wathbaOpenDesktopMegaMenu();
+  });
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       wathbaSetMobileMenuOpen(false);
@@ -804,6 +849,18 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("WATHBA UI failed:", error);
     wathbaReleaseUi();
   }
+});
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    wathbaEnsureMegaMenuReady();
+  }, 150);
+});
+
+window.addEventListener("pageshow", () => {
+  setTimeout(() => {
+    wathbaEnsureMegaMenuReady();
+  }, 150);
 });
 
 window.addEventListener("pageshow", () => {
