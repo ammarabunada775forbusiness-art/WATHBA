@@ -4836,49 +4836,66 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
 }
 
 /* =====================================================
-   FIX - Contact hero support card RTL in Arabic
+   FIX - Contact hero support card position + direction
 ===================================================== */
 
-html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card {
-  direction: rtl !important;
-  text-align: right !important;
-}
+@media (min-width: 1024px) {
 
-html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card .relative.z-10 {
-  width: 100% !important;
-  direction: rtl !important;
-  text-align: right !important;
-}
+  /* بالعربي: الصندوق كامل يروح يمين */
+  html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .grid {
+    direction: ltr !important;
+  }
 
-html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card h2,
-html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card p {
-  direction: rtl !important;
-  text-align: right !important;
-  margin-left: auto !important;
-  margin-right: 0 !important;
-}
+  html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .grid>.glass-card {
+    grid-column: 6 / 13 !important;
+    direction: rtl !important;
+    text-align: right !important;
+    justify-self: stretch !important;
+  }
 
-html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .wathba-contact-wa-hero {
-  direction: rtl !important;
-  margin-left: auto !important;
-  margin-right: 0 !important;
-}
+  html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card .relative.z-10 {
+    width: 100% !important;
+    direction: rtl !important;
+    text-align: right !important;
+  }
 
-html[dir="ltr"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card {
-  direction: ltr !important;
-  text-align: left !important;
-}
+  html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card h2,
+  html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card p {
+    direction: rtl !important;
+    text-align: right !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
 
-html[dir="ltr"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card h2,
-html[dir="ltr"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card p {
-  direction: ltr !important;
-  text-align: left !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
-}
+  html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .wathba-contact-wa-hero {
+    direction: rtl !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
 
-html[dir="ltr"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .wathba-contact-wa-hero {
-  direction: ltr !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
+  /* بالإنجليزي: الصندوق يرجع يسار */
+  html[dir="ltr"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .grid {
+    direction: ltr !important;
+  }
+
+  html[dir="ltr"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .grid>.glass-card {
+    grid-column: 1 / 8 !important;
+    direction: ltr !important;
+    text-align: left !important;
+    justify-self: stretch !important;
+  }
+
+  html[dir="ltr"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card h2,
+  html[dir="ltr"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card p {
+    direction: ltr !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  html[dir="ltr"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .wathba-contact-wa-hero {
+    direction: ltr !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
 }
