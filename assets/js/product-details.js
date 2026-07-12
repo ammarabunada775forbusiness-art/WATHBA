@@ -226,7 +226,9 @@ function splitTitle(name) {
 
 function renderVariantButtons(product) {
   const variants = product.variants || [];
-
+  if (variants.length === 1 && !selectedVariant) {
+    selectedVariant = variants[0];
+  }
   if (variants.length === 0) {
     selectedVariant = null;
 
@@ -365,7 +367,7 @@ function renderProductDetails() {
 >
   <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
 <span>
-  ${(product.variants || []).length && !selectedVariant
+  ${(product.variants || []).length > 1 && !selectedVariant
       ? (currentLang === "ar" ? "اختر القياس أولًا" : "Choose Size First")
       : (currentLang === "ar" ? "إضافة للسلة" : "ADD TO CART")}
 </span></button>
@@ -413,7 +415,7 @@ function bindProductDetailsEvents() {
 
   if (orderButton) {
     orderButton.addEventListener("click", () => {
-      if ((product.variants || []).length && !selectedVariant) {
+      if ((product.variants || []).length > 1 && !selectedVariant) {
         const sizeRow = document.querySelector(".wathba-size-row");
 
         if (sizeRow) {

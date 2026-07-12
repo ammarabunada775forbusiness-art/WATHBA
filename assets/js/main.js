@@ -159,7 +159,7 @@ function renderHomeProducts() {
 >
   <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
 <span>
-  ${(product.variants || []).length
+  ${(product.variants || []).length > 1
           ? (currentLang === "ar" ? "اختر القياس" : "Choose Size")
           : homeTranslations[currentLang].order}
 </span></button>
@@ -176,17 +176,19 @@ function renderHomeProducts() {
       const product = products.find((item) => item.id === button.dataset.homeProductId);
 
       if (product) {
-        const hasVariants = Array.isArray(product.variants) && product.variants.length > 0;
+        const variants = Array.isArray(product.variants) ? product.variants : [];
 
-        if (hasVariants) {
+        if (variants.length > 1) {
           window.location.href = `product.html?id=${encodeURIComponent(product.id)}`;
           return;
         }
 
+        const singleVariant = variants.length === 1 ? variants[0] : null;
+
         if (window.WathbaCart) {
-          window.WathbaCart.addProduct(product);
+          window.WathbaCart.addProduct(product, singleVariant);
         } else {
-          openWhatsApp(product);
+          openWhatsApp(product, singleVariant);
         }
       }
     });
