@@ -4834,3 +4834,51 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
     display: inline-flex !important;
   }
 }
+
+/* =====================================================
+   FIX - Contact hero support card RTL in Arabic
+===================================================== */
+
+html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card .relative.z-10 {
+  width: 100% !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card h2,
+html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card p {
+  direction: rtl !important;
+  text-align: right !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+html[dir="rtl"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .wathba-contact-wa-hero {
+  direction: rtl !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+html[dir="ltr"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+html[dir="ltr"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card h2,
+html[dir="ltr"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .glass-card p {
+  direction: ltr !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+html[dir="ltr"] body:has(#wathba-contact-page-translation) main section:nth-of-type(1) .wathba-contact-wa-hero {
+  direction: ltr !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
