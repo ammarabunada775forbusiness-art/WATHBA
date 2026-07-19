@@ -34,40 +34,6 @@ const products = [
     },
 
     {
-        id: "static-bars",
-        name: {
-            ar: "ستاتيك بارز",
-            en: "Static Bars"
-        },
-        category: {
-            ar: "بارات السحب",
-            en: "Pull-up Bars"
-        },
-        price: null,
-        priceLabel: {
-            ar: "السعر حسب التصميم",
-            en: "Price depends on design"
-        },
-        image: "assets/images/products/static-bars/cover.webp",
-        description: {
-            ar: "ستاتيك بارز بطول تقريبي 2 متر للمهارات، الثبات، وتمارين الكاليستنكس المفتوحة. يمكن تنفيذها حسب الطلب والمساحة.",
-            en: "Static bars around 2 meters long for skills, holds, and open calisthenics movements. Can be customized based on space and request."
-        },
-        variants: [
-            {
-                ar: "طول 2 متر تقريبًا",
-                en: "Around 2m length",
-                price: null
-            },
-            {
-                ar: "تنفيذ حسب الطلب",
-                en: "Custom build",
-                price: null
-            }
-        ]
-    },
-
-    {
         id: "monkey-bars",
         name: {
             ar: "مونكي بارز",
@@ -165,34 +131,58 @@ const products = [
     },
 
     {
-        id: "freestanding-parallel-bars",
+        id: "freestanding-parallel-bars-small",
         name: {
-            ar: "متوازي حديد حر",
-            en: "Freestanding Parallel Bars"
+            ar: "متوازي حديد صغير",
+            en: "Small Freestanding Parallel Bars"
         },
         category: {
-            ar: "متوازي حديد",
-            en: "Parallel Bars"
+            ar: "متوازي وديب بار",
+            en: "Parallel & Dip Bars"
         },
         price: null,
         priceLabel: {
-            ar: "السعر حسب الارتفاع",
-            en: "Price depends on height"
+            ar: "اسأل عن السعر",
+            en: "Ask for price"
         },
-        image: "assets/images/products/freestanding-parallel-bars/cover.webp",
+        image: "assets/images/products/freestanding-parallel-bars-small/cover.webp",
         description: {
-            ar: "متوازي حديد مواسير كامل، ثابت ومناسب لتدريبات الديبس، الضغط، الكور، وتمارين الثبات.",
-            en: "Freestanding parallel bars made from steel pipes, stable for dips, push training, core work, and hold exercises."
+            ar: "متوازي حديد صغير بارتفاع 40 سم، مناسب لتدريبات الديبس، الضغط، الكور، وتمارين التحكم، مع تصميم سهل النقل والتخزين.",
+            en: "Small freestanding parallel bars at 40cm height for dips, push training, core work, and control exercises, with an easy-to-move design."
+        },
+        variants: [
+            {
+                ar: "ارتفاع 40 سم",
+                en: "40cm height",
+                price: null
+            }
+        ]
+    },
+
+    {
+        id: "freestanding-parallel-bars-large",
+        name: {
+            ar: "متوازي حديد كبير",
+            en: "Large Freestanding Parallel Bars"
+        },
+        category: {
+            ar: "متوازي وديب بار",
+            en: "Parallel & Dip Bars"
+        },
+        price: null,
+        priceLabel: {
+            ar: "اسأل عن السعر",
+            en: "Ask for price"
+        },
+        image: "assets/images/products/freestanding-parallel-bars-large/cover.webp",
+        description: {
+            ar: "متوازي حديد كبير بارتفاع 100 سم، مناسب لتدريبات الديبس، الضغط، الكور، والثبات بارتفاع كامل.",
+            en: "Large freestanding parallel bars at 100cm height for full-height dips, push training, core work, and hold exercises."
         },
         variants: [
             {
                 ar: "ارتفاع 100 سم",
                 en: "100cm height",
-                price: null
-            },
-            {
-                ar: "ارتفاع 40 سم",
-                en: "40cm height",
                 price: null
             }
         ]
@@ -205,8 +195,8 @@ const products = [
             en: "Wall-mounted Dip Bars"
         },
         category: {
-            ar: "ديب بار حائط",
-            en: "Wall Dip Bars"
+            ar: "متوازي وديب بار",
+            en: "Parallel & Dip Bars"
         },
         price: null,
         priceLabel: {
@@ -359,6 +349,35 @@ const products = [
     },
 
     {
+        id: "swiss-ladder",
+        name: {
+            ar: "السلم السويسري",
+            en: "Swiss Ladder"
+        },
+        category: {
+            ar: "السلم السويسري",
+            en: "Swiss Ladder"
+        },
+        price: null,
+        priceLabel: {
+            ar: "السعر حسب المقاس",
+            en: "Price depends on size"
+        },
+        image: "assets/images/products/swiss-ladder/cover.webp",
+        description: {
+            ar: "سلم حائط رياضي متعدد الاستخدامات لتدريبات التعلق، المرونة، الكور، وتمارين الجسم المختلفة، وينفذ حسب المساحة.",
+            en: "A versatile wall ladder for hanging, mobility, core, and full-body exercises, built to match the available space."
+        },
+        variants: [
+            {
+                ar: "مقاس حسب الطلب",
+                en: "Custom size",
+                price: null
+            }
+        ]
+    },
+
+    {
         id: "multi-rig",
         name: {
             ar: "جهاز كاليسثنكس متعدد",
@@ -375,8 +394,8 @@ const products = [
         },
         image: "assets/images/products/multi-rig/cover.webp",
         description: {
-            ar: "جهاز كاليسثنكس متعدد حسب الطلب، ممكن يحتوي على عقل، مونكي بارز، ديب بارز، وستاتيك بارز حسب المساحة والهدف.",
-            en: "A custom calisthenics multi rig that can include pull-up bars, monkey bars, dip bars, and static bars based on space and goal."
+            ar: "جهاز كاليسثنكس متعدد حسب الطلب، يمكن أن يحتوي على عقل، مونكي بارز، ديب بارز، وتجهيزات تدريب متنوعة حسب المساحة والهدف.",
+            en: "A custom calisthenics multi rig that can include pull-up bars, monkey bars, dip bars, and other training stations based on space and goal."
         },
         variants: [
             {
