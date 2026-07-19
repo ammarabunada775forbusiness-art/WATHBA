@@ -14,7 +14,7 @@ const productGroups = [
     key: "bars",
     ar: "بارات السحب",
     en: "Pull-up Bars",
-    ids: ["wall-pull-up-bar", "static-bars", "monkey-bars"]
+    ids: ["wall-pull-up-bar", "monkey-bars"]
   },
   {
     key: "parallettes",
@@ -24,15 +24,13 @@ const productGroups = [
   },
   {
     key: "parallel-bars",
-    ar: "متوازي حديد",
-    en: "Parallel Bars",
-    ids: ["freestanding-parallel-bars"]
-  },
-  {
-    key: "wall-dip-bars",
-    ar: "ديب بار حائط",
-    en: "Wall Dip Bars",
-    ids: ["wall-mounted-dip-bars"]
+    ar: "متوازي وديب بار",
+    en: "Parallel & Dip Bars",
+    ids: [
+      "freestanding-parallel-bars-small",
+      "freestanding-parallel-bars-large",
+      "wall-mounted-dip-bars"
+    ]
   },
   {
     key: "rings",
@@ -47,6 +45,12 @@ const productGroups = [
     ids: ["hand-gripper", "resistance-bands", "grip-tape"]
   },
   {
+    key: "swiss-ladder",
+    ar: "السلم السويسري",
+    en: "Swiss Ladder",
+    ids: ["swiss-ladder"]
+  },
+  {
     key: "multi-rig",
     ar: "جهاز متعدد",
     en: "Multi Rig",
@@ -58,7 +62,7 @@ const productGroups = [
     en: "Custom Orders",
     ids: ["custom-orders"]
   }
-];
+]
 
 if (!productGroups.some((group) => group.key === currentFilter)) {
   currentFilter = "all";
