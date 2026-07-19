@@ -63,12 +63,6 @@ const WATHBA_MENU_FALLBACK_PRODUCTS = [
     image: "assets/images/products/pull-up-bar/cover.webp"
   },
   {
-    id: "static-bars",
-    ar: "ستاتيك بارز",
-    en: "Static Bars",
-    image: "assets/images/products/static-bars/cover.webp"
-  },
-  {
     id: "monkey-bars",
     ar: "مونكي بارز",
     en: "Monkey Bars",
@@ -76,8 +70,8 @@ const WATHBA_MENU_FALLBACK_PRODUCTS = [
   },
   {
     id: "steel-wood-parallettes",
-    ar: "باراليتس حديد وخشب",
-    en: "Steel/Wood Parallettes",
+    ar: "باراليتس حديد بمقبض خشب",
+    en: "Steel Parallettes with Wooden Grip",
     image: "assets/images/products/steel-wood-parallettes/cover.webp"
   },
   {
@@ -87,10 +81,16 @@ const WATHBA_MENU_FALLBACK_PRODUCTS = [
     image: "assets/images/products/full-wooden-parallettes/cover.webp"
   },
   {
-    id: "freestanding-parallel-bars",
-    ar: "متوازي حديد",
-    en: "Parallel Bars",
-    image: "assets/images/products/freestanding-parallel-bars/cover.webp"
+    id: "freestanding-parallel-bars-small",
+    ar: "متوازي حديد صغير",
+    en: "Small Freestanding Parallel Bars",
+    image: "assets/images/products/freestanding-parallel-bars-small/cover.webp"
+  },
+  {
+    id: "freestanding-parallel-bars-large",
+    ar: "متوازي حديد كبير",
+    en: "Large Freestanding Parallel Bars",
+    image: "assets/images/products/freestanding-parallel-bars-large/cover.webp"
   },
   {
     id: "wall-mounted-dip-bars",
@@ -123,10 +123,22 @@ const WATHBA_MENU_FALLBACK_PRODUCTS = [
     image: "assets/images/products/grip-tape/cover.webp"
   },
   {
+    id: "swiss-ladder",
+    ar: "السلم السويسري",
+    en: "Swiss Ladder",
+    image: "assets/images/products/swiss-ladder/cover.webp"
+  },
+  {
     id: "multi-rig",
-    ar: "جهاز متعدد",
-    en: "Multi Rig",
+    ar: "جهاز كاليسثنكس متعدد",
+    en: "Calisthenics Multi Rig",
     image: "assets/images/products/multi-rig/cover.webp"
+  },
+  {
+    id: "custom-orders",
+    ar: "طلب تصنيع مخصص",
+    en: "Custom Order",
+    image: "assets/images/products/custom-orders/cover.webp"
   }
 ];
 
@@ -237,7 +249,7 @@ const WATHBA_MENU_GROUPS = [
     key: "bars",
     ar: "بارات السحب",
     en: "Pull-up Bars",
-    ids: ["wall-pull-up-bar", "static-bars", "monkey-bars"]
+    ids: ["wall-pull-up-bar", "monkey-bars"]
   },
   {
     key: "parallettes",
@@ -247,15 +259,13 @@ const WATHBA_MENU_GROUPS = [
   },
   {
     key: "parallel-bars",
-    ar: "متوازي حديد",
-    en: "Parallel Bars",
-    ids: ["freestanding-parallel-bars"]
-  },
-  {
-    key: "wall-dip-bars",
-    ar: "ديب بار حائط",
-    en: "Wall Dip Bars",
-    ids: ["wall-mounted-dip-bars"]
+    ar: "متوازي وديب بار",
+    en: "Parallel & Dip Bars",
+    ids: [
+      "freestanding-parallel-bars-small",
+      "freestanding-parallel-bars-large",
+      "wall-mounted-dip-bars"
+    ]
   },
   {
     key: "rings",
@@ -268,6 +278,12 @@ const WATHBA_MENU_GROUPS = [
     ar: "إكسسوارات",
     en: "Accessories",
     ids: ["hand-gripper", "resistance-bands", "grip-tape"]
+  },
+  {
+    key: "swiss-ladder",
+    ar: "السلم السويسري",
+    en: "Swiss Ladder",
+    ids: ["swiss-ladder"]
   },
   {
     key: "multi-rig",
@@ -643,7 +659,7 @@ function wathbaRenderFooter() {
           <ul class="wathba-footer-list">
             <li><a href="product.html?id=wall-pull-up-bar">${wathbaT("pullUp")}</a></li>
 <li><a href="product.html?id=steel-wood-parallettes">${wathbaT("parallettes")}</a></li>
-<li><a href="product.html?id=freestanding-parallel-bars">${wathbaT("dipBars")}</a></li>
+<li><a href="products.html?filter=parallel-bars">${wathbaT("dipBars")}</a></li>
 <li><a href="product.html?id=gymnastic-rings">${wathbaT("rings")}</a></li>
           </ul>
         </div>
