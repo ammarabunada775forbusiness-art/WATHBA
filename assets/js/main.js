@@ -28,7 +28,7 @@ const homeTranslations = {
 const featuredProductIds = [
   "wall-pull-up-bar",
   "steel-wood-parallettes",
-  "freestanding-parallel-bars",
+  "freestanding-parallel-bars-large",
   "gymnastic-rings",
   "multi-rig",
   "resistance-bands"
