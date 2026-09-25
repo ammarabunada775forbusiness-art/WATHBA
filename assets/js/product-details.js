@@ -296,7 +296,12 @@ function renderProductDetails() {
   const category = product.category[currentLang];
   const priceText = getProductPriceText(product, currentLang);
 
-  document.title = `WATHBA | ${product.name.en}`;
+  document.title = `${product.name[currentLang]} | WATHBA`;
+
+  const description = document.querySelector('meta[name="description"]');
+  if (description) {
+    description.content = `${product.description[currentLang]} ${currentLang === "ar" ? "تعرّف على الاستخدام والتمارين المناسبة في أكاديمية وثبة بالأردن." : "Explore suitable exercises in WATHBA Academy, Jordan."}`;
+  }
 
   productDetailsRoot.innerHTML = `
     <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-16">
@@ -371,6 +376,12 @@ function renderProductDetails() {
       ? (currentLang === "ar" ? "اختر القياس أولًا" : "Choose Size First")
       : (currentLang === "ar" ? "إضافة للسلة" : "ADD TO CART")}
 </span></button>
+
+        <a class="wathba-academy-detail-link" href="${getAcademyGuide(product.id, currentLang)}">
+          <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+          <span>${currentLang === "ar" ? "كيف أتدرّب بهذه المعدّة؟ اقرأ دليل أكاديمية وثبة" : "How do I train with this equipment? Read the WATHBA Academy guide"}</span>
+          <span aria-hidden="true">↗</span>
+        </a>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 pt-16 border-t border-outline-variant/10">
           ${features

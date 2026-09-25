@@ -443,6 +443,31 @@ const products = [
 
 window.WATHBA_PRODUCTS = products;
 
+// Every product leads to a relevant learning page or a specific academy section.
+// Keep the map explicit so an accessory never claims to have its own full guide.
+function getAcademyGuide(productId, lang) {
+    const english = lang === "en";
+    const guide = (name, anchor = "") => `${name}${english ? "-en" : ""}.html${anchor}`;
+    const destinations = {
+        "wall-pull-up-bar": guide("academy-first-pull-up"),
+        "monkey-bars": guide("academy", "#pulling"),
+        "steel-wood-parallettes": guide("academy-parallettes"),
+        "full-wooden-parallettes": guide("academy-parallettes"),
+        "freestanding-parallel-bars-small": guide("academy", "#pushing"),
+        "freestanding-parallel-bars-large": guide("academy", "#pushing"),
+        "wall-mounted-dip-bars": guide("academy", "#pushing"),
+        "gymnastic-rings": guide("academy", "#rings"),
+        "resistance-bands": guide("academy-first-pull-up", "#assisted"),
+        "hand-gripper": guide("academy", "#grip"),
+        "grip-tape": guide("academy", "#grip"),
+        "swiss-ladder": guide("academy", "#pulling"),
+        "multi-rig": guide("academy", "#custom"),
+        "custom-orders": guide("academy", "#custom")
+    };
+
+    return destinations[productId] || guide("academy-beginner");
+}
+
 function getProductPriceText(product, lang) {
     if (product.price !== null && product.price !== undefined) {
         return `${product.price} JOD`;

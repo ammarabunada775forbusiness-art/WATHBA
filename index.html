@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>WATHBA | Premium Calisthenics Equipment</title>
+    <title>معدات الكاليستنكس في الأردن | وثبة WATHBA</title>
+    <meta name="description" content="اكتشف معدات الكاليستنكس من وثبة في الأردن: عقلة حائط، باراليتس، متوازي، حلقات وتجهيزات مخصصة. تعلّم التمارين في أكاديمية وثبة واختر ما يناسبك." />
     <script>
         (function () {
             var lang = localStorage.getItem("wathbaLang") || "ar";
@@ -259,6 +260,7 @@
         }
     </style>
     <link rel="stylesheet" href="assets/css/shared-ui.css" />
+    <link rel="stylesheet" href="assets/css/academy.css" />
 </head>
 
 <body class="selection:bg-primary selection:text-surface">
@@ -274,6 +276,9 @@
 
                     <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
                         href="products.html">Products</a>
+
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="academy.html">Academy</a>
 
                     <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
                         href="about.html">About</a>
@@ -319,6 +324,11 @@
                         <a href="products.html"
                             class="bg-primary text-surface font-headline-md text-[18px] uppercase px-10 py-4 rounded-full flex items-center gap-3 hover:scale-105 transition-transform active:scale-95">
                             <span data-home-hero-browse>Browse Products</span>
+                        </a>
+                        <a href="academy-beginner.html" data-home-hero-academy-link
+                            class="border border-primary/60 text-primary font-headline-md text-[18px] px-10 py-4 rounded-full flex items-center gap-3 hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+                            <span data-home-hero-academy>ابدأ التعلّم</span>
                         </a>
                     </div>
                 </div>
@@ -489,6 +499,7 @@
                     heroArabic: "مصمم للقوة",
                     heroText: "Elite calisthenics equipment crafted for those who demand absolute precision and uncompromising strength.",
                     browse: "Browse Products",
+                    academy: "Start Learning",
                     whatsapp: "WhatsApp",
 
                     materialLabel: "MATERIAL",
@@ -526,6 +537,7 @@
                     heroArabic: "معدات كاليسثنكس احترافية",
                     heroText: "معدات كاليسثنكس مختارة للاعبين الذين يريدون جودة عالية، ثبات قوي، وتجربة تدريب عملية.",
                     browse: "تصفح المنتجات",
+                    academy: "ابدأ التعلّم",
                     whatsapp: "واتساب",
 
                     materialLabel: "الخامة",
@@ -587,6 +599,10 @@
 
                 setText("[data-home-hero-whatsapp]", t.whatsapp);
                 setText("[data-home-hero-browse]", t.browse);
+                setText("[data-home-hero-academy]", t.academy);
+                const academyLink = document.querySelector("[data-home-hero-academy-link]");
+                if (academyLink) academyLink.href = lang === "en" ? "academy-beginner-en.html" : "academy-beginner.html";
+                document.title = lang === "en" ? "Calisthenics Equipment in Jordan | WATHBA" : "معدات الكاليستنكس في الأردن | وثبة WATHBA";
 
                 const statCards = [
                     [".hero-stat-material", "materialLabel", "materialValue"],

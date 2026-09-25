@@ -264,6 +264,10 @@ function renderProducts() {
 </span></button>
               </div>
             </div>
+            <a class="wathba-academy-card-link" href="${getAcademyGuide(product.id, currentLang)}">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              ${currentLang === "ar" ? "تعلّم التمارين المناسبة" : "Explore the training guide"}
+            </a>
           </div>
         </article>
       `;

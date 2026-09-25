@@ -4,6 +4,7 @@ const WATHBA_SHARED_TRANSLATIONS = {
   en: {
     navHome: "Home",
     navProducts: "Products",
+    navAcademy: "Academy",
     navAbout: "About",
     navContact: "Contact",
     whatsappLabel: "Chat with us",
@@ -27,6 +28,7 @@ const WATHBA_SHARED_TRANSLATIONS = {
   ar: {
     navHome: "الرئيسية",
     navProducts: "المنتجات",
+    navAcademy: "الأكاديمية",
     navAbout: "من نحن",
     navContact: "تواصل معنا",
     whatsappLabel: "راسلنا",
@@ -311,6 +313,10 @@ function wathbaGetLang() {
   return localStorage.getItem("wathbaLang") || "ar";
 }
 
+function wathbaAcademyUrl() {
+  return wathbaGetLang() === "en" ? "academy-en.html" : "academy.html";
+}
+
 function wathbaT(key) {
   const lang = wathbaGetLang();
   return WATHBA_SHARED_TRANSLATIONS[lang][key] || WATHBA_SHARED_TRANSLATIONS.en[key] || key;
@@ -390,6 +396,7 @@ function wathbaRenderMobileMenu() {
     <div class="wathba-mobile-menu-head">
       <a href="index.html" data-page="index">${wathbaT("navHome")}</a>
       <a href="products.html" data-page="products">${wathbaT("navProducts")}</a>
+      <a href="${wathbaAcademyUrl()}" data-page="academy">${wathbaT("navAcademy")}</a>
       <a href="about.html" data-page="about">${wathbaT("navAbout")}</a>
       <a href="contact.html" data-page="contact">${wathbaT("navContact")}</a>
     </div>
@@ -649,6 +656,7 @@ function wathbaRenderFooter() {
           <ul class="wathba-footer-list">
             <li><a href="index.html">${wathbaT("navHome")}</a></li>
             <li><a href="products.html">${wathbaT("navProducts")}</a></li>
+            <li><a href="${wathbaAcademyUrl()}">${wathbaT("navAcademy")}</a></li>
             <li><a href="about.html">${wathbaT("navAbout")}</a></li>
             <li><a href="contact.html">${wathbaT("navContact")}</a></li>
           </ul>
@@ -683,6 +691,8 @@ function wathbaTranslateDesktopNav() {
   const navMap = {
     "index.html": wathbaT("navHome"),
     "products.html": wathbaT("navProducts"),
+    "academy.html": wathbaT("navAcademy"),
+    "academy-en.html": wathbaT("navAcademy"),
     "about.html": wathbaT("navAbout"),
     "contact.html": wathbaT("navContact")
   };
@@ -697,6 +707,9 @@ function wathbaTranslateDesktopNav() {
 
     if (navMap[page]) {
       link.textContent = navMap[page];
+      if (page === "academy.html" || page === "academy-en.html") {
+        link.href = wathbaAcademyUrl();
+      }
     }
   });
 
@@ -712,6 +725,9 @@ function wathbaSetActiveLinks() {
   */
   if (normalizedPath === "product.html") {
     normalizedPath = "products.html";
+  }
+  if (normalizedPath.startsWith("academy-")) {
+    normalizedPath = wathbaAcademyUrl();
   }
 
   document.querySelectorAll("nav a, header a, .wathba-mobile-menu a").forEach((link) => {
