@@ -443,6 +443,12 @@ const products = [
 
 window.WATHBA_PRODUCTS = products;
 
+function getProductPageUrl(productId, lang) {
+    const productExists = products.some((item) => item.id === productId);
+    if (!productExists) return `product.html?id=${encodeURIComponent(productId)}`;
+    return `equipment-${encodeURIComponent(productId)}${lang === "en" ? "-en" : ""}.html`;
+}
+
 // Every product leads to a relevant learning page or a specific academy section.
 // Keep the map explicit so an accessory never claims to have its own full guide.
 function getAcademyGuide(productId, lang) {

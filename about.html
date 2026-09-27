@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>About WATHBA | Elite Calisthenics Engineering</title>
+  <title>عن وثبة | معدات الكاليستنكس في الأردن</title>
   <meta name="description" content="تعرّف على وثبة ومعدات الكاليستنكس للمنزل والمساحات التدريبية في الأردن، وكيفية طلب تجهيزات تناسب هدفك ومساحتك." />
   <script>
     (function () {
@@ -199,10 +199,10 @@
       <div class="relative z-10 text-center px-6">
         <h1
           class="font-display-hero text-display-hero text-primary uppercase leading-none tracking-tighter text-glow reveal">
-          ABOUT WATHBA
+          عن وثبة
         </h1>
         <p class="font-label-caps text-label-caps text-on-surface-variant mt-8 tracking-[0.3em] reveal delay-200">
-          ENGINEERED IN THE PURSUIT OF PHYSICAL MASTERY
+          معدات كاليستنكس لمن يسعى للقوة والتحكم والتطور
         </p>
       </div>
     </section>
@@ -396,8 +396,8 @@
         },
 
         ar: {
-          heroTitle: "ABOUT WATHBA",
-          heroSubtitle: "مصممة لمن يسعى للقوة والتحكم والتطور",
+          heroTitle: "عن وثبة",
+          heroSubtitle: "معدات كاليستنكس لمن يسعى للقوة والتحكم والتطور",
 
           craftTitle: "الحرفة",
           craftText1:
@@ -450,6 +450,10 @@
       function applyAboutPageTranslation() {
         const lang = getLang();
         const t = aboutPageText[lang];
+
+        document.title = lang === "ar"
+          ? "عن وثبة | معدات الكاليستنكس في الأردن"
+          : "About WATHBA | Calisthenics Equipment in Jordan";
 
         setText("main section:nth-of-type(1) h1", t.heroTitle);
         setText("main section:nth-of-type(1) p", t.heroSubtitle);

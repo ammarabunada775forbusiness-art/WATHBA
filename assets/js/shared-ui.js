@@ -166,7 +166,9 @@ function wathbaMenuProductName(item) {
 }
 
 function wathbaProductUrl(id) {
-  return `product.html?id=${encodeURIComponent(id)}`;
+  return typeof getProductPageUrl === "function"
+    ? getProductPageUrl(id, wathbaGetLang())
+    : `product.html?id=${encodeURIComponent(id)}`;
 }
 
 function wathbaFormatSharedPhone() {
@@ -665,10 +667,10 @@ function wathbaRenderFooter() {
         <div class="wathba-footer-col">
           <h5 class="wathba-footer-title">${wathbaT("equipmentTitle")}</h5>
           <ul class="wathba-footer-list">
-            <li><a href="product.html?id=wall-pull-up-bar">${wathbaT("pullUp")}</a></li>
-<li><a href="product.html?id=steel-wood-parallettes">${wathbaT("parallettes")}</a></li>
+            <li><a href="${wathbaProductUrl("wall-pull-up-bar")}">${wathbaT("pullUp")}</a></li>
+<li><a href="${wathbaProductUrl("steel-wood-parallettes")}">${wathbaT("parallettes")}</a></li>
 <li><a href="products.html?filter=parallel-bars">${wathbaT("dipBars")}</a></li>
-<li><a href="product.html?id=gymnastic-rings">${wathbaT("rings")}</a></li>
+<li><a href="${wathbaProductUrl("gymnastic-rings")}">${wathbaT("rings")}</a></li>
           </ul>
         </div>
 

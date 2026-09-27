@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>WATHBA | Contact Us</title>
+  <title>تواصل مع وثبة | معدات الكاليستنكس في الأردن</title>
   <meta name="description" content="تواصل مع وثبة في الأردن للاستفسار عن عقلة الحائط والباراليتس والمتوازي وتجهيزات الكاليستنكس حسب الطلب عبر واتساب." />
   <script>
     (function () {
@@ -319,7 +319,7 @@
         <span class="font-label-caps text-label-caps tracking-[0.3em] text-primary mb-8 block">UNCOMPROMISING
           PERFORMANCE</span>
         <h1 class="font-display-hero text-[80px] md:text-display-hero uppercase leading-none hero-text mb-12">
-          LET’S BUILD<br />YOUR SETUP
+          جهّز مساحة<br />تدريبك
         </h1>
         <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
           <!-- WhatsApp Primary CTA Card -->
@@ -427,8 +427,8 @@
           <div
             class="wathba-contact-info-card border border-outline-variant p-8 hover:bg-surface-variant/20 transition-colors">
             <span class="material-symbols-outlined text-primary mb-6" data-icon="schedule">schedule</span>
-            <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2">WORKING HOURS</h3>
-            <p class="wathba-contact-info-value font-headline-md text-headline-md text-primary">SUN-THU, 9AM-6PM</p>
+            <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2">التواصل</h3>
+            <p class="wathba-contact-info-value font-headline-md text-headline-md text-primary">راسلنا عبر واتساب</p>
           </div>
         </div>
       </div>
@@ -517,8 +517,8 @@
           cardInstagram: "INSTAGRAM",
           cardLocation: "LOCATION",
           cardLocationValue: "AMMAN, JORDAN",
-          cardHours: "WORKING HOURS",
-          cardHoursValue: "SUN-THU, 9AM-6PM",
+          cardHours: "GET IN TOUCH",
+          cardHoursValue: "Message us on WhatsApp",
 
           inquiryTitle: "INQUIRY<br />DETAILS",
           inquiryText:
@@ -546,7 +546,7 @@
 
         ar: {
           heroMini: "أداء بلا تنازل",
-          heroTitle: "LET’S BUILD<br />YOUR SETUP",
+          heroTitle: "جهّز مساحة<br />تدريبك",
 
           supportTitle: "دعم مباشر",
           supportText:
@@ -557,8 +557,8 @@
           cardInstagram: "إنستغرام",
           cardLocation: "الموقع",
           cardLocationValue: "عمّان، الأردن",
-          cardHours: "ساعات العمل",
-          cardHoursValue: "الأحد - الخميس، 9 صباحًا - 6 مساءً",
+          cardHours: "التواصل",
+          cardHoursValue: "راسلنا عبر واتساب",
 
           inquiryTitle: "تفاصيل<br />الاستفسار",
           inquiryText:
@@ -602,6 +602,10 @@
       function applyContactPageTranslation() {
         const lang = getLang();
         const t = contactPageText[lang];
+
+        document.title = lang === "ar"
+          ? "تواصل مع وثبة | معدات الكاليستنكس في الأردن"
+          : "Contact WATHBA | Calisthenics Equipment in Jordan";
 
         /* Hero */
         setText("main section:nth-of-type(1) span.font-label-caps", t.heroMini);

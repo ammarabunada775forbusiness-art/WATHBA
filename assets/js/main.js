@@ -106,7 +106,7 @@ function renderHomeProducts() {
         <article class="home-product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-primary/30">
           
           <a
-            href="product.html?id=${product.id}"
+            href="${getProductPageUrl(product.id, currentLang)}"
             class="home-product-media relative ${isLargeCard ? "h-[420px]" : "h-[280px]"} overflow-hidden bg-surface-container block"
           >
             <div
@@ -146,7 +146,7 @@ function renderHomeProducts() {
 
               <div class="flex items-center gap-2">
                 <a
-                  href="product.html?id=${product.id}"
+                  href="${getProductPageUrl(product.id, currentLang)}"
                   class="inline-flex items-center justify-center px-4 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
                 >
                   ${homeTranslations[currentLang].explore}
@@ -183,7 +183,7 @@ function renderHomeProducts() {
         const variants = Array.isArray(product.variants) ? product.variants : [];
 
         if (variants.length > 1) {
-          window.location.href = `product.html?id=${encodeURIComponent(product.id)}`;
+          window.location.href = getProductPageUrl(product.id, currentLang);
           return;
         }
 

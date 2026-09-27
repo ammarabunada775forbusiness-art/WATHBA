@@ -10,6 +10,11 @@ function getCurrentLang() {
 }
 
 function getProductIdFromUrl() {
+  // A static page always represents its own product, even with a query string.
+  if (document.body?.dataset.wathbaProductId) {
+    return document.body.dataset.wathbaProductId;
+  }
+
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
 
@@ -296,10 +301,12 @@ function renderProductDetails() {
   const category = product.category[currentLang];
   const priceText = getProductPriceText(product, currentLang);
 
-  document.title = `${product.name[currentLang]} | WATHBA`;
+  if (!document.body?.dataset.wathbaProductId) {
+    document.title = `${product.name[currentLang]} | WATHBA`;
+  }
 
   const description = document.querySelector('meta[name="description"]');
-  if (description) {
+  if (description && !document.body?.dataset.wathbaProductId) {
     description.content = `${product.description[currentLang]} ${currentLang === "ar" ? "تعرّف على الاستخدام والتمارين المناسبة في أكاديمية وثبة بالأردن." : "Explore suitable exercises in WATHBA Academy, Jordan."}`;
   }
 
@@ -472,7 +479,7 @@ function renderRelatedProducts(currentProduct) {
       .map(
         (product) => `
               <a
-                href="product.html?id=${product.id}"
+                href="${getProductPageUrl(product.id, currentLang)}"
                 class="group relative bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all hover:-translate-y-2"
               >
                 <div class="wathba-related-image aspect-[3/4] relative overflow-hidden">

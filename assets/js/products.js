@@ -101,7 +101,7 @@ function getProductGroupLabel(product) {
 }
 
 function getProductDetailsUrl(product) {
-  return `product.html?id=${encodeURIComponent(product.id)}`;
+  return getProductPageUrl(product.id, currentLang);
 }
 
 function getVariantsOverlay(product) {
@@ -282,7 +282,7 @@ function renderProducts() {
         const variants = Array.isArray(product.variants) ? product.variants : [];
 
         if (variants.length > 1) {
-          window.location.href = `product.html?id=${encodeURIComponent(product.id)}`;
+          window.location.href = getProductPageUrl(product.id, currentLang);
           return;
         }
 
