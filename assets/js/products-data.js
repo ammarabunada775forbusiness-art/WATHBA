@@ -14,7 +14,7 @@ const products = [
             ar: "السعر حسب القياس",
             en: "Price depends on size"
         },
-        image: "assets/images/products/pull-up-bar/cover.webp",
+        image: "assets/images/products/wall-pull-up-bar/1.webp",
         description: {
             ar: "عقلة حائط قوية لتدريب السحب، التعلق، الكور، والمهارات الأساسية. متوفرة ببروز 60 سم أو 90 سم حسب المساحة والهدف.",
             en: "A strong wall-mounted pull-up bar for pulling, hanging, core work, and essential skills. Available in 60cm or 90cm wall projection."
@@ -48,7 +48,7 @@ const products = [
             ar: "السعر حسب المقاس",
             en: "Price depends on size"
         },
-        image: "assets/images/products/monkey-bars/cover.webp",
+        image: "assets/images/products/monkey-bars/1.webp",
         description: {
             ar: "مونكي بارز لتدريب القبضة، السحب، التعلق، والتحمل. مناسبة للتجهيزات الخارجية أو ضمن جهاز كاليسثنكس متعدد.",
             en: "Monkey bars for grip strength, pulling, hanging, and endurance. Suitable for outdoor setups or as part of a multi rig."
@@ -77,7 +77,7 @@ const products = [
             ar: "السعر حسب القياس",
             en: "Price depends on size"
         },
-        image: "assets/images/products/steel-wood-parallettes/cover.webp",
+        image: "assets/images/products/steel-wood-parallettes/1.webp",
         description: {
             ar: "باراليتس بقاعدة حديد قوية ومقبض خشب مريح، مناسب للضغط، L-sit، البلانش، والهاندستاند.",
             en: "Parallettes with a strong steel base and comfortable wooden grip, suitable for push-ups, L-sits, planche work, and handstands."
@@ -116,7 +116,7 @@ const products = [
             ar: "اسأل عن السعر",
             en: "Ask for price"
         },
-        image: "assets/images/products/full-wooden-parallettes/cover.webp",
+        image: "assets/images/products/full-wooden-parallettes/1.webp",
         description: {
             ar: "باراليتس خشب كامل بتصميم بسيط ومتين، مناسب لتدريبات التحكم والضغط والمهارات الأساسية.",
             en: "Full wooden parallettes with a clean and solid design, suitable for control drills, push training, and basic skills."
@@ -145,7 +145,7 @@ const products = [
             ar: "اسأل عن السعر",
             en: "Ask for price"
         },
-        image: "assets/images/products/freestanding-parallel-bars-small/cover.webp",
+        image: "assets/images/products/freestanding-parallel-bars-small/1.webp",
         description: {
             ar: "متوازي حديد صغير بارتفاع 40 سم، مناسب لتدريبات الديبس، الضغط، الكور، وتمارين التحكم، مع تصميم سهل النقل والتخزين.",
             en: "Small freestanding parallel bars at 40cm height for dips, push training, core work, and control exercises, with an easy-to-move design."
@@ -174,7 +174,7 @@ const products = [
             ar: "اسأل عن السعر",
             en: "Ask for price"
         },
-        image: "assets/images/products/freestanding-parallel-bars-large/cover.webp",
+        image: "assets/images/products/freestanding-parallel-bars-large/1.webp",
         description: {
             ar: "متوازي حديد كبير بارتفاع 100 سم، مناسب لتدريبات الديبس، الضغط، الكور، والثبات بارتفاع كامل.",
             en: "Large freestanding parallel bars at 100cm height for full-height dips, push training, core work, and hold exercises."
@@ -203,7 +203,7 @@ const products = [
             ar: "السعر حسب القياس",
             en: "Price depends on size"
         },
-        image: "assets/images/products/wall-mounted-dip-bars/cover.webp",
+        image: "assets/images/products/wall-mounted-dip-bars/1.webp",
         description: {
             ar: "ديب بار يثبت على الحائط لتدريبات الديبس والضغط والكور، مناسب لمن يريد توفير مساحة على الأرض.",
             en: "Wall-mounted dip bars for dips, push training, and core work, suitable for saving floor space."
@@ -237,7 +237,7 @@ const products = [
             ar: "اسأل عن السعر",
             en: "Ask for price"
         },
-        image: "assets/images/products/gymnastic-rings/cover.webp",
+        image: "assets/images/products/gymnastic-rings/1.webp",
         description: {
             ar: "حلقات جمباز لتدريب السحب، الديبس، التوازن، والثبات العضلي بمرونة عالية.",
             en: "Gymnastic rings for pulling, dips, balance, and upper-body stability with high training versatility."
@@ -266,7 +266,7 @@ const products = [
             ar: "السعر حسب المقاومة",
             en: "Price depends on resistance"
         },
-        image: "assets/images/products/resistance-bands/cover.webp",
+        image: "assets/images/products/resistance-bands/1.webp",
         description: {
             ar: "حبال مقاومة تساعدك في العقلة، الإحماء، التدرج، وتمارين المرونة.",
             en: "Resistance bands for pull-up assistance, warm-up, progression, and mobility work."
@@ -305,7 +305,7 @@ const products = [
             ar: "اسأل عن السعر",
             en: "Ask for price"
         },
-        image: "assets/images/products/hand-gripper/cover.webp",
+        image: "assets/images/products/hand-gripper/1.webp",
         description: {
             ar: "هاند جريبر لتقوية القبضة والساعد، مناسب للاعبين الكاليستنكس والتدريب اليومي.",
             en: "Hand gripper for improving grip and forearm strength, suitable for calisthenics athletes and daily training."
@@ -334,7 +334,7 @@ const products = [
             ar: "اسأل عن السعر",
             en: "Ask for price"
         },
-        image: "assets/images/products/grip-tape/cover.webp",
+        image: "assets/images/products/grip-tape/1.webp",
         description: {
             ar: "جريب تيب لتحسين القبضة وتقليل الانزلاق أثناء تمارين البارات والحلقات.",
             en: "Grip tape for improving grip and reducing slipping during bar and ring training."
@@ -363,7 +363,7 @@ const products = [
             ar: "السعر حسب المقاس",
             en: "Price depends on size"
         },
-        image: "assets/images/products/swiss-ladder/cover.webp",
+        image: "assets/images/products/swiss-ladder/1.webp",
         description: {
             ar: "سلم حائط رياضي متعدد الاستخدامات لتدريبات التعلق، المرونة، الكور، وتمارين الجسم المختلفة، وينفذ حسب المساحة.",
             en: "A versatile wall ladder for hanging, mobility, core, and full-body exercises, built to match the available space."
@@ -392,7 +392,7 @@ const products = [
             ar: "السعر حسب التصميم",
             en: "Price depends on design"
         },
-        image: "assets/images/products/multi-rig/cover.webp",
+        image: "assets/images/products/multi-rig/1.webp",
         description: {
             ar: "جهاز كاليسثنكس متعدد حسب الطلب، يمكن أن يحتوي على عقل، مونكي بارز، ديب بارز، وتجهيزات تدريب متنوعة حسب المساحة والهدف.",
             en: "A custom calisthenics multi rig that can include pull-up bars, monkey bars, dip bars, and other training stations based on space and goal."
@@ -426,7 +426,7 @@ const products = [
             ar: "حسب القطعة المطلوبة",
             en: "Depends on requested item"
         },
-        image: "assets/images/products/custom-orders/cover.webp",
+        image: "assets/images/products/custom-orders/1.webp",
         description: {
             ar: "بدك قطعة غير موجودة؟ أرسل لنا صورة أو وصف أو قياسات المساحة، ونساعدك بتصميم وتنفيذ قطعة مناسبة.",
             en: "Need a piece that is not listed? Send us a photo, description, or space dimensions, and we will help design and build it."
@@ -441,7 +441,227 @@ const products = [
     }
 ];
 
+// WATHBA_NUMBERED_IMAGES_START
+// Generated by node scripts/product-images.js --write. Edit image files, not this block.
+const WATHBA_NUMBERED_IMAGES = {
+  "wall-pull-up-bar": [
+    {
+      "src": "assets/images/products/wall-pull-up-bar/1.webp?v=146bdefe36f3",
+      "temporary": true,
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "src": "assets/images/products/wall-pull-up-bar/2.webp?v=31137885e2b5",
+      "temporary": true,
+      "width": 1200,
+      "height": 900
+    }
+  ],
+  "monkey-bars": [
+    {
+      "src": "assets/images/products/monkey-bars/1.webp?v=146bdefe36f3",
+      "temporary": true,
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "src": "assets/images/products/monkey-bars/2.webp?v=31137885e2b5",
+      "temporary": true,
+      "width": 1200,
+      "height": 900
+    }
+  ],
+  "steel-wood-parallettes": [
+    {
+      "src": "assets/images/products/steel-wood-parallettes/1.webp?v=146bdefe36f3",
+      "temporary": true,
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "src": "assets/images/products/steel-wood-parallettes/2.webp?v=31137885e2b5",
+      "temporary": true,
+      "width": 1200,
+      "height": 900
+    }
+  ],
+  "full-wooden-parallettes": [
+    {
+      "src": "assets/images/products/full-wooden-parallettes/1.webp?v=31137885e2b5",
+      "temporary": true,
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "src": "assets/images/products/full-wooden-parallettes/2.webp?v=71705dae19b2",
+      "temporary": true,
+      "width": 1200,
+      "height": 800
+    }
+  ],
+  "freestanding-parallel-bars-small": [
+    {
+      "src": "assets/images/products/freestanding-parallel-bars-small/1.webp?v=71705dae19b2",
+      "temporary": true,
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "src": "assets/images/products/freestanding-parallel-bars-small/2.webp?v=ddfdc393d485",
+      "temporary": true,
+      "width": 1200,
+      "height": 675
+    }
+  ],
+  "freestanding-parallel-bars-large": [
+    {
+      "src": "assets/images/products/freestanding-parallel-bars-large/1.webp?v=ddfdc393d485",
+      "temporary": true,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "assets/images/products/freestanding-parallel-bars-large/2.webp?v=146bdefe36f3",
+      "temporary": true,
+      "width": 800,
+      "height": 1200
+    }
+  ],
+  "wall-mounted-dip-bars": [
+    {
+      "src": "assets/images/products/wall-mounted-dip-bars/1.webp?v=146bdefe36f3",
+      "temporary": true,
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "src": "assets/images/products/wall-mounted-dip-bars/2.webp?v=31137885e2b5",
+      "temporary": true,
+      "width": 1200,
+      "height": 900
+    }
+  ],
+  "gymnastic-rings": [
+    {
+      "src": "assets/images/products/gymnastic-rings/1.webp?v=ddfdc393d485",
+      "temporary": true,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "assets/images/products/gymnastic-rings/2.webp?v=146bdefe36f3",
+      "temporary": true,
+      "width": 800,
+      "height": 1200
+    }
+  ],
+  "resistance-bands": [
+    {
+      "src": "assets/images/products/resistance-bands/1.webp?v=71705dae19b2",
+      "temporary": true,
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "src": "assets/images/products/resistance-bands/2.webp?v=ddfdc393d485",
+      "temporary": true,
+      "width": 1200,
+      "height": 675
+    }
+  ],
+  "hand-gripper": [
+    {
+      "src": "assets/images/products/hand-gripper/1.webp?v=ddfdc393d485",
+      "temporary": true,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "assets/images/products/hand-gripper/2.webp?v=146bdefe36f3",
+      "temporary": true,
+      "width": 800,
+      "height": 1200
+    }
+  ],
+  "grip-tape": [
+    {
+      "src": "assets/images/products/grip-tape/1.webp?v=146bdefe36f3",
+      "temporary": true,
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "src": "assets/images/products/grip-tape/2.webp?v=31137885e2b5",
+      "temporary": true,
+      "width": 1200,
+      "height": 900
+    }
+  ],
+  "swiss-ladder": [
+    {
+      "src": "assets/images/products/swiss-ladder/1.webp?v=146bdefe36f3",
+      "temporary": true,
+      "width": 800,
+      "height": 1200
+    },
+    {
+      "src": "assets/images/products/swiss-ladder/2.webp?v=31137885e2b5",
+      "temporary": true,
+      "width": 1200,
+      "height": 900
+    }
+  ],
+  "multi-rig": [
+    {
+      "src": "assets/images/products/multi-rig/1.webp?v=71705dae19b2",
+      "temporary": true,
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "src": "assets/images/products/multi-rig/2.webp?v=ddfdc393d485",
+      "temporary": true,
+      "width": 1200,
+      "height": 675
+    }
+  ],
+  "custom-orders": [
+    {
+      "src": "assets/images/products/custom-orders/1.webp?v=ddfdc393d485",
+      "temporary": true,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "src": "assets/images/products/custom-orders/2.webp?v=146bdefe36f3",
+      "temporary": true,
+      "width": 800,
+      "height": 1200
+    }
+  ]
+};
+for (const product of products) {
+    product.imageFolder = 'assets/images/products/' + product.id + '/';
+    product.images = WATHBA_NUMBERED_IMAGES[product.id] || [];
+    product.image = product.images[0]?.src || product.imageFolder + '1.webp';
+    product.gallery = product.images.slice(1).map(image => image.src);
+}
+// WATHBA_NUMBERED_IMAGES_END
+
 window.WATHBA_PRODUCTS = products;
+
+function getProductImageAlt(product, lang, index = 0) {
+    const name = product.name[lang] || product.name.ar;
+    return product.images?.[index]?.temporary
+        ? `${lang === 'ar' ? 'صورة تدريب توضيحية مؤقتة' : 'Temporary illustrative training photo'} — ${name}`
+        : name;
+}
+
+function getProductImageNotice(product, lang, index = 0) {
+    if (!product.images?.[index]?.temporary) return '';
+    return `<span class="wathba-temporary-image">${lang === 'ar' ? 'صورة توضيحية مؤقتة' : 'Temporary sample photo'}</span>`;
+}
 
 function getProductPageUrl(productId, lang) {
     const productExists = products.some((item) => item.id === productId);

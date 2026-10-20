@@ -117,9 +117,11 @@ function renderHomeProducts() {
             <img
               class="home-product-image w-full h-full object-cover"
               src="${product.image}"
-              alt="${name}"
+              alt="${getProductImageAlt(product, currentLang)}"
               onerror="this.style.display='none'; this.previousElementSibling.style.display='block';"
             />
+
+            ${getProductImageNotice(product, currentLang)}
 
             <div class="home-product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] flex flex-col justify-center items-center gap-4 px-5 text-center">
               ${getVariantPreview(product)}

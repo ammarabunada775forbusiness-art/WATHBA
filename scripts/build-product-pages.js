@@ -6,10 +6,11 @@ const path = require("node:path");
 const vm = require("node:vm");
 const crypto = require("node:crypto");
 const root = path.resolve(__dirname, "..");
-const sharedAssets = ["assets/css/shared-ui.css", "assets/css/academy.css", "assets/css/product-seo.css", "assets/js/shared-ui.js"];
-const sharedAssetPattern = /(assets\/(?:css\/(?:shared-ui|academy|product-seo)\.css|js\/shared-ui\.js))(?:\?v=[^"'\s<>]*)?/g;
+const sharedAssets = ['css', 'js'].flatMap(folder => fs.readdirSync(path.join(root, 'assets', folder)).filter(name => /\.(css|js)$/.test(name)).sort().map(name => `assets/${folder}/${name}`));
+const sharedAssetPattern = /(assets\/(?:css|js)\/[a-z0-9-]+\.(?:css|js))(?:\?v=[^"'\s<>]*)?/g;
 const unversion = (page) => page.replace(sharedAssetPattern, "$1");
 const template = unversion(fs.readFileSync(path.join(root, "product.html"), "utf8"));
+require('./product-images.js').updateImageCatalog({quiet: true});
 const context = vm.createContext({ window: {} });
 vm.runInContext(fs.readFileSync(path.join(root, "assets/js/products-data.js"), "utf8"), context);
 const catalog = vm.runInContext("products", context);
@@ -69,7 +70,7 @@ function productPage(product, lang) {
   const opposite = isAr ? "en" : "ar";
   const staticHero = `<section class="wathba-product-static"><div class="wathba-product-wrap">
     <nav class="wathba-product-crumb" aria-label="Breadcrumb"><a href="index.html">${labels.home}</a><span>/</span><a href="products.html">${labels.products}</a><span>/</span>${html(name)}</nav>
-    <div class="wathba-static-panel"><div class="wathba-static-art" aria-hidden="true"><strong>WATHBA</strong><span>CALISTHENICS / JORDAN</span></div>
+    <div class="wathba-static-panel"><div class="wathba-static-art"><img src="${html(product.image)}" alt="${html(product.images[0]?.temporary ? (isAr ? 'صورة تدريب توضيحية مؤقتة' : 'Temporary illustrative training photo') : name)}" width="${product.images[0]?.width || 1200}" height="${product.images[0]?.height || 900}">${product.images[0]?.temporary ? `<span class="wathba-temporary-image">${isAr ? 'صورة توضيحية مؤقتة' : 'Temporary sample photo'}</span>` : ''}</div>
     <div><span class="wathba-static-category">${html(product.category[lang])} · ${labels.category}</span><h1>${html(name)}</h1><p>${html(product.description[lang])}</p>
     <div class="wathba-static-options"><strong>${labels.sizes}</strong><ul>${product.variants.map((v) => `<li>${html(v[lang])}</li>`).join("")}</ul><p>${labels.price}</p></div>
     <div class="wathba-static-actions"><a href="${html(whatsApp)}">${labels.buy}</a><a href="${html(academyFor(product.id, lang))}">${labels.guide}</a></div></div></div>

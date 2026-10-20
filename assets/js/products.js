@@ -212,9 +212,11 @@ function renderProducts() {
             <img
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               src="${product.image}"
-              alt="${productName}"
+              alt="${getProductImageAlt(product, currentLang)}"
               onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
             />
+
+            ${getProductImageNotice(product, currentLang)}
 
            <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
               ${getVariantsOverlay(product)}

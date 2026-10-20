@@ -47,7 +47,7 @@ function getCurrentProduct() {
   return product;
 }
 function getProductFolder(product) {
-  return product.image.replace("cover.webp", "");
+  return product.imageFolder || product.image.split("?")[0].replace(/[^/]+$/, "");
 }
 
 function getProductGallery(product) {
@@ -317,11 +317,12 @@ function renderProductDetails() {
         <div class="wathba-detail-main-image relative aspect-square md:aspect-[4/3] overflow-hidden bg-surface-container-lowest border border-outline-variant/20 rounded-lg">
           <img
             id="mainProductImage"
-            alt="${product.name[currentLang]}"
+            alt="${getProductImageAlt(product, currentLang, activeImageIndex)}"
             class="w-full h-full object-cover"
             src="${mainImage}"
             onerror="this.style.display='none'; this.parentElement.classList.add('wathba-image-fallback');"
           />
+          ${getProductImageNotice(product, currentLang, activeImageIndex)}
         </div>
 
         <div class="grid grid-cols-4 gap-4 wathba-detail-thumbs">
@@ -337,7 +338,7 @@ function renderProductDetails() {
                   <img
                     class="w-full h-full object-cover ${index === activeImageIndex ? "opacity-100" : "opacity-60"}"
                     src="${image}"
-                    alt="${product.name[currentLang]} ${index + 1}"
+                    alt="${getProductImageAlt(product, currentLang, index)} ${index + 1}"
                     onerror="this.style.display='none'; this.parentElement.classList.add('wathba-image-fallback');"
                   />
                 </button>

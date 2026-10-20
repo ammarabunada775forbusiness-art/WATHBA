@@ -1,0 +1,10 @@
+{
+  "notice": "Temporary illustrative stock photos for preview; not WATHBA products.",
+  "license": "https://unsplash.com/license",
+  "sources": [
+    {"author":"Mark Bertulfo","page":"https://unsplash.com/photos/assorted-gym-equipment-inside-the-gym-XKimW0pke6w","image":"https://images.unsplash.com/photo-1561214078-f3247647fc5e","sha256":"71705dae19b2733815a445abaec187fdd9a2bec5b65ba41be37c035e72a4f852"},
+    {"author":"Vitaly Gariev","page":"https://unsplash.com/photos/woman-performing-an-exercise-on-gymnastic-rings-5A-6fwsNtrw","image":"https://images.unsplash.com/photo-1758875570005-52f6fff50854","sha256":"ddfdc393d485f32be826d576ae7e1d6b9335a0b1818c6f9646648ce0790c73c8"},
+    {"author":"Rodrigo Rodrigues / WOLF ART","page":"https://unsplash.com/photos/man-performing-pull-ups-at-a-gym-WGPzWNn3RmY","image":"https://images.unsplash.com/photo-1772450014229-2a8b006893e9","sha256":"146bdefe36f31a88c7070484b834f3705802f75eb7112cb85672a8cab5be9969"},
+    {"author":"Ambitious Studio / Rick Barrett","page":"https://unsplash.com/photos/a-gym-with-a-variety-of-exercise-equipment-J2PUYtMwjac","image":"https://images.unsplash.com/photo-1685633224330-d2bd56d7adf1","sha256":"31137885e2b501a86e59dbe82d4ae995aafaa481ab15a7f9e63dd87633c33e60"}
+  ]
+}

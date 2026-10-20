@@ -62,85 +62,85 @@ const WATHBA_MENU_FALLBACK_PRODUCTS = [
     id: "wall-pull-up-bar",
     ar: "عقلة حائط",
     en: "Wall Pull-up Bar",
-    image: "assets/images/products/pull-up-bar/cover.webp"
+    image: "assets/images/products/wall-pull-up-bar/1.webp"
   },
   {
     id: "monkey-bars",
     ar: "مونكي بارز",
     en: "Monkey Bars",
-    image: "assets/images/products/monkey-bars/cover.webp"
+    image: "assets/images/products/monkey-bars/1.webp"
   },
   {
     id: "steel-wood-parallettes",
     ar: "باراليتس حديد بمقبض خشب",
     en: "Steel Parallettes with Wooden Grip",
-    image: "assets/images/products/steel-wood-parallettes/cover.webp"
+    image: "assets/images/products/steel-wood-parallettes/1.webp"
   },
   {
     id: "full-wooden-parallettes",
     ar: "باراليتس خشب كامل",
     en: "Full Wooden Parallettes",
-    image: "assets/images/products/full-wooden-parallettes/cover.webp"
+    image: "assets/images/products/full-wooden-parallettes/1.webp"
   },
   {
     id: "freestanding-parallel-bars-small",
     ar: "متوازي حديد صغير",
     en: "Small Freestanding Parallel Bars",
-    image: "assets/images/products/freestanding-parallel-bars-small/cover.webp"
+    image: "assets/images/products/freestanding-parallel-bars-small/1.webp"
   },
   {
     id: "freestanding-parallel-bars-large",
     ar: "متوازي حديد كبير",
     en: "Large Freestanding Parallel Bars",
-    image: "assets/images/products/freestanding-parallel-bars-large/cover.webp"
+    image: "assets/images/products/freestanding-parallel-bars-large/1.webp"
   },
   {
     id: "wall-mounted-dip-bars",
     ar: "ديب بار حائط",
     en: "Wall Dip Bars",
-    image: "assets/images/products/wall-mounted-dip-bars/cover.webp"
+    image: "assets/images/products/wall-mounted-dip-bars/1.webp"
   },
   {
     id: "gymnastic-rings",
     ar: "حلقات جمباز",
     en: "Gymnastic Rings",
-    image: "assets/images/products/gymnastic-rings/cover.webp"
+    image: "assets/images/products/gymnastic-rings/1.webp"
   },
   {
     id: "resistance-bands",
     ar: "حبال مقاومة",
     en: "Resistance Bands",
-    image: "assets/images/products/resistance-bands/cover.webp"
+    image: "assets/images/products/resistance-bands/1.webp"
   },
   {
     id: "hand-gripper",
     ar: "هاند جريبر",
     en: "Hand Gripper",
-    image: "assets/images/products/hand-gripper/cover.webp"
+    image: "assets/images/products/hand-gripper/1.webp"
   },
   {
     id: "grip-tape",
     ar: "جريب تيب",
     en: "Grip Tape",
-    image: "assets/images/products/grip-tape/cover.webp"
+    image: "assets/images/products/grip-tape/1.webp"
   },
   {
     id: "swiss-ladder",
     ar: "السلم السويسري",
     en: "Swiss Ladder",
-    image: "assets/images/products/swiss-ladder/cover.webp"
+    image: "assets/images/products/swiss-ladder/1.webp"
   },
   {
     id: "multi-rig",
     ar: "جهاز كاليسثنكس متعدد",
     en: "Calisthenics Multi Rig",
-    image: "assets/images/products/multi-rig/cover.webp"
+    image: "assets/images/products/multi-rig/1.webp"
   },
   {
     id: "custom-orders",
     ar: "طلب تصنيع مخصص",
     en: "Custom Order",
-    image: "assets/images/products/custom-orders/cover.webp"
+    image: "assets/images/products/custom-orders/1.webp"
   }
 ];
 
@@ -154,7 +154,7 @@ function wathbaGetMenuProducts() {
       id: product.id,
       ar: product.name?.ar || product.name?.en || product.id,
       en: product.name?.en || product.name?.ar || product.id,
-      image: product.image || "assets/images/products/pull-up-bar/cover.webp"
+      image: product.image || "assets/images/products/wall-pull-up-bar/1.webp"
     }));
   }
 
