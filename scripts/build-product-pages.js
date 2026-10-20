@@ -4,8 +4,12 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
+const crypto = require("node:crypto");
 const root = path.resolve(__dirname, "..");
-const template = fs.readFileSync(path.join(root, "product.html"), "utf8");
+const sharedAssets = ["assets/css/shared-ui.css", "assets/css/academy.css", "assets/css/product-seo.css", "assets/js/shared-ui.js"];
+const sharedAssetPattern = /(assets\/(?:css\/(?:shared-ui|academy|product-seo)\.css|js\/shared-ui\.js))(?:\?v=[^"'\s<>]*)?/g;
+const unversion = (page) => page.replace(sharedAssetPattern, "$1");
+const template = unversion(fs.readFileSync(path.join(root, "product.html"), "utf8"));
 const context = vm.createContext({ window: {} });
 vm.runInContext(fs.readFileSync(path.join(root, "assets/js/products-data.js"), "utf8"), context);
 const catalog = vm.runInContext("products", context);
@@ -112,7 +116,7 @@ for (const product of catalog) {
 
 // Give search crawlers normal links from the catalog before any JS runs.
 const productsPath = path.join(root, "products.html");
-let productsHtml = fs.readFileSync(productsPath, "utf8");
+let productsHtml = unversion(fs.readFileSync(productsPath, "utf8"));
 const cards = catalog.map((product) => `<article class="wathba-catalog-fallback"><span>${html(product.category.ar)}</span><h2><a href="${urlFor(product.id, "ar")}">${html(product.name.ar)}</a></h2><p>${html(product.description.ar)}</p><a href="${html(academyFor(product.id, "ar"))}">دليل التدريب ↗</a></article>`).join("\n                ");
 const catalogMarker = '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="allProducts">';
 const catalogPattern = /(<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="allProducts">)[\s\S]*?(<\/div>\s*<\/section>)/;
@@ -136,4 +140,16 @@ for (const filename of fs.readdirSync(root).filter((name) => /^academy(?:-[a-z-]
   if (before !== after) fs.writeFileSync(filepath, after);
 }
 
-console.log(`Built ${catalog.length * 2} localized product pages and catalog links.`);
+// A content-based version refreshes cached shared UI on every actual change.
+// Only asset URLs change; page content and layouts stay as authored.
+const assetHash = crypto.createHash("sha256");
+for (const asset of sharedAssets) assetHash.update(fs.readFileSync(path.join(root, asset)));
+const assetVersion = assetHash.digest("hex").slice(0, 12);
+for (const filename of fs.readdirSync(root).filter((name) => name.endsWith(".html"))) {
+  const filepath = path.join(root, filename);
+  const before = fs.readFileSync(filepath, "utf8");
+  const after = before.replace(sharedAssetPattern, (_, asset) => `${asset}?v=${assetVersion}`);
+  if (before !== after) fs.writeFileSync(filepath, after);
+}
+
+console.log(`Built ${catalog.length * 2} localized product pages and catalog links. Shared UI: ${assetVersion}.`);
