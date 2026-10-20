@@ -3,7 +3,7 @@
 // Usage: node scripts/publish-seo.js https://your-real-domain.tld
 const fs = require("node:fs");
 const path = require("node:path");
-const root = path.resolve(__dirname, "..");
+const root = path.resolve(__dirname, "..", "public");
 const originConfigPath = path.join(__dirname, "seo-origin.json");
 const savedOrigin = fs.existsSync(originConfigPath) ? JSON.parse(fs.readFileSync(originConfigPath, "utf8")).origin : null;
 const provided = process.argv[2] || savedOrigin;

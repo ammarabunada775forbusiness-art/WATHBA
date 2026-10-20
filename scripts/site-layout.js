@@ -1,8 +1,8 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const vm = require("node:vm");
-const root = path.resolve(__dirname, "..");
-const UI = require("../assets/js/ui.js");
+const root = path.resolve(__dirname, "..", "public");
+const UI = require("../public/assets/js/ui.js");
 const { escape: esc, icon, pageUrl, productArt } = UI;
 const context = vm.createContext({ window: {} });
 vm.runInContext(fs.readFileSync(path.join(root, "assets/js/products-data.js"), "utf8"), context);

@@ -1,4 +1,5 @@
 node_modules/
+.vercel/
 test-results/
 playwright-report/
 __pycache__/

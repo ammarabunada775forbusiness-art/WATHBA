@@ -3,7 +3,7 @@
 const fs = require("node:fs"), path = require("node:path"), http = require("node:http");
 const assert = require("node:assert/strict");
 const { chromium } = require("playwright");
-const root = path.resolve(__dirname,"..");
+const root = path.resolve(__dirname,"..","public");
 const contentTypes = { ".html":"text/html; charset=utf-8", ".css":"text/css", ".js":"text/javascript", ".woff2":"font/woff2", ".webp":"image/webp", ".svg":"image/svg+xml" };
 const server = http.createServer((req,res) => {
   const pathname = decodeURIComponent(new URL(req.url,"http://local").pathname);

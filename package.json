@@ -3,9 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build": "node scripts/build-site.js",
-    "test": "python3 scripts/check-site.py",
+    "dev": "node scripts/serve-site.js",
+    "build": "node scripts/build-site.js && node scripts/check-site.js",
+    "test": "node scripts/check-site.js",
     "test:browser": "node tests/browser.cjs"
   },
-  "devDependencies": { "playwright": "1.62.1" }
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
 }
