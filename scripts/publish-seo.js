@@ -3,10 +3,8 @@
 // Usage: node scripts/publish-seo.js https://your-real-domain.tld
 const fs = require("node:fs");
 const path = require("node:path");
-const root = path.resolve(__dirname, "..", "public");
-const originConfigPath = path.join(__dirname, "seo-origin.json");
-const savedOrigin = fs.existsSync(originConfigPath) ? JSON.parse(fs.readFileSync(originConfigPath, "utf8")).origin : null;
-const provided = process.argv[2] || savedOrigin;
+const root = path.resolve(__dirname, "..");
+const provided = process.argv[2];
 let origin;
 
 try {
@@ -22,8 +20,7 @@ try {
 }
 
 const filenames = fs.readdirSync(root)
-  .filter((name) => name.endsWith(".html") && !["product.html", "404.html", "404-en.html"].includes(name))
-  .filter((name) => !/<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(fs.readFileSync(path.join(root,name),"utf8")))
+  .filter((name) => name.endsWith(".html") && name !== "product.html")
   .sort();
 const names = new Set(filenames);
 const url = (name) => `${origin}${name === "index.html" ? "/" : `/${name}`}`;
@@ -34,6 +31,7 @@ const startMarker = "<!-- WATHBA_ABSOLUTE_SEO_START -->";
 const endMarker = "<!-- WATHBA_ABSOLUTE_SEO_END -->";
 
 function pairFor(filename) {
+  if (!/^(academy|equipment-)/.test(filename)) return null;
   const base = filename.replace(/-en\.html$/, ".html").replace(/\.html$/, "");
   const ar = `${base}.html`;
   const en = `${base}-en.html`;
@@ -57,8 +55,8 @@ function breadcrumbMarkup(filename, page) {
   const titleMatch = page.match(/<title>([^<]+)<\/title>/i);
   if (!titleMatch) throw new Error(`Missing breadcrumb title: ${filename}`);
   const pageName = titleMatch[1].split("|")[0].trim().replace(/&amp;/g, "&");
-  const entries = [{ name: isEnglish ? "Home" : "الرئيسية", item: isEnglish ? url("index-en.html") : `${origin}/` }];
-  if (isEquipment) entries.push({ name: isEnglish ? "Equipment" : "المنتجات", item: url(isEnglish ? "products-en.html" : "products.html") });
+  const entries = [{ name: isEnglish ? "Home" : "الرئيسية", item: `${origin}/` }];
+  if (isEquipment) entries.push({ name: isEnglish ? "Equipment" : "المنتجات", item: `${origin}/products.html` });
   if (filename.startsWith("academy-") && !/^academy-(?:en)\.html$/.test(filename)) {
     entries.push({ name: isEnglish ? "Academy" : "الأكاديمية", item: url(isEnglish ? "academy-en.html" : "academy.html") });
   }
@@ -67,19 +65,6 @@ function breadcrumbMarkup(filename, page) {
     "@context": "https://schema.org", "@type": "BreadcrumbList",
     itemListElement: entries.map((entry, i) => ({ "@type": "ListItem", position: i + 1, ...entry }))
   };
-  return `    <script type="application/ld+json">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>\n`;
-}
-
-function websiteMarkup(filename) {
-  if (!["index.html", "index-en.html"].includes(filename)) return "";
-  const configText = fs.readFileSync(path.join(root, "assets/js/config.js"), "utf8");
-  const vm = require("node:vm"), context = vm.createContext({ window: {} });
-  vm.runInContext(configText,context);
-  const config = context.window.WATHBA_CONFIG;
-  const data = { "@context": "https://schema.org", "@graph": [
-    { "@type": "Organization", "@id": `${origin}/#organization`, name: "WATHBA", alternateName: "وثبة", url: `${origin}/`, sameAs: Object.values(config.socials).map(s=>s.url), contactPoint: { "@type": "ContactPoint", telephone: `+${config.whatsappNumber}`, contactType: "customer service", availableLanguage: ["Arabic","English"] } },
-    { "@type": "WebSite", "@id": `${origin}/#website`, name: "WATHBA", alternateName: "وثبة", url: `${origin}/`, inLanguage: ["ar","en"], publisher: { "@id": `${origin}/#organization` } }
-  ] };
   return `    <script type="application/ld+json">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>\n`;
 }
 
@@ -92,7 +77,7 @@ for (const filename of filenames) {
     if (end < 0) throw new Error(`Unclosed SEO block: ${filename}`);
     page = page.slice(0, start) + page.slice(end + endMarker.length);
   }
-  const insert = `${startMarker}\n    <link rel="canonical" href="${escapeXml(url(filename))}" />\n    <meta property="og:url" content="${escapeXml(url(filename))}" />\n    <meta property="og:site_name" content="WATHBA" />\n${alternates(pairFor(filename))}${breadcrumbMarkup(filename, page)}${websiteMarkup(filename)}${endMarker}`;
+  const insert = `${startMarker}\n    <link rel="canonical" href="${escapeXml(url(filename))}" />\n${alternates(pairFor(filename))}${breadcrumbMarkup(filename, page)}${endMarker}`;
   if (!/<\/head>/i.test(page)) throw new Error(`Missing head element: ${filename}`);
   page = page.replace(/<\/head>/i, `${insert}\n</head>`);
   fs.writeFileSync(filepath, page);
@@ -101,5 +86,4 @@ for (const filename of filenames) {
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${filenames.map((name) => `  <url>\n    <loc>${escapeXml(url(name))}</loc>\n${alternates(pairFor(name), true)}  </url>`).join("\n")}\n</urlset>\n`;
 fs.writeFileSync(path.join(root, "sitemap.xml"), xml);
 fs.writeFileSync(path.join(root, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
-fs.writeFileSync(originConfigPath, `${JSON.stringify({ origin }, null, 2)}\n`);
 console.log(`Prepared ${filenames.length} canonical pages and sitemap URLs for ${origin}.`);

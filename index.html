@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>معدات الكاليستنكس في الأردن | وثبة WATHBA</title>
+    <meta name="description" content="اكتشف معدات الكاليستنكس من وثبة في الأردن: عقلة حائط، باراليتس، متوازي، حلقات وتجهيزات مخصصة. تعلّم التمارين في أكاديمية وثبة واختر ما يناسبك." />
+    <script>
+        (function () {
+            var lang = localStorage.getItem("wathbaLang") || "ar";
+            document.documentElement.lang = lang;
+            document.documentElement.dataset.wathbaLang = lang;
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+            document.documentElement.classList.add("wathba-ui-loading");
+        })();
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+    <style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .product-360-container {
+            perspective: 1000px;
+            cursor: grab;
+        }
+
+        .product-360-inner {
+            transition: transform 0.1s ease-out;
+            transform-style: preserve-3d;
+        }
+
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            color: transparent;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .stagger-1 {
+            animation-delay: 0.2s;
+        }
+
+        .stagger-2 {
+            animation-delay: 0.5s;
+        }
+
+        .arabic-text {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            /* Fallback, would ideally use a proper Arabic Anton-equivalent */
+            direction: rtl;
+        }
+
+        .hero-stat-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        .hero-stat-card {
+            position: absolute;
+            max-width: 180px;
+            padding: 14px 16px;
+            border-radius: 14px;
+            background: rgba(26, 26, 26, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
+        }
+
+        .hero-stat-card span:first-child {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 10px;
+            line-height: 1.2;
+            color: #c4c7c8;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero-stat-card span:last-child {
+            font-family: 'Anton', sans-serif;
+            font-size: 20px;
+            line-height: 1.05;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .hero-stat-material {
+            top: 34px;
+            right: 86px;
+        }
+
+        .hero-stat-capacity {
+            bottom: 46px;
+            left: 84px;
+        }
+
+        .hero-stat-finish {
+            top: 44%;
+            left: 8px;
+        }
+
+        .hero-stat-grip {
+            top: 38px;
+            left: 142px;
+        }
+
+
+        .hero-stat-support {
+            bottom: 70px;
+            right: 120px;
+        }
+
+        .hero-stat-use {
+            top: 46%;
+            right: 4px;
+        }
+
+
+
+        @media (max-width: 1024px) {
+            .hero-stat-layer {
+                inset: auto 0 0 0;
+                display: flex;
+                gap: 8px;
+                overflow-x: auto;
+                padding: 0 8px 4px;
+                scrollbar-width: none;
+            }
+
+            .hero-stat-layer::-webkit-scrollbar {
+                display: none;
+            }
+
+            .hero-stat-card {
+                position: relative !important;
+                top: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                left: auto !important;
+                min-width: 136px;
+                padding: 10px 12px;
+            }
+
+            .hero-stat-card span:first-child {
+                font-size: 8px;
+            }
+
+            .hero-stat-card span:last-child {
+                font-size: 15px;
+            }
+        }
+
+        /* Home trusted floating badge */
+        .home-trusted-floating-card {
+            position: absolute;
+            right: -28px;
+            bottom: -28px;
+            z-index: 5;
+            width: 190px;
+            padding: 16px 18px;
+            border-radius: 16px;
+            background: rgba(26, 26, 26, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 22px 65px rgba(0, 0, 0, 0.32);
+        }
+
+        .home-trusted-number {
+            display: block;
+            font-family: "Anton", sans-serif;
+            font-size: 42px;
+            line-height: 0.95;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .home-trusted-text {
+            display: block;
+            font-family: "Be Vietnam Pro", sans-serif;
+            color: #c4c7c8;
+            font-size: 12px;
+            line-height: 1.4;
+            letter-spacing: 0.08em;
+            font-weight: 1000;
+            text-transform: uppercase;
+        }
+
+        html[dir="rtl"] .home-trusted-floating-card {
+            direction: rtl;
+            text-align: right;
+        }
+
+        html[dir="rtl"] .home-trusted-text {
+            font-size: 15px;
+            letter-spacing: 0;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 768px) {
+            .home-trusted-floating-card {
+                right: 12px;
+                bottom: -18px;
+                width: 150px;
+                padding: 12px 13px;
+            }
+
+            .home-trusted-number {
+                font-size: 32px;
+            }
+
+            .home-trusted-text {
+                font-size: 10px;
+            }
+
+            html[dir="rtl"] .home-trusted-text {
+                font-size: 13px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/shared-ui.css" />
+    <link rel="stylesheet" href="assets/css/academy.css" />
+</head>
+
+<body class="selection:bg-primary selection:text-surface">
+    <!-- WATHBA Unified Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-12">
+                <a class="wathba-logo wathba-nav-logo" href="index.html" data-wathba-logo="true">WATHBA</a>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="index.html">Home</a>
+
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="products.html">Products</a>
+
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="academy.html">Academy</a>
+
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="about.html">About</a>
+
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="contact.html">Contact</a>
+                </div>
+            </div>
+
+            <div class="wathba-nav-empty"></div>
+        </div>
+    </nav>
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section
+            class="relative px-margin-desktop max-w-container-max mx-auto min-h-[921px] flex flex-col justify-center overflow-visible"
+            id="home">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+                <!-- Left: Aggressive Typography -->
+                <div class="md:col-span-5 z-10">
+                    <div class="flex flex-col gap-2">
+                        <span class="text-primary font-label-caps text-label-caps tracking-widest uppercase">Performance
+                            Redefined</span>
+                        <h1 class="font-display-hero text-display-hero leading-none flex flex-col">
+                            <span class="text-primary">ENGINEERED</span>
+                            <span class="hero-text-stroke">FOR POWER</span>
+                        </h1>
+                        <h2 class="arabic-text font-headline-lg text-headline-lg text-primary/80 mt-[-20px]">مصمم للقوة
+                        </h2>
+                    </div>
+                    <p class="mt-8 font-body-lg text-body-lg text-on-surface-variant max-w-sm">
+                        Elite calisthenics equipment crafted for those who demand absolute precision and uncompromising
+                        strength.
+                    </p>
+                    <div class="mt-12 flex flex-wrap gap-4">
+                        <a href="#" data-wathba-whatsapp-link
+                            class="border border-primary text-primary font-headline-md text-[18px] uppercase px-10 py-4 rounded-full flex items-center gap-3 hover:bg-primary/10 transition-colors active:scale-95">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">chat</span>
+                            <span data-home-hero-whatsapp>WhatsApp</span>
+                        </a>
+
+                        <a href="products.html"
+                            class="bg-primary text-surface font-headline-md text-[18px] uppercase px-10 py-4 rounded-full flex items-center gap-3 hover:scale-105 transition-transform active:scale-95">
+                            <span data-home-hero-browse>Browse Products</span>
+                        </a>
+                        <a href="academy-beginner.html" data-home-hero-academy-link
+                            class="border border-primary/60 text-primary font-headline-md text-[18px] px-10 py-4 rounded-full flex items-center gap-3 hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+                            <span data-home-hero-academy>ابدأ التعلّم</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Center: 360 Product Interaction -->
+                <div class="md:col-span-7 relative h-[600px] flex items-center justify-center">
+                    <!-- Rotating Background Blur -->
+                    <div class="absolute w-[120%] h-[120%] -z-10 opacity-20">
+
+                    </div>
+                    <!-- Floating Data Blocks -->
+                    <div class="hero-stat-layer" aria-hidden="true">
+                        <div class="hero-stat-card hero-stat-material floating">
+                            <span>الخامات</span>
+                            <span>خشب وحديد حسب القطعة</span>
+                        </div>
+
+                        <div class="hero-stat-card hero-stat-capacity floating stagger-1">
+                            <span>الأبعاد</span>
+                            <span>حسب المنتج</span>
+                        </div>
+
+                        <div class="hero-stat-card hero-stat-finish floating stagger-2">
+                            <span>خيارات التدريب</span>
+                            <span>دفع وسحب</span>
+                        </div>
+
+                        <div class="hero-stat-card hero-stat-grip floating">
+                            <span>القياسات</span>
+                            <span>اسأل عن التفاصيل</span>
+                        </div>
+
+                        <div class="hero-stat-card hero-stat-use floating stagger-2">
+                            <span>USE</span>
+                            <span>Home / Outdoor</span>
+                        </div>
+
+                        <div class="hero-stat-card hero-stat-support floating">
+                            <span>ORDER SUPPORT</span>
+                            <span>WhatsApp Quote</span>
+                        </div>
+                    </div>
+                    <!-- 360 Product Visual -->
+                    <div class="product-360-container w-full h-full flex items-center justify-center">
+                        <div class="product-360-inner relative w-full h-full flex items-center justify-center">
+                            <img class="w-[80%] h-auto object-contain drop-shadow-[0_35px_35px_rgba(255,255,255,0.1)]"
+                                data-alt="A premium pair of professional wooden calisthenics parallettes made from solid high-grade oak wood with a smooth natural finish. The product is shown from a dynamic three-quarter angle against a dark moody studio background with dramatic top lighting highlighting the wood grain and sturdy construction. The aesthetic is clean, minimalist, and high-performance, fitting a luxury athletic brand identity."
+                                id="hero-product"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpVZ0cs26eDzS3tU8mCu-KnNi7oGvcwbLA-SfS1I9WUGeh-KobGB7RyEvKl6ybAzycdjVVhAgP9sdZHKvPhCEXzf5O-txn3fhpD4DW4oSmMwmwKs0oWIEgVldV54V1qB806nhWG3YYDtr0ugAjJcReZugEkmWNyZWexSNohUYNxbrdZuh9hqoaMCdK7MYDBsOjbxq4wm_6pONUpl7Vtd8wZA1ETyvcOZt7dxdLx8mh_z3LCQcgSiVD8hhj2M1lIogLP3gONInV3g" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Product Grid Section -->
+        <section class="py-32 px-margin-desktop max-w-container-max mx-auto" id="products">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16">
+                <div>
+                    <span class="text-primary font-label-caps text-label-caps tracking-widest uppercase"
+                        data-home-i18n="featuredMini">Curated Collection</span>
+                    <h2 class="font-headline-lg text-headline-lg uppercase mt-2" data-home-i18n="featuredTitle">
+                        Professional Gear</h2>
+                </div>
+
+                <div class="flex flex-col md:items-end gap-5">
+                    <span class="font-body-md text-body-md text-on-surface-variant max-w-xs block md:text-right"
+                        data-home-i18n="featuredText">Tested gear for home, outdoor, and professional calisthenics
+                        setups.</span>
+
+                    <a href="products.html"
+                        class="inline-flex items-center justify-center gap-2 border border-outline-variant/40 text-primary px-6 py-3 rounded-full font-label-caps text-label-caps hover:border-primary transition-all"
+                        data-home-i18n="viewAllProducts">View All Products</a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="homeFeaturedProducts"></div>
+        </section>
+        <!-- Why Choose Section -->
+        <section class="bg-surface-container-lowest py-32 px-margin-desktop overflow-hidden" id="about">
+            <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                <div class="relative">
+                    <div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+                    <h2 class="font-display-hero text-[80px] leading-[0.9] uppercase text-primary">
+                        THE<br />WATHBA<br />STANDARD</h2>
+                    <div class="mt-12 space-y-12">
+                        <div class="flex gap-6 items-start">
+                            <span class="material-symbols-outlined text-primary text-[40px]">architecture</span>
+                            <div>
+                                <h4 class="font-headline-md text-[24px] uppercase">Build Quality</h4>
+                                <p class="text-on-surface-variant text-body-md mt-1">اسأل عن خامة القطعة وأبعادها وطريقة تركيبها قبل الطلب.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 items-start">
+                            <div>
+                                <h4 class="font-headline-md text-[24px] uppercase">Functional Design</h4>
+                                <p class="text-on-surface-variant text-body-md mt-1">اختر المعدة بحسب مساحة التدريب والحركة المناسبة لمستواك.</p>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-[40px]">fitbit</span>
+                        </div>
+                        <div class="flex gap-6 items-start">
+                            <span class="material-symbols-outlined text-primary text-[40px]">home_work</span>
+                            <div>
+                                <h4 class="font-headline-md text-[24px] uppercase">Home &amp; Outdoor</h4>
+                                <p class="text-on-surface-variant text-body-md mt-1">Versatile aesthetics that fit a
+                                    luxury penthouse as well as a rugged outdoor park.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img class="w-full h-auto rounded-lg shadow-2xl"
+                        data-alt="A focused high-contrast black and white photograph of an elite athlete performing a perfectly straight handstand on wooden parallettes. The lighting is dramatic, highlighting muscle definition and the clean lines of the equipment. The setting is a minimalist architectural space with soft ambient light filtering through high windows. The image conveys mastery, balance, and the premium quality of WATHBA products."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP61UWkVZlK97Cnh6Of2btcxnYamuOEPzoc682kw3PQ4HWrC8-jOalHnIXVrG-T_nT6976MqWiVBsHb0cpQ8FccHGaJpniZBlTL7wsDslCZzoWHOfsePA6pKihTOVKZSdKfLI2LwMQRDtih2ZKoBOGb24ObCNlf12wcRQ-MjJUBDFYsfYMwfKlOR4pFeMeof1ybSOZuGHtiRNNbO8ulS1rER_rdYaYvsqkf13_EyQsMuDeb9Ntj8-2ZQ-8TQFKmR_7pctnA0d5Qw" />
+                    <div class="home-trusted-floating-card floating">
+                        <span class="home-trusted-number">01</span>
+                        <span class="home-trusted-text">لمختلف المستويات</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <div id="wathbaFooter"></div>
+    <script>
+        // Simple 360-style rotation effect following mouse movement
+        const productContainer = document.querySelector(".product-360-container");
+        const productInner = document.querySelector(".product-360-inner");
+
+        if (productContainer && productInner) {
+            productContainer.addEventListener("mousemove", (e) => {
+                const rect = productContainer.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const centerX = rect.width / 2;
+                const rotationY = (x - centerX) / 10;
+
+                productInner.style.transform = `rotateY(${rotationY}deg)`;
+            });
+
+            productContainer.addEventListener("mouseleave", () => {
+                productInner.style.transform = "rotateY(0deg)";
+            });
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetSelector = this.getAttribute("href");
+                const target = targetSelector ? document.querySelector(targetSelector) : null;
+
+                if (!target) return;
+
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+    <!-- WATHBA_HOME_PAGE_TRANSLATION_START -->
+    <script id="wathba-home-page-translation">
+        (function () {
+            const homePageText = {
+                en: {
+                    heroMini: "Performance Redefined",
+                    heroLine1: "ENGINEERED",
+                    heroLine2: "FOR POWER",
+                    heroArabic: "مصمم للقوة",
+                    heroText: "Elite calisthenics equipment crafted for those who demand absolute precision and uncompromising strength.",
+                    browse: "Browse Products",
+                    academy: "Start Learning",
+                    whatsapp: "WhatsApp",
+
+                    materialLabel: "MATERIAL OPTIONS",
+                    materialValue: "Wood & steel by product",
+                    capacityLabel: "DIMENSIONS",
+                    capacityValue: "By product",
+                    finishLabel: "TRAINING",
+                    finishValue: "Push & pull",
+                    gripLabel: "SIZING",
+                    gripValue: "Ask for details",
+                    useLabel: "USE",
+                    useValue: "Home / Outdoor",
+                    supportLabel: "ORDER SUPPORT",
+                    supportValue: "WhatsApp Quote",
+
+                    standardTitle: "THE<br />WATHBA<br />STANDARD",
+                    qualityTitle: "Build Quality",
+                    qualityText: "Ask about actual materials, dimensions and installation for the equipment you choose.",
+                    designTitle: "Functional Design",
+                    designText: "Match the equipment to your space and the movements you can currently control.",
+                    outdoorTitle: "Home & Outdoor",
+                    outdoorText: "Versatile aesthetics that fit a luxury home setup as well as a rugged outdoor park.",
+                    trusted: "For every level",
+
+                    ctaMini: "NEED HELP CHOOSING?",
+                    ctaTitle: "BUILD YOUR SETUP",
+                    ctaText: "Tell us your training level, space, and goal. We will help you choose the right calisthenics equipment through WhatsApp.",
+                    ctaBrowse: "Browse Products",
+                    ctaWhatsapp: "WhatsApp Us"
+                },
+
+                ar: {
+                    heroLine1: "ENGINEERED",
+                    heroLine2: "FOR POWER",
+                    heroArabic: "معدات كاليسثنكس احترافية",
+                    heroText: "معدات كاليسثنكس مختارة للاعبين الذين يريدون جودة عالية، ثبات قوي، وتجربة تدريب عملية.",
+                    browse: "تصفح المنتجات",
+                    academy: "ابدأ التعلّم",
+                    whatsapp: "واتساب",
+
+                    materialLabel: "الخامات",
+                    materialValue: "خشب وحديد حسب القطعة",
+                    capacityLabel: "الأبعاد",
+                    capacityValue: "حسب المنتج",
+                    finishLabel: "خيارات التدريب",
+                    finishValue: "دفع وسحب",
+                    gripLabel: "القياسات",
+                    gripValue: "اسأل عن التفاصيل",
+                    useLabel: "الاستخدام",
+                    useValue: "للبيت / الخارج",
+                    supportLabel: "دعم الطلب",
+                    supportValue: "عرض عبر واتساب",
+
+                    standardTitle: "THE<br />WATHBA<br />STANDARD",
+                    qualityTitle: "جودة التصنيع",
+                    qualityText: "نختار خامات قوية وتصميمات عملية لتناسب التدريب اليومي والاستخدام الطويل.",
+                    designTitle: "تصميم عملي",
+                    designText: "اختر المعدة بحسب مساحة التدريب والحركة المناسبة لمستواك.",
+                    outdoorTitle: "للبيت والخارج",
+                    outdoorText: "معدات مناسبة للبيت، المساحات الخارجية، والنوادي حسب احتياجك.",
+                    trusted: "لمختلف المستويات",
+
+                    ctaMini: "محتاج مساعدة بالاختيار؟",
+                    ctaTitle: "BUILD YOUR SETUP",
+                    ctaText: "احكِ لنا مستواك، المساحة المتوفرة، وهدفك، ونساعدك تختار معدات الكاليستنكس المناسبة عبر واتساب.",
+                    ctaBrowse: "تصفح المنتجات",
+                    ctaWhatsapp: "راسلنا واتساب"
+                }
+            };
+
+            function getLang() {
+                return localStorage.getItem("wathbaLang") || "ar";
+            }
+
+            function setText(selector, text) {
+                const element = document.querySelector(selector);
+                if (element) element.textContent = text;
+            }
+
+            function setHTML(selector, html) {
+                const element = document.querySelector(selector);
+                if (element) element.innerHTML = html;
+            }
+
+            function applyHomePageTranslation() {
+                const lang = getLang();
+                const t = homePageText[lang] || homePageText.ar;
+
+                const trustedCardText = document.querySelector(".home-trusted-text");
+                if (trustedCardText) trustedCardText.textContent = t.trusted;
+
+                setText("#home .md\\:col-span-5 span.text-primary", t.heroMini);
+                setText("#home h1 span:nth-child(1)", t.heroLine1);
+                setText("#home h1 span:nth-child(2)", t.heroLine2);
+                setText("#home h2", t.heroArabic);
+                setText("#home .md\\:col-span-5 > p", t.heroText);
+
+                setText("[data-home-hero-whatsapp]", t.whatsapp);
+                setText("[data-home-hero-browse]", t.browse);
+                setText("[data-home-hero-academy]", t.academy);
+                const academyLink = document.querySelector("[data-home-hero-academy-link]");
+                if (academyLink) academyLink.href = lang === "en" ? "academy-beginner-en.html" : "academy-beginner.html";
+                document.title = lang === "en" ? "Calisthenics Equipment in Jordan | WATHBA" : "معدات الكاليستنكس في الأردن | وثبة WATHBA";
+
+                const statCards = [
+                    [".hero-stat-material", "materialLabel", "materialValue"],
+                    [".hero-stat-capacity", "capacityLabel", "capacityValue"],
+                    [".hero-stat-finish", "finishLabel", "finishValue"],
+                    [".hero-stat-grip", "gripLabel", "gripValue"],
+                    [".hero-stat-use", "useLabel", "useValue"],
+                    [".hero-stat-support", "supportLabel", "supportValue"]
+                ];
+
+                statCards.forEach(([selector, labelKey, valueKey]) => {
+                    const card = document.querySelector(`#home ${selector}`);
+                    if (!card) return;
+
+                    const label = card.querySelector("span:first-child");
+                    const value = card.querySelector("span:last-child");
+
+                    if (label) label.textContent = t[labelKey];
+                    if (value) value.textContent = t[valueKey];
+                });
+
+                setHTML("#about h2", t.standardTitle);
+
+                const standardCards = document.querySelectorAll("#about .mt-12 > div");
+                if (standardCards[0]) {
+                    standardCards[0].querySelector("h4").textContent = t.qualityTitle;
+                    standardCards[0].querySelector("p").textContent = t.qualityText;
+                }
+                if (standardCards[1]) {
+                    standardCards[1].querySelector("h4").textContent = t.designTitle;
+                    standardCards[1].querySelector("p").textContent = t.designText;
+                }
+                if (standardCards[2]) {
+                    standardCards[2].querySelector("h4").textContent = t.outdoorTitle;
+                    standardCards[2].querySelector("p").textContent = t.outdoorText;
+                }
+
+                const trusted = document.querySelector("#about .absolute.-bottom-10 span:last-child");
+                if (trusted) trusted.textContent = t.trusted;
+
+                setText(".wathba-final-cta p.font-label-caps", t.ctaMini);
+                setText(".wathba-final-cta h2", t.ctaTitle);
+                setText(".wathba-final-cta p.font-body-lg", t.ctaText);
+
+                const ctaLinks = document.querySelectorAll(".wathba-final-cta a");
+                if (ctaLinks[0]) {
+                    ctaLinks[0].childNodes[0].textContent = t.ctaBrowse + " ";
+                }
+                if (ctaLinks[1]) {
+                    ctaLinks[1].childNodes[2].textContent = t.ctaWhatsapp;
+                }
+
+                if (lang === "ar") {
+                    document.querySelector("#home .md\\:col-span-5")?.classList.add("wathba-ar-text");
+                    document.querySelector("#about")?.classList.add("wathba-ar-text");
+                    document.querySelector(".wathba-final-cta")?.classList.add("wathba-ar-text");
+                } else {
+                    document.querySelector("#home .md\\:col-span-5")?.classList.remove("wathba-ar-text");
+                    document.querySelector("#about")?.classList.remove("wathba-ar-text");
+                    document.querySelector(".wathba-final-cta")?.classList.remove("wathba-ar-text");
+                }
+                /* Static Product Grid Section Translation */
+                const oldProductsSection = document.querySelector("#products");
+
+                if (oldProductsSection) {
+                    const miniTitle = oldProductsSection.querySelector(".flex.justify-between span.text-primary");
+                    const sideText = oldProductsSection.querySelector(".hidden.md\\:block span");
+
+                    if (miniTitle) {
+                        miniTitle.textContent = lang === "ar" ? "مجموعة مختارة" : "Curated Collection";
+                    }
+
+                    if (sideText) {
+                        sideText.textContent =
+                            lang === "ar"
+                                ? "معدات مختارة بعناية لتدريب قوي وثابت واستخدام طويل."
+                                : "Tested by elite athletes to ensure peak performance and durability.";
+                    }
+
+                    const smallCards = oldProductsSection.querySelectorAll(".glass-panel");
+
+                    const cardTranslations = {
+                        ar: [
+                            {
+                                desc: "ثبات عالي لتدريبات الديبس والمهارات المتقدمة.",
+                                action: "استكشف أكثر"
+                            },
+                            {
+                                desc: "طلاء مقاوم للعوامل الخارجية وتجهيزات قوية.",
+                                action: "استكشف أكثر"
+                            },
+                            {
+                                desc: "حبال مقاومة تساعدك في التدرج والإحماء والتمرين.",
+                                action: "استكشف أكثر"
+                            }
+                        ],
+                        en: [
+                            {
+                                desc: "Maximum stability for advanced levers.",
+                                action: "Explore More"
+                            },
+                            {
+                                desc: "Weather-proof coating for outdoor mastery.",
+                                action: "Explore More"
+                            },
+                            {
+                                desc: "Premium latex for progressive load.",
+                                action: "Explore More"
+                            }
+                        ]
+                    };
+
+                    smallCards.forEach((card, index) => {
+                        const desc = card.querySelector("p");
+                        const action = card.querySelector(".font-label-caps.text-label-caps.text-primary");
+
+                        if (desc && cardTranslations[lang][index]) {
+                            desc.textContent = cardTranslations[lang][index].desc;
+                        }
+
+                        if (action && cardTranslations[lang][index]) {
+                            action.textContent = cardTranslations[lang][index].action;
+                        }
+                    });
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", applyHomePageTranslation);
+            document.addEventListener("wathba:langchange", applyHomePageTranslation);
+        })();
+    </script>
+    <!-- WATHBA_HOME_PAGE_TRANSLATION_END -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/products-data.js"></script>
+    <script src="assets/js/whatsapp.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/shared-ui.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>معدات الكاليستنكس والعقلة والباراليتس | وثبة الأردن</title>
+    <meta name="description" content="تصفح معدات الكاليستنكس لدى وثبة في الأردن: عقلة حائط، باراليتس، متوازي، حلقات جمباز وتجهيزات حسب الطلب مع أدلة تعليمية لاستخدامها." />
+    <script>
+        (function () {
+            var lang = localStorage.getItem("wathbaLang") || "ar";
+            document.documentElement.lang = lang;
+            document.documentElement.dataset.wathbaLang = lang;
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+            document.documentElement.classList.add("wathba-ui-loading");
+        })();
+    </script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Theme Configuration -->
+    <script src="assets/js/tailwind-config.js"></script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #e5e2e1;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .glass-panel {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid #1A1A1A;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .whatsapp-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .diagonal-bg {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        @media (max-width: 767px) {
+            .product-card-actions {
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch !important;
+            }
+
+            .product-card-actions a,
+            .product-card-actions button {
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/shared-ui.css" />
+    <link rel="stylesheet" href="assets/css/academy.css" />
+    <link rel="stylesheet" href="assets/css/product-seo.css" />
+</head>
+
+<body class="dark bg-background text-on-surface">
+    <!-- WATHBA Unified Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-12">
+                <a class="wathba-logo wathba-nav-logo" href="index.html" data-wathba-logo="true">WATHBA</a>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="index.html">Home</a>
+
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="products.html">Products</a>
+
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="academy.html">Academy</a>
+
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="about.html">About</a>
+
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="contact.html">Contact</a>
+                </div>
+            </div>
+
+            <div class="wathba-nav-empty"></div>
+        </div>
+    </nav>
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="px-margin-desktop max-w-container-max mx-auto mb-20 relative overflow-hidden">
+            <div class="absolute -top-20 -right-20 opacity-10">
+                <span class="font-display-hero text-[300px] leading-none select-none">WATHBA</span>
+            </div>
+
+            <h1 class="font-display-hero text-display-hero uppercase relative z-10" id="productsHeading">
+                معدات الكاليستنكس
+            </h1>
+
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4" id="productsHeroText">
+                معدات كاليسثنكس للبيت والمساحات التدريبية في الأردن. اختر معدّتك واطّلع على استخدامها قبل الطلب.
+            </p>
+        </section>
+
+        <!-- Filters -->
+        <section class="px-margin-desktop max-w-container-max mx-auto mb-12">
+            <div class="flex flex-wrap gap-4 items-center" id="categoryFilters"></div>
+        </section>
+
+        <!-- Product Grid -->
+        <section class="px-margin-desktop max-w-container-max mx-auto pb-40">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="allProducts">
+                <article class="wathba-catalog-fallback"><span>بارات السحب</span><h2><a href="equipment-wall-pull-up-bar.html">عقلة حائط</a></h2><p>عقلة حائط قوية لتدريب السحب، التعلق، الكور، والمهارات الأساسية. متوفرة ببروز 60 سم أو 90 سم حسب المساحة والهدف.</p><a href="academy-first-pull-up.html">دليل التدريب ↗</a></article>
+                <article class="wathba-catalog-fallback"><span>بارات السحب</span><h2><a href="equipment-monkey-bars.html">مونكي بارز</a></h2><p>مونكي بارز لتدريب القبضة، السحب، التعلق، والتحمل. مناسبة للتجهيزات الخارجية أو ضمن جهاز كاليسثنكس متعدد.</p><a href="academy.html#pulling">دليل التدريب ↗</a></article>
+                <article class="wathba-catalog-fallback"><span>باراليتس</span><h2><a href="equipment-steel-wood-parallettes.html">باراليتس حديد بمقبض خشب</a></h2><p>باراليتس بقاعدة حديد قوية ومقبض خشب مريح، مناسب للضغط، L-sit، البلانش، والهاندستاند.</p><a href="academy-parallettes.html">دليل التدريب ↗</a></article>
+                <article class="wathba-catalog-fallback"><span>باراليتس</span><h2><a href="equipment-full-wooden-parallettes.html">باراليتس خشب كامل</a></h2><p>باراليتس خشب كامل بتصميم بسيط ومتين، مناسب لتدريبات التحكم والضغط والمهارات الأساسية.</p><a href="academy-parallettes.html">دليل التدريب ↗</a></article>
+                <article class="wathba-catalog-fallback"><span>متوازي وديب بار</span><h2><a href="equipment-freestanding-parallel-bars-small.html">متوازي حديد صغير</a></h2><p>متوازي حديد صغير بارتفاع 40 سم، مناسب لتدريبات الديبس، الضغط، الكور، وتمارين التحكم، مع تصميم سهل النقل والتخزين.</p><a href="academy.html#pushing">دليل التدريب ↗</a></article>
+                <article class="wathba-catalog-fallback"><span>متوازي وديب بار</span><h2><a href="equipment-freestanding-parallel-bars-large.html">متوازي حديد كبير</a></h2><p>متوازي حديد كبير بارتفاع 100 سم، مناسب لتدريبات الديبس، الضغط، الكور، والثبات بارتفاع كامل.</p><a href="academy.html#pushing">دليل التدريب ↗</a></article>
+                <article class="wathba-catalog-fallback"><span>متوازي وديب بار</span><h2><a href="equipment-wall-mounted-dip-bars.html">ديب بار حائط</a></h2><p>ديب بار يثبت على الحائط لتدريبات الديبس والضغط والكور، مناسب لمن يريد توفير مساحة على الأرض.</p><a href="academy.html#pushing">دليل التدريب ↗</a></article>
+                <article class="wathba-catalog-fallback"><span>حلقات جمباز</span><h2><a href="equipment-gymnastic-rings.html">حلقات جمباز</a></h2><p>حلقات جمباز لتدريب السحب، الديبس، التوازن، والثبات العضلي بمرونة عالية.</p><a href="academy.html#rings">دليل التدريب ↗</a></article>
+                <article class="wathba-catalog-fallback"><span>إكسسوارات</span><h2><a href="equipment-resistance-bands.html">حبال مقاومة</a></h2><p>حبال مقاومة تساعدك في العقلة، الإحماء، التدرج، وتمارين المرونة.</p><a href="academy-first-pull-up.html#assisted">دليل التدريب ↗</a></article>
+                <article class="wathba-catalog-fallback"><span>إكسسوارات</span><h2><a href="equipment-hand-gripper.html">هاند جريبر</a></h2><p>هاند جريبر لتقوية القبضة والساعد، مناسب للاعبين الكاليستنكس والتدريب اليومي.</p><a href="academy.html#grip">دليل التدريب ↗</a></article>
+                <article class="wathba-catalog-fallback"><span>إكسسوارات</span><h2><a href="equipment-grip-tape.html">جريب تيب</a></h2><p>جريب تيب لتحسين القبضة وتقليل الانزلاق أثناء تمارين البارات والحلقات.</p><a href="academy.html#grip">دليل التدريب ↗</a></article>
+                <article class="wathba-catalog-fallback"><span>السلم السويسري</span><h2><a href="equipment-swiss-ladder.html">السلم السويسري</a></h2><p>سلم حائط رياضي متعدد الاستخدامات لتدريبات التعلق، المرونة، الكور، وتمارين الجسم المختلفة، وينفذ حسب المساحة.</p><a href="academy.html#pulling">دليل التدريب ↗</a></article>
+                <article class="wathba-catalog-fallback"><span>جهاز كاليسثنكس متعدد</span><h2><a href="equipment-multi-rig.html">جهاز كاليسثنكس متعدد</a></h2><p>جهاز كاليسثنكس متعدد حسب الطلب، يمكن أن يحتوي على عقل، مونكي بارز، ديب بارز، وتجهيزات تدريب متنوعة حسب المساحة والهدف.</p><a href="academy.html#custom">دليل التدريب ↗</a></article>
+                <article class="wathba-catalog-fallback"><span>تجهيزات مخصصة</span><h2><a href="equipment-custom-orders.html">طلب تصنيع مخصص</a></h2><p>بدك قطعة غير موجودة؟ أرسل لنا صورة أو وصف أو قياسات المساحة، ونساعدك بتصميم وتنفيذ قطعة مناسبة.</p><a href="academy.html#custom">دليل التدريب ↗</a></article>
+            </div>
+        </section>
+    </main>
+    <div id="wathbaFooter"></div>
+
+    <!-- WATHBA_PRODUCTS_PAGE_TRANSLATION_START -->
+    <script id="wathba-products-page-translation">
+        (function () {
+            const productsPageText = {
+                en: {
+                    heroTitle: "EQUIPMENT",
+                    heroText:
+                        "Engineered for peak performance. Professional-grade calisthenics tools designed for athletes who demand uncompromising quality and durability."
+                },
+                ar: {
+                    heroTitle: "معدات الكاليستنكس",
+                    heroText:
+                        "معدات كاليسثنكس احترافية مصممة للثبات، القوة، والاستخدام الطويل. اختر المنتج المناسب واطلب مباشرة عبر واتساب."
+                }
+            };
+
+            function getLang() {
+                return localStorage.getItem("wathbaLang") || "en";
+            }
+
+            function applyProductsPageTranslation() {
+                const lang = getLang();
+                const text = document.getElementById("productsHeroText");
+
+                if (text) {
+                    text.textContent = productsPageText[lang].heroText;
+
+                    if (lang === "ar") {
+                        text.classList.add("wathba-ar-text");
+                    } else {
+                        text.classList.remove("wathba-ar-text");
+                    }
+                }
+
+                const heading = document.querySelector("main section h1");
+                if (heading) heading.textContent = productsPageText[lang].heroTitle;
+
+                document.title =
+                    lang === "ar"
+                        ? "معدات الكاليستنكس والعقلة والباراليتس | وثبة الأردن"
+                        : "Pull-up Bars, Parallettes & Calisthenics Gear | WATHBA Jordan";
+            }
+
+            document.addEventListener("DOMContentLoaded", applyProductsPageTranslation);
+            document.addEventListener("wathba:langchange", applyProductsPageTranslation);
+        })();
+    </script>
+    <!-- WATHBA_PRODUCTS_PAGE_TRANSLATION_END -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/products-data.js"></script>
+    <script src="assets/js/whatsapp.js"></script>
+    <script src="assets/js/products.js"></script>
+    <script src="assets/js/shared-ui.js"></script>
+</body>
+
+</html>

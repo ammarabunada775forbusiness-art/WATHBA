@@ -1,0 +1,54 @@
+/* Product editorial content stays in the HTML, even when shop scripts are absent. */
+.wathba-product-static, .wathba-product-education {
+  color: #f0ede8;
+  font-family: "Be Vietnam Pro", "Noto Sans Arabic", sans-serif;
+  line-height: 1.85;
+}
+.wathba-product-static *, .wathba-product-education * { box-sizing: border-box; }
+.wathba-product-wrap { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+.wathba-product-crumb { font-size: 14px; color: #aaa49b; margin: 0 0 26px; }
+.wathba-product-crumb a { color: #d5cbc0; text-underline-offset: 4px; }
+.wathba-product-crumb span { margin-inline: 8px; }
+.wathba-product-static { padding-block: 10px 45px; }
+.wathba-static-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(26px, 5vw, 70px); align-items: center; }
+.wathba-static-art { display: grid; place-content: center; text-align: center; min-height: 350px; aspect-ratio: 4 / 3; border-radius: 12px; background: radial-gradient(circle at 70% 20%, #36312a, #181716 65%); border: 1px solid #45413b; }
+.wathba-static-art strong { font: clamp(52px, 9vw, 105px) Anton, sans-serif; letter-spacing: .07em; opacity: .37; line-height: 1; }
+.wathba-static-art span { font-size: 13px; letter-spacing: .2em; color: #c6bbaa; }
+.wathba-static-category, .wathba-product-eyebrow { display: block; color: #c6bbaa; font-size: 13px; font-weight: 700; letter-spacing: .08em; margin-bottom: 15px; }
+.wathba-product-static h1 { font-size: clamp(36px, 5vw, 65px); line-height: 1.17; font-weight: 800; margin-bottom: 16px; }
+.wathba-product-static p { font-size: 17px; color: #d4d0ca; }
+.wathba-static-options { margin-top: 24px; }
+.wathba-static-options strong { display: block; }
+.wathba-static-options ul { padding-inline-start: 24px; margin-top: 9px; }
+.wathba-static-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+.wathba-static-actions a { display: inline-flex; justify-content: center; align-items: center; border: 1px solid #c6bbaa; border-radius: 999px; padding: 10px 19px; color: #fff; text-decoration: none; font-weight: 700; }
+.wathba-static-actions a:hover { background: #f0eae1; color: #171615; }
+.wathba-product-education { padding-top: 40px; }
+.wathba-product-education h2 { font-size: clamp(28px, 3vw, 42px); font-weight: 800; line-height: 1.28; }
+.wathba-product-education h3 { font-size: clamp(21px, 2vw, 26px); font-weight: 750; line-height: 1.4; margin-bottom: 10px; }
+.wathba-product-education p, .wathba-product-education li { font-size: 16px; line-height: 1.9; color: #d6d0c8; }
+.wathba-product-education ul { padding-inline-start: 26px; }
+.wathba-product-education li + li { margin-top: 8px; }
+.wathba-product-intro { max-width: 760px; margin: 13px 0 31px; }
+.wathba-product-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.wathba-product-box { min-width: 0; padding: clamp(24px, 3vw, 37px); border: 1px solid rgba(255,255,255,.14); border-radius: 17px; background: #1d1c1a; }
+.wathba-product-box + .wathba-product-box { background: #24221e; }
+.wathba-product-box.full { grid-column: 1 / -1; }
+.wathba-product-box p + p { margin-top: 12px; }
+.wathba-product-faq { margin-block: 24px; padding: 24px 0; border-top: 1px solid rgba(255,255,255,.14); border-bottom: 1px solid rgba(255,255,255,.14); }
+.wathba-product-footlinks { display: flex; flex-wrap: wrap; gap: 10px; padding-block: 6px 50px; }
+.wathba-product-footlinks a { color: #f0eae1; border: 1px solid #6e675f; border-radius: 999px; padding: 9px 15px; font-size: 14px; text-decoration: none; }
+.wathba-product-footlinks a:hover { border-color: #fff; }
+.wathba-product-static a:focus-visible, .wathba-product-education a:focus-visible, .wathba-catalog-fallback a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.wathba-catalog-fallback { border: 1px solid #48423b; background: #201e1a; border-radius: 12px; min-height: 200px; padding: 26px; }
+.wathba-catalog-fallback span { color: #c6bbaa; font-size: 12px; }
+.wathba-catalog-fallback h2 { font-size: 23px; font-weight: 750; line-height: 1.4; margin-block: 12px; }
+.wathba-catalog-fallback p { line-height: 1.8; color: #d2ccc4; }
+.wathba-catalog-fallback a { color: #f0ede8; text-underline-offset: 5px; }
+html[lang="ar"] #productsHeading { font-size: clamp(42px, 8vw, 105px); line-height: 1.2; }
+@media (max-width: 720px) {
+  .wathba-product-wrap { width: calc(100% - 32px); }
+  .wathba-static-panel, .wathba-product-columns { grid-template-columns: 1fr; }
+  .wathba-static-art { min-height: 250px; }
+  .wathba-product-box.full { grid-column: 1; }
+}
