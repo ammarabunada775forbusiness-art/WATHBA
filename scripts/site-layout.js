@@ -53,15 +53,14 @@ function header(filename, lang) {
 }
 function footer(lang) {
   const t = text(lang);
-  return `<footer class="site-footer"><div class="site-container"><div class="footer-grid"><div class="footer-brand"><a href="${pageUrl("index",lang)}" class="wathba-logo" lang="en">WATHBA</a><p>${t("معدات كاليستنكس من الأردن. تعلّم الحركة، اختر المعدّة، وابنِ مساحة تدريب تناسبك.", "Calisthenics equipment from Jordan. Learn the movement, choose your equipment and build a space that fits you.")}</p><div class="menu-socials">${Object.values(config.socials).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)}</a>`).join("")}</div></div>
-    <div><h2>${t("اكتشف وثبة","Explore WATHBA")}</h2><ul><li><a href="${pageUrl("products",lang)}">${t("جميع المعدات","All equipment")}</a></li><li><a href="${pageUrl("academy",lang)}">${t("أكاديمية وثبة","WATHBA Academy")}</a></li><li><a href="${pageUrl("about",lang)}">${t("عن وثبة","About WATHBA")}</a></li><li><a href="${productUrl("custom-orders",lang)}">${t("تجهيزات حسب الطلب","Custom equipment")}</a></li></ul></div>
-    <div><h2>${t("لنتحدث عن تجهيزك","Let's plan your setup")}</h2><ul><li>${t("عمّان، الأردن","Amman, Jordan")}</li><li><a href="${waUrl(t("مرحبًا وثبة، أريد الاستفسار عن المعدات.","Hi WATHBA, I would like to ask about your equipment."))}" target="_blank" rel="noopener noreferrer" dir="ltr">+962 79 175 2349</a></li><li><a href="${pageUrl("contact",lang)}">${t("تواصل معنا","Contact us")} ↗</a></li></ul></div></div><div class="footer-bottom"><span>© 2026 WATHBA</span><span>${t("الطلب وتأكيد التفاصيل عبر واتساب","Orders and final details confirmed through WhatsApp")}</span></div></div></footer>
-    <div id="sharedWhatsApp"><div class="whatsapp-widget"><a class="whatsapp-float" href="${waUrl(t("مرحبًا وثبة، أحتاج مساعدة في اختيار المعدّة.","Hi WATHBA, I need help choosing equipment."))}" target="_blank" rel="noopener noreferrer" aria-label="${t("راسل وثبة عبر واتساب","Message WATHBA on WhatsApp")}">${icon("whatsapp")}</a></div></div>
+  let original = fs.readFileSync(path.resolve(__dirname, "..", "content", "pages", lang, "footer.html"), "utf8").trim();
+  if (lang === "en") original = original.replace(/href="(index|products|about|contact)\.html(?=["?#])/g, 'href="$1-en.html');
+  return original + `\n    <div id="sharedWhatsApp"><div class="whatsapp-widget"><a class="whatsapp-float" href="${waUrl(t("مرحبًا وثبة، أحتاج مساعدة في اختيار المعدّة.","Hi WATHBA, I need help choosing equipment."))}" target="_blank" rel="noopener noreferrer" aria-label="${t("راسل وثبة عبر واتساب","Message WATHBA on WhatsApp")}">${icon("whatsapp")}</a></div></div>
     <div class="wathba-cart-drawer" id="wathbaCartDrawer" hidden></div><div class="wathba-toast" id="wathbaToast" role="status" aria-live="polite" hidden></div>`;
 }
 function layout({ filename, lang, title, description, main, scripts = [], academy = false, noindex = false, type = "website" }) {
   return `<!doctype html>
-<html lang="${lang}" dir="${lang === "ar" ? "rtl" : "ltr"}" class="dark">
+<html lang="${lang}" dir="${lang === "ar" ? "rtl" : "ltr"}" class="dark" data-wathba-lang="${lang}">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(title)}</title><meta name="description" content="${esc(description)}">
@@ -70,10 +69,10 @@ ${noindex ? '  <meta name="robots" content="noindex,follow">\n' : ''}
   <link rel="icon" href="assets/images/wathba-mark.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/${lang === "ar" ? "noto-sans-arabic-arabic-wght-normal.woff2" : "be-vietnam-pro-latin-400-normal.woff2"}" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/shared-ui.css"><link rel="stylesheet" href="assets/css/academy.css"><link rel="stylesheet" href="assets/css/site.css">
+  ${academy ? "" : '<link rel="stylesheet" href="assets/css/classic-utilities.css">'}\n  <link rel="stylesheet" href="assets/css/shared-ui.css"><link rel="stylesheet" href="assets/css/academy.css"><link rel="stylesheet" href="assets/css/site.css">\n  ${academy ? "" : '<link rel="stylesheet" href="assets/css/classic.css"><link rel="stylesheet" href="assets/css/product-seo.css">'}
   ${["ui", "config", "products-data", "shared-ui", ...scripts].map(name=>`<script src="assets/js/${name}.js" defer></script>`).join("\n  ")}
 </head>
-<body class="site-page${academy ? " academy-page" : ""}" data-site-lang="${lang}">
+<body class="site-page${academy ? " academy-page" : ""}" data-site-lang="${lang}"${academy ? "" : ` data-classic-page="${filename.startsWith("equipment-") ? "equipment" : filename.replace(/-en\.html$|\.html$/g, "")}"`}>
   ${header(filename,lang)}
   ${main}
   ${footer(lang)}

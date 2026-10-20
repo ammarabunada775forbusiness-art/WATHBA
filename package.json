@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "node scripts/serve-site.js",
-    "build": "node scripts/build-site.js && node scripts/check-site.js",
+    "build": "node scripts/prepare-classic-media.js && node scripts/build-site.js && node scripts/check-site.js",
     "test": "node scripts/check-site.js",
     "test:browser": "node tests/browser.cjs"
   },

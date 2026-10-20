@@ -31,12 +31,14 @@ let browser;
     for(const filename of pages) {
       await page.goto(`${base}/${filename}`,{waitUntil:"load"});
       await page.evaluate(()=>document.fonts.ready);
-      const state=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth+1,h1:document.querySelectorAll("h1").length,body:getComputedStyle(document.body).backgroundColor,menu:document.querySelector(".wathba-menu-toggle").getBoundingClientRect().width,main:getComputedStyle(document.querySelector("main")).display}));
+      const state=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth+1,h1:document.querySelectorAll("h1").length,body:getComputedStyle(document.body).backgroundColor,menu:document.querySelector(".wathba-menu-toggle").getBoundingClientRect().width,main:getComputedStyle(document.querySelector("main")).display,accent:getComputedStyle(document.body).getPropertyValue("--w-accent").trim(),classic:!!document.querySelector("main.classic-main"),academy:document.body.classList.contains("academy-page")}));
       assert.equal(state.overflow,false,`${filename} horizontal overflow at ${width}`);
       assert.equal(state.h1,1,`${filename} H1`);
-      assert.equal(state.body,"rgb(19, 19, 19)",`${filename} Academy background`);
+      assert.equal(state.body,"rgb(19, 19, 19)",`${filename} original storefront background`);
       assert.ok(state.menu>=38,`${filename} menu button visible`);
       assert.notEqual(state.main,"none");
+      assert.equal(state.accent,"#ffffff",`${filename} original white accent`);
+      if (/^(index|products|about|contact|equipment-)/.test(filename)) assert.equal(state.classic,true,`${filename} restored storefront layout`);
     }
   }
   for(const width of [320,768]) {
