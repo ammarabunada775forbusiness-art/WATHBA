@@ -162,3 +162,9 @@ html[dir="rtl"] .wathba-toast { transform: translateX(50%); }
  .wathba-footer-brand, .wathba-footer-contact, .wathba-footer-bottom { grid-column: 1/-1; }
  .wathba-footer-col { grid-column: span 1; }
 }
+
+@media(max-width:850px) {
+ .site-header .wathba-top-tools .wathba-lang-btn,
+ .site-header .wathba-top-tools .wathba-cart-toggle,
+ .site-header .wathba-top-tools .wathba-menu-toggle { width:42px; min-width:42px; height:42px; }
+}

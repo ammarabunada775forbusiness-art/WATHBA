@@ -98,7 +98,7 @@
     if (!drawer) return;
     closeMenu();
     lastCartFocus = document.activeElement;
-    renderCart(); drawer.hidden = false;
+    renderCart(); drawer.hidden = false; drawer.classList.add("open");
     document.body.classList.add("overlay-open");
     document.querySelector(".wathba-cart-toggle")?.setAttribute("aria-expanded", "true");
     setBackgroundInert(true);
@@ -106,14 +106,14 @@
   }
   function closeCart() {
     if (!drawer || drawer.hidden) return;
-    drawer.hidden = true; document.body.classList.remove("overlay-open");
+    drawer.hidden = true; drawer.classList.remove("open"); document.body.classList.remove("overlay-open");
     setBackgroundInert(false);
     document.querySelector(".wathba-cart-toggle")?.setAttribute("aria-expanded", "false");
     lastCartFocus?.focus();
   }
   function closeMenu(returnFocus = false) {
     if (!menu || menu.hidden) return;
-    menu.hidden = true;
+    menu.hidden = true; menu.classList.remove("open");
     const toggle = document.querySelector(".wathba-menu-toggle");
     toggle?.setAttribute("aria-expanded", "false");
     if (toggle) { toggle.setAttribute("aria-label", t("افتح القائمة", "Open menu")); toggle.innerHTML = icon("menu"); }
@@ -122,7 +122,7 @@
   function openMenu() {
     if (!menu) return;
     if (drawer && !drawer.hidden) closeCart();
-    menu.hidden = false;
+    menu.hidden = false; menu.classList.add("open");
     const toggle = document.querySelector(".wathba-menu-toggle");
     toggle?.setAttribute("aria-expanded", "true");
     if (toggle) { toggle.setAttribute("aria-label", t("أغلق القائمة", "Close menu")); toggle.innerHTML = icon("close"); }

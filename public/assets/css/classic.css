@@ -5528,3 +5528,11 @@ html[lang="ar"] .classic-equipment-intro h1 { font: 850 clamp(32px,4vw,52px)/1.4
  .wathba-mobile-menu .menu-links,.wathba-mobile-menu .menu-categories,.wathba-mobile-menu .menu-socials { padding: 0 !important; }
 }
 @media(prefers-reduced-motion:reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Match the current accessible controls to the restored open/closed states. */
+.site-header .wathba-top-tools .wathba-lang-btn,
+.site-header .wathba-top-tools .wathba-cart-toggle,
+.site-header .wathba-top-tools .wathba-menu-toggle { width: 42px !important; min-width: 42px !important; height: 42px !important; }
+.site-header .site-nav-links a { font-size: 14px; }
+html[lang="ar"] .site-header .site-nav-links a { font-size: 16px; }
+.wathba-toast:not([hidden]) { opacity: 1 !important; visibility: visible !important; pointer-events: none !important; }
