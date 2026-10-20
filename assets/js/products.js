@@ -1,338 +1,41 @@
-let currentLang = localStorage.getItem("wathbaLang") || "ar";
-let currentFilter = new URLSearchParams(window.location.search).get("filter") || "all";
-const filtersContainer = document.getElementById("categoryFilters");
-const productsContainer = document.getElementById("allProducts");
-
-const productGroups = [
-  {
-    key: "all",
-    ar: "كل المعدات",
-    en: "All Equipment",
-    ids: []
-  },
-  {
-    key: "bars",
-    ar: "بارات السحب",
-    en: "Pull-up Bars",
-    ids: ["wall-pull-up-bar", "monkey-bars"]
-  },
-  {
-    key: "parallettes",
-    ar: "باراليتس",
-    en: "Parallettes",
-    ids: ["steel-wood-parallettes", "full-wooden-parallettes"]
-  },
-  {
-    key: "parallel-bars",
-    ar: "متوازي وديب بار",
-    en: "Parallel & Dip Bars",
-    ids: [
-      "freestanding-parallel-bars-small",
-      "freestanding-parallel-bars-large",
-      "wall-mounted-dip-bars"
-    ]
-  },
-  {
-    key: "rings",
-    ar: "حلقات جمباز",
-    en: "Gymnastic Rings",
-    ids: ["gymnastic-rings"]
-  },
-  {
-    key: "accessories",
-    ar: "إكسسوارات",
-    en: "Accessories",
-    ids: ["hand-gripper", "resistance-bands", "grip-tape"]
-  },
-  {
-    key: "swiss-ladder",
-    ar: "السلم السويسري",
-    en: "Swiss Ladder",
-    ids: ["swiss-ladder"]
-  },
-  {
-    key: "multi-rig",
-    ar: "جهاز متعدد",
-    en: "Multi Rig",
-    ids: ["multi-rig"]
-  },
-  {
-    key: "custom",
-    ar: "طلبات مخصصة",
-    en: "Custom Orders",
-    ids: ["custom-orders"]
+// Filter the existing static cards. Product text and links never depend on JS.
+(function () {
+  const cards = Array.from(document.querySelectorAll("#allProducts [data-product-card]"));
+  const filters = Array.from(document.querySelectorAll("[data-filter]"));
+  const search = document.getElementById("productSearch");
+  const count = document.getElementById("catalogCount");
+  const empty = document.getElementById("catalogEmpty");
+  const lang = document.documentElement.lang;
+  if (!cards.length || !search || !count) return;
+  let currentFilter = "all";
+  const normalize = value => value.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f\u064b-\u065f\u0670\u0640]/g, "").replace(/[أإآ]/g,"ا").replace(/ة/g,"ه");
+  function readQuery() {
+    const params = new URLSearchParams(window.location.search);
+    const filter = params.get("filter") || "all";
+    currentFilter = filters.some(button => button.dataset.filter === filter) ? filter : "all";
+    search.value = params.get("q") || "";
   }
-]
-
-if (!productGroups.some((group) => group.key === currentFilter)) {
-  currentFilter = "all";
-}
-
-function getCurrentLang() {
-  return localStorage.getItem("wathbaLang") || "ar";
-}
-
-function syncCurrentLang(langFromEvent = null) {
-  currentLang = langFromEvent || getCurrentLang();
-}
-
-function getFilteredProducts() {
-  if (currentFilter === "all") {
-    return products;
-  }
-
-  const group = productGroups.find((item) => item.key === currentFilter);
-
-  if (!group) {
-    return products;
-  }
-
-  return products.filter((product) => group.ids.includes(product.id));
-}
-
-function getProductGroupLabel(product) {
-  const group = productGroups.find((item) => item.ids.includes(product.id));
-
-  if (!group) {
-    return currentLang === "ar" ? "معدات" : "Equipment";
-  }
-
-  return group[currentLang];
-}
-
-function getProductDetailsUrl(product) {
-  return getProductPageUrl(product.id, currentLang);
-}
-
-function getVariantsOverlay(product) {
-  const variants = product.variants || [];
-
-  if (variants.length === 0) {
-    return `
-      <span class="font-label-caps text-label-caps text-primary mb-2">
-        ${currentLang === "ar" ? "حسب الطلب" : "Available on request"}
-      </span>
-
-      <div class="flex gap-2 flex-wrap justify-center">
-        <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
-          ${currentLang === "ar" ? "تواصل معنا" : "Contact us"}
-        </span>
-      </div>
-    `;
-  }
-
-  const title = currentLang === "ar" ? "القياسات / الأنواع" : "Sizes / Types";
-
-  return `
-    <span class="font-label-caps text-label-caps text-primary mb-2">${title}</span>
-
-    <div class="flex gap-2 flex-wrap justify-center">
-      ${variants
-      .map(
-        (variant) => `
-            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
-              ${variant[currentLang]}
-            </span>
-          `
-      )
-      .join("")}
-    </div>
-  `;
-}
-
-function renderFilters() {
-  if (!filtersContainer) return;
-
-  syncCurrentLang();
-
-  filtersContainer.innerHTML = productGroups
-    .map((group) => {
-      const isActive = group.key === currentFilter;
-
-      return `
-        <button
-          class="${isActive
-          ? "bg-primary text-background"
-          : "border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary"
-        } px-8 py-3 rounded-full font-label-caps text-label-caps uppercase transition-all active:scale-95"
-          type="button"
-          data-filter="${group.key}"
-        >
-          ${group[currentLang]}
-        </button>
-      `;
-    })
-    .join("");
-
-  filtersContainer.querySelectorAll("[data-filter]").forEach((button) => {
-    button.addEventListener("click", () => {
-      currentFilter = button.dataset.filter;
+  function apply(updateUrl = true) {
+    const query = normalize(search.value.trim());
+    let visible = 0;
+    cards.forEach(card => {
+      const match = (currentFilter === "all" || card.dataset.category === currentFilter) && normalize(card.dataset.search).includes(query);
+      card.hidden = !match;
+      if (match) visible++;
+    });
+    filters.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.filter === currentFilter)));
+    count.textContent = lang === "ar" ? `${visible} من ${cards.length} منتجًا` : `${visible} of ${cards.length} products`;
+    empty.hidden = visible > 0;
+    if (updateUrl) {
       const url = new URL(window.location.href);
-
-      if (currentFilter === "all") {
-        url.searchParams.delete("filter");
-      } else {
-        url.searchParams.set("filter", currentFilter);
-      }
-
-      window.history.replaceState(null, "", url);
-      renderFilters();
-      renderProducts();
-    });
-  });
-}
-
-function renderProducts() {
-  if (!productsContainer) return;
-  productsContainer.classList.add("wathba-products-grid");
-  syncCurrentLang();
-
-  const visibleProducts = getFilteredProducts();
-
-  productsContainer.innerHTML = visibleProducts
-    .map((product) => {
-      const productName = product.name[currentLang];
-      const productDescription = product.description[currentLang];
-      const priceText = getProductPriceText(product, currentLang);
-      const groupLabel = getProductGroupLabel(product);
-      const detailsUrl = getProductDetailsUrl(product);
-
-      return `
-        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
-          
-          <a href="${detailsUrl}" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="${productName}">
-            
-            <div
-              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
-              style="display:none;"
-            >
-              WATHBA
-            </div>
-
-            <img
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              src="${product.image}"
-              alt="${productName}"
-              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
-            />
-
-           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
-              ${getVariantsOverlay(product)}
-            </div>
-          </a>
-
-          <div class="p-8 flex flex-col flex-grow ${currentLang === "ar" ? "text-right" : ""}">
-            <div class="flex justify-between items-start gap-4 mb-2">
-              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
-                <a href="${detailsUrl}" class="hover:text-primary transition-colors">
-                  ${productName}
-                </a>
-              </h3>
-
-              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
-                ${groupLabel}
-              </span>
-            </div>
-
-            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
-              ${productDescription}
-            </p>
-
-            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
-              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
-                ${priceText}
-              </span>
-
-              <div class="flex items-center gap-2 product-card-actions">
-                <a
-                  href="${detailsUrl}"
-                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
-                >
-                  ${currentLang === "ar" ? "التفاصيل" : "Details"}
-                </a>
-
-                <button
-  class="wathba-add-cart-btn"
-  type="button"
-  data-product-id="${product.id}"
->
-  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
-<span>
-  ${(product.variants || []).length > 1
-          ? (currentLang === "ar" ? "اختر القياس" : "Choose Size")
-          : (currentLang === "ar" ? "أضف للسلة" : "Add to Cart")}
-</span></button>
-              </div>
-            </div>
-            <a class="wathba-academy-card-link" href="${getAcademyGuide(product.id, currentLang)}">
-              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
-              ${currentLang === "ar" ? "تعلّم التمارين المناسبة" : "Explore the training guide"}
-            </a>
-          </div>
-        </article>
-      `;
-    })
-    .join("");
-
-  productsContainer.querySelectorAll("[data-product-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const product = products.find((item) => item.id === button.dataset.productId);
-
-      if (product) {
-        const variants = Array.isArray(product.variants) ? product.variants : [];
-
-        if (variants.length > 1) {
-          window.location.href = getProductPageUrl(product.id, currentLang);
-          return;
-        }
-
-        const singleVariant = variants.length === 1 ? variants[0] : null;
-
-        if (window.WathbaCart) {
-          window.WathbaCart.addProduct(product, singleVariant);
-        } else {
-          openWhatsApp(product, singleVariant);
-        }
-      }
-    });
-  });
-}
-
-function refreshProductsPage(langFromEvent = null) {
-  syncCurrentLang(langFromEvent);
-  renderFilters();
-  renderProducts();
-}
-
-document.addEventListener("wathba:langchange", function (event) {
-  const newLang = event.detail && event.detail.lang ? event.detail.lang : null;
-
-  setTimeout(function () {
-    refreshProductsPage(newLang);
-  }, 50);
-});
-
-document.addEventListener("click", function (event) {
-  if (event.target.closest(".wathba-lang-btn")) {
-    setTimeout(function () {
-      refreshProductsPage();
-    }, 120);
+      if (currentFilter === "all") url.searchParams.delete("filter"); else url.searchParams.set("filter",currentFilter);
+      if (search.value.trim()) url.searchParams.set("q",search.value.trim()); else url.searchParams.delete("q");
+      history.replaceState(null,"",url);
+    }
   }
-});
-
-function initProductsPage() {
-  if (!filtersContainer || !productsContainer) return;
-
-  if (typeof products === "undefined" || !Array.isArray(products)) {
-    setTimeout(initProductsPage, 80);
-    return;
-  }
-
-  refreshProductsPage();
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initProductsPage);
-} else {
-  initProductsPage();
-}
+  filters.forEach(button => button.addEventListener("click", () => { currentFilter = button.dataset.filter; apply(); }));
+  search.addEventListener("input", () => apply());
+  document.querySelector("[data-clear-filters]")?.addEventListener("click", () => { currentFilter = "all"; search.value = ""; apply(); search.focus(); });
+  window.addEventListener("popstate", () => { readQuery(); apply(false); });
+  readQuery(); apply(false);
+})();

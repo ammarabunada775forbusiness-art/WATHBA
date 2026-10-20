@@ -1,0 +1,11 @@
+{
+  "name": "wathba-storefront",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node scripts/build-site.js",
+    "test": "python3 scripts/check-site.py",
+    "test:browser": "node tests/browser.cjs"
+  },
+  "devDependencies": { "playwright": "1.62.1" }
+}

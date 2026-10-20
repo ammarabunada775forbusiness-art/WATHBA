@@ -1,12 +1,14 @@
 /* WATHBA Academy: static, readable articles that match the shop's dark UI. */
+.site-page {
+  --academy-ink: var(--w-ink);
+  --academy-muted: var(--w-muted);
+  --academy-edge: var(--w-line);
+  --academy-panel: var(--w-panel);
+}
 .academy-page {
-  --academy-ink: #efebe7;
-  --academy-muted: #ada8a3;
-  --academy-edge: rgba(255, 255, 255, .13);
-  --academy-panel: #1c1b1a;
-  background: #131313;
+  background: var(--w-bg);
   color: var(--academy-ink);
-  font-family: "Be Vietnam Pro", "Noto Sans Arabic", sans-serif;
+  font-family: var(--w-font);
   line-height: 1.8;
 }
 .academy-page * { box-sizing: border-box; }
@@ -14,14 +16,14 @@
 .academy-page a { color: #f4f0ea; text-underline-offset: 4px; }
 .academy-page a:focus-visible, .academy-page button:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
 .academy-page nav a { text-decoration: none; }
-.academy-main { padding-top: 104px; }
+.academy-main { padding-top: 90px; }
 .academy-breadcrumb { padding-block: 24px 10px; color: var(--academy-muted); font-size: 14px; }
 .academy-breadcrumb a { color: var(--academy-muted); }
 .academy-breadcrumb span { margin-inline: 8px; }
 .academy-hero { position: relative; padding: clamp(42px, 7vw, 94px) 0 64px; overflow: hidden; border-bottom: 1px solid var(--academy-edge); }
 .academy-hero::before { content: ""; pointer-events: none; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 15%, rgba(215, 203, 182, .13), transparent 54%); }
 .academy-hero > .academy-container { position: relative; }
-.academy-eyebrow { display: inline-block; margin-bottom: 18px; color: #c6bbaa; font: 700 12px "Be Vietnam Pro", "Noto Sans Arabic", sans-serif; text-transform: uppercase; letter-spacing: .13em; }
+.academy-eyebrow { display: inline-block; margin-bottom: 18px; color: var(--w-accent); font: 700 12px var(--w-font); text-transform: uppercase; letter-spacing: .08em; }
 .academy-hero h1 { max-width: 930px; font-size: clamp(38px, 6vw, 78px); font-weight: 800; line-height: 1.18; letter-spacing: -.035em; }
 .academy-hero p { max-width: 750px; margin-top: 22px; color: var(--academy-muted); font-size: clamp(16px, 1.8vw, 20px); }
 .academy-pills { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 27px; }
@@ -60,7 +62,7 @@
 .academy-figure img { display: block; width: 100%; max-height: 580px; object-fit: cover; border: 1px solid var(--academy-edge); border-radius: 16px; }
 .academy-figure figcaption { color: var(--academy-muted); font-size: 13px; line-height: 1.65; margin-top: 8px; }
 .academy-products { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 21px; }
-.academy-products a, .academy-button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; border-radius: 999px; border: 1px solid rgba(255,255,255,.30); padding: 11px 18px; font-size: 14px; font-weight: 700; text-decoration: none; transition: background .2s, color .2s; }
+.academy-products a, .academy-button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 46px; border-radius: 999px; border: 1px solid var(--w-line); padding: 11px 18px; font-size: 14px; font-weight: 700; text-decoration: none; transition: background .2s, color .2s, border-color .2s; }
 .academy-products a:hover, .academy-button:hover { color: #141414; background: #f2efe9; }
 .academy-faq details { padding: 17px 0; border-bottom: 1px solid var(--academy-edge); }
 .academy-faq summary { cursor: pointer; color: #f6f2ed; font-weight: 700; font-size: 18px; }
@@ -74,4 +76,4 @@
 .wathba-academy-detail-link { display: flex; gap: 12px; align-items: center; width: 100%; padding: 18px 20px; margin-top: 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 14px; color: #fff; background: #242320; line-height: 1.6; font-weight: 700; }
 .wathba-academy-detail-link:hover { border-color: rgba(255,255,255,.6); }
 @media (max-width: 900px) { .academy-article-layout { grid-template-columns: 1fr; } .academy-toc { position: static; grid-row: 1; margin: 18px 0 0; } }
-@media (max-width: 700px) { .academy-main { padding-top: 70px; } .academy-container { width: min(100% - 32px, 1160px); } .academy-hero { padding: 34px 0 45px; } .academy-section { padding-block: 43px; } .academy-grid, .academy-grid.two { grid-template-columns: 1fr; } .academy-card { padding: 23px; } }
+@media (max-width: 700px) { .academy-main { padding-top: 74px; } .academy-container { width: min(100% - 32px, 1160px); } .academy-hero { padding: 34px 0 45px; } .academy-section { padding-block: 43px; } .academy-grid, .academy-grid.two { grid-template-columns: 1fr; } .academy-card { padding: 23px; } }

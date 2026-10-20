@@ -443,6 +443,18 @@ const products = [
 
 window.WATHBA_PRODUCTS = products;
 
+// One category map powers the catalog, navigation and static builder.
+window.WATHBA_CATEGORIES = [
+    { key: "bars", ar: "بارات السحب", en: "Pull-up Bars", ids: ["wall-pull-up-bar", "monkey-bars"] },
+    { key: "parallettes", ar: "باراليتس", en: "Parallettes", ids: ["steel-wood-parallettes", "full-wooden-parallettes"] },
+    { key: "parallel-bars", ar: "متوازي وديب بار", en: "Parallel & Dip Bars", ids: ["freestanding-parallel-bars-small", "freestanding-parallel-bars-large", "wall-mounted-dip-bars"] },
+    { key: "rings", ar: "حلقات جمباز", en: "Gymnastic Rings", ids: ["gymnastic-rings"] },
+    { key: "accessories", ar: "إكسسوارات", en: "Accessories", ids: ["hand-gripper", "resistance-bands", "grip-tape"] },
+    { key: "swiss-ladder", ar: "السلم السويسري", en: "Swiss Ladder", ids: ["swiss-ladder"] },
+    { key: "multi-rig", ar: "جهاز متعدد", en: "Multi Rig", ids: ["multi-rig"] },
+    { key: "custom", ar: "طلبات مخصصة", en: "Custom Orders", ids: ["custom-orders"] }
+];
+
 function getProductPageUrl(productId, lang) {
     const productExists = products.some((item) => item.id === productId);
     if (!productExists) return `product.html?id=${encodeURIComponent(productId)}`;
