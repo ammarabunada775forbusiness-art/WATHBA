@@ -27,6 +27,18 @@ html.dark body {
    Mobile First / WhatsApp Only
 ========================= */
 
+/* The original storefront palette is shared by the shop and Academy. */
+:root {
+  --wathba-bg: #131313;
+  --wathba-panel: #1c1b1b;
+  --wathba-panel-raised: #2a2a2a;
+  --wathba-text: #e5e2e1;
+  --wathba-muted: #c4c7c8;
+  --wathba-accent: #ffffff;
+  --wathba-edge: rgba(255, 255, 255, .14);
+  --wathba-motion: .2s ease;
+}
+
 html,
 body {
   overflow-x: hidden;
@@ -349,8 +361,8 @@ html[dir="rtl"] .wathba-mega-feature-card {
    Desktop Nav
 ========================= */
 
-nav a.active,
-header a.active {
+nav.fixed a.active,
+header.fixed a.active {
   color: #ffffff !important;
   border-bottom: 2px solid #ffffff;
   padding-bottom: 4px;
@@ -627,22 +639,22 @@ html[data-wathba-lang="ar"] .wathba-ar-text {
     font-size: 11px !important;
   }
 
-  nav .hidden,
-  header .hidden,
-  nav .hidden.md\:flex,
-  header .hidden.md\:flex {
+  nav.fixed .hidden,
+  header.fixed .hidden,
+  nav.fixed .hidden.md\:flex,
+  header.fixed .hidden.md\:flex {
     display: none !important;
   }
 
-  nav,
-  header {
+  nav.fixed,
+  header.fixed {
     min-height: 70px !important;
     overflow: visible !important;
   }
 
-  nav>div,
-  header>nav,
-  header>div {
+  nav.fixed>div,
+  header.fixed>nav,
+  header.fixed>div {
     width: 100% !important;
     padding-left: 18px !important;
     padding-right: 112px !important;
@@ -1072,9 +1084,9 @@ html[data-wathba-lang="ar"] .wathba-ar-text {
     height: 42px !important;
   }
 
-  nav>div,
-  header>nav,
-  header>div {
+  nav.fixed>div,
+  header.fixed>nav,
+  header.fixed>div {
     padding-right: 158px !important;
   }
 
@@ -1307,17 +1319,17 @@ html[data-wathba-lang="ar"] header.fixed .hidden.md\:flex a:not(.wathba-logo):no
 }
 
 /* Active page underline */
-nav a.active:not(.wathba-logo):not(.wathba-nav-logo),
-header a.active:not(.wathba-logo):not(.wathba-nav-logo) {
+nav.fixed a.active:not(.wathba-logo):not(.wathba-nav-logo),
+header.fixed a.active:not(.wathba-logo):not(.wathba-nav-logo) {
   color: #ffffff !important;
   border-bottom: 2px solid #ffffff !important;
   padding-bottom: 4px !important;
 }
 
-nav a.wathba-logo.active,
-header a.wathba-logo.active,
-nav a.wathba-nav-logo.active,
-header a.wathba-nav-logo.active {
+nav.fixed a.wathba-logo.active,
+header.fixed a.wathba-logo.active,
+nav.fixed a.wathba-nav-logo.active,
+header.fixed a.wathba-nav-logo.active {
   border-bottom: 0 !important;
   padding-bottom: 0 !important;
 }
@@ -1469,8 +1481,8 @@ body:has(#home) main {
     line-height: 0.9 !important;
   }
 
-  nav .hidden.md\:flex,
-  header .hidden.md\:flex {
+  nav.fixed .hidden.md\:flex,
+  header.fixed .hidden.md\:flex {
     display: none !important;
   }
 
@@ -1883,7 +1895,7 @@ html[dir="rtl"] body:has(#wathba-about-page-translation) main section:nth-of-typ
   height: auto !important;
   border-radius: 30px !important;
   background:
-    radial-gradient(circle at top right, rgba(37, 211, 102, 0.12), transparent 36%),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 36%),
     linear-gradient(180deg, #111111, #090909) !important;
   border: 1px solid rgba(255, 255, 255, 0.14) !important;
   border-left: 1px solid rgba(255, 255, 255, 0.14) !important;
@@ -2948,14 +2960,14 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
     font-size: 15px;
   }
 
-  nav,
-  header {
+  nav.fixed,
+  header.fixed {
     min-height: 62px !important;
   }
 
-  nav>div,
-  header>nav,
-  header>div {
+  nav.fixed>div,
+  header.fixed>nav,
+  header.fixed>div {
     padding-left: 14px !important;
     padding-right: 104px !important;
     padding-top: 9px !important;
@@ -3144,9 +3156,9 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
     font-size: 40px !important;
   }
 
-  nav>div,
-  header>nav,
-  header>div {
+  nav.fixed>div,
+  header.fixed>nav,
+  header.fixed>div {
     padding-right: 98px !important;
   }
 
@@ -4897,5 +4909,74 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
     direction: ltr !important;
     margin-left: 0 !important;
     margin-right: auto !important;
+  }
+}
+
+/* Shared controls keep the original geometry on every page. */
+nav.fixed .hidden.md\:flex a:not(.wathba-logo):not(.wathba-nav-logo) {
+  color: var(--wathba-muted);
+  text-decoration: none;
+}
+
+nav.fixed a:focus-visible,
+.wathba-top-tools button:focus-visible,
+.wathba-mobile-menu a:focus-visible,
+.wathba-site-footer a:focus-visible,
+.wathba-cart-panel :is(a, button, textarea):focus-visible {
+  outline: 2px solid var(--wathba-accent);
+  outline-offset: 4px;
+}
+
+html.wathba-overlay-open,
+html.wathba-overlay-open body {
+  overflow-y: hidden !important;
+}
+
+.wathba-mobile-menu {
+  max-height: calc(100dvh - 100px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.wathba-cart-body {
+  overscroll-behavior: contain;
+}
+
+.wathba-cart-backdrop {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+}
+
+.wathba-add-cart-btn {
+  background: var(--wathba-accent) !important;
+  color: var(--wathba-bg) !important;
+  box-shadow: none !important;
+}
+
+.wathba-add-cart-btn:hover {
+  background: var(--wathba-text) !important;
+}
+
+.wathba-cart-count,
+.wathba-cart-added-bubble {
+  background: var(--wathba-accent);
+  color: var(--wathba-bg);
+}
+
+:is(.wathba-lang-btn, .wathba-menu-toggle, .wathba-cart-toggle,
+    .wathba-cart-panel, .wathba-add-cart-btn, .wathba-site-footer a,
+    .academy-card, .academy-button, .academy-products a,
+    .wathba-academy-detail-link, .wathba-product-footlinks a) {
+  transition-duration: .2s;
+  transition-timing-function: ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
   }
 }

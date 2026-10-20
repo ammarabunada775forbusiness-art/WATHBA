@@ -334,8 +334,8 @@ function wathbaEnsureSharedShell() {
       "afterbegin",
       `
         <div class="wathba-top-tools">
-          <button class="wathba-lang-btn" type="button">AR</button>
-          <button class="wathba-menu-toggle" type="button" aria-label="Open menu">
+          <button class="wathba-lang-btn" type="button" aria-label="Switch language">AR</button>
+          <button class="wathba-menu-toggle" type="button" aria-label="Open menu" aria-controls="wathbaMobileMenu" aria-expanded="false">
             <span class="material-symbols-outlined">menu</span>
           </button>
         </div>
@@ -369,6 +369,7 @@ function wathbaApplyLanguage(lang) {
   const langButton = document.querySelector(".wathba-lang-btn");
   if (langButton) {
     langButton.textContent = lang === "ar" ? "EN" : "AR";
+    langButton.setAttribute("aria-label", lang === "ar" ? "Switch to English" : "التبديل إلى العربية");
   }
 
   wathbaRenderMobileMenu();
@@ -379,6 +380,7 @@ function wathbaApplyLanguage(lang) {
   wathbaNormalizeLinks();
   wathbaSetActiveLinks();
   wathbaNormalizeLogo();
+  wathbaUpdateMenuButton();
   wathbaReleaseUi();
 
   document.dispatchEvent(
@@ -476,7 +478,7 @@ let wathbaMegaCloseTimer = null;
 
 function wathbaPositionDesktopMegaMenu() {
   const megaMenu = document.getElementById("wathbaDesktopMegaMenu");
-  const nav = document.querySelector("nav.fixed, header.fixed, nav, header");
+  const nav = document.querySelector("nav.fixed, header.fixed");
 
   if (!megaMenu) return;
 
@@ -516,7 +518,7 @@ function wathbaIsProductsNavLink(link) {
 }
 
 function wathbaEnsureMegaMenuReady() {
-  if (window.innerWidth < 1024) return;
+  if (window.innerWidth <= 1024) return;
 
   if (!document.getElementById("wathbaDesktopMegaMenu")) {
     wathbaRenderDesktopMegaMenu();
@@ -526,7 +528,7 @@ function wathbaEnsureMegaMenuReady() {
 }
 
 function wathbaBindDesktopMegaTriggers() {
-  document.querySelectorAll("nav a, header a").forEach((link) => {
+  document.querySelectorAll("nav.fixed a, header.fixed a").forEach((link) => {
     if (!wathbaIsProductsNavLink(link)) return;
 
     link.classList.add("wathba-products-trigger");
@@ -699,7 +701,7 @@ function wathbaTranslateDesktopNav() {
     "contact.html": wathbaT("navContact")
   };
 
-  document.querySelectorAll("nav a, header a").forEach((link) => {
+  document.querySelectorAll("nav.fixed a, header.fixed a").forEach((link) => {
     if (link.dataset.wathbaLogo === "true") return;
     if (link.classList.contains("wathba-logo")) return;
     if (link.classList.contains("wathba-nav-logo")) return;
@@ -725,20 +727,22 @@ function wathbaSetActiveLinks() {
     صفحة تفاصيل المنتج product.html تعتبر من قسم المنتجات
     عشان يظل رابط المنتجات هو النشط.
   */
-  if (normalizedPath === "product.html") {
+  if (normalizedPath === "product.html" || normalizedPath.startsWith("equipment-")) {
     normalizedPath = "products.html";
   }
   if (normalizedPath.startsWith("academy-")) {
     normalizedPath = wathbaAcademyUrl();
   }
 
-  document.querySelectorAll("nav a, header a, .wathba-mobile-menu a").forEach((link) => {
+  document.querySelectorAll("nav.fixed a, header.fixed a, .wathba-mobile-menu-head a").forEach((link) => {
     if (link.classList.contains("wathba-logo")) return;
 
     const href = link.getAttribute("href") || "";
-    let linkPage = href.split("?")[0];
+    let linkPage = href.split(/[?#]/)[0];
 
     link.classList.toggle("active", linkPage === normalizedPath);
+    if (linkPage === normalizedPath) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
   });
 }
 
@@ -797,12 +801,32 @@ function wathbaNormalizeLinks() {
   });
 }
 
+function wathbaUpdateMenuButton() {
+  const button = document.querySelector(".wathba-menu-toggle");
+  if (!button) return;
+  const isOpen = document.getElementById("wathbaMobileMenu")?.classList.contains("open") || false;
+  button.setAttribute("aria-expanded", String(isOpen));
+  button.setAttribute("aria-label", wathbaGetLang() === "ar"
+    ? (isOpen ? "إغلاق القائمة" : "فتح القائمة")
+    : (isOpen ? "Close menu" : "Open menu"));
+  const icon = button.querySelector(".material-symbols-outlined");
+  if (icon) icon.textContent = isOpen ? "close" : "menu";
+}
+
+function wathbaSyncScrollLock() {
+  const isOpen = document.body.classList.contains("wathba-mobile-menu-is-open") ||
+    document.getElementById("wathbaCartDrawer")?.classList.contains("open");
+  document.documentElement.classList.toggle("wathba-overlay-open", Boolean(isOpen));
+}
+
 function wathbaSetMobileMenuOpen(isOpen) {
   const menu = document.getElementById("wathbaMobileMenu");
   if (!menu) return;
 
   menu.classList.toggle("open", isOpen);
   document.body.classList.toggle("wathba-mobile-menu-is-open", isOpen);
+  wathbaUpdateMenuButton();
+  wathbaSyncScrollLock();
 }
 
 function wathbaBindEvents() {
@@ -840,9 +864,9 @@ function wathbaBindEvents() {
   });
 
   document.addEventListener("pointerover", (event) => {
-    if (window.innerWidth < 1024) return;
+    if (window.innerWidth <= 1024) return;
 
-    const productsLink = event.target.closest("nav a, header a");
+    const productsLink = event.target.closest("nav.fixed a, header.fixed a");
 
     if (!wathbaIsProductsNavLink(productsLink)) return;
 
@@ -851,9 +875,9 @@ function wathbaBindEvents() {
   });
 
   document.addEventListener("focusin", (event) => {
-    if (window.innerWidth < 1024) return;
+    if (window.innerWidth <= 1024) return;
 
-    const productsLink = event.target.closest("nav a, header a");
+    const productsLink = event.target.closest("nav.fixed a, header.fixed a");
 
     if (!wathbaIsProductsNavLink(productsLink)) return;
 
@@ -863,8 +887,16 @@ function wathbaBindEvents() {
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
+      const wasOpen = document.body.classList.contains("wathba-mobile-menu-is-open");
       wathbaSetMobileMenuOpen(false);
+      wathbaCloseDesktopMegaMenu(0);
+      if (wasOpen) document.querySelector(".wathba-menu-toggle")?.focus();
     }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1024) wathbaSetMobileMenuOpen(false);
+    else wathbaCloseDesktopMegaMenu(0);
   });
 }
 
@@ -909,6 +941,7 @@ window.addEventListener("pageshow", () => {
   const CART_KEY = "wathbaCartItems";
   const PHONE = WATHBA_SHARED_PHONE;
   let cartNotesDraft = "";
+  let cartReturnFocus = null;
 
   function lang() {
     return localStorage.getItem("wathbaLang") || "ar";
@@ -1009,6 +1042,8 @@ window.addEventListener("pageshow", () => {
       const button = document.createElement("button");
       button.className = "wathba-cart-toggle";
       button.type = "button";
+      button.setAttribute("aria-controls", "wathbaCartDrawer");
+      button.setAttribute("aria-expanded", "false");
       button.innerHTML = `
         <span class="material-symbols-outlined">shopping_bag</span>
         <span class="wathba-cart-count">0</span>
@@ -1029,6 +1064,7 @@ window.addEventListener("pageshow", () => {
     }
 
     updateCount();
+    document.querySelector(".wathba-cart-toggle")?.setAttribute("aria-label", txt("فتح سلة الطلبات", "Open shopping cart"));
   }
 
   function addProduct(product, selectedVariant = null, quantity = 1, options = {}) {
@@ -1192,7 +1228,7 @@ Quantity: ${item.qty}`;
     drawer.innerHTML = `
     <div class="wathba-cart-backdrop" data-cart-close></div>
 
-    <aside class="wathba-cart-panel ${items.length ? "" : "is-empty"}" aria-label="${txt("سلة الطلبات", "Shopping cart")}">
+    <aside class="wathba-cart-panel ${items.length ? "" : "is-empty"}" role="dialog" aria-modal="true" aria-label="${txt("سلة الطلبات", "Shopping cart")}">
       <div class="wathba-cart-header">
         <div>
           <strong>WATHBA</strong>
@@ -1246,13 +1282,22 @@ Quantity: ${item.qty}`;
   }
 
   function openCart() {
+    cartReturnFocus = document.activeElement;
+    wathbaSetMobileMenuOpen(false);
+    wathbaCloseDesktopMegaMenu(0);
     ensureCartShell();
     renderCart();
     document.getElementById("wathbaCartDrawer")?.classList.add("open");
+    document.querySelector(".wathba-cart-toggle")?.setAttribute("aria-expanded", "true");
+    wathbaSyncScrollLock();
+    document.querySelector(".wathba-cart-close")?.focus({ preventScroll: true });
   }
 
   function closeCart() {
     document.getElementById("wathbaCartDrawer")?.classList.remove("open");
+    document.querySelector(".wathba-cart-toggle")?.setAttribute("aria-expanded", "false");
+    wathbaSyncScrollLock();
+    if (cartReturnFocus?.isConnected) cartReturnFocus.focus({ preventScroll: true });
   }
 
   document.addEventListener("click", function (event) {
@@ -1296,6 +1341,23 @@ Quantity: ${item.qty}`;
 
     if (notes) {
       cartNotesDraft = notes.value;
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    const drawer = document.getElementById("wathbaCartDrawer");
+    if (!drawer?.classList.contains("open")) return;
+    if (event.key === "Escape") closeCart();
+    if (event.key !== "Tab") return;
+    const controls = Array.from(drawer.querySelectorAll("a[href], button:not([disabled]), textarea"))
+      .filter((node) => node.getClientRects().length);
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (!first) return;
+    if (event.shiftKey && (document.activeElement === first || !drawer.contains(document.activeElement))) {
+      event.preventDefault(); last.focus();
+    } else if (!event.shiftKey && (document.activeElement === last || !drawer.contains(document.activeElement))) {
+      event.preventDefault(); first.focus();
     }
   });
 
