@@ -125,10 +125,10 @@ const WATHBA_MENU_FALLBACK_PRODUCTS = [
     image: "assets/images/products/grip-tape/1.webp"
   },
   {
-    id: "swiss-ladder",
-    ar: "السلم السويسري",
-    en: "Swiss Ladder",
-    image: "assets/images/products/swiss-ladder/1.webp"
+    id: "jump-rope",
+    ar: "حبل قفز",
+    en: "Jump Rope",
+    image: "assets/images/products/jump-rope/1.webp"
   },
   {
     id: "multi-rig",
@@ -281,13 +281,7 @@ const WATHBA_MENU_GROUPS = [
     key: "accessories",
     ar: "إكسسوارات",
     en: "Accessories",
-    ids: ["hand-gripper", "resistance-bands", "grip-tape"]
-  },
-  {
-    key: "swiss-ladder",
-    ar: "السلم السويسري",
-    en: "Swiss Ladder",
-    ids: ["swiss-ladder"]
+    ids: ["hand-gripper", "jump-rope", "grip-tape", "resistance-bands"]
   },
   {
     key: "multi-rig",
@@ -973,7 +967,8 @@ window.addEventListener("pageshow", () => {
 
   function readCart() {
     try {
-      return JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+      const items = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+      return Array.isArray(items) ? items.filter(item => item.id !== 'swiss-ladder') : [];
     } catch {
       return [];
     }

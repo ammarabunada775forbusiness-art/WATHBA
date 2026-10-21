@@ -42,13 +42,7 @@ const productGroups = [
     key: "accessories",
     ar: "إكسسوارات",
     en: "Accessories",
-    ids: ["hand-gripper", "resistance-bands", "grip-tape"]
-  },
-  {
-    key: "swiss-ladder",
-    ar: "السلم السويسري",
-    en: "Swiss Ladder",
-    ids: ["swiss-ladder"]
+    ids: ["hand-gripper", "jump-rope", "grip-tape", "resistance-bands"]
   },
   {
     key: "multi-rig",

@@ -45,6 +45,9 @@
 .academy-article-layout { display: grid; grid-template-columns: minmax(0, 1fr) 235px; gap: clamp(30px, 5vw, 75px); align-items: start; }
 .academy-article-layout > article { min-width: 0; }
 .academy-toc { position: sticky; top: 115px; margin-top: 55px; padding: 24px; border: 1px solid var(--academy-edge); border-radius: 16px; background: var(--academy-panel); }
+.academy-toc { max-height: calc(100dvh - 140px); overflow-y: auto; }
+.academy-table-wrap:focus-visible, .academy-faq summary:focus-visible { outline: 2px solid var(--wathba-accent); outline-offset: 4px; }
+.academy-article-layout .academy-table tbody th { background: transparent; color: var(--wathba-text); font-weight: 600; }
 .academy-toc strong { display: block; margin-bottom: 10px; }
 .academy-toc a { display: block; color: var(--academy-muted); text-decoration: none; font-size: 14px; padding-block: 7px; line-height: 1.45; }
 .academy-toc a:hover { color: #fff; }
@@ -74,5 +77,5 @@
 .wathba-academy-detail-link { display: flex; gap: 12px; align-items: center; width: 100%; padding: 18px 20px; margin-top: 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 14px; color: #fff; background: var(--wathba-panel-raised); line-height: 1.6; font-weight: 700; }
 .wathba-academy-detail-link:hover { border-color: rgba(255,255,255,.6); }
 .wathba-temporary-image { position: absolute; z-index: 30; inset-inline-start: 12px; bottom: 12px; max-width: calc(100% - 24px); padding: 6px 10px; border: 1px solid rgba(255,255,255,.22); border-radius: 8px; background: rgba(19,19,19,.86); color: #fff; font: 600 12px/1.5 "Be Vietnam Pro", sans-serif; letter-spacing: 0; pointer-events: none; }
-@media (max-width: 900px) { .academy-article-layout { grid-template-columns: 1fr; } .academy-toc { position: static; grid-row: 1; margin: 18px 0 0; } }
+@media (max-width: 900px) { .academy-article-layout { grid-template-columns: 1fr; } .academy-toc { position: static; grid-row: 1; margin: 18px 0 0; max-height: none; } }
 @media (max-width: 700px) { .academy-main { padding-top: 70px; } .academy-container { width: min(100% - 32px, 1160px); } .academy-hero { padding: 34px 0 45px; } .academy-section { padding-block: 43px; } .academy-grid, .academy-grid.two { grid-template-columns: 1fr; } .academy-card { padding: 23px; } }

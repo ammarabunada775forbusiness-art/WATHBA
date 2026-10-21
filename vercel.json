@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    {"source": "/equipment-swiss-ladder.html", "destination": "/academy-swiss-ladder.html", "permanent": true},
+    {"source": "/equipment-swiss-ladder-en.html", "destination": "/academy-swiss-ladder-en.html", "permanent": true}
+  ]
+}

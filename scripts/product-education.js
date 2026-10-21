@@ -177,22 +177,7 @@ module.exports = {
       question: "Does grip tape strengthen the hands by itself?", answer: "It changes surface feel and may reduce slipping. Strength develops through progressive hanging and pulling."
     }
   },
-  "swiss-ladder": {
-    ar: {
-      intent: "سلم سويدي جداري حسب المساحة للتعلّق وحركة الجسم.",
-      use: "القضبان المثبتة بالحائط تسمح بخيارات مختلفة من تمارين التعلق ورفع الركبتين وحركة المفاصل بحسب أبعاد المنتج. ابدأ بحركة بسيطة وبموضع يدين يناسب قدرتك، مع ترك مسافة كافية حول الجسم.",
-      levels: ["مبتدئ: تعلّق مدعوم أو حركة خفيفة قرب الأرض.", "متوسط: رفع ركبتين وتحكم في الجذع بحسب التركيب.", "متقدم: تدرّجات تحكم أصعب ضمن حدود التصميم."],
-      choose: "هذا المنتج ينفذ حسب المساحة؛ قِس عرض وارتفاع الجدار ونوعه، وحدد أين ستتم الحركة. اسأل عن المسافة بين القضبان وطريقة تثبيت القطعة قبل الطلب.",
-      question: "هل هو نفسه عقلة الحائط؟", answer: "السلم يتيح مستويات مسك متعددة على الحائط، بينما العقلة بار سحب أفقي؛ اختر حسب التمرين والمساحة المناسبة."
-    },
-    en: {
-      intent: "Custom-size wall ladder for hanging, movement and bodyweight drills.",
-      use: "Wall-mounted rungs enable a range of hangs, knee raises and mobility work depending on actual dimensions. Start with simple controlled movements and leave room around your body.",
-      levels: ["Beginner: supported hanging or gentle movements near the floor.", "Intermediate: knee raises and trunk control when installation allows.", "Advanced: harder progressions within the final design's limits."],
-      choose: "This ladder is sized to the space. Measure usable wall height and width and identify the wall material. Ask about rung spacing and installation before ordering.",
-      question: "Is it the same as a wall pull-up bar?", answer: "A ladder offers several rung levels; a pull-up bar is a horizontal pulling station. Select by movement and available space."
-    }
-  },
+  "jump-rope": require("./jump-rope-content.js").education,
   "multi-rig": {
     ar: {
       intent: "جهاز كاليسثنكس متعدد حسب الطلب للبيت أو الحديقة أو مساحة التدريب.",

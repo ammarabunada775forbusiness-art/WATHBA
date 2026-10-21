@@ -138,6 +138,7 @@ for (const filename of fs.readdirSync(root).filter((name) => /^academy(?:-[a-z-]
 // A content-based version refreshes cached shared UI on every actual change.
 // Only asset URLs change; page content and layouts stay as authored.
 const languagePages = require('./build-language-pages.js');
+require('./build-academy-pages.js').buildAcademy(catalog);
 languagePages.buildCorePages();
 languagePages.finalizeLanguageLinks();
 const assetHash = crypto.createHash("sha256");

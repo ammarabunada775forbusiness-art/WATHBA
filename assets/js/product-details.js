@@ -17,6 +17,8 @@ function getProductIdFromUrl() {
 
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
+  // The legacy redirect sends the retired ladder to its educational guide.
+  if (productId === 'swiss-ladder') return null;
 
   if (productId) {
     return productId;
@@ -95,6 +97,18 @@ function getProductFeatures(product, lang) {
   };
 
   const custom = {
+    "jump-rope": {
+      ar: [
+        {icon:"timer",title:"جولات متدرجة",text:"ابدأ بوقت قصير وزد الجولات حسب التحكم والتعافي."},
+        {icon:"straighten",title:"اختيار الطول",text:"اسأل عن طول الموديل وطريقة ضبطه قبل الطلب."},
+        {icon:"menu_book",title:"دليل حبل القفز",text:"تعلّم الإيقاع والهبوط وكيف تدمجه مع تمارين القوة."}
+      ],
+      en: [
+        {icon:"timer",title:"Gradual intervals",text:"Start briefly and add rounds according to control and recovery."},
+        {icon:"straighten",title:"Find your fit",text:"Ask about the actual model’s length and adjustment method."},
+        {icon:"menu_book",title:"Jump-rope guide",text:"Learn timing, landing and how skipping fits with strength work."}
+      ]
+    },
     "steel-wood-parallettes": {
       ar: [
         {
