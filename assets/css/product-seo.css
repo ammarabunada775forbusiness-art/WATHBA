@@ -48,9 +48,42 @@
 .wathba-catalog-fallback p { line-height: 1.8; color: var(--wathba-text); }
 .wathba-catalog-fallback a { color: var(--wathba-text); text-underline-offset: 5px; }
 html[lang="ar"] #productsHeading { font-size: clamp(42px, 8vw, 105px); line-height: 1.2; }
+.wathba-product-education [id] { scroll-margin-top: 112px; }
+.wathba-equipment-toc { display: flex; flex-wrap: wrap; gap: 8px; margin-block: 24px 32px; }
+.wathba-equipment-toc a { color: var(--wathba-text); border: 1px solid var(--wathba-edge); border-radius: 999px; padding: 8px 14px; font-size: 14px; line-height: 1.7; text-decoration: none; }
+.wathba-equipment-toc a:hover { border-color: var(--wathba-accent); }
+.wathba-product-box h4 { font-size: 18px; line-height: 1.7; font-weight: 700; margin-block: 18px 8px; }
+.wathba-training-levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+.wathba-training-step { min-width: 0; padding: 22px; border: 1px solid var(--wathba-edge); border-radius: 12px; background: var(--wathba-bg); }
+.wathba-training-step h4 { margin-top: 0; }
+.wathba-training-step .wathba-product-eyebrow { margin-bottom: 10px; }
+.wathba-training-step .wathba-training-dose { font-weight: 700; color: var(--wathba-accent); margin-block: 12px; }
+.wathba-training-session { list-style: decimal; padding-inline-start: 24px; }
+.wathba-training-progress { border-inline-start: 3px solid var(--wathba-accent); padding-inline-start: 16px; margin-block: 22px; }
+.wathba-equipment-table { max-width: 100%; overflow-x: auto; margin-block: 20px; border: 1px solid var(--wathba-edge); border-radius: 10px; }
+.wathba-equipment-table:focus-visible { outline: 2px solid var(--wathba-accent); outline-offset: 3px; }
+.wathba-equipment-table table { width: 100%; min-width: 580px; border-collapse: collapse; font-size: 15px; }
+.wathba-equipment-table caption { text-align: start; padding: 14px 18px; color: var(--wathba-muted); }
+.wathba-equipment-table th, .wathba-equipment-table td { text-align: start; vertical-align: top; padding: 16px 18px; border-top: 1px solid var(--wathba-edge); line-height: 1.9; }
+.wathba-equipment-table thead { background: var(--wathba-bg); }
+.wathba-equipment-table tbody th { width: 22%; }
+.wathba-equipment-question { border-top: 1px solid var(--wathba-edge); padding-block: 17px; }
+.wathba-equipment-question summary { cursor: pointer; color: var(--wathba-accent); }
+.wathba-equipment-question summary h4 { display: inline; margin: 0; }
+.wathba-equipment-question p { margin-top: 12px; }
+.wathba-equipment-question summary:focus-visible { outline: 2px solid var(--wathba-accent); outline-offset: 5px; }
+.wathba-product-box .wathba-product-footlinks { padding-bottom: 0; }
+.wathba-product-education a { overflow-wrap: anywhere; }
+.wathba-equipment-sources { padding-block: 26px 48px; }
+.wathba-equipment-sources p, .wathba-equipment-sources li { font-size: 13px; color: var(--wathba-muted); }
+.wathba-equipment-sources ul { display: flex; flex-wrap: wrap; gap: 8px 22px; list-style: none; padding: 0; margin-top: 14px; }
+.wathba-equipment-sources a { color: inherit; text-underline-offset: 4px; }
 @media (max-width: 720px) {
   .wathba-product-wrap { width: calc(100% - 32px); }
   .wathba-static-panel, .wathba-product-columns { grid-template-columns: 1fr; }
   .wathba-static-art { min-height: 250px; }
   .wathba-product-box.full { grid-column: 1; }
+  .wathba-training-levels { grid-template-columns: 1fr; }
+  .wathba-equipment-toc a { font-size: 13px; }
+  .wathba-product-education [id] { scroll-margin-top: 92px; }
 }

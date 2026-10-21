@@ -110,7 +110,7 @@ function getProductFeatures(product, lang) {
         {
           icon: "fitness_center",
           title: "٣ قياسات",
-          text: "متوفر بثلاث قياسات حسب مستوى وهدف اللاعب."
+          text: "قارن القياسات حسب الحركة والمساحة والثبات."
         }
       ],
       en: [
@@ -127,7 +127,7 @@ function getProductFeatures(product, lang) {
         {
           icon: "fitness_center",
           title: "3 Sizes",
-          text: "Available in three sizes based on training level and goal."
+          text: "Compare dimensions for movement, space and stability."
         }
       ]
     },

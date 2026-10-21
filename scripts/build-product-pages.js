@@ -15,6 +15,7 @@ const context = vm.createContext({ window: {} });
 vm.runInContext(fs.readFileSync(path.join(root, "assets/js/products-data.js"), "utf8"), context);
 const catalog = vm.runInContext("products", context);
 const education = require("./product-education.js");
+const renderTraining = require('./render-product-training.js');
 
 function html(value) {
   return String(value).replace(/[&<>"']/g, (char) => ({
@@ -62,7 +63,7 @@ function productPage(product, lang) {
   const title = isAr
     ? `${name} | معدات الكاليستنكس في الأردن – وثبة`
     : `${name} | Calisthenics Equipment in Jordan – WATHBA`;
-  const description = `${entry.intent} ${product.description[lang]}`;
+  const description = entry.intent;
   const question = isAr
     ? `مرحبًا وثبة، أريد تفاصيل ${name} والقياسات المتاحة وطريقة التركيب والسعر.`
     : `Hi WATHBA, please share the available sizes, installation details and price for ${name}.`;
@@ -75,16 +76,7 @@ function productPage(product, lang) {
     <div class="wathba-static-options"><strong>${labels.sizes}</strong><ul>${product.variants.map((v) => `<li>${html(v[lang])}</li>`).join("")}</ul><p>${labels.price}</p></div>
     <div class="wathba-static-actions"><a href="${html(whatsApp)}">${labels.buy}</a><a href="${html(academyFor(product.id, lang))}">${labels.guide}</a></div></div></div>
   </div></section>`;
-  const editorial = `<section class="wathba-product-education" aria-labelledby="equipment-guide-title"><div class="wathba-product-wrap">
-    <span class="wathba-product-eyebrow">WATHBA / ${isAr ? "دليل المعدات" : "Equipment guide"}</span>
-    <h2 id="equipment-guide-title">${isAr ? `كيف أختار ${html(name)} وأتدرّب عليها؟` : `How to choose and train with ${html(name)}`}</h2>
-    <p class="wathba-product-intro">${html(entry.intent)}</p><div class="wathba-product-columns">
-      <div class="wathba-product-box"><h3>${labels.use}</h3><p>${html(entry.use)}</p></div>
-      <div class="wathba-product-box"><h3>${labels.levels}</h3><ul>${entry.levels.map((level) => `<li>${html(level)}</li>`).join("")}</ul></div>
-      <div class="wathba-product-box full"><h3>${labels.choose}</h3><p>${html(entry.choose)}</p><p>${labels.note}</p></div>
-    </div><div class="wathba-product-faq"><h3>${labels.faq}: ${html(entry.question)}</h3><p>${html(entry.answer)}</p></div>
-    <div class="wathba-product-footlinks"><a href="${html(academyFor(product.id, lang))}">${labels.guide} ↗</a><a href="products.html">${labels.other} ↗</a><a href="${urlFor(product.id, opposite)}" lang="${opposite}" hreflang="${opposite}">${labels.switch} ↗</a></div>
-  </div></section>`;
+  const editorial = renderTraining(product, lang, catalog, academyFor(product.id, lang));
   let page = template;
   page = replaceOnce(page, '<html class="dark" lang="ar" dir="rtl">', `<html class="dark" lang="${lang}" dir="${isAr ? "rtl" : "ltr"}">`);
   page = replaceOnce(page, "<title>معدات الكاليستنكس | وثبة الأردن</title>", `<title>${html(title)}</title>`);
