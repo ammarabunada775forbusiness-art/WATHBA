@@ -638,8 +638,15 @@ for (const product of products) {
 
 window.WATHBA_PRODUCTS = products;
 
+function getProductImageAttributes(product, index = 0, loading = 'lazy', priority = 'auto') {
+    const image = product.images?.[index];
+    const dimensions = image && Number.isInteger(image.width) && image.width > 0 && Number.isInteger(image.height) && image.height > 0
+        ? ` width="${image.width}" height="${image.height}"` : '';
+    return `${dimensions} loading="${loading === 'eager' ? 'eager' : 'lazy'}" decoding="async"${priority === 'high' ? ' fetchpriority="high"' : ''}`;
+}
+
 function getProductImageAlt(product, lang, index = 0) {
-    const name = product.name[lang] || product.name.ar;
+    const name = product.name?.[lang] || product.name?.ar || product[lang] || product.id;
     return product.images?.[index]?.temporary
         ? `${lang === 'ar' ? 'صورة تدريب توضيحية مؤقتة' : 'Temporary illustrative training photo'} — ${name}`
         : name;

@@ -118,6 +118,7 @@ function renderHomeProducts() {
               class="home-product-image w-full h-full object-cover"
               src="${product.image}"
               alt="${getProductImageAlt(product, currentLang)}"
+              ${getProductImageAttributes(product)}
               onerror="this.style.display='none'; this.previousElementSibling.style.display='block';"
             />
 

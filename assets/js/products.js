@@ -185,7 +185,7 @@ function renderProducts() {
   const visibleProducts = getFilteredProducts();
 
   productsContainer.innerHTML = visibleProducts
-    .map((product) => {
+    .map((product, index) => {
       const productName = product.name[currentLang];
       const productDescription = product.description[currentLang];
       const priceText = getProductPriceText(product, currentLang);
@@ -208,6 +208,7 @@ function renderProducts() {
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               src="${product.image}"
               alt="${getProductImageAlt(product, currentLang)}"
+              ${getProductImageAttributes(product, 0, index < 3 ? 'eager' : 'lazy')}
               onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
             />
 

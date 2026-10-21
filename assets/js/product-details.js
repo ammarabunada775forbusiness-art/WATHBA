@@ -334,6 +334,7 @@ function renderProductDetails() {
             alt="${getProductImageAlt(product, currentLang, activeImageIndex)}"
             class="w-full h-full object-cover"
             src="${mainImage}"
+            ${getProductImageAttributes(product, activeImageIndex, 'eager', 'high')}
             onerror="this.style.display='none'; this.parentElement.classList.add('wathba-image-fallback');"
           />
           ${getProductImageNotice(product, currentLang, activeImageIndex)}
@@ -353,6 +354,7 @@ function renderProductDetails() {
                     class="w-full h-full object-cover ${index === activeImageIndex ? "opacity-100" : "opacity-60"}"
                     src="${image}"
                     alt="${getProductImageAlt(product, currentLang, index)} ${index + 1}"
+                    ${getProductImageAttributes(product, index)}
                     onerror="this.style.display='none'; this.parentElement.classList.add('wathba-image-fallback');"
                   />
                 </button>
@@ -501,7 +503,8 @@ function renderRelatedProducts(currentProduct) {
                   <img
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     src="${product.image}"
-                    alt="${product.name[currentLang]}"
+                    alt="${getProductImageAlt(product, currentLang)}"
+                    ${getProductImageAttributes(product)}
                     onerror="this.style.display='none'; this.parentElement.classList.add('wathba-image-fallback');"
                   />
                 </div>

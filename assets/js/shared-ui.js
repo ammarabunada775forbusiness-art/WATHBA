@@ -154,6 +154,7 @@ function wathbaGetMenuProducts() {
       id: product.id,
       ar: product.name?.ar || product.name?.en || product.id,
       en: product.name?.en || product.name?.ar || product.id,
+      images: product.images,
       image: product.image || "assets/images/products/wall-pull-up-bar/1.webp"
     }));
   }
@@ -440,8 +441,8 @@ function wathbaRenderMobileMenu() {
                     <span class="wathba-mobile-mini-thumb">
                       <img
                         src="${item.image}"
-                        alt="${wathbaMenuProductName(item)}"
-                        loading="lazy"
+                        alt="${getProductImageAlt(item, lang)}"
+                        ${getProductImageAttributes(item)}
                         onerror="this.style.display='none'; this.parentElement.classList.add('wathba-mobile-thumb-empty');"
                       />
                     </span>
@@ -602,7 +603,7 @@ function wathbaRenderDesktopMegaMenu() {
                     ${groupProducts.map((item) => `
                       <a href="${wathbaProductUrl(item.id)}" class="wathba-mega-mini-product">
                         <span class="wathba-mega-mini-thumb">
-                          <img src="${item.image}" alt="${wathbaMenuProductName(item)}" loading="lazy" />
+                          <img src="${item.image}" alt="${getProductImageAlt(item, lang)}" ${getProductImageAttributes(item)} />
                         </span>
                         <span>${wathbaMenuProductName(item)}</span>
                       </a>
