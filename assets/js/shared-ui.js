@@ -355,6 +355,11 @@ function wathbaEnsureSharedShell() {
   }
 }
 
+function wathbaSyncLanguageLink() {
+  const link = document.querySelector('.wathba-lang-btn');
+  if (link) link.href = window.WathbaLanguage.opposite(window.location, wathbaGetLang() === 'ar' ? 'en' : 'ar');
+}
+
 function wathbaApplyLanguage(lang) {
   if (lang !== wathbaGetLang()) {
     window.location.assign(window.WathbaLanguage.opposite(window.location, lang));
@@ -374,7 +379,7 @@ function wathbaApplyLanguage(lang) {
   if (langButton) {
     langButton.textContent = lang === "ar" ? "EN" : "AR";
     langButton.setAttribute("aria-label", lang === "ar" ? "Switch to English" : "التبديل إلى العربية");
-    langButton.href = window.WathbaLanguage.opposite(window.location, lang === "ar" ? "en" : "ar");
+    wathbaSyncLanguageLink();
     langButton.hreflang = lang === "ar" ? "en" : "ar";
     langButton.lang = lang === "ar" ? "en" : "ar";
   }
@@ -842,6 +847,8 @@ function wathbaSetMobileMenuOpen(isOpen) {
 }
 
 function wathbaBindEvents() {
+  window.addEventListener('hashchange', wathbaSyncLanguageLink);
+  window.addEventListener('popstate', wathbaSyncLanguageLink);
   document.addEventListener("click", (event) => {
     const langButton = event.target.closest(".wathba-lang-btn");
     const menuButton = event.target.closest(".wathba-menu-toggle");
@@ -859,6 +866,7 @@ function wathbaBindEvents() {
 
     if (langButton) {
       // A real link supports copying and opening the other language in a new tab.
+      wathbaSyncLanguageLink();
       return;
     }
 

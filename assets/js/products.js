@@ -176,6 +176,7 @@ function renderFilters() {
       }
 
       window.history.replaceState(null, "", url);
+      if (typeof wathbaSyncLanguageLink === 'function') wathbaSyncLanguageLink();
       renderFilters();
       renderProducts();
     });
