@@ -83,6 +83,7 @@ body {
   font-weight: 900;
   letter-spacing: 0.08em;
   cursor: pointer;
+  text-decoration: none;
   transition: 0.25s ease;
 }
 
@@ -4920,6 +4921,7 @@ nav.fixed .hidden.md\:flex a:not(.wathba-logo):not(.wathba-nav-logo) {
 
 nav.fixed a:focus-visible,
 .wathba-top-tools button:focus-visible,
+.wathba-top-tools a:focus-visible,
 .wathba-mobile-menu a:focus-visible,
 .wathba-site-footer a:focus-visible,
 .wathba-cart-panel :is(a, button, textarea):focus-visible {

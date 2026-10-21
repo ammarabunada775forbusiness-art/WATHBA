@@ -9,7 +9,8 @@
   <meta name="description" content="تعرّف على وثبة ومعدات الكاليستنكس للمنزل والمساحات التدريبية في الأردن، وكيفية طلب تجهيزات تناسب هدفك ومساحتك." />
   <script>
     (function () {
-      var lang = localStorage.getItem("wathbaLang") || "ar";
+      var lang = document.documentElement.lang;
+            try { localStorage.setItem("wathbaLang", lang); } catch (_) {}
       document.documentElement.lang = lang;
       document.documentElement.dataset.wathbaLang = lang;
       document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
@@ -26,7 +27,8 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet" />
 
-  <script src="assets/js/tailwind-config.js?v=2977020e8f43"></script>
+  <script src="assets/js/tailwind-config.js?v=870d90f25057"></script>
+    <script src="assets/js/language.js?v=870d90f25057"></script>
 
   <style>
     .material-symbols-outlined {
@@ -156,10 +158,16 @@
       font-weight: 1000 !important;
     }
   </style>
-  <link rel="stylesheet" href="assets/css/shared-ui.css?v=2977020e8f43" />
+  <link rel="stylesheet" href="assets/css/shared-ui.css?v=870d90f25057" />
+<!-- WATHBA_LANGUAGE_ALTERNATES_START -->
+<link rel="alternate" hreflang="ar" href="https://wathba-rosy.vercel.app/about.html">
+<link rel="alternate" hreflang="en" href="https://wathba-rosy.vercel.app/about-en.html">
+<link rel="alternate" hreflang="x-default" href="https://wathba-rosy.vercel.app/about.html">
+<!-- WATHBA_LANGUAGE_ALTERNATES_END -->
 </head>
 
 <body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
+<!-- WATHBA_STATIC_TOOLS_START --><div class="wathba-top-tools"><a class="wathba-lang-btn" data-wathba-language-switch href="about-en.html" hreflang="en" lang="en" aria-label="Switch to English">EN</a><button class="wathba-menu-toggle" type="button" aria-label="فتح القائمة" aria-controls="wathbaMobileMenu" aria-expanded="false"><span class="material-symbols-outlined">menu</span></button></div><!-- WATHBA_STATIC_TOOLS_END -->
   <!-- WATHBA Unified Navbar -->
   <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
     <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
@@ -168,19 +176,19 @@
 
         <div class="hidden md:flex items-center gap-8">
           <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-            href="index.html">Home</a>
+            href="index.html"><!-- WATHBA_COPY:about-001:START -->الرئيسية<!-- WATHBA_COPY:about-001:END --></a>
 
           <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-            href="products.html">Products</a>
+            href="products.html"><!-- WATHBA_COPY:about-002:START -->المنتجات<!-- WATHBA_COPY:about-002:END --></a>
+
+          <!-- WATHBA_COPY:about-003:START --><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+            href="academy.html"><!-- WATHBA_COPY:about-003:END --><!-- WATHBA_COPY:about-004:START -->الأكاديمية<!-- WATHBA_COPY:about-004:END --></a>
 
           <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-            href="academy.html">Academy</a>
+            href="about.html"><!-- WATHBA_COPY:about-005:START -->من نحن<!-- WATHBA_COPY:about-005:END --></a>
 
           <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-            href="about.html">About</a>
-
-          <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-            href="contact.html">Contact</a>
+            href="contact.html"><!-- WATHBA_COPY:about-006:START -->تواصل معنا<!-- WATHBA_COPY:about-006:END --></a>
         </div>
       </div>
 
@@ -196,32 +204,19 @@
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmalCL-B1ZGb2hFLsJ5x7wJfSsKUllaesOSzZEYQi08DEoicD3JkxkZj6l8alO-ThHiDFTrCw5MOwWFrzOVrU3DOiwLcPxbNkgewdYrzOTEeOhMixgBPr0r0D3lmCxqx8GQUcmOfNlUOW8lUp7Rr6HIxR8GQIi3lXcjBpZaTKkDP-Fqnnb1YsvaHe3VRNOjU4dnR9ZWN02Rm7VxdRyShL8hHQVZL4KaXpLmH9cyIGrmUvb-NHryjdAd4hldPXvKfd6klFEJx7nWg" />
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background"></div>
       </div>
-      <div class="relative z-10 text-center px-6">
+      <div class="relative z-10 text-center px-6 wathba-ar-text">
         <h1
-          class="font-display-hero text-display-hero text-primary uppercase leading-none tracking-tighter text-glow reveal">
-          عن وثبة
-        </h1>
-        <p class="font-label-caps text-label-caps text-on-surface-variant mt-8 tracking-[0.3em] reveal delay-200">
-          معدات كاليستنكس لمن يسعى للقوة والتحكم والتطور
-        </p>
+          class="font-display-hero text-display-hero text-primary uppercase leading-none tracking-tighter text-glow reveal"><!-- WATHBA_COPY:about-007:START -->عن وثبة<!-- WATHBA_COPY:about-007:END --></h1>
+        <p class="font-label-caps text-label-caps text-on-surface-variant mt-8 tracking-[0.3em] reveal delay-200"><!-- WATHBA_COPY:about-008:START -->معدات كاليستنكس لمن يسعى للقوة والتحكم والتطور<!-- WATHBA_COPY:about-008:END --></p>
       </div>
     </section>
     <!-- Section 2: Brand Story -->
-    <section class="py-32 px-16 max-w-container-max mx-auto">
+    <section class="py-32 px-16 max-w-container-max mx-auto wathba-ar-text">
       <div class="grid md:grid-cols-12 gap-16 items-center">
         <div class="md:col-span-5 reveal">
-          <h2 class="font-headline-lg text-headline-lg text-primary uppercase mb-8">THE CRAFT</h2>
-          <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-            Born from the gritty streets and polished by high-performance engineering, WATHBA is the
-            definitive answer for those who demand more from their gear. We don't just manufacture tools; we
-            forge extensions of the human body.
-          </p>
-          <p class="font-body-md text-body-md text-on-surface-variant mt-6 leading-relaxed opacity-80">
-            Our journey began with a single frustration: the lack of equipment that could withstand the
-            explosive power of professional calisthenics while maintaining an aesthetic fit for the modern
-            luxury space. Every ring, every bar, and every strap is a testament to our obsession with
-            detail.
-          </p>
+          <h2 class="font-headline-lg text-headline-lg text-primary uppercase mb-8"><!-- WATHBA_COPY:about-009:START -->الحرفة<!-- WATHBA_COPY:about-009:END --></h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"><!-- WATHBA_COPY:about-010:START -->بدأت WATHBA من فكرة بسيطة: معدات كاليسثنكس قوية وعملية وتليق باللاعب الجاد. نحن لا نبيع أدوات فقط، بل نساعدك تبني مساحة تدريب تخدم هدفك وتطورك.<!-- WATHBA_COPY:about-010:END --></p>
+          <p class="font-body-md text-body-md text-on-surface-variant mt-6 leading-relaxed opacity-80"><!-- WATHBA_COPY:about-011:START -->نركز على الثبات، جودة الخامات، وراحة الاستخدام. كل عقلة، بار، حلقة، أو جهاز يتم اختياره وتصميمه ليخدم التدريب الحقيقي اليومي، سواء في البيت أو الخارج أو النادي.<!-- WATHBA_COPY:about-011:END --></p>
         </div>
         <div class="md:col-span-7 relative reveal delay-300">
           <div
@@ -232,101 +227,178 @@
           </div>
           <!-- Data Block Overlay -->
           <div class="absolute -bottom-8 -left-8 glass-panel p-8 rounded-xl reveal delay-500">
-            <div class="font-headline-md text-headline-md text-primary leading-tight">100%<br />PRO-GRADE
-            </div>
-            <div class="font-label-caps text-label-caps text-on-surface-variant mt-2 uppercase">MIL-SPEC
-              MATERIALS</div>
+            <div class="font-headline-md text-headline-md text-primary leading-tight"><!-- WATHBA_COPY:about-012:START -->100%<br>جاهزة للتدريب<!-- WATHBA_COPY:about-012:END --></div>
+            <div class="font-label-caps text-label-caps text-on-surface-variant mt-2 uppercase"><!-- WATHBA_COPY:about-013:START -->مصممة للاستخدام الحقيقي<!-- WATHBA_COPY:about-013:END --></div>
           </div>
         </div>
       </div>
     </section>
     <!-- Section 3: Mission -->
-    <section class="bg-surface-container-lowest py-40 overflow-hidden">
+    <section class="bg-surface-container-lowest py-40 overflow-hidden wathba-ar-text">
       <div class="max-w-container-max mx-auto px-16 relative">
         <div class="absolute -right-20 top-1/2 -translate-y-1/2 opacity-5 pointer-events-none">
           <span class="font-display-hero text-display-hero text-primary leading-none select-none">STRENGTH</span>
         </div>
         <div class="max-w-3xl reveal">
-          <span class="font-label-caps text-label-caps text-primary mb-4 block">OUR MISSION</span>
-          <h2 class="font-headline-lg text-headline-lg text-primary uppercase leading-tight mb-12">
-            ENGINEERING HUMAN <br /> POTENTIAL.
-          </h2>
+          <span class="font-label-caps text-label-caps text-primary mb-4 block"><!-- WATHBA_COPY:about-014:START -->مهمتنا<!-- WATHBA_COPY:about-014:END --></span>
+          <h2 class="font-headline-lg text-headline-lg text-primary uppercase leading-tight mb-12"><!-- WATHBA_COPY:about-015:START -->هندسة الإمكانات <br> البشرية.<!-- WATHBA_COPY:about-015:END --></h2>
           <div class="h-1 w-24 bg-primary mb-12"></div>
-          <p class="font-body-lg text-body-lg text-on-surface leading-loose">
-            WATHBA exists at the intersection of elite performance and uncompromising design. We provide the
-            tools that allow the human body to defy gravity, build raw power, and achieve a state of
-            physical flow. Our commitment is to provide the elite athlete with equipment that is as
-            resilient as their spirit.
-          </p>
+          <p class="font-body-lg text-body-lg text-on-surface leading-loose"><!-- WATHBA_COPY:about-016:START -->هدف WATHBA هو مساعدة الرياضيين على بناء القوة، التحكم، والثقة من خلال معدات كاليسثنكس موثوقة. نركز على التصميم العملي، الخامات القوية، والدعم المباشر حتى يختار كل شخص التجهيز المناسب لهدفه.<!-- WATHBA_COPY:about-016:END --></p>
         </div>
       </div>
     </section>
     <!-- Section 4: Core Values -->
-    <section class="py-32 px-16 max-w-container-max mx-auto">
+    <section class="py-32 px-16 max-w-container-max mx-auto wathba-ar-text">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Strength -->
         <div class="glass-panel p-10 flex flex-col justify-between min-h-[320px] reveal">
-          <div class="font-headline-md text-headline-md text-primary uppercase">STRENGTH</div>
-          <p class="font-body-md text-body-md text-on-surface-variant">Built to withstand thousands of hours
-            of peak-intensity loads without compromise.</p>
+          <div class="font-headline-md text-headline-md text-primary uppercase"><!-- WATHBA_COPY:about-017:START -->القوة<!-- WATHBA_COPY:about-017:END --></div>
+          <p class="font-body-md text-body-md text-on-surface-variant"><!-- WATHBA_COPY:about-018:START -->معدات تتحمل التمرين الجاد والاستخدام المتكرر.<!-- WATHBA_COPY:about-018:END --></p>
         </div>
         <!-- Control -->
         <div class="glass-panel p-10 flex flex-col justify-between min-h-[320px] reveal delay-100">
-          <div class="font-headline-md text-headline-md text-primary uppercase">CONTROL</div>
-          <p class="font-body-md text-body-md text-on-surface-variant">Precision textures and ergonomic
-            geometries that offer absolute grip and spatial awareness.</p>
+          <div class="font-headline-md text-headline-md text-primary uppercase"><!-- WATHBA_COPY:about-019:START -->التحكم<!-- WATHBA_COPY:about-019:END --></div>
+          <p class="font-body-md text-body-md text-on-surface-variant"><!-- WATHBA_COPY:about-020:START -->تصميم يساعدك على القبضة، التوازن، والتحكم بالحركة.<!-- WATHBA_COPY:about-020:END --></p>
         </div>
         <!-- Progress -->
         <div class="glass-panel p-10 flex flex-col justify-between min-h-[320px] reveal delay-200">
-          <div class="font-headline-md text-headline-md text-primary uppercase">PROGRESS</div>
-          <p class="font-body-md text-body-md text-on-surface-variant">Iterative design philosophy that
-            evolves alongside the world's most advanced practitioners.</p>
+          <div class="font-headline-md text-headline-md text-primary uppercase"><!-- WATHBA_COPY:about-021:START -->التطور<!-- WATHBA_COPY:about-021:END --></div>
+          <p class="font-body-md text-body-md text-on-surface-variant"><!-- WATHBA_COPY:about-022:START -->معدات تناسب المبتدئ والمتوسط والمتقدم وتساعده يتقدم خطوة بخطوة.<!-- WATHBA_COPY:about-022:END --></p>
         </div>
         <!-- Build Quality -->
         <div class="glass-panel p-10 flex flex-col justify-between min-h-[320px] reveal delay-300">
-          <div class="font-headline-md text-headline-md text-primary uppercase">BUILD QUALITY</div>
-          <p class="font-body-md text-body-md text-on-surface-variant">Sourced from premium aerospace-grade
-            alloys and sustainable hardwoods for life-long durability.</p>
+          <div class="font-headline-md text-headline-md text-primary uppercase"><!-- WATHBA_COPY:about-023:START -->جودة التصنيع<!-- WATHBA_COPY:about-023:END --></div>
+          <p class="font-body-md text-body-md text-on-surface-variant"><!-- WATHBA_COPY:about-024:START -->خامات قوية وتفاصيل عملية لتدريب طويل المدى.<!-- WATHBA_COPY:about-024:END --></p>
         </div>
       </div>
     </section>
     <!-- Section 5: Visual Showcase -->
-    <section class="relative py-20 px-4 md:px-0 reveal">
+    <section class="relative py-20 px-4 md:px-0 reveal wathba-ar-text">
       <div class="w-full aspect-[21/9] overflow-hidden">
         <img alt="WATHBA Studio" class="w-full h-full object-cover brightness-90"
           data-alt="A wide-angle editorial shot of a luxury minimalist home gym featuring WATHBA equipment. The space is constructed from raw concrete and dark wood, with floor-to-ceiling windows showing a moody cityscape at dusk. The equipment is perfectly arranged, caught in soft top-down spotlighting that creates deep shadows. The overall vibe is high-fashion, athletic, and extremely premium."
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtbhQNsBOPmmK_wmf77e12CfDtUZLQ8aUxBB9LhYXXA9xNPe79a-iF5P6vHxU3VxpEleKs5O2D92_XMUGmnr75NUJNreXDntjh-uwwwyPaHHb2y12V8XNL09pxzEBKG_S8AXhTeTVKKYFFRntGvk7Elchg73JwUsY9cuG6P49g4RrN-Ke-2asuF2iuXUKlZ1efsB7y3UydjfwohTXOIcJ8KCW-tMDpaW47OH0iFyBOSSLP3a8SV90puFbyNjA6yEWN_ZuiqKWjhA" />
         <div class="absolute inset-0 flex items-center justify-center">
           <div class="text-center px-4">
-            <div class="font-label-caps text-label-caps text-primary tracking-[0.5em] mb-4">THE SETTING
-            </div>
-            <h3 class="font-headline-lg text-headline-lg text-primary uppercase">WHERE POWER MEETS
-              AESTHETICS</h3>
+            <div class="font-label-caps text-label-caps text-primary tracking-[0.5em] mb-4"><!-- WATHBA_COPY:about-025:START -->المساحة<!-- WATHBA_COPY:about-025:END --></div>
+            <h3 class="font-headline-lg text-headline-lg text-primary uppercase"><!-- WATHBA_COPY:about-026:START -->حيث تلتقي القوة بالجمال<!-- WATHBA_COPY:about-026:END --></h3>
           </div>
         </div>
       </div>
     </section>
     <!-- Section 6: Final CTA -->
-    <section class="py-40 px-16 text-center max-w-container-max mx-auto reveal">
-      <h2 class="font-headline-lg text-headline-lg text-primary uppercase mb-6">EQUIP YOUR JOURNEY</h2>
-      <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
-        Join the global community of elite calisthenics practitioners. Our team is ready to help you configure
-        your professional training environment.
-      </p>
+    <section class="py-40 px-16 text-center max-w-container-max mx-auto reveal wathba-ar-text">
+      <h2 class="font-headline-lg text-headline-lg text-primary uppercase mb-6"><!-- WATHBA_COPY:about-027:START -->جهّز رحلتك<!-- WATHBA_COPY:about-027:END --></h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto"><!-- WATHBA_COPY:about-028:START -->احكِ لنا مستواك، المساحة المتوفرة، وهدفك التدريبي. نساعدك تختار معدات WATHBA المناسبة عبر واتساب.<!-- WATHBA_COPY:about-028:END --></p>
       <div class="flex flex-col md:flex-row justify-center gap-6">
-        <a class="bg-primary text-on-primary font-headline-md text-label-caps py-6 px-12 rounded-full uppercase transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3"
-          href="#">
-          EXPLORE PRODUCTS
-        </a>
-        <a class="bg-[#25D366] text-white font-headline-md text-label-caps py-6 px-12 rounded-full uppercase transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3"
-          href="#" data-wathba-whatsapp-link>
-          <span class="material-symbols-outlined" data-icon="chat">chat</span>
-          WHATSAPP US
-        </a>
+        <!-- WATHBA_COPY:about-029:START --><a class="bg-primary text-on-primary font-headline-md text-label-caps py-6 px-12 rounded-full uppercase transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3"
+          href="products.html"><!-- WATHBA_COPY:about-029:END --><!-- WATHBA_COPY:about-030:START -->تصفح المنتجات<!-- WATHBA_COPY:about-030:END --></a>
+        <!-- WATHBA_COPY:about-031:START --><a class="bg-[#25D366] text-white font-headline-md text-label-caps py-6 px-12 rounded-full uppercase transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3"
+          href="https://wa.me/962791752349?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20WATHBA%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B9%D8%AF%D8%A7%D8%AA%20%D8%A7%D9%84%D9%83%D8%A7%D9%84%D9%8A%D8%B3%D8%AA%D9%86%D9%83%D8%B3" data-wathba-whatsapp-link><!-- WATHBA_COPY:about-031:END --><!-- WATHBA_COPY:about-032:START -->
+          <svg class="wathba-wa-svg" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z"></path>
+            <path d="M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z"></path>
+          </svg>
+          راسلنا واتساب
+        <!-- WATHBA_COPY:about-032:END --></a>
       </div>
     </section>
   </main>
-  <div id="wathbaFooter"></div>
+  <div id="wathbaFooter"><!-- WATHBA_SLOT:wathbaFooter:START -->
+    <footer class="wathba-site-footer">
+      <div class="wathba-site-footer-grid">
+        <div class="wathba-footer-brand">
+          <h3 class="wathba-footer-logo">WATHBA</h3>
+          <p class="wathba-footer-text">معدات كاليسثنكس ممتازة للبيت، الخارج، والمساحات التدريبية الاحترافية. تصفح المنتجات واطلب مباشرة عبر واتساب.</p>
+
+          <a
+            href="https://wa.me/962791752349?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20WATHBA%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B9%D8%AF%D8%A7%D8%AA%20%D8%A7%D9%84%D9%83%D8%A7%D9%84%D9%8A%D8%B3%D8%AA%D9%86%D9%83%D8%B3"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="wathba-footer-whatsapp"
+          >
+            <span class="wathba-footer-wa-svg">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M19.11 17.27c-.27-.13-1.58-.78-1.82-.87-.24-.09-.41-.13-.59.14-.18.27-.68.87-.84 1.04-.15.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.3-.79-.7-1.32-1.57-1.47-1.84-.15-.27-.02-.42.11-.55.11-.11.27-.29.41-.43.14-.15.18-.25.27-.43.09-.18.05-.34-.02-.48-.07-.13-.59-1.43-.81-1.96-.21-.5-.43-.43-.59-.44h-.5c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.65 1.11 2.83c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.58-.65 1.8-1.27.22-.63.22-1.16.15-1.27-.06-.12-.24-.18-.5-.31z"></path>
+    <path d="M16.02 3.2c-7.07 0-12.8 5.72-12.8 12.77 0 2.25.59 4.45 1.71 6.39L3.1 28.8l6.63-1.73a12.8 12.8 0 0 0 6.29 1.69h.01c7.06 0 12.79-5.72 12.79-12.77 0-3.42-1.34-6.63-3.79-9.04A12.76 12.76 0 0 0 16.02 3.2zm0 23.39h-.01a10.62 10.62 0 0 1-5.41-1.49l-.39-.23-3.94 1.03 1.05-3.84-.25-.4a10.55 10.55 0 0 1-1.63-5.61c0-5.84 4.76-10.59 10.6-10.59 2.82 0 5.47 1.09 7.47 3.08a10.5 10.5 0 0 1 3.11 7.51c0 5.84-4.76 10.59-10.6 10.59z"></path>
+  </svg>
+</span>
+            اطلب عبر واتساب
+          </a>
+        </div>
+
+        <div class="wathba-footer-col">
+          <h5 class="wathba-footer-title">الصفحات</h5>
+          <ul class="wathba-footer-list">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="academy.html">الأكاديمية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </div>
+
+        <div class="wathba-footer-col">
+          <h5 class="wathba-footer-title">المعدات</h5>
+          <ul class="wathba-footer-list">
+            <li><a href="equipment-wall-pull-up-bar.html">عقلة</a></li>
+<li><a href="equipment-steel-wood-parallettes.html">باراليتس</a></li>
+<li><a href="products.html?filter=parallel-bars">متوازي حديد</a></li>
+<li><a href="equipment-gymnastic-rings.html">حلقات جمباز</a></li>
+          </ul>
+        </div>
+
+        <div class="wathba-footer-contact">
+          <h5 class="wathba-footer-title">التواصل</h5>
+          <p>عمّان، الأردن</p>
+          <p>واتساب: +962 79 175 2349</p>
+          <p>الطلبات والتجهيزات المخصصة تتم مباشرة عبر واتساب.</p>
+
+    <div class="wathba-footer-socials" aria-label="WATHBA social links">
+
+        <a
+          href="https://www.instagram.com/wathba.calisthenics/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-footer-social-link"
+          aria-label="Instagram"
+          title="@wathba.calisthenics"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@wathba.calisthenics?is_from_webapp=1&sender_device=pc"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-footer-social-link"
+          aria-label="TikTok"
+          title="@wathba.calisthenics"
+        >
+          TikTok
+        </a>
+
+        <a
+          href="https://www.facebook.com/profile.php?id=61591296419542"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-footer-social-link"
+          aria-label="Facebook"
+          title="WATHBA Calisthenics"
+        >
+          Facebook
+        </a>
+
+    </div>
+
+        </div>
+
+        <div class="wathba-footer-bottom">
+          <p>© 2026 WATHBA. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+  <!-- WATHBA_SLOT:wathbaFooter:END --></div>
   <script>
     // Micro-interactions and Scroll Reveal
     const observerOptions = {
@@ -355,207 +427,11 @@
     });
   </script>
   <!-- WATHBA_ABOUT_PAGE_TRANSLATION_START -->
-  <script id="wathba-about-page-translation">
-    (function () {
-      const aboutPageText = {
-        en: {
-          heroTitle: "ABOUT WATHBA",
-          heroSubtitle: "ENGINEERED IN THE PURSUIT OF PHYSICAL MASTERY",
-
-          craftTitle: "THE CRAFT",
-          craftText1:
-            "Born from the gritty streets and polished by high-performance engineering, WATHBA is the definitive answer for those who demand more from their gear. We do not just manufacture tools; we build training equipment for real progress.",
-          craftText2:
-            "Our journey began with a simple goal: create calisthenics equipment that is strong, practical, and worthy of serious athletes. Every ring, bar, and setup is designed around control, durability, and daily use.",
-
-          statNumber: "100%<br />TRAINING READY",
-          statLabel: "BUILT FOR REAL USE",
-
-          missionMini: "OUR MISSION",
-          missionTitle: "ENGINEERING HUMAN <br /> POTENTIAL.",
-          missionText:
-            "WATHBA exists to help athletes build strength, control, and confidence through reliable calisthenics equipment. We focus on practical design, strong materials, and direct support so every customer can build the right setup for their goals.",
-
-          value1Title: "STRENGTH",
-          value1Text: "Built to handle serious training sessions and repeated daily use.",
-          value2Title: "CONTROL",
-          value2Text: "Designed to support grip, balance, and precise bodyweight movement.",
-          value3Title: "PROGRESS",
-          value3Text: "Equipment that helps beginners, intermediates, and advanced athletes move forward.",
-          value4Title: "BUILD QUALITY",
-          value4Text: "Made with durable materials and practical details for long-term training.",
-
-          showcaseMini: "THE SETTING",
-          showcaseTitle: "WHERE POWER MEETS AESTHETICS",
-
-          ctaTitle: "EQUIP YOUR JOURNEY",
-          ctaText:
-            "Tell us your level, space, and training goal. We will help you choose the right WATHBA equipment through WhatsApp.",
-          explore: "EXPLORE PRODUCTS",
-          whatsapp: "WHATSAPP US"
-        },
-
-        ar: {
-          heroTitle: "عن وثبة",
-          heroSubtitle: "معدات كاليستنكس لمن يسعى للقوة والتحكم والتطور",
-
-          craftTitle: "الحرفة",
-          craftText1:
-            "بدأت WATHBA من فكرة بسيطة: معدات كاليسثنكس قوية وعملية وتليق باللاعب الجاد. نحن لا نبيع أدوات فقط، بل نساعدك تبني مساحة تدريب تخدم هدفك وتطورك.",
-          craftText2:
-            "نركز على الثبات، جودة الخامات، وراحة الاستخدام. كل عقلة، بار، حلقة، أو جهاز يتم اختياره وتصميمه ليخدم التدريب الحقيقي اليومي، سواء في البيت أو الخارج أو النادي.",
-
-          statNumber: "100%<br />جاهزة للتدريب",
-          statLabel: "مصممة للاستخدام الحقيقي",
-
-          missionMini: "مهمتنا",
-          missionTitle: "هندسة الإمكانات <br /> البشرية.",
-          missionText:
-            "هدف WATHBA هو مساعدة الرياضيين على بناء القوة، التحكم، والثقة من خلال معدات كاليسثنكس موثوقة. نركز على التصميم العملي، الخامات القوية، والدعم المباشر حتى يختار كل شخص التجهيز المناسب لهدفه.",
-
-          value1Title: "القوة",
-          value1Text: "معدات تتحمل التمرين الجاد والاستخدام المتكرر.",
-          value2Title: "التحكم",
-          value2Text: "تصميم يساعدك على القبضة، التوازن، والتحكم بالحركة.",
-          value3Title: "التطور",
-          value3Text: "معدات تناسب المبتدئ والمتوسط والمتقدم وتساعده يتقدم خطوة بخطوة.",
-          value4Title: "جودة التصنيع",
-          value4Text: "خامات قوية وتفاصيل عملية لتدريب طويل المدى.",
-
-          showcaseMini: "المساحة",
-          showcaseTitle: "حيث تلتقي القوة بالجمال",
-
-          ctaTitle: "جهّز رحلتك",
-          ctaText:
-            "احكِ لنا مستواك، المساحة المتوفرة، وهدفك التدريبي. نساعدك تختار معدات WATHBA المناسبة عبر واتساب.",
-          explore: "تصفح المنتجات",
-          whatsapp: "راسلنا واتساب"
-        }
-      };
-
-      function getLang() {
-        return localStorage.getItem("wathbaLang") || "en";
-      }
-
-      function setText(selector, text) {
-        const element = document.querySelector(selector);
-        if (element) element.textContent = text;
-      }
-
-      function setHTML(selector, html) {
-        const element = document.querySelector(selector);
-        if (element) element.innerHTML = html;
-      }
-
-      function applyAboutPageTranslation() {
-        const lang = getLang();
-        const t = aboutPageText[lang];
-
-        document.title = lang === "ar"
-          ? "عن وثبة | معدات الكاليستنكس في الأردن"
-          : "About WATHBA | Calisthenics Equipment in Jordan";
-
-        setText("main section:nth-of-type(1) h1", t.heroTitle);
-        setText("main section:nth-of-type(1) p", t.heroSubtitle);
-
-        setText("main section:nth-of-type(2) h2", t.craftTitle);
-
-        const craftParagraphs = document.querySelectorAll("main section:nth-of-type(2) p");
-        if (craftParagraphs[0]) craftParagraphs[0].textContent = t.craftText1;
-        if (craftParagraphs[1]) craftParagraphs[1].textContent = t.craftText2;
-
-        const statBox = document.querySelector("main section:nth-of-type(2) .absolute.-bottom-8");
-        if (statBox) {
-          const number = statBox.querySelector(".font-headline-md");
-          const label = statBox.querySelector(".font-label-caps");
-          if (number) number.innerHTML = t.statNumber;
-          if (label) label.textContent = t.statLabel;
-        }
-
-        setText("main section:nth-of-type(3) .font-label-caps", t.missionMini);
-        setHTML("main section:nth-of-type(3) h2", t.missionTitle);
-        setText("main section:nth-of-type(3) p", t.missionText);
-
-        const valueCards = document.querySelectorAll("main section:nth-of-type(4) .glass-panel");
-        const values = [
-          [t.value1Title, t.value1Text],
-          [t.value2Title, t.value2Text],
-          [t.value3Title, t.value3Text],
-          [t.value4Title, t.value4Text]
-        ];
-
-        valueCards.forEach((card, index) => {
-          const title = card.querySelector(".font-headline-md");
-          const text = card.querySelector("p");
-
-          if (title && values[index]) title.textContent = values[index][0];
-          if (text && values[index]) text.textContent = values[index][1];
-        });
-
-        setText("main section:nth-of-type(5) .font-label-caps", t.showcaseMini);
-        setText("main section:nth-of-type(5) h3", t.showcaseTitle);
-
-        setText("main section:nth-of-type(6) h2", t.ctaTitle);
-        setText("main section:nth-of-type(6) p", t.ctaText);
-
-        const ctaLinks = document.querySelectorAll("main section:nth-of-type(6) a");
-
-        if (ctaLinks[0]) {
-          ctaLinks[0].textContent = t.explore;
-          ctaLinks[0].href = "products.html";
-        }
-
-        if (ctaLinks[1]) {
-          const whatsappText =
-            lang === "ar"
-              ? "مرحبا WATHBA، أريد الاستفسار عن معدات الكاليستنكس"
-              : "Hello WATHBA, I want to ask about calisthenics equipment";
-
-          ctaLinks[1].innerHTML = `
-          <svg class="wathba-wa-svg" viewBox="0 0 32 32" aria-hidden="true">
-            <path d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z"></path>
-            <path d="M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z"></path>
-          </svg>
-          ${t.whatsapp}
-        `;
-
-          const whatsappNumber =
-            window.WATHBA_CONFIG?.whatsappNumber || "962791752349";
-
-          ctaLinks[1].href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
-          ctaLinks[1].target = "_blank";
-          ctaLinks[1].rel = "noopener noreferrer";
-        }
-
-        const rtlTargets = [
-          "main section:nth-of-type(1) .relative.z-10",
-          "main section:nth-of-type(2)",
-          "main section:nth-of-type(3)",
-          "main section:nth-of-type(4)",
-          "main section:nth-of-type(5)",
-          "main section:nth-of-type(6)"
-        ];
-
-        rtlTargets.forEach((selector) => {
-          const element = document.querySelector(selector);
-          if (!element) return;
-
-          if (lang === "ar") {
-            element.classList.add("wathba-ar-text");
-          } else {
-            element.classList.remove("wathba-ar-text");
-          }
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", applyAboutPageTranslation);
-      document.addEventListener("wathba:langchange", applyAboutPageTranslation);
-    })();
-  </script>
+  <script id="wathba-about-page-translation"></script>
   <!-- WATHBA_ABOUT_PAGE_TRANSLATION_END -->
-  <script src="assets/js/config.js?v=2977020e8f43"></script>
-  <script src="assets/js/products-data.js?v=2977020e8f43"></script>
-  <script src="assets/js/shared-ui.js?v=2977020e8f43"></script>
+  <script src="assets/js/config.js?v=870d90f25057"></script>
+  <script src="assets/js/products-data.js?v=870d90f25057"></script>
+  <script src="assets/js/shared-ui.js?v=870d90f25057"></script>
 </body>
 
 </html>

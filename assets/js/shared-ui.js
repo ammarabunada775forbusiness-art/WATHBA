@@ -312,7 +312,7 @@ function wathbaFindMenuProductById(id) {
 }
 
 function wathbaGetLang() {
-  return localStorage.getItem("wathbaLang") || "ar";
+  return document.documentElement.lang === "en" ? "en" : "ar";
 }
 
 function wathbaAcademyUrl() {
@@ -334,7 +334,7 @@ function wathbaEnsureSharedShell() {
       "afterbegin",
       `
         <div class="wathba-top-tools">
-          <button class="wathba-lang-btn" type="button" aria-label="Switch language">AR</button>
+          <a class="wathba-lang-btn" data-wathba-language-switch href="${window.WathbaLanguage.opposite(window.location, wathbaGetLang() === 'ar' ? 'en' : 'ar')}" aria-label="Switch language">AR</a>
           <button class="wathba-menu-toggle" type="button" aria-label="Open menu" aria-controls="wathbaMobileMenu" aria-expanded="false">
             <span class="material-symbols-outlined">menu</span>
           </button>
@@ -356,6 +356,10 @@ function wathbaEnsureSharedShell() {
 }
 
 function wathbaApplyLanguage(lang) {
+  if (lang !== wathbaGetLang()) {
+    window.location.assign(window.WathbaLanguage.opposite(window.location, lang));
+    return;
+  }
   localStorage.setItem("wathbaLang", lang);
 
   document.documentElement.lang = lang;
@@ -370,6 +374,9 @@ function wathbaApplyLanguage(lang) {
   if (langButton) {
     langButton.textContent = lang === "ar" ? "EN" : "AR";
     langButton.setAttribute("aria-label", lang === "ar" ? "Switch to English" : "التبديل إلى العربية");
+    langButton.href = window.WathbaLanguage.opposite(window.location, lang === "ar" ? "en" : "ar");
+    langButton.hreflang = lang === "ar" ? "en" : "ar";
+    langButton.lang = lang === "ar" ? "en" : "ar";
   }
 
   wathbaRenderMobileMenu();
@@ -514,7 +521,7 @@ function wathbaIsProductsNavLink(link) {
   const rawHref = link.getAttribute("href") || "";
   const cleanHref = rawHref.split("?")[0].split("#")[0];
 
-  return cleanHref.endsWith("products.html");
+  return window.WathbaLanguage.baseFile(cleanHref) === "products.html";
 }
 
 function wathbaEnsureMegaMenuReady() {
@@ -707,7 +714,7 @@ function wathbaTranslateDesktopNav() {
     if (link.classList.contains("wathba-nav-logo")) return;
 
     const href = link.getAttribute("href") || "";
-    const page = href.split("?")[0];
+    const page = window.WathbaLanguage.baseFile(href.split(/[?#]/)[0]);
 
     if (navMap[page]) {
       link.textContent = navMap[page];
@@ -720,7 +727,7 @@ function wathbaTranslateDesktopNav() {
   wathbaNormalizeLogo();
 }
 function wathbaSetActiveLinks() {
-  const path = window.location.pathname.split("/").pop() || "index.html";
+  const path = window.WathbaLanguage.baseFile(window.location.pathname.split("/").pop() || "index.html");
   let normalizedPath = path === "" ? "index.html" : path;
 
   /*
@@ -738,10 +745,11 @@ function wathbaSetActiveLinks() {
     if (link.classList.contains("wathba-logo")) return;
 
     const href = link.getAttribute("href") || "";
-    let linkPage = href.split(/[?#]/)[0];
+    let linkPage = window.WathbaLanguage.baseFile(href.split(/[?#]/)[0]);
 
-    link.classList.toggle("active", linkPage === normalizedPath);
-    if (linkPage === normalizedPath) link.setAttribute("aria-current", "page");
+    const isActive = linkPage === window.WathbaLanguage.baseFile(normalizedPath);
+    link.classList.toggle("active", isActive);
+    if (isActive) link.setAttribute("aria-current", "page");
     else link.removeAttribute("aria-current");
   });
 }
@@ -757,12 +765,16 @@ function wathbaNormalizeLogo() {
     logo.dataset.wathbaLogo = "true";
 
     if (logo.tagName.toLowerCase() === "a") {
-      logo.setAttribute("href", "index.html");
+      logo.setAttribute("href", window.WathbaLanguage.href("index.html", wathbaGetLang()));
     }
   });
 }
 
 function wathbaNormalizeLinks() {
+  document.querySelectorAll('a[href]').forEach((link) => {
+    if (link.hasAttribute('hreflang') || link.hasAttribute('data-wathba-language-switch')) return;
+    link.setAttribute('href', window.WathbaLanguage.href(link.getAttribute('href'), wathbaGetLang()));
+  });
   document.querySelectorAll('a[href="#"]').forEach((link) => {
     const text = link.textContent.toLowerCase();
 
@@ -846,8 +858,8 @@ function wathbaBindEvents() {
     }
 
     if (langButton) {
-      const nextLang = wathbaGetLang() === "en" ? "ar" : "en";
-      wathbaApplyLanguage(nextLang);
+      // A real link supports copying and opening the other language in a new tab.
+      return;
     }
 
     if (menuButton) {

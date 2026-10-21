@@ -9,7 +9,8 @@
   <meta name="description" content="تواصل مع وثبة في الأردن للاستفسار عن عقلة الحائط والباراليتس والمتوازي وتجهيزات الكاليستنكس حسب الطلب عبر واتساب." />
   <script>
     (function () {
-      var lang = localStorage.getItem("wathbaLang") || "ar";
+      var lang = document.documentElement.lang;
+            try { localStorage.setItem("wathbaLang", lang); } catch (_) {}
       document.documentElement.lang = lang;
       document.documentElement.dataset.wathbaLang = lang;
       document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
@@ -280,11 +281,18 @@
       }
     }
   </style>
-  <script src="assets/js/tailwind-config.js?v=2977020e8f43"></script>
-  <link rel="stylesheet" href="assets/css/shared-ui.css?v=2977020e8f43" />
+  <script src="assets/js/tailwind-config.js?v=870d90f25057"></script>
+    <script src="assets/js/language.js?v=870d90f25057"></script>
+  <link rel="stylesheet" href="assets/css/shared-ui.css?v=870d90f25057" />
+<!-- WATHBA_LANGUAGE_ALTERNATES_START -->
+<link rel="alternate" hreflang="ar" href="https://wathba-rosy.vercel.app/contact.html">
+<link rel="alternate" hreflang="en" href="https://wathba-rosy.vercel.app/contact-en.html">
+<link rel="alternate" hreflang="x-default" href="https://wathba-rosy.vercel.app/contact.html">
+<!-- WATHBA_LANGUAGE_ALTERNATES_END -->
 </head>
 
 <body class="bg-background text-on-background selection:bg-primary selection:text-black">
+<!-- WATHBA_STATIC_TOOLS_START --><div class="wathba-top-tools"><a class="wathba-lang-btn" data-wathba-language-switch href="contact-en.html" hreflang="en" lang="en" aria-label="Switch to English">EN</a><button class="wathba-menu-toggle" type="button" aria-label="فتح القائمة" aria-controls="wathbaMobileMenu" aria-expanded="false"><span class="material-symbols-outlined">menu</span></button></div><!-- WATHBA_STATIC_TOOLS_END -->
   <!-- WATHBA Unified Navbar -->
   <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
     <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
@@ -293,19 +301,19 @@
 
         <div class="hidden md:flex items-center gap-8">
           <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-            href="index.html">Home</a>
+            href="index.html"><!-- WATHBA_COPY:contact-001:START -->الرئيسية<!-- WATHBA_COPY:contact-001:END --></a>
 
           <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-            href="products.html">Products</a>
+            href="products.html"><!-- WATHBA_COPY:contact-002:START -->المنتجات<!-- WATHBA_COPY:contact-002:END --></a>
+
+          <!-- WATHBA_COPY:contact-003:START --><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+            href="academy.html"><!-- WATHBA_COPY:contact-003:END --><!-- WATHBA_COPY:contact-004:START -->الأكاديمية<!-- WATHBA_COPY:contact-004:END --></a>
 
           <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-            href="academy.html">Academy</a>
+            href="about.html"><!-- WATHBA_COPY:contact-005:START -->من نحن<!-- WATHBA_COPY:contact-005:END --></a>
 
           <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-            href="about.html">About</a>
-
-          <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-            href="contact.html">Contact</a>
+            href="contact.html"><!-- WATHBA_COPY:contact-006:START -->تواصل معنا<!-- WATHBA_COPY:contact-006:END --></a>
         </div>
       </div>
 
@@ -314,30 +322,24 @@
   </nav>
   <main class="pt-32">
     <!-- Hero Section -->
-    <section class="relative min-h-[716px] flex flex-col justify-center px-6 md:px-16 py-20 overflow-hidden">
+    <section class="relative min-h-[716px] flex flex-col justify-center px-6 md:px-16 py-20 overflow-hidden wathba-ar-text">
       <div class="max-w-container-max mx-auto w-full relative">
-        <span class="font-label-caps text-label-caps tracking-[0.3em] text-primary mb-8 block">UNCOMPROMISING
-          PERFORMANCE</span>
-        <h1 class="font-display-hero text-[80px] md:text-display-hero uppercase leading-none hero-text mb-12">
-          جهّز مساحة<br />تدريبك
-        </h1>
+        <span class="font-label-caps text-label-caps tracking-[0.3em] text-primary mb-8 block"><!-- WATHBA_COPY:contact-007:START -->أداء بلا تنازل<!-- WATHBA_COPY:contact-007:END --></span>
+        <h1 class="font-display-hero text-[80px] md:text-display-hero uppercase leading-none hero-text mb-12"><!-- WATHBA_COPY:contact-008:START -->جهّز مساحة<br>تدريبك<!-- WATHBA_COPY:contact-008:END --></h1>
         <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
           <!-- WhatsApp Primary CTA Card -->
           <div
             class="md:col-span-7 glass-card p-8 md:p-12 rounded-xl flex flex-col justify-between group overflow-hidden relative">
             <div class="relative z-10">
-              <h2 class="font-headline-md text-headline-md mb-6 uppercase">Instant Support</h2>
-              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-10">
-                Connect with our equipment specialists directly. We offer personalized quotes and
-                technical consultations via WhatsApp.
-              </p>
+              <h2 class="font-headline-md text-headline-md mb-6 uppercase"><!-- WATHBA_COPY:contact-009:START -->دعم مباشر<!-- WATHBA_COPY:contact-009:END --></h2>
+              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-10"><!-- WATHBA_COPY:contact-010:START -->تواصل معنا مباشرة عبر واتساب، واحكِ لنا عن المنتج أو المساحة أو التجهيز الذي تريده، وسنساعدك بالاختيار والتفاصيل.<!-- WATHBA_COPY:contact-010:END --></p>
             </div>
             <div class="relative z-10">
-              <a class="wathba-contact-wa-hero" href="#" data-wathba-whatsapp-link target="_blank"
-                rel="noopener noreferrer">
+              <!-- WATHBA_COPY:contact-011:START --><a class="wathba-contact-wa-hero" href="https://wa.me/962791752349?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20WATHBA%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B9%D8%AF%D8%A7%D8%AA%20%D8%A7%D9%84%D9%83%D8%A7%D9%84%D9%8A%D8%B3%D8%AA%D9%86%D9%83%D8%B3" data-wathba-whatsapp-link target="_blank"
+                rel="noopener noreferrer"><!-- WATHBA_COPY:contact-011:END -->
                 <span class="material-symbols-outlined" data-icon="chat" data-weight="fill"
                   style="font-variation-settings: 'FILL' 1;">chat</span>
-                <span class="wathba-contact-hero-wa-text">CHAT ON WHATSAPP</span>
+                <span class="wathba-contact-hero-wa-text"><!-- WATHBA_COPY:contact-012:START -->راسلنا واتساب<!-- WATHBA_COPY:contact-012:END --></span>
               </a>
             </div>
             <div
@@ -350,13 +352,10 @@
     </section>
 
     <!-- Visual Form Section -->
-    <section class="px-6 md:px-16 py-32 grid grid-cols-1 lg:grid-cols-2 gap-24 items-start max-w-container-max mx-auto">
+    <section class="px-6 md:px-16 py-32 grid grid-cols-1 lg:grid-cols-2 gap-24 items-start max-w-container-max mx-auto wathba-ar-text">
       <div class="sticky top-32">
-        <h2 class="font-headline-lg text-headline-lg uppercase mb-8">INQUIRY<br />DETAILS</h2>
-        <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-md">
-          Tell us about your space and goals. Whether you're building a home gym or a professional
-          calisthenics park, we've got the expertise to guide you.
-        </p>
+        <h2 class="font-headline-lg text-headline-lg uppercase mb-8"><!-- WATHBA_COPY:contact-013:START -->تفاصيل<br>الاستفسار<!-- WATHBA_COPY:contact-013:END --></h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-md"><!-- WATHBA_COPY:contact-014:START -->اكتب لنا ما الذي تبحث عنه: تجهيز منزلي، عقلة، متوازي، حلقات، أو مساحة كاليسثنكس كاملة. سنساعدك تختار الأنسب حسب هدفك والمساحة المتوفرة.<!-- WATHBA_COPY:contact-014:END --></p>
         <div class="w-full aspect-video rounded-lg overflow-hidden border border-outline-variant">
           <img alt="Athletic Gym" class="w-full h-full object-cover brightness-95"
             data-alt="A cinematic, high-contrast photograph of a minimalist calisthenics training facility in Amman, Jordan. The space features matte black steel pull-up bars and parallel bars against a dark charcoal concrete wall. High-key dramatic side lighting highlights the metallic textures and creating deep shadows. The atmosphere is intense, professional, and captures the elite athletic editorial luxe aesthetic of the brand."
@@ -364,345 +363,234 @@
         </div>
       </div>
       <div class="glass-card p-10 md:p-16 rounded-xl border border-outline-variant/30">
-        <form class="space-y-12">
+        <form class="space-y-12"><!-- WATHBA_COPY:contact-015:START -->
           <div class="space-y-2 group">
-            <label for="contactName"
-              class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">
-              FULL NAME
-            </label>
-            <input id="contactName" name="name" required autocomplete="name"
-              class="w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary"
-              placeholder="YOUR NAME" type="text" />
+            <label for="contactName" class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">الاسم الكامل</label>
+            <input id="contactName" name="name" required="" autocomplete="name" class="w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary" placeholder="اكتب اسمك" type="text">
           </div>
 
           <div class="space-y-2 group">
-            <label for="contactPhone"
-              class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">
-              PHONE NUMBER
-            </label>
-            <input id="contactPhone" name="phone" required autocomplete="tel"
-              class="w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary"
-              placeholder="+962" type="tel" />
+            <label for="contactPhone" class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">رقم الهاتف</label>
+            <input id="contactPhone" name="phone" required="" autocomplete="tel" class="w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary" placeholder="+962" type="tel">
           </div>
 
           <div class="space-y-2 group">
-            <label for="contactMessage"
-              class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">
-              MESSAGE / EQUIPMENT SPECS
-            </label>
-            <textarea id="contactMessage" name="message" required
-              class="w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary resize-none"
-              placeholder="WHAT ARE YOU LOOKING FOR?" rows="4"></textarea>
+            <label for="contactMessage" class="font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors">الرسالة / تفاصيل المعدات</label>
+            <textarea id="contactMessage" name="message" required="" class="w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary resize-none" placeholder="ما المنتج أو التجهيز الذي تبحث عنه؟" rows="4"></textarea>
           </div>
-        </form>
+        <div class="wathba-contact-final-note" style="display: none; margin-top: 18px; padding: 12px 14px; border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.14); font-size: 14px; line-height: 1.6;"></div><!-- WATHBA_COPY:contact-015:END --></form>
       </div>
     </section>
 
     <!-- Information Grid -->
-    <section class="px-6 md:px-16 py-20 bg-surface-container-lowest">
+    <section class="px-6 md:px-16 py-20 bg-surface-container-lowest wathba-ar-text">
       <div class="max-w-container-max mx-auto">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
           <!-- Card 1 -->
           <div
             class="wathba-contact-info-card border border-outline-variant p-8 hover:bg-surface-variant/20 transition-colors">
             <span class="material-symbols-outlined text-primary mb-6" data-icon="call">call</span>
-            <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2">WHATSAPP NUMBER</h3>
+            <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2"><!-- WATHBA_COPY:contact-016:START -->رقم الواتساب<!-- WATHBA_COPY:contact-016:END --></h3>
             <p class="wathba-contact-info-value font-headline-md text-headline-md text-primary">+962 791752349</p>
           </div>
           <!-- Card 2 -->
           <div
             class="wathba-contact-info-card border border-outline-variant p-8 hover:bg-surface-variant/20 transition-colors">
-            <span class="material-symbols-outlined text-primary mb-6" data-icon="share">share</span>
-            <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2">INSTAGRAM</h3>
-            <p class="wathba-contact-info-value font-headline-md text-headline-md text-primary">@WATHBA_JO</p>
+            <span class="material-symbols-outlined text-primary mb-6" data-icon="share"><!-- WATHBA_COPY:contact-017:START -->groups<!-- WATHBA_COPY:contact-017:END --></span>
+            <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2"><!-- WATHBA_COPY:contact-018:START -->تابعنا<!-- WATHBA_COPY:contact-018:END --></h3>
+            <div class="wathba-contact-info-value font-headline-md text-headline-md text-primary"><!-- WATHBA_COPY:contact-019:START -->
+        <div class="wathba-contact-social-list">
+
+            <a href="https://www.instagram.com/wathba.calisthenics/" target="_blank" rel="noopener noreferrer" class="wathba-contact-social-pill">
+              <span>Instagram</span>
+              <strong>@wathba.calisthenics</strong>
+            </a>
+
+            <a href="https://www.tiktok.com/@wathba.calisthenics?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener noreferrer" class="wathba-contact-social-pill">
+              <span>TikTok</span>
+              <strong>@wathba.calisthenics</strong>
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=61591296419542" target="_blank" rel="noopener noreferrer" class="wathba-contact-social-pill">
+              <span>Facebook</span>
+              <strong>WATHBA Calisthenics</strong>
+            </a>
+
+        </div>
+      <!-- WATHBA_COPY:contact-019:END --></div>
           </div>
           <!-- Card 3 -->
           <div
             class="wathba-contact-info-card border border-outline-variant p-8 hover:bg-surface-variant/20 transition-colors">
             <span class="material-symbols-outlined text-primary mb-6" data-icon="location_on">location_on</span>
-            <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2">LOCATION</h3>
-            <p class="wathba-contact-info-value font-headline-md text-headline-md text-primary">AMMAN, JORDAN</p>
+            <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2"><!-- WATHBA_COPY:contact-020:START -->الموقع<!-- WATHBA_COPY:contact-020:END --></h3>
+            <p class="wathba-contact-info-value font-headline-md text-headline-md text-primary"><!-- WATHBA_COPY:contact-021:START -->عمّان، الأردن<!-- WATHBA_COPY:contact-021:END --></p>
           </div>
           <!-- Card 4 -->
           <div
             class="wathba-contact-info-card border border-outline-variant p-8 hover:bg-surface-variant/20 transition-colors">
             <span class="material-symbols-outlined text-primary mb-6" data-icon="schedule">schedule</span>
-            <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2">التواصل</h3>
-            <p class="wathba-contact-info-value font-headline-md text-headline-md text-primary">راسلنا عبر واتساب</p>
+            <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2"><!-- WATHBA_COPY:contact-022:START -->التواصل<!-- WATHBA_COPY:contact-022:END --></h3>
+            <p class="wathba-contact-info-value font-headline-md text-headline-md text-primary"><!-- WATHBA_COPY:contact-023:START -->راسلنا عبر واتساب<!-- WATHBA_COPY:contact-023:END --></p>
           </div>
         </div>
       </div>
     </section>
     <!-- FAQ Section -->
-    <section class="px-6 md:px-16 py-32 border-t border-outline-variant/10">
+    <section class="px-6 md:px-16 py-32 border-t border-outline-variant/10 wathba-ar-text">
       <div class="max-w-4xl mx-auto">
-        <h2 class="font-headline-lg text-headline-lg uppercase mb-20 text-center">FREQUENTLY ASKED</h2>
+        <h2 class="font-headline-lg text-headline-lg uppercase mb-20 text-center"><!-- WATHBA_COPY:contact-024:START -->الأسئلة الشائعة<!-- WATHBA_COPY:contact-024:END --></h2>
         <div class="space-y-8">
           <!-- Q1 -->
           <div class="border-b border-outline-variant/30 pb-8 group cursor-pointer"
             onclick="this.classList.toggle('active')">
             <div class="flex justify-between items-center mb-4">
-              <h3 class="font-headline-md text-headline-md uppercase">HOW DO I ORDER?</h3>
+              <h3 class="font-headline-md text-headline-md uppercase"><!-- WATHBA_COPY:contact-025:START -->كيف أطلب؟<!-- WATHBA_COPY:contact-025:END --></h3>
               <span class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-45"
                 data-icon="add">add</span>
             </div>
             <div class="hidden group-[.active]:block transition-all duration-500">
-              <p class="font-body-lg text-body-lg text-on-surface-variant">All orders are processed
-                through WhatsApp for personalized verification. Simply send us a message with your
-                requirements, and we'll generate a formal quote.</p>
+              <p class="font-body-lg text-body-lg text-on-surface-variant"><!-- WATHBA_COPY:contact-026:START -->كل الطلبات تتم عبر واتساب. أرسل لنا المنتج المطلوب، وسنؤكد لك التوفر والتفاصيل والسعر.<!-- WATHBA_COPY:contact-026:END --></p>
             </div>
           </div>
           <!-- Q2 -->
           <div class="border-b border-outline-variant/30 pb-8 group cursor-pointer"
             onclick="this.classList.toggle('active')">
             <div class="flex justify-between items-center mb-4">
-              <h3 class="font-headline-md text-headline-md uppercase">ARE PRICES FIXED?</h3>
+              <h3 class="font-headline-md text-headline-md uppercase"><!-- WATHBA_COPY:contact-027:START -->هل الأسعار ثابتة؟<!-- WATHBA_COPY:contact-027:END --></h3>
               <span class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-45"
                 data-icon="add">add</span>
             </div>
             <div class="hidden group-[.active]:block">
-              <p class="font-body-lg text-body-lg text-on-surface-variant">While basic equipment has
-                listed prices, custom rigs and large-scale installations depend on specific dimensions
-                and powder coating finishes. We provide fixed quotes before any commitment.</p>
+              <p class="font-body-lg text-body-lg text-on-surface-variant"><!-- WATHBA_COPY:contact-028:START -->بعض المنتجات تعتمد على القياس والخامة والتجهيز المطلوب. نؤكد السعر النهائي عبر واتساب قبل أي طلب.<!-- WATHBA_COPY:contact-028:END --></p>
             </div>
           </div>
           <!-- Q3 -->
           <div class="border-b border-outline-variant/30 pb-8 group cursor-pointer"
             onclick="this.classList.toggle('active')">
             <div class="flex justify-between items-center mb-4">
-              <h3 class="font-headline-md text-headline-md uppercase">DO YOU DELIVER?</h3>
+              <h3 class="font-headline-md text-headline-md uppercase"><!-- WATHBA_COPY:contact-029:START -->هل يمكن عمل تجهيزات مخصصة؟<!-- WATHBA_COPY:contact-029:END --></h3>
               <span class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-45"
                 data-icon="add">add</span>
             </div>
             <div class="hidden group-[.active]:block">
-              <p class="font-body-lg text-body-lg text-on-surface-variant">Yes, we deliver and provide
-                installation services across all governorates of Jordan. Shipping costs vary based on
-                the weight and destination.</p>
+              <p class="font-body-lg text-body-lg text-on-surface-variant"><!-- WATHBA_COPY:contact-030:START -->نعم، يمكننا المساعدة في تجهيزات منزلية، خارجية، متوازي، عقلات، وأجهزة كاليسثنكس حسب المساحة المتوفرة.<!-- WATHBA_COPY:contact-030:END --></p>
             </div>
           </div>
           <!-- Q4 -->
           <div class="border-b border-outline-variant/30 pb-8 group cursor-pointer"
             onclick="this.classList.toggle('active')">
             <div class="flex justify-between items-center mb-4">
-              <h3 class="font-headline-md text-headline-md uppercase">CAN I CUSTOMIZE EQUIPMENT?</h3>
+              <h3 class="font-headline-md text-headline-md uppercase"><!-- WATHBA_COPY:contact-031:START -->هل يمكن تخصيص المعدات؟<!-- WATHBA_COPY:contact-031:END --></h3>
               <span class="material-symbols-outlined transition-transform duration-300 group-[.active]:rotate-45"
                 data-icon="add">add</span>
             </div>
             <div class="hidden group-[.active]:block">
-              <p class="font-body-lg text-body-lg text-on-surface-variant">Customization is our specialty.
-                We can tailor bar heights, widths, and color schemes to fit your specific training space
-                or brand identity.</p>
+              <p class="font-body-lg text-body-lg text-on-surface-variant"><!-- WATHBA_COPY:contact-032:START -->نعم، يمكن تخصيص بعض المعدات حسب القياس، الارتفاع، الشكل، والمساحة المتوفرة. أرسل لنا التفاصيل عبر واتساب.<!-- WATHBA_COPY:contact-032:END --></p>
             </div>
           </div>
         </div>
       </div>
     </section>
   </main>
-  <div id="wathbaFooter"></div>
+  <div id="wathbaFooter"><!-- WATHBA_SLOT:wathbaFooter:START -->
+    <footer class="wathba-site-footer">
+      <div class="wathba-site-footer-grid">
+        <div class="wathba-footer-brand">
+          <h3 class="wathba-footer-logo">WATHBA</h3>
+          <p class="wathba-footer-text">معدات كاليسثنكس ممتازة للبيت، الخارج، والمساحات التدريبية الاحترافية. تصفح المنتجات واطلب مباشرة عبر واتساب.</p>
+
+          <a
+            href="https://wa.me/962791752349?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20WATHBA%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B9%D8%AF%D8%A7%D8%AA%20%D8%A7%D9%84%D9%83%D8%A7%D9%84%D9%8A%D8%B3%D8%AA%D9%86%D9%83%D8%B3"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="wathba-footer-whatsapp"
+          >
+            <span class="wathba-footer-wa-svg">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M19.11 17.27c-.27-.13-1.58-.78-1.82-.87-.24-.09-.41-.13-.59.14-.18.27-.68.87-.84 1.04-.15.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.3-.79-.7-1.32-1.57-1.47-1.84-.15-.27-.02-.42.11-.55.11-.11.27-.29.41-.43.14-.15.18-.25.27-.43.09-.18.05-.34-.02-.48-.07-.13-.59-1.43-.81-1.96-.21-.5-.43-.43-.59-.44h-.5c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.65 1.11 2.83c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.58-.65 1.8-1.27.22-.63.22-1.16.15-1.27-.06-.12-.24-.18-.5-.31z"></path>
+    <path d="M16.02 3.2c-7.07 0-12.8 5.72-12.8 12.77 0 2.25.59 4.45 1.71 6.39L3.1 28.8l6.63-1.73a12.8 12.8 0 0 0 6.29 1.69h.01c7.06 0 12.79-5.72 12.79-12.77 0-3.42-1.34-6.63-3.79-9.04A12.76 12.76 0 0 0 16.02 3.2zm0 23.39h-.01a10.62 10.62 0 0 1-5.41-1.49l-.39-.23-3.94 1.03 1.05-3.84-.25-.4a10.55 10.55 0 0 1-1.63-5.61c0-5.84 4.76-10.59 10.6-10.59 2.82 0 5.47 1.09 7.47 3.08a10.5 10.5 0 0 1 3.11 7.51c0 5.84-4.76 10.59-10.6 10.59z"></path>
+  </svg>
+</span>
+            اطلب عبر واتساب
+          </a>
+        </div>
+
+        <div class="wathba-footer-col">
+          <h5 class="wathba-footer-title">الصفحات</h5>
+          <ul class="wathba-footer-list">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="academy.html">الأكاديمية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </div>
+
+        <div class="wathba-footer-col">
+          <h5 class="wathba-footer-title">المعدات</h5>
+          <ul class="wathba-footer-list">
+            <li><a href="equipment-wall-pull-up-bar.html">عقلة</a></li>
+<li><a href="equipment-steel-wood-parallettes.html">باراليتس</a></li>
+<li><a href="products.html?filter=parallel-bars">متوازي حديد</a></li>
+<li><a href="equipment-gymnastic-rings.html">حلقات جمباز</a></li>
+          </ul>
+        </div>
+
+        <div class="wathba-footer-contact">
+          <h5 class="wathba-footer-title">التواصل</h5>
+          <p>عمّان، الأردن</p>
+          <p>واتساب: +962 79 175 2349</p>
+          <p>الطلبات والتجهيزات المخصصة تتم مباشرة عبر واتساب.</p>
+
+    <div class="wathba-footer-socials" aria-label="WATHBA social links">
+
+        <a
+          href="https://www.instagram.com/wathba.calisthenics/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-footer-social-link"
+          aria-label="Instagram"
+          title="@wathba.calisthenics"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@wathba.calisthenics?is_from_webapp=1&sender_device=pc"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-footer-social-link"
+          aria-label="TikTok"
+          title="@wathba.calisthenics"
+        >
+          TikTok
+        </a>
+
+        <a
+          href="https://www.facebook.com/profile.php?id=61591296419542"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-footer-social-link"
+          aria-label="Facebook"
+          title="WATHBA Calisthenics"
+        >
+          Facebook
+        </a>
+
+    </div>
+
+        </div>
+
+        <div class="wathba-footer-bottom">
+          <p>© 2026 WATHBA. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+  <!-- WATHBA_SLOT:wathbaFooter:END --></div>
 
   <!-- WATHBA_CONTACT_PAGE_TRANSLATION_START -->
-  <script id="wathba-contact-page-translation">
-    (function () {
-      const contactPageText = {
-        en: {
-          heroMini: "UNCOMPROMISING PERFORMANCE",
-          heroTitle: "LET’S BUILD<br />YOUR SETUP",
-
-          supportTitle: "Instant Support",
-          supportText:
-            "Connect with our equipment specialists directly. We offer personalized quotes and technical consultations via WhatsApp.",
-          chatButton: "CHAT ON WHATSAPP",
-
-          cardWhatsapp: "WHATSAPP NUMBER",
-          cardInstagram: "INSTAGRAM",
-          cardLocation: "LOCATION",
-          cardLocationValue: "AMMAN, JORDAN",
-          cardHours: "GET IN TOUCH",
-          cardHoursValue: "Message us on WhatsApp",
-
-          inquiryTitle: "INQUIRY<br />DETAILS",
-          inquiryText:
-            "Tell us about your space and goals. Whether you're building a home gym or a professional calisthenics park, we've got the expertise to guide you.",
-
-          nameLabel: "FULL NAME",
-          namePlaceholder: "YOUR NAME",
-          phoneLabel: "PHONE NUMBER",
-          phonePlaceholder: "+962",
-          messageLabel: "MESSAGE / EQUIPMENT SPECS",
-          messagePlaceholder: "WHAT ARE YOU LOOKING FOR?",
-          submitButton: "SEND VIA WHATSAPP",
-
-          faqTitle: "FREQUENTLY ASKED",
-          q1: "HOW DO I ORDER?",
-          a1:
-            "All orders are processed through WhatsApp. Send us your product request, and we will confirm availability, details, and price.",
-          q2: "ARE PRICES FIXED?",
-          a2:
-            "Some products depend on size, material, and custom setup. We always confirm the final price through WhatsApp before ordering.",
-          q3: "DO YOU MAKE CUSTOM SETUPS?",
-          a3:
-            "Yes. We can help with home setups, outdoor bars, multi rigs, and customized calisthenics spaces depending on your available area."
-        },
-
-        ar: {
-          heroMini: "أداء بلا تنازل",
-          heroTitle: "جهّز مساحة<br />تدريبك",
-
-          supportTitle: "دعم مباشر",
-          supportText:
-            "تواصل معنا مباشرة عبر واتساب، واحكِ لنا عن المنتج أو المساحة أو التجهيز الذي تريده، وسنساعدك بالاختيار والتفاصيل.",
-          chatButton: "راسلنا واتساب",
-
-          cardWhatsapp: "رقم الواتساب",
-          cardInstagram: "إنستغرام",
-          cardLocation: "الموقع",
-          cardLocationValue: "عمّان، الأردن",
-          cardHours: "التواصل",
-          cardHoursValue: "راسلنا عبر واتساب",
-
-          inquiryTitle: "تفاصيل<br />الاستفسار",
-          inquiryText:
-            "اكتب لنا ما الذي تبحث عنه: تجهيز منزلي، عقلة، متوازي، حلقات، أو مساحة كاليسثنكس كاملة. سنساعدك تختار الأنسب حسب هدفك والمساحة المتوفرة.",
-
-          nameLabel: "الاسم الكامل",
-          namePlaceholder: "اكتب اسمك",
-          phoneLabel: "رقم الهاتف",
-          phonePlaceholder: "+962",
-          messageLabel: "الرسالة / تفاصيل المعدات",
-          messagePlaceholder: "ما المنتج أو التجهيز الذي تبحث عنه؟",
-          submitButton: "إرسال عبر واتساب",
-
-          faqTitle: "الأسئلة الشائعة",
-          q1: "كيف أطلب؟",
-          a1:
-            "كل الطلبات تتم عبر واتساب. أرسل لنا المنتج المطلوب وسنؤكد لك التوفر والتفاصيل والسعر.",
-          q2: "هل الأسعار ثابتة؟",
-          a2:
-            "بعض المنتجات تعتمد على القياس والخامة والتجهيز المطلوب. نؤكد السعر النهائي عبر واتساب قبل أي طلب.",
-          q3: "هل يمكن عمل تجهيزات مخصصة؟",
-          a3:
-            "نعم، يمكننا المساعدة في تجهيزات منزلية، خارجية، متوازي، عقلات، وأجهزة كاليسثنكس حسب المساحة المتوفرة."
-        }
-      };
-
-      function getLang() {
-        return localStorage.getItem("wathbaLang") || "ar";
-      }
-
-      function setText(selector, text) {
-        const element = document.querySelector(selector);
-        if (element) element.textContent = text;
-      }
-
-      function setHTML(selector, html) {
-        const element = document.querySelector(selector);
-        if (element) element.innerHTML = html;
-      }
-
-      function applyContactPageTranslation() {
-        const lang = getLang();
-        const t = contactPageText[lang];
-
-        document.title = lang === "ar"
-          ? "تواصل مع وثبة | معدات الكاليستنكس في الأردن"
-          : "Contact WATHBA | Calisthenics Equipment in Jordan";
-
-        /* Hero */
-        setText("main section:nth-of-type(1) span.font-label-caps", t.heroMini);
-        setHTML("main section:nth-of-type(1) h1", t.heroTitle);
-
-        setText("main section:nth-of-type(1) .glass-card h2", t.supportTitle);
-        setText("main section:nth-of-type(1) .glass-card p", t.supportText);
-
-        const heroWhatsappButton = document.querySelector("main section:nth-of-type(1) .glass-card a .wathba-contact-hero-wa-text");
-        if (heroWhatsappButton) heroWhatsappButton.textContent = t.chatButton;
-
-        /* Info Cards */
-        const infoCards = document.querySelectorAll("main section:nth-of-type(3) .wathba-contact-info-card");
-
-        if (infoCards[0]) {
-          infoCards[0].querySelector("h3").textContent = t.cardWhatsapp;
-        }
-
-        if (infoCards[1]) {
-          infoCards[1].querySelector("h3").textContent = t.cardInstagram;
-        }
-
-        if (infoCards[2]) {
-          infoCards[2].querySelector("h3").textContent = t.cardLocation;
-          infoCards[2].querySelector("p").textContent = t.cardLocationValue;
-        }
-
-        if (infoCards[3]) {
-          infoCards[3].querySelector("h3").textContent = t.cardHours;
-          infoCards[3].querySelector("p").textContent = t.cardHoursValue;
-        }
-
-        /* Form Section */
-        setHTML("main section:nth-of-type(2) h2", t.inquiryTitle);
-        setText("main section:nth-of-type(2) .sticky > p", t.inquiryText);
-
-        const form = document.querySelector("main section:nth-of-type(2) form");
-
-        if (form) {
-          const groups = form.querySelectorAll(".group");
-          const inputs = form.querySelectorAll("input");
-          const textarea = form.querySelector("textarea");
-          const submitText = form.querySelector("button[type='submit'] span:first-child");
-
-          if (groups[0]) groups[0].querySelector("label").textContent = t.nameLabel;
-          if (groups[1]) groups[1].querySelector("label").textContent = t.phoneLabel;
-          if (groups[2]) groups[2].querySelector("label").textContent = t.messageLabel;
-
-          if (inputs[0]) inputs[0].placeholder = t.namePlaceholder;
-          if (inputs[1]) inputs[1].placeholder = t.phonePlaceholder;
-          if (textarea) textarea.placeholder = t.messagePlaceholder;
-
-          if (submitText) submitText.textContent = t.submitButton;
-        }
-
-        /* FAQ */
-        setText("main section:nth-of-type(4) h2", t.faqTitle);
-
-        const faqItems = document.querySelectorAll("main section:nth-of-type(4) .border-b");
-
-        const faqData = [
-          [t.q1, t.a1],
-          [t.q2, t.a2],
-          [t.q3, t.a3]
-        ];
-
-        faqItems.forEach((item, index) => {
-          const question = item.querySelector("h3");
-          const answer = item.querySelector("p");
-
-          if (question && faqData[index]) question.textContent = faqData[index][0];
-          if (answer && faqData[index]) answer.textContent = faqData[index][1];
-        });
-
-        const rtlTargets = [
-          "main section:nth-of-type(1)",
-          "main section:nth-of-type(2)",
-          "main section:nth-of-type(3)",
-          "main section:nth-of-type(4)"
-        ];
-
-        rtlTargets.forEach((selector) => {
-          const element = document.querySelector(selector);
-          if (!element) return;
-
-          if (lang === "ar") {
-            element.classList.add("wathba-ar-text");
-          } else {
-            element.classList.remove("wathba-ar-text");
-          }
-        });
-      }
-
-      document.addEventListener("DOMContentLoaded", applyContactPageTranslation);
-      document.addEventListener("wathba:langchange", applyContactPageTranslation);
-    })();
-  </script>
+  <script id="wathba-contact-page-translation"></script>
   <!-- WATHBA_CONTACT_PAGE_TRANSLATION_END -->
 
   <!-- WATHBA_CONTACT_FINAL_FIX_START -->
@@ -983,9 +871,9 @@ ${message}`;
     })();
   </script>
   <!-- WATHBA_CONTACT_FINAL_FIX_END -->
-  <script src="assets/js/config.js?v=2977020e8f43"></script>
-  <script src="assets/js/products-data.js?v=2977020e8f43"></script>
-  <script src="assets/js/shared-ui.js?v=2977020e8f43"></script>
+  <script src="assets/js/config.js?v=870d90f25057"></script>
+  <script src="assets/js/products-data.js?v=870d90f25057"></script>
+  <script src="assets/js/shared-ui.js?v=870d90f25057"></script>
 </body>
 
 </html>

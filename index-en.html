@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Calisthenics Equipment in Jordan | WATHBA</title>
+    <meta name="description" content="Explore WATHBA calisthenics equipment in Jordan: pull-up bars, parallettes, parallel bars, rings and custom setups. Learn how to choose and train with your equipment." />
+    <script>
+        (function () {
+            var lang = document.documentElement.lang;
+            try { localStorage.setItem("wathbaLang", lang); } catch (_) {}
+            document.documentElement.lang = lang;
+            document.documentElement.dataset.wathbaLang = lang;
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+            document.documentElement.classList.add("wathba-ui-loading");
+        })();
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="assets/js/tailwind-config.js?v=870d90f25057"></script>
+    <script src="assets/js/language.js?v=870d90f25057"></script>
+    <style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .product-360-container {
+            perspective: 1000px;
+            cursor: grab;
+        }
+
+        .product-360-inner {
+            transition: transform 0.1s ease-out;
+            transform-style: preserve-3d;
+        }
+
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            color: transparent;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .stagger-1 {
+            animation-delay: 0.2s;
+        }
+
+        .stagger-2 {
+            animation-delay: 0.5s;
+        }
+
+        .arabic-text {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            /* Fallback, would ideally use a proper Arabic Anton-equivalent */
+            direction: rtl;
+        }
+
+        .hero-stat-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        .hero-stat-card {
+            position: absolute;
+            max-width: 180px;
+            padding: 14px 16px;
+            border-radius: 14px;
+            background: rgba(26, 26, 26, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
+        }
+
+        .hero-stat-card span:first-child {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            font-size: 10px;
+            line-height: 1.2;
+            color: #c4c7c8;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero-stat-card span:last-child {
+            font-family: 'Anton', sans-serif;
+            font-size: 20px;
+            line-height: 1.05;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .hero-stat-material {
+            top: 34px;
+            right: 86px;
+        }
+
+        .hero-stat-capacity {
+            bottom: 46px;
+            left: 84px;
+        }
+
+        .hero-stat-finish {
+            top: 44%;
+            left: 8px;
+        }
+
+        .hero-stat-grip {
+            top: 38px;
+            left: 142px;
+        }
+
+
+        .hero-stat-support {
+            bottom: 70px;
+            right: 120px;
+        }
+
+        .hero-stat-use {
+            top: 46%;
+            right: 4px;
+        }
+
+
+
+        @media (max-width: 1024px) {
+            .hero-stat-layer {
+                inset: auto 0 0 0;
+                display: flex;
+                gap: 8px;
+                overflow-x: auto;
+                padding: 0 8px 4px;
+                scrollbar-width: none;
+            }
+
+            .hero-stat-layer::-webkit-scrollbar {
+                display: none;
+            }
+
+            .hero-stat-card {
+                position: relative !important;
+                top: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                left: auto !important;
+                min-width: 136px;
+                padding: 10px 12px;
+            }
+
+            .hero-stat-card span:first-child {
+                font-size: 8px;
+            }
+
+            .hero-stat-card span:last-child {
+                font-size: 15px;
+            }
+        }
+
+        /* Home trusted floating badge */
+        .home-trusted-floating-card {
+            position: absolute;
+            right: -28px;
+            bottom: -28px;
+            z-index: 5;
+            width: 190px;
+            padding: 16px 18px;
+            border-radius: 16px;
+            background: rgba(26, 26, 26, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 22px 65px rgba(0, 0, 0, 0.32);
+        }
+
+        .home-trusted-number {
+            display: block;
+            font-family: "Anton", sans-serif;
+            font-size: 42px;
+            line-height: 0.95;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .home-trusted-text {
+            display: block;
+            font-family: "Be Vietnam Pro", sans-serif;
+            color: #c4c7c8;
+            font-size: 12px;
+            line-height: 1.4;
+            letter-spacing: 0.08em;
+            font-weight: 1000;
+            text-transform: uppercase;
+        }
+
+        html[dir="rtl"] .home-trusted-floating-card {
+            direction: rtl;
+            text-align: right;
+        }
+
+        html[dir="rtl"] .home-trusted-text {
+            font-size: 15px;
+            letter-spacing: 0;
+            line-height: 1.55;
+        }
+
+        @media (max-width: 768px) {
+            .home-trusted-floating-card {
+                right: 12px;
+                bottom: -18px;
+                width: 150px;
+                padding: 12px 13px;
+            }
+
+            .home-trusted-number {
+                font-size: 32px;
+            }
+
+            .home-trusted-text {
+                font-size: 10px;
+            }
+
+            html[dir="rtl"] .home-trusted-text {
+                font-size: 13px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/shared-ui.css?v=870d90f25057" />
+    <link rel="stylesheet" href="assets/css/academy.css?v=870d90f25057" />
+<!-- WATHBA_LANGUAGE_ALTERNATES_START -->
+<link rel="alternate" hreflang="ar" href="https://wathba-rosy.vercel.app/">
+<link rel="alternate" hreflang="en" href="https://wathba-rosy.vercel.app/index-en.html">
+<link rel="alternate" hreflang="x-default" href="https://wathba-rosy.vercel.app/">
+<!-- WATHBA_LANGUAGE_ALTERNATES_END -->
+</head>
+
+<body class="selection:bg-primary selection:text-surface">
+<!-- WATHBA_STATIC_TOOLS_START --><div class="wathba-top-tools"><a class="wathba-lang-btn" data-wathba-language-switch href="index.html" hreflang="ar" lang="ar" aria-label="التبديل إلى العربية">AR</a><button class="wathba-menu-toggle" type="button" aria-label="Open menu" aria-controls="wathbaMobileMenu" aria-expanded="false"><span class="material-symbols-outlined">menu</span></button></div><!-- WATHBA_STATIC_TOOLS_END -->
+    <!-- WATHBA Unified Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
+        <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+            <div class="flex items-center gap-12">
+                <a class="wathba-logo wathba-nav-logo" href="index-en.html" data-wathba-logo="true">WATHBA</a>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="index-en.html"><!-- WATHBA_COPY:index-001:START -->Home<!-- WATHBA_COPY:index-001:END --></a>
+
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="products-en.html"><!-- WATHBA_COPY:index-002:START -->Products<!-- WATHBA_COPY:index-002:END --></a>
+
+                    <!-- WATHBA_COPY:index-003:START --><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="academy-en.html"><!-- WATHBA_COPY:index-003:END --><!-- WATHBA_COPY:index-004:START -->Academy<!-- WATHBA_COPY:index-004:END --></a>
+
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="about-en.html"><!-- WATHBA_COPY:index-005:START -->About<!-- WATHBA_COPY:index-005:END --></a>
+
+                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="contact-en.html"><!-- WATHBA_COPY:index-006:START -->Contact<!-- WATHBA_COPY:index-006:END --></a>
+                </div>
+            </div>
+
+            <div class="wathba-nav-empty"></div>
+        </div>
+    </nav>
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section
+            class="relative px-margin-desktop max-w-container-max mx-auto min-h-[921px] flex flex-col justify-center overflow-visible"
+            id="home">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+                <!-- Left: Aggressive Typography -->
+                <div class="md:col-span-5 z-10">
+                    <div class="flex flex-col gap-2">
+                        <span class="text-primary font-label-caps text-label-caps tracking-widest uppercase"><!-- WATHBA_COPY:index-007:START -->Performance Redefined<!-- WATHBA_COPY:index-007:END --></span>
+                        <h1 class="font-display-hero text-display-hero leading-none flex flex-col">
+                            <span class="text-primary">ENGINEERED</span>
+                            <span class="hero-text-stroke">FOR POWER</span>
+                        </h1>
+                        <h2 class="arabic-text font-headline-lg text-headline-lg text-primary/80 mt-[-20px]"><!-- WATHBA_COPY:index-008:START -->Built for Strength<!-- WATHBA_COPY:index-008:END --></h2>
+                    </div>
+                    <p class="mt-8 font-body-lg text-body-lg text-on-surface-variant max-w-sm"><!-- WATHBA_COPY:index-009:START -->Elite calisthenics equipment crafted for those who demand absolute precision and uncompromising strength.<!-- WATHBA_COPY:index-009:END --></p>
+                    <div class="mt-12 flex flex-wrap gap-4">
+                        <!-- WATHBA_COPY:index-010:START --><a href="https://wa.me/962791752349?text=Hello%20WATHBA%2C%20I%20want%20to%20ask%20about%20calisthenics%20equipment" data-wathba-whatsapp-link
+                            class="border border-primary text-primary font-headline-md text-[18px] uppercase px-10 py-4 rounded-full flex items-center gap-3 hover:bg-primary/10 transition-colors active:scale-95"><!-- WATHBA_COPY:index-010:END -->
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">chat</span>
+                            <span data-home-hero-whatsapp><!-- WATHBA_COPY:index-011:START -->WhatsApp<!-- WATHBA_COPY:index-011:END --></span>
+                        </a>
+
+                        <a href="products-en.html"
+                            class="bg-primary text-surface font-headline-md text-[18px] uppercase px-10 py-4 rounded-full flex items-center gap-3 hover:scale-105 transition-transform active:scale-95">
+                            <span data-home-hero-browse><!-- WATHBA_COPY:index-012:START -->Browse Products<!-- WATHBA_COPY:index-012:END --></span>
+                        </a>
+                        <!-- WATHBA_COPY:index-013:START --><a href="academy-beginner-en.html" data-home-hero-academy-link
+                            class="border border-primary/60 text-primary font-headline-md text-[18px] px-10 py-4 rounded-full flex items-center gap-3 hover:bg-primary/10 transition-colors"><!-- WATHBA_COPY:index-013:END -->
+                            <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+                            <span data-home-hero-academy><!-- WATHBA_COPY:index-014:START -->Start Learning<!-- WATHBA_COPY:index-014:END --></span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Center: 360 Product Interaction -->
+                <div class="md:col-span-7 relative h-[600px] flex items-center justify-center">
+                    <!-- Rotating Background Blur -->
+                    <div class="absolute w-[120%] h-[120%] -z-10 opacity-20">
+
+                    </div>
+                    <!-- Floating Data Blocks -->
+                    <div class="hero-stat-layer" aria-hidden="true">
+                        <div class="hero-stat-card hero-stat-material floating">
+                            <span><!-- WATHBA_COPY:index-015:START -->MATERIAL OPTIONS<!-- WATHBA_COPY:index-015:END --></span>
+                            <span><!-- WATHBA_COPY:index-016:START -->Wood &amp; steel by product<!-- WATHBA_COPY:index-016:END --></span>
+                        </div>
+
+                        <div class="hero-stat-card hero-stat-capacity floating stagger-1">
+                            <span><!-- WATHBA_COPY:index-017:START -->DIMENSIONS<!-- WATHBA_COPY:index-017:END --></span>
+                            <span><!-- WATHBA_COPY:index-018:START -->By product<!-- WATHBA_COPY:index-018:END --></span>
+                        </div>
+
+                        <div class="hero-stat-card hero-stat-finish floating stagger-2">
+                            <span><!-- WATHBA_COPY:index-019:START -->TRAINING<!-- WATHBA_COPY:index-019:END --></span>
+                            <span><!-- WATHBA_COPY:index-020:START -->Push &amp; pull<!-- WATHBA_COPY:index-020:END --></span>
+                        </div>
+
+                        <div class="hero-stat-card hero-stat-grip floating">
+                            <span><!-- WATHBA_COPY:index-021:START -->SIZING<!-- WATHBA_COPY:index-021:END --></span>
+                            <span><!-- WATHBA_COPY:index-022:START -->Ask for details<!-- WATHBA_COPY:index-022:END --></span>
+                        </div>
+
+                        <div class="hero-stat-card hero-stat-use floating stagger-2">
+                            <span><!-- WATHBA_COPY:index-023:START -->USE<!-- WATHBA_COPY:index-023:END --></span>
+                            <span><!-- WATHBA_COPY:index-024:START -->Home / Outdoor<!-- WATHBA_COPY:index-024:END --></span>
+                        </div>
+
+                        <div class="hero-stat-card hero-stat-support floating">
+                            <span><!-- WATHBA_COPY:index-025:START -->ORDER SUPPORT<!-- WATHBA_COPY:index-025:END --></span>
+                            <span><!-- WATHBA_COPY:index-026:START -->WhatsApp Quote<!-- WATHBA_COPY:index-026:END --></span>
+                        </div>
+                    </div>
+                    <!-- 360 Product Visual -->
+                    <div class="product-360-container w-full h-full flex items-center justify-center">
+                        <div class="product-360-inner relative w-full h-full flex items-center justify-center">
+                            <img class="w-[80%] h-auto object-contain drop-shadow-[0_35px_35px_rgba(255,255,255,0.1)]"
+                                data-alt="A premium pair of professional wooden calisthenics parallettes made from solid high-grade oak wood with a smooth natural finish. The product is shown from a dynamic three-quarter angle against a dark moody studio background with dramatic top lighting highlighting the wood grain and sturdy construction. The aesthetic is clean, minimalist, and high-performance, fitting a luxury athletic brand identity."
+                                id="hero-product"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpVZ0cs26eDzS3tU8mCu-KnNi7oGvcwbLA-SfS1I9WUGeh-KobGB7RyEvKl6ybAzycdjVVhAgP9sdZHKvPhCEXzf5O-txn3fhpD4DW4oSmMwmwKs0oWIEgVldV54V1qB806nhWG3YYDtr0ugAjJcReZugEkmWNyZWexSNohUYNxbrdZuh9hqoaMCdK7MYDBsOjbxq4wm_6pONUpl7Vtd8wZA1ETyvcOZt7dxdLx8mh_z3LCQcgSiVD8hhj2M1lIogLP3gONInV3g" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Product Grid Section -->
+        <section class="py-32 px-margin-desktop max-w-container-max mx-auto" id="products">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16">
+                <div>
+                    <span class="text-primary font-label-caps text-label-caps tracking-widest uppercase"
+                        data-home-i18n="featuredMini"><!-- WATHBA_COPY:index-027:START -->Curated Collection<!-- WATHBA_COPY:index-027:END --></span>
+                    <h2 class="font-headline-lg text-headline-lg uppercase mt-2" data-home-i18n="featuredTitle"><!-- WATHBA_COPY:index-028:START -->Professional Gear<!-- WATHBA_COPY:index-028:END --></h2>
+                </div>
+
+                <div class="flex flex-col md:items-end gap-5">
+                    <span class="font-body-md text-body-md text-on-surface-variant max-w-xs block md:text-right"
+                        data-home-i18n="featuredText"><!-- WATHBA_COPY:index-029:START -->Tested gear for home, outdoor, and professional calisthenics setups.<!-- WATHBA_COPY:index-029:END --></span>
+
+                    <a href="products-en.html"
+                        class="inline-flex items-center justify-center gap-2 border border-outline-variant/40 text-primary px-6 py-3 rounded-full font-label-caps text-label-caps hover:border-primary transition-all"
+                        data-home-i18n="viewAllProducts"><!-- WATHBA_COPY:index-030:START -->View All Products<!-- WATHBA_COPY:index-030:END --></a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="homeFeaturedProducts"><!-- WATHBA_SLOT:homeFeaturedProducts:START -->
+        <article class="home-product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-primary/30">
+
+          <a
+            href="equipment-wall-pull-up-bar-en.html"
+            class="home-product-media relative h-[420px] overflow-hidden bg-surface-container block"
+          >
+            <div
+              class="hidden absolute inset-0 home-product-fallback"
+              style="display:none;"
+            ></div>
+
+            <img
+              class="home-product-image w-full h-full object-cover"
+              src="assets/images/products/wall-pull-up-bar/1.webp?v=146bdefe36f3"
+              alt="Temporary illustrative training photo — Wall Pull-up Bar"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='block';"
+            />
+
+            <span class="wathba-temporary-image">Temporary sample photo</span>
+
+            <div class="home-product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">
+      Sizes / Types
+    </span>
+
+    <div class="flex flex-wrap gap-2 justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              60cm wall projection
+            </span>
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              90cm wall projection
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-7 flex flex-col flex-grow">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-3">
+              Pull-up Bars
+            </span>
+
+            <h3 class="font-headline-md text-headline-md uppercase tracking-tight leading-none mb-4">
+              Wall Pull-up Bar
+            </h3>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              A strong wall-mounted pull-up bar for pulling, hanging, core work, and essential skills. Available in 60cm or 90cm wall projection.
+            </p>
+
+            <div class="home-product-actions flex items-center justify-between gap-4 mt-auto">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                Price depends on size
+              </span>
+
+              <div class="flex items-center gap-2">
+                <a
+                  href="equipment-wall-pull-up-bar-en.html"
+                  class="inline-flex items-center justify-center px-4 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  Explore
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-home-product-id="wall-pull-up-bar"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  Choose Size
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy-first-pull-up-en.html">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              Explore the training guide
+            </a>
+          </div>
+        </article>
+
+        <article class="home-product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-primary/30">
+
+          <a
+            href="equipment-steel-wood-parallettes-en.html"
+            class="home-product-media relative h-[420px] overflow-hidden bg-surface-container block"
+          >
+            <div
+              class="hidden absolute inset-0 home-product-fallback"
+              style="display:none;"
+            ></div>
+
+            <img
+              class="home-product-image w-full h-full object-cover"
+              src="assets/images/products/steel-wood-parallettes/1.webp?v=146bdefe36f3"
+              alt="Temporary illustrative training photo — Steel Parallettes with Wooden Grip"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='block';"
+            />
+
+            <span class="wathba-temporary-image">Temporary sample photo</span>
+
+            <div class="home-product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">
+      Sizes / Types
+    </span>
+
+    <div class="flex flex-wrap gap-2 justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              Small size
+            </span>
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              Medium size
+            </span>
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              Large size
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-7 flex flex-col flex-grow">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-3">
+              Parallettes
+            </span>
+
+            <h3 class="font-headline-md text-headline-md uppercase tracking-tight leading-none mb-4">
+              Steel Parallettes with Wooden Grip
+            </h3>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              Parallettes with a strong steel base and comfortable wooden grip, suitable for push-ups, L-sits, planche work, and handstands.
+            </p>
+
+            <div class="home-product-actions flex items-center justify-between gap-4 mt-auto">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                Price depends on size
+              </span>
+
+              <div class="flex items-center gap-2">
+                <a
+                  href="equipment-steel-wood-parallettes-en.html"
+                  class="inline-flex items-center justify-center px-4 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  Explore
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-home-product-id="steel-wood-parallettes"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  Choose Size
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy-parallettes-en.html">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              Explore the training guide
+            </a>
+          </div>
+        </article>
+
+        <article class="home-product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-primary/30">
+
+          <a
+            href="equipment-freestanding-parallel-bars-large-en.html"
+            class="home-product-media relative h-[420px] overflow-hidden bg-surface-container block"
+          >
+            <div
+              class="hidden absolute inset-0 home-product-fallback"
+              style="display:none;"
+            ></div>
+
+            <img
+              class="home-product-image w-full h-full object-cover"
+              src="assets/images/products/freestanding-parallel-bars-large/1.webp?v=ddfdc393d485"
+              alt="Temporary illustrative training photo — Large Freestanding Parallel Bars"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='block';"
+            />
+
+            <span class="wathba-temporary-image">Temporary sample photo</span>
+
+            <div class="home-product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">
+      Sizes / Types
+    </span>
+
+    <div class="flex flex-wrap gap-2 justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              100cm height
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-7 flex flex-col flex-grow">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-3">
+              Parallel & Dip Bars
+            </span>
+
+            <h3 class="font-headline-md text-headline-md uppercase tracking-tight leading-none mb-4">
+              Large Freestanding Parallel Bars
+            </h3>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              Large freestanding parallel bars at 100cm height for full-height dips, push training, core work, and hold exercises.
+            </p>
+
+            <div class="home-product-actions flex items-center justify-between gap-4 mt-auto">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                Ask for price
+              </span>
+
+              <div class="flex items-center gap-2">
+                <a
+                  href="equipment-freestanding-parallel-bars-large-en.html"
+                  class="inline-flex items-center justify-center px-4 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  Explore
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-home-product-id="freestanding-parallel-bars-large"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  Add to Cart
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy-en.html#pushing">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              Explore the training guide
+            </a>
+          </div>
+        </article>
+
+        <article class="home-product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-primary/30">
+
+          <a
+            href="equipment-gymnastic-rings-en.html"
+            class="home-product-media relative h-[280px] overflow-hidden bg-surface-container block"
+          >
+            <div
+              class="hidden absolute inset-0 home-product-fallback"
+              style="display:none;"
+            ></div>
+
+            <img
+              class="home-product-image w-full h-full object-cover"
+              src="assets/images/products/gymnastic-rings/1.webp?v=ddfdc393d485"
+              alt="Temporary illustrative training photo — Gymnastic Rings"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='block';"
+            />
+
+            <span class="wathba-temporary-image">Temporary sample photo</span>
+
+            <div class="home-product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">
+      Sizes / Types
+    </span>
+
+    <div class="flex flex-wrap gap-2 justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              Wooden rings
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-7 flex flex-col flex-grow">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-3">
+              Gymnastic Rings
+            </span>
+
+            <h3 class="font-headline-md text-headline-md uppercase tracking-tight leading-none mb-4">
+              Gymnastic Rings
+            </h3>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              Gymnastic rings for pulling, dips, balance, and upper-body stability with high training versatility.
+            </p>
+
+            <div class="home-product-actions flex items-center justify-between gap-4 mt-auto">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                Ask for price
+              </span>
+
+              <div class="flex items-center gap-2">
+                <a
+                  href="equipment-gymnastic-rings-en.html"
+                  class="inline-flex items-center justify-center px-4 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  Explore
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-home-product-id="gymnastic-rings"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  Add to Cart
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy-en.html#rings">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              Explore the training guide
+            </a>
+          </div>
+        </article>
+
+        <article class="home-product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-primary/30">
+
+          <a
+            href="equipment-multi-rig-en.html"
+            class="home-product-media relative h-[280px] overflow-hidden bg-surface-container block"
+          >
+            <div
+              class="hidden absolute inset-0 home-product-fallback"
+              style="display:none;"
+            ></div>
+
+            <img
+              class="home-product-image w-full h-full object-cover"
+              src="assets/images/products/multi-rig/1.webp?v=71705dae19b2"
+              alt="Temporary illustrative training photo — Calisthenics Multi Rig"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='block';"
+            />
+
+            <span class="wathba-temporary-image">Temporary sample photo</span>
+
+            <div class="home-product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">
+      Sizes / Types
+    </span>
+
+    <div class="flex flex-wrap gap-2 justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              Space-based design
+            </span>
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              Park / gym / home setup
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-7 flex flex-col flex-grow">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-3">
+              Calisthenics Multi Rig
+            </span>
+
+            <h3 class="font-headline-md text-headline-md uppercase tracking-tight leading-none mb-4">
+              Calisthenics Multi Rig
+            </h3>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              A custom calisthenics multi rig that can include pull-up bars, monkey bars, dip bars, and other training stations based on space and goal.
+            </p>
+
+            <div class="home-product-actions flex items-center justify-between gap-4 mt-auto">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                Price depends on design
+              </span>
+
+              <div class="flex items-center gap-2">
+                <a
+                  href="equipment-multi-rig-en.html"
+                  class="inline-flex items-center justify-center px-4 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  Explore
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-home-product-id="multi-rig"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  Choose Size
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy-en.html#custom">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              Explore the training guide
+            </a>
+          </div>
+        </article>
+
+        <article class="home-product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:border-primary/30">
+
+          <a
+            href="equipment-resistance-bands-en.html"
+            class="home-product-media relative h-[280px] overflow-hidden bg-surface-container block"
+          >
+            <div
+              class="hidden absolute inset-0 home-product-fallback"
+              style="display:none;"
+            ></div>
+
+            <img
+              class="home-product-image w-full h-full object-cover"
+              src="assets/images/products/resistance-bands/1.webp?v=71705dae19b2"
+              alt="Temporary illustrative training photo — Resistance Bands"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='block';"
+            />
+
+            <span class="wathba-temporary-image">Temporary sample photo</span>
+
+            <div class="home-product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">
+      Sizes / Types
+    </span>
+
+    <div class="flex flex-wrap gap-2 justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              Light resistance
+            </span>
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              Medium resistance
+            </span>
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              Heavy resistance
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-7 flex flex-col flex-grow">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-3">
+              Accessories
+            </span>
+
+            <h3 class="font-headline-md text-headline-md uppercase tracking-tight leading-none mb-4">
+              Resistance Bands
+            </h3>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              Resistance bands for pull-up assistance, warm-up, progression, and mobility work.
+            </p>
+
+            <div class="home-product-actions flex items-center justify-between gap-4 mt-auto">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                Price depends on resistance
+              </span>
+
+              <div class="flex items-center gap-2">
+                <a
+                  href="equipment-resistance-bands-en.html"
+                  class="inline-flex items-center justify-center px-4 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  Explore
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-home-product-id="resistance-bands"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  Choose Size
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy-first-pull-up-en.html#assisted">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              Explore the training guide
+            </a>
+          </div>
+        </article>
+      <!-- WATHBA_SLOT:homeFeaturedProducts:END --></div>
+        </section>
+        <!-- Why Choose Section -->
+        <section class="bg-surface-container-lowest py-32 px-margin-desktop overflow-hidden" id="about">
+            <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+                <div class="relative">
+                    <div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+                    <h2 class="font-display-hero text-[80px] leading-[0.9] uppercase text-primary"><!-- WATHBA_COPY:index-031:START -->THE<br>WATHBA<br>STANDARD<!-- WATHBA_COPY:index-031:END --></h2>
+                    <div class="mt-12 space-y-12">
+                        <div class="flex gap-6 items-start">
+                            <span class="material-symbols-outlined text-primary text-[40px]">architecture</span>
+                            <div>
+                                <h4 class="font-headline-md text-[24px] uppercase"><!-- WATHBA_COPY:index-032:START -->Build Quality<!-- WATHBA_COPY:index-032:END --></h4>
+                                <p class="text-on-surface-variant text-body-md mt-1"><!-- WATHBA_COPY:index-033:START -->Ask about actual materials, dimensions and installation for the equipment you choose.<!-- WATHBA_COPY:index-033:END --></p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 items-start">
+                            <div>
+                                <h4 class="font-headline-md text-[24px] uppercase"><!-- WATHBA_COPY:index-034:START -->Functional Design<!-- WATHBA_COPY:index-034:END --></h4>
+                                <p class="text-on-surface-variant text-body-md mt-1"><!-- WATHBA_COPY:index-035:START -->Match the equipment to your space and the movements you can currently control.<!-- WATHBA_COPY:index-035:END --></p>
+                            </div>
+                            <span class="material-symbols-outlined text-primary text-[40px]">fitbit</span>
+                        </div>
+                        <div class="flex gap-6 items-start">
+                            <span class="material-symbols-outlined text-primary text-[40px]">home_work</span>
+                            <div>
+                                <h4 class="font-headline-md text-[24px] uppercase"><!-- WATHBA_COPY:index-036:START -->Home &amp; Outdoor<!-- WATHBA_COPY:index-036:END --></h4>
+                                <p class="text-on-surface-variant text-body-md mt-1"><!-- WATHBA_COPY:index-037:START -->Versatile aesthetics that fit a luxury home setup as well as a rugged outdoor park.<!-- WATHBA_COPY:index-037:END --></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img class="w-full h-auto rounded-lg shadow-2xl"
+                        data-alt="A focused high-contrast black and white photograph of an elite athlete performing a perfectly straight handstand on wooden parallettes. The lighting is dramatic, highlighting muscle definition and the clean lines of the equipment. The setting is a minimalist architectural space with soft ambient light filtering through high windows. The image conveys mastery, balance, and the premium quality of WATHBA products."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP61UWkVZlK97Cnh6Of2btcxnYamuOEPzoc682kw3PQ4HWrC8-jOalHnIXVrG-T_nT6976MqWiVBsHb0cpQ8FccHGaJpniZBlTL7wsDslCZzoWHOfsePA6pKihTOVKZSdKfLI2LwMQRDtih2ZKoBOGb24ObCNlf12wcRQ-MjJUBDFYsfYMwfKlOR4pFeMeof1ybSOZuGHtiRNNbO8ulS1rER_rdYaYvsqkf13_EyQsMuDeb9Ntj8-2ZQ-8TQFKmR_7pctnA0d5Qw" />
+                    <div class="home-trusted-floating-card floating">
+                        <span class="home-trusted-number">01</span>
+                        <span class="home-trusted-text"><!-- WATHBA_COPY:index-038:START -->For every level<!-- WATHBA_COPY:index-038:END --></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <div id="wathbaFooter"><!-- WATHBA_SLOT:wathbaFooter:START -->
+    <footer class="wathba-site-footer">
+      <div class="wathba-site-footer-grid">
+        <div class="wathba-footer-brand">
+          <h3 class="wathba-footer-logo">WATHBA</h3>
+          <p class="wathba-footer-text">Premium calisthenics equipment for home, outdoor, and professional training setups. Browse, choose, and order directly through WhatsApp.</p>
+
+          <a
+            href="https://wa.me/962791752349?text=Hello%20WATHBA%2C%20I%20want%20to%20ask%20about%20calisthenics%20equipment"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="wathba-footer-whatsapp"
+          >
+            <span class="wathba-footer-wa-svg">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M19.11 17.27c-.27-.13-1.58-.78-1.82-.87-.24-.09-.41-.13-.59.14-.18.27-.68.87-.84 1.04-.15.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.3-.79-.7-1.32-1.57-1.47-1.84-.15-.27-.02-.42.11-.55.11-.11.27-.29.41-.43.14-.15.18-.25.27-.43.09-.18.05-.34-.02-.48-.07-.13-.59-1.43-.81-1.96-.21-.5-.43-.43-.59-.44h-.5c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.65 1.11 2.83c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.58-.65 1.8-1.27.22-.63.22-1.16.15-1.27-.06-.12-.24-.18-.5-.31z"></path>
+    <path d="M16.02 3.2c-7.07 0-12.8 5.72-12.8 12.77 0 2.25.59 4.45 1.71 6.39L3.1 28.8l6.63-1.73a12.8 12.8 0 0 0 6.29 1.69h.01c7.06 0 12.79-5.72 12.79-12.77 0-3.42-1.34-6.63-3.79-9.04A12.76 12.76 0 0 0 16.02 3.2zm0 23.39h-.01a10.62 10.62 0 0 1-5.41-1.49l-.39-.23-3.94 1.03 1.05-3.84-.25-.4a10.55 10.55 0 0 1-1.63-5.61c0-5.84 4.76-10.59 10.6-10.59 2.82 0 5.47 1.09 7.47 3.08a10.5 10.5 0 0 1 3.11 7.51c0 5.84-4.76 10.59-10.6 10.59z"></path>
+  </svg>
+</span>
+            Order via WhatsApp
+          </a>
+        </div>
+
+        <div class="wathba-footer-col">
+          <h5 class="wathba-footer-title">Pages</h5>
+          <ul class="wathba-footer-list">
+            <li><a href="index-en.html">Home</a></li>
+            <li><a href="products-en.html">Products</a></li>
+            <li><a href="academy-en.html">Academy</a></li>
+            <li><a href="about-en.html">About</a></li>
+            <li><a href="contact-en.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="wathba-footer-col">
+          <h5 class="wathba-footer-title">Equipment</h5>
+          <ul class="wathba-footer-list">
+            <li><a href="equipment-wall-pull-up-bar-en.html">Pull-up Bar</a></li>
+<li><a href="equipment-steel-wood-parallettes-en.html">Parallettes</a></li>
+<li><a href="products-en.html?filter=parallel-bars">Parallel Bars</a></li>
+<li><a href="equipment-gymnastic-rings-en.html">Rings</a></li>
+          </ul>
+        </div>
+
+        <div class="wathba-footer-contact">
+          <h5 class="wathba-footer-title">Contact</h5>
+          <p>Amman, Jordan</p>
+          <p>WhatsApp: +962 79 175 2349</p>
+          <p>Orders and custom equipment requests are handled directly through WhatsApp.</p>
+
+    <div class="wathba-footer-socials" aria-label="WATHBA social links">
+
+        <a
+          href="https://www.instagram.com/wathba.calisthenics/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-footer-social-link"
+          aria-label="Instagram"
+          title="@wathba.calisthenics"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@wathba.calisthenics?is_from_webapp=1&sender_device=pc"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-footer-social-link"
+          aria-label="TikTok"
+          title="@wathba.calisthenics"
+        >
+          TikTok
+        </a>
+
+        <a
+          href="https://www.facebook.com/profile.php?id=61591296419542"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-footer-social-link"
+          aria-label="Facebook"
+          title="WATHBA Calisthenics"
+        >
+          Facebook
+        </a>
+
+    </div>
+
+        </div>
+
+        <div class="wathba-footer-bottom">
+          <p>© 2026 WATHBA. ALL RIGHTS RESERVED.</p>
+        </div>
+      </div>
+    </footer>
+  <!-- WATHBA_SLOT:wathbaFooter:END --></div>
+    <script>
+        // Simple 360-style rotation effect following mouse movement
+        const productContainer = document.querySelector(".product-360-container");
+        const productInner = document.querySelector(".product-360-inner");
+
+        if (productContainer && productInner) {
+            productContainer.addEventListener("mousemove", (e) => {
+                const rect = productContainer.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const centerX = rect.width / 2;
+                const rotationY = (x - centerX) / 10;
+
+                productInner.style.transform = `rotateY(${rotationY}deg)`;
+            });
+
+            productContainer.addEventListener("mouseleave", () => {
+                productInner.style.transform = "rotateY(0deg)";
+            });
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetSelector = this.getAttribute("href");
+                const target = targetSelector ? document.querySelector(targetSelector) : null;
+
+                if (!target) return;
+
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
+    <!-- WATHBA_HOME_PAGE_TRANSLATION_START -->
+    <script id="wathba-home-page-translation"></script>
+    <!-- WATHBA_HOME_PAGE_TRANSLATION_END -->
+    <script src="assets/js/config.js?v=870d90f25057"></script>
+    <script src="assets/js/products-data.js?v=870d90f25057"></script>
+    <script src="assets/js/whatsapp.js?v=870d90f25057"></script>
+    <script src="assets/js/main.js?v=870d90f25057"></script>
+    <script src="assets/js/shared-ui.js?v=870d90f25057"></script>
+</body>
+
+</html>

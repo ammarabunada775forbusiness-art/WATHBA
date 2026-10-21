@@ -6,10 +6,11 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>معدات الكاليستنكس والعقلة والباراليتس | وثبة الأردن</title>
-    <meta name="description" content="تصفح معدات الكاليستنكس لدى وثبة في الأردن: عقلة حائط، باراليتس، متوازي، حلقات جمباز وتجهيزات حسب الطلب مع أدلة تعليمية لاستخدامها." />
+    <meta name="description" content="تصفح معدات الكاليستنكس لدى وثبة في الأردن: عقلة حائط، باراليتس، متوازي، حلقات جمباز وتجهيزات حسب الطلب، مع أدلة تعليمية لاستخدامها." />
     <script>
         (function () {
-            var lang = localStorage.getItem("wathbaLang") || "ar";
+            var lang = document.documentElement.lang;
+            try { localStorage.setItem("wathbaLang", lang); } catch (_) {}
             document.documentElement.lang = lang;
             document.documentElement.dataset.wathbaLang = lang;
             document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
@@ -27,7 +28,8 @@
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <!-- Tailwind Theme Configuration -->
-    <script src="assets/js/tailwind-config.js?v=2977020e8f43"></script>
+    <script src="assets/js/tailwind-config.js?v=870d90f25057"></script>
+    <script src="assets/js/language.js?v=870d90f25057"></script>
     <style>
         body {
             background-color: #000000;
@@ -86,12 +88,18 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="assets/css/shared-ui.css?v=2977020e8f43" />
-    <link rel="stylesheet" href="assets/css/academy.css?v=2977020e8f43" />
-    <link rel="stylesheet" href="assets/css/product-seo.css?v=2977020e8f43" />
+    <link rel="stylesheet" href="assets/css/shared-ui.css?v=870d90f25057" />
+    <link rel="stylesheet" href="assets/css/academy.css?v=870d90f25057" />
+    <link rel="stylesheet" href="assets/css/product-seo.css?v=870d90f25057" />
+<!-- WATHBA_LANGUAGE_ALTERNATES_START -->
+<link rel="alternate" hreflang="ar" href="https://wathba-rosy.vercel.app/products.html">
+<link rel="alternate" hreflang="en" href="https://wathba-rosy.vercel.app/products-en.html">
+<link rel="alternate" hreflang="x-default" href="https://wathba-rosy.vercel.app/products.html">
+<!-- WATHBA_LANGUAGE_ALTERNATES_END -->
 </head>
 
 <body class="dark bg-background text-on-surface">
+<!-- WATHBA_STATIC_TOOLS_START --><div class="wathba-top-tools"><a class="wathba-lang-btn" data-wathba-language-switch href="products-en.html" hreflang="en" lang="en" aria-label="Switch to English">EN</a><button class="wathba-menu-toggle" type="button" aria-label="فتح القائمة" aria-controls="wathbaMobileMenu" aria-expanded="false"><span class="material-symbols-outlined">menu</span></button></div><!-- WATHBA_STATIC_TOOLS_END -->
     <!-- WATHBA Unified Navbar -->
     <nav class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10">
         <div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
@@ -100,19 +108,19 @@
 
                 <div class="hidden md:flex items-center gap-8">
                     <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-                        href="index.html">Home</a>
+                        href="index.html"><!-- WATHBA_COPY:products-001:START -->الرئيسية<!-- WATHBA_COPY:products-001:END --></a>
 
                     <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-                        href="products.html">Products</a>
+                        href="products.html"><!-- WATHBA_COPY:products-002:START -->المنتجات<!-- WATHBA_COPY:products-002:END --></a>
+
+                    <!-- WATHBA_COPY:products-003:START --><a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
+                        href="academy.html"><!-- WATHBA_COPY:products-003:END --><!-- WATHBA_COPY:products-004:START -->الأكاديمية<!-- WATHBA_COPY:products-004:END --></a>
 
                     <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-                        href="academy.html">Academy</a>
+                        href="about.html"><!-- WATHBA_COPY:products-005:START -->من نحن<!-- WATHBA_COPY:products-005:END --></a>
 
                     <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-                        href="about.html">About</a>
-
-                    <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors"
-                        href="contact.html">Contact</a>
+                        href="contact.html"><!-- WATHBA_COPY:products-006:START -->تواصل معنا<!-- WATHBA_COPY:products-006:END --></a>
                 </div>
             </div>
 
@@ -126,95 +134,1389 @@
                 <span class="font-display-hero text-[300px] leading-none select-none">WATHBA</span>
             </div>
 
-            <h1 class="font-display-hero text-display-hero uppercase relative z-10" id="productsHeading">
-                معدات الكاليستنكس
-            </h1>
+            <h1 class="font-display-hero text-display-hero uppercase relative z-10" id="productsHeading"><!-- WATHBA_COPY:products-007:START -->معدات الكاليستنكس<!-- WATHBA_COPY:products-007:END --></h1>
 
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4" id="productsHeroText">
-                معدات كاليسثنكس للبيت والمساحات التدريبية في الأردن. اختر معدّتك واطّلع على استخدامها قبل الطلب.
-            </p>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-4 wathba-ar-text" id="productsHeroText"><!-- WATHBA_COPY:products-008:START -->معدات كاليسثنكس احترافية مصممة للثبات، القوة، والاستخدام الطويل. اختر المنتج المناسب واطلب مباشرة عبر واتساب.<!-- WATHBA_COPY:products-008:END --></p>
         </section>
 
         <!-- Filters -->
         <section class="px-margin-desktop max-w-container-max mx-auto mb-12">
-            <div class="flex flex-wrap gap-4 items-center" id="categoryFilters"></div>
+            <div class="flex flex-wrap gap-4 items-center" id="categoryFilters"><!-- WATHBA_SLOT:categoryFilters:START -->
+        <button
+          class="bg-primary text-background px-8 py-3 rounded-full font-label-caps text-label-caps uppercase transition-all active:scale-95"
+          type="button"
+          data-filter="all"
+        >
+          كل المعدات
+        </button>
+
+        <button
+          class="border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary px-8 py-3 rounded-full font-label-caps text-label-caps uppercase transition-all active:scale-95"
+          type="button"
+          data-filter="bars"
+        >
+          بارات السحب
+        </button>
+
+        <button
+          class="border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary px-8 py-3 rounded-full font-label-caps text-label-caps uppercase transition-all active:scale-95"
+          type="button"
+          data-filter="parallettes"
+        >
+          باراليتس
+        </button>
+
+        <button
+          class="border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary px-8 py-3 rounded-full font-label-caps text-label-caps uppercase transition-all active:scale-95"
+          type="button"
+          data-filter="parallel-bars"
+        >
+          متوازي وديب بار
+        </button>
+
+        <button
+          class="border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary px-8 py-3 rounded-full font-label-caps text-label-caps uppercase transition-all active:scale-95"
+          type="button"
+          data-filter="rings"
+        >
+          حلقات جمباز
+        </button>
+
+        <button
+          class="border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary px-8 py-3 rounded-full font-label-caps text-label-caps uppercase transition-all active:scale-95"
+          type="button"
+          data-filter="accessories"
+        >
+          إكسسوارات
+        </button>
+
+        <button
+          class="border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary px-8 py-3 rounded-full font-label-caps text-label-caps uppercase transition-all active:scale-95"
+          type="button"
+          data-filter="swiss-ladder"
+        >
+          السلم السويسري
+        </button>
+
+        <button
+          class="border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary px-8 py-3 rounded-full font-label-caps text-label-caps uppercase transition-all active:scale-95"
+          type="button"
+          data-filter="multi-rig"
+        >
+          جهاز متعدد
+        </button>
+
+        <button
+          class="border border-outline-variant/30 text-on-surface-variant hover:border-primary hover:text-primary px-8 py-3 rounded-full font-label-caps text-label-caps uppercase transition-all active:scale-95"
+          type="button"
+          data-filter="custom"
+        >
+          طلبات مخصصة
+        </button>
+      <!-- WATHBA_SLOT:categoryFilters:END --></div>
         </section>
 
         <!-- Product Grid -->
         <section class="px-margin-desktop max-w-container-max mx-auto pb-40">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="allProducts">
-                <article class="wathba-catalog-fallback"><span>بارات السحب</span><h2><a href="equipment-wall-pull-up-bar.html">عقلة حائط</a></h2><p>عقلة حائط قوية لتدريب السحب، التعلق، الكور، والمهارات الأساسية. متوفرة ببروز 60 سم أو 90 سم حسب المساحة والهدف.</p><a href="academy-first-pull-up.html">دليل التدريب ↗</a></article>
-                <article class="wathba-catalog-fallback"><span>بارات السحب</span><h2><a href="equipment-monkey-bars.html">مونكي بارز</a></h2><p>مونكي بارز لتدريب القبضة، السحب، التعلق، والتحمل. مناسبة للتجهيزات الخارجية أو ضمن جهاز كاليسثنكس متعدد.</p><a href="academy.html#pulling">دليل التدريب ↗</a></article>
-                <article class="wathba-catalog-fallback"><span>باراليتس</span><h2><a href="equipment-steel-wood-parallettes.html">باراليتس حديد بمقبض خشب</a></h2><p>باراليتس بقاعدة حديد قوية ومقبض خشب مريح، مناسب للضغط، L-sit، البلانش، والهاندستاند.</p><a href="academy-parallettes.html">دليل التدريب ↗</a></article>
-                <article class="wathba-catalog-fallback"><span>باراليتس</span><h2><a href="equipment-full-wooden-parallettes.html">باراليتس خشب كامل</a></h2><p>باراليتس خشب كامل بتصميم بسيط ومتين، مناسب لتدريبات التحكم والضغط والمهارات الأساسية.</p><a href="academy-parallettes.html">دليل التدريب ↗</a></article>
-                <article class="wathba-catalog-fallback"><span>متوازي وديب بار</span><h2><a href="equipment-freestanding-parallel-bars-small.html">متوازي حديد صغير</a></h2><p>متوازي حديد صغير بارتفاع 40 سم، مناسب لتدريبات الديبس، الضغط، الكور، وتمارين التحكم، مع تصميم سهل النقل والتخزين.</p><a href="academy.html#pushing">دليل التدريب ↗</a></article>
-                <article class="wathba-catalog-fallback"><span>متوازي وديب بار</span><h2><a href="equipment-freestanding-parallel-bars-large.html">متوازي حديد كبير</a></h2><p>متوازي حديد كبير بارتفاع 100 سم، مناسب لتدريبات الديبس، الضغط، الكور، والثبات بارتفاع كامل.</p><a href="academy.html#pushing">دليل التدريب ↗</a></article>
-                <article class="wathba-catalog-fallback"><span>متوازي وديب بار</span><h2><a href="equipment-wall-mounted-dip-bars.html">ديب بار حائط</a></h2><p>ديب بار يثبت على الحائط لتدريبات الديبس والضغط والكور، مناسب لمن يريد توفير مساحة على الأرض.</p><a href="academy.html#pushing">دليل التدريب ↗</a></article>
-                <article class="wathba-catalog-fallback"><span>حلقات جمباز</span><h2><a href="equipment-gymnastic-rings.html">حلقات جمباز</a></h2><p>حلقات جمباز لتدريب السحب، الديبس، التوازن، والثبات العضلي بمرونة عالية.</p><a href="academy.html#rings">دليل التدريب ↗</a></article>
-                <article class="wathba-catalog-fallback"><span>إكسسوارات</span><h2><a href="equipment-resistance-bands.html">حبال مقاومة</a></h2><p>حبال مقاومة تساعدك في العقلة، الإحماء، التدرج، وتمارين المرونة.</p><a href="academy-first-pull-up.html#assisted">دليل التدريب ↗</a></article>
-                <article class="wathba-catalog-fallback"><span>إكسسوارات</span><h2><a href="equipment-hand-gripper.html">هاند جريبر</a></h2><p>هاند جريبر لتقوية القبضة والساعد، مناسب للاعبين الكاليستنكس والتدريب اليومي.</p><a href="academy.html#grip">دليل التدريب ↗</a></article>
-                <article class="wathba-catalog-fallback"><span>إكسسوارات</span><h2><a href="equipment-grip-tape.html">جريب تيب</a></h2><p>جريب تيب لتحسين القبضة وتقليل الانزلاق أثناء تمارين البارات والحلقات.</p><a href="academy.html#grip">دليل التدريب ↗</a></article>
-                <article class="wathba-catalog-fallback"><span>السلم السويسري</span><h2><a href="equipment-swiss-ladder.html">السلم السويسري</a></h2><p>سلم حائط رياضي متعدد الاستخدامات لتدريبات التعلق، المرونة، الكور، وتمارين الجسم المختلفة، وينفذ حسب المساحة.</p><a href="academy.html#pulling">دليل التدريب ↗</a></article>
-                <article class="wathba-catalog-fallback"><span>جهاز كاليسثنكس متعدد</span><h2><a href="equipment-multi-rig.html">جهاز كاليسثنكس متعدد</a></h2><p>جهاز كاليسثنكس متعدد حسب الطلب، يمكن أن يحتوي على عقل، مونكي بارز، ديب بارز، وتجهيزات تدريب متنوعة حسب المساحة والهدف.</p><a href="academy.html#custom">دليل التدريب ↗</a></article>
-                <article class="wathba-catalog-fallback"><span>تجهيزات مخصصة</span><h2><a href="equipment-custom-orders.html">طلب تصنيع مخصص</a></h2><p>بدك قطعة غير موجودة؟ أرسل لنا صورة أو وصف أو قياسات المساحة، ونساعدك بتصميم وتنفيذ قطعة مناسبة.</p><a href="academy.html#custom">دليل التدريب ↗</a></article>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter wathba-products-grid" id="allProducts">
+<!-- WATHBA_SLOT:allProducts:START -->
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-wall-pull-up-bar.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="عقلة حائط">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/wall-pull-up-bar/1.webp?v=146bdefe36f3"
+              alt="صورة تدريب توضيحية مؤقتة — عقلة حائط"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              بروز 60 سم من الحائط
+            </span>
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              بروز 90 سم من الحائط
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-wall-pull-up-bar.html" class="hover:text-primary transition-colors">
+                  عقلة حائط
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                بارات السحب
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              عقلة حائط قوية لتدريب السحب، التعلق، الكور، والمهارات الأساسية. متوفرة ببروز 60 سم أو 90 سم حسب المساحة والهدف.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                السعر حسب القياس
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-wall-pull-up-bar.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="wall-pull-up-bar"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  اختر القياس
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy-first-pull-up.html">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-monkey-bars.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="مونكي بارز">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/monkey-bars/1.webp?v=146bdefe36f3"
+              alt="صورة تدريب توضيحية مؤقتة — مونكي بارز"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              قياس حسب الطلب
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-monkey-bars.html" class="hover:text-primary transition-colors">
+                  مونكي بارز
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                بارات السحب
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              مونكي بارز لتدريب القبضة، السحب، التعلق، والتحمل. مناسبة للتجهيزات الخارجية أو ضمن جهاز كاليسثنكس متعدد.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                السعر حسب المقاس
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-monkey-bars.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="monkey-bars"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  أضف للسلة
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy.html#pulling">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-steel-wood-parallettes.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="باراليتس حديد بمقبض خشب">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/steel-wood-parallettes/1.webp?v=146bdefe36f3"
+              alt="صورة تدريب توضيحية مؤقتة — باراليتس حديد بمقبض خشب"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              قياس صغير
+            </span>
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              قياس وسط
+            </span>
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              قياس كبير
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-steel-wood-parallettes.html" class="hover:text-primary transition-colors">
+                  باراليتس حديد بمقبض خشب
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                باراليتس
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              باراليتس بقاعدة حديد قوية ومقبض خشب مريح، مناسب للضغط، L-sit، البلانش، والهاندستاند.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                السعر حسب القياس
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-steel-wood-parallettes.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="steel-wood-parallettes"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  اختر القياس
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy-parallettes.html">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-full-wooden-parallettes.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="باراليتس خشب كامل">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/full-wooden-parallettes/1.webp?v=31137885e2b5"
+              alt="صورة تدريب توضيحية مؤقتة — باراليتس خشب كامل"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              قياس ثابت
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-full-wooden-parallettes.html" class="hover:text-primary transition-colors">
+                  باراليتس خشب كامل
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                باراليتس
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              باراليتس خشب كامل بتصميم بسيط ومتين، مناسب لتدريبات التحكم والضغط والمهارات الأساسية.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                اسأل عن السعر
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-full-wooden-parallettes.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="full-wooden-parallettes"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  أضف للسلة
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy-parallettes.html">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-freestanding-parallel-bars-small.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="متوازي حديد صغير">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/freestanding-parallel-bars-small/1.webp?v=71705dae19b2"
+              alt="صورة تدريب توضيحية مؤقتة — متوازي حديد صغير"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              ارتفاع 40 سم
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-freestanding-parallel-bars-small.html" class="hover:text-primary transition-colors">
+                  متوازي حديد صغير
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                متوازي وديب بار
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              متوازي حديد صغير بارتفاع 40 سم، مناسب لتدريبات الديبس، الضغط، الكور، وتمارين التحكم، مع تصميم سهل النقل والتخزين.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                اسأل عن السعر
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-freestanding-parallel-bars-small.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="freestanding-parallel-bars-small"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  أضف للسلة
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy.html#pushing">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-freestanding-parallel-bars-large.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="متوازي حديد كبير">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/freestanding-parallel-bars-large/1.webp?v=ddfdc393d485"
+              alt="صورة تدريب توضيحية مؤقتة — متوازي حديد كبير"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              ارتفاع 100 سم
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-freestanding-parallel-bars-large.html" class="hover:text-primary transition-colors">
+                  متوازي حديد كبير
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                متوازي وديب بار
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              متوازي حديد كبير بارتفاع 100 سم، مناسب لتدريبات الديبس، الضغط، الكور، والثبات بارتفاع كامل.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                اسأل عن السعر
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-freestanding-parallel-bars-large.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="freestanding-parallel-bars-large"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  أضف للسلة
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy.html#pushing">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-wall-mounted-dip-bars.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="ديب بار حائط">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/wall-mounted-dip-bars/1.webp?v=146bdefe36f3"
+              alt="صورة تدريب توضيحية مؤقتة — ديب بار حائط"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              قياس ثابت
+            </span>
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              تنفيذ حسب الطلب
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-wall-mounted-dip-bars.html" class="hover:text-primary transition-colors">
+                  ديب بار حائط
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                متوازي وديب بار
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              ديب بار يثبت على الحائط لتدريبات الديبس والضغط والكور، مناسب لمن يريد توفير مساحة على الأرض.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                السعر حسب القياس
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-wall-mounted-dip-bars.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="wall-mounted-dip-bars"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  اختر القياس
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy.html#pushing">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-gymnastic-rings.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="حلقات جمباز">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/gymnastic-rings/1.webp?v=ddfdc393d485"
+              alt="صورة تدريب توضيحية مؤقتة — حلقات جمباز"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              حلقات خشب
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-gymnastic-rings.html" class="hover:text-primary transition-colors">
+                  حلقات جمباز
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                حلقات جمباز
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              حلقات جمباز لتدريب السحب، الديبس، التوازن، والثبات العضلي بمرونة عالية.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                اسأل عن السعر
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-gymnastic-rings.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="gymnastic-rings"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  أضف للسلة
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy.html#rings">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-resistance-bands.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="حبال مقاومة">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/resistance-bands/1.webp?v=71705dae19b2"
+              alt="صورة تدريب توضيحية مؤقتة — حبال مقاومة"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              مقاومة خفيفة
+            </span>
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              مقاومة متوسطة
+            </span>
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              مقاومة قوية
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-resistance-bands.html" class="hover:text-primary transition-colors">
+                  حبال مقاومة
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                إكسسوارات
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              حبال مقاومة تساعدك في العقلة، الإحماء، التدرج، وتمارين المرونة.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                السعر حسب المقاومة
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-resistance-bands.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="resistance-bands"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  اختر القياس
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy-first-pull-up.html#assisted">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-hand-gripper.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="هاند جريبر">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/hand-gripper/1.webp?v=ddfdc393d485"
+              alt="صورة تدريب توضيحية مؤقتة — هاند جريبر"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              قياس / مقاومة متوفرة
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-hand-gripper.html" class="hover:text-primary transition-colors">
+                  هاند جريبر
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                إكسسوارات
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              هاند جريبر لتقوية القبضة والساعد، مناسب للاعبين الكاليستنكس والتدريب اليومي.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                اسأل عن السعر
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-hand-gripper.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="hand-gripper"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  أضف للسلة
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy.html#grip">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-grip-tape.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="جريب تيب">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/grip-tape/1.webp?v=146bdefe36f3"
+              alt="صورة تدريب توضيحية مؤقتة — جريب تيب"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              رول جريب تيب
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-grip-tape.html" class="hover:text-primary transition-colors">
+                  جريب تيب
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                إكسسوارات
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              جريب تيب لتحسين القبضة وتقليل الانزلاق أثناء تمارين البارات والحلقات.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                اسأل عن السعر
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-grip-tape.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="grip-tape"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  أضف للسلة
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy.html#grip">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-swiss-ladder.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="السلم السويسري">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/swiss-ladder/1.webp?v=146bdefe36f3"
+              alt="صورة تدريب توضيحية مؤقتة — السلم السويسري"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              مقاس حسب الطلب
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-swiss-ladder.html" class="hover:text-primary transition-colors">
+                  السلم السويسري
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                السلم السويسري
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              سلم حائط رياضي متعدد الاستخدامات لتدريبات التعلق، المرونة، الكور، وتمارين الجسم المختلفة، وينفذ حسب المساحة.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                السعر حسب المقاس
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-swiss-ladder.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="swiss-ladder"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  أضف للسلة
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy.html#pulling">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-multi-rig.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="جهاز كاليسثنكس متعدد">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/multi-rig/1.webp?v=71705dae19b2"
+              alt="صورة تدريب توضيحية مؤقتة — جهاز كاليسثنكس متعدد"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              تصميم حسب المساحة
+            </span>
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              تجهيز حديقة / نادي / بيت
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-multi-rig.html" class="hover:text-primary transition-colors">
+                  جهاز كاليسثنكس متعدد
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                جهاز متعدد
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              جهاز كاليسثنكس متعدد حسب الطلب، يمكن أن يحتوي على عقل، مونكي بارز، ديب بارز، وتجهيزات تدريب متنوعة حسب المساحة والهدف.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                السعر حسب التصميم
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-multi-rig.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="multi-rig"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  اختر القياس
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy.html#custom">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+
+        <article class="product-card group relative flex flex-col bg-surface-container-low border border-outline-variant/10 rounded-lg overflow-hidden transition-all duration-500 hover:border-primary/30">
+
+          <a href="equipment-custom-orders.html" class="relative h-[400px] overflow-hidden bg-surface-container block" aria-label="طلب تصنيع مخصص">
+
+            <div
+              class="hidden absolute inset-0 place-items-center font-headline-md text-headline-md text-primary/40 tracking-widest"
+              style="display:none;"
+            >
+              WATHBA
+            </div>
+
+            <img
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="assets/images/products/custom-orders/1.webp?v=ddfdc393d485"
+              alt="صورة تدريب توضيحية مؤقتة — طلب تصنيع مخصص"
+              onerror="this.style.display='none'; this.previousElementSibling.style.display='grid';"
+            />
+
+            <span class="wathba-temporary-image">صورة توضيحية مؤقتة</span>
+
+           <div class="product-overlay absolute inset-0 bg-background/20 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center gap-4 px-5 text-center">
+
+    <span class="font-label-caps text-label-caps text-primary mb-2">القياسات / الأنواع</span>
+
+    <div class="flex gap-2 flex-wrap justify-center">
+
+            <span class="bg-surface/80 border border-outline-variant px-4 py-1 rounded-full text-[10px] font-bold uppercase">
+              قطعة حسب الطلب
+            </span>
+
+    </div>
+
+            </div>
+          </a>
+
+          <div class="p-8 flex flex-col flex-grow text-right">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+                <a href="equipment-custom-orders.html" class="hover:text-primary transition-colors">
+                  طلب تصنيع مخصص
+                </a>
+              </h3>
+
+              <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
+                طلبات مخصصة
+              </span>
+            </div>
+
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+              بدك قطعة غير موجودة؟ أرسل لنا صورة أو وصف أو قياسات المساحة، ونساعدك بتصميم وتنفيذ قطعة مناسبة.
+            </p>
+
+            <div class="flex items-center justify-between gap-4 mt-auto product-card-bottom">
+              <span class="font-label-caps text-label-caps text-on-surface/60 italic">
+                حسب القطعة المطلوبة
+              </span>
+
+              <div class="flex items-center gap-2 product-card-actions">
+                <a
+                  href="equipment-custom-orders.html"
+                  class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
+                >
+                  التفاصيل
+                </a>
+
+                <button
+  class="wathba-add-cart-btn"
+  type="button"
+  data-product-id="custom-orders"
+>
+  <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+<span>
+  أضف للسلة
+</span></button>
+              </div>
+            </div>
+            <a class="wathba-academy-card-link" href="academy.html#custom">
+              <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+              تعلّم التمارين المناسبة
+            </a>
+          </div>
+        </article>
+      <!-- WATHBA_SLOT:allProducts:END -->
             </div>
         </section>
     </main>
-    <div id="wathbaFooter"></div>
+    <div id="wathbaFooter"><!-- WATHBA_SLOT:wathbaFooter:START -->
+    <footer class="wathba-site-footer">
+      <div class="wathba-site-footer-grid">
+        <div class="wathba-footer-brand">
+          <h3 class="wathba-footer-logo">WATHBA</h3>
+          <p class="wathba-footer-text">معدات كاليسثنكس ممتازة للبيت، الخارج، والمساحات التدريبية الاحترافية. تصفح المنتجات واطلب مباشرة عبر واتساب.</p>
+
+          <a
+            href="https://wa.me/962791752349?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20WATHBA%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B9%D8%AF%D8%A7%D8%AA%20%D8%A7%D9%84%D9%83%D8%A7%D9%84%D9%8A%D8%B3%D8%AA%D9%86%D9%83%D8%B3"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="wathba-footer-whatsapp"
+          >
+            <span class="wathba-footer-wa-svg">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M19.11 17.27c-.27-.13-1.58-.78-1.82-.87-.24-.09-.41-.13-.59.14-.18.27-.68.87-.84 1.04-.15.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.3-.79-.7-1.32-1.57-1.47-1.84-.15-.27-.02-.42.11-.55.11-.11.27-.29.41-.43.14-.15.18-.25.27-.43.09-.18.05-.34-.02-.48-.07-.13-.59-1.43-.81-1.96-.21-.5-.43-.43-.59-.44h-.5c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29s.98 2.65 1.11 2.83c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.58-.65 1.8-1.27.22-.63.22-1.16.15-1.27-.06-.12-.24-.18-.5-.31z"></path>
+    <path d="M16.02 3.2c-7.07 0-12.8 5.72-12.8 12.77 0 2.25.59 4.45 1.71 6.39L3.1 28.8l6.63-1.73a12.8 12.8 0 0 0 6.29 1.69h.01c7.06 0 12.79-5.72 12.79-12.77 0-3.42-1.34-6.63-3.79-9.04A12.76 12.76 0 0 0 16.02 3.2zm0 23.39h-.01a10.62 10.62 0 0 1-5.41-1.49l-.39-.23-3.94 1.03 1.05-3.84-.25-.4a10.55 10.55 0 0 1-1.63-5.61c0-5.84 4.76-10.59 10.6-10.59 2.82 0 5.47 1.09 7.47 3.08a10.5 10.5 0 0 1 3.11 7.51c0 5.84-4.76 10.59-10.6 10.59z"></path>
+  </svg>
+</span>
+            اطلب عبر واتساب
+          </a>
+        </div>
+
+        <div class="wathba-footer-col">
+          <h5 class="wathba-footer-title">الصفحات</h5>
+          <ul class="wathba-footer-list">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="products.html">المنتجات</a></li>
+            <li><a href="academy.html">الأكاديمية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </div>
+
+        <div class="wathba-footer-col">
+          <h5 class="wathba-footer-title">المعدات</h5>
+          <ul class="wathba-footer-list">
+            <li><a href="equipment-wall-pull-up-bar.html">عقلة</a></li>
+<li><a href="equipment-steel-wood-parallettes.html">باراليتس</a></li>
+<li><a href="products.html?filter=parallel-bars">متوازي حديد</a></li>
+<li><a href="equipment-gymnastic-rings.html">حلقات جمباز</a></li>
+          </ul>
+        </div>
+
+        <div class="wathba-footer-contact">
+          <h5 class="wathba-footer-title">التواصل</h5>
+          <p>عمّان، الأردن</p>
+          <p>واتساب: +962 79 175 2349</p>
+          <p>الطلبات والتجهيزات المخصصة تتم مباشرة عبر واتساب.</p>
+
+    <div class="wathba-footer-socials" aria-label="WATHBA social links">
+
+        <a
+          href="https://www.instagram.com/wathba.calisthenics/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-footer-social-link"
+          aria-label="Instagram"
+          title="@wathba.calisthenics"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@wathba.calisthenics?is_from_webapp=1&sender_device=pc"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-footer-social-link"
+          aria-label="TikTok"
+          title="@wathba.calisthenics"
+        >
+          TikTok
+        </a>
+
+        <a
+          href="https://www.facebook.com/profile.php?id=61591296419542"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="wathba-footer-social-link"
+          aria-label="Facebook"
+          title="WATHBA Calisthenics"
+        >
+          Facebook
+        </a>
+
+    </div>
+
+        </div>
+
+        <div class="wathba-footer-bottom">
+          <p>© 2026 WATHBA. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+  <!-- WATHBA_SLOT:wathbaFooter:END --></div>
 
     <!-- WATHBA_PRODUCTS_PAGE_TRANSLATION_START -->
-    <script id="wathba-products-page-translation">
-        (function () {
-            const productsPageText = {
-                en: {
-                    heroTitle: "EQUIPMENT",
-                    heroText:
-                        "Engineered for peak performance. Professional-grade calisthenics tools designed for athletes who demand uncompromising quality and durability."
-                },
-                ar: {
-                    heroTitle: "معدات الكاليستنكس",
-                    heroText:
-                        "معدات كاليسثنكس احترافية مصممة للثبات، القوة، والاستخدام الطويل. اختر المنتج المناسب واطلب مباشرة عبر واتساب."
-                }
-            };
-
-            function getLang() {
-                return localStorage.getItem("wathbaLang") || "en";
-            }
-
-            function applyProductsPageTranslation() {
-                const lang = getLang();
-                const text = document.getElementById("productsHeroText");
-
-                if (text) {
-                    text.textContent = productsPageText[lang].heroText;
-
-                    if (lang === "ar") {
-                        text.classList.add("wathba-ar-text");
-                    } else {
-                        text.classList.remove("wathba-ar-text");
-                    }
-                }
-
-                const heading = document.querySelector("main section h1");
-                if (heading) heading.textContent = productsPageText[lang].heroTitle;
-
-                document.title =
-                    lang === "ar"
-                        ? "معدات الكاليستنكس والعقلة والباراليتس | وثبة الأردن"
-                        : "Pull-up Bars, Parallettes & Calisthenics Gear | WATHBA Jordan";
-            }
-
-            document.addEventListener("DOMContentLoaded", applyProductsPageTranslation);
-            document.addEventListener("wathba:langchange", applyProductsPageTranslation);
-        })();
-    </script>
+    <script id="wathba-products-page-translation"></script>
     <!-- WATHBA_PRODUCTS_PAGE_TRANSLATION_END -->
-    <script src="assets/js/config.js?v=2977020e8f43"></script>
-    <script src="assets/js/products-data.js?v=2977020e8f43"></script>
-    <script src="assets/js/whatsapp.js?v=2977020e8f43"></script>
-    <script src="assets/js/products.js?v=2977020e8f43"></script>
-    <script src="assets/js/shared-ui.js?v=2977020e8f43"></script>
+    <script src="assets/js/config.js?v=870d90f25057"></script>
+    <script src="assets/js/products-data.js?v=870d90f25057"></script>
+    <script src="assets/js/whatsapp.js?v=870d90f25057"></script>
+    <script src="assets/js/products.js?v=870d90f25057"></script>
+    <script src="assets/js/shared-ui.js?v=870d90f25057"></script>
 </body>
 
 </html>

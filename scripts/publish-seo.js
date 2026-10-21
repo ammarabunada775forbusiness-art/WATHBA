@@ -31,7 +31,6 @@ const startMarker = "<!-- WATHBA_ABSOLUTE_SEO_START -->";
 const endMarker = "<!-- WATHBA_ABSOLUTE_SEO_END -->";
 
 function pairFor(filename) {
-  if (!/^(academy|equipment-)/.test(filename)) return null;
   const base = filename.replace(/-en\.html$/, ".html").replace(/\.html$/, "");
   const ar = `${base}.html`;
   const en = `${base}-en.html`;
@@ -40,11 +39,12 @@ function pairFor(filename) {
 
 function alternates(pair, inSitemap = false) {
   if (!pair) return "";
-  if (inSitemap) return ["ar", "en"].map((lang) =>
-    `    <xhtml:link rel="alternate" hreflang="${lang}" href="${escapeXml(url(pair[lang]))}"/>`
+  const languages = ["ar", "en", "x-default"];
+  if (inSitemap) return languages.map((lang) =>
+    `    <xhtml:link rel="alternate" hreflang="${lang}" href="${escapeXml(url(pair[lang === 'x-default' ? 'ar' : lang]))}"/>`
   ).join("\n") + "\n";
-  return ["ar", "en"].map((lang) =>
-    `    <link rel="alternate" hreflang="${lang}" href="${escapeXml(url(pair[lang]))}" />`
+  return languages.map((lang) =>
+    `    <link rel="alternate" hreflang="${lang}" href="${escapeXml(url(pair[lang === 'x-default' ? 'ar' : lang]))}" />`
   ).join("\n") + "\n";
 }
 
@@ -55,8 +55,8 @@ function breadcrumbMarkup(filename, page) {
   const titleMatch = page.match(/<title>([^<]+)<\/title>/i);
   if (!titleMatch) throw new Error(`Missing breadcrumb title: ${filename}`);
   const pageName = titleMatch[1].split("|")[0].trim().replace(/&amp;/g, "&");
-  const entries = [{ name: isEnglish ? "Home" : "الرئيسية", item: `${origin}/` }];
-  if (isEquipment) entries.push({ name: isEnglish ? "Equipment" : "المنتجات", item: `${origin}/products.html` });
+  const entries = [{ name: isEnglish ? "Home" : "الرئيسية", item: url(isEnglish ? 'index-en.html' : 'index.html') }];
+  if (isEquipment) entries.push({ name: isEnglish ? "Equipment" : "المنتجات", item: url(isEnglish ? 'products-en.html' : 'products.html') });
   if (filename.startsWith("academy-") && !/^academy-(?:en)\.html$/.test(filename)) {
     entries.push({ name: isEnglish ? "Academy" : "الأكاديمية", item: url(isEnglish ? "academy-en.html" : "academy.html") });
   }
@@ -71,6 +71,7 @@ function breadcrumbMarkup(filename, page) {
 for (const filename of filenames) {
   const filepath = path.join(root, filename);
   let page = fs.readFileSync(filepath, "utf8");
+  page = page.replace(/<!-- WATHBA_LANGUAGE_ALTERNATES_START -->[\s\S]*?<!-- WATHBA_LANGUAGE_ALTERNATES_END -->\n?/g, '');
   if (page.includes(startMarker)) {
     const start = page.indexOf(startMarker);
     const end = page.indexOf(endMarker, start);

@@ -121,8 +121,10 @@ let productsHtml = unversion(fs.readFileSync(productsPath, "utf8"));
 const cards = catalog.map((product) => `<article class="wathba-catalog-fallback"><span>${html(product.category.ar)}</span><h2><a href="${urlFor(product.id, "ar")}">${html(product.name.ar)}</a></h2><p>${html(product.description.ar)}</p><a href="${html(academyFor(product.id, "ar"))}">دليل التدريب ↗</a></article>`).join("\n                ");
 const catalogMarker = '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="allProducts">';
 const catalogPattern = /(<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="allProducts">)[\s\S]*?(<\/div>\s*<\/section>)/;
-if (!catalogPattern.test(productsHtml)) throw new Error("Catalog fallback location missing");
-productsHtml = productsHtml.replace(catalogPattern, `${catalogMarker}\n                ${cards}\n            </div>\n        </section>`);
+if (!productsHtml.includes('WATHBA_SLOT:allProducts:START')) {
+  if (!catalogPattern.test(productsHtml)) throw new Error("Catalog fallback location missing");
+  productsHtml = productsHtml.replace(catalogPattern, `${catalogMarker}\n<!-- WATHBA_SLOT:allProducts:START -->${cards}<!-- WATHBA_SLOT:allProducts:END -->\n            </div>\n        </section>`);
+}
 if (!productsHtml.includes('href="assets/css/product-seo.css"')) {
   productsHtml = productsHtml.replace('<link rel="stylesheet" href="assets/css/academy.css" />',
     '<link rel="stylesheet" href="assets/css/academy.css" />\n    <link rel="stylesheet" href="assets/css/product-seo.css" />');
@@ -143,6 +145,9 @@ for (const filename of fs.readdirSync(root).filter((name) => /^academy(?:-[a-z-]
 
 // A content-based version refreshes cached shared UI on every actual change.
 // Only asset URLs change; page content and layouts stay as authored.
+const languagePages = require('./build-language-pages.js');
+languagePages.buildCorePages();
+languagePages.finalizeLanguageLinks();
 const assetHash = crypto.createHash("sha256");
 for (const asset of sharedAssets) assetHash.update(fs.readFileSync(path.join(root, asset)));
 const assetVersion = assetHash.digest("hex").slice(0, 12);

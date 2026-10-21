@@ -1,0 +1,442 @@
+{
+  "index-001": {
+    "ar": "الرئيسية",
+    "en": "Home"
+  },
+  "index-002": {
+    "ar": "المنتجات",
+    "en": "Products"
+  },
+  "index-003": {
+    "ar": "<a class=\"font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors\"\n                        href=\"academy.html\">",
+    "en": "<a class=\"font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors\"\n                        href=\"academy-en.html\">"
+  },
+  "index-004": {
+    "ar": "الأكاديمية",
+    "en": "Academy"
+  },
+  "index-005": {
+    "ar": "من نحن",
+    "en": "About"
+  },
+  "index-006": {
+    "ar": "تواصل معنا",
+    "en": "Contact"
+  },
+  "index-007": {
+    "ar": "Performance Redefined",
+    "en": "Performance Redefined"
+  },
+  "index-008": {
+    "ar": "معدات كاليسثنكس احترافية",
+    "en": "Built for Strength"
+  },
+  "index-009": {
+    "ar": "معدات كاليسثنكس مختارة للاعبين الذين يريدون جودة عالية، ثبات قوي، وتجربة تدريب عملية.",
+    "en": "Elite calisthenics equipment crafted for those who demand absolute precision and uncompromising strength."
+  },
+  "index-010": {
+    "ar": "<a href=\"https://wa.me/962791752349?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20WATHBA%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B9%D8%AF%D8%A7%D8%AA%20%D8%A7%D9%84%D9%83%D8%A7%D9%84%D9%8A%D8%B3%D8%AA%D9%86%D9%83%D8%B3\" data-wathba-whatsapp-link\n                            class=\"border border-primary text-primary font-headline-md text-[18px] uppercase px-10 py-4 rounded-full flex items-center gap-3 hover:bg-primary/10 transition-colors active:scale-95\">",
+    "en": "<a href=\"https://wa.me/962791752349?text=Hello%20WATHBA%2C%20I%20want%20to%20ask%20about%20calisthenics%20equipment\" data-wathba-whatsapp-link\n                            class=\"border border-primary text-primary font-headline-md text-[18px] uppercase px-10 py-4 rounded-full flex items-center gap-3 hover:bg-primary/10 transition-colors active:scale-95\">"
+  },
+  "index-011": {
+    "ar": "واتساب",
+    "en": "WhatsApp"
+  },
+  "index-012": {
+    "ar": "تصفح المنتجات",
+    "en": "Browse Products"
+  },
+  "index-013": {
+    "ar": "<a href=\"academy-beginner.html\" data-home-hero-academy-link\n                            class=\"border border-primary/60 text-primary font-headline-md text-[18px] px-10 py-4 rounded-full flex items-center gap-3 hover:bg-primary/10 transition-colors\">",
+    "en": "<a href=\"academy-beginner-en.html\" data-home-hero-academy-link\n                            class=\"border border-primary/60 text-primary font-headline-md text-[18px] px-10 py-4 rounded-full flex items-center gap-3 hover:bg-primary/10 transition-colors\">"
+  },
+  "index-014": {
+    "ar": "ابدأ التعلّم",
+    "en": "Start Learning"
+  },
+  "index-015": {
+    "ar": "الخامات",
+    "en": "MATERIAL OPTIONS"
+  },
+  "index-016": {
+    "ar": "خشب وحديد حسب القطعة",
+    "en": "Wood &amp; steel by product"
+  },
+  "index-017": {
+    "ar": "الأبعاد",
+    "en": "DIMENSIONS"
+  },
+  "index-018": {
+    "ar": "حسب المنتج",
+    "en": "By product"
+  },
+  "index-019": {
+    "ar": "خيارات التدريب",
+    "en": "TRAINING"
+  },
+  "index-020": {
+    "ar": "دفع وسحب",
+    "en": "Push &amp; pull"
+  },
+  "index-021": {
+    "ar": "القياسات",
+    "en": "SIZING"
+  },
+  "index-022": {
+    "ar": "اسأل عن التفاصيل",
+    "en": "Ask for details"
+  },
+  "index-023": {
+    "ar": "الاستخدام",
+    "en": "USE"
+  },
+  "index-024": {
+    "ar": "للبيت / الخارج",
+    "en": "Home / Outdoor"
+  },
+  "index-025": {
+    "ar": "دعم الطلب",
+    "en": "ORDER SUPPORT"
+  },
+  "index-026": {
+    "ar": "عرض عبر واتساب",
+    "en": "WhatsApp Quote"
+  },
+  "index-027": {
+    "ar": "مجموعة مختارة",
+    "en": "Curated Collection"
+  },
+  "index-028": {
+    "ar": "معدات احترافية",
+    "en": "Professional Gear"
+  },
+  "index-029": {
+    "ar": "معدات مختارة للبيت، الخارج، والتجهيزات الاحترافية.",
+    "en": "Tested gear for home, outdoor, and professional calisthenics setups."
+  },
+  "index-030": {
+    "ar": "عرض كل المنتجات",
+    "en": "View All Products"
+  },
+  "index-031": {
+    "ar": "THE<br>WATHBA<br>STANDARD",
+    "en": "THE<br>WATHBA<br>STANDARD"
+  },
+  "index-032": {
+    "ar": "جودة التصنيع",
+    "en": "Build Quality"
+  },
+  "index-033": {
+    "ar": "نختار خامات قوية وتصميمات عملية لتناسب التدريب اليومي والاستخدام الطويل.",
+    "en": "Ask about actual materials, dimensions and installation for the equipment you choose."
+  },
+  "index-034": {
+    "ar": "تصميم عملي",
+    "en": "Functional Design"
+  },
+  "index-035": {
+    "ar": "اختر المعدة بحسب مساحة التدريب والحركة المناسبة لمستواك.",
+    "en": "Match the equipment to your space and the movements you can currently control."
+  },
+  "index-036": {
+    "ar": "للبيت والخارج",
+    "en": "Home &amp; Outdoor"
+  },
+  "index-037": {
+    "ar": "معدات مناسبة للبيت، المساحات الخارجية، والنوادي حسب احتياجك.",
+    "en": "Versatile aesthetics that fit a luxury home setup as well as a rugged outdoor park."
+  },
+  "index-038": {
+    "ar": "لمختلف المستويات",
+    "en": "For every level"
+  },
+  "products-001": {
+    "ar": "الرئيسية",
+    "en": "Home"
+  },
+  "products-002": {
+    "ar": "المنتجات",
+    "en": "Products"
+  },
+  "products-003": {
+    "ar": "<a class=\"font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors\"\n                        href=\"academy.html\">",
+    "en": "<a class=\"font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors\"\n                        href=\"academy-en.html\">"
+  },
+  "products-004": {
+    "ar": "الأكاديمية",
+    "en": "Academy"
+  },
+  "products-005": {
+    "ar": "من نحن",
+    "en": "About"
+  },
+  "products-006": {
+    "ar": "تواصل معنا",
+    "en": "Contact"
+  },
+  "products-007": {
+    "ar": "معدات الكاليستنكس",
+    "en": "EQUIPMENT"
+  },
+  "products-008": {
+    "ar": "معدات كاليسثنكس احترافية مصممة للثبات، القوة، والاستخدام الطويل. اختر المنتج المناسب واطلب مباشرة عبر واتساب.",
+    "en": "Engineered for peak performance. Professional-grade calisthenics tools designed for athletes who demand uncompromising quality and durability."
+  },
+  "about-001": {
+    "ar": "الرئيسية",
+    "en": "Home"
+  },
+  "about-002": {
+    "ar": "المنتجات",
+    "en": "Products"
+  },
+  "about-003": {
+    "ar": "<a class=\"font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors\"\n            href=\"academy.html\">",
+    "en": "<a class=\"font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors\"\n            href=\"academy-en.html\">"
+  },
+  "about-004": {
+    "ar": "الأكاديمية",
+    "en": "Academy"
+  },
+  "about-005": {
+    "ar": "من نحن",
+    "en": "About"
+  },
+  "about-006": {
+    "ar": "تواصل معنا",
+    "en": "Contact"
+  },
+  "about-007": {
+    "ar": "عن وثبة",
+    "en": "ABOUT WATHBA"
+  },
+  "about-008": {
+    "ar": "معدات كاليستنكس لمن يسعى للقوة والتحكم والتطور",
+    "en": "ENGINEERED IN THE PURSUIT OF PHYSICAL MASTERY"
+  },
+  "about-009": {
+    "ar": "الحرفة",
+    "en": "THE CRAFT"
+  },
+  "about-010": {
+    "ar": "بدأت WATHBA من فكرة بسيطة: معدات كاليسثنكس قوية وعملية وتليق باللاعب الجاد. نحن لا نبيع أدوات فقط، بل نساعدك تبني مساحة تدريب تخدم هدفك وتطورك.",
+    "en": "Born from the gritty streets and polished by high-performance engineering, WATHBA is the definitive answer for those who demand more from their gear. We do not just manufacture tools; we build training equipment for real progress."
+  },
+  "about-011": {
+    "ar": "نركز على الثبات، جودة الخامات، وراحة الاستخدام. كل عقلة، بار، حلقة، أو جهاز يتم اختياره وتصميمه ليخدم التدريب الحقيقي اليومي، سواء في البيت أو الخارج أو النادي.",
+    "en": "Our journey began with a simple goal: create calisthenics equipment that is strong, practical, and worthy of serious athletes. Every ring, bar, and setup is designed around control, durability, and daily use."
+  },
+  "about-012": {
+    "ar": "100%<br>جاهزة للتدريب",
+    "en": "100%<br>TRAINING READY"
+  },
+  "about-013": {
+    "ar": "مصممة للاستخدام الحقيقي",
+    "en": "BUILT FOR REAL USE"
+  },
+  "about-014": {
+    "ar": "مهمتنا",
+    "en": "OUR MISSION"
+  },
+  "about-015": {
+    "ar": "هندسة الإمكانات <br> البشرية.",
+    "en": "ENGINEERING HUMAN <br> POTENTIAL."
+  },
+  "about-016": {
+    "ar": "هدف WATHBA هو مساعدة الرياضيين على بناء القوة، التحكم، والثقة من خلال معدات كاليسثنكس موثوقة. نركز على التصميم العملي، الخامات القوية، والدعم المباشر حتى يختار كل شخص التجهيز المناسب لهدفه.",
+    "en": "WATHBA exists to help athletes build strength, control, and confidence through reliable calisthenics equipment. We focus on practical design, strong materials, and direct support so every customer can build the right setup for their goals."
+  },
+  "about-017": {
+    "ar": "القوة",
+    "en": "STRENGTH"
+  },
+  "about-018": {
+    "ar": "معدات تتحمل التمرين الجاد والاستخدام المتكرر.",
+    "en": "Built to handle serious training sessions and repeated daily use."
+  },
+  "about-019": {
+    "ar": "التحكم",
+    "en": "CONTROL"
+  },
+  "about-020": {
+    "ar": "تصميم يساعدك على القبضة، التوازن، والتحكم بالحركة.",
+    "en": "Designed to support grip, balance, and precise bodyweight movement."
+  },
+  "about-021": {
+    "ar": "التطور",
+    "en": "PROGRESS"
+  },
+  "about-022": {
+    "ar": "معدات تناسب المبتدئ والمتوسط والمتقدم وتساعده يتقدم خطوة بخطوة.",
+    "en": "Equipment that helps beginners, intermediates, and advanced athletes move forward."
+  },
+  "about-023": {
+    "ar": "جودة التصنيع",
+    "en": "BUILD QUALITY"
+  },
+  "about-024": {
+    "ar": "خامات قوية وتفاصيل عملية لتدريب طويل المدى.",
+    "en": "Made with durable materials and practical details for long-term training."
+  },
+  "about-025": {
+    "ar": "المساحة",
+    "en": "THE SETTING"
+  },
+  "about-026": {
+    "ar": "حيث تلتقي القوة بالجمال",
+    "en": "WHERE POWER MEETS AESTHETICS"
+  },
+  "about-027": {
+    "ar": "جهّز رحلتك",
+    "en": "EQUIP YOUR JOURNEY"
+  },
+  "about-028": {
+    "ar": "احكِ لنا مستواك، المساحة المتوفرة، وهدفك التدريبي. نساعدك تختار معدات WATHBA المناسبة عبر واتساب.",
+    "en": "Tell us your level, space, and training goal. We will help you choose the right WATHBA equipment through WhatsApp."
+  },
+  "about-029": {
+    "ar": "<a class=\"bg-primary text-on-primary font-headline-md text-label-caps py-6 px-12 rounded-full uppercase transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3\"\n          href=\"products.html\">",
+    "en": "<a class=\"bg-primary text-on-primary font-headline-md text-label-caps py-6 px-12 rounded-full uppercase transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3\"\n          href=\"products.html\">"
+  },
+  "about-030": {
+    "ar": "تصفح المنتجات",
+    "en": "EXPLORE PRODUCTS"
+  },
+  "about-031": {
+    "ar": "<a class=\"bg-[#25D366] text-white font-headline-md text-label-caps py-6 px-12 rounded-full uppercase transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3\"\n          href=\"https://wa.me/962791752349?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20WATHBA%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B9%D8%AF%D8%A7%D8%AA%20%D8%A7%D9%84%D9%83%D8%A7%D9%84%D9%8A%D8%B3%D8%AA%D9%86%D9%83%D8%B3\" data-wathba-whatsapp-link>",
+    "en": "<a class=\"bg-[#25D366] text-white font-headline-md text-label-caps py-6 px-12 rounded-full uppercase transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3\"\n          href=\"https://wa.me/962791752349?text=Hello%20WATHBA%2C%20I%20want%20to%20ask%20about%20calisthenics%20equipment\" data-wathba-whatsapp-link>"
+  },
+  "about-032": {
+    "ar": "\n          <svg class=\"wathba-wa-svg\" viewBox=\"0 0 32 32\" aria-hidden=\"true\">\n            <path d=\"M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z\"></path>\n            <path d=\"M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z\"></path>\n          </svg>\n          راسلنا واتساب\n        ",
+    "en": "\n          <svg class=\"wathba-wa-svg\" viewBox=\"0 0 32 32\" aria-hidden=\"true\">\n            <path d=\"M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75c1.9 1.04 4.04 1.59 6.34 1.59h.01C23.2 28.84 29 23.02 29 15.86 29 8.82 23.19 3 16.02 3Zm0 23.64c-2.04 0-4.03-.55-5.77-1.58l-.41-.24-3.96 1.04 1.06-3.86-.27-.4a10.72 10.72 0 0 1-1.65-5.72c0-5.93 4.84-10.76 10.8-10.76 2.88 0 5.59 1.12 7.62 3.15a10.68 10.68 0 0 1 3.17 7.61c0 5.94-4.83 10.76-10.79 10.76Z\"></path>\n            <path d=\"M19.11 17.29c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.39s1.03 2.78 1.17 2.97c.14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33Z\"></path>\n          </svg>\n          WHATSAPP US\n        "
+  },
+  "contact-001": {
+    "ar": "الرئيسية",
+    "en": "Home"
+  },
+  "contact-002": {
+    "ar": "المنتجات",
+    "en": "Products"
+  },
+  "contact-003": {
+    "ar": "<a class=\"font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors\"\n            href=\"academy.html\">",
+    "en": "<a class=\"font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors\"\n            href=\"academy-en.html\">"
+  },
+  "contact-004": {
+    "ar": "الأكاديمية",
+    "en": "Academy"
+  },
+  "contact-005": {
+    "ar": "من نحن",
+    "en": "About"
+  },
+  "contact-006": {
+    "ar": "تواصل معنا",
+    "en": "Contact"
+  },
+  "contact-007": {
+    "ar": "أداء بلا تنازل",
+    "en": "UNCOMPROMISING PERFORMANCE"
+  },
+  "contact-008": {
+    "ar": "جهّز مساحة<br>تدريبك",
+    "en": "LET’S BUILD<br>YOUR SETUP"
+  },
+  "contact-009": {
+    "ar": "دعم مباشر",
+    "en": "Instant Support"
+  },
+  "contact-010": {
+    "ar": "تواصل معنا مباشرة عبر واتساب، واحكِ لنا عن المنتج أو المساحة أو التجهيز الذي تريده، وسنساعدك بالاختيار والتفاصيل.",
+    "en": "Connect with our equipment specialists directly. We offer personalized quotes and technical consultations via WhatsApp."
+  },
+  "contact-011": {
+    "ar": "<a class=\"wathba-contact-wa-hero\" href=\"https://wa.me/962791752349?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20WATHBA%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%B9%D8%AF%D8%A7%D8%AA%20%D8%A7%D9%84%D9%83%D8%A7%D9%84%D9%8A%D8%B3%D8%AA%D9%86%D9%83%D8%B3\" data-wathba-whatsapp-link target=\"_blank\"\n                rel=\"noopener noreferrer\">",
+    "en": "<a class=\"wathba-contact-wa-hero\" href=\"https://wa.me/962791752349?text=Hello%20WATHBA%2C%20I%20want%20to%20ask%20about%20calisthenics%20equipment\" data-wathba-whatsapp-link target=\"_blank\"\n                rel=\"noopener noreferrer\">"
+  },
+  "contact-012": {
+    "ar": "راسلنا واتساب",
+    "en": "CHAT ON WHATSAPP"
+  },
+  "contact-013": {
+    "ar": "تفاصيل<br>الاستفسار",
+    "en": "INQUIRY<br>DETAILS"
+  },
+  "contact-014": {
+    "ar": "اكتب لنا ما الذي تبحث عنه: تجهيز منزلي، عقلة، متوازي، حلقات، أو مساحة كاليسثنكس كاملة. سنساعدك تختار الأنسب حسب هدفك والمساحة المتوفرة.",
+    "en": "Tell us about your space and goals. Whether you're building a home gym or a professional calisthenics park, we've got the expertise to guide you."
+  },
+  "contact-015": {
+    "ar": "\n          <div class=\"space-y-2 group\">\n            <label for=\"contactName\" class=\"font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors\">الاسم الكامل</label>\n            <input id=\"contactName\" name=\"name\" required=\"\" autocomplete=\"name\" class=\"w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary\" placeholder=\"اكتب اسمك\" type=\"text\">\n          </div>\n\n          <div class=\"space-y-2 group\">\n            <label for=\"contactPhone\" class=\"font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors\">رقم الهاتف</label>\n            <input id=\"contactPhone\" name=\"phone\" required=\"\" autocomplete=\"tel\" class=\"w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary\" placeholder=\"+962\" type=\"tel\">\n          </div>\n\n          <div class=\"space-y-2 group\">\n            <label for=\"contactMessage\" class=\"font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors\">الرسالة / تفاصيل المعدات</label>\n            <textarea id=\"contactMessage\" name=\"message\" required=\"\" class=\"w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary resize-none\" placeholder=\"ما المنتج أو التجهيز الذي تبحث عنه؟\" rows=\"4\"></textarea>\n          </div>\n        <div class=\"wathba-contact-final-note\" style=\"display: none; margin-top: 18px; padding: 12px 14px; border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.14); font-size: 14px; line-height: 1.6;\"></div>",
+    "en": "\n          <div class=\"space-y-2 group\">\n            <label for=\"contactName\" class=\"font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors\">FULL NAME</label>\n            <input id=\"contactName\" name=\"name\" required=\"\" autocomplete=\"name\" class=\"w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary\" placeholder=\"YOUR NAME\" type=\"text\">\n          </div>\n\n          <div class=\"space-y-2 group\">\n            <label for=\"contactPhone\" class=\"font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors\">PHONE NUMBER</label>\n            <input id=\"contactPhone\" name=\"phone\" required=\"\" autocomplete=\"tel\" class=\"w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary\" placeholder=\"+962\" type=\"tel\">\n          </div>\n\n          <div class=\"space-y-2 group\">\n            <label for=\"contactMessage\" class=\"font-label-caps text-label-caps text-on-surface-variant group-focus-within:text-primary transition-colors\">MESSAGE / EQUIPMENT SPECS</label>\n            <textarea id=\"contactMessage\" name=\"message\" required=\"\" class=\"w-full bg-transparent border-b border-outline-variant py-4 font-headline-md text-headline-md uppercase placeholder:text-surface-variant transition-all focus:border-primary resize-none\" placeholder=\"WHAT ARE YOU LOOKING FOR?\" rows=\"4\"></textarea>\n          </div>\n        <div class=\"wathba-contact-final-note\" style=\"display: none; margin-top: 18px; padding: 12px 14px; border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.14); font-size: 14px; line-height: 1.6;\"></div>"
+  },
+  "contact-016": {
+    "ar": "رقم الواتساب",
+    "en": "WHATSAPP NUMBER"
+  },
+  "contact-017": {
+    "ar": "groups",
+    "en": "groups"
+  },
+  "contact-018": {
+    "ar": "تابعنا",
+    "en": "Follow Us"
+  },
+  "contact-019": {
+    "ar": "\n        <div class=\"wathba-contact-social-list\">\n          \n            <a href=\"https://www.instagram.com/wathba.calisthenics/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wathba-contact-social-pill\">\n              <span>Instagram</span>\n              <strong>@wathba.calisthenics</strong>\n            </a>\n          \n            <a href=\"https://www.tiktok.com/@wathba.calisthenics?is_from_webapp=1&amp;sender_device=pc\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wathba-contact-social-pill\">\n              <span>TikTok</span>\n              <strong>@wathba.calisthenics</strong>\n            </a>\n          \n            <a href=\"https://www.facebook.com/profile.php?id=61591296419542\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wathba-contact-social-pill\">\n              <span>Facebook</span>\n              <strong>WATHBA Calisthenics</strong>\n            </a>\n          \n        </div>\n      ",
+    "en": "\n        <div class=\"wathba-contact-social-list\">\n          \n            <a href=\"https://www.instagram.com/wathba.calisthenics/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wathba-contact-social-pill\">\n              <span>Instagram</span>\n              <strong>@wathba.calisthenics</strong>\n            </a>\n          \n            <a href=\"https://www.tiktok.com/@wathba.calisthenics?is_from_webapp=1&amp;sender_device=pc\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wathba-contact-social-pill\">\n              <span>TikTok</span>\n              <strong>@wathba.calisthenics</strong>\n            </a>\n          \n            <a href=\"https://www.facebook.com/profile.php?id=61591296419542\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"wathba-contact-social-pill\">\n              <span>Facebook</span>\n              <strong>WATHBA Calisthenics</strong>\n            </a>\n          \n        </div>\n      "
+  },
+  "contact-020": {
+    "ar": "الموقع",
+    "en": "LOCATION"
+  },
+  "contact-021": {
+    "ar": "عمّان، الأردن",
+    "en": "AMMAN, JORDAN"
+  },
+  "contact-022": {
+    "ar": "التواصل",
+    "en": "GET IN TOUCH"
+  },
+  "contact-023": {
+    "ar": "راسلنا عبر واتساب",
+    "en": "Message us on WhatsApp"
+  },
+  "contact-024": {
+    "ar": "الأسئلة الشائعة",
+    "en": "FREQUENTLY ASKED"
+  },
+  "contact-025": {
+    "ar": "كيف أطلب؟",
+    "en": "HOW DO I ORDER?"
+  },
+  "contact-026": {
+    "ar": "كل الطلبات تتم عبر واتساب. أرسل لنا المنتج المطلوب، وسنؤكد لك التوفر والتفاصيل والسعر.",
+    "en": "All orders are handled through WhatsApp. Send us the product you want, and we will confirm availability, details, and price."
+  },
+  "contact-027": {
+    "ar": "هل الأسعار ثابتة؟",
+    "en": "ARE PRICES FIXED?"
+  },
+  "contact-028": {
+    "ar": "بعض المنتجات تعتمد على القياس والخامة والتجهيز المطلوب. نؤكد السعر النهائي عبر واتساب قبل أي طلب.",
+    "en": "Some products depend on size, material, and custom setup. We confirm the final price through WhatsApp before any order."
+  },
+  "contact-029": {
+    "ar": "هل يمكن عمل تجهيزات مخصصة؟",
+    "en": "DO YOU MAKE CUSTOM SETUPS?"
+  },
+  "contact-030": {
+    "ar": "نعم، يمكننا المساعدة في تجهيزات منزلية، خارجية، متوازي، عقلات، وأجهزة كاليسثنكس حسب المساحة المتوفرة.",
+    "en": "Yes. We can help with home setups, outdoor bars, multi rigs, and custom calisthenics spaces depending on your area."
+  },
+  "contact-031": {
+    "ar": "هل يمكن تخصيص المعدات؟",
+    "en": "CAN I CUSTOMIZE EQUIPMENT?"
+  },
+  "contact-032": {
+    "ar": "نعم، يمكن تخصيص بعض المعدات حسب القياس، الارتفاع، الشكل، والمساحة المتوفرة. أرسل لنا التفاصيل عبر واتساب.",
+    "en": "Yes. Equipment can be customized by size, height, layout, and available space. Send us your requirements through WhatsApp."
+  }
+}
