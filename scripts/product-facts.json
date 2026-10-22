@@ -1,0 +1,607 @@
+{
+  "reviewDate": "2026-10-21",
+  "products": {
+    "wall-pull-up-bar": {
+      "rows": [
+        {
+          "label": {
+            "ar": "الخيارات",
+            "en": "Options"
+          },
+          "value": {
+            "ar": "Home 60: بروز 60 سم؛ Skill 90: بروز 90 سم. البروز مسافة عن الحائط.",
+            "en": "Home 60: 60 cm projection; Skill 90: 90 cm projection. Projection is distance from the wall."
+          }
+        },
+        {
+          "label": {
+            "ar": "القياسات المرجعية",
+            "en": "Reference dimensions"
+          },
+          "value": {
+            "ar": "طول مسكة Home: 120 سم. Skill: من 120 إلى 130 سم حسب الطلب. الجزء العمودي: 50 / 70 سم على الترتيب.",
+            "en": "Home grip length: 120 cm. Skill: 120–130 cm by order. Vertical wall member: 50 / 70 cm respectively."
+          }
+        },
+        {
+          "label": {
+            "ar": "الخامات والقبضة",
+            "en": "Materials and grip"
+          },
+          "value": {
+            "ar": "هيكل حديد؛ مقطع رئيسي 6 × 3 سم. قطر مسكة العقلة 3.2 سم.",
+            "en": "Steel frame; main section 6 × 3 cm. Pull-up grip diameter: 3.2 cm."
+          }
+        },
+        {
+          "label": {
+            "ar": "التشطيب المرجعي",
+            "en": "Reference finish"
+          },
+          "value": {
+            "ar": "حديد أسود مطفي؛ خيارات اللون الأخرى تحتاج تأكيدًا.",
+            "en": "Matte black steel; other colours require confirmation."
+          }
+        },
+        {
+          "label": {
+            "ar": "التركيب",
+            "en": "Installation"
+          },
+          "value": {
+            "ar": "يثبت على حائط مناسب بعد فحصه واختيار نظام التثبيت بحسب مادته؛ يحدد نطاق التركيب عند الطلب.",
+            "en": "Mount to a suitable wall after inspection and selection of anchors for its material; confirm the installation scope when ordering."
+          }
+        },
+        {
+          "label": {
+            "ar": "سماكة جدار الحديد",
+            "en": "Steel wall thickness"
+          },
+          "value": {
+            "ar": "جدار التيوبات والمواسير 2 مم؛ سماكات الصفائح والحاضنات منفصلة حسب التصميم.",
+            "en": "Tube and pipe wall thickness: 2 mm; plate and socket thicknesses are specified separately."
+          }
+        }
+      ],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": 2,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    },
+    "monkey-bars": {
+      "rows": [],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": null,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    },
+    "steel-wood-parallettes": {
+      "rows": [
+        {
+          "label": {
+            "ar": "الصغير: طول × عمق قاعدة × ارتفاع",
+            "en": "Small: length × base depth × height"
+          },
+          "value": {
+            "ar": "25 × 16 × 10 سم إلى أعلى الخشب.",
+            "en": "25 × 16 × 10 cm to the top of the wooden grip."
+          }
+        },
+        {
+          "label": {
+            "ar": "الوسط: طول × عمق قاعدة × ارتفاع",
+            "en": "Medium: length × base depth × height"
+          },
+          "value": {
+            "ar": "50 × 25 × 10 سم إلى أعلى الخشب.",
+            "en": "50 × 25 × 10 cm to the top of the wooden grip."
+          }
+        },
+        {
+          "label": {
+            "ar": "المرتفع: طول × عمق قاعدة × ارتفاع",
+            "en": "High: length × base depth × height"
+          },
+          "value": {
+            "ar": "50 × 35 × 30 سم إلى أعلى الخشب.",
+            "en": "50 × 35 × 30 cm to the top of the wooden grip."
+          }
+        },
+        {
+          "label": {
+            "ar": "الخامات والقبضة",
+            "en": "Materials and grip"
+          },
+          "value": {
+            "ar": "قواعد حديد بمقطع 4 × 2 سم؛ مقبض زان قطره 4 سم. المنتج زوج من قطعتين.",
+            "en": "Steel bases with a 4 × 2 cm section; 4 cm diameter beech grip. Supplied as a pair of units."
+          }
+        },
+        {
+          "label": {
+            "ar": "التشطيب المرجعي",
+            "en": "Reference finish"
+          },
+          "value": {
+            "ar": "حديد أسود مطفي؛ خيارات اللون الأخرى تحتاج تأكيدًا.",
+            "en": "Matte black steel; other colours require confirmation."
+          }
+        },
+        {
+          "label": {
+            "ar": "الاستخدام والتجميع",
+            "en": "Setup"
+          },
+          "value": {
+            "ar": "قطعتان مستقلتان على أرضية مستوية غير زلقة؛ تفحص الوصلات واستواء القواعد قبل الاستخدام.",
+            "en": "Two independent units on a level, non-slip floor; inspect connections and base contact before use."
+          }
+        },
+        {
+          "label": {
+            "ar": "سماكة جدار الحديد",
+            "en": "Steel wall thickness"
+          },
+          "value": {
+            "ar": "جدار التيوبات والمواسير 2 مم؛ سماكات الصفائح والحاضنات منفصلة حسب التصميم.",
+            "en": "Tube and pipe wall thickness: 2 mm; plate and socket thicknesses are specified separately."
+          }
+        }
+      ],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": 2,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    },
+    "full-wooden-parallettes": {
+      "rows": [
+        {
+          "label": {
+            "ar": "طول × عمق سفلي × ارتفاع",
+            "en": "Length × lower base depth × height"
+          },
+          "value": {
+            "ar": "30 × 16 × 12 سم؛ عمق الجانب العلوي 8 سم، وسماكة الجانب 3.5 سم.",
+            "en": "30 × 16 × 12 cm; upper side depth 8 cm and side thickness 3.5 cm."
+          }
+        },
+        {
+          "label": {
+            "ar": "الخامة والقبضة",
+            "en": "Material and grip"
+          },
+          "value": {
+            "ar": "خشب زان؛ قطر المقبض 4 سم، وطوله الظاهر بين الجانبين 23 سم. المنتج زوج.",
+            "en": "Beech wood; 4 cm grip diameter, with 23 cm exposed between the sides. Supplied as a pair."
+          }
+        },
+        {
+          "label": {
+            "ar": "التشطيب المرجعي",
+            "en": "Reference finish"
+          },
+          "value": {
+            "ar": "خشب طبيعي بتشطيب مطفي خفيف؛ يؤكد التشطيب النهائي عند الطلب.",
+            "en": "Natural wood with a light matte finish; confirm the final finish when ordering."
+          }
+        },
+        {
+          "label": {
+            "ar": "الاستخدام",
+            "en": "Setup"
+          },
+          "value": {
+            "ar": "قطعتان مستقلتان على أرضية مستوية غير زلقة؛ تفحص الوصلات واستواء القواعد قبل الاستخدام.",
+            "en": "Two independent units on a level, non-slip floor; inspect connections and base contact before use."
+          }
+        }
+      ],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": null,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    },
+    "freestanding-parallel-bars-small": {
+      "rows": [
+        {
+          "label": {
+            "ar": "قياس الموديل والارتفاع النهائي",
+            "en": "Model size and assembled height"
+          },
+          "value": {
+            "ar": "اسم الموديل 40 سم يشير لوحدة الماسورة؛ الارتفاع المرجعي مع القاعدة 43.6 سم قبل الربل، وليس 40 سم إجمالًا.",
+            "en": "The 40 cm model name refers to the tube frame; reference assembled height is 43.6 cm before rubber feet, rather than 40 cm overall."
+          }
+        },
+        {
+          "label": {
+            "ar": "المساحة المرجعية لكل قطعة",
+            "en": "Reference footprint per unit"
+          },
+          "value": {
+            "ar": "طول القاعدة 50 سم؛ الطول الخارجي بين حافتي الرجلين 69 سم. المسافة بين محوري الرجلين 65 سم، وليست المسافة بين البارين.",
+            "en": "Base depth 50 cm; outside span between the legs 69 cm. Leg centre spacing is 65 cm, not spacing between the two bars."
+          }
+        },
+        {
+          "label": {
+            "ar": "الخامات والقبضة",
+            "en": "Materials and grip"
+          },
+          "value": {
+            "ar": "قواعد حديد بمقطع 6 × 3 سم، ومواسير قطرها الخارجي 4 سم. المنتج زوج من قطعتين مستقلتين.",
+            "en": "Steel bases with a 6 × 3 cm section and 4 cm outside-diameter tubes. Supplied as two independent units."
+          }
+        },
+        {
+          "label": {
+            "ar": "التشطيب المرجعي",
+            "en": "Reference finish"
+          },
+          "value": {
+            "ar": "حديد أسود مطفي؛ خيارات اللون الأخرى تحتاج تأكيدًا.",
+            "en": "Matte black steel; other colours require confirmation."
+          }
+        },
+        {
+          "label": {
+            "ar": "الاستخدام والتجميع",
+            "en": "Setup"
+          },
+          "value": {
+            "ar": "قطعتان مستقلتان على أرضية مستوية غير زلقة؛ تفحص الوصلات واستواء القواعد قبل الاستخدام.",
+            "en": "Two independent units on a level, non-slip floor; inspect connections and base contact before use."
+          }
+        },
+        {
+          "label": {
+            "ar": "سماكة جدار الحديد",
+            "en": "Steel wall thickness"
+          },
+          "value": {
+            "ar": "جدار التيوبات والمواسير 2 مم؛ سماكات الصفائح والحاضنات منفصلة حسب التصميم.",
+            "en": "Tube and pipe wall thickness: 2 mm; plate and socket thicknesses are specified separately."
+          }
+        }
+      ],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": 2,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    },
+    "freestanding-parallel-bars-large": {
+      "rows": [
+        {
+          "label": {
+            "ar": "قياس الموديل والارتفاع النهائي",
+            "en": "Model size and assembled height"
+          },
+          "value": {
+            "ar": "اسم الموديل 100 سم يشير لوحدة الماسورة؛ الارتفاع المرجعي مع القاعدة 103.6 سم قبل الربل، وليس 100 سم إجمالًا.",
+            "en": "The 100 cm model name refers to the tube frame; reference assembled height is 103.6 cm before rubber feet, rather than 100 cm overall."
+          }
+        },
+        {
+          "label": {
+            "ar": "المساحة المرجعية لكل قطعة",
+            "en": "Reference footprint per unit"
+          },
+          "value": {
+            "ar": "طول القاعدة 55 سم؛ الطول الخارجي بين حافتي الرجلين 84 سم. المسافة بين محوري الرجلين 80 سم، وليست المسافة بين البارين.",
+            "en": "Base depth 55 cm; outside span between the legs 84 cm. Leg centre spacing is 80 cm, not spacing between the two bars."
+          }
+        },
+        {
+          "label": {
+            "ar": "الخامات والقبضة",
+            "en": "Materials and grip"
+          },
+          "value": {
+            "ar": "قواعد حديد بمقطع 6 × 3 سم، ومواسير قطرها الخارجي 4 سم. المنتج زوج من قطعتين مستقلتين.",
+            "en": "Steel bases with a 6 × 3 cm section and 4 cm outside-diameter tubes. Supplied as two independent units."
+          }
+        },
+        {
+          "label": {
+            "ar": "التشطيب المرجعي",
+            "en": "Reference finish"
+          },
+          "value": {
+            "ar": "حديد أسود مطفي؛ خيارات اللون الأخرى تحتاج تأكيدًا.",
+            "en": "Matte black steel; other colours require confirmation."
+          }
+        },
+        {
+          "label": {
+            "ar": "الاستخدام والتجميع",
+            "en": "Setup"
+          },
+          "value": {
+            "ar": "قطعتان مستقلتان على أرضية مستوية غير زلقة؛ تفحص الوصلات واستواء القواعد قبل الاستخدام.",
+            "en": "Two independent units on a level, non-slip floor; inspect connections and base contact before use."
+          }
+        },
+        {
+          "label": {
+            "ar": "سماكة جدار الحديد",
+            "en": "Steel wall thickness"
+          },
+          "value": {
+            "ar": "جدار التيوبات والمواسير 2 مم؛ سماكات الصفائح والحاضنات منفصلة حسب التصميم.",
+            "en": "Tube and pipe wall thickness: 2 mm; plate and socket thicknesses are specified separately."
+          }
+        }
+      ],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": 2,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    },
+    "wall-mounted-dip-bars": {
+      "rows": [
+        {
+          "label": {
+            "ar": "القياسات المرجعية لكل جهة",
+            "en": "Reference dimensions per unit"
+          },
+          "value": {
+            "ar": "ارتفاع نحو 50 سم؛ طول ماسورة المسكة 70 سم؛ فراغ أمامي لليد 30 سم.",
+            "en": "Approximately 50 cm high; grip tube length 70 cm, with 30 cm of front hand clearance."
+          }
+        },
+        {
+          "label": {
+            "ar": "الخامات والقبضة",
+            "en": "Materials and grip"
+          },
+          "value": {
+            "ar": "هيكل حديد بمقطع 6 × 3 سم؛ قطر القبضة 4 سم. جهتان مستقلتان.",
+            "en": "Steel frame with a 6 × 3 cm section; 4 cm grip diameter. Two independent units."
+          }
+        },
+        {
+          "label": {
+            "ar": "المسافة عند التركيب",
+            "en": "Mounting spacing"
+          },
+          "value": {
+            "ar": "مرجع 52 إلى 55 سم بين مركزي المسكتين؛ يراجع حسب المستخدم والموقع.",
+            "en": "Reference spacing of 52–55 cm between grip centres; review for the user and site."
+          }
+        },
+        {
+          "label": {
+            "ar": "التشطيب المرجعي",
+            "en": "Reference finish"
+          },
+          "value": {
+            "ar": "حديد أسود مطفي؛ خيارات اللون الأخرى تحتاج تأكيدًا.",
+            "en": "Matte black steel; other colours require confirmation."
+          }
+        },
+        {
+          "label": {
+            "ar": "التركيب",
+            "en": "Installation"
+          },
+          "value": {
+            "ar": "يثبت على حائط مناسب بعد فحصه واختيار نظام التثبيت بحسب مادته؛ يحدد نطاق التركيب عند الطلب.",
+            "en": "Mount to a suitable wall after inspection and selection of anchors for its material; confirm the installation scope when ordering."
+          }
+        },
+        {
+          "label": {
+            "ar": "سماكة جدار الحديد",
+            "en": "Steel wall thickness"
+          },
+          "value": {
+            "ar": "جدار التيوبات والمواسير 2 مم؛ سماكات الصفائح والحاضنات منفصلة حسب التصميم.",
+            "en": "Tube and pipe wall thickness: 2 mm; plate and socket thicknesses are specified separately."
+          }
+        }
+      ],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": 2,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    },
+    "gymnastic-rings": {
+      "rows": [
+        {
+          "label": {
+            "ar": "أبعاد الحلقة",
+            "en": "Ring dimensions"
+          },
+          "value": {
+            "ar": "قطر داخلي 18 سم؛ قطر قبضة 2.8 سم؛ قطر خارجي اسمي 23.6 سم.",
+            "en": "18 cm internal diameter; 2.8 cm grip diameter; nominal outside diameter 23.6 cm."
+          }
+        },
+        {
+          "label": {
+            "ar": "الخامة",
+            "en": "Material"
+          },
+          "value": {
+            "ar": "أبلكاش بتولا كامل الطبقات وفق دليل التصنيع. المنتج حلقتان مع الأحزمة.",
+            "en": "Full-layer birch plywood as specified in the manufacturing guide. Two rings with straps."
+          }
+        },
+        {
+          "label": {
+            "ar": "الأحزمة والمشابك",
+            "en": "Straps and buckles"
+          },
+          "value": {
+            "ar": "حزام بوليستر غير مطاطي بطول 5 م لكل حلقة، وعرض 3.8 إلى 4 سم، مع مشبك معدني مطابق.",
+            "en": "Non-elastic polyester strap, 5 m per ring and 3.8–4 cm wide, with a matching metal buckle."
+          }
+        },
+        {
+          "label": {
+            "ar": "التركيب",
+            "en": "Setup"
+          },
+          "value": {
+            "ar": "تحتاج نقطة تعليق مناسبة وفحص الحلقة والحزام والمشبك كنظام كامل؛ لا يوجد ادعاء اعتماد FIG.",
+            "en": "Requires a suitable anchor point and checks of the ring, strap and buckle as a complete system; no FIG certification is claimed."
+          }
+        }
+      ],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": null,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    },
+    "hand-gripper": {
+      "rows": [],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": null,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    },
+    "jump-rope": {
+      "rows": [],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": null,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    },
+    "grip-tape": {
+      "rows": [],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": null,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    },
+    "resistance-bands": {
+      "rows": [],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": null,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    },
+    "multi-rig": {
+      "rows": [],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": null,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    },
+    "custom-orders": {
+      "rows": [],
+      "weightKg": null,
+      "testedLoadKg": null,
+      "wallThicknessMm": null,
+      "commerce": {
+        "priceConfirmed": false,
+        "availability": null,
+        "leadTime": null,
+        "delivery": null,
+        "warrantyReturns": null
+      },
+      "specificationsConfirmed": false
+    }
+  },
+  "excludedCommerceFields": [
+    "delivery",
+    "warrantyReturns"
+  ],
+  "manufacturingReference": {
+    "excludeArchivedDirectory": "دليل قديم غير منقح",
+    "steelWallThicknessMm": 2,
+    "confirmedBy": "User confirmation 2026-10-21"
+  }
+}

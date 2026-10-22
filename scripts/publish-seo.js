@@ -48,26 +48,6 @@ function alternates(pair, inSitemap = false) {
   ).join("\n") + "\n";
 }
 
-function breadcrumbMarkup(filename, page) {
-  if (!/^(equipment-|academy)/.test(filename)) return "";
-  const isEnglish = filename.endsWith("-en.html");
-  const isEquipment = filename.startsWith("equipment-");
-  const titleMatch = page.match(/<title>([^<]+)<\/title>/i);
-  if (!titleMatch) throw new Error(`Missing breadcrumb title: ${filename}`);
-  const pageName = titleMatch[1].split("|")[0].trim().replace(/&amp;/g, "&");
-  const entries = [{ name: isEnglish ? "Home" : "الرئيسية", item: url(isEnglish ? 'index-en.html' : 'index.html') }];
-  if (isEquipment) entries.push({ name: isEnglish ? "Equipment" : "المنتجات", item: url(isEnglish ? 'products-en.html' : 'products.html') });
-  if (filename.startsWith("academy-") && !/^academy-(?:en)\.html$/.test(filename)) {
-    entries.push({ name: isEnglish ? "Academy" : "الأكاديمية", item: url(isEnglish ? "academy-en.html" : "academy.html") });
-  }
-  entries.push({ name: pageName, item: url(filename) });
-  const data = {
-    "@context": "https://schema.org", "@type": "BreadcrumbList",
-    itemListElement: entries.map((entry, i) => ({ "@type": "ListItem", position: i + 1, ...entry }))
-  };
-  return `    <script type="application/ld+json">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>\n`;
-}
-
 for (const filename of filenames) {
   const filepath = path.join(root, filename);
   let page = fs.readFileSync(filepath, "utf8");
@@ -76,15 +56,16 @@ for (const filename of filenames) {
     const start = page.indexOf(startMarker);
     const end = page.indexOf(endMarker, start);
     if (end < 0) throw new Error(`Unclosed SEO block: ${filename}`);
-    page = page.slice(0, start) + page.slice(end + endMarker.length);
+    page = page.slice(0, start).replace(/\s*$/, '\n') + page.slice(end + endMarker.length).replace(/^\s*/, '');
   }
-  const insert = `${startMarker}\n    <link rel="canonical" href="${escapeXml(url(filename))}" />\n${alternates(pairFor(filename))}${breadcrumbMarkup(filename, page)}${endMarker}`;
+  const insert = `${startMarker}\n    <link rel="canonical" href="${escapeXml(url(filename))}" />\n${alternates(pairFor(filename))}${endMarker}`;
   if (!/<\/head>/i.test(page)) throw new Error(`Missing head element: ${filename}`);
-  page = page.replace(/<\/head>/i, `${insert}\n</head>`);
+  page = page.replace(/\s*<\/head>/i, `\n${insert}\n</head>`);
   fs.writeFileSync(filepath, page);
 }
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${filenames.map((name) => `  <url>\n    <loc>${escapeXml(url(name))}</loc>\n${alternates(pairFor(name), true)}  </url>`).join("\n")}\n</urlset>\n`;
 fs.writeFileSync(path.join(root, "sitemap.xml"), xml);
 fs.writeFileSync(path.join(root, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
+require('./structured-data.js').buildStructuredData({origin});
 console.log(`Prepared ${filenames.length} canonical pages and sitemap URLs for ${origin}.`);

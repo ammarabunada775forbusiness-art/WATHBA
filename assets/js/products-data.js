@@ -143,13 +143,13 @@ const products = [
         },
         "image": "assets/images/products/freestanding-parallel-bars-small/1.webp?v=71705dae19b2",
         "description": {
-            "ar": "متوازي حديد صغير بارتفاع 40 سم، مناسب لتدريبات الديبس، الضغط، الكور، وتمارين التحكم، مع تصميم سهل النقل والتخزين.",
-            "en": "Small freestanding parallel bars at 40cm height for dips, push training, core work, and control exercises, with an easy-to-move design."
+            "ar": "متوازي حديد صغير بمقاس اسمي 40 سم لوحدة الماسورة، مناسب لتدريبات الديبس، الضغط، الكور، وتمارين التحكم، مع تصميم سهل النقل والتخزين.",
+            "en": "Small freestanding parallel bars with a nominal 40cm tube frame for dips, push training, core work, and control exercises, with an easy-to-move design."
         },
         "variants": [
             {
-                "ar": "ارتفاع 40 سم",
-                "en": "40cm height",
+                "ar": "موديل 40 سم – قياس الماسورة",
+                "en": "40cm model – tube frame",
                 "price": null
             }
         ]
@@ -171,13 +171,13 @@ const products = [
         },
         "image": "assets/images/products/freestanding-parallel-bars-large/1.webp?v=ddfdc393d485",
         "description": {
-            "ar": "متوازي حديد كبير بارتفاع 100 سم، مناسب لتدريبات الديبس، الضغط، الكور، والثبات بارتفاع كامل.",
-            "en": "Large freestanding parallel bars at 100cm height for full-height dips, push training, core work, and hold exercises."
+            "ar": "متوازي حديد كبير بمقاس اسمي 100 سم لوحدة الماسورة، مناسب لتدريبات الديبس، الضغط، الكور، والثبات بارتفاع كامل.",
+            "en": "Large freestanding parallel bars with a nominal 100cm tube frame for full-height dips, push training, core work, and hold exercises."
         },
         "variants": [
             {
-                "ar": "ارتفاع 100 سم",
-                "en": "100cm height",
+                "ar": "موديل 100 سم – قياس الماسورة",
+                "en": "100cm model – tube frame",
                 "price": null
             }
         ]
@@ -691,6 +691,12 @@ function getAcademyGuide(productId, lang) {
 function getProductPriceText(product, lang) {
     if (product.price !== null && product.price !== undefined) {
         return `${product.price} JOD`;
+    }
+
+    const prices = (product.variants || []).map(v => v.price);
+    if (prices.length && prices.every(p => typeof p === 'number' && Number.isFinite(p) && p > 0)) {
+        const low = Math.min(...prices), high = Math.max(...prices);
+        return low === high ? `${low} JOD` : `${low}–${high} JOD`;
     }
 
     if (product.priceLabel && product.priceLabel[lang]) {

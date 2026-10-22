@@ -6,6 +6,7 @@ const path = require("node:path");
 const vm = require("node:vm");
 const crypto = require("node:crypto");
 const root = path.resolve(__dirname, "..");
+const launchOrigin = fs.readFileSync(path.join(root, 'index.html'), 'utf8').match(/rel="canonical" href="(https:\/\/[^/]+)/)?.[1];
 const sharedAssets = ['css', 'js'].flatMap(folder => fs.readdirSync(path.join(root, 'assets', folder)).filter(name => /\.(css|js)$/.test(name)).sort().map(name => `assets/${folder}/${name}`));
 const sharedAssetPattern = /(assets\/(?:css|js)\/[a-z0-9-]+\.(?:css|js))(?:\?v=[^"'\s<>]*)?/g;
 const unversion = (page) => page.replace(sharedAssetPattern, "$1");
@@ -16,6 +17,7 @@ vm.runInContext(fs.readFileSync(path.join(root, "assets/js/products-data.js"), "
 const catalog = vm.runInContext("products", context);
 const education = require("./product-education.js");
 const renderTraining = require('./render-product-training.js');
+const renderFacts = require('./render-product-facts.js');
 
 function html(value) {
   return String(value).replace(/[&<>"']/g, (char) => ({
@@ -73,7 +75,7 @@ function productPage(product, lang) {
     <nav class="wathba-product-crumb" aria-label="Breadcrumb"><a href="index.html">${labels.home}</a><span>/</span><a href="products.html">${labels.products}</a><span>/</span>${html(name)}</nav>
     <div class="wathba-static-panel"><div class="wathba-static-art"><img src="${html(product.image)}" alt="${html(product.images[0]?.temporary ? (isAr ? 'صورة تدريب توضيحية مؤقتة' : 'Temporary illustrative training photo') : name)}" width="${product.images[0]?.width || 1200}" height="${product.images[0]?.height || 900}" loading="eager" decoding="async" fetchpriority="high">${product.images[0]?.temporary ? `<span class="wathba-temporary-image">${isAr ? 'صورة توضيحية مؤقتة' : 'Temporary sample photo'}</span>` : ''}</div>
     <div><span class="wathba-static-category">${html(product.category[lang])} · ${labels.category}</span><h1>${html(name)}</h1><p>${html(product.description[lang])}</p>
-    <div class="wathba-static-options"><strong>${labels.sizes}</strong><ul>${product.variants.map((v) => `<li>${html(v[lang])}</li>`).join("")}</ul><p>${labels.price}</p></div>
+    <div class="wathba-static-options"><strong>${labels.sizes}</strong><ul>${product.variants.map((v, index) => `<li><a href="${urlFor(product.id, lang)}?variant=${index}">${html(v[lang])}</a>${typeof v.price === 'number' && Number.isFinite(v.price) && v.price > 0 ? ` — ${v.price} JOD` : ''}</li>`).join("")}</ul><p>${html(vm.runInContext(`getProductPriceText(products.find(p => p.id === ${JSON.stringify(product.id)}), ${JSON.stringify(lang)})`, context))}</p></div>
     <div class="wathba-static-actions"><a href="${html(whatsApp)}">${labels.buy}</a><a href="${html(academyFor(product.id, lang))}">${labels.guide}</a></div></div></div>
   </div></section>`;
   const editorial = renderTraining(product, lang, catalog, academyFor(product.id, lang));
@@ -90,7 +92,7 @@ function productPage(product, lang) {
   page = replaceOnce(page, '<body class="bg-background text-on-surface font-body-md selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">',
     `<body class="bg-background text-on-surface font-body-md selection:bg-tertiary-fixed selection:text-on-tertiary-fixed" data-wathba-product-id="${product.id}" data-product-page-lang="${lang}">`);
   page = replaceOnce(page, '<section id="productDetailsRoot"></section>',
-    `<section id="productDetailsRoot">${staticHero}</section>\n        ${editorial}`);
+    `<section id="productDetailsRoot">${staticHero}</section>\n        ${renderFacts(product, lang)}\n        ${editorial}`);
   page = replaceOnce(page, '<script src="assets/js/shared-ui.js"></script>',
     '<script src="assets/js/product-language.js"></script>\n    <script src="assets/js/shared-ui.js"></script>');
   page = replaceOnce(page, '    <script src="assets/js/product-legacy-redirect.js"></script>\n', '');
@@ -141,6 +143,7 @@ const languagePages = require('./build-language-pages.js');
 require('./build-academy-pages.js').buildAcademy(catalog);
 languagePages.buildCorePages();
 languagePages.finalizeLanguageLinks();
+const structuredData = require('./structured-data.js').buildStructuredData({origin: launchOrigin});
 const assetHash = crypto.createHash("sha256");
 for (const asset of sharedAssets) assetHash.update(fs.readFileSync(path.join(root, asset)));
 const assetVersion = assetHash.digest("hex").slice(0, 12);
@@ -151,4 +154,5 @@ for (const filename of fs.readdirSync(root).filter((name) => name.endsWith(".htm
   if (before !== after) fs.writeFileSync(filepath, after);
 }
 
-console.log(`Built ${catalog.length * 2} localized product pages and catalog links. Shared UI: ${assetVersion}.`);
+if (launchOrigin) require('node:child_process').execFileSync(process.execPath, [path.join(__dirname,'publish-seo.js'), launchOrigin], {cwd:root});
+console.log(`Built ${catalog.length * 2} localized product pages and catalog links. Shared UI: ${assetVersion}. JSON-LD: ${structuredData.pages} pages.`);

@@ -79,3 +79,5 @@
 .wathba-temporary-image { position: absolute; z-index: 30; inset-inline-start: 12px; bottom: 12px; max-width: calc(100% - 24px); padding: 6px 10px; border: 1px solid rgba(255,255,255,.22); border-radius: 8px; background: rgba(19,19,19,.86); color: #fff; font: 600 12px/1.5 "Be Vietnam Pro", sans-serif; letter-spacing: 0; pointer-events: none; }
 @media (max-width: 900px) { .academy-article-layout { grid-template-columns: 1fr; } .academy-toc { position: static; grid-row: 1; margin: 18px 0 0; max-height: none; } }
 @media (max-width: 700px) { .academy-main { padding-top: 70px; } .academy-container { width: min(100% - 32px, 1160px); } .academy-hero { padding: 34px 0 45px; } .academy-section { padding-block: 43px; } .academy-grid, .academy-grid.two { grid-template-columns: 1fr; } .academy-card { padding: 23px; } }
+/* The author shown to readers matches the Article author in JSON-LD. */
+.academy-hero .academy-article-author { font-size: 14px; opacity: .8; margin-top: 12px; }

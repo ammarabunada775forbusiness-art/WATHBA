@@ -1,6 +1,7 @@
 let currentLang = localStorage.getItem("wathbaLang") || "ar";
 let selectedVariant = null;
 let activeImageIndex = 0;
+let initialVariantApplied = false;
 
 const productDetailsRoot = document.getElementById("productDetailsRoot");
 const relatedProductsRoot = document.getElementById("relatedProductsRoot");
@@ -308,12 +309,19 @@ function renderProductDetails() {
 
   const product = getCurrentProduct();
   if (!product) return;
+  if (!initialVariantApplied) {
+    const requested = new URLSearchParams(window.location.search).get('variant');
+    if (requested !== null && /^(0|[1-9]\d*)$/.test(requested)) {
+      selectedVariant = product.variants[Number(requested)] || null;
+    }
+    initialVariantApplied = true;
+  }
   const gallery = getProductGallery(product);
   const mainImage = gallery[activeImageIndex] || product.image;
   const features = getProductFeatures(product, currentLang);
   const title = splitTitle(product.name[currentLang]);
   const category = product.category[currentLang];
-  const priceText = getProductPriceText(product, currentLang);
+  const priceText = getProductPriceText(selectedVariant?.price != null ? {...product, price:selectedVariant.price} : product, currentLang);
 
   if (!document.body?.dataset.wathbaProductId) {
     document.title = `${product.name[currentLang]} | WATHBA`;
@@ -426,6 +434,7 @@ function renderProductDetails() {
 
   bindProductDetailsEvents();
   renderRelatedProducts(product);
+  if (typeof wathbaSyncLanguageLink === 'function') wathbaSyncLanguageLink();
 }
 
 function bindProductDetailsEvents() {
@@ -442,6 +451,9 @@ function bindProductDetailsEvents() {
     button.addEventListener("click", () => {
       const index = Number(button.dataset.variantIndex);
       selectedVariant = product.variants[index];
+      const location = new URL(window.location.href);
+      location.searchParams.set('variant', String(index));
+      window.history.replaceState(null, '', location.href);
       renderProductDetails();
     });
   });

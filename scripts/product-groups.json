@@ -1,0 +1,30 @@
+{
+  "singlePage": {
+    "wall-pull-up-bar": {
+      "variesBy": ["size"],
+      "variants": [
+        {"index": 0, "sku": "wall-pull-up-bar-home-60", "size": {"ar": "بروز 60 سم من الحائط", "en": "60cm wall projection"}},
+        {"index": 1, "sku": "wall-pull-up-bar-skill-90", "size": {"ar": "بروز 90 سم من الحائط", "en": "90cm wall projection"}}
+      ]
+    },
+    "steel-wood-parallettes": {
+      "variesBy": ["size"],
+      "variants": [
+        {"index": 0, "sku": "steel-wood-parallettes-small", "size": {"ar": "قياس صغير", "en": "Small size"}},
+        {"index": 1, "sku": "steel-wood-parallettes-medium", "size": {"ar": "قياس وسط", "en": "Medium size"}},
+        {"index": 2, "sku": "steel-wood-parallettes-high", "size": {"ar": "قياس كبير", "en": "Large size"}}
+      ]
+    }
+  },
+  "multiPage": [
+    {
+      "id": "freestanding-parallel-bars",
+      "name": {"ar": "متوازي حديد أرضي", "en": "Freestanding Parallel Bars"},
+      "variesBy": ["size"],
+      "members": [
+        {"productId": "freestanding-parallel-bars-small", "index": 0, "sku": "freestanding-parallel-bars-small", "size": {"ar": "موديل 40 سم – قياس الماسورة", "en": "40cm model – tube frame"}},
+        {"productId": "freestanding-parallel-bars-large", "index": 0, "sku": "freestanding-parallel-bars-large", "size": {"ar": "موديل 100 سم – قياس الماسورة", "en": "100cm model – tube frame"}}
+      ]
+    }
+  ]
+}

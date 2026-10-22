@@ -8,7 +8,7 @@
 
 1. تأكد أن نسخة HTTPS النهائية من الدومين تفتح الصفحات، وأن اختيار `www` أو بدونه ثابت.
 2. إذا تغيّرت أسماء أو بيانات المنتجات، عدّل `assets/js/products-data.js` ونصوص التدريب المدققة في `scripts/product-education.js`، ثم شغّل `node scripts/build-product-pages.js`.
-3. شغّل `node scripts/publish-seo.js https://YOUR-ACTUAL-DOMAIN` مع استبدال الرابط بدومينك النهائي. هذا يكتب `sitemap.xml` ويضيف روابط canonical وبدائل اللغة إلى الصفحات المنشورة ويحدث `robots.txt`. أعد تنفيذ هذه الخطوة بعد كل بناء جديد لصفحات المنتجات.
+3. شغّل `node scripts/publish-seo.js https://YOUR-ACTUAL-DOMAIN` مع استبدال الرابط بدومينك النهائي. هذا يكتب `sitemap.xml` ويضيف روابط canonical وبدائل اللغة إلى الصفحات المنشورة ويحدث `robots.txt` وجميع روابط JSON-LD. بعد وجود canonical للدومين في الرئيسية، يحافظ البناء العادي عليه ويعيد توليد بيانات الإطلاق تلقائيًا.
 4. انشر هذه الملفات مع بقية الموقع، وأضف ملكية الدومين في Google Search Console ثم أرسل `https://YOUR-ACTUAL-DOMAIN/sitemap.xml`. افحص صفحات نموذجية عربية وإنجليزية باستخدام URL Inspection بعد النشر.
 5. أضف صورًا حقيقية للمعدات في مسارات `assets/images/products/` المحددة في `assets/js/products-data.js`، وأكّد المقاسات ومواصفات التركيب والأسعار قبل نشرها. لا تضف أسعارًا أو تقييمات أو مخطط عروض `Offer` قبل وجود بيانات فعلية يمكن للزوار رؤيتها.
 

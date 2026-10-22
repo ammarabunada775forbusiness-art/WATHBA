@@ -1,4 +1,15 @@
 /* Product editorial content stays in the HTML, even when shop scripts are absent. */
+.wathba-product-facts { color: var(--wathba-text); font-family: "Be Vietnam Pro", "Noto Sans Arabic", sans-serif; padding-block: 18px 36px; line-height: 1.85; }
+.wathba-product-facts * { box-sizing: border-box; }
+.wathba-product-facts h2 { font-size: clamp(25px, 3vw, 36px); line-height: 1.4; margin-bottom: 14px; font-weight: 800; }
+.wathba-product-facts p { margin-block: 12px; }
+.wathba-spec-list { margin-block: 22px; border: 1px solid var(--wathba-edge); border-radius: 12px; overflow: hidden; }
+.wathba-spec-row { display: grid; grid-template-columns: minmax(170px, .7fr) minmax(0, 1.8fr); gap: 20px; padding: 17px 22px; background: var(--wathba-panel); }
+.wathba-spec-row + .wathba-spec-row { border-top: 1px solid var(--wathba-edge); }
+.wathba-spec-row dt { font-weight: 700; }
+.wathba-spec-row dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.wathba-order-details { padding: 14px 22px; border-inline-start: 2px solid var(--wathba-muted); background: var(--wathba-panel); border-radius: 6px; }
+@media (max-width: 600px) { .wathba-spec-row { grid-template-columns: minmax(0, 1fr); gap: 5px; padding: 16px; } .wathba-order-details { padding: 10px 16px; } }
 .wathba-product-static, .wathba-product-education {
   color: var(--wathba-text);
   font-family: "Be Vietnam Pro", "Noto Sans Arabic", sans-serif;
