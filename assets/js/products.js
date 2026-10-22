@@ -168,11 +168,11 @@ function renderProducts() {
 
           <div class="p-8 flex flex-col flex-grow ${currentLang === "ar" ? "text-right" : ""}">
             <div class="flex justify-between items-start gap-4 mb-2">
-              <h3 class="font-headline-md text-headline-md uppercase leading-tight">
+              <h2 class="font-headline-md text-headline-md uppercase leading-tight">
                 <a href="${detailsUrl}" class="hover:text-primary transition-colors">
                   ${productName}
                 </a>
-              </h3>
+              </h2>
 
               <span class="font-label-caps text-label-caps text-on-surface-variant text-end">
                 ${groupLabel}
@@ -191,6 +191,7 @@ function renderProducts() {
               <div class="flex items-center gap-2 product-card-actions">
                 <a
                   href="${detailsUrl}"
+                  aria-label="${currentLang === 'ar' ? 'تفاصيل ' : 'Details: '}${productName}"
                   class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
                 >
                   ${currentLang === "ar" ? "التفاصيل" : "Details"}
@@ -209,7 +210,7 @@ function renderProducts() {
 </span></button>
               </div>
             </div>
-            <a class="wathba-academy-card-link" href="${getAcademyGuide(product.id, currentLang)}">
+            <a class="wathba-academy-card-link" href="${getAcademyGuide(product.id, currentLang)}" aria-label="${currentLang === 'ar' ? 'دليل التدريب: ' : 'Training guide: '}${productName}">
               <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
               ${currentLang === "ar" ? "تعلّم التمارين المناسبة" : "Explore the training guide"}
             </a>

@@ -420,8 +420,8 @@ function renderProductDetails() {
       .map(
         (feature) => `
                 <div class="flex flex-col gap-3">
-                  <span class="material-symbols-outlined text-primary text-3xl">${feature.icon}</span>
-                  <h3 class="font-label-caps text-label-caps">${feature.title}</h3>
+                  <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">${feature.icon}</span>
+                  <h2 class="font-label-caps text-label-caps">${feature.title}</h2>
                   <p class="text-xs text-on-surface-variant">${feature.text}</p>
                 </div>
               `
@@ -523,16 +523,16 @@ function renderRelatedProducts(currentProduct) {
 
                 <div class="p-6 flex justify-between items-center">
                   <div>
-                    <h4 class="font-headline-md text-[20px] uppercase tracking-tight">
+                    <h3 class="font-headline-md text-[20px] uppercase tracking-tight">
                       ${product.name[currentLang]}
-                    </h4>
+                    </h3>
 
                     <p class="font-label-caps text-[10px] text-on-surface-variant">
                       ${product.category[currentLang]}
                     </p>
                   </div>
 
-                  <span class="material-symbols-outlined text-primary">arrow_forward</span>
+                  <span class="material-symbols-outlined text-primary" aria-hidden="true">arrow_forward</span>
                 </div>
               </a>
             `

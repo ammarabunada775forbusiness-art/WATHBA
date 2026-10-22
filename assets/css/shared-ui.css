@@ -558,7 +558,7 @@ a[href*="wa.me"] {
   gap: 12px;
   margin-top: 28px;
   background: #25d366;
-  color: #ffffff;
+  color: #131313;
   padding: 14px 22px;
   border-radius: 999px;
   font-family: "Be Vietnam Pro", sans-serif;
@@ -1009,7 +1009,7 @@ html[data-wathba-lang="ar"] .wathba-ar-text {
   padding: 16px;
 }
 
-.wathba-cart-item h4 {
+.wathba-cart-item h3 {
   margin: 0 0 6px;
   font-size: 18px;
   font-weight: 900;
@@ -1921,7 +1921,7 @@ html[dir="rtl"] body:has(#wathba-about-page-translation) main section:nth-of-typ
   color: #ffffff !important;
 }
 
-.wathba-cart-header h3 {
+.wathba-cart-header h2 {
   margin: 10px 0 4px !important;
   font-size: 20px !important;
   line-height: 1.2 !important;
@@ -2019,7 +2019,7 @@ html[dir="rtl"] .wathba-cart-body>* {
   font-size: 13px !important;
 }
 
-.wathba-cart-item-info h4 {
+.wathba-cart-item-info h3 {
   margin: 0 0 6px !important;
   font-size: 18px !important;
   line-height: 1.25 !important;
@@ -2130,7 +2130,7 @@ html[dir="rtl"] .wathba-cart-body>* {
   color: #25d366 !important;
 }
 
-.wathba-cart-empty h4 {
+.wathba-cart-empty h3 {
   margin: 8px 0 4px !important;
   color: #ffffff !important;
   font-size: 18px !important;
@@ -2370,7 +2370,7 @@ html[dir="rtl"] .wathba-cart-remove {
     font-size: 24px !important;
   }
 
-  .wathba-cart-header h3 {
+  .wathba-cart-header h2 {
     font-size: 17px !important;
     margin-top: 7px !important;
   }
@@ -2391,7 +2391,7 @@ html[dir="rtl"] .wathba-cart-remove {
     padding: 13px !important;
   }
 
-  .wathba-cart-item-info h4 {
+  .wathba-cart-item-info h3 {
     font-size: 16px !important;
   }
 
@@ -2440,7 +2440,7 @@ html[dir="rtl"] .wathba-cart-remove {
   gap: 18px;
 }
 
-.wathba-mega-top h3 {
+.wathba-mega-top h2 {
   margin: 8px 0 0;
   color: #050505;
   font-family: "Anton", sans-serif;
@@ -2568,7 +2568,7 @@ html[dir="rtl"] .wathba-mega-bottom {
   gap: 18px;
 }
 
-.wathba-mega-groups-top h3 {
+.wathba-mega-groups-top h2 {
   margin: 8px 0 0;
   color: #ffffff;
   font-family: "Anton", sans-serif;
@@ -3730,13 +3730,13 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
     padding: 12px !important;
   }
 
-  .wathba-products-grid .product-card h3 {
+  .wathba-products-grid .product-card h2 {
     font-size: 18px !important;
     line-height: 1.18 !important;
     margin-bottom: 4px !important;
   }
 
-  html[data-wathba-lang="ar"] .wathba-products-grid .product-card h3 {
+  html[data-wathba-lang="ar"] .wathba-products-grid .product-card h2 {
     font-size: 17px !important;
     line-height: 1.28 !important;
   }
@@ -3948,7 +3948,7 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
     line-height: 0.9 !important;
   }
 
-  .wathba-cart-header h3 {
+  .wathba-cart-header h2 {
     font-size: 22px !important;
     margin-top: 8px !important;
   }
@@ -3989,7 +3989,7 @@ html[dir="rtl"] .wathba-contact-social-pill strong {
     font-size: 54px !important;
   }
 
-  .wathba-cart-empty h4 {
+  .wathba-cart-empty h3 {
     font-size: 24px !important;
     line-height: 1.2 !important;
   }
@@ -4980,3 +4980,20 @@ html.wathba-overlay-open body {
 
 .wathba-editorial-note {max-width:1160px;margin:40px auto;padding:24px;color:var(--wathba-muted);border-top:1px solid var(--wathba-edge);font-size:14px;line-height:1.8;}
 .wathba-editorial-note p + p {margin-top:8px;}
+
+/* Keyboard navigation and readable text keep the storefront's existing palette. */
+.wathba-skip-link {
+  position: fixed;
+  inset-block-start: 12px;
+  inset-inline-start: 12px;
+  z-index: 1000000;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #131313;
+  font-weight: 700;
+  transform: translateY(-180%);
+}
+.wathba-skip-link:focus { transform: translateY(0); outline: 2px solid #ffffff; outline-offset: 3px; }
+.wathba-cart-notes label { display: block; color: var(--wathba-text); margin-bottom: 8px; }
+.wathba-footer-whatsapp:hover { color: #131313; }

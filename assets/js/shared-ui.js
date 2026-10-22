@@ -284,7 +284,7 @@ function wathbaEnsureSharedShell() {
         <div class="wathba-top-tools">
           <a class="wathba-lang-btn" data-wathba-language-switch href="${window.WathbaLanguage.opposite(window.location, wathbaGetLang() === 'ar' ? 'en' : 'ar')}" aria-label="Switch language">AR</a>
           <button class="wathba-menu-toggle" type="button" aria-label="Open menu" aria-controls="wathbaMobileMenu" aria-expanded="false">
-            <span class="material-symbols-outlined">menu</span>
+            <span class="material-symbols-outlined" aria-hidden="true">menu</span>
           </button>
         </div>
       `
@@ -294,7 +294,7 @@ function wathbaEnsureSharedShell() {
   if (!document.getElementById("wathbaMobileMenu")) {
     document.body.insertAdjacentHTML(
       "afterbegin",
-      `<div class="wathba-mobile-menu" id="wathbaMobileMenu"></div>`
+      `<div class="wathba-mobile-menu" id="wathbaMobileMenu" inert aria-hidden="true"></div>`
     );
   }
 
@@ -530,7 +530,7 @@ function wathbaRenderDesktopMegaMenu() {
           <div class="wathba-mega-groups-top">
             <div>
               <span class="wathba-mega-title">${lang === "ar" ? "المنتجات" : "Equipment"}</span>
-              <h3>${lang === "ar" ? "اختر حسب التصنيف" : "Shop by Category"}</h3>
+              <h2>${lang === "ar" ? "اختر حسب التصنيف" : "Shop by Category"}</h2>
             </div>
 
             <a href="products.html" class="wathba-mega-view-all">
@@ -601,7 +601,7 @@ function wathbaRenderFooter() {
     <footer class="wathba-site-footer">
       <div class="wathba-site-footer-grid">
         <div class="wathba-footer-brand">
-          <h3 class="wathba-footer-logo">WATHBA</h3>
+          <p class="wathba-footer-logo">WATHBA</p>
           <p class="wathba-footer-text">${wathbaT("footerText")}</p>
 
           <a
@@ -616,7 +616,7 @@ function wathbaRenderFooter() {
         </div>
 
         <div class="wathba-footer-col">
-          <h5 class="wathba-footer-title">${wathbaT("pagesTitle")}</h5>
+          <h2 class="wathba-footer-title">${wathbaT("pagesTitle")}</h2>
           <ul class="wathba-footer-list">
             <li><a href="index.html">${wathbaT("navHome")}</a></li>
             <li><a href="products.html">${wathbaT("navProducts")}</a></li>
@@ -627,7 +627,7 @@ function wathbaRenderFooter() {
         </div>
 
         <div class="wathba-footer-col">
-          <h5 class="wathba-footer-title">${wathbaT("equipmentTitle")}</h5>
+          <h2 class="wathba-footer-title">${wathbaT("equipmentTitle")}</h2>
           <ul class="wathba-footer-list">
             <li><a href="${wathbaProductUrl("wall-pull-up-bar")}">${wathbaT("pullUp")}</a></li>
 <li><a href="${wathbaProductUrl("steel-wood-parallettes")}">${wathbaT("parallettes")}</a></li>
@@ -637,7 +637,7 @@ function wathbaRenderFooter() {
         </div>
 
         <div class="wathba-footer-contact">
-          <h5 class="wathba-footer-title">${wathbaT("contactTitle")}</h5>
+          <h2 class="wathba-footer-title">${wathbaT("contactTitle")}</h2>
           <p>${wathbaT("footerLocation")}</p>
           <p>${wathbaGetLang() === "ar" ? "واتساب: " : "WhatsApp: "}${wathbaFormatSharedPhone()}</p>
           <p>${wathbaT("footerNote")}</p>
@@ -788,6 +788,9 @@ function wathbaSetMobileMenuOpen(isOpen) {
   const menu = document.getElementById("wathbaMobileMenu");
   if (!menu) return;
 
+  if (!isOpen && menu.contains(document.activeElement)) document.querySelector(".wathba-menu-toggle")?.focus();
+  menu.toggleAttribute("inert", !isOpen);
+  menu.setAttribute("aria-hidden", String(!isOpen));
   menu.classList.toggle("open", isOpen);
   document.body.classList.toggle("wathba-mobile-menu-is-open", isOpen);
   wathbaUpdateMenuButton();
@@ -1000,7 +1003,7 @@ window.addEventListener("pageshow", (event) => {
       button.setAttribute("aria-controls", "wathbaCartDrawer");
       button.setAttribute("aria-expanded", "false");
       button.innerHTML = `
-        <span class="material-symbols-outlined">shopping_bag</span>
+        <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span>
         <span class="wathba-cart-count">0</span>
       `;
 
@@ -1014,7 +1017,7 @@ window.addEventListener("pageshow", (event) => {
     if (!document.getElementById("wathbaCartDrawer")) {
       document.body.insertAdjacentHTML(
         "beforeend",
-        `<div class="wathba-cart-drawer" id="wathbaCartDrawer"></div>`
+        `<div class="wathba-cart-drawer" id="wathbaCartDrawer" inert aria-hidden="true"></div>`
       );
     }
 
@@ -1132,7 +1135,7 @@ Quantity: ${item.qty}`;
                 <div class="wathba-cart-item-index">${index + 1}</div>
 
                 <div class="wathba-cart-item-info">
-                  <h4>${itemName(item.name)}</h4>
+                  <h3>${itemName(item.name)}</h3>
 
                   <p>
                     ${itemCategory}
@@ -1146,22 +1149,22 @@ Quantity: ${item.qty}`;
                   data-cart-remove
                   aria-label="${txt("حذف المنتج", "Remove item")}"
                 >
-                  <span class="material-symbols-outlined">close</span>
+                  <span class="material-symbols-outlined" aria-hidden="true">close</span>
                 </button>
               </div>
 
               <div class="wathba-cart-item-bottom">
                 <strong>${itemPrice}</strong>
 
-                <div class="wathba-cart-stepper" aria-label="${txt("تغيير الكمية", "Change quantity")}">
+                <div class="wathba-cart-stepper" role="group" aria-label="${txt("تغيير الكمية", "Change quantity")}">
                   <button type="button" data-cart-minus aria-label="${txt("تقليل", "Decrease")}">
-                    <span class="material-symbols-outlined">remove</span>
+                    <span class="material-symbols-outlined" aria-hidden="true">remove</span>
                   </button>
 
                   <b>${item.qty}</b>
 
                   <button type="button" data-cart-plus aria-label="${txt("زيادة", "Increase")}">
-                    <span class="material-symbols-outlined">add</span>
+                    <span class="material-symbols-outlined" aria-hidden="true">add</span>
                   </button>
                 </div>
               </div>
@@ -1171,8 +1174,8 @@ Quantity: ${item.qty}`;
         .join("")
       : `
       <div class="wathba-cart-empty">
-  <span class="material-symbols-outlined">shopping_bag</span>
-  <h4>${txt("السلة فارغة", "Your cart is empty")}</h4>
+  <span class="material-symbols-outlined" aria-hidden="true">shopping_bag</span>
+  <h3>${txt("السلة فارغة", "Your cart is empty")}</h3>
   <p>${txt("أضف المنتجات التي تريدها، ثم اطلبها كلها برسالة واتساب واحدة.", "Add products, then order everything in one WhatsApp message.")}</p>
   <a class="wathba-cart-empty-link" href="products.html">
     ${txt("تصفح المنتجات", "Start Shopping")}
@@ -1183,11 +1186,11 @@ Quantity: ${item.qty}`;
     drawer.innerHTML = `
     <div class="wathba-cart-backdrop" data-cart-close></div>
 
-    <aside class="wathba-cart-panel ${items.length ? "" : "is-empty"}" role="dialog" aria-modal="true" aria-label="${txt("سلة الطلبات", "Shopping cart")}">
+    <div class="wathba-cart-panel ${items.length ? "" : "is-empty"}" role="dialog" aria-modal="true" aria-label="${txt("سلة الطلبات", "Shopping cart")}">
       <div class="wathba-cart-header">
         <div>
           <strong>WATHBA</strong>
-          <h3>${txt("سلة الطلبات", "Your Cart")}</h3>
+          <h2>${txt("سلة الطلبات", "Your Cart")}</h2>
 
           <p>
             ${totalQty} ${txt("قطعة", "items")}
@@ -1196,7 +1199,7 @@ Quantity: ${item.qty}`;
         </div>
 
         <button class="wathba-cart-close" type="button" data-cart-close aria-label="${txt("إغلاق السلة", "Close cart")}">
-          <span class="material-symbols-outlined">close</span>
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
         </button>
       </div>
 
@@ -1205,12 +1208,13 @@ Quantity: ${item.qty}`;
       </div>
 
       <div class="wathba-cart-footer">
-        <button class="wathba-cart-notes-toggle" type="button" data-cart-notes-toggle>
-          <span class="material-symbols-outlined">edit_note</span>
+        <button class="wathba-cart-notes-toggle" type="button" data-cart-notes-toggle aria-controls="wathbaCartNotesSection" aria-expanded="${Boolean(cartNotesDraft)}">
+          <span class="material-symbols-outlined" aria-hidden="true">edit_note</span>
           ${txt("إضافة ملاحظات / قياسات", "Add notes / sizes")}
         </button>
 
-        <div class="wathba-cart-notes ${cartNotesDraft ? "open" : ""}">
+        <div class="wathba-cart-notes ${cartNotesDraft ? "open" : ""}" id="wathbaCartNotesSection">
+          <label for="wathbaCartNotes">${txt("ملاحظات الطلب", "Order notes")}</label>
           <textarea
             id="wathbaCartNotes"
             rows="3"
@@ -1224,7 +1228,7 @@ Quantity: ${item.qty}`;
         </div>
 
         <button class="wathba-cart-order" type="button" data-cart-order ${items.length ? "" : "disabled"}>
-          <span class="material-symbols-outlined">send</span>
+          <span class="material-symbols-outlined" aria-hidden="true">send</span>
           ${txt("اطلب الآن عبر واتساب", "Order now on WhatsApp")}
         </button>
 
@@ -1232,7 +1236,7 @@ Quantity: ${item.qty}`;
           ${txt("تفريغ السلة", "Clear cart")}
         </button>
       </div>
-    </aside>
+    </div>
   `;
   }
 
@@ -1242,7 +1246,10 @@ Quantity: ${item.qty}`;
     wathbaCloseDesktopMegaMenu(0);
     ensureCartShell();
     renderCart();
-    document.getElementById("wathbaCartDrawer")?.classList.add("open");
+    const drawer = document.getElementById("wathbaCartDrawer");
+    drawer?.removeAttribute("inert");
+    drawer?.setAttribute("aria-hidden", "false");
+    drawer?.classList.add("open");
     document.querySelector(".wathba-cart-toggle")?.setAttribute("aria-expanded", "true");
     wathbaSyncScrollLock();
     document.querySelector(".wathba-cart-close")?.focus({ preventScroll: true });
@@ -1253,6 +1260,9 @@ Quantity: ${item.qty}`;
     document.querySelector(".wathba-cart-toggle")?.setAttribute("aria-expanded", "false");
     wathbaSyncScrollLock();
     if (cartReturnFocus?.isConnected) cartReturnFocus.focus({ preventScroll: true });
+    const drawer = document.getElementById("wathbaCartDrawer");
+    drawer?.setAttribute("inert", "");
+    drawer?.setAttribute("aria-hidden", "true");
   }
 
   document.addEventListener("click", function (event) {
@@ -1274,7 +1284,9 @@ Quantity: ${item.qty}`;
     const notesToggle = event.target.closest("[data-cart-notes-toggle]");
 
     if (notesToggle) {
-      document.querySelector(".wathba-cart-notes")?.classList.toggle("open");
+      const notes = document.getElementById("wathbaCartNotesSection");
+      notes?.classList.toggle("open");
+      notesToggle.setAttribute("aria-expanded", String(Boolean(notes?.classList.contains("open"))));
     }
     const cartItem = event.target.closest(".wathba-cart-item");
 

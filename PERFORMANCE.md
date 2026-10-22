@@ -75,3 +75,11 @@ The Google-hosted mobile Lighthouse 13.5 report completed successfully on 2026-1
 Other reported categories: accessibility 88, best practices 100, SEO 92. Existing image alternative-text, contrast and heading-order findings remain separate from the performance work. PageSpeed reported no CrUX field data. Lighthouse TBT is not INP; the INP values above come from actual menu/cart interactions in the inspected browser visits. The failed baseline cannot support a numeric before/after score claim.
 
 Report: https://pagespeed.web.dev/analysis/https-wathba-rosy-vercel-app/oonpzb7cuq?form_factor=mobile
+
+## Accessibility follow-up
+
+The follow-up addresses the existing image-alt, heading-order, color-contrast and invalid-dialog-role findings. Six illustrative site images receive accurate Arabic/English alternatives. Product originals and temporary-image labels remain unchanged. The brand wordmark no longer pretends to be a section heading, footer headings are level 2, product/card headings follow their page hierarchy, and the product path label before the main heading is ordinary text.
+
+The footer WhatsApp button uses dark text against its green background. Decorative icon names are hidden from assistive technology. Generic product/detail/guide links have product-specific accessible names. A keyboard-visible skip link moves to the focusable main content. Closed mobile menus and cart drawers are inert and hidden from the accessibility tree; opening restores access, Escape closes them, and focus returns to the opener. Cart dialog semantics, order-note labeling and disclosure state are explicit.
+
+Validation: static accessibility checks cover 70 indexable pages, 166 image alternatives and 1,094 sequential headings; 456 runtime assertions cover 14 Arabic/English scenarios. Existing content, cart, gallery, language, SEO and reproducibility checks remain in place. These automated checks are not a full accessibility certification. Domain configuration and Search Console registration remain deferred.

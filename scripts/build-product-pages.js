@@ -150,6 +150,7 @@ languagePages.buildCorePages();
 require('./build-site-links.js').buildSiteLinks(catalog, academyFor);
 languagePages.finalizeLanguageLinks();
 require('./editorial.js').applyEditorial(root);
+require('./build-accessibility.js').buildAccessibility(root);
 require('node:child_process').execFileSync(process.execPath, [path.join(__dirname,'build-performance.js')], {cwd:root,stdio:'inherit'});
 const structuredData = require('./structured-data.js').buildStructuredData({origin: launchOrigin});
 const assetHash = crypto.createHash("sha256");

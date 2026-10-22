@@ -150,6 +150,7 @@ function renderHomeProducts() {
               <div class="flex items-center gap-2">
                 <a
                   href="${getProductPageUrl(product.id, currentLang)}"
+                  aria-label="${homeTranslations[currentLang].explore}: ${name}"
                   class="inline-flex items-center justify-center px-4 py-3 rounded-full border border-outline-variant/40 text-primary font-label-caps text-label-caps hover:border-primary transition-all"
                 >
                   ${homeTranslations[currentLang].explore}
@@ -168,7 +169,7 @@ function renderHomeProducts() {
 </span></button>
               </div>
             </div>
-            <a class="wathba-academy-card-link" href="${getAcademyGuide(product.id, currentLang)}">
+            <a class="wathba-academy-card-link" href="${getAcademyGuide(product.id, currentLang)}" aria-label="${currentLang === 'ar' ? 'دليل التدريب: ' : 'Training guide: '}${name}">
               <span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
               ${currentLang === "ar" ? "تعلّم التمارين المناسبة" : "Explore the training guide"}
             </a>
