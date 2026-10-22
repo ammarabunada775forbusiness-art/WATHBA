@@ -34,7 +34,7 @@ Original source URLs and local geometry are recorded in `scripts/site-images.jso
 
 ## Measurements and limits
 
-The self-hosted official `web-vitals` package observes CLS, LCP and INP for the current visit. Results are exposed as `window.WATHBA_VITALS` for local diagnostics only: no requests, identifiers, cookies, storage or analytics collection. INP needs real interactions; a null value is not a passing score. Visit-level measurements are not the 28-day, 75th-percentile field assessment used by CrUX/Search Console.
+The self-hosted official `web-vitals` package observes CLS, LCP and INP for the current visit. Results are exposed as `window.WATHBA_VITALS` and a `meta[name="wathba-vitals"]` diagnostic for local inspection only: no requests, identifiers, cookies, storage or analytics collection. INP needs real interactions; a null value is not a passing score. Visit-level measurements are not the 28-day, 75th-percentile field assessment used by CrUX/Search Console.
 
 The unauthenticated PageSpeed Insights API returned HTTP 429 during this work. The baseline web-interface report also failed with `NO_FCP`, so no valid before score was available. Mobile-width browser testing is not a physical-phone test. Record observed visit metrics separately from field data and do not claim a Core Web Vitals pass without the latter.
 
@@ -47,3 +47,31 @@ Official references:
 ## Editorial attribution (limited stage 9 scope)
 
 Academy and equipment guides identify WATHBA Academy as preparer and WATHBA as the responsible editorial organization, link existing guide sources, and explicitly state that no named specialist reviewer is documented. Unsubstantiated review dates are removed. No named author, specialist credential or reviewer is invented, and no `reviewedBy` schema is emitted. The other commercial/legal pages from stage 9 were excluded at the owner's request.
+
+### Observed browser visits on 2026-10-22
+
+Brave desktop browser with a 390 × 844 viewport override, ordinary network/CPU and some cached assets (not a throttled physical handset or representative field sample):
+
+| Page | LCP | CLS | INP after menu/cart interactions |
+| --- | ---: | ---: | ---: |
+| Arabic home (`index.html`) | 1,028 ms | 0.000679 | 80 ms |
+| English accessories category | 416 ms | 0.000679 | 72 ms |
+
+The menu opened/closed in both languages. Rings gallery and cart add/increase/decrease/remove were exercised; the pre-existing cart item was preserved. The small/large parallel-bar category/product/Academy path and the English accessories category were also traversed. These samples had no horizontal overflow at the inspected mobile width. All 70 live HTML pages were checked separately for HTTP success and static CSS. The automated interaction/content/reproducibility suite passed 4,155 checks; structured-data fixtures passed 19 checks.
+
+### PageSpeed Insights after deployment
+
+The Google-hosted mobile Lighthouse 13.5 report completed successfully on 2026-10-22 at 14:29 UTC, using an emulated Moto G Power and slow 4G initial load:
+
+| Metric | Result |
+| --- | ---: |
+| Performance | 98 / 100 |
+| FCP | 1.240 s |
+| LCP | 1.545 s |
+| TBT | 0 ms |
+| CLS | 0 |
+| Speed Index | 4.007 s |
+
+Other reported categories: accessibility 88, best practices 100, SEO 92. Existing image alternative-text, contrast and heading-order findings remain separate from the performance work. PageSpeed reported no CrUX field data. Lighthouse TBT is not INP; the INP values above come from actual menu/cart interactions in the inspected browser visits. The failed baseline cannot support a numeric before/after score claim.
+
+Report: https://pagespeed.web.dev/analysis/https-wathba-rosy-vercel-app/oonpzb7cuq?form_factor=mobile
