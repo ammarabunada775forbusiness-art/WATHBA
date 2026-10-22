@@ -81,6 +81,7 @@ function finalizeLanguageLinks() {
     let html = fs.readFileSync(path.join(root, file), 'utf8');
     const lang = file.endsWith('-en.html') ? 'en' : 'ar';
     html = localizedLinks(html, lang);
+    html = html.replace(/<(nav|header)\b[\s\S]*?<\/\1>/g, fragment => fragment.replace(/class="(hidden md:flex[^"]*)"/g, (_, classes) => `class="${classes.includes('wathba-desktop-links') ? classes : classes + ' wathba-desktop-links'}"`));
     if (!html.includes('src="assets/js/language.js')) html = html.replace(/(<script src="assets\/js\/tailwind-config\.js[^>]*><\/script>)/, '$1\n    <script src="assets/js/language.js"></script>');
     if (!html.includes('src="assets/js/site-structure.js')) html = html.replace(/(<script src="assets\/js\/language\.js[^>]*><\/script>)/, '$1\n    <script src="assets/js/site-structure.js"></script>');
     if (routes.isPage(file)) {

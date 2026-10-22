@@ -4997,3 +4997,35 @@ html.wathba-overlay-open body {
 .wathba-skip-link:focus { transform: translateY(0); outline: 2px solid #ffffff; outline-offset: 3px; }
 .wathba-cart-notes label { display: block; color: var(--wathba-text); margin-bottom: 8px; }
 .wathba-footer-whatsapp:hover { color: #131313; }
+
+/* Center only the featured-section introduction on phones. */
+@media (max-width: 768px) {
+  html[dir] #products .wathba-featured-heading {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  html[dir] #products .wathba-featured-heading > div {
+    max-width: 100%;
+    text-align: center !important;
+  }
+  html[dir] #products .wathba-featured-heading [data-home-i18n] {
+    text-align: center !important;
+  }
+}
+
+/* Keep primary desktop navigation readable beside the wordmark. */
+@media (min-width: 1025px) {
+  :is(nav.fixed, header.fixed) .wathba-desktop-links {
+    gap: clamp(18px, 2vw, 32px) !important;
+  }
+  :is(nav.fixed, header.fixed) .wathba-desktop-links a {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-height: 44px;
+    font-size: clamp(18px, 1.3vw, 22px) !important;
+    line-height: 1.5 !important;
+    font-weight: 800 !important;
+    letter-spacing: 0 !important;
+  }
+}
