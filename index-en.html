@@ -1084,7 +1084,7 @@
         }
 
         // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        document.querySelectorAll('a[href^="#"]:not(.wathba-skip-link)').forEach((anchor) => {
             anchor.addEventListener("click", function (e) {
                 const targetSelector = this.getAttribute("href");
                 const target = targetSelector ? document.querySelector(targetSelector) : null;
