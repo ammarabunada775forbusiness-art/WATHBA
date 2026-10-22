@@ -67,12 +67,12 @@ tailwind.config = {
                 "container-max": "1440px"
             },
             fontFamily: {
-                "headline-lg-mobile": ["Anton"],
-                "display-hero": ["Anton"],
+                "headline-lg-mobile": ["Anton", "Impact", "Arial Narrow", "sans-serif"],
+                "display-hero": ["Anton", "Impact", "Arial Narrow", "sans-serif"],
                 "body-lg": ["Be Vietnam Pro"],
                 "label-caps": ["Be Vietnam Pro"],
-                "headline-lg": ["Anton"],
-                "headline-md": ["Anton"],
+                "headline-lg": ["Anton", "Impact", "Arial Narrow", "sans-serif"],
+                "headline-md": ["Anton", "Impact", "Arial Narrow", "sans-serif"],
                 "body-md": ["Be Vietnam Pro"],
                 "arabic-support": ["Be Vietnam Pro"]
             },

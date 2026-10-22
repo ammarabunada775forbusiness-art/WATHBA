@@ -18,7 +18,7 @@ for slug,q in queries:
  for i,b in enumerate(blocks):
   if slug!='symbols' and '/* latin */' not in b:continue
   u=re.search(r'url\(([^)]+)\)',b).group(1);name=f'{slug}-{i}.woff2';data=urllib.request.urlopen(u,timeout=25).read();(out/name).write_bytes(data)
-  rules.append(re.sub(r'url\([^)]+\)',f'url(../fonts/{name})',b).replace('font-display: swap','font-display: optional' if slug!='symbols' else 'font-display: block'))
+  rules.append(re.sub(r'url\([^)]+\)',f'url(../fonts/{name})',b).replace('font-display: swap','font-display: swap' if slug=='anton' else ('font-display: optional' if slug!='symbols' else 'font-display: block')))
  if slug=='symbols':
   extra=css[css.rfind('}')+1:]
   # Google emits an icon class after font face; preserve only the known class explicitly below.
