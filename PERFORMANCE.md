@@ -14,7 +14,7 @@ node scripts/check-product-facts.js
 node scripts/test-structured-data.js
 ```
 
-`npm run build` regenerates products, category and Academy pages, editorial attribution, production assets, language links and JSON-LD. The output is committed so the site also works as plain static files. Vercel builds from the lockfile. Two consecutive builds must produce identical HTML. The browser uses the same product markup as the initial HTML to reduce hydration-related shifts. Initial content is visible without waiting for JavaScript.
+`npm run build` regenerates products, category and Academy pages, editorial attribution, production assets, language links and JSON-LD. The output is committed so the site also works as plain static files. Vercel builds from the lockfile and serves only the packaged `dist/` output. Two consecutive builds must produce identical HTML. The browser uses the same product markup as the initial HTML to reduce hydration-related shifts. Initial content is visible without waiting for JavaScript.
 
 ## Images and fonts
 
@@ -36,7 +36,7 @@ Original source URLs and local geometry are recorded in `scripts/site-images.jso
 
 The self-hosted official `web-vitals` package observes CLS, LCP and INP for the current visit. Results are exposed as `window.WATHBA_VITALS` for local diagnostics only: no requests, identifiers, cookies, storage or analytics collection. INP needs real interactions; a null value is not a passing score. Visit-level measurements are not the 28-day, 75th-percentile field assessment used by CrUX/Search Console.
 
-The unauthenticated PageSpeed Insights API returned HTTP 429 during this work, so it did not provide a trustworthy before/after Lighthouse score. Mobile-width browser testing is not a physical-phone test. Record observed visit metrics separately from field data and do not claim a Core Web Vitals pass without the latter.
+The unauthenticated PageSpeed Insights API returned HTTP 429 during this work. The baseline web-interface report also failed with `NO_FCP`, so no valid before score was available. Mobile-width browser testing is not a physical-phone test. Record observed visit metrics separately from field data and do not claim a Core Web Vitals pass without the latter.
 
 Official references:
 - https://v3.tailwindcss.com/docs/content-configuration

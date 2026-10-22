@@ -62,6 +62,6 @@ module.exports = function renderTraining(product, lang, catalog, academyUrl) {
       ${section('faq', questions, 'full')}
       ${section('related', `<div class="wathba-product-footlinks"><a href="${escape(academyUrl)}">${text('اقرأ دليل الأكاديمية المرتبط', 'Read the related Academy guide')} ↗</a>${related}<a href="${ar ? 'products.html' : 'products-en.html'}">${text('جميع المعدات', 'All equipment')} ↗</a></div>`, 'full')}
     </div>
-    <footer class="wathba-equipment-sources"><p>${text('تحرير وثبة — مراجعة المحتوى:', 'WATHBA editorial — content reviewed:')} <time datetime="${training.reviewedAt}">${training.reviewedAt}</time>. ${text('أمثلة الاستخدام والحصص من إعداد وثبة؛ المراجع التالية للشرح العام وليست اعتمادًا لمنتجاتنا أو نسخة من برامجها.', 'Use and session examples are WATHBA editorial work; references provide general background, not product approval or copied programs.')}</p>${sources ? `<ul>${sources}</ul>` : ''}</footer>
+    <footer class="wathba-equipment-sources"><p>${text('إعداد وتحرير وثبة.', 'Prepared and edited by WATHBA.')} ${text('أمثلة الاستخدام والحصص من إعداد وثبة؛ المراجع التالية للشرح العام وليست اعتمادًا لمنتجاتنا أو نسخة من برامجها.', 'Use and session examples are WATHBA editorial work; references provide general background, not product approval or copied programs.')}</p>${sources ? `<ul>${sources}</ul>` : ''}</footer>
   </div></section>`;
 };
