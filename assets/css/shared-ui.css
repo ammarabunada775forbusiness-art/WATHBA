@@ -2,13 +2,8 @@
    Prevent language flash before JS applies translations
 ===================================================== */
 
-html.wathba-ui-loading body {
-  opacity: 0;
-}
-
 html.wathba-ui-ready body {
   opacity: 1;
-  transition: opacity 0.12s ease;
 }
 
 html,
@@ -4982,3 +4977,6 @@ html.wathba-overlay-open body {
     scroll-behavior: auto !important;
   }
 }
+
+.wathba-editorial-note {max-width:1160px;margin:40px auto;padding:24px;color:var(--wathba-muted);border-top:1px solid var(--wathba-edge);font-size:14px;line-height:1.8;}
+.wathba-editorial-note p + p {margin-top:8px;}

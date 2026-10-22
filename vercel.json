@@ -1,6 +1,28 @@
 {
   "redirects": [
-    {"source": "/equipment-swiss-ladder.html", "destination": "/academy-swiss-ladder.html", "permanent": true},
-    {"source": "/equipment-swiss-ladder-en.html", "destination": "/academy-swiss-ladder-en.html", "permanent": true}
+    {
+      "source": "/equipment-swiss-ladder.html",
+      "destination": "/academy-swiss-ladder.html",
+      "permanent": true
+    },
+    {
+      "source": "/equipment-swiss-ladder-en.html",
+      "destination": "/academy-swiss-ladder-en.html",
+      "permanent": true
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": null,
+  "headers": [
+    {
+      "source": "/assets/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, stale-while-revalidate=86400"
+        }
+      ]
+    }
   ]
 }

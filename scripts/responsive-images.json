@@ -1,0 +1,206 @@
+{
+  "assets/images/products/multi-rig/1.webp": {
+    "srcset": "assets/images/optimized/71705dae19b2-480.webp 480w, assets/images/optimized/71705dae19b2-960.webp 960w, assets/images/products/multi-rig/1.webp 1200w",
+    "width": 1200,
+    "height": 800,
+    "sha256": "71705dae19b2733815a445abaec187fdd9a2bec5b65ba41be37c035e72a4f852"
+  },
+  "assets/images/products/multi-rig/2.webp": {
+    "srcset": "assets/images/optimized/ddfdc393d485-480.webp 480w, assets/images/optimized/ddfdc393d485-960.webp 960w, assets/images/products/multi-rig/2.webp 1200w",
+    "width": 1200,
+    "height": 675,
+    "sha256": "ddfdc393d485f32be826d576ae7e1d6b9335a0b1818c6f9646648ce0790c73c8"
+  },
+  "assets/images/products/grip-tape/1.webp": {
+    "srcset": "assets/images/optimized/146bdefe36f3-480.webp 480w, assets/images/products/grip-tape/1.webp 800w",
+    "width": 800,
+    "height": 1200,
+    "sha256": "146bdefe36f31a88c7070484b834f3705802f75eb7112cb85672a8cab5be9969"
+  },
+  "assets/images/products/grip-tape/2.webp": {
+    "srcset": "assets/images/optimized/31137885e2b5-480.webp 480w, assets/images/optimized/31137885e2b5-960.webp 960w, assets/images/products/grip-tape/2.webp 1200w",
+    "width": 1200,
+    "height": 900,
+    "sha256": "31137885e2b501a86e59dbe82d4ae995aafaa481ab15a7f9e63dd87633c33e60"
+  },
+  "assets/images/products/wall-mounted-dip-bars/1.webp": {
+    "srcset": "assets/images/optimized/146bdefe36f3-480.webp 480w, assets/images/products/wall-mounted-dip-bars/1.webp 800w",
+    "width": 800,
+    "height": 1200,
+    "sha256": "146bdefe36f31a88c7070484b834f3705802f75eb7112cb85672a8cab5be9969"
+  },
+  "assets/images/products/wall-mounted-dip-bars/2.webp": {
+    "srcset": "assets/images/optimized/31137885e2b5-480.webp 480w, assets/images/optimized/31137885e2b5-960.webp 960w, assets/images/products/wall-mounted-dip-bars/2.webp 1200w",
+    "width": 1200,
+    "height": 900,
+    "sha256": "31137885e2b501a86e59dbe82d4ae995aafaa481ab15a7f9e63dd87633c33e60"
+  },
+  "assets/images/products/freestanding-parallel-bars-small/1.webp": {
+    "srcset": "assets/images/optimized/71705dae19b2-480.webp 480w, assets/images/optimized/71705dae19b2-960.webp 960w, assets/images/products/freestanding-parallel-bars-small/1.webp 1200w",
+    "width": 1200,
+    "height": 800,
+    "sha256": "71705dae19b2733815a445abaec187fdd9a2bec5b65ba41be37c035e72a4f852"
+  },
+  "assets/images/products/freestanding-parallel-bars-small/2.webp": {
+    "srcset": "assets/images/optimized/ddfdc393d485-480.webp 480w, assets/images/optimized/ddfdc393d485-960.webp 960w, assets/images/products/freestanding-parallel-bars-small/2.webp 1200w",
+    "width": 1200,
+    "height": 675,
+    "sha256": "ddfdc393d485f32be826d576ae7e1d6b9335a0b1818c6f9646648ce0790c73c8"
+  },
+  "assets/images/products/resistance-bands/1.webp": {
+    "srcset": "assets/images/optimized/71705dae19b2-480.webp 480w, assets/images/optimized/71705dae19b2-960.webp 960w, assets/images/products/resistance-bands/1.webp 1200w",
+    "width": 1200,
+    "height": 800,
+    "sha256": "71705dae19b2733815a445abaec187fdd9a2bec5b65ba41be37c035e72a4f852"
+  },
+  "assets/images/products/resistance-bands/2.webp": {
+    "srcset": "assets/images/optimized/ddfdc393d485-480.webp 480w, assets/images/optimized/ddfdc393d485-960.webp 960w, assets/images/products/resistance-bands/2.webp 1200w",
+    "width": 1200,
+    "height": 675,
+    "sha256": "ddfdc393d485f32be826d576ae7e1d6b9335a0b1818c6f9646648ce0790c73c8"
+  },
+  "assets/images/products/freestanding-parallel-bars-large/1.webp": {
+    "srcset": "assets/images/optimized/ddfdc393d485-480.webp 480w, assets/images/optimized/ddfdc393d485-960.webp 960w, assets/images/products/freestanding-parallel-bars-large/1.webp 1200w",
+    "width": 1200,
+    "height": 675,
+    "sha256": "ddfdc393d485f32be826d576ae7e1d6b9335a0b1818c6f9646648ce0790c73c8"
+  },
+  "assets/images/products/freestanding-parallel-bars-large/2.webp": {
+    "srcset": "assets/images/optimized/146bdefe36f3-480.webp 480w, assets/images/products/freestanding-parallel-bars-large/2.webp 800w",
+    "width": 800,
+    "height": 1200,
+    "sha256": "146bdefe36f31a88c7070484b834f3705802f75eb7112cb85672a8cab5be9969"
+  },
+  "assets/images/products/full-wooden-parallettes/1.webp": {
+    "srcset": "assets/images/optimized/31137885e2b5-480.webp 480w, assets/images/optimized/31137885e2b5-960.webp 960w, assets/images/products/full-wooden-parallettes/1.webp 1200w",
+    "width": 1200,
+    "height": 900,
+    "sha256": "31137885e2b501a86e59dbe82d4ae995aafaa481ab15a7f9e63dd87633c33e60"
+  },
+  "assets/images/products/full-wooden-parallettes/2.webp": {
+    "srcset": "assets/images/optimized/71705dae19b2-480.webp 480w, assets/images/optimized/71705dae19b2-960.webp 960w, assets/images/products/full-wooden-parallettes/2.webp 1200w",
+    "width": 1200,
+    "height": 800,
+    "sha256": "71705dae19b2733815a445abaec187fdd9a2bec5b65ba41be37c035e72a4f852"
+  },
+  "assets/images/products/jump-rope/1.webp": {
+    "srcset": "assets/images/optimized/71705dae19b2-480.webp 480w, assets/images/optimized/71705dae19b2-960.webp 960w, assets/images/products/jump-rope/1.webp 1200w",
+    "width": 1200,
+    "height": 800,
+    "sha256": "71705dae19b2733815a445abaec187fdd9a2bec5b65ba41be37c035e72a4f852"
+  },
+  "assets/images/products/jump-rope/2.webp": {
+    "srcset": "assets/images/optimized/ddfdc393d485-480.webp 480w, assets/images/optimized/ddfdc393d485-960.webp 960w, assets/images/products/jump-rope/2.webp 1200w",
+    "width": 1200,
+    "height": 675,
+    "sha256": "ddfdc393d485f32be826d576ae7e1d6b9335a0b1818c6f9646648ce0790c73c8"
+  },
+  "assets/images/products/hand-gripper/1.webp": {
+    "srcset": "assets/images/optimized/ddfdc393d485-480.webp 480w, assets/images/optimized/ddfdc393d485-960.webp 960w, assets/images/products/hand-gripper/1.webp 1200w",
+    "width": 1200,
+    "height": 675,
+    "sha256": "ddfdc393d485f32be826d576ae7e1d6b9335a0b1818c6f9646648ce0790c73c8"
+  },
+  "assets/images/products/hand-gripper/2.webp": {
+    "srcset": "assets/images/optimized/146bdefe36f3-480.webp 480w, assets/images/products/hand-gripper/2.webp 800w",
+    "width": 800,
+    "height": 1200,
+    "sha256": "146bdefe36f31a88c7070484b834f3705802f75eb7112cb85672a8cab5be9969"
+  },
+  "assets/images/products/steel-wood-parallettes/1.webp": {
+    "srcset": "assets/images/optimized/146bdefe36f3-480.webp 480w, assets/images/products/steel-wood-parallettes/1.webp 800w",
+    "width": 800,
+    "height": 1200,
+    "sha256": "146bdefe36f31a88c7070484b834f3705802f75eb7112cb85672a8cab5be9969"
+  },
+  "assets/images/products/steel-wood-parallettes/2.webp": {
+    "srcset": "assets/images/optimized/31137885e2b5-480.webp 480w, assets/images/optimized/31137885e2b5-960.webp 960w, assets/images/products/steel-wood-parallettes/2.webp 1200w",
+    "width": 1200,
+    "height": 900,
+    "sha256": "31137885e2b501a86e59dbe82d4ae995aafaa481ab15a7f9e63dd87633c33e60"
+  },
+  "assets/images/products/wall-pull-up-bar/1.webp": {
+    "srcset": "assets/images/optimized/146bdefe36f3-480.webp 480w, assets/images/products/wall-pull-up-bar/1.webp 800w",
+    "width": 800,
+    "height": 1200,
+    "sha256": "146bdefe36f31a88c7070484b834f3705802f75eb7112cb85672a8cab5be9969"
+  },
+  "assets/images/products/wall-pull-up-bar/2.webp": {
+    "srcset": "assets/images/optimized/31137885e2b5-480.webp 480w, assets/images/optimized/31137885e2b5-960.webp 960w, assets/images/products/wall-pull-up-bar/2.webp 1200w",
+    "width": 1200,
+    "height": 900,
+    "sha256": "31137885e2b501a86e59dbe82d4ae995aafaa481ab15a7f9e63dd87633c33e60"
+  },
+  "assets/images/products/gymnastic-rings/1.webp": {
+    "srcset": "assets/images/optimized/ddfdc393d485-480.webp 480w, assets/images/optimized/ddfdc393d485-960.webp 960w, assets/images/products/gymnastic-rings/1.webp 1200w",
+    "width": 1200,
+    "height": 675,
+    "sha256": "ddfdc393d485f32be826d576ae7e1d6b9335a0b1818c6f9646648ce0790c73c8"
+  },
+  "assets/images/products/gymnastic-rings/2.webp": {
+    "srcset": "assets/images/optimized/146bdefe36f3-480.webp 480w, assets/images/products/gymnastic-rings/2.webp 800w",
+    "width": 800,
+    "height": 1200,
+    "sha256": "146bdefe36f31a88c7070484b834f3705802f75eb7112cb85672a8cab5be9969"
+  },
+  "assets/images/products/custom-orders/1.webp": {
+    "srcset": "assets/images/optimized/ddfdc393d485-480.webp 480w, assets/images/optimized/ddfdc393d485-960.webp 960w, assets/images/products/custom-orders/1.webp 1200w",
+    "width": 1200,
+    "height": 675,
+    "sha256": "ddfdc393d485f32be826d576ae7e1d6b9335a0b1818c6f9646648ce0790c73c8"
+  },
+  "assets/images/products/custom-orders/2.webp": {
+    "srcset": "assets/images/optimized/146bdefe36f3-480.webp 480w, assets/images/products/custom-orders/2.webp 800w",
+    "width": 800,
+    "height": 1200,
+    "sha256": "146bdefe36f31a88c7070484b834f3705802f75eb7112cb85672a8cab5be9969"
+  },
+  "assets/images/products/monkey-bars/1.webp": {
+    "srcset": "assets/images/optimized/146bdefe36f3-480.webp 480w, assets/images/products/monkey-bars/1.webp 800w",
+    "width": 800,
+    "height": 1200,
+    "sha256": "146bdefe36f31a88c7070484b834f3705802f75eb7112cb85672a8cab5be9969"
+  },
+  "assets/images/products/monkey-bars/2.webp": {
+    "srcset": "assets/images/optimized/31137885e2b5-480.webp 480w, assets/images/optimized/31137885e2b5-960.webp 960w, assets/images/products/monkey-bars/2.webp 1200w",
+    "width": 1200,
+    "height": 900,
+    "sha256": "31137885e2b501a86e59dbe82d4ae995aafaa481ab15a7f9e63dd87633c33e60"
+  },
+  "assets/images/site/5530be571f7b.webp": {
+    "srcset": "assets/images/optimized/43cfa5e6f9aa-480.webp 480w, assets/images/site/5530be571f7b.webp 512w",
+    "width": 512,
+    "height": 512,
+    "sha256": "43cfa5e6f9aa457af044adb8985977c179923e364aa8d9404aec48b58c97cf8e"
+  },
+  "assets/images/site/459bc04c89c0.webp": {
+    "srcset": "assets/images/optimized/7d9ffe659dc5-480.webp 480w, assets/images/site/459bc04c89c0.webp 512w",
+    "width": 512,
+    "height": 512,
+    "sha256": "7d9ffe659dc5421d3e25180a2458f6c2e660cc641dc727b8172f3a880d6b08f9"
+  },
+  "assets/images/site/f66c8e0cd854.webp": {
+    "srcset": "assets/images/optimized/0bdaa9f4fb45-480.webp 480w, assets/images/site/f66c8e0cd854.webp 512w",
+    "width": 512,
+    "height": 512,
+    "sha256": "0bdaa9f4fb458f75a80ec56b13c0bd0df4e5ed5912b23d0bbd60ee2bb199ef5a"
+  },
+  "assets/images/site/685df9e33e98.webp": {
+    "srcset": "assets/images/optimized/d9dc5cb36d04-480.webp 480w, assets/images/site/685df9e33e98.webp 512w",
+    "width": 512,
+    "height": 512,
+    "sha256": "d9dc5cb36d04c3ca4ed5b8b256ff631682518ba24ad96442c908c324abc3b017"
+  },
+  "assets/images/site/9f72c660958b.webp": {
+    "srcset": "assets/images/optimized/39f3d44a3287-480.webp 480w, assets/images/site/9f72c660958b.webp 512w",
+    "width": 512,
+    "height": 512,
+    "sha256": "39f3d44a3287b6a32405f6924390957ea4bf0309085cabdafbc4a1d5d4acc420"
+  },
+  "assets/images/site/75ba4e2263d8.webp": {
+    "srcset": "assets/images/optimized/892efed0d8d4-480.webp 480w, assets/images/site/75ba4e2263d8.webp 512w",
+    "width": 512,
+    "height": 512,
+    "sha256": "892efed0d8d4a9be760863b562be6112eaa2b058e60efae9dbb63c20f210f11b"
+  }
+}

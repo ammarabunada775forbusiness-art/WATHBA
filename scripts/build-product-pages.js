@@ -6,9 +6,14 @@ const path = require("node:path");
 const vm = require("node:vm");
 const crypto = require("node:crypto");
 const root = path.resolve(__dirname, "..");
+// Generated production pages are also the retained source shells. Normalize asset tags first.
+for (const file of fs.readdirSync(root).filter(f=>f.endsWith('.html'))) {
+  const p=path.join(root,file);
+  fs.writeFileSync(p,fs.readFileSync(p,'utf8').replace(/(assets\/(?:css|js)\/[a-z0-9-]+)\.min\.(css|js)/g,'$1.$2').replace(/<script\s+defer\s+src=/g,'<script src='));
+}
 const launchOrigin = fs.readFileSync(path.join(root, 'index.html'), 'utf8').match(/rel="canonical" href="(https:\/\/[^/]+)/)?.[1];
 const sharedAssets = ['css', 'js'].flatMap(folder => fs.readdirSync(path.join(root, 'assets', folder)).filter(name => /\.(css|js)$/.test(name)).sort().map(name => `assets/${folder}/${name}`));
-const sharedAssetPattern = /(assets\/(?:css|js)\/[a-z0-9-]+\.(?:css|js))(?:\?v=[^"'\s<>]*)?/g;
+const sharedAssetPattern = /(assets\/(?:css|js)\/[a-z0-9-]+(?:\.min)?\.(?:css|js))(?:\?v=[^"'\s<>]*)?/g;
 const unversion = (page) => page.replace(sharedAssetPattern, "$1");
 const template = unversion(fs.readFileSync(path.join(root, "product.html"), "utf8"));
 require('./product-images.js').updateImageCatalog({quiet: true});
@@ -92,7 +97,7 @@ function productPage(product, lang) {
   page = replaceOnce(page, '<body class="bg-background text-on-surface font-body-md selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">',
     `<body class="bg-background text-on-surface font-body-md selection:bg-tertiary-fixed selection:text-on-tertiary-fixed" data-wathba-product-id="${product.id}" data-product-page-lang="${lang}">`);
   page = replaceOnce(page, '<section id="productDetailsRoot"></section>',
-    `<section id="productDetailsRoot">${staticHero}</section>\n        ${renderFacts(product, lang)}\n        ${editorial}`);
+    `<section id="productDetailsRoot">${require('./render-product-shell.js')(root,product.id,lang)}</section>\n        ${renderFacts(product, lang)}\n        ${editorial}`);
   page = replaceOnce(page, '<script src="assets/js/shared-ui.js"></script>',
     '<script src="assets/js/product-language.js"></script>\n    <script src="assets/js/shared-ui.js"></script>');
   page = replaceOnce(page, '    <script src="assets/js/product-legacy-redirect.js"></script>\n', '');
@@ -144,6 +149,8 @@ require('./build-academy-pages.js').buildAcademy(catalog);
 languagePages.buildCorePages();
 require('./build-site-links.js').buildSiteLinks(catalog, academyFor);
 languagePages.finalizeLanguageLinks();
+require('./editorial.js').applyEditorial(root);
+require('node:child_process').execFileSync(process.execPath, [path.join(__dirname,'build-performance.js')], {cwd:root,stdio:'inherit'});
 const structuredData = require('./structured-data.js').buildStructuredData({origin: launchOrigin});
 const assetHash = crypto.createHash("sha256");
 for (const asset of sharedAssets) assetHash.update(fs.readFileSync(path.join(root, asset)));
@@ -156,4 +163,5 @@ for (const filename of fs.readdirSync(root).filter((name) => name.endsWith(".htm
 }
 
 if (launchOrigin) require('node:child_process').execFileSync(process.execPath, [path.join(__dirname,'publish-seo.js'), launchOrigin], {cwd:root});
+require('./package-site.js')(root);
 console.log(`Built ${catalog.length * 2} localized product pages and catalog links. Shared UI: ${assetVersion}. JSON-LD: ${structuredData.pages} pages.`);

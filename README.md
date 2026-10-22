@@ -21,3 +21,5 @@ node scripts/build-product-pages.js
 محتوى أدلة المعدات الموسع في `scripts/product-training.js` بالعربية والإنجليزية: الجمهور والعضلات، تدرجات الاستخدام، حصة نموذجية، أخطاء، تركيب وعناية، مقارنة وأسئلة شائعة وروابط مرتبطة. يبقى التعريف المختصر في `scripts/product-education.js`، وتولّد `scripts/render-product-training.js` المحتوى داخل HTML دون اعتماد على JavaScript في المتصفح. الجريب تيب وطلبات التصنيع لهما مسار استخدام وتجهيز بدل برنامج تمرين مصطنع. أعد أمر البناء بعد تحرير المحتوى؛ لا تعدّل ملفات `equipment-*.html` المولّدة يدويًا.
 
 الأدلة الستة المضافة للأكاديمية في `scripts/academy-guides.js`، ويولدها `scripts/build-academy-pages.js` من هوية الصفحات الحالية. تبقى أدلة البداية والعقلة والباراليتس محفوظة في ملفاتها. حبل القفز له منتج ودليل مستقلان، ومحتواه في `scripts/jump-rope-content.js`. ترتيب الإكسسوارات: هاند جريبر، حبل قفز، جريب تيب، حبال مقاومة. السلم السويسري تعليمي فقط؛ روابط منتجه السابقة تحوّل إلى دليله عبر `vercel.json`.
+
+Performance builds, mobile checks and editorial attribution: [PERFORMANCE.md](PERFORMANCE.md).

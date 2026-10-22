@@ -885,23 +885,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    wathbaEnsureMegaMenuReady();
-  }, 150);
-});
-
-window.addEventListener("pageshow", () => {
-  setTimeout(() => {
-    wathbaEnsureMegaMenuReady();
-  }, 150);
-});
-
-window.addEventListener("pageshow", () => {
-  setTimeout(() => {
-    wathbaRenderDesktopMegaMenu();
-    wathbaBindDesktopMegaTriggers();
-  }, 80);
+// Restore desktop triggers on back/forward cache visits without rebuilding the menu twice.
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) wathbaEnsureMegaMenuReady();
 });
 
 /* WATHBA CART PATCH */
