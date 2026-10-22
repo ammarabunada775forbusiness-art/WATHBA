@@ -80,4 +80,9 @@
 @media (max-width: 900px) { .academy-article-layout { grid-template-columns: 1fr; } .academy-toc { position: static; grid-row: 1; margin: 18px 0 0; max-height: none; } }
 @media (max-width: 700px) { .academy-main { padding-top: 70px; } .academy-container { width: min(100% - 32px, 1160px); } .academy-hero { padding: 34px 0 45px; } .academy-section { padding-block: 43px; } .academy-grid, .academy-grid.two { grid-template-columns: 1fr; } .academy-card { padding: 23px; } }
 /* The author shown to readers matches the Article author in JSON-LD. */
+.wathba-category-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
+.wathba-category-product { min-width: 0; padding: 22px; border: 1px solid var(--wathba-edge); border-radius: 12px; background: var(--wathba-panel); }
+.wathba-category-product img { display: block; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; margin-bottom: 18px; }
+.wathba-category-product h3 { margin-bottom: 10px; }
+@media (max-width: 650px) { .wathba-category-grid { grid-template-columns: minmax(0,1fr); } .wathba-category-product { padding: 16px; } }
 .academy-hero .academy-article-author { font-size: 14px; opacity: .8; margin-top: 12px; }

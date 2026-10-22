@@ -1,0 +1,31 @@
+const t=(ar,en)=>({ar,en});
+module.exports={
+  bars:{
+    lead:t('قارن عقلة الحائط والمونكي بارز حسب حركة السحب ومساحة الانتقال. افتح المنتج للقياسات، ثم انتقل إلى دليل الاختيار والتدرّج المناسب.','Compare a wall pull-up bar and monkey bars by pulling movements and traversing space. Open the product for dimensions, then follow its choice and practice guides.'),
+    checks:[t('للسحب في نقطة واحدة: ابدأ بصفحة عقلة الحائط وقارن البروز ومساحة الجسم.','For pulling in one place, start with the wall bar and compare projection and body clearance.'),t('للانتقال بين المسكات: راجع مساحة المونكي بارز والوصول للبداية وطريقة النزول.','For travel between grips, review monkey-bar space, starting access and descent.'),t('التثبيت والوصول يحددان الاختيار؛ اسم المقاس لا يحدد مستوى اللاعب.','Mounting and access shape the choice; a size label does not rank athletic ability.')]
+  },
+  parallettes:{
+    lead:t('الخشب الكامل وقاعدة الحديد بمقبض خشب خياران مختلفان للدعم والضغط ومهارات التحكم. قارن المساحة وارتفاع القبضة، ثم افتح التمارين حسب قدرتك.','Full wood and a steel base with wooden grips offer different support setups for pressing and control skills. Compare space and grip height, then choose practice for your ability.'),
+    checks:[t('ابدأ بارتفاع القبضة والفراغ اللازم للحركة، ثم قارن طول المقبض وعمق القاعدة.','Start with grip height and movement clearance, then compare handle length and base depth.'),t('افتح الخشب الكامل لمراجعة أبعاد الجوانب والقبضة؛ افتح الحديد والخشب لمقارنة المقاسات الثلاثة.','Open the full-wood option for side and grip dimensions, or the steel-and-wood option to compare its three sizes.'),t('دليل الباراليتس يجمع الاختيار والتمارين؛ يمكنك الرجوع منه إلى المنتجين مباشرة.','The parallettes guide covers selection and practice, with direct links back to both products.')]
+  },
+  'parallel-bars':{
+    lead:t('قارن المتوازي الأرضي الصغير والكبير وديب بار الحائط. الاختلاف الأساسي هو فراغ الحركة والقواعد ومتطلبات التثبيت، وليس تقسيم اللاعبين إلى مستويات بحسب حجم الجهاز.','Compare small and large freestanding bars with wall-mounted dip bars. The main differences are movement clearance, bases and mounting, rather than assigning ability levels by equipment size.'),
+    checks:[t('الصغير: راجع فراغ القدمين والركبتين والحركة التي تستطيع أداءها دون ملامسة الأرض.','Small bars: check foot and knee clearance for the movement you can perform without touching the floor.'),t('الكبير: قارن الارتفاع النهائي وعمق القواعد ومساحة النزول.','Large bars: compare assembled height, base depth and descent space.'),t('ديب بار الحائط: راجع نوع الحائط والمسافة بين المسكتين وإمكانية تعديل موضع التركيب.','Wall bars: review wall material, grip spacing and the available mounting position.')]
+  },
+  rings:{
+    lead:t('افهم نظام الحلقات كاملًا: الحلقة والحزام والمشبك ونقطة التعليق. صفحة المنتج تعرض القياسات المرجعية، ودليل الأكاديمية يشرح البداية المدعومة والتدرّج.','Consider the complete ring system: ring, strap, buckle and anchor point. The product page provides reference dimensions; the Academy guide covers supported starts and progression.'),
+    checks:[t('ابدأ بنقطة تعليق مناسبة ومساحة خالية، ثم راجع الحلقة والحزام والمشبك معًا.','Start with a suitable anchor point and clear space, then review the ring, strap and buckle together.'),t('قارن قطر القبضة وطول الحزام وطريقة ضبط الجهتين في صفحة المنتج.','Compare grip diameter, strap length and adjustment of both sides on the product page.'),t('ابدأ من دليل الحلقات المدعومة؛ وجود حلقة لا يعني أن الديبس عليها مناسب لقدرتك الآن.','Use the supported ring guide first; owning rings does not mean ring dips suit your current ability.')]
+  },
+  accessories:{
+    lead:t('الهاند جريبر وحبل القفز والجريب تيب وحبال المقاومة تخدم احتياجات مختلفة. اختر وظيفة القطعة أولًا، ثم انتقل إلى مواصفاتها ودليل استخدامها.','Hand grippers, jump ropes, grip tape and resistance bands serve different needs. Choose the function first, then open the item’s specifications and use guide.'),
+    checks:[t('لإغلاق اليد: راجع الهاند جريبر؛ لملمس المقبض: راجع الجريب تيب. الوظيفتان مختلفتان.','For hand closing, review the gripper; for handle surface, review grip tape. These are different functions.'),t('للإيقاع وجولات الحركة: افتح حبل القفز ودليل التقنية واختيار الطول.','For timing and movement intervals, open the jump rope and its technique and length guide.'),t('للسحب المساعد: افتح حبال المقاومة ودليل أول عقلة، مع مراجعة الموديل ونقطة التثبيت.','For assisted pulling, open resistance bands and the first pull-up guide, checking the actual model and anchor point.')]
+  },
+  'multi-rig':{
+    lead:t('التجهيز متعدد المحطات يبدأ بخريطة المكان والحركات التي تريد جمعها. هذه الفئة تقود إلى صفحة تخطيط المنتج، ثم إرشادات الاختيار والتواصل.','A multi-station setup starts with the site layout and the movements it should combine. This category leads to product planning, selection guidance and contact.'),
+    checks:[t('حدد الحركات والمحطات المطلوبة قبل جمع أشكال أجهزة مختلفة في تصميم واحد.','Define required movements and stations before combining equipment designs.'),t('راجع أبعاد المكان ومسار الدخول والحركة والمسافة بين المحطات.','Review site dimensions, access, movement routes and spacing between stations.'),t('اعتمد القياسات والتثبيت ونطاق التجهيز للطلب الفعلي؛ لا تستنتجها من صورة توضيحية.','Agree dimensions, mounting and build scope for the actual order; do not infer them from an illustrative photo.')]
+  },
+  custom:{
+    lead:t('لديك مساحة أو استخدام يحتاج تعديلًا؟ ابدأ بوصف المكان والحركة، وافتح دليل تجهيز طلب التصنيع قبل التواصل مع وثبة.','Need a build for a particular space or use? Start with the site and movement requirements, and open the custom-order planning guide before contacting WATHBA.'),
+    checks:[t('اكتب الاستخدام المطلوب وأبعاد المكان، وأرفق صورًا توضح العوائق ونقاط التثبيت.','Describe the intended use and site dimensions, with photos showing obstructions and mounting points.'),t('اتفق على المواد والقياسات والتشطيب والتجميع في وصف طلب واضح.','Agree materials, dimensions, finish and assembly in a clear order specification.'),t('استخدم دليل تجهيز الطلب لترتيب أسئلتك؛ هذه خدمة تصنيع وليست مستوى تمرين أو برنامجًا تدريبيًا.','Use the order-planning guide to organise questions; this is a fabrication service, not an exercise level or training programme.')]
+  }
+};

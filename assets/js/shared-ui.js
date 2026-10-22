@@ -249,54 +249,7 @@ function wathbaRenderMobileMenuSocialLinks() {
   `;
 }
 
-const WATHBA_MENU_GROUPS = [
-  {
-    key: "bars",
-    ar: "بارات السحب",
-    en: "Pull-up Bars",
-    ids: ["wall-pull-up-bar", "monkey-bars"]
-  },
-  {
-    key: "parallettes",
-    ar: "باراليتس",
-    en: "Parallettes",
-    ids: ["steel-wood-parallettes", "full-wooden-parallettes"]
-  },
-  {
-    key: "parallel-bars",
-    ar: "متوازي وديب بار",
-    en: "Parallel & Dip Bars",
-    ids: [
-      "freestanding-parallel-bars-small",
-      "freestanding-parallel-bars-large",
-      "wall-mounted-dip-bars"
-    ]
-  },
-  {
-    key: "rings",
-    ar: "حلقات جمباز",
-    en: "Gymnastic Rings",
-    ids: ["gymnastic-rings"]
-  },
-  {
-    key: "accessories",
-    ar: "إكسسوارات",
-    en: "Accessories",
-    ids: ["hand-gripper", "jump-rope", "grip-tape", "resistance-bands"]
-  },
-  {
-    key: "multi-rig",
-    ar: "جهاز متعدد",
-    en: "Multi Rig",
-    ids: ["multi-rig"]
-  },
-  {
-    key: "custom",
-    ar: "طلبات مخصصة",
-    en: "Custom Orders",
-    ids: ["custom-orders"]
-  }
-];
+const WATHBA_MENU_GROUPS = window.WathbaStructure.categories;
 
 function wathbaMenuGroupLabel(group) {
   return wathbaGetLang() === "ar" ? group.ar : group.en;
@@ -431,7 +384,7 @@ function wathbaRenderMobileMenu() {
 
     return `
             <div class="wathba-mobile-category-card">
-              <a href="products.html?filter=${group.key}" class="wathba-mobile-category-pill">
+              <a href="${window.WathbaStructure.categoryUrl(group.key, lang)}" class="wathba-mobile-category-pill">
                 ${wathbaMenuGroupLabel(group)}
               </a>
 
@@ -595,7 +548,7 @@ function wathbaRenderDesktopMegaMenu() {
 
       return `
                 <div class="wathba-mega-category-card">
-                  <a href="products.html?filter=${group.key}" class="wathba-mega-category-pill">
+                  <a href="${window.WathbaStructure.categoryUrl(group.key, lang)}" class="wathba-mega-category-pill">
                     ${wathbaMenuGroupLabel(group)}
                   </a>
 
@@ -678,7 +631,7 @@ function wathbaRenderFooter() {
           <ul class="wathba-footer-list">
             <li><a href="${wathbaProductUrl("wall-pull-up-bar")}">${wathbaT("pullUp")}</a></li>
 <li><a href="${wathbaProductUrl("steel-wood-parallettes")}">${wathbaT("parallettes")}</a></li>
-<li><a href="products.html?filter=parallel-bars">${wathbaT("dipBars")}</a></li>
+<li><a href="${window.WathbaStructure.categoryUrl('parallel-bars', wathbaGetLang())}">${wathbaT("dipBars")}</a></li>
 <li><a href="${wathbaProductUrl("gymnastic-rings")}">${wathbaT("rings")}</a></li>
           </ul>
         </div>
@@ -734,7 +687,7 @@ function wathbaSetActiveLinks() {
     صفحة تفاصيل المنتج product.html تعتبر من قسم المنتجات
     عشان يظل رابط المنتجات هو النشط.
   */
-  if (normalizedPath === "product.html" || normalizedPath.startsWith("equipment-")) {
+  if (normalizedPath === "product.html" || normalizedPath.startsWith("equipment-") || normalizedPath.startsWith("category-")) {
     normalizedPath = "products.html";
   }
   if (normalizedPath.startsWith("academy-")) {

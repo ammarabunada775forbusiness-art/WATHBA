@@ -3,60 +3,7 @@ let currentFilter = new URLSearchParams(window.location.search).get("filter") ||
 const filtersContainer = document.getElementById("categoryFilters");
 const productsContainer = document.getElementById("allProducts");
 
-const productGroups = [
-  {
-    key: "all",
-    ar: "كل المعدات",
-    en: "All Equipment",
-    ids: []
-  },
-  {
-    key: "bars",
-    ar: "بارات السحب",
-    en: "Pull-up Bars",
-    ids: ["wall-pull-up-bar", "monkey-bars"]
-  },
-  {
-    key: "parallettes",
-    ar: "باراليتس",
-    en: "Parallettes",
-    ids: ["steel-wood-parallettes", "full-wooden-parallettes"]
-  },
-  {
-    key: "parallel-bars",
-    ar: "متوازي وديب بار",
-    en: "Parallel & Dip Bars",
-    ids: [
-      "freestanding-parallel-bars-small",
-      "freestanding-parallel-bars-large",
-      "wall-mounted-dip-bars"
-    ]
-  },
-  {
-    key: "rings",
-    ar: "حلقات جمباز",
-    en: "Gymnastic Rings",
-    ids: ["gymnastic-rings"]
-  },
-  {
-    key: "accessories",
-    ar: "إكسسوارات",
-    en: "Accessories",
-    ids: ["hand-gripper", "jump-rope", "grip-tape", "resistance-bands"]
-  },
-  {
-    key: "multi-rig",
-    ar: "جهاز متعدد",
-    en: "Multi Rig",
-    ids: ["multi-rig"]
-  },
-  {
-    key: "custom",
-    ar: "طلبات مخصصة",
-    en: "Custom Orders",
-    ids: ["custom-orders"]
-  }
-]
+const productGroups = [{key: "all", ar: "كل المعدات", en: "All Equipment", ids: []}, ...window.WathbaStructure.categories];
 
 if (!productGroups.some((group) => group.key === currentFilter)) {
   currentFilter = "all";

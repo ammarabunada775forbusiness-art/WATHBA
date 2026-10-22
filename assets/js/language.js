@@ -8,7 +8,7 @@
     return (file || 'index.html').replace(/-en\.html$/, '.html');
   }
   function isPage(file) {
-    return /^(?:index|products|about|contact|academy(?:-[a-z-]+)?|equipment-[a-z0-9-]+)\.html$/.test(baseFile(file));
+    return /^(?:index|products|about|contact|academy(?:-[a-z-]+)?|equipment-[a-z0-9-]+|category-[a-z0-9-]+)\.html$/.test(baseFile(file));
   }
   function pageFile(file, lang) {
     const base = baseFile(file);

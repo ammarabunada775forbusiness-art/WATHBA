@@ -37,7 +37,7 @@ function renderSlots(page, lang) {
   };
   const window = {location: {pathname: `/${page}${lang === 'en' ? '-en' : ''}.html`, search: '', hash: ''}, addEventListener() {}};
   const context = vm.createContext({document, window, localStorage: {getItem: () => lang, setItem() {}}, URL, URLSearchParams, setTimeout: () => 0, clearTimeout() {}, console});
-  for (const file of ['config', 'language', 'products-data', ...(page === 'index' ? ['main'] : page === 'products' ? ['products'] : []), 'shared-ui']) {
+  for (const file of ['config', 'language', 'site-structure', 'products-data', ...(page === 'index' ? ['main'] : page === 'products' ? ['products'] : []), 'shared-ui']) {
     vm.runInContext(fs.readFileSync(path.join(root, `assets/js/${file}.js`), 'utf8'), context);
   }
   vm.runInContext('wathbaRenderFooter()', context);
@@ -82,6 +82,7 @@ function finalizeLanguageLinks() {
     const lang = file.endsWith('-en.html') ? 'en' : 'ar';
     html = localizedLinks(html, lang);
     if (!html.includes('src="assets/js/language.js')) html = html.replace(/(<script src="assets\/js\/tailwind-config\.js[^>]*><\/script>)/, '$1\n    <script src="assets/js/language.js"></script>');
+    if (!html.includes('src="assets/js/site-structure.js')) html = html.replace(/(<script src="assets\/js\/language\.js[^>]*><\/script>)/, '$1\n    <script src="assets/js/site-structure.js"></script>');
     if (routes.isPage(file)) {
       const other = lang === 'ar' ? 'en' : 'ar';
       const otherFile = routes.pageFile(file, other);

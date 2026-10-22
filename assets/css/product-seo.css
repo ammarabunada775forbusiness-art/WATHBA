@@ -1,4 +1,13 @@
 /* Product editorial content stays in the HTML, even when shop scripts are absent. */
+.wathba-discovery { color: var(--wathba-text); font-family: "Be Vietnam Pro", "Noto Sans Arabic", sans-serif; padding-block: 28px; line-height: 1.85; }
+.wathba-discovery h2 { font-size: clamp(22px, 2.5vw, 32px); font-weight: 750; line-height: 1.5; margin-bottom: 12px; }
+.wathba-discovery-links { display: flex; flex-wrap: wrap; gap: 10px; margin-block: 16px; }
+.wathba-discovery-links a { display: inline-flex; padding: 10px 16px; border: 1px solid var(--wathba-edge); border-radius: 9px; color: var(--wathba-text); text-decoration: none; background: var(--wathba-panel); }
+.wathba-discovery-links a:hover { border-color: var(--wathba-muted); background: var(--wathba-panel-raised); }
+.wathba-discovery a:focus-visible, .wathba-discovery-links a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.wathba-path-crumb { display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; margin-bottom: 20px; }
+.wathba-path-crumb a { text-decoration: underline; text-underline-offset: 4px; }
+.wathba-training-step { scroll-margin-top: 110px; }
 .wathba-product-facts { color: var(--wathba-text); font-family: "Be Vietnam Pro", "Noto Sans Arabic", sans-serif; padding-block: 18px 36px; line-height: 1.85; }
 .wathba-product-facts * { box-sizing: border-box; }
 .wathba-product-facts h2 { font-size: clamp(25px, 3vw, 36px); line-height: 1.4; margin-bottom: 14px; font-weight: 800; }

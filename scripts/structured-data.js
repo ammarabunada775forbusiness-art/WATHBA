@@ -4,6 +4,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const identity = require('./site-identity.json');
 const {buildProduct,blockers} = require('./product-schema.js');
+const structure = require('../assets/js/site-structure.js');
 const START = '<!-- WATHBA_JSON_LD_START -->';
 const END = '<!-- WATHBA_JSON_LD_END -->';
 const strip = s => s.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
@@ -38,7 +39,13 @@ function graphFor(file, html, {origin, catalog, facts}) {
   const webpage = graph[2];
   if (!/^index(?:-en)?\.html$/.test(file)) {
     const crumbs = [{name:english ? 'Home' : 'الرئيسية',item:url(filenameFor('index',lang))}];
-    if (file.startsWith('equipment-')) crumbs.push({name:english ? 'Equipment' : 'المنتجات',item:url(filenameFor('products',lang))});
+    if (file.startsWith('equipment-') || file.startsWith('category-')) crumbs.push({name:english ? 'Equipment' : 'المنتجات',item:url(filenameFor('products',lang))});
+    if (file.startsWith('equipment-')) {
+      const id=html.match(/data-wathba-product-id="([^"]+)"/)?.[1];
+      const category=structure.categoryForProduct(id);
+      if (!category) throw Error('Missing breadcrumb category: '+file);
+      crumbs.push({name:category[lang],item:url(structure.categoryUrl(category.key,lang))});
+    }
     if (articlePage(file)) crumbs.push({name:english ? 'Academy' : 'الأكاديمية',item:url(filenameFor('academy',lang))});
     crumbs.push({name:heading,item:current});
     const id = current + '#breadcrumb';
@@ -67,7 +74,7 @@ function buildStructuredData(options = {}) {
   const canonical = fs.readFileSync(path.join(root,'index.html'),'utf8').match(/rel="canonical" href="(https:\/\/[^/]+)/)?.[1];
   const origin = validOrigin(options.origin || process.env.WATHBA_SITE_URL || canonical || identity.origin);
   const catalog = loadCatalog(root), facts = JSON.parse(fs.readFileSync(path.join(root,'scripts/product-facts.json'),'utf8'));
-  const files = fs.readdirSync(root).filter(f => /^(index|products|about|contact|academy(?:-[a-z-]+)?|equipment-[a-z0-9-]+)(?:-en)?\.html$/.test(f)).sort();
+  const files = fs.readdirSync(root).filter(f => /^(index|products|about|contact|academy(?:-[a-z-]+)?|equipment-[a-z0-9-]+|category-[a-z0-9-]+)(?:-en)?\.html$/.test(f)).sort();
   const counts = {};
   for (const file of files) {
     const location = path.join(root,file);

@@ -374,7 +374,7 @@ function renderProductDetails() {
 
       <div class="lg:col-span-5 flex flex-col ${currentLang === "ar" ? "text-right" : ""}">
         <span class="font-label-caps text-label-caps text-tertiary-fixed-dim mb-4 uppercase">
-          ${category} / WATHBA
+          <a href="${window.WathbaStructure.categoryUrl(window.WathbaStructure.categoryForProduct(product.id).key, currentLang)}">${category}</a> / WATHBA
         </span>
 
         <h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-6 tracking-tighter leading-none">
@@ -487,9 +487,9 @@ function bindProductDetailsEvents() {
 function renderRelatedProducts(currentProduct) {
   if (!relatedProductsRoot) return;
 
-  const relatedProducts = products
-    .filter((product) => product.id !== currentProduct.id)
-    .slice(0, 4);
+  const category = window.WathbaStructure.categoryForProduct(currentProduct.id);
+  const relatedProducts = products.filter(product => product.id !== currentProduct.id && category.ids.includes(product.id));
+  if (!relatedProducts.length) { relatedProductsRoot.innerHTML = ''; return; }
 
   relatedProductsRoot.innerHTML = `
     <section class="mt-32 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">

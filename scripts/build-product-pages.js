@@ -142,6 +142,7 @@ for (const filename of fs.readdirSync(root).filter((name) => /^academy(?:-[a-z-]
 const languagePages = require('./build-language-pages.js');
 require('./build-academy-pages.js').buildAcademy(catalog);
 languagePages.buildCorePages();
+require('./build-site-links.js').buildSiteLinks(catalog, academyFor);
 languagePages.finalizeLanguageLinks();
 const structuredData = require('./structured-data.js').buildStructuredData({origin: launchOrigin});
 const assetHash = crypto.createHash("sha256");

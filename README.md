@@ -14,6 +14,7 @@ node scripts/build-product-pages.js
 - [ربط الدومين وتفعيل خريطة المواقع](SEO-LAUNCH.md)
 - [بيانات المنتجات والمعلومات المتبقية للمرحلة ٦](PRODUCT-DATA.md)
 - [البيانات المنظمة وفحوص المرحلة ٧](STRUCTURED-DATA.md)
+- [الربط الداخلي وصفحات الفئات للمرحلة ٨](INTERNAL-LINKS.md)
 
 نصوص ترجمة الصفحات الأساسية في `scripts/page-translations.json`. لا تحذف تعليقات `WATHBA_COPY` و`WATHBA_SLOT` من القوالب العربية؛ يستخدمها البناء لتحديث النصوص والمنتجات مع الحفاظ على التخطيط.
 
