@@ -72,7 +72,7 @@ The Google-hosted mobile Lighthouse 13.5 report completed successfully on 2026-1
 | CLS | 0 |
 | Speed Index | 4.007 s |
 
-Other reported categories: accessibility 88, best practices 100, SEO 92. Existing image alternative-text, contrast and heading-order findings remain separate from the performance work. PageSpeed reported no CrUX field data. Lighthouse TBT is not INP; the INP values above come from actual menu/cart interactions in the inspected browser visits. The failed baseline cannot support a numeric before/after score claim.
+Other reported categories: accessibility 88, best practices 100, SEO 92. This earlier report identified image alternative-text, contrast and heading-order findings; these were addressed in the follow-up below. PageSpeed reported no CrUX field data. Lighthouse TBT is not INP; the INP values above come from actual menu/cart interactions in the inspected browser visits. The failed baseline cannot support a numeric before/after score claim.
 
 Report: https://pagespeed.web.dev/analysis/https-wathba-rosy-vercel-app/oonpzb7cuq?form_factor=mobile
 
@@ -87,3 +87,17 @@ Validation: static accessibility checks cover 70 indexable pages, 166 image alte
 Live browser follow-up: the footer action renders dark text on green; Arabic/English mobile widths had no horizontal overflow. Closed menu/cart inert states, Escape and return focus, cart Shift+Tab focus wrapping and the labeled notes disclosure were checked. The home smooth-scroll handler excludes the skip link so native fragment focus remains available.
 
 The browser confirmed that activating the skip link focuses `wathbaMain` and updates the fragment in the published homepage. A cold-load report screenshot revealed an optional-font fallback for Anton; the brand font now uses swap to preserve the intended typography.
+
+### Final follow-up reports (brand font retained)
+
+After the Anton cold-load correction, the final Google mobile Lighthouse reports on 2026-10-22 were:
+
+| Page | Performance | Accessibility | Best practices | SEO | LCP | CLS | TBT |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Arabic home | 98 | 100 | 100 | 100 | 1.555 s | 0 | 0 ms |
+| English rings product | 99 | 100 | 100 | 100 | 1.666 s | 0.001 | 0 ms |
+
+- Home report: https://pagespeed.web.dev/analysis/https-wathba-rosy-vercel-app/zct5p06igo?form_factor=mobile
+- English product report: https://pagespeed.web.dev/analysis/https-wathba-rosy-vercel-app-equipment-gymnastic-rings-en-html/0tofzv9i11?form_factor=mobile
+
+The previous follow-up run showed 100 in all four home-page categories but allowed the optional brand font to remain on a fallback under a cold load. The retained final configuration prioritizes rendering the Anton wordmark/headline. The final scores above, rather than that intermediate run, describe the delivered version. Both reports use an emulated Moto G Power with slow 4G; neither is a ranking result, field Core Web Vitals assessment or complete accessibility certification.
