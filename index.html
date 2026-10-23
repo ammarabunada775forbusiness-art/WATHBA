@@ -9,8 +9,8 @@
     <meta name="description" content="اكتشف معدات الكاليستنكس من وثبة في الأردن: عقلة حائط، باراليتس، متوازي، حلقات وتجهيزات مخصصة. تعلّم التمارين واختر المعدات المناسبة لهدفك." />
     <link data-wathba-font-preload rel="preload" href="assets/fonts/symbols-0.woff2" as="font" type="font/woff2" crossorigin>
 <link data-wathba-font-preload rel="preload" href="assets/fonts/anton-2.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/fonts.css?v=242bd629af6f">
-<link rel="stylesheet" href="assets/css/production.css?v=242bd629af6f">
+<link rel="stylesheet" href="assets/css/fonts.css?v=a23bfc32dc4f">
+<link rel="stylesheet" href="assets/css/production.css?v=a23bfc32dc4f">
 <script>
         (function () {
             var lang = document.documentElement.lang;
@@ -21,8 +21,8 @@
             document.documentElement.classList.add("wathba-ui-loading");
         })();
     </script>
-    <script defer src="assets/js/language.min.js?v=242bd629af6f"></script>
-    <script defer src="assets/js/site-structure.min.js?v=242bd629af6f"></script>
+    <script defer src="assets/js/language.min.js?v=a23bfc32dc4f"></script>
+    <script defer src="assets/js/site-structure.min.js?v=a23bfc32dc4f"></script>
     <style>
         body {
             background-color: #131313;
@@ -31,162 +31,15 @@
             overflow-x: hidden;
         }
 
-        .product-360-container {
-            perspective: 1000px;
-            cursor: grab;
-        }
-
-        .product-360-inner {
-            transition: transform 0.1s ease-out;
-            transform-style: preserve-3d;
-        }
-
-        .glass-panel {
-            background: rgba(26, 26, 26, 0.7);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
         .hero-text-stroke {
             -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
             color: transparent;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        .floating {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .stagger-1 {
-            animation-delay: 0.2s;
-        }
-
-        .stagger-2 {
-            animation-delay: 0.5s;
         }
 
         .arabic-text {
             font-family: 'Be Vietnam Pro', sans-serif;
             /* Fallback, would ideally use a proper Arabic Anton-equivalent */
             direction: rtl;
-        }
-
-        .hero-stat-layer {
-            position: absolute;
-            inset: 0;
-            z-index: 20;
-            pointer-events: none;
-        }
-
-        .hero-stat-card {
-            position: absolute;
-            max-width: 180px;
-            padding: 14px 16px;
-            border-radius: 14px;
-            background: rgba(26, 26, 26, 0.72);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.28);
-        }
-
-        .hero-stat-card span:first-child {
-            font-family: 'Be Vietnam Pro', sans-serif;
-            font-size: 10px;
-            line-height: 1.2;
-            color: #c4c7c8;
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 900;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .hero-stat-card span:last-child {
-            font-family: 'Anton', sans-serif;
-            font-size: 20px;
-            line-height: 1.05;
-            color: #ffffff;
-            text-transform: uppercase;
-        }
-
-        .hero-stat-material {
-            top: 34px;
-            right: 86px;
-        }
-
-        .hero-stat-capacity {
-            bottom: 46px;
-            left: 84px;
-        }
-
-        .hero-stat-finish {
-            top: 44%;
-            left: 8px;
-        }
-
-        .hero-stat-grip {
-            top: 38px;
-            left: 142px;
-        }
-
-
-        .hero-stat-support {
-            bottom: 70px;
-            right: 120px;
-        }
-
-        .hero-stat-use {
-            top: 46%;
-            right: 4px;
-        }
-
-
-
-        @media (max-width: 1024px) {
-            .hero-stat-layer {
-                inset: auto 0 0 0;
-                display: flex;
-                gap: 8px;
-                overflow-x: auto;
-                padding: 0 8px 4px;
-                scrollbar-width: none;
-            }
-
-            .hero-stat-layer::-webkit-scrollbar {
-                display: none;
-            }
-
-            .hero-stat-card {
-                position: relative !important;
-                top: auto !important;
-                right: auto !important;
-                bottom: auto !important;
-                left: auto !important;
-                min-width: 136px;
-                padding: 10px 12px;
-            }
-
-            .hero-stat-card span:first-child {
-                font-size: 8px;
-            }
-
-            .hero-stat-card span:last-child {
-                font-size: 15px;
-            }
         }
 
         /* Home trusted floating badge */
@@ -257,10 +110,11 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="assets/css/shared-ui.min.css?v=242bd629af6f" />
-    <link rel="stylesheet" href="assets/css/academy.min.css?v=242bd629af6f" />
-<link rel="stylesheet" href="assets/css/product-seo.min.css?v=242bd629af6f">
-<script type="module" defer src="assets/js/performance.js?v=242bd629af6f"></script>
+    <link rel="stylesheet" href="assets/css/shared-ui.min.css?v=a23bfc32dc4f" />
+    <link rel="stylesheet" href="assets/css/academy.min.css?v=a23bfc32dc4f" />
+<link rel="stylesheet" href="assets/css/product-seo.min.css?v=a23bfc32dc4f">
+<script type="module" defer src="assets/js/performance.js?v=a23bfc32dc4f"></script>
+<link rel="stylesheet" href="assets/css/home-hero.css?v=a23bfc32dc4f">
 <!-- WATHBA_LANGUAGE_ALTERNATES_START -->
 <link rel="alternate" hreflang="ar" href="https://wathba-rosy.vercel.app/">
 <link rel="alternate" hreflang="en" href="https://wathba-rosy.vercel.app/index-en.html">
@@ -304,11 +158,11 @@
     <main class="pt-32" id="wathbaMain" tabindex="-1">
         <!-- Hero Section -->
         <section
-            class="relative px-margin-desktop max-w-container-max mx-auto min-h-[921px] flex flex-col justify-center overflow-visible"
+            class="wathba-home-hero relative px-margin-desktop max-w-container-max mx-auto flex flex-col justify-center overflow-visible"
             id="home">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+            <div class="wathba-hero-layout">
                 <!-- Left: Aggressive Typography -->
-                <div class="md:col-span-5 z-10 wathba-ar-text">
+                <div class="wathba-hero-copy wathba-ar-text">
                     <div class="flex flex-col gap-2">
                         <span class="text-primary font-label-caps text-label-caps tracking-widest uppercase"><!-- WATHBA_COPY:index-007:START -->Performance Redefined<!-- WATHBA_COPY:index-007:END --></span>
                         <h1 class="font-display-hero text-display-hero leading-none flex flex-col">
@@ -337,54 +191,20 @@
                         </a>
                     </div>
                 </div>
-                <!-- Center: 360 Product Interaction -->
-                <div class="md:col-span-7 relative h-[600px] flex items-center justify-center">
-                    <!-- Rotating Background Blur -->
-                    <div class="absolute w-[120%] h-[120%] -z-10 opacity-20">
-
-                    </div>
-                    <!-- Floating Data Blocks -->
-                    <div class="hero-stat-layer" aria-hidden="true">
-                        <div class="hero-stat-card hero-stat-material floating">
-                            <span><!-- WATHBA_COPY:index-015:START -->الخامات<!-- WATHBA_COPY:index-015:END --></span>
-                            <span><!-- WATHBA_COPY:index-016:START -->خشب وحديد حسب القطعة<!-- WATHBA_COPY:index-016:END --></span>
-                        </div>
-
-                        <div class="hero-stat-card hero-stat-capacity floating stagger-1">
-                            <span><!-- WATHBA_COPY:index-017:START -->الأبعاد<!-- WATHBA_COPY:index-017:END --></span>
-                            <span><!-- WATHBA_COPY:index-018:START -->حسب المنتج<!-- WATHBA_COPY:index-018:END --></span>
-                        </div>
-
-                        <div class="hero-stat-card hero-stat-finish floating stagger-2">
-                            <span><!-- WATHBA_COPY:index-019:START -->خيارات التدريب<!-- WATHBA_COPY:index-019:END --></span>
-                            <span><!-- WATHBA_COPY:index-020:START -->دفع وسحب<!-- WATHBA_COPY:index-020:END --></span>
-                        </div>
-
-                        <div class="hero-stat-card hero-stat-grip floating">
-                            <span><!-- WATHBA_COPY:index-021:START -->القياسات<!-- WATHBA_COPY:index-021:END --></span>
-                            <span><!-- WATHBA_COPY:index-022:START -->اسأل عن التفاصيل<!-- WATHBA_COPY:index-022:END --></span>
-                        </div>
-
-                        <div class="hero-stat-card hero-stat-use floating stagger-2">
-                            <span><!-- WATHBA_COPY:index-023:START -->الاستخدام<!-- WATHBA_COPY:index-023:END --></span>
-                            <span><!-- WATHBA_COPY:index-024:START -->للبيت / الخارج<!-- WATHBA_COPY:index-024:END --></span>
-                        </div>
-
-                        <div class="hero-stat-card hero-stat-support floating">
-                            <span><!-- WATHBA_COPY:index-025:START -->دعم الطلب<!-- WATHBA_COPY:index-025:END --></span>
-                            <span><!-- WATHBA_COPY:index-026:START -->عرض عبر واتساب<!-- WATHBA_COPY:index-026:END --></span>
-                        </div>
-                    </div>
-                    <!-- 360 Product Visual -->
-                    <div class="product-360-container w-full h-full flex items-center justify-center">
-                        <div class="product-360-inner relative w-full h-full flex items-center justify-center">
-                            <img alt="صورة توضيحية لباراليتس بمقابض خشبية" class="w-[80%] h-auto object-contain drop-shadow-[0_35px_35px_rgba(255,255,255,0.1)]"
-
-                                id="hero-product"
-                                src="assets/images/site/75ba4e2263d8.webp" loading="eager" fetchpriority="high" width="512" height="512" decoding="async" srcset="assets/images/optimized/892efed0d8d4-480.webp 480w, assets/images/site/75ba4e2263d8.webp 512w" sizes="(max-width: 1023px) 100vw, 60vw">
-                        </div>
-                    </div>
-                </div>
+                <figure class="wathba-hero-visual" data-hero-motion="static">
+                    <img alt="ذيب بالرباطين الأسودين وصخر بالرباطين الأبيضين، واقفان وجهًا لوجه وجذعاهما بزاوية نحو الزائر" class="wathba-hero-image" src="assets/images/characters/dheeb-sakhr-1254.webp"
+                        srcset="assets/images/characters/dheeb-sakhr-640.webp 640w, assets/images/characters/dheeb-sakhr-1254.webp 1254w"
+                        sizes="(max-width: 640px) calc(100vw - 36px), (max-width: 1024px) 620px, 52vw"
+                        width="1254" height="1254" loading="eager" fetchpriority="high" decoding="async"
+                       >
+                    <canvas class="wathba-hero-canvas" width="1254" height="1254" aria-hidden="true"></canvas>
+                    <button class="wathba-hero-motion" type="button" hidden>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path class="wathba-motion-pause" d="M7 5h3v14H7zm7 0h3v14h-3z"></path>
+                            <path class="wathba-motion-play" d="M8 5v14l11-7z"></path>
+                        </svg>
+                    </button>
+                </figure>
             </div>
         </section>
         <!-- Product Grid Section -->
@@ -1064,25 +884,6 @@
     </footer>
   <!-- WATHBA_SLOT:wathbaFooter:END --></div>
     <script>
-        // Simple 360-style rotation effect following mouse movement
-        const productContainer = document.querySelector(".product-360-container");
-        const productInner = document.querySelector(".product-360-inner");
-
-        if (productContainer && productInner) {
-            productContainer.addEventListener("mousemove", (e) => {
-                const rect = productContainer.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const centerX = rect.width / 2;
-                const rotationY = (x - centerX) / 10;
-
-                productInner.style.transform = `rotateY(${rotationY}deg)`;
-            });
-
-            productContainer.addEventListener("mouseleave", () => {
-                productInner.style.transform = "rotateY(0deg)";
-            });
-        }
-
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]:not(.wathba-skip-link)').forEach((anchor) => {
             anchor.addEventListener("click", function (e) {
@@ -1101,11 +902,12 @@
     <!-- WATHBA_HOME_PAGE_TRANSLATION_START -->
     <script id="wathba-home-page-translation"></script>
     <!-- WATHBA_HOME_PAGE_TRANSLATION_END -->
-    <script defer src="assets/js/config.min.js?v=242bd629af6f"></script>
-    <script defer src="assets/js/products-data.min.js?v=242bd629af6f"></script>
-    <script defer src="assets/js/whatsapp.min.js?v=242bd629af6f"></script>
-    <script defer src="assets/js/main.min.js?v=242bd629af6f"></script>
-    <script defer src="assets/js/shared-ui.min.js?v=242bd629af6f"></script>
+    <script defer src="assets/js/config.min.js?v=a23bfc32dc4f"></script>
+    <script defer src="assets/js/products-data.min.js?v=a23bfc32dc4f"></script>
+    <script defer src="assets/js/whatsapp.min.js?v=a23bfc32dc4f"></script>
+    <script defer src="assets/js/main.min.js?v=a23bfc32dc4f"></script>
+    <script defer src="assets/js/shared-ui.min.js?v=a23bfc32dc4f"></script>
+    <script defer src="assets/js/home-hero.min.js?v=a23bfc32dc4f"></script>
 </body>
 
 </html>

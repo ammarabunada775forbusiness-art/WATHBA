@@ -1,0 +1,129 @@
+/* The figures share the page surface; their image contains genuine alpha. */
+body:has(#home) #home.wathba-home-hero {
+  min-height: calc(100svh - var(--wathba-nav-height));
+  padding-block: 30px 48px;
+}
+
+.wathba-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  align-items: center;
+  gap: clamp(24px, 3vw, 56px);
+  width: 100%;
+}
+
+.wathba-hero-copy {
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.wathba-hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 760px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  isolation: isolate;
+  direction: ltr;
+}
+
+.wathba-hero-image,
+.wathba-hero-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.wathba-hero-canvas {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.wathba-hero-visual.is-ready .wathba-hero-canvas {
+  visibility: visible;
+}
+
+.wathba-hero-visual.is-ready .wathba-hero-image {
+  opacity: 0;
+}
+
+body:has(#home) #home .wathba-hero-motion {
+  position: absolute;
+  inset: auto 3% 1% auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-height: 44px !important;
+  padding: 10px !important;
+  color: #e5e2e1;
+  border: 1px solid #ffffff38;
+  border-radius: 50%;
+  background: #131313;
+  cursor: pointer;
+}
+
+.wathba-hero-motion[hidden] {
+  display: none !important;
+}
+
+.wathba-hero-motion:hover {
+  border-color: #ffffff90;
+}
+
+.wathba-hero-motion:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+.wathba-hero-motion svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.wathba-hero-motion .wathba-motion-play,
+[data-hero-motion="paused"] .wathba-motion-pause {
+  display: none;
+}
+
+[data-hero-motion="paused"] .wathba-motion-play {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  body:has(#home) #home.wathba-home-hero {
+    min-height: auto !important;
+    padding-block: 30px 36px !important;
+  }
+
+  .wathba-hero-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .wathba-hero-copy {
+    order: 0;
+  }
+
+  .wathba-hero-visual {
+    order: 1;
+    max-width: 620px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wathba-hero-visual.is-ready .wathba-hero-image {
+    opacity: 1;
+  }
+
+  .wathba-hero-visual.is-ready .wathba-hero-canvas,
+  body:has(#home) #home .wathba-hero-motion {
+    visibility: hidden;
+  }
+}

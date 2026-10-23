@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build-product-pages.js",
-    "check": "node scripts/check-site-links.js && node scripts/check-structured-data.js && node scripts/check-performance.js && node scripts/check-accessibility.js"
+    "check": "node scripts/check-site-links.js && node scripts/check-structured-data.js && node scripts/check-performance.js && node scripts/check-accessibility.js && node scripts/check-hero.js"
   },
   "devDependencies": {
     "tailwindcss": "3.4.17",

@@ -1,6 +1,7 @@
 // Language-aware image descriptions and keyboard navigation in every static shell.
 const fs=require('node:fs'),path=require('node:path');
 const imageDescriptions={
+ 'dheeb-sakhr-1254.webp':{ar:'ذيب بالرباطين الأسودين وصخر بالرباطين الأبيضين، واقفان وجهًا لوجه وجذعاهما بزاوية نحو الزائر',en:'Dheeb with black wristbands and Sakhr with white wristbands, facing each other with their torsos angled toward the viewer'},
  '75ba4e2263d8.webp':{ar:'صورة توضيحية لباراليتس بمقابض خشبية',en:'Illustrative photo of parallettes with wooden handles'},
  'f66c8e0cd854.webp':{ar:'صورة توضيحية لتدريب الوقوف على اليدين باستخدام الباراليتس',en:'Illustrative photo of a handstand on parallettes'},
  '685df9e33e98.webp':{ar:'صورة توضيحية لليدين تمسكان بحلقات جمباز خشبية',en:'Illustrative photo of hands gripping wooden gymnastic rings'},
@@ -14,7 +15,7 @@ function buildAccessibility(root){
   const location=path.join(root,file),lang=file.endsWith('-en.html')?'en':'ar';
   let html=fs.readFileSync(location,'utf8');
   html=html.replace(/<img\b[^>]*>/g,tag=>{
-   const name=tag.match(/\bsrc="assets\/images\/site\/([^"?]+)/)?.[1],alt=imageDescriptions[name]?.[lang];
+   const name=tag.match(/\bsrc="assets\/images\/(?:site|characters)\/([^"?]+)/)?.[1],alt=imageDescriptions[name]?.[lang];
    if(!alt)return tag;
    tag=tag.replace(/\s(?:alt|data-alt)="[^"]*"/g,'');
    return tag.replace(/<img\b/,`<img alt="${alt}"`);
