@@ -16,6 +16,7 @@ body:has(#home) #home.wathba-home-hero {
   min-width: 0;
   position: relative;
   z-index: 1;
+  container-type: inline-size;
 }
 
 .wathba-hero-visual {
@@ -94,6 +95,27 @@ body:has(#home) #home .wathba-hero-motion {
 
 [data-hero-motion="paused"] .wathba-motion-play {
   display: block;
+}
+
+@media (min-width: 1025px) {
+  body:has(#home) #home .wathba-hero-copy h1 {
+    font-size: clamp(62px, 23cqw, 144px) !important;
+    line-height: 0.96 !important;
+  }
+
+  .wathba-hero-copy h1 span {
+    white-space: nowrap;
+  }
+
+  body:has(#home) #home .wathba-hero-copy h2 {
+    font-size: clamp(32px, 10cqw, 54px) !important;
+    line-height: 1.2 !important;
+    margin-top: 12px !important;
+  }
+
+  .wathba-hero-visual {
+    max-width: min(760px, calc(100svh - var(--wathba-nav-height) - 48px));
+  }
 }
 
 @media (max-width: 1024px) {
