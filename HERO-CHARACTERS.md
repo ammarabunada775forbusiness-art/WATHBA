@@ -8,6 +8,7 @@ Generated with the built-in image generator, using the approved front, back and 
 
 - `assets/images/characters/dheeb-sakhr-1254.webp`: full-resolution transparent artwork, 1254 × 1254.
 - `assets/images/characters/dheeb-sakhr-640.webp`: mobile source candidate, 640 × 640.
+- `assets/images/characters/dheeb-sakhr-960.webp`: intermediate source candidate for phones and smaller desktop panels, 960 × 960.
 - Both preserve the generated alpha channel and opaque light body highlights. There is no rectangular backdrop.
 - Dheeb is left with two black wristbands. Sakhr is right with two white wristbands. Their heads face each other and their torsos angle toward the viewer.
 
