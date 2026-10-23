@@ -8,7 +8,7 @@ Dheeb stays on the viewer's LEFT in the exact approved staggered standing image 
 
 The shared style and build are approved. Sakhr's new shoulder-stretch rendering implements the requested pose; it is not recorded as a separately approved drawing or a replacement for the governing Dheeb source.
 
-The authoritative style reference is version 2.0 of [مرجع ثبات شخصيات ذيب وصخر](https://github.com/ammarabunada775forbusiness-art/WATHBA-Manufacturing-Docs/blob/codex/characters-20261023/يوتيوب/وضعيات%20الشخصيات/مرجع%20ثبات%20شخصيات%20ذيب%20وصخر.md). Original PNGs are stored in that repository's central character library as `ذيب وقوف متدرج بعد التمرين.png` and `صخر يمدد كتفه.png`.
+The authoritative style reference is version 2.0 of [مرجع ثبات شخصيات ذيب وصخر](https://github.com/ammarabunada775forbusiness-art/WATHBA-Manufacturing-Docs/blob/main/يوتيوب/وضعيات%20الشخصيات/مرجع%20ثبات%20شخصيات%20ذيب%20وصخر.md). Original PNGs are stored in that repository's central character library as `ذيب وقوف متدرج بعد التمرين.png` and `صخر يمدد كتفه.png`.
 
 - Dheeb PNG SHA-256: `f22c8554ba5f701879f5e5d367f8c46207620829ae4225d1b7d803a23b1b36a1`
 - Sakhr PNG SHA-256: `22081140af3e02bbb7af255d74b921c51e144e13fac05a9bda6b717b5b96eadb`
