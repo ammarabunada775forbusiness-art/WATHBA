@@ -1,38 +1,42 @@
-# WATHBA home hero: Dheeb and Sakhr
+# WATHBA homepage characters
 
-Replaces the equipment photograph, floating specification cards and mouse-follow rotation in both homepages. The existing dark surface, hero copy and calls to action are retained. On mobile, copy and buttons precede the two figures.
+Updated 2026-10-23 after Ammar explicitly approved the rebuilt shared character style and requested the matching UI.
 
-## Artwork
+## Artwork and identity
 
-Generated with the built-in image generator, using the approved front, back and scribble-style references. The source reference library remains unchanged.
+Dheeb stays on the viewer's LEFT in the exact approved staggered standing image with two black wristbands. Sakhr stays on the RIGHT with two white wristbands, performing the cross-body shoulder stretch from Ammar's attached pose reference. This physical order is identical in Arabic, English and mobile. Mobile copy and buttons appear before the figures.
 
-- `assets/images/characters/dheeb-sakhr-1254.webp`: full-resolution transparent artwork, 1254 × 1254.
-- `assets/images/characters/dheeb-sakhr-640.webp`: mobile source candidate, 640 × 640.
-- `assets/images/characters/dheeb-sakhr-960.webp`: intermediate source candidate for phones and smaller desktop panels, 960 × 960.
-- Both preserve the generated alpha channel and opaque light body highlights. There is no rectangular backdrop.
-- Dheeb is left with two black wristbands. Sakhr is right with two white wristbands. Their heads face each other and their torsos angle toward the viewer.
+The shared style and build are approved. Sakhr's new shoulder-stretch rendering implements the requested pose; it is not recorded as a separately approved drawing or a replacement for the governing Dheeb source.
 
-### Generation prompt
+The authoritative style reference is version 2.0 of [مرجع ثبات شخصيات ذيب وصخر](https://github.com/ammarabunada775forbusiness-art/WATHBA-Manufacturing-Docs/blob/main/يوتيوب/وضعيات%20الشخصيات/مرجع%20ثبات%20شخصيات%20ذيب%20وصخر.md). Original PNGs are stored in that repository's central character library as `ذيب وقوف متدرج بعد التمرين.png` and `صخر يمدد كتفه.png`.
 
-Use case: illustration-story. Asset type: transparent full-body character pair for WATHBA website hero, to be animated gently later in code. Create Dheeb and Sakhr standing side by side after exercise. Their heads face one another; their torsos are turned about 30 degrees inward from frontal, so both chests remain clearly visible toward the viewer. Dheeb stands on the LEFT, looking right toward Sakhr; Sakhr on the RIGHT, looking left toward Dheeb. Both full bodies and bare feet visible, equal scale, natural confident relaxed standing with arms resting at their sides and a subtle bend in elbows, feet planted naturally, a small clear transparent gap between silhouettes (no overlap). No gestures, no exercise equipment. Each man's weight rests naturally, as if recovering and breathing after a workout.
+- Dheeb PNG SHA-256: `f22c8554ba5f701879f5e5d367f8c46207620829ae4225d1b7d803a23b1b36a1`
+- Sakhr PNG SHA-256: `22081140af3e02bbb7af255d74b921c51e144e13fac05a9bda6b717b5b96eadb`
 
-REFERENCE ROLES: image 1 defines Dheeb's identity, athletic proportions, black wristbands, shorts and body; image 2 defines Sakhr's identity, white wristbands outlined in ink, and the governing dense organic scribble ink style; DO NOT copy its raised victory arm. Image 3 is anatomy and shared identity reference only, not the pose or back view.
+## Assets and exact image preservation
 
-STYLE LOCK: monochrome hand-drawn black ink scribble and layered cross hatching; delicate looping construction lines, irregular medium strokes following muscle volumes, deep dark ink knots in shadow folds, clear white highlights. Organic fine stray ink lines extend just outside bodies. No uniform wire mesh, no clean cartoon outlines, no smooth digital shading, no 3D or photorealism. Preserve bald heads and blank faceless faces: no eyes, brows, nose, mouth, hair or dark scalp patch; keep jawline and head direction readable through silhouette only. Athletic male calisthenics bodies, balanced shoulders and natural trapezius/neck transitions matching references, not exaggerated bodybuilders. Dheeb has TWO solid BLACK wristbands. Sakhr has TWO WHITE wristbands with fine BLACK outlines. Same short athletic shorts shape as references, shaded with scribble 15–20% darker than adjoining body, not solid black. Visible skin surfaces remain opaque white/light gray so the ink figures read on a dark #131313 website.
+- `dheeb-standing-1024.webp` and `sakhr-stretch-1024.webp` are lossless encodings of the original 1024×1536 PNGs. Their decoded pixels were compared byte-for-byte with the source. No regeneration, mirroring, retouching, background removal, new glow or color adjustment is applied to Dheeb.
+- Responsive 512px and 768px WebPs are resized delivery copies at quality 93. The full-size originals remain available.
+- Screen blending merges the original black backgrounds with the page and preserves their existing broad soft glow, including behind the thighs. Both figures remain unframed. The site background stays dark.
+- Stage size is 1260×1320. Unscaled source placements are Dheeb (-180,-110) and Sakhr (240,-110). CSS and WebGL share exactly these proportions; only empty source margins extend outside the stage. Both heads, hands and bare feet remain visible.
+- The old pair files remain available for history but are no longer referenced by either homepage.
 
-BACKGROUND: truly transparent alpha everywhere outside the two figures and their fine ink contours, including between limbs and between bodies; no green chroma, no white rectangle, no backdrop, no floor, no drop shadow, no glow.
+## Image generation
 
-COMPOSITION: square canvas, both figures from head to toes, occupy about 92% of canvas height and 84% of canvas width, with modest empty alpha margins and gap, separate non-touching silhouettes. No text, labels, logos, glasses, props, decorative elements, or additional characters. This is the single finished pair illustration, not a website screenshot, not a pose sheet.
+Built-in image generation was used for Sakhr; the approved Dheeb image was reused. Input 1: approved Dheeb source (mandatory shared identity, moderately muscular build, fine irregular scribble, darker shorts and soft white-gray glow). Input 2: Ammar's shoulder-stretch attachment (pose only).
+
+Prompt: Match the approved reference's physique, fine black scribble/crosshatching and light interior exactly. Bald adult male, completely featureless face, two white wristbands outlined lightly in ink, dark athletic shorts and bare feet. Right arm extends horizontally across the chest toward viewer-right; bent left arm draws the right upper arm inward, with left fist near the face. Head turns viewer-left. Complete standing staggered legs, both feet visible. Black background with a broad subtle white-gray bloom from above the knees to the head, fading softly to black. No external scribble halo, hair, colors, text, logos or added elements.
 
 ## Motion and fallback
 
-`assets/js/home-hero.js` uses one small WebGL mesh and the already loaded responsive image. It adds no animation framework, video, extra image download or per-frame layout work. Chest expansion and shoulder lift have separate breathing periods; deformation is zero below the hips. Rendering is limited to 30 frames per second and stops outside the viewport, in a hidden tab, or when the page is suspended.
+One WebGL canvas uses two textures already loaded by the responsive image elements. Each figure has an independent breathing period (about 3.7 and 4.3 seconds). Fine mesh deformation raises the upper body slightly and expands the chest gently; it is zero below the hips, so the feet and leg stance stay fixed. The stretch is held.
 
-A keyboard-accessible pause/play control is labeled in the page language. Reduced-motion and data-saving preferences show the static illustration. Missing JavaScript, unsupported WebGL, shader errors and context loss retain or restore the normal image and its localized text alternative.
+Screen composition in the canvas matches the static CSS images. Rendering is capped at 30fps, and stops offscreen, in hidden tabs and during page suspension. No video or animation framework is downloaded.
+
+The pause/play control is keyboard accessible and localized. Reduced-motion and data-saving preferences keep the normal static images. No JavaScript, unsupported WebGL, shader failure, image failure or graphics context loss retain or restore the images and their localized text alternatives. Initialization waits for both figures.
 
 ## Validation
 
-- `npm run build` regenerates both language shells and production assets.
-- `npm run check` checks existing internal links, structured data, performance contracts and accessibility structure.
-- `node scripts/check-hero.js` checks motion lifecycle, reduced motion, data saving, unavailable graphics and context loss.
-- Visual browser verification checks desktop and phone-sized viewports. A phone-sized browser is not a physical-device test.
+- Run `npm run build` and `npm run check`.
+- The existing lifecycle test covers both image readiness, pause/resume, frame cap, viewport/visibility/page suspension, reduced motion, data saving, image failure, graphics failure and both languages.
+- Review desktop, narrow desktop and phone layouts in the browser; confirm both wristband colors, physical order, full hand/feet visibility, no image rectangles, and copy before figures on mobile.

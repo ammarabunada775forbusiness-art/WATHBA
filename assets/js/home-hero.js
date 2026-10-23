@@ -1,19 +1,23 @@
-// A small GPU mesh expands the chest and lifts the shoulders; the legs stay fixed.
-// The normal <img> remains the complete, accessible no-JS/WebGL fallback.
+// Preserve each approved image; a shared GPU mesh adds only local upper-body breathing.
+// CSS and the canvas use the same screen composition to merge the black backgrounds.
 (() => {
   const visual = document.querySelector('.wathba-hero-visual');
   if (!visual) return;
-  const image = visual.querySelector('img');
+  const images = Array.from(visual.querySelectorAll('img'));
   const canvas = visual.querySelector('canvas');
   const toggle = visual.querySelector('button');
-  if (!image || !canvas || !toggle) return;
+  if (images.length !== 2 || !canvas || !toggle) return;
 
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const isArabic = document.documentElement.lang === 'ar';
-  const labels = isArabic
+  const labels = document.documentElement.lang === 'ar'
     ? ['إيقاف حركة التنفّس', 'تشغيل حركة التنفّس']
     : ['Pause breathing animation', 'Play breathing animation'];
-  let gl, program, texture, timeLocation, count;
+  // Original 1024×1536 images, positioned without mirroring or stretching pixels.
+  const figures = [
+    {rect: [-180 / 1260, -110 / 1320, 1024 / 1260, 1536 / 1320], rate: 1.68, phase: 0},
+    {rect: [240 / 1260, -110 / 1320, 1024 / 1260, 1536 / 1320], rate: 1.46, phase: 1.1}
+  ];
+  let gl, program, count, locations;
   let frame = 0, elapsed = 0, previousTime = null, previousPaint = -Infinity;
   let inView = !('IntersectionObserver' in window), paused = false, failed = false;
   let pageActive = true;
@@ -44,6 +48,11 @@
     return shader;
   }
 
+  function upload(index) {
+    gl.bindTexture(gl.TEXTURE_2D, figures[index].texture);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, images[index]);
+  }
+
   function initialize() {
     try {
       gl = canvas.getContext('webgl', {
@@ -55,17 +64,17 @@
         attribute vec2 a_position;
         varying vec2 v_uv;
         uniform float u_time;
+        uniform vec4 u_rect;
+        uniform vec2 u_breath;
         void main() {
           vec2 p = a_position;
-          bool left = p.x < 0.5;
-          float center = left ? 0.30 : 0.71;
-          float phase = left ? 1.68 * u_time : 1.46 * u_time + 1.1;
-          float breath = 0.5 - 0.5 * cos(phase);
-          float upper = 1.0 - smoothstep(0.29, 0.61, p.y);
-          float chest = exp(-pow((p.y - 0.28) / 0.14, 2.0));
-          p.y -= 0.0055 * upper * breath;
-          p.x += (p.x - center) * 0.016 * chest * upper * breath;
-          gl_Position = vec4(p.x * 2.0 - 1.0, 1.0 - p.y * 2.0, 0.0, 1.0);
+          float breath = 0.5 - 0.5 * cos(u_breath.x * u_time + u_breath.y);
+          float upper = 1.0 - smoothstep(0.28, 0.49, p.y);
+          float chest = exp(-pow((p.y - 0.28) / 0.13, 2.0));
+          p.y -= 0.0035 * upper * breath;
+          p.x += (p.x - 0.50) * 0.012 * chest * upper * breath;
+          vec2 stage = u_rect.xy + p * u_rect.zw;
+          gl_Position = vec4(stage.x * 2.0 - 1.0, 1.0 - stage.y * 2.0, 0.0, 1.0);
           v_uv = a_position;
         }
       `);
@@ -83,9 +92,7 @@
       gl.deleteShader(fragment);
       if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return false;
       gl.useProgram(program);
-
-      const vertices = [];
-      const columns = 32, rows = 40;
+      const vertices = [], columns = 32, rows = 48;
       for (let row = 0; row < rows; row++) {
         for (let column = 0; column < columns; column++) {
           const x = column / columns, y = row / rows;
@@ -99,40 +106,46 @@
       const position = gl.getAttribLocation(program, 'a_position');
       gl.enableVertexAttribArray(position);
       gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
-      timeLocation = gl.getUniformLocation(program, 'u_time');
-      texture = gl.createTexture();
-      gl.bindTexture(gl.TEXTURE_2D, texture);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-      gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
-      upload();
+      locations = Object.fromEntries(['time', 'rect', 'breath'].map(name => [name, gl.getUniformLocation(program, 'u_' + name)]));
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_COLOR);
+      images.forEach((_, index) => {
+        figures[index].texture = gl.createTexture();
+        gl.bindTexture(gl.TEXTURE_2D, figures[index].texture);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        upload(index);
+      });
       return true;
     } catch (_) {
       return false;
     }
   }
 
-  function upload() {
-    gl.bindTexture(gl.TEXTURE_2D, texture);
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
-  }
-
   function draw() {
-    gl.clearColor(0, 0, 0, 0);
+    if (!gl || failed) return;
+    gl.clearColor(0, 0, 0, 1);
     gl.clear(gl.COLOR_BUFFER_BIT);
-    gl.uniform1f(timeLocation, elapsed);
-    gl.drawArrays(gl.TRIANGLES, 0, count);
+    gl.uniform1f(locations.time, elapsed);
+    figures.forEach(figure => {
+      gl.bindTexture(gl.TEXTURE_2D, figure.texture);
+      gl.uniform4fv(locations.rect, figure.rect);
+      gl.uniform2f(locations.breath, figure.rate, figure.phase);
+      gl.drawArrays(gl.TRIANGLES, 0, count);
+    });
   }
 
   function resize() {
     if (!gl || failed) return;
     const scale = Math.min(devicePixelRatio || 1, 1.75);
-    const width = Math.max(1, Math.min(1254, Math.round(visual.clientWidth * scale)));
-    if (canvas.width !== width || canvas.height !== width) {
-      canvas.width = canvas.height = width;
-      gl.viewport(0, 0, width, width);
+    const width = Math.max(1, Math.min(1260, Math.round(visual.clientWidth * scale)));
+    const height = Math.round(width * 1320 / 1260);
+    if (canvas.width !== width || canvas.height !== height) {
+      canvas.width = width;
+      canvas.height = height;
+      gl.viewport(0, 0, width, height);
     }
     draw();
   }
@@ -149,7 +162,7 @@
 
   function update() {
     stop();
-    if (failed || !image.complete || !image.naturalWidth) return;
+    if (failed || images.some(image => !image.complete || !image.naturalWidth)) return;
     if (reducedMotion.matches || navigator.connection?.saveData) {
       visual.classList.remove('is-ready');
       visual.dataset.heroMotion = 'static';
@@ -168,13 +181,15 @@
   }
 
   toggle.addEventListener('click', () => { paused = !paused; update(); });
-  image.addEventListener('load', () => {
-    if (gl && !failed) {
-      try { upload(); } catch (_) { return fallback(); }
-    }
-    update();
+  images.forEach((image, index) => {
+    image.addEventListener('load', () => {
+      if (gl && !failed) {
+        try { upload(index); } catch (_) { return fallback(); }
+      }
+      update();
+    });
+    image.addEventListener('error', fallback);
   });
-  image.addEventListener('error', fallback);
   canvas.addEventListener('webglcontextlost', event => { event.preventDefault(); fallback(); });
   reducedMotion.addEventListener('change', update);
   document.addEventListener('visibilitychange', update);

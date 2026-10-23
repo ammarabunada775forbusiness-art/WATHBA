@@ -1,4 +1,4 @@
-/* The figures share the page surface; their image contains genuine alpha. */
+/* Screen blending preserves the approved artwork and its soft glow on the page. */
 body:has(#home) #home.wathba-home-hero {
   min-height: calc(100svh - var(--wathba-nav-height));
   padding-block: 30px 48px;
@@ -23,10 +23,10 @@ body:has(#home) #home.wathba-home-hero {
   position: relative;
   width: 100%;
   max-width: 760px;
-  aspect-ratio: 1;
+  aspect-ratio: 1260 / 1320;
   margin: 0 auto;
-  isolation: isolate;
   direction: ltr;
+  overflow: hidden;
 }
 
 .wathba-hero-image,
@@ -34,14 +34,26 @@ body:has(#home) #home.wathba-home-hero {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
 }
+
+.wathba-hero-image {
+  position: absolute;
+  top: -8.333333%;
+  width: 81.269841%;
+  height: 116.363636%;
+  max-width: none;
+  mix-blend-mode: screen;
+}
+
+.wathba-hero-dheeb { left: -14.285714%; }
+.wathba-hero-sakhr { left: 19.047619%; }
 
 .wathba-hero-canvas {
   position: absolute;
   inset: 0;
   visibility: hidden;
   pointer-events: none;
+  mix-blend-mode: screen;
 }
 
 .wathba-hero-visual.is-ready .wathba-hero-canvas {
@@ -114,7 +126,7 @@ body:has(#home) #home .wathba-hero-motion {
   }
 
   .wathba-hero-visual {
-    max-width: min(760px, calc(100svh - var(--wathba-nav-height) - 48px));
+    max-width: min(760px, calc((100svh - var(--wathba-nav-height) - 48px) * 0.954545));
   }
 }
 

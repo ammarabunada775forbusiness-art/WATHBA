@@ -12,13 +12,15 @@ function harness({reduced = false, graphics = true, saveData = false, loaded = t
   const gl = new Proxy({
     drawArrays() { draws++; }, getShaderParameter() { return true; }, getProgramParameter() { return true; }
   }, {get(object, key) { return key in object ? object[key] : (/^[A-Z_]+$/.test(key) ? 1 : () => ({})); }});
-  const image = eventTarget({complete: loaded, naturalWidth: loaded ? 1254 : 0});
+  const image = eventTarget({complete: loaded, naturalWidth: loaded ? 1024 : 0});
+  const second = eventTarget({complete: loaded, naturalWidth: loaded ? 1024 : 0});
   const canvas = eventTarget({width: 1254, height: 1254, getContext() { contexts++; return graphics ? gl : null; }});
   const toggle = eventTarget({hidden: true, attributes: {}, setAttribute(name, value) { this.attributes[name] = value; }});
   const visual = {
     dataset: {heroMotion: 'static'}, clientWidth: 390,
     classList: {add: value => classes.add(value), remove: value => classes.delete(value)},
-    querySelector: selector => ({img: image, canvas, button: toggle})[selector]
+    querySelectorAll: selector => selector === 'img' ? [image, second] : [],
+    querySelector: selector => ({canvas, button: toggle})[selector]
   };
   const media = eventTarget({matches: reduced});
   const document = eventTarget({hidden: false, documentElement: {lang}, querySelector: () => visual});
@@ -33,7 +35,7 @@ function harness({reduced = false, graphics = true, saveData = false, loaded = t
   });
   vm.runInContext(source, context);
   return {
-    visual, image, canvas, toggle, media, document, window, frames, classes,
+    visual, image, second, canvas, toggle, media, document, window, frames, classes,
     get draws() { return draws; }, get contexts() { return contexts; },
     visible(value) { observers[0]([{isIntersecting: value}]); },
     tick(timestamp) { const [id, callback] = frames.entries().next().value; frames.delete(id); callback(timestamp); },
@@ -50,7 +52,7 @@ assert.equal(active.toggle.hidden, false);
 assert.equal(active.toggle.attributes['aria-label'], 'إيقاف حركة التنفّس');
 const before = active.draws;
 active.tick(0); active.tick(16); active.tick(34);
-assert.equal(active.draws - before, 2, 'limit rendering to 30fps');
+assert.equal(active.draws - before, 4, 'limit rendering to 30fps, with two figures per frame');
 active.toggle.events.click();
 assert.equal(active.frames.size, 0);
 assert.equal(active.visual.dataset.heroMotion, 'paused');
@@ -86,6 +88,14 @@ for (const options of [{reduced: true}, {saveData: true}, {graphics: false}, {lo
   assert.equal(fallback.frames.size, 0);
   assert.equal(fallback.toggle.hidden, true);
 }
+const delayed = harness({loaded: false}); delayed.visible(true);
+delayed.image.complete = true; delayed.image.naturalWidth = 1024; delayed.image.events.load();
+assert.equal(delayed.contexts, 0, 'wait for both figures before GPU initialization');
+delayed.second.complete = true; delayed.second.naturalWidth = 1024; delayed.second.events.load();
+assert(delayed.classes.has('is-ready'));
+assert.equal(delayed.frames.size, 1);
+delayed.second.events.error();
+assert.equal(delayed.frames.size, 0, 'a failed second image returns to the static fallback');
 const english = harness({lang: 'en'}); english.visible(true);
 assert.equal(english.toggle.attributes['aria-label'], 'Pause breathing animation');
 english.toggle.events.click();
