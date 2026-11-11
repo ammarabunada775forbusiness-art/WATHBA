@@ -94,6 +94,13 @@ body:has(#home) #home .wathba-hero-motion {
   display: none !important;
 }
 
+/* The pause control stays out of sight: it appears only when reached with the keyboard, so
+   keyboard and screen-reader users can still stop the animation. */
+body:has(#home) #home .wathba-hero-motion:not(:focus-visible) {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .wathba-hero-motion:hover {
   border-color: #ffffff90;
 }

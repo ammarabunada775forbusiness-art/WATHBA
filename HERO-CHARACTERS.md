@@ -33,15 +33,17 @@ Prompt: Match the approved reference's physique, fine black scribble/crosshatchi
 
 Each character is skinned to a small 2D skeleton (feet, pelvis, chest, head, upper and lower arms) on its own WebGL canvas. The approved pixels are never redrawn; a 32×48 mesh moves them with joint weights measured on the 1024×1536 originals.
 
-Both characters look as if they have just finished training:
+Both characters look as if they have just finished training. A light breathing heave (about 1.7 seconds per breath for Dheeb, 1.55 for Sakhr) lifts the shoulders a few pixels; the body itself barely changes size. On top of it, each character cycles through moves in a shuffled order with short rests in between, so the motion keeps changing:
 
-- Dheeb: fast panting (one breath about every 1.25 seconds, with a quick inhale and a longer exhale), a slow weight shift, arms that swing out a little with each breath, a deep recovery breath every 8.3 seconds where his shoulders and head drop on the exhale, and a short shake-out of both arms every 10.9 seconds. A tap makes him take a recovery breath and then shake out his arms.
-- Sakhr: fast panting (about every 1.1 seconds) while he keeps the shoulder stretch. Every 5.2 seconds he pulls the straight arm in with effort, trembles slightly while holding it, then lets go with a tired slump; he also takes a deep recovery breath every 11.3 seconds. A tap starts a deeper pull. At rest his head stays turned toward Dheeb.
-- With a mouse, both heads glance toward the pointer. Heads and arms ride rigidly on the breathing chest, so they never stretch. The feet are bound to a fixed bone, so the stance never moves.
+- Dheeb: looks at Sakhr, shrugs, shakes out his arms, rolls his shoulders, shifts his weight, takes a deep sigh with a head drop, and nods.
+- Sakhr: pulls the shoulder stretch with a fatigue tremor and lets go, looks at Dheeb, drops his head, shrugs, shifts his weight, re-grips the stretch, and sighs.
+- When one looks at the other while the other is resting, the other looks back.
+- A tap or click starts a move (Dheeb: shake out, then nod; Sakhr: stretch, then re-grip). With a mouse, both heads glance toward the pointer.
+- Heads and arms ride rigidly on the chest, so they never stretch. The feet are bound to a fixed bone, so the stance never moves.
 
 Rendering is capped at 30fps and stops offscreen, in hidden tabs and during page suspension. No video or animation framework is downloaded.
 
-The pause/play control is keyboard accessible and localized; it sits at the lower left of the figures, clear of the WhatsApp button in both languages. Reduced-motion and data-saving preferences keep the normal static images in the same separated layout. No JavaScript, unsupported WebGL, shader failure, image failure or graphics context loss retain or restore the images and their localized text alternatives. Initialization waits for both figures.
+The pause/play control is localized and stays invisible unless it is reached with the keyboard (it then appears at the lower left of the figures), so the hero shows no button while keyboard and screen-reader users can still stop the motion. Reduced-motion and data-saving preferences keep the normal static images in the same separated layout. No JavaScript, unsupported WebGL, shader failure, image failure or graphics context loss retain or restore the images and their localized text alternatives. Initialization waits for both figures.
 
 ## Validation
 

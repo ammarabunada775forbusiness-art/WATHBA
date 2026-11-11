@@ -1,8 +1,9 @@
-// Dheeb and Sakhr are two separate animated characters, just finished training. Each approved
-// drawing stays pixel-identical and is skinned to a small 2D skeleton on its own WebGL canvas:
-// fast panting, deep recovery breaths, weight shift, Dheeb shaking out his arms, Sakhr's tired
-// shoulder stretch with a fatigue tremor, glances toward the pointer and a reaction on tap.
-// The feet never move.
+// Dheeb and Sakhr are two separate animated characters who have just finished training. Each
+// approved drawing stays pixel-identical and is skinned to a small 2D skeleton on its own WebGL
+// canvas. Under a light breathing heave, each one cycles through moves in a shuffled order:
+// looking at each other, shrugging, rolling shoulders, shifting weight, deep sighs, Dheeb shaking
+// out his arms and nodding, Sakhr pulling his stretch, dropping his head and re-gripping.
+// Heads glance toward the pointer, and a tap starts a move. The feet never move.
 (() => {
   const visual = document.querySelector('.wathba-hero-visual');
   if (!visual) return;
@@ -18,21 +19,21 @@
     : ['Pause character animation', 'Play character animation'];
   const TAU = Math.PI * 2, WIDTH = 1024, HEIGHT = 1536;
   // Joints measured on the approved 1024×1536 originals; L and R are the viewer's left and right.
-  // Times are in seconds: pant = one breath, sway = weight shift, sigh = deep recovery breath.
+  // breath = seconds per breath; tap = moves a tap or click starts, in turn.
   const rigs = [
     {
       ground: [470, 1330], waist: [520, 565], neck: [540, 335], top: [550, 150],
       shoulderL: [375, 380], elbowL: [330, 590], handL: [372, 805],
       shoulderR: [605, 385], elbowR: [642, 572], handR: [676, 825],
       hipL: [455, 650], hipR: [598, 650], ankleL: [362, 1290], ankleR: [565, 1225],
-      pant: 1.25, sway: 6.5, sigh: 8.3, sighOffset: 2, shake: 10.9, shakeOffset: 5, phase: 0, rest: 0, cooldown: 3.5
+      breath: 1.7, phase: 0, rest: 0, cooldown: 2.5, tap: ['shake', 'nod']
     },
     {
       ground: [450, 1320], waist: [510, 575], neck: [495, 345], top: [450, 155],
       shoulderL: [372, 372], elbowL: [590, 390], handL: [945, 372],
       shoulderR: [640, 425], elbowR: [618, 522], handR: [588, 298],
       hipL: [405, 650], hipR: [615, 650], ankleL: [325, 1275], ankleR: [563, 1230],
-      pant: 1.1, sway: 7.4, sigh: 11.3, sighOffset: 7, stretch: 5.2, stretchOffset: 0.6, phase: 1.1, rest: -0.35, cooldown: 3.6
+      breath: 1.55, phase: 1.1, rest: -0.35, cooldown: 2.5, tap: ['stretch', 'regrip']
     }
   ];
   // The stage gap between the two bodies, used to decide which character a tap belongs to.
@@ -42,7 +43,7 @@
   let pageActive = true, pointer = null;
 
   characters.forEach((character, index) => Object.assign(character, {
-    rig: rigs[index], look: rigs[index].rest, tapAt: -Infinity
+    index, rig: rigs[index], look: rigs[index].rest, bag: [], move: null, nextAt: 0.6 + index * 0.9, taps: 0, tapAt: -Infinity
   }));
 
   function stop() {
@@ -128,73 +129,110 @@
   }
 
   const ease = x => x < 0.5 ? 2 * x * x : 1 - 2 * (1 - x) * (1 - x);
+  // 0 → 1 → 0 over an action: ease in for `rise` of the time, hold, ease out over `fall`.
+  const hold = (p, rise = 0.25, fall = 0.3) => p < rise ? ease(p / rise) : p > 1 - fall ? ease((1 - p) / fall) : 1;
+  const bump = p => Math.sin(Math.PI * Math.max(0, Math.min(1, p)));
 
-  // One panting breath: a quick inhale, then a slightly longer exhale (0 → 1 → 0).
-  function pant(time, period) {
+  // Heavy breathing after training: a quick inhale and a longer exhale (0 → 1 → 0). It lifts the
+  // shoulders a few pixels; the body itself barely changes size.
+  function breath(time, period) {
     const phase = (time / period) % 1;
-    return phase < 0.38 ? 1 - (1 - phase / 0.38) ** 2 : 1 - ease((phase - 0.38) / 0.62);
+    return phase < 0.4 ? 1 - (1 - phase / 0.4) ** 2 : 1 - ease((phase - 0.4) / 0.6);
   }
 
-  // A deep recovery breath: [inhale 0–1, slump 0–1] where the slump drops shoulders and head.
-  function sigh(since) {
-    if (since < 0 || since > 2.8) return [0, 0];
-    if (since < 0.9) return [ease(since / 0.9), 0];
-    const out = (since - 0.9) / 1.9;
-    return [1 - ease(out), Math.sin(Math.PI * out)];
+  // Moves each character cycles through in a shuffled order. Every move returns offsets for the
+  // skeleton: angles in radians, moves in source pixels.
+  const shared = {
+    shrug: {duration: 1.5, move: p => { const e = bump(p); return {chestY: -5 * e, armY: -12 * e, headY: 3 * e}; }},
+    shift: {duration: 3.2, move: (p, t, side) => { const e = hold(p, 0.3, 0.3); return {pelvisA: 0.018 * side * e, headA: -0.014 * side * e, upLA: 0.012 * side * e, upRA: 0.012 * side * e}; }},
+    sigh: {duration: 2.8, calm: true, move: p => {
+      const inhale = p < 0.35 ? ease(p / 0.35) : 1 - ease((p - 0.35) / 0.65);
+      const slump = p < 0.35 ? 0 : bump((p - 0.35) / 0.65);
+      return {chestY: -9 * inhale + 4 * slump, chestSY: 0.008 * inhale, armY: -3 * inhale + 3 * slump, headY: -4 * inhale + 12 * slump, headSY: -0.04 * slump, headA: 0.025 * slump};
+    }}
+  };
+  const moves = [
+    {
+      // Dheeb: relaxed after training, arms hanging.
+      lookAtPartner: {duration: 2.6, partner: true, move: p => { const e = hold(p, 0.2, 0.3); return {headX: 12 * e, headA: 0.08 * e}; }},
+      shrug: shared.shrug,
+      shake: {duration: 1.3, move: (p, t) => { const s = bump(p) * Math.sin(Math.PI * 2 * t * 9); return {foLA: 0.055 * s, foRA: 0.055 * s, upLA: 0.018 * s, upRA: 0.018 * s}; }},
+      roll: {duration: 2.2, move: p => { const e = bump(p), a = Math.PI * 2 * p; return {armY: -9 * (1 - Math.cos(a)) / 2 * e, armSpread: 5 * Math.sin(a) * e, chestSY: 0.004 * e}; }},
+      shift: {...shared.shift, side: 1},
+      sigh: shared.sigh,
+      nod: {duration: 1.6, move: p => { const n = Math.max(0, Math.sin(Math.PI * 4 * p)) * bump(p); return {headY: 10 * n, headSY: -0.04 * n}; }}
+    },
+    {
+      // Sakhr: keeps the shoulder stretch, tired.
+      stretch: {duration: 3.6, move: (p, t) => {
+        const pull = p < 0.35 ? ease(p / 0.35) : p < 0.65 ? 1 : p < 0.85 ? 1 - ease((p - 0.65) / 0.2) : 0;
+        const release = p > 0.65 && p < 0.95 ? bump((p - 0.65) / 0.3) : 0;
+        const tremor = p > 0.33 && p < 0.67 ? 0.006 * bump((p - 0.33) / 0.34) * Math.sin(Math.PI * 2 * t * 8.5) : 0;
+        return {chestA: -0.01 * pull, headA: -0.02 * pull, headY: 9 * release, chestY: 3 * release,
+          upLA: -0.04 * pull + tremor + 0.03 * release, foLA: -0.015 * pull + 0.7 * tremor,
+          upRA: 0.025 * pull - 0.6 * tremor, foRA: -0.045 * pull + tremor};
+      }},
+      lookAtPartner: {duration: 2.4, partner: true, move: p => { const e = hold(p, 0.2, 0.3); return {headX: -10 * e, headA: -0.07 * e}; }},
+      drop: {duration: 2.6, move: p => { const e = hold(p, 0.3, 0.35); return {headY: 14 * e, headSY: -0.05 * e, headA: 0.02 * e, chestY: 4 * e, armY: 3 * e}; }},
+      shrug: shared.shrug,
+      shift: {...shared.shift, side: -1},
+      regrip: {duration: 1.4, move: p => { const e = bump(p); return {foRA: 0.09 * e, upRA: 0.025 * e, upLA: 0.02 * e}; }},
+      sigh: shared.sigh
+    }
+  ];
+
+  function shuffle(list) {
+    for (let i = list.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [list[i], list[j]] = [list[j], list[i]];
+    }
+    return list;
   }
 
-  // Seconds since the latest periodic event or tap, whichever is more recent.
-  function since(time, every, offset, tapAt, tapDelay = 0) {
-    const periodic = (time + offset) % every;
-    const tapped = time - tapAt - tapDelay;
-    return tapped >= 0 && tapped < periodic ? tapped : periodic;
+  function start(character, name, time) {
+    const move = moves[character.index][name];
+    character.move = {name, move, at: time};
+    character.nextAt = time + move.duration + 0.4 + Math.random() * 0.8;
   }
 
-  function pose(character, index) {
+  // Pick the next move when the current one (plus a short rest) is over. Looking at the partner
+  // makes the partner look back if it is resting at that moment.
+  function schedule(character, time) {
+    if (time < character.nextAt) return;
+    if (!character.bag.length) character.bag = shuffle(Object.keys(moves[character.index]));
+    const name = character.bag.pop();
+    start(character, name, time);
+    const partner = characters[1 - character.index];
+    if (moves[character.index][name].partner && (!partner.move || time - partner.move.at > partner.move.move.duration)) {
+      start(partner, 'lookAtPartner', time + 0.3);
+    }
+  }
+
+  function pose(character) {
     const rig = character.rig, time = elapsed;
-    const sway = Math.sin(TAU * time / rig.sway + rig.phase);
-    const intensity = 0.8 + 0.2 * Math.sin(TAU * time / 9.5 + rig.phase);
-    const [deep, recover] = sigh(since(time, rig.sigh, rig.sighOffset, index === 0 ? character.tapAt : -Infinity));
-    const look = character.look * (1 - 0.6 * recover);
-    let pull = 0, release = 0, tremor = 0, shake = 0;
-    if (index === 0) {
-      const shaking = since(time, rig.shake, rig.shakeOffset, character.tapAt, 2.4);
-      if (shaking < 0.9) shake = Math.sin(Math.PI * shaking / 0.9) * Math.sin(TAU * shaking * 9);
-    } else {
-      const tapped = time - character.tapAt;
-      const stretching = since(time, rig.stretch, rig.stretchOffset, character.tapAt);
-      const boost = tapped >= 0 && tapped < 3.3 ? 1.5 : 1;
-      if (stretching < 1.4) pull = ease(stretching / 1.4);
-      else if (stretching < 2.4) pull = 1;
-      else if (stretching < 3.3) {
-        const letGo = (stretching - 2.4) / 0.9;
-        pull = 1 - ease(letGo);
-        release = Math.sin(Math.PI * letGo);
+    schedule(character, time);
+    const o = {pelvisA: 0, chestA: 0, chestY: 0, chestSY: 0, headA: 0, headX: 0, headY: 0, headSY: 0,
+      upLA: 0, foLA: 0, upRA: 0, foRA: 0, armY: 0, armSpread: 0};
+    let calm = 0;
+    const current = character.move;
+    if (current && time >= current.at) {
+      const p = (time - current.at) / current.move.duration;
+      if (p < 1) {
+        const offsets = current.move.move(p, time - current.at, current.move.side || 1);
+        for (const key in offsets) o[key] += offsets[key];
+        if (current.move.calm) calm = bump(p);
       }
-      pull *= boost;
-      if (stretching > 1.2 && stretching < 2.5) tremor = 0.006 * Math.sin(Math.PI * (stretching - 1.2) / 1.3) * Math.sin(TAU * time * 8.5);
     }
-    const slump = Math.max(recover, 0.7 * release);
-    const breath = pant(time, rig.pant) * intensity * (1 - Math.max(deep, recover)) + 1.3 * deep;
-    const pelvis = local(rig.ground, 0.006 * sway);
-    const chest = multiply(pelvis, local(rig.waist, -0.003 * sway - 0.008 * pull,
-      1 + 0.013 * breath, 1 + 0.022 * breath - 0.014 * slump));
-    const head = attach(chest, rig.neck, 0.05 * look + 0.02 * slump - 0.015 * pull, 1, 1 - 0.035 * slump,
-      4 * look, -2.5 * breath + 9 * slump);
-    let upperL, upperR, foreL, foreR;
-    if (index === 0) {
-      // Dheeb: arms hang and swing out a little with each breath; every so often he shakes them out.
-      upperL = attach(chest, rig.shoulderL, 0.016 * breath + 0.012 * shake - 0.01 * slump);
-      foreL = multiply(upperL, local(rig.elbowL, 0.012 * breath + 0.04 * shake));
-      upperR = attach(chest, rig.shoulderR, -0.016 * breath + 0.012 * shake + 0.01 * slump);
-      foreR = multiply(upperR, local(rig.elbowR, -0.012 * breath + 0.04 * shake));
-    } else {
-      // Sakhr: pulls the straight arm in with effort, trembles while holding, then lets it drop.
-      upperL = attach(chest, rig.shoulderL, -0.03 * pull + tremor + 0.025 * release);
-      foreL = multiply(upperL, local(rig.elbowL, -0.012 * pull + 0.7 * tremor));
-      upperR = attach(chest, rig.shoulderR, 0.02 * pull - 0.6 * tremor);
-      foreR = multiply(upperR, local(rig.elbowR, -0.035 * pull + tremor));
-    }
+    const intensity = 0.85 + 0.15 * Math.sin(Math.PI * 2 * time / 9.5 + rig.phase);
+    const b = breath(time, rig.breath) * intensity * (1 - calm);
+    const look = character.look;
+    const pelvis = local(rig.ground, o.pelvisA + 0.002 * Math.sin(Math.PI * 2 * time / 7 + rig.phase));
+    const chest = multiply(pelvis, local(rig.waist, o.chestA, 1 + 0.004 * b, 1 + 0.005 * b + o.chestSY, 0, -4 * b + o.chestY));
+    const head = attach(chest, rig.neck, 0.03 * look + o.headA, 1, 1 + o.headSY, 3 * look + o.headX, -1 * b + o.headY);
+    const upperL = attach(chest, rig.shoulderL, o.upLA, 1, 1, -o.armSpread, o.armY);
+    const foreL = multiply(upperL, local(rig.elbowL, o.foLA));
+    const upperR = attach(chest, rig.shoulderR, o.upRA, 1, 1, o.armSpread, o.armY);
+    const foreR = multiply(upperR, local(rig.elbowR, o.foRA));
     const world = [[1, 0, 0, 0, 1, 0], pelvis, chest, head, upperL, foreL, upperR, foreR];
     const rows = new Float32Array(48);
     world.forEach((m, i) => {
@@ -305,8 +343,8 @@
 
   function draw() {
     if (!ready || failed) return;
-    characters.forEach((character, index) => {
-      const gl = character.gl, rows = pose(character, index);
+    characters.forEach(character => {
+      const gl = character.gl, rows = pose(character);
       gl.clearColor(0, 0, 0, 1);
       gl.clear(gl.COLOR_BUFFER_BIT);
       gl.uniform3fv(character.rows[0], rows.subarray(0, 24));
@@ -370,7 +408,9 @@
     if (!frame || event.target.closest?.('button') || !visual.getBoundingClientRect) return;
     const box = visual.getBoundingClientRect();
     const character = characters[(event.clientX - box.left) / box.width < split ? 0 : 1];
-    if (elapsed - character.tapAt > character.rig.cooldown) character.tapAt = elapsed;
+    if (elapsed - character.tapAt < character.rig.cooldown) return;
+    character.tapAt = elapsed;
+    start(character, character.rig.tap[character.taps++ % character.rig.tap.length], elapsed);
   });
   window.addEventListener('pointermove', event => {
     pointer = event.pointerType === 'mouse' ? {x: event.clientX} : null;
