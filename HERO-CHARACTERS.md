@@ -1,6 +1,6 @@
 # WATHBA homepage characters
 
-Updated 2026-10-23 after Ammar explicitly approved the rebuilt shared character style and requested the matching UI.
+Updated 2026-10-23 after Ammar explicitly approved the rebuilt shared character style and requested the matching UI. Updated 2026-11-11 after Ammar asked for Dheeb and Sakhr to be separated and animated as characters rather than shown as one picture or video.
 
 ## Artwork and identity
 
@@ -18,7 +18,8 @@ The authoritative style reference is version 2.0 of [مرجع ثبات شخصي�
 - `dheeb-standing-1024.webp` and `sakhr-stretch-1024.webp` are lossless encodings of the original 1024×1536 PNGs. Their decoded pixels were compared byte-for-byte with the source. No regeneration, mirroring, retouching, background removal, new glow or color adjustment is applied to Dheeb.
 - Responsive 512px and 768px WebPs are resized delivery copies at quality 93. The full-size originals remain available.
 - Screen blending merges the original black backgrounds with the page and preserves their existing broad soft glow, including behind the thighs. Both figures remain unframed. The site background stays dark.
-- Stage size is 1260×1320. Unscaled source placements are Dheeb (-180,-110) and Sakhr (240,-110). CSS and WebGL share exactly these proportions; only empty source margins extend outside the stage. Both heads, hands and bare feet remain visible.
+- Dheeb and Sakhr are two separate elements, each with its own canvas, fallback image and glow. Stage size is 1502×1450 source pixels: Dheeb's full 1024×1536 image sits at (-150,-30) and Sakhr's at (478,-30), leaving a clear gap of about 160 source pixels between the bodies. Only black margins and the outer glow overlap; both screen-blend, so no image rectangle appears.
+- The stage has the page color (#131313) and a soft edge mask, so any remaining glow fades out instead of ending at a hard edge. Both heads, hands and bare feet remain visible.
 - The old pair files remain available for history but are no longer referenced by either homepage.
 
 ## Image generation
@@ -29,14 +30,18 @@ Prompt: Match the approved reference's physique, fine black scribble/crosshatchi
 
 ## Motion and fallback
 
-One WebGL canvas uses two textures already loaded by the responsive image elements. Each figure has an independent breathing period (about 3.7 and 4.3 seconds). Fine mesh deformation raises the upper body slightly and expands the chest gently; it is zero below the hips, so the feet and leg stance stay fixed. The stretch is held.
+Each character is skinned to a small 2D skeleton (feet, pelvis, chest, head, upper and lower arms) on its own WebGL canvas. The approved pixels are never redrawn; a 32×48 mesh moves them with joint weights measured on the 1024×1536 originals.
 
-Screen composition in the canvas matches the static CSS images. Rendering is capped at 30fps, and stops offscreen, in hidden tabs and during page suspension. No video or animation framework is downloaded.
+- Dheeb: breathing (about 3.7 seconds), slow weight shift, relaxed arm sway and a small head movement. A tap makes him roll his shoulders and nod.
+- Sakhr: breathing (about 4.3 seconds), weight shift, and the held shoulder stretch pulling in and releasing every 5.6 seconds. A tap deepens the pull. At rest his head stays turned toward Dheeb.
+- With a mouse, both heads glance toward the pointer. The feet are bound to a fixed bone, so the stance never moves.
 
-The pause/play control is keyboard accessible and localized. Reduced-motion and data-saving preferences keep the normal static images. No JavaScript, unsupported WebGL, shader failure, image failure or graphics context loss retain or restore the images and their localized text alternatives. Initialization waits for both figures.
+Rendering is capped at 30fps and stops offscreen, in hidden tabs and during page suspension. No video or animation framework is downloaded.
+
+The pause/play control is keyboard accessible and localized; on phones and tablets it sits at the lower left, clear of the WhatsApp button. Reduced-motion and data-saving preferences keep the normal static images in the same separated layout. No JavaScript, unsupported WebGL, shader failure, image failure or graphics context loss retain or restore the images and their localized text alternatives. Initialization waits for both figures.
 
 ## Validation
 
 - Run `npm run build` and `npm run check`.
-- The existing lifecycle test covers both image readiness, pause/resume, frame cap, viewport/visibility/page suspension, reduced motion, data saving, image failure, graphics failure and both languages.
-- Review desktop, narrow desktop and phone layouts in the browser; confirm both wristband colors, physical order, full hand/feet visibility, no image rectangles, and copy before figures on mobile.
+- The lifecycle test covers two separate character canvases, both image readiness, pause/resume, frame cap, viewport/visibility/page suspension, reduced motion, data saving, image failure, graphics failure and both languages.
+- Review desktop, narrow desktop and phone layouts in the browser; confirm both wristband colors, physical order, the gap between the figures, full hand/feet visibility, no image rectangles, feet that never move, and copy before figures on mobile.

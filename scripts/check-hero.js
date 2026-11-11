@@ -12,16 +12,19 @@ function harness({reduced = false, graphics = true, saveData = false, loaded = t
   const gl = new Proxy({
     drawArrays() { draws++; }, getShaderParameter() { return true; }, getProgramParameter() { return true; }
   }, {get(object, key) { return key in object ? object[key] : (/^[A-Z_]+$/.test(key) ? 1 : () => ({})); }});
-  const image = eventTarget({complete: loaded, naturalWidth: loaded ? 1024 : 0});
-  const second = eventTarget({complete: loaded, naturalWidth: loaded ? 1024 : 0});
-  const canvas = eventTarget({width: 1254, height: 1254, getContext() { contexts++; return graphics ? gl : null; }});
+  const figure = () => {
+    const image = eventTarget({complete: loaded, naturalWidth: loaded ? 1024 : 0});
+    const canvas = eventTarget({width: 1024, height: 1536, getContext() { contexts++; return graphics ? gl : null; }});
+    return {image, canvas, node: eventTarget({clientWidth: 260, querySelector: selector => ({img: image, canvas})[selector]})};
+  };
+  const dheeb = figure(), sakhr = figure();
   const toggle = eventTarget({hidden: true, attributes: {}, setAttribute(name, value) { this.attributes[name] = value; }});
-  const visual = {
+  const visual = eventTarget({
     dataset: {heroMotion: 'static'}, clientWidth: 390,
     classList: {add: value => classes.add(value), remove: value => classes.delete(value)},
-    querySelectorAll: selector => selector === 'img' ? [image, second] : [],
-    querySelector: selector => ({canvas, button: toggle})[selector]
-  };
+    querySelectorAll: selector => selector === '.wathba-hero-character' ? [dheeb.node, sakhr.node] : [],
+    querySelector: selector => selector === 'button' ? toggle : null
+  });
   const media = eventTarget({matches: reduced});
   const document = eventTarget({hidden: false, documentElement: {lang}, querySelector: () => visual});
   const window = eventTarget({IntersectionObserver: true, ResizeObserver: true});
@@ -35,7 +38,8 @@ function harness({reduced = false, graphics = true, saveData = false, loaded = t
   });
   vm.runInContext(source, context);
   return {
-    visual, image, second, canvas, toggle, media, document, window, frames, classes,
+    visual, image: dheeb.image, second: sakhr.image, canvas: dheeb.canvas, canvases: [dheeb.canvas, sakhr.canvas],
+    toggle, media, document, window, frames, classes,
     get draws() { return draws; }, get contexts() { return contexts; },
     visible(value) { observers[0]([{isIntersecting: value}]); },
     tick(timestamp) { const [id, callback] = frames.entries().next().value; frames.delete(id); callback(timestamp); },
@@ -46,13 +50,14 @@ function harness({reduced = false, graphics = true, saveData = false, loaded = t
 const active = harness();
 assert.equal(active.contexts, 0, 'defer GPU initialization while the figure is outside the viewport');
 active.visible(true);
+assert.equal(active.contexts, 2, 'each character renders on its own canvas');
 assert(active.classes.has('is-ready'));
 assert.equal(active.frames.size, 1);
 assert.equal(active.toggle.hidden, false);
-assert.equal(active.toggle.attributes['aria-label'], 'إيقاف حركة التنفّس');
+assert.equal(active.toggle.attributes['aria-label'], 'إيقاف حركة الشخصيات');
 const before = active.draws;
 active.tick(0); active.tick(16); active.tick(34);
-assert.equal(active.draws - before, 4, 'limit rendering to 30fps, with two figures per frame');
+assert.equal(active.draws - before, 4, 'limit rendering to 30fps, one draw per character');
 active.toggle.events.click();
 assert.equal(active.frames.size, 0);
 assert.equal(active.visual.dataset.heroMotion, 'paused');
@@ -77,7 +82,7 @@ assert.equal(active.toggle.hidden, true);
 active.reduce(false);
 assert(active.classes.has('is-ready'));
 assert.equal(active.frames.size, 1);
-active.canvas.events.webglcontextlost({preventDefault() {}});
+active.canvases[1].events.webglcontextlost({preventDefault() {}});
 assert.equal(active.frames.size, 0);
 assert(!active.classes.has('is-ready'));
 assert.equal(active.toggle.hidden, true);
@@ -97,7 +102,7 @@ assert.equal(delayed.frames.size, 1);
 delayed.second.events.error();
 assert.equal(delayed.frames.size, 0, 'a failed second image returns to the static fallback');
 const english = harness({lang: 'en'}); english.visible(true);
-assert.equal(english.toggle.attributes['aria-label'], 'Pause breathing animation');
+assert.equal(english.toggle.attributes['aria-label'], 'Pause character animation');
 english.toggle.events.click();
-assert.equal(english.toggle.attributes['aria-label'], 'Play breathing animation');
-console.log('Hero lifecycle passed: render limit, pause/resume, viewport, visibility, page suspension, motion preferences, data saving, static fallback, context loss and both languages.');
+assert.equal(english.toggle.attributes['aria-label'], 'Play character animation');
+console.log('Hero lifecycle passed: two separate characters, render limit, pause/resume, viewport, visibility, page suspension, motion preferences, data saving, static fallback, context loss and both languages.');
