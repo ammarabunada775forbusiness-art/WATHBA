@@ -4714,3 +4714,39 @@ html.wathba-overlay-open body {
     letter-spacing: 0 !important;
   }
 }
+
+/* =====================================================
+   SCROLL REVEAL (assets/js/shared-ui.js)
+   Only active when the script adds .wathba-sr-ready, so content is always visible without it.
+===================================================== */
+
+html.wathba-sr-ready .wathba-sr-hide {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+}
+
+html.wathba-sr-ready .wathba-sr-hide.wathba-sr-media {
+  transform: translate3d(0, 14px, 0) scale(0.965);
+}
+
+html.wathba-sr-ready .wathba-sr-anim {
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition-delay: var(--wathba-sr-delay, 0ms) !important;
+}
+
+@media (max-width: 767px) {
+  html.wathba-sr-ready .wathba-sr-hide {
+    transform: translate3d(0, 18px, 0);
+  }
+
+  html.wathba-sr-ready .wathba-sr-anim {
+    transition-duration: 0.5s !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.wathba-sr-ready .wathba-sr-hide {
+    opacity: 1;
+    transform: none;
+  }
+}

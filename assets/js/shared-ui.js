@@ -1347,3 +1347,104 @@ Quantity: ${item.qty}`;
     getItems: readCart
   };
 })();
+
+/* WATHBA SCROLL REVEAL
+   Content blocks below the first screen fade and rise into place as they scroll into view;
+   cards in the same row follow each other. Content is never hidden unless the browser supports
+   it, anything already on screen at load stays as it is, reduced-motion users get no motion,
+   and a scroll check backs up the observer so nothing can stay hidden. */
+(function () {
+  if (typeof window === "undefined" || typeof document === "undefined" || !document.documentElement) return;
+  if (!("IntersectionObserver" in window) || typeof window.requestAnimationFrame !== "function") return;
+
+  const UNITS = "h1,h2,h3,h4,p,ul,ol,dl,table,details,figure,img,picture,blockquote,form,iframe," +
+    ".academy-card,.product-card,.wathba-product-box,.glass-panel";
+  const SKIP = "script,style,template,noscript,svg,canvas,button,input,select,textarea,label,br,hr,#home,.reveal,[hidden],[aria-hidden='true']";
+  const pending = new Set();
+  let observer = null;
+
+  function isRow(parent) {
+    if (parent.children.length < 2) return false;
+    const style = getComputedStyle(parent);
+    return style.display.includes("grid") || (style.display.includes("flex") && style.flexWrap === "wrap");
+  }
+
+  function collect(root, units) {
+    for (const child of root.children) {
+      if (child.matches(SKIP)) continue;
+      const position = getComputedStyle(child).position;
+      if (position === "fixed" || position === "sticky") continue;
+      if (child.matches(UNITS) || (isRow(root) && child.offsetHeight >= 40)) units.push(child);
+      else collect(child, units);
+    }
+    return units;
+  }
+
+  function reveal(element, delay) {
+    if (!pending.delete(element)) return;
+    observer.unobserve(element);
+    element.style.setProperty("--wathba-sr-delay", delay + "ms");
+    element.classList.add("wathba-sr-anim");
+    requestAnimationFrame(() => element.classList.remove("wathba-sr-hide"));
+    let finished = false;
+    const done = () => {
+      if (finished) return;
+      finished = true;
+      element.classList.remove("wathba-sr-anim");
+      element.style.removeProperty("--wathba-sr-delay");
+    };
+    element.addEventListener("transitionend", (event) => {
+      if (event.target === element && event.propertyName === "opacity") done();
+    });
+    setTimeout(done, 1100 + delay);
+  }
+
+  function revealBatch(elements) {
+    elements
+      .sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top || a.getBoundingClientRect().left - b.getBoundingClientRect().left)
+      .forEach((element, index) => reveal(element, Math.min(index, 5) * 80));
+  }
+
+  function revealAll() {
+    revealBatch(Array.from(pending));
+  }
+
+  // Backup for the observer: anything that has entered the screen at all is revealed, including
+  // the last lines of a page that can never scroll higher than the bottom edge.
+  let checking = false;
+  function checkVisible() {
+    if (checking) return;
+    checking = true;
+    requestAnimationFrame(() => {
+      checking = false;
+      const limit = window.innerHeight;
+      revealBatch(Array.from(pending).filter((element) => element.getBoundingClientRect().top < limit));
+      if (!pending.size) window.removeEventListener("scroll", checkVisible);
+    });
+  }
+
+  function start() {
+    const motion = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+    if (motion && motion.matches) return;
+    const roots = Array.from(document.querySelectorAll("main, #wathbaFooter"));
+    const units = roots.flatMap((root) => collect(root, []));
+    const firstScreen = window.innerHeight;
+    document.documentElement.classList.add("wathba-sr-ready");
+    observer = new IntersectionObserver((entries) => {
+      revealBatch(entries.filter((entry) => entry.isIntersecting).map((entry) => entry.target));
+    }, {rootMargin: "0px 0px -8% 0px", threshold: 0});
+    units.forEach((element) => {
+      if (element.getBoundingClientRect().top < firstScreen) return;
+      element.classList.add("wathba-sr-hide");
+      if (element.matches("img,picture,figure,iframe")) element.classList.add("wathba-sr-media");
+      pending.add(element);
+      observer.observe(element);
+    });
+    if (!pending.size) return;
+    window.addEventListener("scroll", checkVisible, {passive: true});
+    window.addEventListener("beforeprint", revealAll);
+    if (motion && motion.addEventListener) motion.addEventListener("change", () => { if (motion.matches) revealAll(); });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => setTimeout(start, 0));
+})();
