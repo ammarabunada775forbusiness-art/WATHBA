@@ -1,6 +1,6 @@
 # WATHBA homepage characters
 
-Updated 2026-10-23 after Ammar explicitly approved the rebuilt shared character style and requested the matching UI. Updated 2026-11-11 after Ammar asked for Dheeb and Sakhr to be separated and animated as characters rather than shown as one picture or video.
+Updated 2026-10-23 after Ammar explicitly approved the rebuilt shared character style and requested the matching UI. Updated 2026-11-11 after Ammar asked for Dheeb and Sakhr to be separated and animated as characters rather than shown as one picture or video, then asked the same day to remove the glow behind them and to make the motion livelier, as if both had just finished training.
 
 ## Artwork and identity
 
@@ -15,16 +15,17 @@ The authoritative style reference is version 2.0 of [مرجع ثبات شخصي�
 
 ## Assets and exact image preservation
 
-- `dheeb-standing-1024.webp` and `sakhr-stretch-1024.webp` are lossless encodings of the original 1024×1536 PNGs. Their decoded pixels were compared byte-for-byte with the source. No regeneration, mirroring, retouching, background removal, new glow or color adjustment is applied to Dheeb.
-- Responsive 512px and 768px WebPs are resized delivery copies at quality 93. The full-size originals remain available.
-- Screen blending merges the original black backgrounds with the page and preserves their existing broad soft glow, including behind the thighs. Both figures remain unframed. The site background stays dark.
-- Dheeb and Sakhr are two separate elements, each with its own canvas, fallback image and glow. Stage size is 1502×1450 source pixels: Dheeb's full 1024×1536 image sits at (-150,-30) and Sakhr's at (478,-30), leaving a clear gap of about 160 source pixels between the bodies. Only black margins and the outer glow overlap; both screen-blend, so no image rectangle appears.
-- The stage has the page color (#131313) and a soft edge mask, so any remaining glow fades out instead of ending at a hard edge. Both heads, hands and bare feet remain visible.
+- `dheeb-standing-1024.webp` and `sakhr-stretch-1024.webp` are lossless encodings of the original 1024×1536 PNGs. Their decoded pixels were compared byte-for-byte with the source. They stay in the repository unchanged.
+- No glow is shown behind the characters. The hero uses `dheeb-standing-noglow-*.webp` and `sakhr-stretch-noglow-*.webp`, derived from those originals by `scripts/remove-character-glow.py`: the smooth background glow, including the glow seen through gaps between the limbs, is subtracted to black, while every pixel of the ink drawing keeps its exact original value (checked on every run). No regeneration, mirroring, retouching or color adjustment is applied. Re-run the script only if an original changes.
+- Responsive 512px and 768px WebPs are resized delivery copies at quality 93; the 1024px files are lossless.
+- Screen blending merges the black backgrounds with the page. Both figures remain unframed. The site background stays dark.
+- Dheeb and Sakhr are two separate elements, each with its own canvas and fallback image. Stage size is 1502×1450 source pixels: Dheeb's full 1024×1536 image sits at (-150,-30) and Sakhr's at (478,-30), leaving a clear gap of about 160 source pixels between the bodies. Only black margins overlap, so no image rectangle appears.
+- The stage has the page color (#131313) and a soft edge mask as a safeguard against any visible image edge. Both heads, hands and bare feet remain visible.
 - The old pair files remain available for history but are no longer referenced by either homepage.
 
 ## Image generation
 
-Built-in image generation was used for Sakhr; the approved Dheeb image was reused. Input 1: approved Dheeb source (mandatory shared identity, moderately muscular build, fine irregular scribble, darker shorts and soft white-gray glow). Input 2: Ammar's shoulder-stretch attachment (pose only).
+Built-in image generation was used for Sakhr; the approved Dheeb image was reused. The generation record below is kept as history; the glow it describes is removed on the site. Input 1: approved Dheeb source (mandatory shared identity, moderately muscular build, fine irregular scribble, darker shorts and soft white-gray glow). Input 2: Ammar's shoulder-stretch attachment (pose only).
 
 Prompt: Match the approved reference's physique, fine black scribble/crosshatching and light interior exactly. Bald adult male, completely featureless face, two white wristbands outlined lightly in ink, dark athletic shorts and bare feet. Right arm extends horizontally across the chest toward viewer-right; bent left arm draws the right upper arm inward, with left fist near the face. Head turns viewer-left. Complete standing staggered legs, both feet visible. Black background with a broad subtle white-gray bloom from above the knees to the head, fading softly to black. No external scribble halo, hair, colors, text, logos or added elements.
 
@@ -32,16 +33,18 @@ Prompt: Match the approved reference's physique, fine black scribble/crosshatchi
 
 Each character is skinned to a small 2D skeleton (feet, pelvis, chest, head, upper and lower arms) on its own WebGL canvas. The approved pixels are never redrawn; a 32×48 mesh moves them with joint weights measured on the 1024×1536 originals.
 
-- Dheeb: breathing (about 3.7 seconds), slow weight shift, relaxed arm sway and a small head movement. A tap makes him roll his shoulders and nod.
-- Sakhr: breathing (about 4.3 seconds), weight shift, and the held shoulder stretch pulling in and releasing every 5.6 seconds. A tap deepens the pull. At rest his head stays turned toward Dheeb.
-- With a mouse, both heads glance toward the pointer. The feet are bound to a fixed bone, so the stance never moves.
+Both characters look as if they have just finished training:
+
+- Dheeb: fast panting (one breath about every 1.25 seconds, with a quick inhale and a longer exhale), a slow weight shift, arms that swing out a little with each breath, a deep recovery breath every 8.3 seconds where his shoulders and head drop on the exhale, and a short shake-out of both arms every 10.9 seconds. A tap makes him take a recovery breath and then shake out his arms.
+- Sakhr: fast panting (about every 1.1 seconds) while he keeps the shoulder stretch. Every 5.2 seconds he pulls the straight arm in with effort, trembles slightly while holding it, then lets go with a tired slump; he also takes a deep recovery breath every 11.3 seconds. A tap starts a deeper pull. At rest his head stays turned toward Dheeb.
+- With a mouse, both heads glance toward the pointer. Heads and arms ride rigidly on the breathing chest, so they never stretch. The feet are bound to a fixed bone, so the stance never moves.
 
 Rendering is capped at 30fps and stops offscreen, in hidden tabs and during page suspension. No video or animation framework is downloaded.
 
-The pause/play control is keyboard accessible and localized; on phones and tablets it sits at the lower left, clear of the WhatsApp button. Reduced-motion and data-saving preferences keep the normal static images in the same separated layout. No JavaScript, unsupported WebGL, shader failure, image failure or graphics context loss retain or restore the images and their localized text alternatives. Initialization waits for both figures.
+The pause/play control is keyboard accessible and localized; it sits at the lower left of the figures, clear of the WhatsApp button in both languages. Reduced-motion and data-saving preferences keep the normal static images in the same separated layout. No JavaScript, unsupported WebGL, shader failure, image failure or graphics context loss retain or restore the images and their localized text alternatives. Initialization waits for both figures.
 
 ## Validation
 
 - Run `npm run build` and `npm run check`.
 - The lifecycle test covers two separate character canvases, both image readiness, pause/resume, frame cap, viewport/visibility/page suspension, reduced motion, data saving, image failure, graphics failure and both languages.
-- Review desktop, narrow desktop and phone layouts in the browser; confirm both wristband colors, physical order, the gap between the figures, full hand/feet visibility, no image rectangles, feet that never move, and copy before figures on mobile.
+- Review desktop, narrow desktop and phone layouts in the browser; confirm both wristband colors, physical order, the gap between the figures, no glow or light rim around the figures, full hand/feet visibility, no image rectangles, feet that never move, and copy before figures on mobile.

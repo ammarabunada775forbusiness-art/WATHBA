@@ -1,4 +1,4 @@
-/* Screen blending preserves the approved artwork and its soft glow on the page. */
+/* Screen blending merges the approved artwork's black background with the page; no glow is shown. */
 body:has(#home) #home.wathba-home-hero {
   min-height: calc(100svh - var(--wathba-nav-height));
   padding-block: 30px 48px;
@@ -20,7 +20,7 @@ body:has(#home) #home.wathba-home-hero {
 }
 
 /* Stage 1502×1450: Dheeb's box at x -150, Sakhr's at x 478 (source px), leaving a clear gap
-   between the two bodies. Each original keeps its own glow; the soft mask removes clip edges. */
+   between the two bodies. The soft mask keeps any image edge invisible. */
 .wathba-hero-visual {
   position: relative;
   width: 100%;
@@ -74,7 +74,8 @@ body:has(#home) #home.wathba-home-hero {
 
 body:has(#home) #home .wathba-hero-motion {
   position: absolute;
-  inset: auto 3% 1% auto;
+  /* Lower left keeps the control clear of the floating WhatsApp button in both languages. */
+  inset: auto auto 1% 3%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -156,11 +157,6 @@ body:has(#home) #home .wathba-hero-motion {
   .wathba-hero-visual {
     order: 1;
     max-width: 620px;
-  }
-
-  /* Keep the pause control clear of the floating WhatsApp button. */
-  body:has(#home) #home .wathba-hero-motion {
-    inset: auto auto 1% 3%;
   }
 }
 
