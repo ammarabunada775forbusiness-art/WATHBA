@@ -33,13 +33,13 @@ Prompt: Match the approved reference's physique, fine black scribble/crosshatchi
 
 Each character is skinned to a small 2D skeleton (feet, pelvis, chest, head, upper and lower arms) on its own WebGL canvas. The approved pixels are never redrawn; a 32×48 mesh moves them with joint weights measured on the 1024×1536 originals.
 
-Both characters look as if they have just finished training. A light breathing heave (about 1.7 seconds per breath for Dheeb, 1.55 for Sakhr) lifts the shoulders a few pixels; the body itself barely changes size. On top of it, each character cycles through moves in a shuffled order with short rests in between, so the motion keeps changing:
+Both characters look calm and alive with one continuous idle motion, after the owner found the rotating moves too busy (2026-11-11):
 
-- Dheeb: looks at Sakhr, shrugs, shakes out his arms, rolls his shoulders, shifts his weight, takes a deep sigh with a head drop, and nods.
-- Sakhr: pulls the shoulder stretch with a fatigue tremor and lets go, looks at Dheeb, drops his head, shrugs, shifts his weight, re-grips the stretch, and sighs.
-- When one looks at the other while the other is resting, the other looks back.
-- A tap or click starts a move (Dheeb: shake out, then nod; Sakhr: stretch, then re-grip). With a mouse, both heads glance toward the pointer.
-- Heads and arms ride rigidly on the chest, so they never stretch. The feet are bound to a fixed bone, so the stance never moves.
+- A light breathing heave (about 1.7 seconds per breath for Dheeb, 1.55 for Sakhr) lifts the shoulders a few pixels; the body does not change size.
+- A slow weight sway of the whole figure, and a head that drifts gently on its own rhythm.
+- With a mouse, both heads turn a little toward the visitor's pointer; without one, Sakhr keeps looking toward Dheeb.
+- Taps do nothing. Heads and arms ride rigidly on the chest, and the feet are bound to a fixed bone, so the stance never moves.
+- The earlier move set (shrug, nod, stretch pull and others) is still defined in the script but not scheduled.
 
 Rendering is capped at 30fps and stops offscreen, in hidden tabs and during page suspension. No video or animation framework is downloaded.
 

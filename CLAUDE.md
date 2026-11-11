@@ -32,14 +32,14 @@ This file is read automatically at the start of every Claude Code session in thi
 ## Characters on the homepage
 - Follow reference 2.1: no glow behind or around the characters, Dheeb on the viewer's left, Sakhr on the right in every language and on mobile, never redraw, mirror or retouch the art.
 - The hero uses glow-free copies (`*-noglow-*.webp`) derived by `scripts/tools/remove-character-glow.py` (Python with NumPy, SciPy, Pillow); every ink pixel keeps its exact value.
-- `site/assets/js/home-hero.js`: each character has its own WebGL canvas and a small 2D skeleton. A light breathing heave plus a shuffled set of moves; feet never move. Tests in `scripts/checks/check-hero.js`; details in `docs/HERO-CHARACTERS.md`.
+- `site/assets/js/home-hero.js`: each character has its own WebGL canvas and a small 2D skeleton. One calm idle motion only (breathing heave, slow sway, head drift that follows the pointer); the owner rejected rotating moves as too busy. Feet never move. Tests in `scripts/checks/check-hero.js`; details in `docs/HERO-CHARACTERS.md`.
 - The pause control is invisible unless reached with the keyboard (the owner asked to hide it; keyboard access keeps it accessible).
 
 ## Scroll reveal
 - "WATHBA SCROLL REVEAL" at the end of `site/assets/js/shared-ui.js` and `site/assets/css/shared-ui.css`, classes `wathba-sr-*`. An older reveal was disabled because it left content hidden on some devices; this one must never hide content that is on screen, without JavaScript or with reduced motion. Test phone and desktop after any change.
 
 ## Current status (2026-11-11)
-- Hero: Dheeb and Sakhr separated, glow removed, rigged animation with rotating post-workout moves; pause control hidden.
+- Hero: Dheeb and Sakhr separated, glow removed, rigged animation reduced to one calm idle motion with a head that follows the visitor; pause control hidden.
 - Scroll reveal added across the site; the owner is evaluating whether to keep it.
 - Repository reorganized into `site/`, `content/`, `scripts/*`, `docs/`; build output verified identical and the live deploy confirmed.
 - Character reference 2.1 (no glow) committed in the manufacturing docs repo.

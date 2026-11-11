@@ -210,7 +210,6 @@
 
   function pose(character) {
     const rig = character.rig, time = elapsed;
-    schedule(character, time);
     const o = {pelvisA: 0, chestA: 0, chestY: 0, chestSY: 0, headA: 0, headX: 0, headY: 0, headSY: 0,
       upLA: 0, foLA: 0, upRA: 0, foRA: 0, armY: 0, armSpread: 0};
     let calm = 0;
@@ -226,9 +225,11 @@
     const intensity = 0.85 + 0.15 * Math.sin(Math.PI * 2 * time / 9.5 + rig.phase);
     const b = breath(time, rig.breath) * intensity * (1 - calm);
     const look = character.look;
-    const pelvis = local(rig.ground, o.pelvisA + 0.002 * Math.sin(Math.PI * 2 * time / 7 + rig.phase));
+    const pelvis = local(rig.ground, o.pelvisA + 0.005 * Math.sin(Math.PI * 2 * time / 7 + rig.phase));
     const chest = multiply(pelvis, local(rig.waist, o.chestA, 1 + 0.004 * b, 1 + 0.005 * b + o.chestSY, 0, -4 * b + o.chestY));
-    const head = attach(chest, rig.neck, 0.03 * look + o.headA, 1, 1 + o.headSY, 3 * look + o.headX, -1 * b + o.headY);
+    // One calm idle: breathing, a slow weight sway and a head that drifts and follows the visitor.
+    const drift = Math.sin(Math.PI * 2 * time / 5.3 + rig.phase);
+    const head = attach(chest, rig.neck, 0.05 * look + 0.015 * drift + o.headA, 1, 1 + o.headSY, 5 * look + 2 * drift + o.headX, -1 * b + o.headY);
     const upperL = attach(chest, rig.shoulderL, o.upLA, 1, 1, -o.armSpread, o.armY);
     const foreL = multiply(upperL, local(rig.elbowL, o.foLA));
     const upperR = attach(chest, rig.shoulderR, o.upRA, 1, 1, o.armSpread, o.armY);
@@ -410,7 +411,6 @@
     const character = characters[(event.clientX - box.left) / box.width < split ? 0 : 1];
     if (elapsed - character.tapAt < character.rig.cooldown) return;
     character.tapAt = elapsed;
-    start(character, character.rig.tap[character.taps++ % character.rig.tap.length], elapsed);
   });
   window.addEventListener('pointermove', event => {
     pointer = event.pointerType === 'mouse' ? {x: event.clientX} : null;
