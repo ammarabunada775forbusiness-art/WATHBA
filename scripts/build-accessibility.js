@@ -2,7 +2,6 @@
 const fs=require('node:fs'),path=require('node:path');
 const imageDescriptions={
  'dheeb-standing-1024.webp':{ar:'ذيب على اليسار برباطين أسودين في الوقفة المتدرجة المعتمدة',en:'Dheeb on the left, black wristbands, in the approved relaxed staggered stance'},
- 'dheeb-standing-768.webp':{ar:'ذيب، شخصية وثبة، واقفًا بعد التمرين برباطين أسودين',en:'Dheeb, the WATHBA character, standing after training in black wristbands'},
  'sakhr-stretch-1024.webp':{ar:'صخر على اليمين برباطين أبيضين يمدد كتفه بذراع ممتدة أمام الصدر',en:'Sakhr on the right, white wristbands, stretching his shoulder with one arm across his chest'},
  '75ba4e2263d8.webp':{ar:'صورة توضيحية لباراليتس بمقابض خشبية',en:'Illustrative photo of parallettes with wooden handles'},
  'f66c8e0cd854.webp':{ar:'صورة توضيحية لتدريب الوقوف على اليدين باستخدام الباراليتس',en:'Illustrative photo of a handstand on parallettes'},
